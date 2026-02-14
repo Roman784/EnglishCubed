@@ -11,7 +11,7 @@ using Utils;
 
 namespace GameRoot
 {
-    public sealed class GameEntryPoint : SceneEntryPoint
+    public sealed class GameEntryPoint : SceneEntryPoint<SceneEnterParams>
     {
         private void Start()
         {
@@ -20,7 +20,7 @@ namespace GameRoot
         }
 
         // Application initializing: loading data and setting up.
-        public override IEnumerator Run<T>(T _)
+        protected override IEnumerator Run(SceneEnterParams _)
         {
             SetAppSettings();
 
@@ -79,6 +79,12 @@ namespace GameRoot
 
             if (initialEditorScene == Scenes.LEVEL_MENU)
             {
+                return;
+            }
+
+            else if (initialEditorScene == Scenes.TEST_ROOM)
+            {
+                G.SceneProvider.OpenTestRoom();
                 return;
             }
 

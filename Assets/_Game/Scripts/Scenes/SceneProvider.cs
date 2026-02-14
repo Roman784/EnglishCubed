@@ -1,3 +1,4 @@
+using TestRoom;
 using UI;
 
 namespace GameRoot
@@ -14,6 +15,21 @@ namespace GameRoot
         public SceneProvider(UIRoot uiRoot)
         {
             _sceneLoader = new SceneLoader(uiRoot);
+        }
+
+        public void OpenTestRoom()
+        {
+            var enterParams = new TestRoomEnterParams();
+            OpenTestRoom(enterParams);
+        }
+
+        private void OpenTestRoom(TestRoomEnterParams enterParams)
+        {
+            _previousSceneParams = _currentSceneParams;
+            _currentSceneParams = enterParams;
+
+            _sceneLoader.LoadAndRunScene
+                <TestRoomEntryPoint, TestRoomEnterParams>(enterParams);
         }
     }
 }
