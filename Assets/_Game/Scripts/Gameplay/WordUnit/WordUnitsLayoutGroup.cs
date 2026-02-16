@@ -10,14 +10,15 @@ namespace Gameplay
 
         private List<WordUnit> _allWordUnits = new();
 
-        private void Update()
-        {
-            Arrange();
-        }
-
         public void Add(WordUnit wordUnit)
         {
             _allWordUnits.Add(wordUnit);
+            Arrange();
+        }
+
+        public void Remove(WordUnit wordUnit)
+        {
+            _allWordUnits.Remove(wordUnit);
             Arrange();
         }
 

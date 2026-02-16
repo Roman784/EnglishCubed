@@ -49,6 +49,7 @@ MonoBehaviour:
   _wordView: {fileID: 1213148712609781694}
   _containerBorderWidth: 0.25
   _minContainerWidth: 1
+  _pointerDetector: {fileID: 8078999396267707461}
 --- !u!1 &2493296497185266432
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,6 +197,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8433991116503443309}
   - component: {fileID: 7740989789816744643}
+  - component: {fileID: 8157783617715024839}
+  - component: {fileID: 8078999396267707461}
+  - component: {fileID: 3258336144809420987}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -247,6 +251,51 @@ Canvas:
   m_SortingLayerID: 180928475
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &8157783617715024839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6535037824741451997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GraphicRaycaster
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &8078999396267707461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6535037824741451997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 372708881f55d0f4fbc21955f6b13cd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Utils.PointerDetector
+--- !u!114 &3258336144809420987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6535037824741451997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbe76303072cd3c48823a477503202c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Utils.ZoomOnHover
+  _target: {fileID: 8433991116503443309}
+  _zoomScale: 1.15
+  _duration: 0.15
+  _ease: 6
 --- !u!1 &7935613500837700425
 GameObject:
   m_ObjectHideFlags: 0
