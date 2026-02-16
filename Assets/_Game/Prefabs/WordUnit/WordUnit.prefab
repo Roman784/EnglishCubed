@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ae3963f1eaf07241b97f9c29f6516c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.WordUnit
+  _rootView: {fileID: 8890383201883565244}
   _containerView: {fileID: 8433991116503443309}
   _wordView: {fileID: 1213148712609781694}
   _containerBorderWidth: 0.25

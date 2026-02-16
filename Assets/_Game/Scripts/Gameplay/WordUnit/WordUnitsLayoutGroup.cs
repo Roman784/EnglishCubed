@@ -9,16 +9,19 @@ namespace Gameplay
         [SerializeField] private float _spacing;
 
         private List<WordUnit> _allWordUnits = new();
+        private WordUnit _addedWordUnit;
 
         public void Add(WordUnit wordUnit)
         {
             _allWordUnits.Add(wordUnit);
+            _addedWordUnit = wordUnit;
             Arrange();
         }
 
         public void Remove(WordUnit wordUnit)
         {
             _allWordUnits.Remove(wordUnit);
+            _addedWordUnit = null;
             Arrange();
         }
 
@@ -94,7 +97,11 @@ namespace Gameplay
                     var position = wordUnit.transform.position;
                     position.x = currentX + wordUnit.ContainerSize.x / 2f;
                     position.y = currentY - wordUnitHeight / 2f;
-                    wordUnit.transform.position = position;
+
+                    if (wordUnit == _addedWordUnit)
+                        wordUnit.MoveToByDecreasing(position);
+                    else
+                        wordUnit.MoveTo(position);
 
                     currentX += wordUnit.ContainerSize.x + _spacing;
                 }

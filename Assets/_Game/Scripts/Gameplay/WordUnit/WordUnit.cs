@@ -1,4 +1,5 @@
 using Configs;
+using DG.Tweening;
 using R3;
 using TMPro;
 using UnityEngine;
@@ -10,6 +11,7 @@ namespace Gameplay
     public class WordUnit : MonoBehaviour
     {
         [Header("View")]
+        [SerializeField] private Transform _rootView;
         [SerializeField] private RectTransform _containerView;
         [SerializeField] private TMP_Text _wordView;
 
@@ -39,6 +41,20 @@ namespace Gameplay
             SetWord(_configs.EnWord);
 
             return this;
+        }
+
+        public void MoveTo(Vector2 to)
+        {
+            transform.DOMove(to, 0.25f).SetEase(Ease.OutQuad);
+        }
+
+        public void MoveToByDecreasing(Vector2 to)
+        {
+            _rootView.DOScale(0, 0.1f).OnComplete(() =>
+            {
+                transform.position = to;
+                _rootView.DOScale(1, 0.15f).SetEase(Ease.OutBack);
+            });
         }
 
         private void SetWord(string word)
