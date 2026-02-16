@@ -13,6 +13,7 @@ namespace TestRoom
     {
         [SerializeField] private WordUnit _wordUnitPrefab;
         [SerializeField] private WordUnitConfigs[] _wordUnitsConfigs;
+        [SerializeField] private WordUnitsLayoutGroup _wordUnitsLayoutGroup;
 
         // Sequential scene initialization.
         protected override IEnumerator Run(TestRoomEnterParams enterParams)
@@ -23,7 +24,7 @@ namespace TestRoom
             foreach (var configs in _wordUnitsConfigs)
             {
                 var newWordUnit = Instantiate(_wordUnitPrefab).SetConfigs(configs);
-                newWordUnit.transform.position = new Vector2(0, i * 1.2f);
+                _wordUnitsLayoutGroup.Add(newWordUnit);
                 i++;
             }
 

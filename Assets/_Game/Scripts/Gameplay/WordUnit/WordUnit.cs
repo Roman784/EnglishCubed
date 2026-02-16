@@ -17,6 +17,8 @@ namespace Gameplay
 
         private WordUnitConfigs _configs;
 
+        public Vector2 ContainerSize => _containerView.sizeDelta;
+
         public WordUnit SetConfigs(WordUnitConfigs configs)
         {
             _configs = configs;
