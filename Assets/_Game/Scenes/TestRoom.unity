@@ -400,8 +400,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3ebd2d6c2152be74aa1d0684f3ea163b, type: 2}
   - {fileID: 11400000, guid: 2e38dfab934cdfa49859eac9a6ad7400, type: 2}
   - {fileID: 11400000, guid: 3ebd2d6c2152be74aa1d0684f3ea163b, type: 2}
-  _handWordUnitsGroup: {fileID: 1807663763}
-  _fieldWordUnitsGroup: {fileID: 1114353180}
+  _handWordUnitsGroup: {fileID: 1807663764}
+  _fieldWordUnitsGroup: {fileID: 1114353182}
 --- !u!1 &553538552
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,7 +486,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1114353181}
-  - component: {fileID: 1114353180}
+  - component: {fileID: 1114353182}
   m_Layer: 0
   m_Name: FieldWordUnitsGroup
   m_TagString: Untagged
@@ -494,20 +494,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1114353180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1114353179}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ab808d6c45663d4d8a4295e6ea99dba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Gameplay.WordUnitsLayoutGroup
-  _container: {fileID: 1182296949}
-  _spacing: 0.25
 --- !u!4 &1114353181
 Transform:
   m_ObjectHideFlags: 0
@@ -524,6 +510,21 @@ Transform:
   - {fileID: 466070125}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1114353182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114353179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad83dab91eb33724685e2a99726a7ca7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Gameplay.FieldWordUnitsGroup
+  _container: {fileID: 1182296949}
+  _spacing: 0.35
+  _wordUnitScale: 1
 --- !u!1 &1144785533
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,6 +694,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1807663762}
   - component: {fileID: 1807663763}
+  - component: {fileID: 1807663764}
   m_Layer: 0
   m_Name: HandWordUnitsGroup
   m_TagString: Untagged
@@ -730,6 +732,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.WordUnitsLayoutGroup
   _container: {fileID: 553538553}
   _spacing: 0.5
+  _wordUnitScale: 1
+  _isArrangeWhenRemoved: 0
+  _allWordUnits: []
+  _addedWordUnit: {fileID: 0}
+--- !u!114 &1807663764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807663761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf1a98cfb71360243b9b5125f38a178e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Gameplay.HandWordUnitsGroup
+  _container: {fileID: 553538553}
+  _spacing: 0.5
+  _wordUnitScale: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

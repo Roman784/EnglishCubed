@@ -7,6 +7,7 @@ using System.Collections;
 using UI;
 using UnityEngine;
 using R3;
+using System.Collections.Generic;
 
 namespace TestRoom
 {
@@ -14,8 +15,8 @@ namespace TestRoom
     {
         [SerializeField] private WordUnit _wordUnitPrefab;
         [SerializeField] private WordUnitConfigs[] _wordUnitsConfigs;
-        [SerializeField] private WordUnitsLayoutGroup _handWordUnitsGroup;
-        [SerializeField] private WordUnitsLayoutGroup _fieldWordUnitsGroup;
+        [SerializeField] private HandWordUnitsGroup _handWordUnitsGroup;
+        [SerializeField] private FieldWordUnitsGroup _fieldWordUnitsGroup;
 
         // Sequential scene initialization.
         protected override IEnumerator Run(TestRoomEnterParams enterParams)
@@ -25,13 +26,14 @@ namespace TestRoom
             G.HandWordUnitsGroup = _handWordUnitsGroup;
             G.FieldWordUnitsGroup = _fieldWordUnitsGroup;
 
-            var i = 0;
+            var wordUnits = new List<WordUnit>();
             foreach (var configs in _wordUnitsConfigs)
             {
                 var newWordUnit = Instantiate(_wordUnitPrefab).SetConfigs(configs);
-                _handWordUnitsGroup.Add(newWordUnit);
-                i++;
+                wordUnits.Add(newWordUnit);
             }
+
+            _handWordUnitsGroup.SetWordUnits(wordUnits);
 
             isLoaded = true;
 

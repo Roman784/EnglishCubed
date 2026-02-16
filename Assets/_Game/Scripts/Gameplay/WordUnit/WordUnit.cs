@@ -14,6 +14,7 @@ namespace Gameplay
         [SerializeField] private Transform _rootView;
         [SerializeField] private RectTransform _containerView;
         [SerializeField] private TMP_Text _wordView;
+        [SerializeField] private RectTransform _backplate;
 
         [Header("Container Size")]
         [SerializeField] private float _containerBorderWidth;
@@ -25,6 +26,7 @@ namespace Gameplay
 
         private WordUnitConfigs _configs;
 
+        public RectTransform Backplate => _backplate;
         public Vector2 ContainerSize => _containerView.sizeDelta;
         public Observable<PointerEventData> OnPointerClickSignal => _pointerDetector.OnPointerClickSignal;
 
@@ -48,12 +50,12 @@ namespace Gameplay
             transform.DOMove(to, 0.25f).SetEase(Ease.OutQuad);
         }
 
-        public void MoveToByDecreasing(Vector2 to)
+        public void MoveToByDecreasing(Vector2 position, float scale)
         {
-            _rootView.DOScale(0, 0.1f).OnComplete(() =>
+            _rootView.DOScale(0, 0.15f).OnComplete(() =>
             {
-                transform.position = to;
-                _rootView.DOScale(1, 0.15f).SetEase(Ease.OutBack);
+                transform.position = position;
+                _rootView.DOScale(scale, 0.2f).SetEase(Ease.OutBack);
             });
         }
 

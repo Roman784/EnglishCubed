@@ -1,33 +1,27 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.InputSystem.iOS;
 
 namespace Gameplay
 {
-    public class WordUnitsLayoutGroup : MonoBehaviour
+    public abstract class WordUnitsLayoutGroup : MonoBehaviour
     {
         [SerializeField] private RectTransform _container;
         [SerializeField] private float _spacing;
+        [SerializeField] protected float _wordUnitScale;
 
-        private List<WordUnit> _allWordUnits = new();
-        private WordUnit _addedWordUnit;
+        public abstract void Add(WordUnit wordUnit);
+        public abstract void Remove(WordUnit wordUnit);
+        protected abstract void Move(WordUnit wordUnit, Vector2 position, float scale);
 
-        public void Add(WordUnit wordUnit)
+        private Vector2 WordUnitSize(WordUnit wordUnit) => wordUnit.ContainerSize * _wordUnitScale;
+
+        protected Dictionary<WordUnit, Vector2> Arrange(IEnumerable<WordUnit> wordUnits)
         {
-            _allWordUnits.Add(wordUnit);
-            _addedWordUnit = wordUnit;
-            Arrange();
-        }
+            if (wordUnits.Count() == 0) return null;
 
-        public void Remove(WordUnit wordUnit)
-        {
-            _allWordUnits.Remove(wordUnit);
-            _addedWordUnit = null;
-            Arrange();
-        }
-
-        private void Arrange()
-        {
-            if (_allWordUnits.Count == 0) return;
+            var wordUnitPositionsMap = new Dictionary<WordUnit, Vector2>();
 
             var containerCorners = new Vector3[4];
             _container.GetWorldCorners(containerCorners);
@@ -40,10 +34,9 @@ namespace Gameplay
             var lines = new List<List<WordUnit>>();
             var currentLine = new List<WordUnit>();
 
-            for (int i = 0; i < _allWordUnits.Count; i++)
+            foreach (var wordUnit in wordUnits)
             {
-                var wordUnit = _allWordUnits[i];
-                var wordUnitWidth = wordUnit.ContainerSize.x;
+                var wordUnitWidth = WordUnitSize(wordUnit).x;
 
                 // If an element fits into the current line.
                 if (currentLineWidth + wordUnitWidth + (currentLine.Count > 0 ? _spacing : 0) <= containerWidth)
@@ -65,19 +58,27 @@ namespace Gameplay
                 lines.Add(new List<WordUnit>(currentLine));
 
             if (lines.Count > 0)
-                CenterLines(lines, minScreenContainerCorner, maxScreenContainerCorner);
+            {
+                var wordUnitsAndPositionsPair = CenterLines(lines, minScreenContainerCorner, maxScreenContainerCorner);
+                foreach (var pair in wordUnitsAndPositionsPair)
+                    wordUnitPositionsMap[pair.Item1] = pair.Item2;
+            }
+
+            return wordUnitPositionsMap;
         }
 
-        private void CenterLines(List<List<WordUnit>> lines, Vector2 minContainerCorner, Vector2 maxContainerCorner)
+        private List<(WordUnit, Vector2)> CenterLines(List<List<WordUnit>> lines, Vector2 minContainerCorner, Vector2 maxContainerCorner)
         {
-            if (lines.Count == 0) return;
+            if (lines.Count == 0) return null;
+
+            var wordUnitsAndPositionsPair = new List<(WordUnit, Vector2)>();
 
             var containerWidth = maxContainerCorner.x - minContainerCorner.x;
             var containerHeight = maxContainerCorner.y - minContainerCorner.y;
             var containerX = (minContainerCorner.x + maxContainerCorner.x) / 2f;
             var containerY = (minContainerCorner.y + maxContainerCorner.y) / 2f;
 
-            var wordUnitHeight = lines[0][0].ContainerSize.y;
+            var wordUnitHeight = WordUnitSize(lines[0][0]).y;
             var totalHeight = lines.Count * (wordUnitHeight + _spacing) - _spacing;
             var startY = totalHeight / 2f + containerY;
             var currentY = startY;
@@ -86,7 +87,7 @@ namespace Gameplay
             {
                 var totalWidth = 0f;
                 foreach (var wordUnit in line)
-                    totalWidth += wordUnit.ContainerSize.x;
+                    totalWidth += WordUnitSize(wordUnit).x;
                 totalWidth += (line.Count - 1) * _spacing;
 
                 var startX = -totalWidth / 2f + containerX;
@@ -95,18 +96,17 @@ namespace Gameplay
                 foreach (var wordUnit in line)
                 {
                     var position = wordUnit.transform.position;
-                    position.x = currentX + wordUnit.ContainerSize.x / 2f;
+                    position.x = currentX + WordUnitSize(wordUnit).x / 2f;
                     position.y = currentY - wordUnitHeight / 2f;
 
-                    if (wordUnit == _addedWordUnit)
-                        wordUnit.MoveToByDecreasing(position);
-                    else
-                        wordUnit.MoveTo(position);
+                    wordUnitsAndPositionsPair.Add((wordUnit, position));
+                    Move(wordUnit, position, _wordUnitScale);
 
-                    currentX += wordUnit.ContainerSize.x + _spacing;
+                    currentX += WordUnitSize(wordUnit).x + _spacing;
                 }
                 currentY -= wordUnitHeight + _spacing;
             }
+            return wordUnitsAndPositionsPair;
         }
     }
 }
