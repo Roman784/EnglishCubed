@@ -1,5 +1,7 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Utils;
 
 namespace Gameplay
 {
@@ -13,12 +15,12 @@ namespace Gameplay
             _allWordUnits.Add(wordUnit);
             _addedWordUnit = wordUnit;
             Arrange(_allWordUnits);
+            _addedWordUnit = null;
         }
 
         public override void Remove(WordUnit wordUnit)
         {
             _allWordUnits.Remove(wordUnit);
-            _addedWordUnit = null;
             Arrange(_allWordUnits);
         }
 

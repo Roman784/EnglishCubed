@@ -16,5 +16,9 @@ namespace Gameplay
         public abstract void Enter();
         public virtual void Exit() { }
         public virtual void OnPointerClick() { }
+        public virtual void OnPointerEnter() { }
+        public virtual void OnPointerExit() { }
+        public virtual void OnPointerDown() { }
+        public virtual void OnPointerUp() { }
     }
 }

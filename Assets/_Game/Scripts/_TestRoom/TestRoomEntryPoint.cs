@@ -8,6 +8,7 @@ using UI;
 using UnityEngine;
 using R3;
 using System.Collections.Generic;
+using GrammarValidation;
 
 namespace TestRoom
 {
@@ -34,6 +35,32 @@ namespace TestRoom
             }
 
             _handWordUnitsGroup.SetWordUnits(wordUnits);
+
+            var grammarValidator = new PatternGrammarValidator();
+            var sen1 = "he is good";
+            var sen2 = "i am not stupid";
+            var sen3 = "we will be beautiful";
+            var sen4 = "they were not wise";
+            var sen5 = "where were they?";
+            var sen6 = "were they here?";
+
+            var sen12 = "i is good";
+            var sen22 = "am i not stupid?";
+            var sen32 = "we will beautiful be";
+            var sen42 = "not they were wise";
+
+            Debug.Log($"{sen1} - {grammarValidator.Validate(sen1)}");
+            Debug.Log($"{sen2} - {grammarValidator.Validate(sen2)}");
+            Debug.Log($"{sen3} - {grammarValidator.Validate(sen3)}");
+            Debug.Log($"{sen4} - {grammarValidator.Validate(sen4)}");
+            Debug.Log($"{sen4} - {grammarValidator.Validate(sen4)}");
+            Debug.Log($"{sen5} - {grammarValidator.Validate(sen5)}");
+            Debug.Log($"{sen6} - {grammarValidator.Validate(sen6)}");
+
+            Debug.Log($"{sen12} - {grammarValidator.Validate(sen12)}");
+            Debug.Log($"{sen22} - {grammarValidator.Validate(sen22)}");
+            Debug.Log($"{sen32} - {grammarValidator.Validate(sen32)}");
+            Debug.Log($"{sen42} - {grammarValidator.Validate(sen42)}");
 
             isLoaded = true;
 

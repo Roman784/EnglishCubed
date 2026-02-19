@@ -11,15 +11,17 @@ namespace Gameplay
         [SerializeField] private float _spacing;
         [SerializeField] protected float _wordUnitScale;
 
+        protected Dictionary<WordUnit, Vector2> _wordUnitPositionsMap = new();
+
         public abstract void Add(WordUnit wordUnit);
         public abstract void Remove(WordUnit wordUnit);
         protected abstract void Move(WordUnit wordUnit, Vector2 position, float scale);
 
         private Vector2 WordUnitSize(WordUnit wordUnit) => wordUnit.ContainerSize * _wordUnitScale;
 
-        protected Dictionary<WordUnit, Vector2> Arrange(IEnumerable<WordUnit> wordUnits)
+        protected void Arrange(IEnumerable<WordUnit> wordUnits)
         {
-            if (wordUnits.Count() == 0) return null;
+            if (wordUnits.Count() == 0) return;
 
             var wordUnitPositionsMap = new Dictionary<WordUnit, Vector2>();
 
@@ -64,7 +66,7 @@ namespace Gameplay
                     wordUnitPositionsMap[pair.Item1] = pair.Item2;
             }
 
-            return wordUnitPositionsMap;
+            _wordUnitPositionsMap = wordUnitPositionsMap;
         }
 
         private List<(WordUnit, Vector2)> CenterLines(List<List<WordUnit>> lines, Vector2 minContainerCorner, Vector2 maxContainerCorner)
@@ -100,7 +102,9 @@ namespace Gameplay
                     position.y = currentY - wordUnitHeight / 2f;
 
                     wordUnitsAndPositionsPair.Add((wordUnit, position));
-                    Move(wordUnit, position, _wordUnitScale);
+
+                    if (wordUnit.Position != (Vector2)position)
+                        Move(wordUnit, position, _wordUnitScale);
 
                     currentX += WordUnitSize(wordUnit).x + _spacing;
                 }

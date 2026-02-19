@@ -1,17 +1,17 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
+using Utils;
 
 namespace Gameplay
 {
     public class HandWordUnitsGroup : WordUnitsLayoutGroup
     {
-        private Dictionary<WordUnit, Vector2> _wordUnitPositionsMap = new();
-
         public void SetWordUnits(IEnumerable<WordUnit> wordUnits)
         {
-            _wordUnitPositionsMap = Arrange(wordUnits);
+            Arrange(wordUnits);
             CreateBackplates(_wordUnitPositionsMap);
         }
 

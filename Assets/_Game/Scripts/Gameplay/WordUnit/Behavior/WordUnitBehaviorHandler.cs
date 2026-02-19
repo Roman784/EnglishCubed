@@ -25,7 +25,11 @@ namespace Gameplay
             _behaviorsMap[typeof(OnFieldWordUnitBehavior)] = new OnFieldWordUnitBehavior(this, _wordUnit);
         }
 
-        public void HandleOnClick() => _currentBehavior?.OnPointerClick();
+        public void HandleOnPointerClick() => _currentBehavior?.OnPointerClick();
+        public void HandleOnPointerEnter() => _currentBehavior?.OnPointerEnter();
+        public void HandleOnPointerExit() => _currentBehavior?.OnPointerExit();
+        public void HandleOnPointerDown() => _currentBehavior?.OnPointerDown();
+        public void HandleOnPointerUp() => _currentBehavior?.OnPointerUp();
 
         public void SetInHandBehavior()
         {

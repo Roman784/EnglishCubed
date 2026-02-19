@@ -1,6 +1,7 @@
 using Configs;
 using DG.Tweening;
 using R3;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -25,16 +26,19 @@ namespace Gameplay
         [SerializeField] private PointerDetector _pointerDetector;
 
         private WordUnitConfigs _configs;
+        private WordUnitDragging _dragging;
 
+        public Vector2 Position => transform.position;
         public RectTransform Backplate => _backplate;
+        public WordUnitDragging Dragging => _dragging;
         public Vector2 ContainerSize => _containerView.sizeDelta;
         public Observable<PointerEventData> OnPointerClickSignal => _pointerDetector.OnPointerClickSignal;
 
         private void Start()
         {
-            var behaviorHandler = new WordUnitBehaviorHandler(this);
-            _pointerDetector.OnPointerClickSignal.Subscribe(_ => behaviorHandler.HandleOnClick());
-            behaviorHandler.SetInHandBehavior();
+            _dragging = new WordUnitDragging(transform);
+
+            InitBehavior();
         }
 
         public WordUnit SetConfigs(WordUnitConfigs configs)
@@ -43,6 +47,17 @@ namespace Gameplay
             SetWord(_configs.EnWord);
 
             return this;
+        }
+
+        private void InitBehavior()
+        {
+            var behaviorHandler = new WordUnitBehaviorHandler(this);
+            _pointerDetector.OnPointerEnterSignal.Subscribe(_ => behaviorHandler.HandleOnPointerEnter());
+            _pointerDetector.OnPointerExitSignal.Subscribe(_ => behaviorHandler.HandleOnPointerExit());
+            _pointerDetector.OnPointerDownSignal.Subscribe(_ => behaviorHandler.HandleOnPointerDown());
+            _pointerDetector.OnPointerUpSignal.Subscribe(_ => behaviorHandler.HandleOnPointerUp());
+            _pointerDetector.OnPointerClickSignal.Subscribe(_ => behaviorHandler.HandleOnPointerClick());
+            behaviorHandler.SetInHandBehavior();
         }
 
         public void MoveTo(Vector2 to)
