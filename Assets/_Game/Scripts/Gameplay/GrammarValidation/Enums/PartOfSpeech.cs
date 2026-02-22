@@ -4,12 +4,14 @@ namespace GrammarValidation
 {
     public enum PartOfSpeech
     {
-        None,
-        Pronoun,
+        Noun,
         Verb,
         Adjective,
         Adverb,
-        WhWord,
-        Interjection
+        Pronoun,
+        Determiner,
+        Preposition,
+        Conjunction,
+        Particle
     }
 }

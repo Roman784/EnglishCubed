@@ -17,14 +17,14 @@ namespace GrammarValidation
             if (PartOfSpeech.HasValue && word.PartOfSpeech != PartOfSpeech.Value)
                 return false;
 
-            if (RequireBe && !word.IsBeVerb)
+            /*if (RequireBe && !word.IsBeVerb)
                 return false;
 
             if (RequireModal && !word.IsModal)
                 return false;
 
             if (RequireNegative && !word.IsNegative)
-                return false;
+                return false;*/
 
             return true;
         }

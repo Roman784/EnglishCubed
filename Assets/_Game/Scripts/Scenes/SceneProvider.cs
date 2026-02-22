@@ -1,3 +1,4 @@
+using MainMenu;
 using TestRoom;
 using UI;
 
@@ -17,19 +18,37 @@ namespace GameRoot
             _sceneLoader = new SceneLoader(uiRoot);
         }
 
+        public void OpenMainMenu()
+        {
+            var enterParams = new MainMenuEnterParams();
+            OpenMainMenu(enterParams);
+        }
+
         public void OpenTestRoom()
         {
             var enterParams = new TestRoomEnterParams();
             OpenTestRoom(enterParams);
         }
 
+        private void OpenMainMenu(MainMenuEnterParams enterParams)
+        {
+            OpenScene<MainMenuEntryPoint, MainMenuEnterParams>(enterParams);
+        }
+
         private void OpenTestRoom(TestRoomEnterParams enterParams)
+        {
+            OpenScene<TestRoomEntryPoint, TestRoomEnterParams>(enterParams);
+        }
+
+        private void OpenScene<TEntryPoint, TEnterParams>(TEnterParams enterParams) 
+            where TEntryPoint : SceneEntryPoint 
+            where TEnterParams : SceneEnterParams
         {
             _previousSceneParams = _currentSceneParams;
             _currentSceneParams = enterParams;
 
             _sceneLoader.LoadAndRunScene
-                <TestRoomEntryPoint, TestRoomEnterParams>(enterParams);
+                <TEntryPoint, TEnterParams>(enterParams);
         }
     }
 }

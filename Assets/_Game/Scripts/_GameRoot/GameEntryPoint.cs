@@ -77,7 +77,13 @@ namespace GameRoot
 #if UNITY_EDITOR
             var initialEditorScene = GameAutostarter.InitialEditorScene;
 
-            if (initialEditorScene == Scenes.LEVEL_MENU)
+            if (initialEditorScene == Scenes.MAIN_MENU)
+            {
+                G.SceneProvider.OpenMainMenu();
+                return;
+            }
+
+            else if (initialEditorScene == Scenes.LEVEL_MENU)
             {
                 return;
             }

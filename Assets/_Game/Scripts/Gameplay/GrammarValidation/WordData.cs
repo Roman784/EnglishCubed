@@ -7,14 +7,13 @@ namespace GrammarValidation
         public string Word;
         public PartOfSpeech PartOfSpeech;
 
-        public bool IsBeVerb;
-        public bool IsModal;
-        public bool IsNegative;
+        public Morphology Morphology = new();
+        public SyntaxProperties Syntax = new();
 
-        public WordData(string word, PartOfSpeech partOfSpeech)
+        public WordData(string word, PartOfSpeech pos)
         {
             Word = word;
-            PartOfSpeech = partOfSpeech;
+            PartOfSpeech = pos;
         }
     }
 }

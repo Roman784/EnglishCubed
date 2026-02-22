@@ -1,272 +1,179 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Windows;
 
 namespace GrammarValidation
 {
     public class PatternGrammarValidator: IGrammarValidator
     {
-        private List<GrammarPattern> patterns;
+        private Dictionary<string, WordData> dictionary;
 
-        public PatternGrammarValidator()
+        public PatternGrammarValidator(Dictionary<string, WordData> dict)
         {
-            patterns = BuildPatterns();
+            dictionary = dict;
         }
 
         public bool Validate(string sentence)
         {
-            sentence = sentence.Trim();
+            if (string.IsNullOrWhiteSpace(sentence))
+                return false;
 
-            bool isQuestion = sentence.EndsWith("?");
-            bool isExclamation = sentence.EndsWith("!");
+            var words = Tokenize(sentence);
+            if (words == null || words.Count == 0)
+                return false;
 
-            if (isQuestion || isExclamation)
-                sentence = sentence.Substring(0, sentence.Length - 1);
+            var roles = AssignRoles(words);
+            if (roles == null)
+                return false;
 
-            var tokens = sentence.Split(' ');
-            var words = new List<WordData>();
+            if (!HasSingleVerb(words))
+                return false;
 
-            foreach (var t in tokens)
-            {
-                if (!DictionaryData.Words.ContainsKey(t.ToLower()))
-                    return false;
+            if (!MatchVerbPattern(words, roles))
+                return false;
 
-                words.Add(DictionaryData.Words[t.ToLower()]);
-            }
-
-            foreach (var pattern in patterns)
-            {
-                var match = pattern.Match(words);
-
-                if (!match.Success)
-                    continue;
-
-                if (!CheckBeAgreement(match.Subject, match.Verb))
-                    return false;
-
-                return true;
-            }
-
-            return false;
-        }
-
-        private bool CheckBeAgreement(WordData subject, WordData verb)
-        {
-            if (subject == null || verb == null)
-                return true;
-
-            if (!verb.IsBeVerb)
-                return true;
-
-            string s = subject.Word;
-            string v = verb.Word;
-
-            if (v == "am" && s != "i") return false;
-            if (v == "is" && !(s == "he" || s == "she")) return false;
-            if (v == "are" && (s == "he" || s == "she" || s == "i")) return false;
-
-            if (v == "was" && !(s == "i" || s == "he" || s == "she")) return false;
-            if (v == "were" && (s == "he" || s == "she")) return false;
+            if (!ValidateAgreement(words, roles))
+                return false;
 
             return true;
         }
 
-        private bool IsQuestionPattern(List<WordData> words)
+        private List<WordData> Tokenize(string input)
         {
-            if (words[0].PartOfSpeech == PartOfSpeech.WhWord)
-                return true;
+            input = input.ToLower().Trim();
+            input = input.TrimEnd('.', '?', '!');
 
-            if (words[0].IsBeVerb)
-                return true;
+            var tokens = input.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+            var result = new List<WordData>();
+
+            foreach (var token in tokens)
+            {
+                if (!dictionary.ContainsKey(token))
+                    return null;
+
+                result.Add(dictionary[token]);
+            }
+
+            return result;
+        }
+
+        private List<SentenceRole> AssignRoles(List<WordData> words)
+        {
+            var roles = new List<SentenceRole>();
+
+            int verbIndex = words.FindIndex(w => w.PartOfSpeech == PartOfSpeech.Verb);
+            if (verbIndex == -1)
+                return null;
+
+            for (int i = 0; i < words.Count; i++)
+            {
+                var word = words[i];
+
+                if (i == verbIndex)
+                {
+                    roles.Add(SentenceRole.Verb);
+                    continue;
+                }
+
+                if (i < verbIndex)
+                {
+                    if (word.PartOfSpeech == PartOfSpeech.Noun ||
+                        word.PartOfSpeech == PartOfSpeech.Pronoun)
+                    {
+                        roles.Add(SentenceRole.Subject);
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+                else
+                {
+                    if (word.PartOfSpeech == PartOfSpeech.Adjective)
+                    {
+                        roles.Add(SentenceRole.Complement);
+                    }
+                    else if (word.PartOfSpeech == PartOfSpeech.Noun ||
+                             word.PartOfSpeech == PartOfSpeech.Pronoun)
+                    {
+                        roles.Add(SentenceRole.DirectObject);
+                    }
+                    else if (word.PartOfSpeech == PartOfSpeech.Adverb)
+                    {
+                        roles.Add(SentenceRole.Adverbial);
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+            }
+
+            return roles;
+        }
+
+        private bool HasSingleVerb(List<WordData> words)
+        {
+            return words.Count(w => w.PartOfSpeech == PartOfSpeech.Verb) == 1;
+        }
+
+        private bool MatchVerbPattern(List<WordData> words, List<SentenceRole> roles)
+        {
+            var verbIndex = words.FindIndex(w => w.PartOfSpeech == PartOfSpeech.Verb);
+            var verb = words[verbIndex];
+
+            foreach (var pattern in verb.Syntax.AllowedPatterns)
+            {
+                if (PatternMatches(pattern.Pattern, roles))
+                    return true;
+            }
 
             return false;
         }
 
-        private List<GrammarPattern> BuildPatterns()
+        private bool PatternMatches(SentenceRole[] pattern, List<SentenceRole> roles)
         {
-            return new List<GrammarPattern>
+            if (pattern.Length != roles.Count)
+                return false;
+
+            for (int i = 0; i < pattern.Length; i++)
             {
-                // Present Simple – Affirmative.
-                new GrammarPattern(
-                    new List<PatternElement>
-                    {
-                        new PatternElement{
-                            PartOfSpeech = PartOfSpeech.Pronoun,
-                            role = GrammarRole.Subject
-                        },
-                        new PatternElement{
-                            RequireBe = true,
-                            role = GrammarRole.Verb
-                        },
-                        new PatternElement{
-                            RequireNegative = true,
-                            Optional = true
-                        },
-                        new PatternElement{
-                            PartOfSpeech = PartOfSpeech.Adjective,
-                            Optional = true
-                        },
-                        new PatternElement{
-                            PartOfSpeech = PartOfSpeech.Adverb,
-                            Optional = true
-                        }
-                    }
-                ),
+                if (pattern[i] != roles[i])
+                    return false;
+            }
 
-                // Future – Affirmative.
-                new GrammarPattern(
-                    new List<PatternElement>
-                    {
-                        new PatternElement{
-                            PartOfSpeech = PartOfSpeech.Pronoun,
-                            role = GrammarRole.Subject
-                        },
-                        new PatternElement{
-                            RequireModal = true
-                        },
-                        new PatternElement{
-                            RequireNegative = true,
-                            Optional = true
-                        },
-                        new PatternElement{
-                            RequireBe = true,
-                            role = GrammarRole.Verb
-                        },
-                        new PatternElement{
-                            PartOfSpeech = PartOfSpeech.Adjective,
-                            Optional = true
-                        },
-                        new PatternElement{
-                            PartOfSpeech = PartOfSpeech.Adverb,
-                            Optional = true
-                        }
-                    }
-                ),
+            return true;
+        }
 
-                // Yes/No Question – Present/Past.
-                new GrammarPattern(
-                    new List<PatternElement>
-                    {
-                        new PatternElement{
-                            RequireBe = true,
-                            role = GrammarRole.Verb
-                        },
-                        new PatternElement{
-                            PartOfSpeech = PartOfSpeech.Pronoun,
-                            role = GrammarRole.Subject
-                        },
-                        new PatternElement{
-                            RequireNegative = true,
-                            Optional = true
-                        },
-                        new PatternElement{
-                            PartOfSpeech = PartOfSpeech.Adjective,
-                            Optional = true
-                        },
-                        new PatternElement{
-                            PartOfSpeech = PartOfSpeech.Adverb,
-                            Optional = true
-                        }
-                    }
-                ),
 
-                // Yes/No Future.
-                new GrammarPattern(
-                    new List<PatternElement>
-                    {
-                        new PatternElement{
-                            RequireModal = true
-                        },
-                        new PatternElement{
-                            PartOfSpeech = PartOfSpeech.Pronoun,
-                            role = GrammarRole.Subject
-                        },
-                        new PatternElement{
-                            RequireNegative = true,
-                            Optional = true
-                        },
-                        new PatternElement{
-                            RequireBe = true,
-                            role = GrammarRole.Verb
-                        },
-                        new PatternElement{
-                            PartOfSpeech = PartOfSpeech.Adjective,
-                            Optional = true
-                        }
-                    }
-                ),
+        private bool ValidateAgreement(List<WordData> words, List<SentenceRole> roles)
+        {
+            var subjectIndex = roles.FindIndex(r => r == SentenceRole.Subject);
+            var verbIndex = roles.FindIndex(r => r == SentenceRole.Verb);
 
-                // WH Question – Present/Past.
-                new GrammarPattern(
-                    new List<PatternElement>
-                    {
-                        new PatternElement{
-                            PartOfSpeech = PartOfSpeech.WhWord
-                        },
-                        new PatternElement{
-                            RequireBe = true,
-                            role = GrammarRole.Verb
-                        },
-                        new PatternElement{
-                            PartOfSpeech = PartOfSpeech.Pronoun,
-                            role = GrammarRole.Subject
-                        },
-                        new PatternElement{
-                            PartOfSpeech = PartOfSpeech.Adjective,
-                            Optional = true
-                        },
-                        new PatternElement{
-                            PartOfSpeech = PartOfSpeech.Adverb,
-                            Optional = true
-                        }
-                    }
-                ),
+            if (subjectIndex == -1 || verbIndex == -1)
+                return false;
 
-                // WH Future.
-                new GrammarPattern(
-                    new List<PatternElement>
-                    {
-                        new PatternElement{
-                            PartOfSpeech = PartOfSpeech.WhWord
-                        },
-                        new PatternElement{
-                            RequireModal = true
-                        },
-                        new PatternElement{
-                            PartOfSpeech = PartOfSpeech.Pronoun,
-                            role = GrammarRole.Subject
-                        },
-                        new PatternElement{
-                            RequireBe = true,
-                            role = GrammarRole.Verb
-                        }
-                    }
-                ),
+            var subject = words[subjectIndex];
+            var verb = words[verbIndex];
 
-                // Imperative.
-                new GrammarPattern(
-                    new List<PatternElement>
-                    {
-                        new PatternElement{
-                            RequireBe = true,
-                            role = GrammarRole.Verb
-                        },
-                        new PatternElement{
-                            PartOfSpeech = PartOfSpeech.Adjective
-                        }
-                    }
-                ),
+            return CheckSubjectVerbAgreement(subject, verb);
+        }
 
-                // Interjection.
-                new GrammarPattern(
-                    new List<PatternElement>
-                    {
-                        new PatternElement{
-                            PartOfSpeech = PartOfSpeech.Interjection
-                        }
-                    }
-                )
-            };
+        public bool CheckSubjectVerbAgreement(WordData subject, WordData verb)
+        {
+            if (subject.Morphology.Person == Person.Third &&
+                subject.Morphology.Number == Number.Singular)
+            {
+                return verb.Morphology.VerbForm ==
+                       VerbForm.ThirdPersonSingular;
+            }
+
+            // Все остальные формы → Base
+            return verb.Morphology.VerbForm == VerbForm.Base;
         }
     }
 }

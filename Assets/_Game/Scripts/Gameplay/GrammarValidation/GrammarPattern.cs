@@ -5,53 +5,40 @@ namespace GrammarValidation
 {
     public class GrammarPattern
     {
-        private List<PatternElement> _elements;
+        public List<PatternElement> Elements;
 
         public GrammarPattern(List<PatternElement> elements)
         {
-            _elements = elements;
+            Elements = elements;
         }
 
-        public PatternMatchResult Match(List<WordData> words)
+        public bool Match(List<WordData> words)
         {
-            int wordIndex = 0;
+            int w = 0;
 
-            var result = new PatternMatchResult();
-
-            foreach (var element in _elements)
+            /*foreach (var element in Elements)
             {
-                if (wordIndex >= words.Count)
+                if (w >= words.Count)
                 {
-                    if (element.Optional)
-                        continue;
-                    return new PatternMatchResult { Success = false };
+                    if (element.Optional) continue;
+                    return false;
                 }
 
-                var word = words[wordIndex];
-
-                if (!element.Match(word))
+                if (element.Match(words[w]))
                 {
-                    if (element.Optional)
-                        continue;
-
-                    return new PatternMatchResult { Success = false };
+                    if (!element.Repeatable)
+                        w++;
+                    else
+                    {
+                        while (w < words.Count && element.Match(words[w]))
+                            w++;
+                    }
                 }
+                else if (!element.Optional)
+                    return false;
+            }*/
 
-                // 🔥 Назначаем роли
-                if (element.role == GrammarRole.Subject)
-                    result.Subject = word;
-
-                if (element.role == GrammarRole.Verb)
-                    result.Verb = word;
-
-                wordIndex++;
-            }
-
-            if (wordIndex != words.Count)
-                return new PatternMatchResult { Success = false };
-
-            result.Success = true;
-            return result;
+            return w == words.Count;
         }
     }
 }
