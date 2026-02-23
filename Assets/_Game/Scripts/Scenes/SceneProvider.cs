@@ -1,3 +1,4 @@
+using AbilityMenu;
 using LevelMenu;
 using MainMenu;
 using TestRoom;
@@ -29,6 +30,11 @@ namespace GameRoot
         {
             var enterParams = new LevelMenuEnterParams();
             OpenScene<LevelMenuEntryPoint, LevelMenuEnterParams>(enterParams);
+        }
+        public void OpenAbilityMenu()
+        {
+            var enterParams = new AbilityMenuEnterParams();
+            OpenScene<AbilityMenuEntryPoint, AbilityMenuEnterParams>(enterParams);
         }
 
         public void OpenTestRoom()

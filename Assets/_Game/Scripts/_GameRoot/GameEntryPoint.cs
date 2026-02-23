@@ -89,6 +89,12 @@ namespace GameRoot
                 return;
             }
 
+            else if (initialEditorScene == Scenes.ABILITY_MENU)
+            {
+                G.SceneProvider.OpenAbilityMenu();
+                return;
+            }
+
             else if (initialEditorScene == Scenes.TEST_ROOM)
             {
                 G.SceneProvider.OpenTestRoom();

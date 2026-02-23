@@ -71,7 +71,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -241,7 +241,7 @@ TextureImporter:
         width: 73
         height: 145
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -263,7 +263,7 @@ TextureImporter:
         width: 71
         height: 151
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -272,6 +272,28 @@ TextureImporter:
       bones: []
       spriteID: f72ec64b7f35bd649b47ae39cc76e41b
       internalID: -186057115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ic_lock
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 167
+        width: 44
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85fc9d8dc6733194487b3098d5fdced5
+      internalID: -816058915
       vertices: []
       indices: 
       edges: []
@@ -295,6 +317,7 @@ TextureImporter:
       cloud: 524866619
       ic_coin: -267339983
       ic_infinity: -186057115
+      ic_lock: -816058915
       ic_settings: -1173457764
       ic_tree: 1928172411
       square_outline_r32: 329716326
