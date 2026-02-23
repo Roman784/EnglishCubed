@@ -1,3 +1,4 @@
+using LevelMenu;
 using MainMenu;
 using TestRoom;
 using UI;
@@ -21,22 +22,18 @@ namespace GameRoot
         public void OpenMainMenu()
         {
             var enterParams = new MainMenuEnterParams();
-            OpenMainMenu(enterParams);
+            OpenScene<MainMenuEntryPoint, MainMenuEnterParams>(enterParams);
+        }
+
+        public void OpenLevelMenu()
+        {
+            var enterParams = new LevelMenuEnterParams();
+            OpenScene<LevelMenuEntryPoint, LevelMenuEnterParams>(enterParams);
         }
 
         public void OpenTestRoom()
         {
             var enterParams = new TestRoomEnterParams();
-            OpenTestRoom(enterParams);
-        }
-
-        private void OpenMainMenu(MainMenuEnterParams enterParams)
-        {
-            OpenScene<MainMenuEntryPoint, MainMenuEnterParams>(enterParams);
-        }
-
-        private void OpenTestRoom(TestRoomEnterParams enterParams)
-        {
             OpenScene<TestRoomEntryPoint, TestRoomEnterParams>(enterParams);
         }
 

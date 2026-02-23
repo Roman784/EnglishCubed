@@ -2,11 +2,11 @@ using GameRoot;
 using System.Collections;
 using UnityEngine;
 
-namespace MainMenu
+namespace LevelMenu
 {
-    public class MainMenuEntryPoint : SceneEntryPoint<MainMenuEnterParams>
+    public class LevelMenuEntryPoint : SceneEntryPoint<LevelMenuEnterParams>
     {
-        protected override IEnumerator Run(MainMenuEnterParams enterParams)
+        protected override IEnumerator Run(LevelMenuEnterParams enterParams)
         {
             var isLoaded = false;
 

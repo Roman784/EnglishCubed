@@ -219,7 +219,7 @@ TextureImporter:
         width: 47
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -228,6 +228,50 @@ TextureImporter:
       bones: []
       spriteID: f52e9f2087c916344a948712b05cf98d
       internalID: -1809274364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ic_tree
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 0
+        width: 73
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8baebaeb96ec99e41bbab1ce7afe5c5c
+      internalID: 1928172411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ic_infinity
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 0
+        width: 71
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f72ec64b7f35bd649b47ae39cc76e41b
+      internalID: -186057115
       vertices: []
       indices: 
       edges: []
@@ -250,7 +294,9 @@ TextureImporter:
     nameFileIdTable:
       cloud: 524866619
       ic_coin: -267339983
+      ic_infinity: -186057115
       ic_settings: -1173457764
+      ic_tree: 1928172411
       square_outline_r32: 329716326
       square_r32: 194469976
       star_little: -1809274364

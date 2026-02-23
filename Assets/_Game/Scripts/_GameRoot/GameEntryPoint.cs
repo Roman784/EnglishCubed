@@ -85,6 +85,7 @@ namespace GameRoot
 
             else if (initialEditorScene == Scenes.LEVEL_MENU)
             {
+                G.SceneProvider.OpenLevelMenu();
                 return;
             }
 
@@ -102,7 +103,7 @@ namespace GameRoot
             }
 #endif
 
-            //G.SceneProvider.OpenLevelMenu();
+            G.SceneProvider.OpenMainMenu();
         }
     }
 }
