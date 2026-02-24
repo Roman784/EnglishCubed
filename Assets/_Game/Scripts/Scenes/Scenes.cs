@@ -7,6 +7,7 @@ namespace GameRoot
         public const string LEVEL_MENU = "LevelMenu";
         public const string ABILITY_MENU = "AbilityMenu";
         public const string HERO_MENU = "HeroMenu";
+        public const string COMBAT = "Combat";
         public const string TEST_ROOM = "TestRoom";
     }
 }

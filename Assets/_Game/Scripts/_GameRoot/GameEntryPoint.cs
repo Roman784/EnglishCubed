@@ -81,6 +81,7 @@ namespace GameRoot
             else if (initialEditorScene == Scenes.LEVEL_MENU) { G.SceneProvider.OpenLevelMenu(); return; }
             else if (initialEditorScene == Scenes.ABILITY_MENU) { G.SceneProvider.OpenAbilityMenu(); return; }
             else if (initialEditorScene == Scenes.HERO_MENU) { G.SceneProvider.OpenHeroMenu(); return; }
+            else if (initialEditorScene == Scenes.COMBAT) { G.SceneProvider.OpenCombat(); return; }
             else if (initialEditorScene == Scenes.TEST_ROOM) { G.SceneProvider.OpenTestRoom(); return; }
 
             // For an unregistered scene. For example, from assets.

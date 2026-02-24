@@ -1,4 +1,5 @@
 using AbilityMenu;
+using Combat;
 using HeroMenu;
 using LevelMenu;
 using MainMenu;
@@ -42,6 +43,12 @@ namespace GameRoot
         {
             var enterParams = new HeroMenuEnterParams();
             OpenScene<HeroMenuEntryPoint, HeroMenuEnterParams>(enterParams);
+        }
+
+        public void OpenCombat()
+        {
+            var enterParams = new CombatEnterParams();
+            OpenScene<CombatEntryPoint, CombatEnterParams>(enterParams);
         }
 
         public void OpenTestRoom()
