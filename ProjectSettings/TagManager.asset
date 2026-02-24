@@ -44,6 +44,12 @@ TagManager:
   - name: WordUnit
     uniqueID: 180928475
     locked: 0
+  - name: LocationBackgound
+    uniqueID: 2457790317
+    locked: 0
+  - name: LocationForeground
+    uniqueID: 1009545867
+    locked: 0
   m_RenderingLayers:
   - Default
   - Light Layer 1
