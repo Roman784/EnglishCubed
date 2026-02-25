@@ -1,53 +1,54 @@
 using UnityEngine;
 using R3;
+using UI;
 
 namespace Gameplay
 {
     public class WordUnitsMovementProvider
     {
-        private readonly HandWordUnitsGroup _handWordUnitsGroup;
-        private readonly FieldWordUnitsGroup _fieldWordUnitsGroup;
+        private readonly HandFlowLayout _handLayout;
+        private readonly FieldFlowLayout _fieldLayout;
 
         public WordUnitsMovementProvider(
-            HandWordUnitsGroup handWordUnitsGroup, 
-            FieldWordUnitsGroup fieldWordUnitsGroup)
+            HandFlowLayout handWordUnitsGroup,
+            FieldFlowLayout fieldWordUnitsGroup)
         {
-            _handWordUnitsGroup = handWordUnitsGroup;
-            _fieldWordUnitsGroup = fieldWordUnitsGroup;
+            _handLayout = handWordUnitsGroup;
+            _fieldLayout = fieldWordUnitsGroup;
         }
 
         public void MoveFromHandToField(WordUnit wordUnit)
         {
-            _handWordUnitsGroup.GravitationalPuller.Disable();
-            _fieldWordUnitsGroup.GravitationalPuller.Disable();
+            _handLayout.GravitationalPuller.Disable();
+            _fieldLayout.GravitationalPuller.Disable();
 
-            _handWordUnitsGroup.Remove(wordUnit);
-            _fieldWordUnitsGroup.Add(wordUnit);
+            _handLayout.Remove(wordUnit.Transform);
+            _fieldLayout.Add(wordUnit.Transform);
 
-            _handWordUnitsGroup.Arrange();
-            _fieldWordUnitsGroup.Arrange().Subscribe(arrangedUnit =>
+            _handLayout.Arrange();
+            _fieldLayout.Arrange().Subscribe(arrangedUnit =>
             {
-                if (arrangedUnit == wordUnit)
+                if (arrangedUnit == (ILayoutElement)wordUnit.Transform)
                 {
-                    _handWordUnitsGroup.GravitationalPuller.Enable();
-                    _fieldWordUnitsGroup.GravitationalPuller.Enable();
+                    _handLayout.GravitationalPuller.Enable();
+                    _fieldLayout.GravitationalPuller.Enable();
                 }
             });
         }
 
         public void MoveFromFieldToHand(WordUnit wordUnit)
         {
-            _fieldWordUnitsGroup.GravitationalPuller.Disable();
-            _handWordUnitsGroup.GravitationalPuller.Disable();
+            _fieldLayout.GravitationalPuller.Disable();
+            _handLayout.GravitationalPuller.Disable();
 
-            _fieldWordUnitsGroup.Remove(wordUnit);
-            _handWordUnitsGroup.Add(wordUnit);
+            _fieldLayout.Remove(wordUnit.Transform);
+            _handLayout.Add(wordUnit.Transform);
 
-            _fieldWordUnitsGroup.Arrange();
-            _handWordUnitsGroup.Arrange().Subscribe(_ =>
+            _fieldLayout.Arrange();
+            _handLayout.Arrange().Subscribe(_ =>
             {
-                _fieldWordUnitsGroup.GravitationalPuller.Enable();
-                _handWordUnitsGroup.GravitationalPuller.Enable();
+                _fieldLayout.GravitationalPuller.Enable();
+                _handLayout.GravitationalPuller.Enable();
             });
         }
     }

@@ -1287,8 +1287,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2e38dfab934cdfa49859eac9a6ad7400, type: 2}
   - {fileID: 11400000, guid: 2e38dfab934cdfa49859eac9a6ad7400, type: 2}
   - {fileID: 11400000, guid: 2e38dfab934cdfa49859eac9a6ad7400, type: 2}
-  _handWordUnitsGroup: {fileID: 1807663764}
-  _fieldWordUnitsGroup: {fileID: 1114353182}
+  _handWordUnitsLayout: {fileID: 1807663764}
+  _fieldWordUnitsLayout: {fileID: 1114353182}
 --- !u!1 &553538552
 GameObject:
   m_ObjectHideFlags: 0
@@ -1940,7 +1940,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1114353179}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad83dab91eb33724685e2a99726a7ca7, type: 3}
+  m_Script: {fileID: 11500000, guid: c72457e9ff1f26c449abe44285204a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.FieldWordUnitsGroup
   _container: {fileID: 1182296949}
@@ -3358,7 +3358,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1807663761}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf1a98cfb71360243b9b5125f38a178e, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a4a9b4b5d327bd41a790f83065e86fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.HandWordUnitsGroup
   _container: {fileID: 553538553}

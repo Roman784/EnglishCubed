@@ -4,6 +4,8 @@ using GameRoot;
 using GrammarValidation;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using UI;
 using UnityEngine;
 
 namespace Combat
@@ -12,14 +14,14 @@ namespace Combat
     {
         [SerializeField] private WordUnit _wordUnitPrefab;
         [SerializeField] private WordUnitConfigs[] _wordUnitsConfigs;
-        [SerializeField] private HandWordUnitsGroup _handWordUnitsGroup;
-        [SerializeField] private FieldWordUnitsGroup _fieldWordUnitsGroup;
+        [SerializeField] private HandFlowLayout _handWordUnitsLayout;
+        [SerializeField] private FieldFlowLayout _fieldWordUnitsLayout;
 
         protected override IEnumerator Run(CombatEnterParams enterParams)
         {
             var isLoaded = false;
 
-            G.WordUnitsMovementProvider = new WordUnitsMovementProvider(_handWordUnitsGroup, _fieldWordUnitsGroup);
+            G.WordUnitsMovementProvider = new WordUnitsMovementProvider(_handWordUnitsLayout, _fieldWordUnitsLayout);
 
             var wordUnits = new List<WordUnit>();
             foreach (var configs in _wordUnitsConfigs)
@@ -28,7 +30,7 @@ namespace Combat
                 wordUnits.Add(newWordUnit);
             }
 
-            _handWordUnitsGroup.SetWordUnits(wordUnits);
+            _handWordUnitsLayout.SetWordUnits(wordUnits.Select(w => w.Transform));
 
             isLoaded = true;
             yield return new WaitUntil(() => isLoaded);

@@ -1,23 +1,22 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
-namespace Gameplay
+namespace UI
 {
-    public class WordUnitsGravitationalPuller
+    public class GravitationalPuller
     {
         private readonly RectTransform _container;
-        private readonly IEnumerable<WordUnit> _wordUnits;
+        private readonly IEnumerable<ILayoutElement> _elements;
         private readonly float _strength;
 
         private bool _isEnabled;
-        private WordUnit _currentHoveredUnit;
+        private ILayoutElement _currentHoveredElement;
 
-        public WordUnitsGravitationalPuller(
-            RectTransform container, IEnumerable<WordUnit> wordUnits, float strength)
+        public GravitationalPuller(
+            RectTransform container, IEnumerable<ILayoutElement> elements, float strength)
         {
             _container = container;
-            _wordUnits = wordUnits;
+            _elements = elements;
             _strength = strength;
 
             _isEnabled = true;
@@ -37,19 +36,19 @@ namespace Gameplay
             if (IsMouseOverContainer())
             {
                 var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                var closestUnit = FindClosestWordUnitToPosition(mousePosition);
+                var closestElement = FindClosestElementToPosition(mousePosition);
 
-                if (closestUnit != null && closestUnit != _currentHoveredUnit)
+                if (closestElement != null && closestElement != _currentHoveredElement)
                 {
-                    _currentHoveredUnit = closestUnit;
-                    PushAwayFrom(closestUnit);
+                    _currentHoveredElement = closestElement;
+                    PushAwayFrom(closestElement);
                 }
             }
             else
             {
-                if (_currentHoveredUnit != null)
+                if (_currentHoveredElement != null)
                 {
-                    _currentHoveredUnit = null;
+                    _currentHoveredElement = null;
                     ReturnAllToOriginalPositions();
                 }
             }
@@ -73,47 +72,47 @@ namespace Gameplay
                    mousePosition.y <= maxCorner.y;
         }
 
-        private WordUnit FindClosestWordUnitToPosition(Vector2 position)
+        private ILayoutElement FindClosestElementToPosition(Vector2 position)
         {
             var minDistance = float.MaxValue;
-            WordUnit closestUnit = null;
+            ILayoutElement closestElement = null;
 
-            foreach (var wordUnit in _wordUnits)
+            foreach (var element in _elements)
             {
-                var distance = (position - wordUnit.Position).sqrMagnitude;
+                var distance = (position - element.Position).sqrMagnitude;
                 if (distance < minDistance)
                 {
                     minDistance = distance;
-                    closestUnit = wordUnit;
+                    closestElement = element;
                 }
             }
 
-            return closestUnit;
+            return closestElement;
         }
 
-        private void PushAwayFrom(WordUnit centralUnit)
+        private void PushAwayFrom(ILayoutElement centralElement)
         {
-            var centralPosition = centralUnit.Position;
-            centralUnit.Transform.MoveViewToLocal(Vector2.zero);
+            var centralPosition = centralElement.Position;
+            centralElement.MoveViewToLocal(Vector2.zero);
 
-            foreach (var wordUnit in _wordUnits)
+            foreach (var element in _elements)
             {
-                if (wordUnit == centralUnit) continue;
+                if (element == centralElement) continue;
 
-                var currentPosition = wordUnit.Position;
+                var currentPosition = element.Position;
                 var direction = currentPosition - centralPosition;
                 var distance = direction.magnitude;
                 var newPosition = direction.normalized * (_strength / Mathf.Sqrt(distance));
 
-                wordUnit.Transform.MoveViewToLocal(newPosition);
+                element.MoveViewToLocal(newPosition);
             }
         }
 
         private void ReturnAllToOriginalPositions()
         {
-            foreach (var wordUnit in _wordUnits)
+            foreach (var element in _elements)
             {
-                wordUnit.Transform.MoveViewToLocal(Vector2.zero);
+                element.MoveViewToLocal(Vector2.zero);
             }
         }
     }

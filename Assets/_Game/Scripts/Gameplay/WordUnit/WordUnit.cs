@@ -25,7 +25,6 @@ namespace Gameplay
         private WordUnitTransform _transform;
 
         public WordUnitTransform Transform => _transform;
-        public Vector2 Position => transform.position;
         public RectTransform Backplate => _backplate;
 
         private void Awake()

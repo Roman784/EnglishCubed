@@ -14,10 +14,10 @@ namespace TestRoom
 {
     public class TestRoomEntryPoint : SceneEntryPoint<TestRoomEnterParams>
     {
-        [SerializeField] private WordUnit _wordUnitPrefab;
+        /*[SerializeField] private WordUnit _wordUnitPrefab;
         [SerializeField] private WordUnitConfigs[] _wordUnitsConfigs;
         [SerializeField] private HandWordUnitsGroup _handWordUnitsGroup;
-        [SerializeField] private FieldWordUnitsGroup _fieldWordUnitsGroup;
+        [SerializeField] private FieldWordUnitsGroup _fieldWordUnitsGroup;*/
 
         // Sequential scene initialization.
         protected override IEnumerator Run(TestRoomEnterParams enterParams)
@@ -25,7 +25,7 @@ namespace TestRoom
             var isLoaded = false;
 
             /*G.HandWordUnitsGroup = _handWordUnitsGroup;
-            G.FieldWordUnitsGroup = _fieldWordUnitsGroup;*/
+            G.FieldWordUnitsGroup = _fieldWordUnitsGroup;*//*
 
             var wordUnits = new List<WordUnit>();
             foreach (var configs in _wordUnitsConfigs)
@@ -48,7 +48,7 @@ namespace TestRoom
             CheckSentence(grammarValidator, "he am wise", false);
             CheckSentence(grammarValidator, "she are wise", false);
             CheckSentence(grammarValidator, "we is wise", false);
-            CheckSentence(grammarValidator, "they is wise", false);
+            CheckSentence(grammarValidator, "they is wise", false);*/
 
             
 

@@ -1,10 +1,11 @@
 using DG.Tweening;
 using TMPro;
+using UI;
 using UnityEngine;
 
 namespace Gameplay
 {
-    public class WordUnitTransform : MonoBehaviour
+    public class WordUnitTransform : MonoBehaviour, ILayoutElement
     {
         [SerializeField] private Transform _rootView;
         [SerializeField] private RectTransform _containerView;
@@ -15,6 +16,9 @@ namespace Gameplay
         [SerializeField] private float _minContainerWidth;
 
         public Vector2 ContainerSize => _containerView.sizeDelta;
+
+        public Transform Transform => transform;
+        public Vector2 Position => Transform.position;
 
         public void SetContainerSize(float wordWidth)
         {

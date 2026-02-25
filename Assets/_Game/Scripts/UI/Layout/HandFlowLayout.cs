@@ -1,27 +1,23 @@
 using DG.Tweening;
-using R3;
-using System.Collections;
+using Gameplay;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using UnityEngine.UIElements;
-using Utils;
 
-namespace Gameplay
+namespace UI
 {
-    public class HandWordUnitsGroup : WordUnitsLayoutGroup
+    public class HandFlowLayout : FlowLayoutGroup
     {
-        public void SetWordUnits(IEnumerable<WordUnit> wordUnits)
+        public void SetWordUnits(IEnumerable<ILayoutElement> elements)
         {
-            _allWordUnits.Clear();
-            _allWordUnits.AddRange(wordUnits);
+            _allElements.Clear();
+            _allElements.AddRange(elements);
             Arrange();
             //CreateBackplates(_wordUnitPositionsMap);
         }
 
-        public override void Add(WordUnit wordUnit) 
+        public override void Add(ILayoutElement element)
         {
-            base.Add(wordUnit);
+            base.Add(element);
 
             /*if (_wordUnitPositionsMap.TryGetValue(wordUnit, out Vector2 position))
             {
@@ -29,12 +25,17 @@ namespace Gameplay
             }*/
         }
 
-        protected override Tween Move(WordUnit wordUnit, Vector2 position)
+        public override void Remove(ILayoutElement element)
         {
-            return wordUnit.Transform.MoveTo(position);
+            base.Remove(element);
         }
 
-        private void CreateBackplates(IReadOnlyDictionary<WordUnit, Vector2> wordUnitPositionsMap)
+        protected override Tween Move(ILayoutElement element, Vector2 position)
+        {
+            return element.MoveTo(position);
+        }
+
+        /*private void CreateBackplates(IReadOnlyDictionary<ILayoutElement, Vector2> wordUnitPositionsMap)
         {
             foreach (var pair in wordUnitPositionsMap)
             {
@@ -42,6 +43,6 @@ namespace Gameplay
                 createdBackplate.sizeDelta = pair.Key.Transform.ContainerSize;
                 createdBackplate.gameObject.SetActive(true);
             }
-        }
+        }*/
     }
 }
