@@ -15,10 +15,14 @@ namespace Gameplay
         [SerializeField] private float _containerBorderWidth;
         [SerializeField] private float _minContainerWidth;
 
-        public Vector2 ContainerSize => _containerView.sizeDelta;
+        [Space]
+
+        [SerializeField] private WordUnitBackplate _backplatePrefab;
 
         public Transform Transform => transform;
         public Vector2 Position => Transform.position;
+        public Vector2 ContainerSize => _containerView.sizeDelta;
+        public WordUnitBackplate BackplatePrefab => _backplatePrefab;
 
         public void SetContainerSize(float wordWidth)
         {

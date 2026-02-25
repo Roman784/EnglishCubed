@@ -14,7 +14,7 @@ namespace Combat
     {
         [SerializeField] private WordUnit _wordUnitPrefab;
         [SerializeField] private WordUnitConfigs[] _wordUnitsConfigs;
-        [SerializeField] private HandFlowLayout _handWordUnitsLayout;
+        [SerializeField] private HandWordUnitsLayout _handWordUnitsLayout;
         [SerializeField] private FieldFlowLayout _fieldWordUnitsLayout;
 
         protected override IEnumerator Run(CombatEnterParams enterParams)

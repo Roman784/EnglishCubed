@@ -6,11 +6,11 @@ namespace Gameplay
 {
     public class WordUnitsMovementProvider
     {
-        private readonly HandFlowLayout _handLayout;
+        private readonly HandWordUnitsLayout _handLayout;
         private readonly FieldFlowLayout _fieldLayout;
 
         public WordUnitsMovementProvider(
-            HandFlowLayout handWordUnitsGroup,
+            HandWordUnitsLayout handWordUnitsGroup,
             FieldFlowLayout fieldWordUnitsGroup)
         {
             _handLayout = handWordUnitsGroup;
@@ -45,10 +45,15 @@ namespace Gameplay
             _handLayout.Add(wordUnit.Transform);
 
             _fieldLayout.Arrange();
-            _handLayout.Arrange().Subscribe(_ =>
+            _handLayout.Arrange().Subscribe(arrangedUnit =>
             {
-                _fieldLayout.GravitationalPuller.Enable();
-                _handLayout.GravitationalPuller.Enable();
+                if (arrangedUnit == (ILayoutElement)wordUnit.Transform)
+                {
+                    _fieldLayout.GravitationalPuller.Enable();
+                    _handLayout.GravitationalPuller.Enable();
+
+                    _handLayout.DestroyBackplates();
+                }
             });
         }
     }

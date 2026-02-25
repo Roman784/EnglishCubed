@@ -1,11 +1,7 @@
 using Configs;
-using DG.Tweening;
 using R3;
-using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.UIElements;
 using Utils;
 
 namespace Gameplay
@@ -13,19 +9,13 @@ namespace Gameplay
     [RequireComponent(typeof(WordUnitTransform))]
     public class WordUnit : MonoBehaviour
     {
-        [Header("View")]
         [SerializeField] private TMP_Text _wordView;
-        [SerializeField] private RectTransform _backplate;
-
-        [Space]
-
         [SerializeField] private PointerDetector _pointerDetector;
 
         private WordUnitConfigs _configs;
         private WordUnitTransform _transform;
 
         public WordUnitTransform Transform => _transform;
-        public RectTransform Backplate => _backplate;
 
         private void Awake()
         {
