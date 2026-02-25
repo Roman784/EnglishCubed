@@ -17,7 +17,6 @@ namespace GameRoot
         public static AudioProvider AudioProvider;
 
         // Gameplay.
-        public static HandWordUnitsGroup HandWordUnitsGroup;
-        public static FieldWordUnitsGroup FieldWordUnitsGroup;
+        public static WordUnitsMovementProvider WordUnitsMovementProvider;
     }
 }

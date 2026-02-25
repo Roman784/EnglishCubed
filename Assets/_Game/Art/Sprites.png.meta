@@ -320,6 +320,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: ic_swords
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 167
+        width: 67
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b546468d38f5f914ca9ce04d671885f0
+      internalID: -1463130058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -342,6 +364,7 @@ TextureImporter:
       ic_infinity: -186057115
       ic_lock: -816058915
       ic_settings: -1173457764
+      ic_swords: -1463130058
       ic_tree: 1928172411
       square_outline_r32: 329716326
       square_r32: 194469976

@@ -24,8 +24,8 @@ namespace TestRoom
         {
             var isLoaded = false;
 
-            G.HandWordUnitsGroup = _handWordUnitsGroup;
-            G.FieldWordUnitsGroup = _fieldWordUnitsGroup;
+            /*G.HandWordUnitsGroup = _handWordUnitsGroup;
+            G.FieldWordUnitsGroup = _fieldWordUnitsGroup;*/
 
             var wordUnits = new List<WordUnit>();
             foreach (var configs in _wordUnitsConfigs)

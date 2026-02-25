@@ -42,7 +42,7 @@ namespace Utils
                 {
                     cam.rect = new Rect(0, 0, 1, 1);
                     cam.clearFlags = originalClearFlags;
-                    continue;
+                    yield break;
                 }
 
                 // Меняем режим очистки, чтобы фон камеры заливался цветом (поля)

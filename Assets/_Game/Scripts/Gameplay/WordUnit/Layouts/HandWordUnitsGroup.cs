@@ -1,3 +1,5 @@
+using DG.Tweening;
+using R3;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,23 +13,25 @@ namespace Gameplay
     {
         public void SetWordUnits(IEnumerable<WordUnit> wordUnits)
         {
-            Arrange(wordUnits);
-            CreateBackplates(_wordUnitPositionsMap);
+            _allWordUnits.Clear();
+            _allWordUnits.AddRange(wordUnits);
+            Arrange();
+            //CreateBackplates(_wordUnitPositionsMap);
         }
 
         public override void Add(WordUnit wordUnit) 
         {
-            if (_wordUnitPositionsMap.TryGetValue(wordUnit, out Vector2 position))
+            base.Add(wordUnit);
+
+            /*if (_wordUnitPositionsMap.TryGetValue(wordUnit, out Vector2 position))
             {
-                wordUnit.MoveToByDecreasing(position, _wordUnitScale);
-            }
+                wordUnit.Transform.MoveToByDecreasing(position);
+            }*/
         }
 
-        public override void Remove(WordUnit wordUnit) { }
-
-        protected override void Move(WordUnit wordUnit, Vector2 position, float _)
+        protected override Tween Move(WordUnit wordUnit, Vector2 position)
         {
-            wordUnit.MoveTo(position);
+            return wordUnit.Transform.MoveTo(position);
         }
 
         private void CreateBackplates(IReadOnlyDictionary<WordUnit, Vector2> wordUnitPositionsMap)
@@ -35,7 +39,7 @@ namespace Gameplay
             foreach (var pair in wordUnitPositionsMap)
             {
                 var createdBackplate = Instantiate(pair.Key.Backplate, pair.Value, Quaternion.identity);
-                createdBackplate.sizeDelta = pair.Key.ContainerSize;
+                createdBackplate.sizeDelta = pair.Key.Transform.ContainerSize;
                 createdBackplate.gameObject.SetActive(true);
             }
         }
