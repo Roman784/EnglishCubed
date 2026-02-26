@@ -18,5 +18,7 @@ namespace GameRoot
 
         // Gameplay.
         public static WordUnitsMovementProvider WordUnitsMovementProvider;
+
+        public static GameConfigs Configs => ConfigsProvider.GameConfigs;
     }
 }

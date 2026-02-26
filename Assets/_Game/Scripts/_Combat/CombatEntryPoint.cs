@@ -1,6 +1,7 @@
 using Configs;
 using Gameplay;
 using GameRoot;
+using GrammarValidation;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +31,8 @@ namespace Combat
             }
 
             _handWordUnitsLayout.SetWordUnits(wordUnits.Select(w => w.Transform));
+
+            var lexer = new Lexer(G.Configs.LexiconConfigs);
 
             isLoaded = true;
             yield return new WaitUntil(() => isLoaded);

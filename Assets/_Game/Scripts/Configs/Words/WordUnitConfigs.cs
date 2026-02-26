@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Configs
 {
     [CreateAssetMenu(fileName = "WordUnitConfigs",
-                     menuName = "Game Configs/Words/New Word Unit Configs")]
+                     menuName = "Game Configs/Lexicon/New Word Unit Configs")]
     public class WordUnitConfigs: ScriptableObject
     {
         public WordData Word;

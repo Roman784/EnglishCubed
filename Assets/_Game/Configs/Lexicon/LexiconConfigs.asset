@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 392676718a50616408ebc8ab13332221, type: 3}
+  m_Name: LexiconConfigs
+  m_EditorClassIdentifier: Assembly-CSharp::Configs.LexiconConfigs
+  Adjectives:
+  - {fileID: 11400000, guid: 8df80c55d4e9596409aa8f209ac4815f, type: 2}
+  Articles:
+  - {fileID: 11400000, guid: 315cce5a869d56d458f8ac9b2a85e2aa, type: 2}
+  - {fileID: 11400000, guid: d8cd5f23be38c5f46976f39a4a3e0103, type: 2}
+  - {fileID: 11400000, guid: a771d23365daa364abf66c4c1929a4cd, type: 2}
+  AuxiliaryVerbs:
+  - {fileID: 11400000, guid: 5e63a98140b4d6a47a83a3addce8437b, type: 2}
+  - {fileID: 11400000, guid: db6814f2563cea6408657c325a15ad9e, type: 2}
+  LinkingVerbs:
+  - {fileID: 11400000, guid: 3ebd2d6c2152be74aa1d0684f3ea163b, type: 2}
+  - {fileID: 11400000, guid: f75e4c5502011314cab76bbd7b3e7364, type: 2}
+  - {fileID: 11400000, guid: b48efb3c4461a0e47a3453c5001771a4, type: 2}
+  Nouns:
+  - {fileID: 11400000, guid: bd5c865563985794f913f95f71785f63, type: 2}
+  - {fileID: 11400000, guid: 2c96237aa7176914798210f18fc1fe53, type: 2}
+  Pronouns:
+  - {fileID: 11400000, guid: 76d39556b85601745bbbedc02e59ae07, type: 2}
+  - {fileID: 11400000, guid: 503f3b335eb71164d90d6ab09fa38417, type: 2}
+  - {fileID: 11400000, guid: bb1c9f2a888638e4f9c27e83f722cef0, type: 2}
+  - {fileID: 11400000, guid: 5c51c2d8987650547abbbf63d657e10c, type: 2}
+  - {fileID: 11400000, guid: 8a76990848a9c0045b976c7c7fe1c343, type: 2}
+  - {fileID: 11400000, guid: 5e111e8d0b0fbfe49b98755b5687e840, type: 2}
+  - {fileID: 11400000, guid: 516b79c656cb1eb459fe7a00af2f9440, type: 2}
+  Verbs:
+  - {fileID: 11400000, guid: 695d17531965b2a4693016a2a97fdb82, type: 2}
+  - {fileID: 11400000, guid: 4210c2cd410922f48a70c61f7955d760, type: 2}

@@ -8,6 +8,7 @@ namespace Configs
                      order = 0)]
     public class GameConfigs : ScriptableObject
     {
+        public LexiconConfigs LexiconConfigs;
         public AudioConfigs AudioConfigs;
         public UIConfigs UIConfigs;
         public DefaultGameStateConfigs DefaultGameStateConfigs;
