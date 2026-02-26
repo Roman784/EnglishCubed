@@ -14,12 +14,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Configs.WordUnitConfigs
   Word:
     Text: am
+    Lemma: be
     PartOfSpeech: 2
-    Number: 0
-    IsCountable: 0
-    Person: 0
-    Gender: 0
-    Tense: 1
-    VerbForm: 1
-    IsLinkingVerb: 1
-    IsModal: 0
+    NounAttributes:
+      Number: 0
+      IsCountable: 0
+      Case: 0
+      IsProper: 0
+    VerbAttributes:
+      Tense: 1
+      Aspect: 0
+      VerbForm: 1
+      Voice: 0
+      Mood: 0
+      Person: 1
+      Number: 1
+      IsMainVerb: 0
+      IsAuxiliary: 1
+      IsLinkingVerb: 1
+      IsModal: 0
+      IsTransitive: 0
+      IsRegular: 0
+    PronounAttributes:
+      Person: 0
+      Gender: 0
+      Case: 0
+      Type: 0
+      Number: 0
+    AdjectiveAttributes:
+      Degree: 0
+    ArticleAttributes:
+      Type: 0
