@@ -27,7 +27,7 @@ namespace Gameplay
         public WordUnit SetConfigs(WordUnitConfigs configs)
         {
             _configs = configs;
-            SetWord(_configs.EnWord);
+            SetWord(_configs.Word.Text);
 
             return this;
         }
