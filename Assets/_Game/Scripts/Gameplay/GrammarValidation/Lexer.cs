@@ -6,12 +6,12 @@ using UnityEngine;
 
 namespace GrammarValidation
 {
-    public class ParsedSentence
+    public class TokenizedSentence
     {
-        public readonly IEnumerable<Token> Tokens;
+        public readonly List<Token> Tokens;
         public readonly char TerminalPunctuation;
 
-        public ParsedSentence(IEnumerable<Token> tokens, char terminalPunctuation)
+        public TokenizedSentence(List<Token> tokens, char terminalPunctuation)
         {
             Tokens = new List<Token>(tokens);
             TerminalPunctuation = terminalPunctuation;
@@ -48,7 +48,7 @@ namespace GrammarValidation
             _lexicon = lexicon;
         }
 
-        public ParsedSentence Tokenize(string sentence)
+        public TokenizedSentence Tokenize(string sentence)
         {
             if (sentence.Length == 0) return null;
 
@@ -72,7 +72,7 @@ namespace GrammarValidation
                 tokens.Add(new Token(lexeme, i));
             }
 
-            return new ParsedSentence(tokens, terminalPunctuation);
+            return new TokenizedSentence(tokens, terminalPunctuation);
         }
 
         private char GetTerminalPunctuation(string sentence)
