@@ -108,11 +108,11 @@ namespace GrammarValidation
 
             var verb = Consume().Lexeme;
 
-            if (verb.VerbAttributes.VerbForm == VerbForm.ThirdPersonS)
+            /*if (verb.VerbAttributes.VerbForm == VerbForm.ThirdPersonS)
             {
                 Debug.LogError("Use base form verb in questions!");
                 return;
-            }
+            }*/
 
             sentence.Predicate = new PredicateNode
             {

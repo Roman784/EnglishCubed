@@ -32,7 +32,30 @@ namespace Combat
 
             _handWordUnitsLayout.SetWordUnits(wordUnits.Select(w => w.Transform));
 
-            var lexer = new Lexer(G.Configs.LexiconConfigs);
+            var grammarValidator = new GrammarValidator(G.Configs.LexiconConfigs);
+
+            // PresentSimpleVerbAgreementRule.
+            grammarValidator.DebugSentence("i like workers", true);
+            grammarValidator.DebugSentence("you like workers", true);
+            grammarValidator.DebugSentence("he likes workers", true);
+            grammarValidator.DebugSentence("she likes workers", true);
+            grammarValidator.DebugSentence("it likes workers", true);
+            grammarValidator.DebugSentence("we like workers", true);
+            grammarValidator.DebugSentence("they like workers", true);
+
+            grammarValidator.DebugSentence("worker likes workers", true);
+            grammarValidator.DebugSentence("workers like workers", true);
+
+            grammarValidator.DebugSentence("he like workers", false);
+            grammarValidator.DebugSentence("she like workers", false);
+            grammarValidator.DebugSentence("it like workers", false);
+            grammarValidator.DebugSentence("worker like workers", false);
+
+            grammarValidator.DebugSentence("i likes workers", false);
+            grammarValidator.DebugSentence("you likes workers", false);
+            grammarValidator.DebugSentence("we likes workers", false);
+            grammarValidator.DebugSentence("they likes workers", false);
+            grammarValidator.DebugSentence("workers likes workers", false);
 
             isLoaded = true;
             yield return new WaitUntil(() => isLoaded);
