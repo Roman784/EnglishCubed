@@ -19,7 +19,7 @@ namespace GrammarValidation
 
             if (!IsAtEnd())
             {
-                Debug.LogError("Unexpected tokens at end of sentence.");
+                Debug.Log("Unexpected tokens at end of sentence.");
                 return null;
             }
 
@@ -45,7 +45,7 @@ namespace GrammarValidation
 
             if (Peek() == null)
             {
-                Debug.LogError("Unexpected end of input in question!");
+                Debug.Log("Unexpected end of input in question!");
                 return null;
             }
 
@@ -103,7 +103,7 @@ namespace GrammarValidation
             // Base verb.
             if (Peek()?.Lexeme.PartOfSpeech != PartOfSpeech.Verb)
             {
-                Debug.LogError("Expected base verb in question!");
+                Debug.Log("Expected base verb in question!");
                 return;
             }
 
@@ -132,7 +132,7 @@ namespace GrammarValidation
 
             if (token == null)
             {
-                Debug.LogError("Expected subject!");
+                Debug.Log("Expected subject!");
                 return null;
             }
 
@@ -150,7 +150,7 @@ namespace GrammarValidation
         {
             var result = TryParseNounPhrase();
             if (result == null)
-                throw new Exception("Expected noun in noun phrase.");
+                Debug.Log("Expected noun in noun phrase.");
             return result;
         }
 
@@ -185,7 +185,7 @@ namespace GrammarValidation
 
             if (Peek()?.Lexeme.PartOfSpeech != PartOfSpeech.Verb)
             {
-                Debug.LogError("Expected verb!");
+                Debug.Log("Expected verb!");
                 return null;
             }
 
@@ -210,7 +210,7 @@ namespace GrammarValidation
         {
             if (IsAtEnd())
             {
-                Debug.LogError("Expected complement after linking verb!");
+                Debug.Log("Expected complement after linking verb!");
                 return;
             }
 
@@ -229,7 +229,7 @@ namespace GrammarValidation
                 return;
             }
 
-            Debug.LogError("Invalid complement after linking verb!");
+            Debug.Log("Invalid complement after linking verb!");
         }
     }
 }

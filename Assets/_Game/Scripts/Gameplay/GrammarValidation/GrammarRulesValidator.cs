@@ -17,8 +17,7 @@ namespace GrammarValidation
                 new ArticleRule(),
                 new ToBeAgreementRule(),
                 new SubjectNumberAgreementRule(),
-                /*new ArticleNumberAgreementRule(),
-                new QuestionAgreementRule()*/
+                new DoDoesRule()
             };
         }
 
@@ -28,10 +27,7 @@ namespace GrammarValidation
             {
                 var result = rule.Validate(sentence);
                 if (!result.IsValid)
-                {
-                    Debug.Log($"Failed at {rule.GetType().Name}: {result.Message}");
                     return result;
-                }
             }
 
             return ValidationResult.Success();

@@ -1,5 +1,6 @@
 using Configs;
 using System.ComponentModel.DataAnnotations;
+using System.Data;
 using UnityEngine;
 
 namespace GrammarValidation
@@ -32,9 +33,14 @@ namespace GrammarValidation
 
         public void DebugSentence(string sentence, bool expectedResult)
         {
-            Debug.Log($"=== Debug: {sentence} ===");
-            if (Validate(sentence).IsValid != expectedResult)
-                Debug.LogError($"Fail: {sentence} | must be: {expectedResult}");
+            // Debug.Log($"=== Debug: {sentence} ===");
+            var res = Validate(sentence);
+            if (res.IsValid != expectedResult)
+            {
+                //Debug.Log($"Failed at {rule.GetType().Name}: {result.Message}");
+                Debug.LogError($"Fail: {sentence}\nMust be: {expectedResult}\nMessage: {res.Message}\n" +
+                    $"{_parser.Parse(_lexer.Tokenize(sentence))}");
+            }
         }
     }
 }

@@ -34,10 +34,6 @@ namespace Combat
 
             var grammarValidator = new GrammarValidator(G.Configs.LexiconConfigs);
 
-            var tokens = new Lexer(G.Configs.LexiconConfigs).Tokenize("She is workers");
-            var ast = new CFGParser().Parse(tokens);
-            Debug.Log(ast);
-
             grammarValidator.DebugSentence("I am tired.", true);
             grammarValidator.DebugSentence("You are tired.", true);
             grammarValidator.DebugSentence("He is tired.", true);
@@ -171,6 +167,8 @@ namespace Combat
             grammarValidator.DebugSentence("Worker a is he.", false);
             grammarValidator.DebugSentence("Are workers they tired?", false);
             grammarValidator.DebugSentence("Is worker the tired?", false);
+
+            grammarValidator.DebugSentence("Is he like?", false);
 
             isLoaded = true;
             yield return new WaitUntil(() => isLoaded);
