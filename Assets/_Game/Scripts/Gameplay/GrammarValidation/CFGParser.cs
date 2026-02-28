@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
@@ -142,7 +143,15 @@ namespace GrammarValidation
                 return node;
             }
 
-            return TryParseNounPhrase();
+            return ParseNounPhrase();
+        }
+
+        private SubjectNode ParseNounPhrase()
+        {
+            var result = TryParseNounPhrase();
+            if (result == null)
+                throw new Exception("Expected noun in noun phrase.");
+            return result;
         }
 
         private SubjectNode TryParseNounPhrase()
@@ -166,7 +175,6 @@ namespace GrammarValidation
             }
 
             // Rollback if no noun.
-            Debug.LogError("Expected noun in noun phrase!");
             _pointer = start;
             return null;
         }

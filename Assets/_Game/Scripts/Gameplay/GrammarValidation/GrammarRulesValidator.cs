@@ -14,8 +14,8 @@ namespace GrammarValidation
             {
                 new BasicStructureRule(),
                 new PresentSimpleVerbAgreementRule(),
-                /*new ArticleRule(),
-                new ArticleNumberAgreementRule(),
+                new ArticleRule(),
+                /*new ArticleNumberAgreementRule(),
                 new ToBeAgreementRule(),
                 new QuestionAgreementRule()*/
             };

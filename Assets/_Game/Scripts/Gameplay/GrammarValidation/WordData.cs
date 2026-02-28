@@ -31,7 +31,6 @@ namespace GrammarValidation
         public Number Number;
         public bool IsCountable;
         public NounCase Case;
-        public bool IsProper;
     }
 
     [Serializable]

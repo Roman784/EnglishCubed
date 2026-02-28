@@ -28,6 +28,8 @@ MonoBehaviour:
   Nouns:
   - {fileID: 11400000, guid: bd5c865563985794f913f95f71785f63, type: 2}
   - {fileID: 11400000, guid: 2c96237aa7176914798210f18fc1fe53, type: 2}
+  - {fileID: 11400000, guid: d41d225574f33ac4cb6cf7657ae12f9a, type: 2}
+  - {fileID: 11400000, guid: a5c8a6957c00bcc4e83ef4c5d996ad37, type: 2}
   Pronouns:
   - {fileID: 11400000, guid: 76d39556b85601745bbbedc02e59ae07, type: 2}
   - {fileID: 11400000, guid: 503f3b335eb71164d90d6ab09fa38417, type: 2}

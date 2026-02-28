@@ -10,31 +10,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d802ab344f97ea45b40371681795fe7, type: 3}
-  m_Name: LIKE_WordUnit
+  m_Name: APPLE_WordUnit
   m_EditorClassIdentifier: Assembly-CSharp::Configs.WordUnitConfigs
   Word:
-    Text: like
-    Lemma: like
-    PartOfSpeech: 2
+    Text: apple
+    Lemma: apple
+    PartOfSpeech: 1
     NounAttributes:
-      Number: 0
-      IsCountable: 0
-      Case: 0
-      IsProper: 0
+      Number: 1
+      IsCountable: 1
+      Case: 1
     VerbAttributes:
-      Tense: 1
-      Aspect: 1
-      VerbForm: 1
+      Tense: 0
+      Aspect: 0
+      VerbForm: 0
       Voice: 0
       Mood: 0
-      Person: 1
-      Number: 1
+      Person: 0
+      Number: 0
       IsMainVerb: 0
       IsAuxiliary: 0
       IsLinkingVerb: 0
       IsModal: 0
-      IsTransitive: 1
-      IsRegular: 1
+      IsTransitive: 0
+      IsRegular: 0
     PronounAttributes:
       Person: 0
       Case: 0
