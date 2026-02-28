@@ -8,7 +8,7 @@ namespace GrammarValidation
         Preposition, Conjunction, Interjection, Numeral, Determiner
     }
 
-    public enum Number { None, Singular, Plural, Uncountable }
+    public enum Number { None, Singular, Plural }
     public enum Person { None, First, Second, Third }
     public enum Tense { None, Present, Past, Future }
     public enum VerbForm { None, Base, ThirdPersonS, Past, Gerund, PastParticiple }

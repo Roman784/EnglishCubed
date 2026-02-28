@@ -168,6 +168,9 @@ namespace Combat
             grammarValidator.DebugSentence("Are workers they tired?", false);
             grammarValidator.DebugSentence("Is worker the tired?", false);
 
+            var tokens = new Lexer(G.Configs.LexiconConfigs).Tokenize("She is workers");
+            var ast = new CFGParser().Parse(tokens);
+            Debug.Log(ast);
 
             isLoaded = true;
             yield return new WaitUntil(() => isLoaded);
