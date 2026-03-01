@@ -20,6 +20,10 @@ namespace Combat
         [SerializeField] private FieldWordUnitsGroup _fieldWordUnitsGroup;
         [SerializeField] private CombatHUD _mainHUD;
 
+        [SerializeField] private StatCellsView _heroHealthStatView;
+        [SerializeField] private StatCellsView _heroArmorStatView;
+        [SerializeField] private StatBarView _heroExperienceStatView;
+
         protected override IEnumerator Run(CombatEnterParams enterParams)
         {
             var isLoaded = false;
@@ -47,6 +51,17 @@ namespace Combat
                     G.UIRoot.ShowMessage(G.Configs.GrammarHintsConfigs.GetMessage(res.HintCode));
                 }
             });
+
+            // ========== Hero Stats ==========
+            var heroHealth = new Health(5, 5);
+            var heroArmor = new Armor(5, 5);
+            var heroExperience = new Experience(0, 500);
+
+            _heroHealthStatView.Init(heroHealth);
+            _heroArmorStatView.Init(heroArmor);
+            _heroExperienceStatView.Init(heroExperience);
+
+            G.HeroStats = new HeroStats(heroHealth, heroArmor, heroExperience);
 
             isLoaded = true;
             yield return new WaitUntil(() => isLoaded);

@@ -17,6 +17,7 @@ namespace GameRoot
         public static AudioProvider AudioProvider;
 
         // Gameplay.
+        public static HeroStats HeroStats;
         public static WordUnitsMovementProvider WordUnitsMovementProvider;
 
         public static GameConfigs Configs => ConfigsProvider.GameConfigs;

@@ -343,16 +343,16 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: messageBox
+      name: square
       rect:
         serializedVersion: 2
         x: 834
         y: 0
-        width: 258
-        height: 319
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 32, y: 96, z: 128, w: 32}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
@@ -369,7 +369,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1111
-        y: 61
+        y: 0
         width: 336
         height: 258
       alignment: 0
@@ -408,6 +408,94 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: ic_heart_full
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 250
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22473f830c0c61f4ba5426ec368d2afd
+      internalID: -222968538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ic_heart_empty
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 330
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c679842b54e4ce4da1ce34786fd74ec
+      internalID: -780306982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ic_shield_full
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 250
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9208c1228c2ef724881a5a50f33897c3
+      internalID: 959961410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ic_shield_empty
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 330
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f518fedc680b1924fb189d5b0954e5a2
+      internalID: -2015586938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -429,13 +517,17 @@ TextureImporter:
       enemy_1: 664701876
       hero_knight: 757588557
       ic_coin: -267339983
+      ic_heart_empty: -780306982
+      ic_heart_full: -222968538
       ic_infinity: -186057115
       ic_lock: -816058915
       ic_settings: -1173457764
+      ic_shield_empty: -2015586938
+      ic_shield_full: 959961410
       ic_swords: -1463130058
       ic_tree: 1928172411
-      messageBox: -1202163512
       oldman: 871545008
+      square: -1202163512
       square_outline_r32: 329716326
       square_r32: 194469976
       star_little: -1809274364
