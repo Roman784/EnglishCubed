@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.WordUnit
   _wordView: {fileID: 1213148712609781694}
   _pointerDetector: {fileID: 8078999396267707461}
+  _backplatePrefab: {fileID: 7296553785746029548, guid: ef015052997323f47a7b9b8e6445263e, type: 3}
 --- !u!114 &6281273425437999530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,7 +65,6 @@ MonoBehaviour:
   _containerView: {fileID: 8433991116503443309}
   _containerBorderWidth: 0.2
   _minContainerWidth: 1
-  _backplatePrefab: {fileID: 7296553785746029548, guid: ef015052997323f47a7b9b8e6445263e, type: 3}
 --- !u!1 &2493296497185266432
 GameObject:
   m_ObjectHideFlags: 0

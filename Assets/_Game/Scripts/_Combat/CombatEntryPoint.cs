@@ -15,15 +15,18 @@ namespace Combat
     {
         [SerializeField] private WordUnit _wordUnitPrefab;
         [SerializeField] private WordUnitConfigs[] _wordUnitsConfigs;
-        [SerializeField] private HandWordUnitsLayout _handWordUnitsLayout;
-        [SerializeField] private FieldWordUnitsLayout _fieldWordUnitsLayout;
+        [SerializeField] private HandFlowLayout _handLayout;
+        [SerializeField] private FieldFlowLayout _fieldLayout;
         [SerializeField] private CombatHUD _mainHUD;
 
         protected override IEnumerator Run(CombatEnterParams enterParams)
         {
             var isLoaded = false;
 
-            G.WordUnitsMovementProvider = new WordUnitsMovementProvider(_handWordUnitsLayout, _fieldWordUnitsLayout);
+            var handWordUnitsGroup = new HandWordUnitsGroup(_handLayout);
+            var fieldWordUnitsGroup = new FieldWordUnitsGroup(_fieldLayout);
+
+            G.WordUnitsMovementProvider = new WordUnitsMovementProvider(handWordUnitsGroup, fieldWordUnitsGroup);
             var grammarValidator = new GrammarValidator(G.Configs.LexiconConfigs);
 
             var wordUnits = new List<WordUnit>();
@@ -33,9 +36,12 @@ namespace Combat
                 wordUnits.Add(newWordUnit);
             }
 
-            _handWordUnitsLayout.SetWordUnits(wordUnits.Select(w => w.Transform));
+            handWordUnitsGroup.SetInitialWordUnits(wordUnits);
 
-            _mainHUD.AttackButtonPressedSignal.Subscribe(_ => { });
+            _mainHUD.AttackButtonPressedSignal.ThrottleFirst(System.TimeSpan.FromSeconds(0.25f)).Subscribe(_ =>
+            {
+                Debug.Log($"Hand: {handWordUnitsGroup.AllWordUnits.Count()}\nField: {fieldWordUnitsGroup.AllWordUnits.Count()}");
+            });
 
             isLoaded = true;
             yield return new WaitUntil(() => isLoaded);

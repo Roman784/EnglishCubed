@@ -12,10 +12,16 @@ namespace Gameplay
         [SerializeField] private TMP_Text _wordView;
         [SerializeField] private PointerDetector _pointerDetector;
 
+        [Space]
+
+        [SerializeField] private WordUnitBackplate _backplatePrefab;
+
         private WordUnitConfigs _configs;
         private WordUnitTransform _transform;
 
         public WordUnitTransform Transform => _transform;
+        public WordUnitBackplate BackplatePrefab => _backplatePrefab;
+
 
         private void Awake()
         {

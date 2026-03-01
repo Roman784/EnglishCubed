@@ -7,5 +7,10 @@ namespace UI
     {
         private Subject<Unit> _attackButtonPressedSignalSubj = new();
         public Observable<Unit> AttackButtonPressedSignal => _attackButtonPressedSignalSubj;
+
+        public void PressAttackButton()
+        {
+            _attackButtonPressedSignalSubj.OnNext(Unit.Default);
+        }
     }
 }
