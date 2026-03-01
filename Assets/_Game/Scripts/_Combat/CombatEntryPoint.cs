@@ -45,7 +45,7 @@ namespace Combat
                 var res = grammarValidator.Validate(sentence);
                 if (!res.IsValid)
                 {
-                    Debug.Log(G.Configs.GrammarHintsConfigs.GetMessage(res.HintCode));
+                    G.UIRoot.ShowMessage(G.Configs.GrammarHintsConfigs.GetMessage(res.HintCode));
                 }
             });
 

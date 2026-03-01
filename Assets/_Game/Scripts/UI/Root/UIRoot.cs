@@ -10,8 +10,9 @@ namespace UI
         [Space]
 
         [SerializeField] private Transform _fullscreenUIContainer;
-        [SerializeField] private LoadingScreen _loadingScreen;
+        [SerializeField] private MessageMan _messageMan;
         [SerializeField] private PopUpsRoot _popUpsRoot;
+        [SerializeField] private LoadingScreen _loadingScreen;
 
         public PopUpsRoot PopUpsRoot => _popUpsRoot;
 
@@ -23,6 +24,11 @@ namespace UI
         public IEnumerator HideLoadingScreen()
         {
             yield return _loadingScreen.Hide().ToCoroutine();
+        }
+
+        public void ShowMessage(string message)
+        {
+            _messageMan.Show(message);
         }
 
         public void AttachFullsreenUI(FullscreenUI ui)

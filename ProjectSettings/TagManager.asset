@@ -53,6 +53,9 @@ TagManager:
   - name: WordUnit
     uniqueID: 180928475
     locked: 0
+  - name: Top
+    uniqueID: 910874709
+    locked: 0
   m_RenderingLayers:
   - Default
   - Light Layer 1
