@@ -5,7 +5,8 @@ using UnityEngine;
 
 namespace Gameplay
 {
-    public class HandWordUnitsGroup
+    [RequireComponent(typeof(HandFlowLayout))]
+    public class HandWordUnitsGroup : MonoBehaviour
     {
         private List<WordUnit> _allWordUnits = new();
         private Dictionary<WordUnit, WordUnitBackplate> _backplatesMap = new();
@@ -16,9 +17,9 @@ namespace Gameplay
         public HandFlowLayout Layout => _layout;
         public IEnumerable<WordUnit> AllWordUnits => _allWordUnits;
 
-        public HandWordUnitsGroup(HandFlowLayout layout)
+        private void Awake()
         {
-            _layout = layout;
+            _layout = GetComponent<HandFlowLayout>();
         }
 
         public void SetInitialWordUnits(IEnumerable<WordUnit> wordUnits)
@@ -26,6 +27,9 @@ namespace Gameplay
             _allWordUnits = new List<WordUnit>(wordUnits);
             _layout.SetInitialElements(wordUnits.Select(w => w.Transform));
         }
+
+        public bool CanAdd() => true;
+        public bool CanRemove(WordUnit wordUnit) => _allWordUnits.Contains(wordUnit);
 
         public void Add(WordUnit wordUnit)
         {

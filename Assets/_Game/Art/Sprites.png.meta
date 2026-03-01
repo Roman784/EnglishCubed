@@ -306,8 +306,8 @@ TextureImporter:
         y: 282
         width: 211
         height: 321
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.4909619, y: 0.14156534}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -373,7 +373,7 @@ TextureImporter:
         width: 336
         height: 258
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 32, y: 32, z: 112, w: 32}
       customData: 
       outline: []
@@ -382,6 +382,28 @@ TextureImporter:
       bones: []
       spriteID: d82868774fe33234ab86af3f9c9590dc
       internalID: 625730798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_1
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 282
+        width: 304
+        height: 290
+      alignment: 9
+      pivot: {x: 0.5041821, y: 0.14489777}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4037b2b2c05c7e4b80e707fa31a004c
+      internalID: 664701876
       vertices: []
       indices: 
       edges: []
@@ -404,6 +426,7 @@ TextureImporter:
     nameFileIdTable:
       Sprites_0: 625730798
       cloud: 524866619
+      enemy_1: 664701876
       hero_knight: 757588557
       ic_coin: -267339983
       ic_infinity: -186057115

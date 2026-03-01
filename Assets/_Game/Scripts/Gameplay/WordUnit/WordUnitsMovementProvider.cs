@@ -19,11 +19,13 @@ namespace Gameplay
 
         public void MoveFromHandToField(WordUnit wordUnit)
         {
+            if (!_fieldLayout.CanAdd() || !_handGroup.CanRemove(wordUnit)) return;
+
             _handGroup.Layout.GravitationalPuller.Disable();
             _fieldLayout.Layout.GravitationalPuller.Disable();
 
-            _handGroup.Remove(wordUnit);
             _fieldLayout.Add(wordUnit);
+            _handGroup.Remove(wordUnit);
 
             _handGroup.Layout.Arrange();
             _fieldLayout.Layout.Arrange().Subscribe(arrangedUnit =>
@@ -38,6 +40,8 @@ namespace Gameplay
 
         public void MoveFromFieldToHand(WordUnit wordUnit)
         {
+            if (!_fieldLayout.CanRemove(wordUnit) || !_handGroup.CanAdd()) return;
+
             _fieldLayout.Layout.GravitationalPuller.Disable();
             _handGroup.Layout.GravitationalPuller.Disable();
 
