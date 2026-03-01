@@ -1339,6 +1339,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 516b79c656cb1eb459fe7a00af2f9440, type: 2}
   - {fileID: 11400000, guid: 695d17531965b2a4693016a2a97fdb82, type: 2}
   - {fileID: 11400000, guid: 4210c2cd410922f48a70c61f7955d760, type: 2}
+  - {fileID: 11400000, guid: 0d83112eaa0978942bf40bfb33ce0f24, type: 2}
   _handLayout: {fileID: 1807663764}
   _fieldLayout: {fileID: 1114353182}
   _mainHUD: {fileID: 1830545101}
