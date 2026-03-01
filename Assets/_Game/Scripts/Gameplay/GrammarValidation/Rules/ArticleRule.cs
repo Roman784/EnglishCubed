@@ -34,12 +34,12 @@ namespace GrammarValidation
                 if (!hasArticle)
                 {
                     if (number == Number.Singular && isCountable)
-                        return ValidationResult.Fail("Singular countable noun must have an article!");
+                        return ValidationResult.Fail("Singular countable noun must have an article!", 1);
                     return ValidationResult.Success();
                 }
 
                 if (!isCountable && article.ArticleAttributes.Type != ArticleType.Definite)
-                    return ValidationResult.Fail("Uncountable nouns can only use definite article 'the'!");
+                    return ValidationResult.Fail("Uncountable nouns can only use definite article 'the'!", 1);
 
                 if (number == Number.Singular)
                 {
@@ -52,12 +52,12 @@ namespace GrammarValidation
                 }
 
                 if (number == Number.Plural && article.ArticleAttributes.Type == ArticleType.Indefinite)
-                    return ValidationResult.Fail("Indefinite article 'a/an' cannot be used with plural nouns!");
+                    return ValidationResult.Fail("Indefinite article 'a/an' cannot be used with plural nouns!", 1);
             }
             else if (noun == null && hasArticle)
-                return ValidationResult.Fail("Article cannot exist without a noun!");
+                return ValidationResult.Fail("Article cannot exist without a noun!", 1);
             else if (pronoun != null && hasArticle)
-                return ValidationResult.Fail("Article cannot be used before a pronoun!");
+                return ValidationResult.Fail("Article cannot be used before a pronoun!", 1);
 
             return ValidationResult.Success();
         }
@@ -68,9 +68,9 @@ namespace GrammarValidation
             var nounText = noun.Text;
 
             if (articleText == "a" && StartsWithVowelSound(nounText))
-                return ValidationResult.Fail($"Use 'an' instead of 'a' before '{nounText}' (starts with vowel sound)!");
+                return ValidationResult.Fail($"Use 'an' instead of 'a' before '{nounText}' (starts with vowel sound)!", 1);
             else if (articleText == "an" && !StartsWithVowelSound(nounText))
-                return ValidationResult.Fail($"Use 'a' instead of 'an' before '{nounText}' (starts with consonant sound)!");
+                return ValidationResult.Fail($"Use 'a' instead of 'an' before '{nounText}' (starts with consonant sound)!", 1);
             return ValidationResult.Success();
         }
 

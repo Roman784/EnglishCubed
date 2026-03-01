@@ -7,10 +7,10 @@ namespace GrammarValidation
         public ValidationResult Validate(SentenceNode sentence)
         {
             if (sentence.Subject == null)
-                return ValidationResult.Fail("Sentence must have a subject.");
+                return ValidationResult.Fail("Sentence must have a subject.", 6);
 
             if (sentence.Predicate == null || sentence.Predicate.Verb == null)
-                return ValidationResult.Fail("Sentence must have a verb.");
+                return ValidationResult.Fail("Sentence must have a verb.", 7);
 
             return ValidationResult.Success();
         }

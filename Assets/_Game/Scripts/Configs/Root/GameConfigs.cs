@@ -9,6 +9,7 @@ namespace Configs
     public class GameConfigs : ScriptableObject
     {
         public LexiconConfigs LexiconConfigs;
+        public GrammarHintsConfigs GrammarHintsConfigs;
         public AudioConfigs AudioConfigs;
         public UIConfigs UIConfigs;
         public DefaultGameStateConfigs DefaultGameStateConfigs;

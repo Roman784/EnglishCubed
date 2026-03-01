@@ -8,6 +8,7 @@ using System.Linq;
 using UI;
 using UnityEngine;
 using R3;
+using System;
 
 namespace Combat
 {
@@ -40,7 +41,12 @@ namespace Combat
 
             _mainHUD.AttackButtonPressedSignal.ThrottleFirst(System.TimeSpan.FromSeconds(0.25f)).Subscribe(_ =>
             {
-                Debug.Log($"Hand: {handWordUnitsGroup.AllWordUnits.Count()}\nField: {fieldWordUnitsGroup.AllWordUnits.Count()}");
+                var sentence = string.Join(" ", fieldWordUnitsGroup.AllWordUnits.Select(w => w.GetWordText()));
+                var res = grammarValidator.Validate(sentence);
+                if (!res.IsValid)
+                {
+                    Debug.Log(G.Configs.GrammarHintsConfigs.GetMessage(res.HintCode));
+                }
             });
 
             isLoaded = true;

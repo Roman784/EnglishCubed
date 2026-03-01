@@ -28,7 +28,8 @@ namespace GrammarValidation
                 obj.PartOfSpeech == PartOfSpeech.Noun ? obj.NounAttributes.Number : Number.None;
 
             if (subjectNumber != objNumber)
-                return ValidationResult.Fail($"Subject '{subject.Text}' ({subjectNumber} number) does not agree with object ({objNumber} number)");
+                return ValidationResult.Fail(
+                    $"Subject '{subject.Text}' ({subjectNumber} number) does not agree with object ({objNumber} number)", 3);
 
             return ValidationResult.Success();
         }

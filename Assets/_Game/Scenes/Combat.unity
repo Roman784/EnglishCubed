@@ -1081,7 +1081,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1830545101}
         m_TargetAssemblyTypeName: UI.CombatHUD, Assembly-CSharp
-        m_MethodName: OnPressAttackButton
+        m_MethodName: PressAttackButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -21,21 +21,21 @@ namespace GrammarValidation
                 var pronoun = subject.PronounAttributes;
 
                 if (verb.Person == Person.Third && !(pronoun.Person == Person.Third && pronoun.Number == Number.Singular))
-                    return ValidationResult.Fail($"Verb person third requires third singular pronoun.");
+                    return ValidationResult.Fail($"Verb person third requires third singular pronoun.", 4);
                 else if (verb.Person == Person.First && pronoun.Person == Person.Third && pronoun.Number == Number.Singular)
-                    return ValidationResult.Fail($"Verb person first requires not third singular pronoun.");
+                    return ValidationResult.Fail($"Verb person first requires not third singular pronoun.", 4);
             }
             else if (subject.PartOfSpeech == PartOfSpeech.Noun)
             {
                 var noun = subject.NounAttributes;
 
                 if (verb.Person == Person.Third && noun.Number != Number.Singular) // like.
-                    return ValidationResult.Fail($"Verb person third requires singular noun.");
+                    return ValidationResult.Fail($"Verb person third requires singular noun.", 4);
                 if (verb.Person == Person.First && noun.Number != Number.Plural) // likes.
-                    return ValidationResult.Fail($"Verb person first requires plural noun.");
+                    return ValidationResult.Fail($"Verb person first requires plural noun.", 4);
             }
             else
-                return ValidationResult.Fail("Sentence must have a subject (noun or pronoun).");
+                return ValidationResult.Fail("Sentence must have a subject (noun or pronoun).", 4);
 
             return ValidationResult.Success();
         }

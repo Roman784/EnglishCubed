@@ -22,6 +22,7 @@ namespace Gameplay
         public WordUnitTransform Transform => _transform;
         public WordUnitBackplate BackplatePrefab => _backplatePrefab;
 
+        public string GetWordText() => _configs?.Word.Text ?? "";
 
         private void Awake()
         {
@@ -33,7 +34,7 @@ namespace Gameplay
         public WordUnit SetConfigs(WordUnitConfigs configs)
         {
             _configs = configs;
-            SetWord(_configs.Word.Text);
+            SetWordText(_configs.Word.Text);
 
             return this;
         }
@@ -49,9 +50,9 @@ namespace Gameplay
             behaviorHandler.SetInHandBehavior();
         }
 
-        private void SetWord(string word)
+        private void SetWordText(string text)
         {
-            _wordView.text = word;
+            _wordView.text = text;
             _transform.SetContainerSize(_wordView.preferredWidth);
         }
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Configs
 {
     [CreateAssetMenu(fileName = "LexiconConfigs",
-                     menuName = "Game Configs/Lexicon/New Lexicon Configs",
+                     menuName = "Game Configs/Grammar/New Lexicon Configs",
                      order = 0)]
     public class LexiconConfigs : ScriptableObject
     {

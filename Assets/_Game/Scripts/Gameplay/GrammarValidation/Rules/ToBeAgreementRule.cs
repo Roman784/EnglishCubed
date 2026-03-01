@@ -18,20 +18,24 @@ namespace GrammarValidation
                 var pronoun = subject.PronounAttributes;
 
                 if (pronoun.Number == Number.Plural && verb.Number != Number.Plural) // we, they -> are.
-                    return ValidationResult.Fail($"Pronoun '{subject.Text}' ({pronoun.Number} number) does not agree with verb ({verb.Number} number)");
+                    return ValidationResult.Fail(
+                        $"Pronoun '{subject.Text}' ({pronoun.Number} number) does not agree with verb ({verb.Number} number)", 2);
                 
                 else if (pronoun.Number != Number.Plural && pronoun.Person != verb.Person) // i -> am. he, she, it -> is. you -> are.
-                    return ValidationResult.Fail($"Pronoun '{subject.Text}' ({pronoun.Person} person) does not agree with verb ({verb.Person} person)");
+                    return ValidationResult.Fail(
+                        $"Pronoun '{subject.Text}' ({pronoun.Person} person) does not agree with verb ({verb.Person} person)", 2);
             }
             else if (subject.PartOfSpeech == PartOfSpeech.Noun)
             {
                 var noun = subject.NounAttributes;
 
                 if (noun.Number != verb.Number)
-                    return ValidationResult.Fail($"Noun '{subject.Text}' ({noun.Number} number) does not agree with verb ({verb.Number} number)");
+                    return ValidationResult.Fail(
+                        $"Noun '{subject.Text}' ({noun.Number} number) does not agree with verb ({verb.Number} number)", 2);
 
                 if (!noun.IsCountable && !(verb.Number == Number.Singular && verb.Person == Person.Third))
-                    return ValidationResult.Fail($"Uncountable noun '{subject.Text}' requires singular verb (is)");
+                    return ValidationResult.Fail(
+                        $"Uncountable noun '{subject.Text}' requires singular verb (is)", 2);
             }
 
             return ValidationResult.Success();

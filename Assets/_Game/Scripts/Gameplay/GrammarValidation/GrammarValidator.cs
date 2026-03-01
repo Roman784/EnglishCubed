@@ -22,11 +22,11 @@ namespace GrammarValidation
         {
             var tokens = _lexer.Tokenize(sentence);
             if (tokens == null)
-                return ValidationResult.Fail("Unknown word");
+                return ValidationResult.Fail("Unknown word", 0);
 
             var ast = _parser.Parse(tokens);
             if (ast == null)
-                return ValidationResult.Fail("Syntax error");
+                return ValidationResult.Fail("Syntax error", 0);
 
             return _rulesValidator.Validate(ast);
         }

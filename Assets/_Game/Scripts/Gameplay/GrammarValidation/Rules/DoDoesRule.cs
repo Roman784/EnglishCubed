@@ -24,24 +24,24 @@ namespace GrammarValidation
                 var pronoun = subject.PronounAttributes;
 
                 if (aux.Text == "does" && !(pronoun.Person == Person.Third && pronoun.Number == Number.Singular)) // he, she, it -> does
-                    return ValidationResult.Fail($"Pronoun '{subject.Text}' does not agree with auxiliary 'does'");
+                    return ValidationResult.Fail($"Pronoun '{subject.Text}' does not agree with auxiliary 'does'", 5);
                 else if (aux.Text == "do" && pronoun.Person == Person.Third && pronoun.Number == Number.Singular)
-                    return ValidationResult.Fail($"Pronoun '{subject.Text}' does not agree with auxiliary 'do'");
+                    return ValidationResult.Fail($"Pronoun '{subject.Text}' does not agree with auxiliary 'do'", 5);
             }
             else if (subject.PartOfSpeech == PartOfSpeech.Noun)
             {
                 var noun = subject.NounAttributes;
 
                 if (aux.Text == "does" && noun.Number != Number.Singular)
-                    return ValidationResult.Fail("'Does' requires singular noun.");
+                    return ValidationResult.Fail("'Does' requires singular noun.", 5);
                 if (aux.Text == "do" && noun.Number != Number.Plural)
-                    return ValidationResult.Fail("'Do' requires plural noun.");
+                    return ValidationResult.Fail("'Do' requires plural noun.", 5);
             }
             else
-                return ValidationResult.Fail("Sentence must have a subject (noun or pronoun).");
+                return ValidationResult.Fail("Sentence must have a subject (noun or pronoun).", 5);
 
             if (verb.VerbAttributes.VerbForm != VerbForm.Base)
-                return ValidationResult.Fail("Verb must be in base form after auxiliary.");
+                return ValidationResult.Fail("Verb must be in base form after auxiliary.", 5);
 
             return ValidationResult.Success();
         }
