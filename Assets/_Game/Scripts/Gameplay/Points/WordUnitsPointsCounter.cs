@@ -1,8 +1,8 @@
 using DG.Tweening;
 using R3;
-using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Utils;
 
@@ -11,7 +11,7 @@ namespace Gameplay
     public class WordUnitsPointsCounter
     {
         private const float DELAY_BETWEEN_EXTRACTION = 0.25f;
-        private const float DELAY_BETWEEN_MOVEMENT_TO_ACCUMULUTATION = 0.25f;
+        private const float DELAY_BETWEEN_MOVEMENT_TO_ACCUMULUTATION = 0.5f;
 
         private Vector2 _accumulationPosition;
         private WordUnitPoints _accumulativePoints;
@@ -67,18 +67,20 @@ namespace Gameplay
         {
             if (points == _accumulativePoints)
             {
-                points.MoveToAccumulator(_accumulationPosition, false).OnComplete(() =>
+                points.MoveToAccumulator(_accumulationPosition).OnComplete(() =>
                 {
                     points.TurnIntoAccumulator();
-                    _accumulativePoints.Shake();
+                    _accumulativePoints.Pop();
                 });
             }
             else
             {
-                points.MoveToAccumulator(_accumulationPosition).OnComplete(() =>
+                points.SendToAccumulator().OnComplete(() =>
                 {
                     _accumulativePoints.Plus(points.Value);
-                    _accumulativePoints.Shake();
+                    _accumulativePoints.Pop();
+
+                    Object.Destroy(points.gameObject);
                 });
             }
         }

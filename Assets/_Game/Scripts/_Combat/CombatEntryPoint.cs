@@ -57,7 +57,7 @@ namespace Combat
                 }
                 else
 */
-                pointsCounter.StartCounting(_fieldWordUnitsGroup.AllWordUnits, _location.Center);
+                pointsCounter.StartCounting(_fieldWordUnitsGroup.AllWordUnits, _location.PointsAccumulationPoint);
             });
 
             // ========== Hero Stats ==========

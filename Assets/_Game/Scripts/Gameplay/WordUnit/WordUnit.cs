@@ -61,7 +61,7 @@ namespace Gameplay
             var createdPoints = Instantiate(_pointsPrefab, _pointsSpawnPoint.position, Quaternion.identity);
             
             createdPoints.Plus(_configs.Points);
-            createdPoints.SetSign('+');
+            createdPoints.SetSign("+");
             createdPoints.Show();
 
             return createdPoints;
