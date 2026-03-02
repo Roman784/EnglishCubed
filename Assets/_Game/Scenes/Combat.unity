@@ -522,12 +522,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 43706565}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.93999994, y: 4.66, z: 2}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.93999994, y: 4.6099997, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1794532374}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &101060732
 GameObject:
@@ -1101,12 +1101,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 292153383}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.3, y: 4.22, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.3, y: 4.1699996, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1794532374}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &341558159
 GameObject:
@@ -1631,6 +1631,7 @@ MonoBehaviour:
   _heroHealthStatView: {fileID: 1860857682}
   _heroArmorStatView: {fileID: 1509695403}
   _heroExperienceStatView: {fileID: 737497468}
+  _location: {fileID: 1794532375}
 --- !u!1 &553538552
 GameObject:
   m_ObjectHideFlags: 0
@@ -2660,7 +2661,7 @@ GameObject:
   m_Component:
   - component: {fileID: 914037318}
   m_Layer: 0
-  m_Name: Center
+  m_Name: CenterPoint
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -3180,12 +3181,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1154640270}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.12, y: 4.45, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.12, y: 4.3999996, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1794532374}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1182296948
 GameObject:
@@ -4499,6 +4500,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1794532374}
+  - component: {fileID: 1794532375}
   m_Layer: 0
   m_Name: ForestLocation
   m_TagString: Untagged
@@ -4534,8 +4536,27 @@ Transform:
   - {fileID: 1038239555}
   - {fileID: 1012390}
   - {fileID: 914037318}
+  - {fileID: 1985337512}
+  - {fileID: 292153385}
+  - {fileID: 1154640272}
+  - {fileID: 43706567}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1794532375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794532373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2c10a716066b2640a97e8252144da53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Gameplay.Location
+  _centerPoint: {fileID: 914037318}
+  _enemies:
+  - {fileID: 292153385}
 --- !u!1 &1807663761
 GameObject:
   m_ObjectHideFlags: 0
@@ -5189,12 +5210,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1985337510}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.26, y: 4.37, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.26, y: 4.3199997, z: 0}
   m_LocalScale: {x: 0.85, y: 0.85, z: 0.85}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1794532374}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2009405812
 GameObject:
@@ -5774,7 +5795,3 @@ SceneRoots:
   - {fileID: 1794532374}
   - {fileID: 1830545102}
   - {fileID: 1249546706}
-  - {fileID: 1985337512}
-  - {fileID: 292153385}
-  - {fileID: 1154640272}
-  - {fileID: 43706567}

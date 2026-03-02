@@ -25,6 +25,8 @@ namespace Combat
         [SerializeField] private StatCellsView _heroArmorStatView;
         [SerializeField] private StatBarView _heroExperienceStatView;
 
+        [SerializeField] private Location _location;
+
         protected override IEnumerator Run(CombatEnterParams enterParams)
         {
             var isLoaded = false;
@@ -43,16 +45,19 @@ namespace Combat
 
             _handWordUnitsGroup.SetInitialWordUnits(wordUnits);
 
+            var pointsCounter = new WordUnitsPointsCounter();
+
             _mainHUD.AttackButtonPressedSignal.ThrottleFirst(System.TimeSpan.FromSeconds(0.25f)).Subscribe(_ =>
             {
-                var sentence = string.Join(" ", _fieldWordUnitsGroup.AllWordUnits.Select(w => w.GetWordText()));
+                /*var sentence = string.Join(" ", _fieldWordUnitsGroup.AllWordUnits.Select(w => w.GetWordText()));
                 var res = grammarValidator.Validate(sentence);
-                /*if (!res.IsValid)
+                if (!res.IsValid)
                 {
                     G.UIRoot.ShowMessage(G.Configs.GrammarHintsConfigs.GetMessage(res.HintCode));
-                }*/
-                
-                    Coroutines.Start(ExtractPoints(_fieldWordUnitsGroup));
+                }
+                else
+*/
+                pointsCounter.StartCounting(_fieldWordUnitsGroup.AllWordUnits, _location.Center);
             });
 
             // ========== Hero Stats ==========
@@ -68,16 +73,6 @@ namespace Combat
 
             isLoaded = true;
             yield return new WaitUntil(() => isLoaded);
-        }
-
-        private IEnumerator ExtractPoints(FieldWordUnitsGroup fieldWordUnitsGroup)
-        {
-            foreach (var wordUnit in fieldWordUnitsGroup.AllWordUnits)
-            {
-                yield return new WaitForSeconds(0.25f);
-
-                wordUnit.ExtractPoints();
-            }
-        }
+        } 
     }
 }

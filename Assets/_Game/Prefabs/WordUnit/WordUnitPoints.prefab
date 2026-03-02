@@ -243,7 +243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.WordUnitPoints
   _rootView: {fileID: 6677320789869829485}
-  _pointsView: {fileID: 87455271965985469}
+  _valueView: {fileID: 87455271965985469}
 --- !u!1 &8799244086431242514
 GameObject:
   m_ObjectHideFlags: 0

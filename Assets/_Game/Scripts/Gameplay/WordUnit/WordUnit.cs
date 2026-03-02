@@ -59,7 +59,11 @@ namespace Gameplay
         public WordUnitPoints ExtractPoints()
         {
             var createdPoints = Instantiate(_pointsPrefab, _pointsSpawnPoint.position, Quaternion.identity);
-            createdPoints.InitPlus(_configs.Points);
+            
+            createdPoints.Plus(_configs.Points);
+            createdPoints.SetSign('+');
+            createdPoints.Show();
+
             return createdPoints;
         }
 
