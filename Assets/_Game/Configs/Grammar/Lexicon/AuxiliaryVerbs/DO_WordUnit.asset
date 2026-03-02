@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d802ab344f97ea45b40371681795fe7, type: 3}
   m_Name: DO_WordUnit
   m_EditorClassIdentifier: Assembly-CSharp::Configs.WordUnitConfigs
+  Points: 10
   Word:
     Text: do
     Lemma: do
@@ -20,7 +21,6 @@ MonoBehaviour:
       Number: 0
       IsCountable: 0
       Case: 0
-      IsProper: 0
     VerbAttributes:
       Tense: 1
       Aspect: 0
@@ -37,7 +37,6 @@ MonoBehaviour:
       IsRegular: 0
     PronounAttributes:
       Person: 0
-      Gender: 0
       Case: 0
       Type: 0
       Number: 0

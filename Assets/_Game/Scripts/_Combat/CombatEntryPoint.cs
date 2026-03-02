@@ -9,6 +9,7 @@ using UI;
 using UnityEngine;
 using R3;
 using System;
+using Utils;
 
 namespace Combat
 {
@@ -46,10 +47,12 @@ namespace Combat
             {
                 var sentence = string.Join(" ", _fieldWordUnitsGroup.AllWordUnits.Select(w => w.GetWordText()));
                 var res = grammarValidator.Validate(sentence);
-                if (!res.IsValid)
+                /*if (!res.IsValid)
                 {
                     G.UIRoot.ShowMessage(G.Configs.GrammarHintsConfigs.GetMessage(res.HintCode));
-                }
+                }*/
+                
+                    Coroutines.Start(ExtractPoints(_fieldWordUnitsGroup));
             });
 
             // ========== Hero Stats ==========
@@ -65,6 +68,16 @@ namespace Combat
 
             isLoaded = true;
             yield return new WaitUntil(() => isLoaded);
+        }
+
+        private IEnumerator ExtractPoints(FieldWordUnitsGroup fieldWordUnitsGroup)
+        {
+            foreach (var wordUnit in fieldWordUnitsGroup.AllWordUnits)
+            {
+                yield return new WaitForSeconds(0.25f);
+
+                wordUnit.ExtractPoints();
+            }
         }
     }
 }

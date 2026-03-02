@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d802ab344f97ea45b40371681795fe7, type: 3}
   m_Name: AN_WordUnit
   m_EditorClassIdentifier: Assembly-CSharp::Configs.WordUnitConfigs
+  Points: 10
   Word:
     Text: an
     Lemma: an
@@ -20,13 +21,14 @@ MonoBehaviour:
       Number: 0
       IsCountable: 0
       Case: 0
-      IsProper: 0
     VerbAttributes:
       Tense: 0
       Aspect: 0
       VerbForm: 0
       Voice: 0
       Mood: 0
+      Person: 0
+      Number: 0
       IsMainVerb: 0
       IsAuxiliary: 0
       IsLinkingVerb: 0
@@ -35,7 +37,6 @@ MonoBehaviour:
       IsRegular: 0
     PronounAttributes:
       Person: 0
-      Gender: 0
       Case: 0
       Type: 0
       Number: 0

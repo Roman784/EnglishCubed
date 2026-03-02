@@ -9,6 +9,7 @@ namespace Configs
                      menuName = "Game Configs/Grammar/New Word Unit Configs")]
     public class WordUnitConfigs: ScriptableObject
     {
+        public int Points;
         public WordData Word;
     }
 }

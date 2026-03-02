@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d802ab344f97ea45b40371681795fe7, type: 3}
   m_Name: QuestionMarkConfigs
   m_EditorClassIdentifier: Assembly-CSharp::Configs.WordUnitConfigs
+  Points: 10
   Word:
     Text: '?'
     Lemma: 

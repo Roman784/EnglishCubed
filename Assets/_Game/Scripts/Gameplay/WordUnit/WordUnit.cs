@@ -16,6 +16,11 @@ namespace Gameplay
 
         [SerializeField] private WordUnitBackplate _backplatePrefab;
 
+        [Space]
+
+        [SerializeField] private Transform _pointsSpawnPoint;
+        [SerializeField] private WordUnitPoints _pointsPrefab;
+
         private WordUnitConfigs _configs;
         private WordUnitTransform _transform;
 
@@ -48,6 +53,14 @@ namespace Gameplay
             _pointerDetector.OnPointerUpSignal.Subscribe(_ => behaviorHandler.HandleOnPointerUp());
             _pointerDetector.OnPointerClickSignal.Subscribe(_ => behaviorHandler.HandleOnPointerClick());
             behaviorHandler.SetInHandBehavior();
+        }
+
+        [ContextMenu("Extract Points")]
+        public WordUnitPoints ExtractPoints()
+        {
+            var createdPoints = Instantiate(_pointsPrefab, _pointsSpawnPoint.position, Quaternion.identity);
+            createdPoints.InitPlus(_configs.Points);
+            return createdPoints;
         }
 
         private void SetWordText(string text)
