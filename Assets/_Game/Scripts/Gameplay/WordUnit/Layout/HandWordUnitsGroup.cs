@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UI;
@@ -63,13 +64,30 @@ namespace Gameplay
             _layout.Remove(wordUnit.Transform);
         }
 
+        public void DestroyLinkedBackplates(IEnumerable<WordUnit> wordUnits)
+        {
+            foreach (var wordUnit in wordUnits)
+            {
+                if (_backplatesMap.TryGetValue(wordUnit, out var backplate))
+                    _backplatesForDestruction.Add(backplate);
+            }
+            DestroyBackplates();
+        }
+
         public void DestroyBackplates()
         {
             if (_backplatesForDestruction.Count == 0) return;
+
+            _backplatesMap = _backplatesMap
+                .Where(x => !_backplatesForDestruction.Contains(x.Value))
+                .ToDictionary(x => x.Key, x => x.Value);
+
             foreach (var backplate in _backplatesForDestruction)
             {
-                Object.Destroy(backplate.gameObject);
+                _layout.Remove(backplate);
+                backplate.Destroy();
             }
+
             _backplatesForDestruction.Clear();
         }
     }

@@ -31,7 +31,13 @@ namespace UI
 
         public virtual void Remove(ILayoutElement element)
         {
-            _allElements.Remove(element);
+            if (_allElements.Contains(element))
+                _allElements.Remove(element);
+        }
+
+        public virtual void RemoveAll()
+        {
+            _allElements.Clear();
         }
 
         private void Awake()

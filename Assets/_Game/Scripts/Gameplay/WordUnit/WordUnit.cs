@@ -1,4 +1,5 @@
 using Configs;
+using DG.Tweening;
 using R3;
 using TMPro;
 using UnityEngine;
@@ -43,6 +44,14 @@ namespace Gameplay
             SetWordText(_configs.Word.Text);
 
             return this;
+        }
+
+        public void Discard(Vector2 deckPosition)
+        {
+            _transform.Discard(deckPosition).OnComplete(() =>
+            {
+                Destroy(gameObject);
+            });
         }
 
         private void InitBehavior()

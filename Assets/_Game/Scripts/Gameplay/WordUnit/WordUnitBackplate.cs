@@ -6,6 +6,7 @@ namespace Gameplay
 {
     public class WordUnitBackplate : MonoBehaviour, ILayoutElement
     {
+        [SerializeField] private CanvasGroup _canvasGroup;
         [SerializeField] private RectTransform _container;
         [SerializeField] private RectTransform _view;
 
@@ -13,6 +14,10 @@ namespace Gameplay
         public Vector2 Position => transform.position;
         public Vector2 ContainerSize => _container.sizeDelta;
 
+        private void Awake()
+        {
+            _canvasGroup.alpha = 1f;
+        }
 
         public void SetSize(Vector2 size)
         {
@@ -32,6 +37,14 @@ namespace Gameplay
         public Tween MoveViewToLocal(Vector2 to)
         {
             return _view.DOLocalMove(to, 0.25f).SetEase(Ease.OutQuad);
+        }
+
+        public void Destroy()
+        {
+            _canvasGroup.DOFade(0, 0.1f).OnComplete(() =>
+            {
+                Destroy(gameObject);
+            });
         }
     }
 }

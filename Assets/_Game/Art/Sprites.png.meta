@@ -496,6 +496,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: ic_sack
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 270
+        width: 152
+        height: 165
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb764a4f6bd25fd46bb7d79f965dce60
+      internalID: 2076174178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -521,12 +543,14 @@ TextureImporter:
       ic_heart_full: -222968538
       ic_infinity: -186057115
       ic_lock: -816058915
+      ic_sack: 2076174178
       ic_settings: -1173457764
       ic_shield_empty: -2015586938
       ic_shield_full: 959961410
       ic_swords: -1463130058
       ic_tree: 1928172411
       oldman: 871545008
+      sack: -1996793046
       square: -1202163512
       square_outline_r32: 329716326
       square_r32: 194469976

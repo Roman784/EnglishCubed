@@ -51,7 +51,6 @@ MonoBehaviour:
   _pointerDetector: {fileID: 8078999396267707461}
   _backplatePrefab: {fileID: 7296553785746029548, guid: ef015052997323f47a7b9b8e6445263e, type: 3}
   _pointsSpawnPoint: {fileID: 8578179997245769628}
-  _pointsPrefab: {fileID: 8482325934696569473, guid: fa43e9f581281b2429348cd903e612a4, type: 3}
 --- !u!114 &6281273425437999530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,6 +65,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.WordUnitTransform
   _rootView: {fileID: 8890383201883565244}
   _containerView: {fileID: 8433991116503443309}
+  _canvasGroup: {fileID: 7019208437472815053}
   _containerBorderWidth: 0.2
   _minContainerWidth: 1
 --- !u!1 &2493296497185266432
@@ -218,6 +218,7 @@ GameObject:
   - component: {fileID: 8157783617715024839}
   - component: {fileID: 8078999396267707461}
   - component: {fileID: 3258336144809420987}
+  - component: {fileID: 7019208437472815053}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -314,6 +315,18 @@ MonoBehaviour:
   _zoomScale: 1.25
   _duration: 0.15
   _ease: 6
+--- !u!225 &7019208437472815053
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6535037824741451997}
+  m_Enabled: 1
+  m_Alpha: 0.19
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &7935613500837700425
 GameObject:
   m_ObjectHideFlags: 0

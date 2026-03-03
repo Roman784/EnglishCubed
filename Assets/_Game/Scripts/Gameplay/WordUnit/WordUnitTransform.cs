@@ -9,6 +9,7 @@ namespace Gameplay
     {
         [SerializeField] private Transform _rootView;
         [SerializeField] private RectTransform _containerView;
+        [SerializeField] private CanvasGroup _canvasGroup;
 
         [Space]
 
@@ -18,6 +19,11 @@ namespace Gameplay
         public Transform Transform => transform;
         public Vector2 Position => Transform.position;
         public Vector2 ContainerSize => _containerView.sizeDelta;
+
+        private void Awake()
+        {
+            _canvasGroup.alpha = 1f;
+        }
 
         public void SetContainerSize(float wordWidth)
         {
@@ -46,6 +52,16 @@ namespace Gameplay
         public Tween MoveViewToLocal(Vector2 to)
         {
             return _rootView.DOLocalMove(to, 0.25f).SetEase(Ease.OutQuad);
+        }
+
+        public Tween Discard(Vector2 deckPosition)
+        {
+            var seq = DOTween.Sequence();
+            seq.Join(transform.DOMove(deckPosition, 0.5f).SetEase(Ease.OutCubic));
+            seq.Join(_canvasGroup.DOFade(0, 0.5f).SetEase(Ease.InQuint));
+            seq.Join(transform.DOScale(0.1f, 0.5f).SetEase(Ease.InExpo));
+
+            return seq;
         }
     }
 }

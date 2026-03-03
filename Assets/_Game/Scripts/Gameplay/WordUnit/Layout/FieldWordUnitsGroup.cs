@@ -1,7 +1,9 @@
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UI;
 using UnityEngine;
+using Utils;
 
 namespace Gameplay
 {
@@ -48,6 +50,26 @@ namespace Gameplay
             _layout.Remove(wordUnit.Transform);
 
             UpdateAvailableWordsCountView();
+        }
+
+        public IEnumerable<WordUnit> Discard(Vector2 deckPosition)
+        {
+            var wordUnits = new List<WordUnit>(_allWordUnits);
+            _allWordUnits.Clear();
+            _layout.RemoveAll();
+
+            Coroutines.Start(DiscardRoutine(wordUnits, deckPosition));
+
+            return wordUnits;
+        }
+
+        private IEnumerator DiscardRoutine(IEnumerable<WordUnit> wordUnits, Vector2 deckPosition)
+        {
+            foreach (WordUnit wordUnit in wordUnits)
+            {
+                yield return new WaitForSeconds(0.15f);
+                wordUnit.Discard(deckPosition);
+            }
         }
 
         private void UpdateAvailableWordsCountView()

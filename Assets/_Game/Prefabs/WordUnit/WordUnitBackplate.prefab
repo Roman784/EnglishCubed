@@ -86,6 +86,7 @@ GameObject:
   - component: {fileID: 4632223879482569922}
   - component: {fileID: 8583962658982909271}
   - component: {fileID: 7296553785746029548}
+  - component: {fileID: 7961381546643005946}
   m_Layer: 5
   m_Name: WordUnitBackplate
   m_TagString: Untagged
@@ -110,7 +111,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 1.135}
+  m_AnchoredPosition: {x: 0, y: 1.1350098}
   m_SizeDelta: {x: 2.5, y: 0.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &8583962658982909271
@@ -148,5 +149,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c463a5e429946ca4a9d25a1168b0b2b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.WordUnitBackplate
+  _canvasGroup: {fileID: 7961381546643005946}
   _container: {fileID: 4632223879482569922}
   _view: {fileID: 2240175172177486120}
+--- !u!225 &7961381546643005946
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4084965036357053503}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0

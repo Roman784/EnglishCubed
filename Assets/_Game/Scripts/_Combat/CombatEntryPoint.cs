@@ -60,6 +60,8 @@ namespace Combat
                 }
                 else
 */
+                G.WordUnitsMovementProvider.Disable();
+
                 _pointsCounter.StartCounting(_fieldWordUnitsGroup.AllWordUnits, _location.PointsAccumulationPoint)
                 .Subscribe(accumulativePoints =>
                 {
@@ -72,7 +74,14 @@ namespace Combat
 
                     _pointsCounter.AddMultipliers(multipliers, _fieldWordUnitsGroup.WordUnitsPointsPoisition).Subscribe(_ =>
                     {
-                        accumulativePoints.Attack(_location.FirstEnemyPosition);
+                        accumulativePoints.Attack(_location.FirstEnemyPosition).Subscribe(_ =>
+                        {
+                            var discarderWords = _fieldWordUnitsGroup.Discard(_mainHUD.DeckButtonPosition);
+                            _handWordUnitsGroup.DestroyLinkedBackplates(discarderWords);
+                            _handWordUnitsGroup.Layout.Arrange();
+
+                            G.WordUnitsMovementProvider.Enable();
+                        });
                     });
                 });
             });
