@@ -75,6 +75,22 @@ namespace Gameplay
             _popSeq.Append(_rootView.DOScale(1f, 0.25f).SetEase(Ease.OutQuad));
         }
 
+        public void Attack(Vector3 position)
+        {
+            var direction = (position - transform.position).normalized;
+            var backPosition = transform.position - direction * 0.5f;
+            var nextPosition = position + direction * 0.5f;
+
+            var seq = DOTween.Sequence();
+            seq.Join(transform.DOMove(backPosition, 0.5f).SetEase(Ease.OutQuad));
+            seq.AppendInterval(0.15f);
+            seq.Append(transform.DOMove(nextPosition, 0.25f).SetEase(Ease.InCubic));
+            seq.Append(transform.DOMove(position, 0.75f).SetEase(Ease.OutElastic));
+            seq.Join(_rootView.DOLocalMoveY(-0.25f, 0.5f).SetEase(Ease.OutBounce));
+            seq.Join(_rootView.DOScale(0.85f, 0.5f));
+            seq.Join(_valueView.DOFade(0, 0.5f).SetEase(Ease.OutQuad));
+        }
+
         private void UpdateView()
         {
             _valueView.text = $"{_sign}{_value}";

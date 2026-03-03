@@ -16,9 +16,9 @@ namespace Gameplay
         private Vector2 _accumulationPosition;
         private WordUnitPoints _accumulativePoints;
 
-        public Observable<Unit> StartCounting(IEnumerable<WordUnit> wordUnits, Vector2 accumulationPosition)
+        public Observable<WordUnitPoints> StartCounting(IEnumerable<WordUnit> wordUnits, Vector2 accumulationPosition)
         {
-            var onCompleted = new Subject<Unit>();
+            var onCompleted = new Subject<WordUnitPoints>();
             _accumulativePoints = null;
             _accumulationPosition = accumulationPosition;
 
@@ -27,7 +27,7 @@ namespace Gameplay
             return onCompleted;
         }
 
-        private IEnumerator CountingRoutine(IEnumerable<WordUnit> wordUnits, Subject<Unit> onCompleted)
+        private IEnumerator CountingRoutine(IEnumerable<WordUnit> wordUnits, Subject<WordUnitPoints> onCompleted)
         {
             var allPoints = new List<WordUnitPoints>();
 
@@ -38,7 +38,7 @@ namespace Gameplay
 
             yield return MoveToAccumulationPositionRoutine(allPoints);
 
-            onCompleted.OnNext(Unit.Default);
+            onCompleted.OnNext(_accumulativePoints);
             onCompleted.OnCompleted();
         }
 
