@@ -25,6 +25,7 @@ namespace Combat
         [SerializeField] private StatCellsView _heroArmorStatView;
         [SerializeField] private StatBarView _heroExperienceStatView;
 
+        [SerializeField] private PointsCounter _pointsCounter;
         [SerializeField] private Location _location;
 
         [SerializeField] private CameraShaker _cameraShaker;
@@ -49,8 +50,6 @@ namespace Combat
 
             _handWordUnitsGroup.SetInitialWordUnits(wordUnits);
 
-            var pointsCounter = new WordUnitsPointsCounter();
-
             _mainHUD.AttackButtonPressedSignal.ThrottleFirst(System.TimeSpan.FromSeconds(0.25f)).Subscribe(_ =>
             {
                 /*var sentence = string.Join(" ", _fieldWordUnitsGroup.AllWordUnits.Select(w => w.GetWordText()));
@@ -61,10 +60,20 @@ namespace Combat
                 }
                 else
 */
-                pointsCounter.StartCounting(_fieldWordUnitsGroup.AllWordUnits, _location.PointsAccumulationPoint)
+                _pointsCounter.StartCounting(_fieldWordUnitsGroup.AllWordUnits, _location.PointsAccumulationPoint)
                 .Subscribe(accumulativePoints =>
                 {
-                    accumulativePoints.Attack(_location.FirstEnemyPosition);
+                    var multipliers = new List<PointsMultiplierData>()
+                    {
+                        new PointsMultiplierData(2f, "Вопрос "),
+                        new PointsMultiplierData(1.5f, "Отрицание "),
+                        new PointsMultiplierData(1.5f, "Ещё что-то "),
+                    };
+
+                    _pointsCounter.AddMultipliers(multipliers, _fieldWordUnitsGroup.WordUnitsPointsPoisition).Subscribe(_ =>
+                    {
+                        accumulativePoints.Attack(_location.FirstEnemyPosition);
+                    });
                 });
             });
 

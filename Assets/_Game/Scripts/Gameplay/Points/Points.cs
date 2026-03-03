@@ -6,28 +6,47 @@ using UnityEngine.UIElements;
 
 namespace Gameplay
 {
-    public class WordUnitPoints : MonoBehaviour
+    public class Points : MonoBehaviour
     {
         [SerializeField] private Transform _rootView;
         [SerializeField] private TMP_Text _valueView;
 
-        private int _value;
+        private float _value;
+        private string _message;
         private string _sign;
 
         private Sequence _popSeq;
 
-        public int Value => _value;
+        public float Value => _value;
         public string Sign => _sign;
 
-        public void Plus(int value)
+        public void Plus(float value)
         {
             _value += value;
+            UpdateView();
+        }
+
+        public void Multiply(float multiplier)
+        {
+            _value *= multiplier;
+            UpdateView();
+        }
+
+        public void SetMessage(string message)
+        {
+            _message = message;
             UpdateView();
         }
 
         public void SetSign(string sign)
         {
             _sign = sign;
+            UpdateView();
+        }
+
+        public void Round()
+        {
+            _value = Mathf.Floor(_value);
             UpdateView();
         }
 
@@ -42,7 +61,8 @@ namespace Gameplay
 
         public void TurnIntoAccumulator()
         {
-            _sign = "<sprite index=1>";
+            _message = "<sprite index=1>";
+            _sign = "";
             UpdateView();
 
             transform.DOScale(1.5f, 0.25f).SetEase(Ease.OutBack);
@@ -97,7 +117,7 @@ namespace Gameplay
 
         private void UpdateView()
         {
-            _valueView.text = $"{_sign}{_value}";
+            _valueView.text = $"{_message}{_sign}{_value}";
         }
     }
 }

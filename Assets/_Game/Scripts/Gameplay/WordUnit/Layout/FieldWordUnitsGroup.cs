@@ -9,6 +9,7 @@ namespace Gameplay
     public class FieldWordUnitsGroup : MonoBehaviour
     {
         [SerializeField] private TMP_Text _availableWordsCountView;
+        [SerializeField] private Transform _wordUnitsPointsPoint;
 
         private List<WordUnit> _allWordUnits = new();
         private FieldFlowLayout _layout;
@@ -17,6 +18,7 @@ namespace Gameplay
 
         public FieldFlowLayout Layout => _layout;
         public IEnumerable<WordUnit> AllWordUnits => _allWordUnits;
+        public Vector2 WordUnitsPointsPoisition => _wordUnitsPointsPoint.position;
 
         private void Awake()
         {

@@ -19,13 +19,14 @@ namespace Gameplay
         [Space]
 
         [SerializeField] private Transform _pointsSpawnPoint;
-        [SerializeField] private WordUnitPoints _pointsPrefab;
 
         private WordUnitConfigs _configs;
         private WordUnitTransform _transform;
 
         public WordUnitTransform Transform => _transform;
         public WordUnitBackplate BackplatePrefab => _backplatePrefab;
+        public int Points => _configs.Points;
+        public Vector2 PointsSpawnPosition => _pointsSpawnPoint.position;
 
         public string GetWordText() => _configs?.Word.Text ?? "";
 
@@ -53,18 +54,6 @@ namespace Gameplay
             _pointerDetector.OnPointerUpSignal.Subscribe(_ => behaviorHandler.HandleOnPointerUp());
             _pointerDetector.OnPointerClickSignal.Subscribe(_ => behaviorHandler.HandleOnPointerClick());
             behaviorHandler.SetInHandBehavior();
-        }
-
-        [ContextMenu("Extract Points")]
-        public WordUnitPoints ExtractPoints()
-        {
-            var createdPoints = Instantiate(_pointsPrefab, _pointsSpawnPoint.position, Quaternion.identity);
-            
-            createdPoints.Plus(_configs.Points);
-            createdPoints.SetSign("+");
-            createdPoints.Show();
-
-            return createdPoints;
         }
 
         private void SetWordText(string text)

@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 3653005562266731985}
   - component: {fileID: 8482325934696569473}
   m_Layer: 0
-  m_Name: WordUnitPoints
+  m_Name: Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
