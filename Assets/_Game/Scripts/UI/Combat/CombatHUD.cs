@@ -9,9 +9,11 @@ namespace UI
 
         private Subject<Unit> _attackButtonPressedSignalSubj = new();
         private Subject<Unit> _deckButtonPressedSignalSubj = new();
+        private Subject<Unit> _discardButtonPressedSignalSubj = new();
 
         public Observable<Unit> AttackButtonPressedSignal => _attackButtonPressedSignalSubj;
         public Observable<Unit> DeckButtonPressedSignal => _deckButtonPressedSignalSubj;
+        public Observable<Unit> DiscardButtonPressedSignal => _discardButtonPressedSignalSubj;
 
         public Vector2 DeckButtonPosition => _deckButtonPoint.position;
 
@@ -23,6 +25,11 @@ namespace UI
         public void PressDeckButton()
         {
             _deckButtonPressedSignalSubj.OnNext(Unit.Default);
+        }
+
+        public void PressDiscardButton()
+        {
+            _discardButtonPressedSignalSubj.OnNext(Unit.Default);
         }
     }
 }

@@ -40,6 +40,7 @@ namespace Combat
             var grammarValidator = new GrammarValidator(G.Configs.LexiconConfigs);
 
             _fieldWordUnitsGroup.SetMaxAvailableWordsCount(5);
+            _fieldWordUnitsGroup.SetDiscardPointsCount(3);
 
             var wordUnits = new List<WordUnit>();
             foreach (var configs in _wordUnitsConfigs)
@@ -52,38 +53,51 @@ namespace Combat
 
             _mainHUD.AttackButtonPressedSignal.ThrottleFirst(System.TimeSpan.FromSeconds(0.25f)).Subscribe(_ =>
             {
-                /*var sentence = string.Join(" ", _fieldWordUnitsGroup.AllWordUnits.Select(w => w.GetWordText()));
+                var sentence = string.Join(" ", _fieldWordUnitsGroup.AllWordUnits.Select(w => w.GetWordText()));
                 var res = grammarValidator.Validate(sentence);
                 if (!res.IsValid)
                 {
                     G.UIRoot.ShowMessage(G.Configs.GrammarHintsConfigs.GetMessage(res.HintCode));
                 }
                 else
-*/
-                G.WordUnitsMovementProvider.Disable();
-
-                _pointsCounter.StartCounting(_fieldWordUnitsGroup.AllWordUnits, _location.PointsAccumulationPoint)
-                .Subscribe(accumulativePoints =>
                 {
-                    var multipliers = new List<PointsMultiplierData>()
+
+                    G.WordUnitsMovementProvider.Disable();
+
+                    _pointsCounter.StartCounting(_fieldWordUnitsGroup.AllWordUnits, _location.PointsAccumulationPoint)
+                    .Subscribe(accumulativePoints =>
                     {
+                        var multipliers = new List<PointsMultiplierData>()
+                        {
                         new PointsMultiplierData(2f, "Вопрос "),
                         new PointsMultiplierData(1.5f, "Отрицание "),
                         new PointsMultiplierData(1.5f, "Ещё что-то "),
-                    };
+                        };
 
-                    _pointsCounter.AddMultipliers(multipliers, _fieldWordUnitsGroup.WordUnitsPointsPoisition).Subscribe(_ =>
-                    {
-                        accumulativePoints.Attack(_location.FirstEnemyPosition).Subscribe(_ =>
+                        _pointsCounter.AddMultipliers(multipliers, _fieldWordUnitsGroup.WordUnitsPointsPoisition).Subscribe(_ =>
                         {
-                            var discarderWords = _fieldWordUnitsGroup.Discard(_mainHUD.DeckButtonPosition);
-                            _handWordUnitsGroup.DestroyLinkedBackplates(discarderWords);
-                            _handWordUnitsGroup.Layout.Arrange();
+                            accumulativePoints.Attack(_location.FirstEnemyPosition).Subscribe(_ =>
+                            {
+                                var discarderWords = _fieldWordUnitsGroup.Discard(_mainHUD.DeckButtonPosition);
+                                _handWordUnitsGroup.DestroyLinkedBackplates(discarderWords);
+                                _handWordUnitsGroup.Layout.Arrange();
 
-                            G.WordUnitsMovementProvider.Enable();
+                                G.WordUnitsMovementProvider.Enable();
+                            });
                         });
                     });
-                });
+                }
+            });
+
+            _mainHUD.DiscardButtonPressedSignal.Subscribe(_ =>
+            {
+                if (_fieldWordUnitsGroup.DiscardPointsCount > 0 && _fieldWordUnitsGroup.AllWordUnitsCount > 0)
+                {
+                    _fieldWordUnitsGroup.SpendDiscardPoint();
+                    var discarderWords = _fieldWordUnitsGroup.Discard(_mainHUD.DeckButtonPosition);
+                    _handWordUnitsGroup.DestroyLinkedBackplates(discarderWords);
+                    _handWordUnitsGroup.Layout.Arrange();
+                }
             });
 
             // ========== Hero Stats ==========

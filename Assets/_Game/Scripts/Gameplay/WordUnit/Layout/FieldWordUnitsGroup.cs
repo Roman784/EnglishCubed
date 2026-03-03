@@ -11,16 +11,20 @@ namespace Gameplay
     public class FieldWordUnitsGroup : MonoBehaviour
     {
         [SerializeField] private TMP_Text _availableWordsCountView;
+        [SerializeField] private TMP_Text _discardPointsCountView;
         [SerializeField] private Transform _wordUnitsPointsPoint;
 
         private List<WordUnit> _allWordUnits = new();
         private FieldFlowLayout _layout;
 
         private int _maxAvailableWordsCount;
+        private int _discardPointsCount;
 
         public FieldFlowLayout Layout => _layout;
         public IEnumerable<WordUnit> AllWordUnits => _allWordUnits;
+        public int AllWordUnitsCount => _allWordUnits.Count;
         public Vector2 WordUnitsPointsPoisition => _wordUnitsPointsPoint.position;
+        public int DiscardPointsCount => _discardPointsCount;
 
         private void Awake()
         {
@@ -33,7 +37,13 @@ namespace Gameplay
             UpdateAvailableWordsCountView();
         }
 
-        public bool CanAdd() => _allWordUnits.Count < _maxAvailableWordsCount;
+        public void SetDiscardPointsCount(int count)
+        {
+            _discardPointsCount = count;
+            UpdateDiscardPointsCountView();
+        }
+
+        public bool CanAdd() => AllWordUnitsCount < _maxAvailableWordsCount;
         public bool CanRemove(WordUnit wordUnit) => _allWordUnits.Contains(wordUnit);
 
         public void Add(WordUnit wordUnit)
@@ -52,6 +62,12 @@ namespace Gameplay
             UpdateAvailableWordsCountView();
         }
 
+        public void SpendDiscardPoint()
+        {
+            _discardPointsCount -= 1;
+            UpdateDiscardPointsCountView();
+        }
+
         public IEnumerable<WordUnit> Discard(Vector2 deckPosition)
         {
             var wordUnits = new List<WordUnit>(_allWordUnits);
@@ -67,14 +83,19 @@ namespace Gameplay
         {
             foreach (WordUnit wordUnit in wordUnits)
             {
-                yield return new WaitForSeconds(0.15f);
                 wordUnit.Discard(deckPosition);
+                yield return new WaitForSeconds(0.05f);
             }
         }
 
         private void UpdateAvailableWordsCountView()
         {
             _availableWordsCountView.text = $"доступно: {(_maxAvailableWordsCount - _allWordUnits.Count)}";
+        }
+
+        public void UpdateDiscardPointsCountView()
+        {
+            _discardPointsCountView.text = $"В мешок x{_discardPointsCount}";
         }
     }
 }
