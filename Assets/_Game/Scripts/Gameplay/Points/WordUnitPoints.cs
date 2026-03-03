@@ -1,4 +1,5 @@
 using DG.Tweening;
+using GameRoot;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -54,6 +55,7 @@ namespace Gameplay
             seq.AppendInterval(0.25f);
             seq.Append(_rootView.DOLocalMoveY(0, 0.15f).SetEase(Ease.Flash));
             seq.Join(_valueView.DOFade(0, 0.15f).SetEase(Ease.InQuad));
+            seq.AppendCallback(() => G.CameraShaker.WeakShake());
 
             return seq;
         }
@@ -62,6 +64,7 @@ namespace Gameplay
         {
             var seq = DOTween.Sequence();
             seq.Join(transform.DOMove(position, 0.5f).SetEase(Ease.InBack));
+            seq.AppendCallback(() => G.CameraShaker.WeakShake());
 
             return seq;
         }
@@ -85,6 +88,7 @@ namespace Gameplay
             seq.Join(transform.DOMove(backPosition, 0.5f).SetEase(Ease.OutQuad));
             seq.AppendInterval(0.15f);
             seq.Append(transform.DOMove(nextPosition, 0.25f).SetEase(Ease.InCubic));
+            seq.AppendCallback(() => G.CameraShaker.MidShake());
             seq.Append(transform.DOMove(position, 0.75f).SetEase(Ease.OutElastic));
             seq.Join(_rootView.DOLocalMoveY(-0.25f, 0.5f).SetEase(Ease.OutBounce));
             seq.Join(_rootView.DOScale(0.85f, 0.5f));

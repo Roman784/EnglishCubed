@@ -27,9 +27,13 @@ namespace Combat
 
         [SerializeField] private Location _location;
 
+        [SerializeField] private CameraShaker _cameraShaker;
+
         protected override IEnumerator Run(CombatEnterParams enterParams)
         {
             var isLoaded = false;
+
+            G.CameraShaker = _cameraShaker;
 
             G.WordUnitsMovementProvider = new WordUnitsMovementProvider(_handWordUnitsGroup, _fieldWordUnitsGroup);
             var grammarValidator = new GrammarValidator(G.Configs.LexiconConfigs);

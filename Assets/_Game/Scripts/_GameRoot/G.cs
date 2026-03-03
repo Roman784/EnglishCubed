@@ -17,6 +17,7 @@ namespace GameRoot
         public static AudioProvider AudioProvider;
 
         // Gameplay.
+        public static CameraShaker CameraShaker;
         public static HeroStats HeroStats;
         public static WordUnitsMovementProvider WordUnitsMovementProvider;
 
