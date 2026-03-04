@@ -48,7 +48,8 @@ namespace Combat
             var wordUnits = new List<WordUnit>();
             foreach (var configs in _wordUnitsConfigs)
             {
-                var newWordUnit = Instantiate(_wordUnitPrefab).SetConfigs(configs);
+                var newWordUnit = Instantiate(_wordUnitPrefab, _handWordUnitsGroup.Layout.Container.position, Quaternion.identity)
+                    .SetConfigs(configs);
                 wordUnits.Add(newWordUnit);
             }
 

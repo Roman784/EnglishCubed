@@ -16,7 +16,10 @@ namespace Gameplay
         [SerializeField] private float _containerBorderWidth;
         [SerializeField] private float _minContainerWidth;
 
-        private Tween _localViewMovement;
+        private Tween _movingTween;
+        private Tween _localViewMovingTween;
+        private Sequence _movingWithDecreasingSeq;
+        private Sequence _discardingSeq;
 
         public Transform Transform => transform;
         public Vector2 Position => Transform.position;
@@ -37,35 +40,40 @@ namespace Gameplay
 
         public Tween MoveTo(Vector2 to)
         {
-            return transform.DOMove(to, 0.25f).SetEase(Ease.OutQuad);
+            _movingTween?.Kill();
+            _movingTween = transform.DOMove(to, 0.25f).SetEase(Ease.OutQuad);
+            return _movingTween;
         }
 
         public Tween MoveToByDecreasing(Vector2 position)
         {
-            var seq = DOTween.Sequence();
+            _movingWithDecreasingSeq?.Kill();
+            _movingWithDecreasingSeq = DOTween.Sequence();
 
-            seq.Append(_rootView.DOScale(0, 0.15f));
-            seq.AppendCallback(() => transform.position = position);
-            seq.Append(_rootView.DOScale(1, 0.2f).SetEase(Ease.OutBack));
+            _movingWithDecreasingSeq.Append(_rootView.DOScale(0, 0.15f));
+            _movingWithDecreasingSeq.AppendCallback(() => transform.position = position);
+            _movingWithDecreasingSeq.Append(_rootView.DOScale(1, 0.2f).SetEase(Ease.OutBack));
 
-            return seq;
+            return _movingWithDecreasingSeq;
         }
 
         public Tween MoveViewToLocal(Vector2 to)
         {
-            _localViewMovement?.Kill();
-            _localViewMovement = _rootView.DOLocalMove(to, 0.25f).SetEase(Ease.OutQuad);
-            return _localViewMovement;
+            _localViewMovingTween?.Kill();
+            _localViewMovingTween = _rootView.DOLocalMove(to, 0.25f).SetEase(Ease.OutQuad);
+            return _localViewMovingTween;
         }
 
         public Tween Discard(Vector2 deckPosition)
         {
-            var seq = DOTween.Sequence();
-            seq.Join(transform.DOMove(deckPosition, 0.5f).SetEase(Ease.OutCubic));
-            seq.Join(_canvasGroup.DOFade(0, 0.5f).SetEase(Ease.InQuint));
-            seq.Join(transform.DOScale(0.1f, 0.5f).SetEase(Ease.InExpo));
+            _discardingSeq?.Kill();
+            _discardingSeq = DOTween.Sequence();
 
-            return seq;
+            _discardingSeq.Join(transform.DOMove(deckPosition, 0.5f).SetEase(Ease.OutCubic));
+            _discardingSeq.Join(_canvasGroup.DOFade(0, 0.5f).SetEase(Ease.InQuint));
+            _discardingSeq.Join(transform.DOScale(0.1f, 0.5f).SetEase(Ease.InExpo));
+
+            return _discardingSeq;
         }
     }
 }

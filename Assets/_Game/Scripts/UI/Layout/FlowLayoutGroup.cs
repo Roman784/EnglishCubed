@@ -54,7 +54,7 @@ namespace UI
         }
 
         [ContextMenu("Arrange")]
-        public Observable<ILayoutElement> Arrange()
+        public Observable<ILayoutElement> Arrange(bool instantly = false)
         {
             if (_allElements.Count == 0) return Observable.Never<ILayoutElement>();
 
@@ -76,7 +76,7 @@ namespace UI
             var scale = CalculateOptimalScale(_allElements.ToList(), baseSizes, containerWidth, containerHeight);
             var lines = CreateLinesWithScale(_allElements, baseSizes, containerWidth, scale);
             var elementsAndPositionsPair = CenterLinesWithScale(
-                lines, minScreenContainerCorner, maxScreenContainerCorner, baseSizes, scale, elementMovedSignal);
+                lines, minScreenContainerCorner, maxScreenContainerCorner, baseSizes, scale, instantly, elementMovedSignal);
 
             foreach (var pair in elementsAndPositionsPair)
                 elementPositionsMap[pair.Item1] = pair.Item2;
@@ -166,7 +166,7 @@ namespace UI
 
         private List<(ILayoutElement, Vector2)> CenterLinesWithScale(List<List<ILayoutElement>> lines,
             Vector2 minContainerCorner, Vector2 maxContainerCorner,
-            Dictionary<ILayoutElement, Vector2> baseSizes, float scale,
+            Dictionary<ILayoutElement, Vector2> baseSizes, float scale, bool instantly,
             Subject<ILayoutElement> elementMovedSignal)
         {
             if (lines.Count == 0) return null;
@@ -204,12 +204,22 @@ namespace UI
                     ApplyScaleToElement(element, scale);
 
                     if (element.Position != position)
-                        Move(element, position).OnComplete(() =>
+                        if (!instantly)
+                            Move(element, position).OnComplete(() =>
+                            {
+                                elementMovedSignal.OnNext(element);
+                                if (element == _allElements.LastOrDefault())
+                                    elementMovedSignal.OnCompleted();
+                            });
+                        else
                         {
-                            elementMovedSignal.OnNext(element);
+                            element.Transform.position = position;
                             if (element == _allElements.LastOrDefault())
+                            {
+                                elementMovedSignal.OnNext(element);
                                 elementMovedSignal.OnCompleted();
-                        });
+                            }
+                        }
 
                     currentX += scaledSize.x + scaledSpacing;
                 }

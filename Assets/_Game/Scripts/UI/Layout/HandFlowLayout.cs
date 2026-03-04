@@ -7,11 +7,11 @@ namespace UI
 {
     public class HandFlowLayout : FlowLayoutGroup
     {
-        public void SetInitialElements(IEnumerable<ILayoutElement> elements)
+        public void SetInitialElements(IEnumerable<ILayoutElement> elements, bool instantly = false)
         {
             _allElements.Clear();
             _allElements.AddRange(elements);
-            Arrange();
+            Arrange(instantly);
         }
 
         public bool Contains(ILayoutElement element) => _allElements.Contains(element);

@@ -10,7 +10,8 @@ namespace Gameplay
         [SerializeField] private RectTransform _container;
         [SerializeField] private RectTransform _view;
 
-        private Tween _localViewMovement;
+        private Tween _movingTween;
+        private Tween _localViewMovingTween;
 
         public Transform Transform => transform;
         public Vector2 Position => transform.position;
@@ -28,7 +29,9 @@ namespace Gameplay
 
         public Tween MoveTo(Vector2 to)
         {
-            return transform.DOMove(to, 0.25f).SetEase(Ease.OutQuad);
+            _movingTween?.Kill();
+            _movingTween = transform.DOMove(to, 0.25f).SetEase(Ease.OutQuad);
+            return _movingTween;
         }
 
         public Tween MoveToByDecreasing(Vector2 position)
@@ -38,9 +41,9 @@ namespace Gameplay
 
         public Tween MoveViewToLocal(Vector2 to)
         {
-            _localViewMovement?.Kill();
-            _localViewMovement = _view.DOLocalMove(to, 0.25f).SetEase(Ease.OutQuad);
-            return _localViewMovement;
+            _localViewMovingTween?.Kill();
+            _localViewMovingTween = _view.DOLocalMove(to, 0.25f).SetEase(Ease.OutQuad);
+            return _localViewMovingTween;
         }
 
         public void Destroy()

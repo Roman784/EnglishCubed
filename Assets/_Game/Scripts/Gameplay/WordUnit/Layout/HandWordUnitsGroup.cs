@@ -23,10 +23,10 @@ namespace Gameplay
             _layout = GetComponent<HandFlowLayout>();
         }
 
-        public void SetInitialWordUnits(IEnumerable<WordUnit> wordUnits)
+        public void SetInitialWordUnits(IEnumerable<WordUnit> wordUnits, bool instantly = false)
         {
             _allWordUnits = new List<WordUnit>(wordUnits);
-            _layout.SetInitialElements(wordUnits.Select(w => w.Transform));
+            _layout.SetInitialElements(wordUnits.Select(w => w.Transform), instantly);
         }
 
         public bool CanAdd() => true;

@@ -30,7 +30,10 @@ namespace UI
 
         private WordUnit CreateWordUnit(WordUnitConfigs wordUnitConfigs)
         {
-            return Instantiate(_wordUnitPrefab, _layout.Container, true).SetConfigs(wordUnitConfigs);
+            var createWord = Instantiate(_wordUnitPrefab, transform.position, Quaternion.identity);
+            createWord.transform.SetParent(_layout.Container, true);
+            createWord.SetConfigs(wordUnitConfigs);
+            return createWord;
         }
     }
 }
