@@ -50,7 +50,9 @@ namespace Gameplay
             _movingWithDecreasingSeq?.Kill();
             _movingWithDecreasingSeq = DOTween.Sequence();
 
-            _movingWithDecreasingSeq.Append(_rootView.DOScale(0, 0.15f));
+            if (_rootView.localScale != Vector3.zero)
+                _movingWithDecreasingSeq.Append(_rootView.DOScale(0, 0.15f));
+
             _movingWithDecreasingSeq.AppendCallback(() => transform.position = position);
             _movingWithDecreasingSeq.Append(_rootView.DOScale(1, 0.2f).SetEase(Ease.OutBack));
 
@@ -74,6 +76,19 @@ namespace Gameplay
             _discardingSeq.Join(transform.DOScale(0.1f, 0.5f).SetEase(Ease.InExpo));
 
             return _discardingSeq;
+        }
+
+        public void ZeroRootViewScale()
+        {
+            _rootView.localScale = Vector3.zero;
+        }
+
+        private void OnDestroy()
+        {
+            _movingTween?.Kill();
+            _localViewMovingTween?.Kill();
+            _movingWithDecreasingSeq?.Kill();
+            _discardingSeq?.Kill();
         }
     }
 }

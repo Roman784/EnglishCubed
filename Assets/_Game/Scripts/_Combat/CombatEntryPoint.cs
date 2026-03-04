@@ -2,14 +2,15 @@ using Configs;
 using Gameplay;
 using GameRoot;
 using GrammarValidation;
+using R3;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UI;
 using UnityEngine;
-using R3;
-using System;
 using Utils;
+using static UnityEngine.Rendering.STP;
 
 namespace Combat
 {
@@ -45,7 +46,7 @@ namespace Combat
             // ========== Deck ==========
             var deck = new Deck(_wordUnitsConfigs);
 
-            var wordUnits = new List<WordUnit>();
+            /*var wordUnits = new List<WordUnit>();
             foreach (var configs in _wordUnitsConfigs)
             {
                 var newWordUnit = Instantiate(_wordUnitPrefab, _handWordUnitsGroup.Layout.Container.position, Quaternion.identity)
@@ -53,7 +54,7 @@ namespace Combat
                 wordUnits.Add(newWordUnit);
             }
 
-            _handWordUnitsGroup.SetInitialWordUnits(wordUnits);
+            _handWordUnitsGroup.SetInitialWordUnits(wordUnits);*/
 
 
 
@@ -67,7 +68,6 @@ namespace Combat
                 }
                 else
                 {
-
                     G.WordUnitsMovementProvider.Disable();
 
                     _pointsCounter.StartCounting(_fieldWordUnitsGroup.AllWordUnits, _location.PointsAccumulationPoint)
@@ -116,6 +116,19 @@ namespace Combat
                     _handWordUnitsGroup.Layout.GravitationalPuller.Enable();
                     _fieldWordUnitsGroup.Layout.GravitationalPuller.Enable();
                 });
+            });
+
+            _mainHUD.DrawWordUnitsButtonPressedSignal.Subscribe(_ =>
+            {
+                var wordUnitConfigs = deck.GetRandom();
+                if (wordUnitConfigs != null)
+                {
+                    deck.Remove(wordUnitConfigs);
+                    var newWordUnit = Instantiate(_wordUnitPrefab, _mainHUD.DrawWordUnitsButtonPosition, Quaternion.identity)
+                        .SetConfigs(wordUnitConfigs);
+                    _handWordUnitsGroup.Add(newWordUnit);
+                    _handWordUnitsGroup.Layout.Arrange();
+                }
             });
 
             // ========== Hero Stats ==========

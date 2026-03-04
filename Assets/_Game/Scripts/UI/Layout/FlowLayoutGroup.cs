@@ -15,12 +15,13 @@ namespace UI
 
         protected List<ILayoutElement> _allElements = new();
         protected Dictionary<ILayoutElement, Vector2> _elementPositionsMap = new();
-        protected ILayoutElement _lastAddedElement;
+        protected List<ILayoutElement> _newElements = new();
         private Dictionary<ILayoutElement, Vector3> _originalScales = new();
 
         private GravitationalPuller _gravitationalPuller;
 
         public RectTransform Container => _container;
+        public int AllElementsCount => _allElements.Count;
         public GravitationalPuller GravitationalPuller => _gravitationalPuller;
 
         protected abstract Tween Move(ILayoutElement element, Vector2 position);
@@ -28,7 +29,7 @@ namespace UI
         public virtual void Add(ILayoutElement element)
         {
             _allElements.Add(element);
-            _lastAddedElement = element;
+            _newElements.Add(element);
         }
 
         public virtual void Remove(ILayoutElement element)
@@ -56,7 +57,7 @@ namespace UI
         [ContextMenu("Arrange")]
         public Observable<ILayoutElement> Arrange(bool instantly = false)
         {
-            if (_allElements.Count == 0) return Observable.Never<ILayoutElement>();
+            if (_allElements.Count == 0 || _container == null) return Observable.Never<ILayoutElement>();
 
             var elementMovedSignal = new Subject<ILayoutElement>();
             var elementPositionsMap = new Dictionary<ILayoutElement, Vector2>();
@@ -81,8 +82,8 @@ namespace UI
             foreach (var pair in elementsAndPositionsPair)
                 elementPositionsMap[pair.Item1] = pair.Item2;
 
-            _lastAddedElement = null;
             _elementPositionsMap = elementPositionsMap;
+            _newElements.Clear();
 
             return elementMovedSignal;
         }
@@ -204,22 +205,17 @@ namespace UI
                     ApplyScaleToElement(element, scale);
 
                     if (element.Position != position)
-                        if (!instantly)
-                            Move(element, position).OnComplete(() =>
-                            {
-                                elementMovedSignal.OnNext(element);
-                                if (element == _allElements.LastOrDefault())
-                                    elementMovedSignal.OnCompleted();
-                            });
-                        else
-                        {
+                    {
+                        if (instantly)
                             element.Transform.position = position;
+
+                        Move(element, position).OnComplete(() =>
+                        {
+                            elementMovedSignal.OnNext(element);
                             if (element == _allElements.LastOrDefault())
-                            {
-                                elementMovedSignal.OnNext(element);
                                 elementMovedSignal.OnCompleted();
-                            }
-                        }
+                        });
+                    }
 
                     currentX += scaledSize.x + scaledSpacing;
                 }

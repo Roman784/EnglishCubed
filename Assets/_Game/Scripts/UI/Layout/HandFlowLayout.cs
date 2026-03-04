@@ -11,6 +11,7 @@ namespace UI
         {
             _allElements.Clear();
             _allElements.AddRange(elements);
+            _newElements.AddRange(elements);
             Arrange(instantly);
         }
 
@@ -20,7 +21,10 @@ namespace UI
 
         protected override Tween Move(ILayoutElement element, Vector2 position)
         {
-            return element.MoveTo(position);
+            if (_newElements.Contains(element))
+                return element.MoveToByDecreasing(position);
+            else
+                return element.MoveTo(position);
         }
     }
 }

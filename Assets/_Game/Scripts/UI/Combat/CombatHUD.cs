@@ -19,6 +19,7 @@ namespace UI
         public Observable<Unit> DiscardButtonPressedSignal => _discardButtonPressedSignalSubj;
 
         public Vector2 DeckButtonPosition => _deckButtonPoint.position;
+        public Vector2 DrawWordUnitsButtonPosition => _drawWordUnitsButtonPoint.position;
 
         public void PressAttackButton()
         {

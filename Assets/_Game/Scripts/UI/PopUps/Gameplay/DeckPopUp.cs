@@ -25,7 +25,7 @@ namespace UI
             {
                 wordUnits.Add(CreateWordUnit(configs));
             }
-            _layout.SetInitialElements(wordUnits.Select(w => w.Transform));
+            _layout.SetInitialElements(wordUnits.Select(w => w.Transform), true);
         }
 
         private WordUnit CreateWordUnit(WordUnitConfigs wordUnitConfigs)
@@ -33,6 +33,7 @@ namespace UI
             var createWord = Instantiate(_wordUnitPrefab, transform.position, Quaternion.identity);
             createWord.transform.SetParent(_layout.Container, true);
             createWord.SetConfigs(wordUnitConfigs);
+            createWord.Transform.ZeroRootViewScale();
             return createWord;
         }
     }

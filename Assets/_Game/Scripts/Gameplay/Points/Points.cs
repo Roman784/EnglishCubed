@@ -4,6 +4,7 @@ using R3;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
+using Utils;
 
 namespace Gameplay
 {
@@ -62,7 +63,7 @@ namespace Gameplay
 
         public void TurnIntoAccumulator()
         {
-            _message = "<sprite index=1>";
+            _message = TextIcons.CrossedSwords;
             _sign = "";
             UpdateView();
 
