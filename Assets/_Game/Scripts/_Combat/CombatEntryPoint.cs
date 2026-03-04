@@ -42,6 +42,9 @@ namespace Combat
             _fieldWordUnitsGroup.SetMaxAvailableWordsCount(5);
             _fieldWordUnitsGroup.SetDiscardPointsCount(3);
 
+            // ========== Deck ==========
+            var deck = new Deck(_wordUnitsConfigs);
+
             var wordUnits = new List<WordUnit>();
             foreach (var configs in _wordUnitsConfigs)
             {
@@ -50,6 +53,8 @@ namespace Combat
             }
 
             _handWordUnitsGroup.SetInitialWordUnits(wordUnits);
+
+
 
             _mainHUD.AttackButtonPressedSignal.ThrottleFirst(System.TimeSpan.FromSeconds(0.25f)).Subscribe(_ =>
             {
@@ -98,6 +103,18 @@ namespace Combat
                     _handWordUnitsGroup.DestroyLinkedBackplates(discarderWords);
                     _handWordUnitsGroup.Layout.Arrange();
                 }
+            });
+
+            _mainHUD.DeckButtonPressedSignal.Subscribe(_ => 
+            {
+                _handWordUnitsGroup.Layout.GravitationalPuller.Disable();
+                _fieldWordUnitsGroup.Layout.GravitationalPuller.Disable();
+
+                G.PopUpsProvider.OpenDeckPopUp(deck.AllWordUnits).CloseSignal.Subscribe(_ =>
+                {
+                    _handWordUnitsGroup.Layout.GravitationalPuller.Enable();
+                    _fieldWordUnitsGroup.Layout.GravitationalPuller.Enable();
+                });
             });
 
             // ========== Hero Stats ==========

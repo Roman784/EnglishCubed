@@ -1,4 +1,6 @@
+using Configs;
 using GameRoot;
+using System.Collections.Generic;
 
 namespace UI
 {
@@ -8,5 +10,17 @@ namespace UI
 
         private UIConfigs Configs => G.ConfigsProvider.GameConfigs.UIConfigs;
 
+        public PopUpsProvider()
+        {
+            _popUpFactory = new PopUpFactory();
+        }
+
+        public DeckPopUp OpenDeckPopUp(IEnumerable<WordUnitConfigs> wordUnitConfigs)
+        {
+            var createdPopUp = _popUpFactory.Create(Configs.DeckPopUpPrefab);
+            createdPopUp.Open(wordUnitConfigs);
+
+            return createdPopUp;
+        }
     }
 }

@@ -9,6 +9,7 @@ namespace UI
     public abstract class FlowLayoutGroup : MonoBehaviour
     {
         [SerializeField] private RectTransform _container;
+        [SerializeField] private float _scale = 1;
         [SerializeField, Range(0f, 1f)] private float _spacing;
         [SerializeField, Range(0f, 1f)] private float _gravitationalPullerStrength;
 
@@ -19,6 +20,7 @@ namespace UI
 
         private GravitationalPuller _gravitationalPuller;
 
+        public RectTransform Container => _container;
         public GravitationalPuller GravitationalPuller => _gravitationalPuller;
 
         protected abstract Tween Move(ILayoutElement element, Vector2 position);
@@ -90,7 +92,7 @@ namespace UI
             float containerWidth, float containerHeight)
         {
             float minScale = 0.3f;
-            float maxScale = 1f;
+            float maxScale = _scale;
             float optimalScale = 1f;
 
             for (float testScale = maxScale; testScale >= minScale; testScale -= 0.05f)

@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: UIConfigs
   m_EditorClassIdentifier: 
   Root: {fileID: 7702238020924992235, guid: 377f9ba9cc9f0414b9ec601c009f52d8, type: 3}
+  DeckPopUpPrefab: {fileID: 2262036923349815242, guid: c4c2297f3632649418af8f691c4f9ecf, type: 3}

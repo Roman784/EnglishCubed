@@ -39,6 +39,7 @@ namespace GameRoot
 
             G.Repository = new Repository(gameStateProvider);
             G.UIRoot = CreateUIRoot();
+            G.PopUpsProvider = new PopUpsProvider();
             G.SceneProvider = new SceneProvider(G.UIRoot);
             G.AudioProvider = new AudioProvider();
 

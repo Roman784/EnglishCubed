@@ -9,5 +9,8 @@ namespace GameRoot
     {
         [Header("Root")]
         public UIRoot Root;
+
+        [Header("PopUps Gameplay")]
+        public DeckPopUp DeckPopUpPrefab;
     }
 }

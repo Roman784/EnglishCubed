@@ -13,6 +13,7 @@ namespace GameRoot
         public static IConfigsProvider ConfigsProvider;
         public static Repository Repository;
         public static UIRoot UIRoot;
+        public static PopUpsProvider PopUpsProvider;
         public static SceneProvider SceneProvider;
         public static AudioProvider AudioProvider;
 

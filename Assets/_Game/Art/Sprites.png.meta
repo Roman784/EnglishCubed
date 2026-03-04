@@ -503,7 +503,7 @@ TextureImporter:
         x: 834
         y: 270
         width: 152
-        height: 165
+        height: 166
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -514,6 +514,28 @@ TextureImporter:
       bones: []
       spriteID: fb764a4f6bd25fd46bb7d79f965dce60
       internalID: 2076174178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ic_sack_open
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 269
+        width: 136
+        height: 170
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb4e50ff2a5e0cc4382b91db0c808785
+      internalID: -2078837754
       vertices: []
       indices: 
       edges: []
@@ -544,6 +566,7 @@ TextureImporter:
       ic_infinity: -186057115
       ic_lock: -816058915
       ic_sack: 2076174178
+      ic_sack_open: -2078837754
       ic_settings: -1173457764
       ic_shield_empty: -2015586938
       ic_shield_full: 959961410

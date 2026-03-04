@@ -10,6 +10,8 @@ namespace Gameplay
         [SerializeField] private RectTransform _container;
         [SerializeField] private RectTransform _view;
 
+        private Tween _localViewMovement;
+
         public Transform Transform => transform;
         public Vector2 Position => transform.position;
         public Vector2 ContainerSize => _container.sizeDelta;
@@ -36,7 +38,9 @@ namespace Gameplay
 
         public Tween MoveViewToLocal(Vector2 to)
         {
-            return _view.DOLocalMove(to, 0.25f).SetEase(Ease.OutQuad);
+            _localViewMovement?.Kill();
+            _localViewMovement = _view.DOLocalMove(to, 0.25f).SetEase(Ease.OutQuad);
+            return _localViewMovement;
         }
 
         public void Destroy()
