@@ -11,6 +11,8 @@ namespace Gameplay
 
         public IEnumerable<WordUnitConfigs> AllWordUnits => _allWordUnits;
 
+        public bool HasAnyWordUnit => _allWordUnits.Count > 0;
+
         public Deck(IEnumerable<WordUnitConfigs> wordUnits = null)
         {
             _allWordUnits = new List<WordUnitConfigs>();

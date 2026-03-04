@@ -5336,6 +5336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.HandWordUnitsGroup
   _capacityView: {fileID: 2003338546}
+  _drawingPointsCountView: {fileID: 2132041229}
 --- !u!1 &1830545100
 GameObject:
   m_ObjectHideFlags: 0

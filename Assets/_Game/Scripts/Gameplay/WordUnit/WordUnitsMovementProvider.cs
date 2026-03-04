@@ -57,7 +57,7 @@ namespace Gameplay
 
         public void MoveFromFieldToHand(WordUnit wordUnit)
         {
-            if (!_isEnabled || !_fieldLayout.CanRemove(wordUnit) || !_handGroup.CanAdd()) return;
+            if (!_isEnabled || !_fieldLayout.CanRemove(wordUnit) || !_handGroup.CanAdd(wordUnit)) return;
 
             _fieldLayout.Layout.GravitationalPuller.Disable();
             _handGroup.Layout.GravitationalPuller.Disable();

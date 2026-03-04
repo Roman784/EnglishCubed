@@ -11,16 +11,21 @@ namespace Gameplay
     public class HandWordUnitsGroup : MonoBehaviour
     {
         [SerializeField] private TMP_Text _capacityView;
+        [SerializeField] private TMP_Text _drawingPointsCountView;
 
         private List<WordUnit> _allWordUnits = new();
         private Dictionary<WordUnit, WordUnitBackplate> _backplatesMap = new();
         private List<WordUnitBackplate> _backplatesForDestruction = new();
 
-        private int _capacity;
+        private int _maxCapacity;
+        private int _drawingPointsCount;
         private HandFlowLayout _layout;
 
+        public int CapacityLeft => _maxCapacity - CurrentCapacity;
         public HandFlowLayout Layout => _layout;
         public IEnumerable<WordUnit> AllWordUnits => _allWordUnits;
+        private int CurrentCapacity => _layout.AllElementsCount;
+        public int DrawingPointsCount => _drawingPointsCount;
 
         private void Awake()
         {
@@ -33,13 +38,25 @@ namespace Gameplay
             _layout.SetInitialElements(wordUnits.Select(w => w.Transform), instantly);
         }
 
-        public void SetCapacity(int capacity)
+        public void SetMaxCapacity(int capacity)
         {
-            _capacity = capacity;
+            _maxCapacity = capacity;
             UpdateCapacityView();
         }
 
-        public bool CanAdd() => true;
+        public void SetDrawingPointsCount(int count)
+        {
+            _drawingPointsCount = count;
+            UpdateDrawingPointsView();
+        }
+
+        public void SpendDrawingPoint()
+        {
+            _drawingPointsCount -= 1;
+            UpdateDrawingPointsView();
+        }
+
+        public bool CanAdd(WordUnit wordUnit) => CapacityLeft > 0 || _backplatesMap.ContainsKey(wordUnit);
         public bool CanRemove(WordUnit wordUnit) => _allWordUnits.Contains(wordUnit);
 
         public void Add(WordUnit wordUnit)
@@ -109,7 +126,12 @@ namespace Gameplay
 
         private void UpdateCapacityView()
         {
-            _capacityView.text = $"Слов: {_layout.AllElementsCount}/{_capacity}";
+            _capacityView.text = $"Слов: {CurrentCapacity}/{_maxCapacity}";
+        }
+
+        private void UpdateDrawingPointsView()
+        {
+            _drawingPointsCountView.text = $"x{_drawingPointsCount}";
         }
     }
 }

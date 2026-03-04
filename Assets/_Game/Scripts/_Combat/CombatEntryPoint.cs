@@ -42,6 +42,8 @@ namespace Combat
 
             _fieldWordUnitsGroup.SetMaxAvailableWordsCount(5);
             _fieldWordUnitsGroup.SetDiscardPointsCount(3);
+            _handWordUnitsGroup.SetMaxCapacity(15);
+            _handWordUnitsGroup.SetDrawingPointsCount(5);
 
             // ========== Deck ==========
             var deck = new Deck(_wordUnitsConfigs);
@@ -103,6 +105,7 @@ namespace Combat
                     var discarderWords = _fieldWordUnitsGroup.Discard(_mainHUD.DeckButtonPosition);
                     _handWordUnitsGroup.DestroyLinkedBackplates(discarderWords);
                     _handWordUnitsGroup.Layout.Arrange();
+                    deck.Add(discarderWords.Select(w => w.Configs));
                 }
             });
 
@@ -120,13 +123,28 @@ namespace Combat
 
             _mainHUD.DrawWordUnitsButtonPressedSignal.Subscribe(_ =>
             {
-                var wordUnitConfigs = deck.GetRandom();
-                if (wordUnitConfigs != null)
+                var handCapacityLeft = _handWordUnitsGroup.CapacityLeft;
+                if (handCapacityLeft > 0 && _handWordUnitsGroup.DrawingPointsCount > 0)
                 {
-                    deck.Remove(wordUnitConfigs);
-                    var newWordUnit = Instantiate(_wordUnitPrefab, _mainHUD.DrawWordUnitsButtonPosition, Quaternion.identity)
-                        .SetConfigs(wordUnitConfigs);
-                    _handWordUnitsGroup.Add(newWordUnit);
+                    if (deck.HasAnyWordUnit)
+                        _handWordUnitsGroup.SpendDrawingPoint();
+
+                    var wordUnitsConfigs = new List<WordUnitConfigs>();
+                    for (int i = 0; i < handCapacityLeft; i++)
+                    {
+                        if (deck.HasAnyWordUnit)
+                        {
+                            var wordUnitConfigs = deck.GetRandom();
+                            if (wordUnitConfigs != null)
+                            {
+                                deck.Remove(wordUnitConfigs);
+                                var createdWord = Instantiate(_wordUnitPrefab, _mainHUD.DrawWordUnitsButtonPosition, Quaternion.identity)
+                                    .SetConfigs(wordUnitConfigs);
+                                createdWord.Transform.ZeroRootViewScale();
+                                _handWordUnitsGroup.Add(createdWord);
+                            }
+                        }
+                    }
                     _handWordUnitsGroup.Layout.Arrange();
                 }
             });

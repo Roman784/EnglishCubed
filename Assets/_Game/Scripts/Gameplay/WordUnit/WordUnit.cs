@@ -24,6 +24,7 @@ namespace Gameplay
         private WordUnitConfigs _configs;
         private WordUnitTransform _transform;
 
+        public WordUnitConfigs Configs => _configs;
         public WordUnitTransform Transform => _transform;
         public WordUnitBackplate BackplatePrefab => _backplatePrefab;
         public int Points => _configs.Points;
