@@ -3,6 +3,7 @@ using R3;
 using TMPro;
 using UI;
 using UnityEngine;
+using Utils;
 
 namespace Combat
 {
@@ -60,8 +61,22 @@ namespace Combat
 
         public void ShowMessage(string message) => G.UIRoot.ShowMessage(message);
 
-        public void UpdateDiscardPoints(int points) => _discardPointsView.text = $"В мешок x{points}";
-        public void UpdateDrawPoints(int points) => _drawPointsView.text = $"x{points}";
+        public void UpdateDiscardPoints(int points)
+        {
+            if (points > 0)
+                _discardPointsView.text = $"В мешок x{points}";
+            else
+                _discardPointsView.text = $"В мешок<size=92>{TextIcons.BrokenHeart}</size>";
+        }
+
+        public void UpdateDrawPoints(int points)
+        {
+            if (points > 0)
+                _drawPointsView.text = $"x{points}";
+            else
+                _drawPointsView.text = $"<size=92>{TextIcons.BrokenHeart}</size>";
+        }
+
         public void UpdateAvailableWordsOnField(int count) => _availableWordsOnFieldView.text = $"Доступно: {count}";
         public void UpdateHandCapacity(int current, int max) => _handCapacityView.text = $"Слов: {current}/{max}";
     }

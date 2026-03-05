@@ -83,12 +83,17 @@ namespace Gameplay
             _rootView.localScale = Vector3.zero;
         }
 
-        private void OnDestroy()
+        public void DOKillAll()
         {
             _movingTween?.Kill();
             _localViewMovingTween?.Kill();
             _movingWithDecreasingSeq?.Kill();
             _discardingSeq?.Kill();
+        }
+
+        private void OnDestroy()
+        {
+            DOKillAll();
         }
     }
 }

@@ -39,10 +39,10 @@ namespace Combat
             // ========== MVP ==========
 
             var model = new CombatModel(
-                discardPoints: 10, 
+                discardPoints: 3, 
                 drawPoints: 5,
                 maxAvailableWordsOnFieldCount: 5,
-                maxHandCapacity: 15,
+                maxHandCapacity: 30,
                 deck: deck,
                 handWordUnitsGroup: _handWordUnitsGroup,
                 fieldWordUnitsGroup: _fieldWordUnitsGroup,

@@ -51,6 +51,7 @@ namespace Gameplay
         {
             _transform.Discard(deckPosition).OnComplete(() =>
             {
+                _transform.DOKillAll();
                 Destroy(gameObject);
             });
         }

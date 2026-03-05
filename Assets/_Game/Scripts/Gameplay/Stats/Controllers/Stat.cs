@@ -16,6 +16,7 @@ namespace Gameplay
 
         public int Max => _max;
         public ReadOnlyReactiveProperty<int> Current => _current;
+        public int CurrentValue => _current.CurrentValue;
         public float Rate => _current.Value / _max;
         public Subject<int> ZeroReachedSignal => _zeroReachedSignalSubj;
         public Subject<int> MaxReachedSignal => _maxReachedSignalSubj;
@@ -36,8 +37,8 @@ namespace Gameplay
             CheckAndApplyNewCurrentValue(newCurrentValue);
         }
 
-        public void DecreaseOne() => AddStep(-1);
-        public void IncreaseOne() => AddStep(1);
+        public virtual void DecreaseOne() => AddStep(-1);
+        public virtual void IncreaseOne() => AddStep(1);
 
         public void AddStep(int step)
         {

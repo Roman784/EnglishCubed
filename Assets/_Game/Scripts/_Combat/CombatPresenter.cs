@@ -55,8 +55,16 @@ namespace Combat
                 .AddTo(_disposables);
         }
 
+        // ================ Attack ================
+
         private void HandleAttack()
         {
+            if (_model.UnitsOnFieldCount == 0)
+            {
+                G.UIRoot.ShowMessage("Сначала составь предложение"); // Loc.
+                return;
+            }
+
             var sentence = string.Join(" ", _model.FieldWordUnitsGroup.AllWordUnits.Select(w => w.GetWordText()));
             var validationResult = _model.GrammarValidator.Validate(sentence);
 
@@ -106,11 +114,26 @@ namespace Combat
             .AddTo(_disposables);
         }
 
+        // ================ Discard ================
+
         private void HandleDiscard()
         {
-            if (_model.DiscardPoints <= 0 || _model.UnitsOnFieldCount <= 0) return;
+            if (_model.UnitsOnFieldCount <= 0)
+            {
+                G.UIRoot.ShowMessage("Не вижу ни одного слова"); // Loc.
+                return;
+            }
 
-            _model.SpendDiscardPoint();
+            if (_model.DiscardPoints > 0)
+                _model.SpendDiscardPoint();
+            else if (G.HeroStats.Health.CurrentValue > 1)
+                G.HeroStats.Health.DecreaseOne();
+            else
+            {
+                G.UIRoot.ShowMessage("Ты так сильно хочешь умереть?"); // Loc.
+                return;
+            }
+
             DiscardFieldWords();
         }
 
@@ -122,6 +145,8 @@ namespace Combat
             _model.Deck.Add(discardedWords.Select(w => w.Configs));
         }
 
+        // ================ Open Deck ================
+
         private void HandleDeckOpen()
         {
             _view.DisableControls();
@@ -131,13 +156,31 @@ namespace Combat
                 .AddTo(_disposables);
         }
 
+        // ================ Draw ================
+
         private void HandleDraw()
         {
             var capacityLeft = _model.MaxHandCapacity - _model.UnitsInHandCount;
-            if (capacityLeft <= 0 || _model.DrawPoints <= 0) return;
-             
-            if (_model.Deck.HasAnyWordUnit)
+            if (capacityLeft <= 0)
+            {
+                G.UIRoot.ShowMessage("Все места на поле уже заняты"); // Loc.
+                return;
+            } 
+            else if (!_model.Deck.HasAnyWordUnit)
+            {
+                G.UIRoot.ShowMessage("Мешок пуст, ни одного слова"); // Loc.
+                return;
+            }
+
+            if (_model.DrawPoints > 0)
                 _model.SpendDrawPoint();
+            else if (G.HeroStats.Health.CurrentValue > 1)
+                G.HeroStats.Health.DecreaseOne();
+            else
+            {
+                G.UIRoot.ShowMessage("Ты так сильно хочешь умереть?"); // Loc.
+                return;
+            }
 
             var wordUnitsConfigs = new List<WordUnitConfigs>();
             for (int i = 0; i < capacityLeft; i++)
@@ -152,6 +195,8 @@ namespace Combat
             }
             _model.HandWordUnitsGroup.Layout.Arrange();
         }
+
+        // ================ UI ================
 
         private void UpdateView()
         {

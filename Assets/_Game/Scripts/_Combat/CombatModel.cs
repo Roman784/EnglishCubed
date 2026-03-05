@@ -10,6 +10,9 @@ namespace Combat
 
         public int DiscardPoints { get; private set; }
         public int DrawPoints { get; private set; }
+        public int MaxAvailableWordsOnFieldCount { get; private set; }
+        public int MaxHandCapacity { get; private set; }
+
         public Deck Deck { get; private set; }
         public HandWordUnitsGroup HandWordUnitsGroup { get; private set; }
         public FieldWordUnitsGroup FieldWordUnitsGroup { get; private set; }
@@ -17,8 +20,6 @@ namespace Combat
         public PointsCounter PointsCounter { get; private set; }
         public Location Location { get; private set; }
 
-        public int MaxAvailableWordsOnFieldCount { get; private set; }
-        public int MaxHandCapacity { get; private set; }
         public int AvailableWordsOnFieldCount => MaxAvailableWordsOnFieldCount - UnitsOnFieldCount;
         public int UnitsOnFieldCount => FieldWordUnitsGroup.AllElementsCount;
         public int UnitsInHandCount => HandWordUnitsGroup.AllElementsCount;
