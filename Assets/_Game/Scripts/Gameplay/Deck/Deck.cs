@@ -32,10 +32,14 @@ namespace Gameplay
             _allWordUnits.Add(wordUnit);
         }
 
-        public WordUnitConfigs GetRandom()
+        public WordUnitConfigs DrawRandom()
         {
             if (_allWordUnits.Count == 0) return null;
-            return _allWordUnits[Random.Range(0, _allWordUnits.Count)];
+
+            var index = Random.Range(0, _allWordUnits.Count);
+            var configs = _allWordUnits[index];
+            _allWordUnits.RemoveAt(index);
+            return configs;
         }
 
         public void Remove(WordUnitConfigs configs)

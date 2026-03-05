@@ -1,3 +1,4 @@
+using R3;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,54 +11,25 @@ namespace Gameplay
     [RequireComponent(typeof(HandFlowLayout))]
     public class HandWordUnitsGroup : MonoBehaviour
     {
-        [SerializeField] private TMP_Text _capacityView;
-        [SerializeField] private TMP_Text _drawingPointsCountView;
-
         private List<WordUnit> _allWordUnits = new();
         private Dictionary<WordUnit, WordUnitBackplate> _backplatesMap = new();
         private List<WordUnitBackplate> _backplatesForDestruction = new();
 
-        private int _maxCapacity;
-        private int _drawingPointsCount;
         private HandFlowLayout _layout;
 
-        public int CapacityLeft => _maxCapacity - CurrentCapacity;
-        public HandFlowLayout Layout => _layout;
-        public IEnumerable<WordUnit> AllWordUnits => _allWordUnits;
-        private int CurrentCapacity => _layout.AllElementsCount;
-        public int DrawingPointsCount => _drawingPointsCount;
+        private Subject<Unit> _changedSignalSubj = new();
 
-        private void Awake()
+        public HandFlowLayout Layout => _layout;
+        public int AllElementsCount => _layout.AllElementsCount; // Including backplates.
+        public Observable<Unit> ChangedSignal => _changedSignalSubj;
+
+        public void Init()
         {
             _layout = GetComponent<HandFlowLayout>();
         }
 
-        public void SetInitialWordUnits(IEnumerable<WordUnit> wordUnits, bool instantly = false)
-        {
-            _allWordUnits = new List<WordUnit>(wordUnits);
-            _layout.SetInitialElements(wordUnits.Select(w => w.Transform), instantly);
-        }
-
-        public void SetMaxCapacity(int capacity)
-        {
-            _maxCapacity = capacity;
-            UpdateCapacityView();
-        }
-
-        public void SetDrawingPointsCount(int count)
-        {
-            _drawingPointsCount = count;
-            UpdateDrawingPointsView();
-        }
-
-        public void SpendDrawingPoint()
-        {
-            _drawingPointsCount -= 1;
-            UpdateDrawingPointsView();
-        }
-
-        public bool CanAdd(WordUnit wordUnit) => CapacityLeft > 0 || _backplatesMap.ContainsKey(wordUnit);
-        public bool CanRemove(WordUnit wordUnit) => _allWordUnits.Contains(wordUnit);
+        public bool CanMoveIn(WordUnit wordUnit) => _backplatesMap.ContainsKey(wordUnit);
+        public bool CanMoveOut(WordUnit wordUnit) => _allWordUnits.Contains(wordUnit);
 
         public void Add(WordUnit wordUnit)
         {
@@ -75,8 +47,7 @@ namespace Gameplay
             }
 
             _layout.Add(wordUnit.Transform);
-
-            UpdateCapacityView();
+            _changedSignalSubj.OnNext(Unit.Default);
         }
 
         public void Remove(WordUnit wordUnit)
@@ -91,8 +62,8 @@ namespace Gameplay
             var idx = _layout.IndexOf(wordUnit.Transform);
             _layout.Insert(idx, createdBackplate);
             _layout.Remove(wordUnit.Transform);
-            
-            UpdateCapacityView();
+
+            _changedSignalSubj.OnNext(Unit.Default);
         }
 
         public void DestroyLinkedBackplates(IEnumerable<WordUnit> wordUnits)
@@ -120,18 +91,7 @@ namespace Gameplay
             }
 
             _backplatesForDestruction.Clear();
-
-            UpdateCapacityView();
-        }
-
-        private void UpdateCapacityView()
-        {
-            _capacityView.text = $"Слов: {CurrentCapacity}/{_maxCapacity}";
-        }
-
-        private void UpdateDrawingPointsView()
-        {
-            _drawingPointsCountView.text = $"x{_drawingPointsCount}";
+            _changedSignalSubj.OnNext(Unit.Default);
         }
     }
 }

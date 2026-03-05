@@ -6,8 +6,8 @@ namespace Gameplay
 {
     public class WordUnitsMovementProvider
     {
-        private readonly HandWordUnitsGroup _handGroup;
-        private readonly FieldWordUnitsGroup _fieldLayout;
+        private HandWordUnitsGroup _handGroup;
+        private FieldWordUnitsGroup _fieldLayout;
 
         private bool _isEnabled;
 
@@ -34,9 +34,11 @@ namespace Gameplay
             _fieldLayout.Layout.GravitationalPuller.Disable();
         }
 
-        public void MoveFromHandToField(WordUnit wordUnit)
+        public bool TryMoveFromHandToField(WordUnit wordUnit)
         {
-            if (!_isEnabled || !_fieldLayout.CanAdd() || !_handGroup.CanRemove(wordUnit)) return;
+            if (!_isEnabled || 
+                !_fieldLayout.CanMoveIn() || 
+                !_handGroup.CanMoveOut(wordUnit)) return false;
 
             _handGroup.Layout.GravitationalPuller.Disable();
             _fieldLayout.Layout.GravitationalPuller.Disable();
@@ -53,11 +55,15 @@ namespace Gameplay
                     _fieldLayout.Layout.GravitationalPuller.Enable();
                 }
             });
+
+            return true;
         }
 
-        public void MoveFromFieldToHand(WordUnit wordUnit)
+        public bool TryMoveFromFieldToHand(WordUnit wordUnit)
         {
-            if (!_isEnabled || !_fieldLayout.CanRemove(wordUnit) || !_handGroup.CanAdd(wordUnit)) return;
+            if (!_isEnabled || 
+                !_fieldLayout.CanMoveOut(wordUnit) || 
+                !_handGroup.CanMoveIn(wordUnit)) return false;
 
             _fieldLayout.Layout.GravitationalPuller.Disable();
             _handGroup.Layout.GravitationalPuller.Disable();
@@ -76,6 +82,8 @@ namespace Gameplay
                     _handGroup.DestroyBackplates();
                 }
             });
+
+            return true;
         }
     }
 }

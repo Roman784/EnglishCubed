@@ -1,3 +1,4 @@
+using R3;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -10,62 +11,38 @@ namespace Gameplay
     [RequireComponent(typeof(FieldFlowLayout))]
     public class FieldWordUnitsGroup : MonoBehaviour
     {
-        [SerializeField] private TMP_Text _availableWordsCountView;
-        [SerializeField] private TMP_Text _discardPointsCountView;
-        [SerializeField] private Transform _wordUnitsPointsPoint;
-
         private List<WordUnit> _allWordUnits = new();
         private FieldFlowLayout _layout;
 
         private int _maxAvailableWordsCount;
-        private int _discardPointsCount;
+
+        private Subject<Unit> _changedSignalSubj = new();
 
         public FieldFlowLayout Layout => _layout;
         public IEnumerable<WordUnit> AllWordUnits => _allWordUnits;
-        public int AllWordUnitsCount => _allWordUnits.Count;
-        public Vector2 WordUnitsPointsPoisition => _wordUnitsPointsPoint.position;
-        public int DiscardPointsCount => _discardPointsCount;
+        public int AllElementsCount => _allWordUnits.Count;
+        public Observable<Unit> ChangedSignal => _changedSignalSubj;
 
-        private void Awake()
+        public void Init(int maxAvailableWordsCount)
         {
             _layout = GetComponent<FieldFlowLayout>();
+            _maxAvailableWordsCount = maxAvailableWordsCount;
         }
 
-        public void SetMaxAvailableWordsCount(int count)
-        {
-            _maxAvailableWordsCount = count;
-            UpdateAvailableWordsCountView();
-        }
-
-        public void SetDiscardPointsCount(int count)
-        {
-            _discardPointsCount = count;
-            UpdateDiscardPointsCountView();
-        }
-
-        public bool CanAdd() => AllWordUnitsCount < _maxAvailableWordsCount;
-        public bool CanRemove(WordUnit wordUnit) => _allWordUnits.Contains(wordUnit);
+        public bool CanMoveIn() => AllElementsCount < _maxAvailableWordsCount;
+        public bool CanMoveOut(WordUnit wordUnit) => _allWordUnits.Contains(wordUnit);
 
         public void Add(WordUnit wordUnit)
         {
             _allWordUnits.Add(wordUnit);
             _layout.Add(wordUnit.Transform);
-
-            UpdateAvailableWordsCountView();
         }
 
         public void Remove(WordUnit wordUnit)
         {
             _allWordUnits.Remove(wordUnit);
             _layout.Remove(wordUnit.Transform);
-
-            UpdateAvailableWordsCountView();
-        }
-
-        public void SpendDiscardPoint()
-        {
-            _discardPointsCount -= 1;
-            UpdateDiscardPointsCountView();
+            _changedSignalSubj.OnNext(Unit.Default);
         }
 
         public IEnumerable<WordUnit> Discard(Vector2 deckPosition)
@@ -73,6 +50,7 @@ namespace Gameplay
             var wordUnits = new List<WordUnit>(_allWordUnits);
             _allWordUnits.Clear();
             _layout.RemoveAll();
+            _changedSignalSubj.OnNext(Unit.Default);
 
             Coroutines.Start(DiscardRoutine(wordUnits, deckPosition));
 
@@ -86,16 +64,6 @@ namespace Gameplay
                 wordUnit.Discard(deckPosition);
                 yield return new WaitForSeconds(0.05f);
             }
-        }
-
-        private void UpdateAvailableWordsCountView()
-        {
-            _availableWordsCountView.text = $"доступно: {(_maxAvailableWordsCount - _allWordUnits.Count)}";
-        }
-
-        public void UpdateDiscardPointsCountView()
-        {
-            _discardPointsCountView.text = $"В мешок x{_discardPointsCount}";
         }
     }
 }

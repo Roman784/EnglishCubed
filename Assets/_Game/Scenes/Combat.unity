@@ -1819,7 +1819,6 @@ GameObject:
   m_Component:
   - component: {fileID: 549001360}
   - component: {fileID: 549001361}
-  - component: {fileID: 549001362}
   m_Layer: 0
   m_Name: EntryPoint
   m_TagString: Untagged
@@ -1854,7 +1853,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398f0d511f8f7a141909beca99f2c10b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Combat.CombatEntryPoint
-  _wordUnitPrefab: {fileID: 5306689005820375816, guid: 424d1cf122f67fa4c915f3192d622d5e, type: 3}
+  _view: {fileID: 1830545101}
+  _handWordUnitsGroup: {fileID: 1807663765}
+  _fieldWordUnitsGroup: {fileID: 1114353183}
+  _location: {fileID: 1794532375}
+  _cameraShaker: {fileID: 2005119206}
   _wordUnitsConfigs:
   - {fileID: 11400000, guid: 8df80c55d4e9596409aa8f209ac4815f, type: 2}
   - {fileID: 11400000, guid: 315cce5a869d56d458f8ac9b2a85e2aa, type: 2}
@@ -1877,28 +1880,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 695d17531965b2a4693016a2a97fdb82, type: 2}
   - {fileID: 11400000, guid: 4210c2cd410922f48a70c61f7955d760, type: 2}
   - {fileID: 11400000, guid: 0d83112eaa0978942bf40bfb33ce0f24, type: 2}
-  _handWordUnitsGroup: {fileID: 1807663765}
-  _fieldWordUnitsGroup: {fileID: 1114353183}
-  _mainHUD: {fileID: 1830545101}
   _heroHealthStatView: {fileID: 1860857682}
   _heroArmorStatView: {fileID: 1509695403}
   _heroExperienceStatView: {fileID: 737497468}
-  _pointsCounter: {fileID: 549001362}
-  _location: {fileID: 1794532375}
-  _cameraShaker: {fileID: 2005119206}
---- !u!114 &549001362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 549001359}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4320238fa8c9cd44588b19fec002507c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Gameplay.PointsCounter
-  _pointsPrefab: {fileID: 8482325934696569473, guid: fa43e9f581281b2429348cd903e612a4, type: 3}
 --- !u!1 &553538552
 GameObject:
   m_ObjectHideFlags: 0
@@ -3298,9 +3282,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd521f3e844c77540be7547dfa38ac52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.FieldWordUnitsGroup
-  _availableWordsCountView: {fileID: 639814000}
-  _discardPointsCountView: {fileID: 560865024}
-  _wordUnitsPointsPoint: {fileID: 1162923875}
 --- !u!1 &1134517369
 GameObject:
   m_ObjectHideFlags: 0
@@ -3568,7 +3549,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1162923875}
   m_Layer: 0
-  m_Name: PoinsPoint
+  m_Name: DefaultPoinsShowingPoint
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -5191,8 +5172,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1830545101}
-        m_TargetAssemblyTypeName: UI.CombatHUD, Assembly-CSharp
-        m_MethodName: PressDrawWordUnitsButton
+        m_TargetAssemblyTypeName: Combat.CombatView, Assembly-CSharp
+        m_MethodName: PressDrawButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5335,8 +5316,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9769f2048efcda7499721a0de24780eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.HandWordUnitsGroup
-  _capacityView: {fileID: 2003338546}
-  _drawingPointsCountView: {fileID: 2132041229}
 --- !u!1 &1830545100
 GameObject:
   m_ObjectHideFlags: 0
@@ -5366,8 +5345,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aab7214c9c742fb46b9454685de8af69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI.CombatHUD
+  _discardPointsView: {fileID: 560865024}
+  _drawPointsView: {fileID: 2132041229}
+  _availableWordsOnFieldView: {fileID: 639814000}
+  _handCapacityView: {fileID: 2003338546}
   _deckButtonPoint: {fileID: 51605288}
   _drawWordUnitsButtonPoint: {fileID: 1743268321}
+  _defaultPointsShowingPoint: {fileID: 1162923875}
 --- !u!4 &1830545102
 Transform:
   m_ObjectHideFlags: 0

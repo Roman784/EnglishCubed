@@ -21,6 +21,8 @@ namespace GameRoot
         public static CameraShaker CameraShaker;
         public static HeroStats HeroStats;
         public static WordUnitsMovementProvider WordUnitsMovementProvider;
+        public static WordUnitFactory WordUnitFactory;
+        public static PointsFactory PointsFactory;
 
         public static GameConfigs Configs => ConfigsProvider.GameConfigs;
     }

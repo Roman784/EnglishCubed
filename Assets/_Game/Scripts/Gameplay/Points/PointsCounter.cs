@@ -1,4 +1,5 @@
 using DG.Tweening;
+using GameRoot;
 using R3;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,30 +9,20 @@ using Utils;
 
 namespace Gameplay
 { 
-    public class PointsMultiplierData
+    public class PointsCounter
     {
-        public readonly float Points;
-        public readonly string Message;
-
-        public PointsMultiplierData(float points, string message)
-        {
-            Points = points;
-            Message = message;
-        }
-    }
-
-    public class PointsCounter : MonoBehaviour
-    {
-        [SerializeField] private Points _pointsPrefab;
-
         private Vector2 _accumulationPosition;
         private Points _accumulativePoints;
 
-        public Observable<Points> StartCounting(IEnumerable<WordUnit> wordUnits, Vector2 accumulationPosition)
+        public PointsCounter(Vector2 position)
+        {
+            _accumulationPosition = position;
+        }
+
+        public Observable<Points> StartCounting(IEnumerable<WordUnit> wordUnits)
         {
             var onCompleted = new Subject<Points>();
             _accumulativePoints = null;
-            _accumulationPosition = accumulationPosition;
 
             Coroutines.Start(CountingRoutine(wordUnits, onCompleted));
 
@@ -69,7 +60,7 @@ namespace Gameplay
 
             foreach (var multiplier in multipliers)
             {
-                var createdPoints = CreatePoints(multiplier.Points, "x", multiplier.Message, position);
+                var createdPoints = G.PointsFactory.Create(multiplier.Points, "x", multiplier.Message, position);
 
                 yield return new WaitForSeconds(0.25f);
 
@@ -79,7 +70,7 @@ namespace Gameplay
                     _accumulativePoints.Multiply(multiplier.Points);
                     _accumulativePoints.Pop();
                     isSended = true;
-                    Destroy(createdPoints);
+                    Object.Destroy(createdPoints);
                 });
 
                 yield return new WaitUntil(() => isSended);
@@ -94,7 +85,7 @@ namespace Gameplay
         {
             foreach (var wordUnit in wordUnits)
             {
-                var createdPoints = CreatePoints(wordUnit.Points, "+", "", wordUnit.PointsSpawnPosition);
+                var createdPoints = G.PointsFactory.Create(wordUnit.Points, "+", "", wordUnit.PointsSpawnPosition);
                 outPoints.Add(createdPoints);
 
                 yield return new WaitForSeconds(0.25f);
@@ -127,21 +118,9 @@ namespace Gameplay
                     _accumulativePoints.Plus(points.Value);
                     _accumulativePoints.Pop();
 
-                    Destroy(points.gameObject);
+                    Object.Destroy(points.gameObject);
                 });
             }
-        }
-
-        private Points CreatePoints(float points, string sign, string message, Vector2 position)
-        {
-            var createdPoints = Instantiate(_pointsPrefab, position, Quaternion.identity);
-
-            createdPoints.Plus(points);
-            createdPoints.SetSign(sign);
-            createdPoints.SetMessage(message);
-            createdPoints.Show();
-
-            return createdPoints;
         }
     }
 }

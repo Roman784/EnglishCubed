@@ -1,5 +1,6 @@
 using Configs;
 using Gameplay;
+using GameRoot;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -10,7 +11,6 @@ namespace UI
     {
         [Space]
 
-        [SerializeField] private WordUnit _wordUnitPrefab;
         [SerializeField] private HandFlowLayout _layout;
 
         public void Open(IEnumerable<WordUnitConfigs> wordUnitsConfigs)
@@ -28,12 +28,10 @@ namespace UI
             _layout.SetInitialElements(wordUnits.Select(w => w.Transform), true);
         }
 
-        private WordUnit CreateWordUnit(WordUnitConfigs wordUnitConfigs)
+        private WordUnit CreateWordUnit(WordUnitConfigs configs)
         {
-            var createWord = Instantiate(_wordUnitPrefab, transform.position, Quaternion.identity);
+            var createWord = G.WordUnitFactory.Create(configs, transform.position);
             createWord.transform.SetParent(_layout.Container, true);
-            createWord.SetConfigs(wordUnitConfigs);
-            createWord.Transform.ZeroRootViewScale();
             return createWord;
         }
     }

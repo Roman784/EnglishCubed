@@ -15,8 +15,8 @@ namespace Gameplay
 
         public override void OnPointerClick()
         {
-            G.WordUnitsMovementProvider.MoveFromHandToField(_wordUnit);
-            _handler.SetOnFieldBehavior();
+            if (G.WordUnitsMovementProvider.TryMoveFromHandToField(_wordUnit))
+                _handler.SetOnFieldBehavior();
         }
     }
 }
