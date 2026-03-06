@@ -100,9 +100,9 @@ namespace Gameplay
             _popSeq.Append(_rootView.DOScale(1f, 0.25f).SetEase(Ease.OutQuad));
         }
 
-        public Observable<Unit> Attack(Vector3 position)
+        public Observable<int> Attack(Vector3 position)
         {
-            var onCompleted = new Subject<Unit>();
+            var onCompleted = new Subject<int>();
 
             var direction = (position - transform.position).normalized;
             var backPosition = transform.position - direction * 0.5f;
@@ -115,8 +115,8 @@ namespace Gameplay
 
             seq.AppendCallback(() =>
             {
-                G.CameraShaker.MidShake();
-                onCompleted.OnNext(Unit.Default);
+                var pointsValue = Mathf.FloorToInt(Value);
+                onCompleted.OnNext(pointsValue);
                 onCompleted.OnCompleted();
             });
             

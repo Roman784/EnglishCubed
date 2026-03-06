@@ -55,7 +55,7 @@ namespace Combat
 
             var heroHealth = new Health(5, 5);
             var heroArmor = new Armor(5, 5);
-            var heroExperience = new Experience(0, 500);
+            var heroExperience = new Experience(0, 100);
 
             _heroHealthStatView.Init(heroHealth);
             _heroArmorStatView.Init(heroArmor);

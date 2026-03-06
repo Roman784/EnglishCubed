@@ -68,12 +68,12 @@ namespace Combat
             var sentence = string.Join(" ", _model.FieldWordUnitsGroup.AllWordUnits.Select(w => w.GetWordText()));
             var validationResult = _model.GrammarValidator.Validate(sentence);
 
-            if (!validationResult.IsValid)
+            /*if (!validationResult.IsValid)
             {
                 var hintMessage = G.Configs.GrammarHintsConfigs.GetMessage(validationResult.HintCode);
                 _view.ShowMessage(hintMessage);
                 return;
-            }
+            }*/
 
             ExecuteAttackSequence();
         }
@@ -106,9 +106,15 @@ namespace Combat
 
         private void CompleteAttack(Points points)
         {
-            points.Attack(_model.Location.FirstEnemyPosition).Subscribe(_ =>
+            points.Attack(_model.Location.FirstEnemyPosition).Subscribe(pointsValue =>
             {
                 DiscardFieldWords();
+                G.CameraShaker.MidShake();
+
+                // Enemy take damage -> subscrube -> next
+
+                G.HeroStats.Experience.Add(pointsValue);
+
                 _view.EnableControls();
             })
             .AddTo(_disposables);
