@@ -15,11 +15,11 @@ namespace Combat
         [SerializeField] private Location _location;
         [SerializeField] private CameraShaker _cameraShaker;
 
-        [SerializeField] private WordUnitConfigs[] _wordUnitsConfigs; // TEMP.
+        [SerializeField] private WordUnitConfigs[] _wordUnitsConfigs; // Temp.
 
-        [SerializeField] private StatCellsView _heroHealthStatView; // TEMP.
-        [SerializeField] private StatCellsView _heroArmorStatView; // TEMP.
-        [SerializeField] private StatBarView _heroExperienceStatView; // TEMP.
+        [SerializeField] private StatCellsView _heroHealthStatView; // Temp.
+        [SerializeField] private StatCellsView _heroArmorStatView; // Temp.
+        [SerializeField] private StatBarView _heroExperienceStatView; // Temp.
 
         private CombatPresenter _presenter;
 

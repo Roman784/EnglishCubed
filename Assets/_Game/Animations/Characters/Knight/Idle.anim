@@ -47,7 +47,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Skin/knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1
+    path: knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -81,7 +81,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Skin/knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1/bone_armLeft_2
+    path: knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1/bone_armLeft_2
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -115,7 +115,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Skin/knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3
+    path: knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -149,7 +149,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Skin/knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3/bone_armLeft_4
+    path: knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3/bone_armLeft_4
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -183,7 +183,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Skin/knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1
+    path: knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -217,7 +217,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Skin/knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3/bone_armLeft_4
+    path: knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3/bone_armLeft_4
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -251,7 +251,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Skin/knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3
+    path: knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -285,7 +285,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Skin/knight_bodyBottom/bone_body
+    path: knight_bodyBottom/bone_body
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -319,7 +319,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Skin/knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2
+    path: knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -353,7 +353,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Skin/knight_bodyBottom/knight_legLeft/bone_leg_left_1/bone_leg_left_2
+    path: knight_bodyBottom/knight_legLeft/bone_leg_left_1/bone_leg_left_2
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -387,7 +387,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Skin/knight_bodyBottom/knight_legLeft/bone_leg_left_1
+    path: knight_bodyBottom/knight_legLeft/bone_leg_left_1
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -421,7 +421,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Skin/knight_bodyBottom/knight_legRight/bone_leg_right_1
+    path: knight_bodyBottom/knight_legRight/bone_leg_right_1
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -455,7 +455,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Skin/knight_bodyBottom/knight_legRight/bone_leg_right_1/bone_leg_right_2
+    path: knight_bodyBottom/knight_legRight/bone_leg_right_1/bone_leg_right_2
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -489,7 +489,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Skin/knight_bodyBottom/knight_legLeft/bone_leg_left_1/bone_leg_left_2/bone_leg_left_3
+    path: knight_bodyBottom/knight_legLeft/bone_leg_left_1/bone_leg_left_2/bone_leg_left_3
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -523,7 +523,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Skin/knight_bodyBottom/knight_legRight/bone_leg_right_1/bone_leg_right_2/bone_leg_right_3
+    path: knight_bodyBottom/knight_legRight/bone_leg_right_1/bone_leg_right_2/bone_leg_right_3
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -557,7 +557,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Skin/knight_bodyBottom/bone_bodyBottom_center/bone_bodyBottom_left
+    path: knight_bodyBottom/bone_bodyBottom_center/bone_bodyBottom_left
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -591,7 +591,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Skin/knight_bodyBottom/bone_bodyBottom_center/bone_bodyBottom_right
+    path: knight_bodyBottom/bone_bodyBottom_center/bone_bodyBottom_right
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -625,7 +625,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Skin/knight_bodyBottom/bone_body/knight_head/knight_helmet/knight_crista
+    path: knight_bodyBottom/bone_body/knight_head/knight_helmet/knight_crista
   m_PositionCurves:
   - curve:
       serializedVersion: 2
@@ -651,7 +651,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Skin/knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1
+    path: knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -685,7 +685,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Skin/knight_bodyBottom/bone_body
+    path: knight_bodyBottom/bone_body
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -719,7 +719,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Skin/knight_bodyBottom
+    path: knight_bodyBottom
   m_ScaleCurves: []
   m_FloatCurves:
   - serializedVersion: 2
@@ -748,7 +748,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_SortingOrder
-    path: Skin/knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3/bone_armLeft_4/knight_palmRight/knight_sword
+    path: knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3/bone_armLeft_4/knight_palmRight/knight_sword
     classID: 212
     script: {fileID: 0}
     flags: 0
@@ -1015,7 +1015,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: Skin/knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1
+    path: knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -1054,7 +1054,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: Skin/knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1
+    path: knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -1093,7 +1093,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: Skin/knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1
+    path: knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -1132,7 +1132,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: Skin/knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1/bone_armLeft_2
+    path: knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1/bone_armLeft_2
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -1171,7 +1171,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: Skin/knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1/bone_armLeft_2
+    path: knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1/bone_armLeft_2
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -1210,7 +1210,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: Skin/knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1/bone_armLeft_2
+    path: knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1/bone_armLeft_2
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -1249,7 +1249,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: Skin/knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3
+    path: knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -1288,7 +1288,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: Skin/knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3
+    path: knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -1327,7 +1327,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: Skin/knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3
+    path: knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -1366,7 +1366,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: Skin/knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3/bone_armLeft_4
+    path: knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3/bone_armLeft_4
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -1405,7 +1405,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: Skin/knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3/bone_armLeft_4
+    path: knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3/bone_armLeft_4
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -1444,7 +1444,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: Skin/knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3/bone_armLeft_4
+    path: knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3/bone_armLeft_4
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -1474,7 +1474,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Skin/knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1
+    path: knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1504,7 +1504,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Skin/knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1
+    path: knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1534,7 +1534,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Skin/knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1
+    path: knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1573,7 +1573,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: Skin/knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1
+    path: knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -1612,7 +1612,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: Skin/knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1
+    path: knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -1651,7 +1651,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: Skin/knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1
+    path: knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -1690,7 +1690,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: Skin/knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3/bone_armLeft_4
+    path: knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3/bone_armLeft_4
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -1729,7 +1729,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: Skin/knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3/bone_armLeft_4
+    path: knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3/bone_armLeft_4
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -1768,7 +1768,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: Skin/knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3/bone_armLeft_4
+    path: knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3/bone_armLeft_4
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -1807,7 +1807,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: Skin/knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3
+    path: knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -1846,7 +1846,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: Skin/knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3
+    path: knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -1885,7 +1885,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: Skin/knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3
+    path: knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -1924,7 +1924,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: Skin/knight_bodyBottom/bone_body
+    path: knight_bodyBottom/bone_body
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -1963,7 +1963,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: Skin/knight_bodyBottom/bone_body
+    path: knight_bodyBottom/bone_body
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -2002,7 +2002,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: Skin/knight_bodyBottom/bone_body
+    path: knight_bodyBottom/bone_body
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -2041,7 +2041,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: Skin/knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2
+    path: knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -2080,7 +2080,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: Skin/knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2
+    path: knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -2119,7 +2119,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: Skin/knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2
+    path: knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -2149,7 +2149,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_SortingOrder
-    path: Skin/knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3/bone_armLeft_4/knight_palmRight/knight_sword
+    path: knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3/bone_armLeft_4/knight_palmRight/knight_sword
     classID: 212
     script: {fileID: 0}
     flags: 0
@@ -2188,7 +2188,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Skin/knight_bodyBottom/bone_body
+    path: knight_bodyBottom/bone_body
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -2227,7 +2227,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Skin/knight_bodyBottom/bone_body
+    path: knight_bodyBottom/bone_body
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -2266,7 +2266,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Skin/knight_bodyBottom/bone_body
+    path: knight_bodyBottom/bone_body
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -2305,7 +2305,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: Skin/knight_bodyBottom/knight_legLeft/bone_leg_left_1/bone_leg_left_2
+    path: knight_bodyBottom/knight_legLeft/bone_leg_left_1/bone_leg_left_2
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -2344,7 +2344,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: Skin/knight_bodyBottom/knight_legLeft/bone_leg_left_1/bone_leg_left_2
+    path: knight_bodyBottom/knight_legLeft/bone_leg_left_1/bone_leg_left_2
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -2383,7 +2383,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: Skin/knight_bodyBottom/knight_legLeft/bone_leg_left_1/bone_leg_left_2
+    path: knight_bodyBottom/knight_legLeft/bone_leg_left_1/bone_leg_left_2
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -2422,7 +2422,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: Skin/knight_bodyBottom/knight_legLeft/bone_leg_left_1
+    path: knight_bodyBottom/knight_legLeft/bone_leg_left_1
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -2461,7 +2461,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: Skin/knight_bodyBottom/knight_legLeft/bone_leg_left_1
+    path: knight_bodyBottom/knight_legLeft/bone_leg_left_1
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -2500,7 +2500,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: Skin/knight_bodyBottom/knight_legLeft/bone_leg_left_1
+    path: knight_bodyBottom/knight_legLeft/bone_leg_left_1
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -2539,7 +2539,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: Skin/knight_bodyBottom/knight_legRight/bone_leg_right_1
+    path: knight_bodyBottom/knight_legRight/bone_leg_right_1
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -2578,7 +2578,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: Skin/knight_bodyBottom/knight_legRight/bone_leg_right_1
+    path: knight_bodyBottom/knight_legRight/bone_leg_right_1
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -2617,7 +2617,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: Skin/knight_bodyBottom/knight_legRight/bone_leg_right_1
+    path: knight_bodyBottom/knight_legRight/bone_leg_right_1
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -2656,7 +2656,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: Skin/knight_bodyBottom/knight_legRight/bone_leg_right_1/bone_leg_right_2
+    path: knight_bodyBottom/knight_legRight/bone_leg_right_1/bone_leg_right_2
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -2695,7 +2695,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: Skin/knight_bodyBottom/knight_legRight/bone_leg_right_1/bone_leg_right_2
+    path: knight_bodyBottom/knight_legRight/bone_leg_right_1/bone_leg_right_2
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -2734,7 +2734,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: Skin/knight_bodyBottom/knight_legRight/bone_leg_right_1/bone_leg_right_2
+    path: knight_bodyBottom/knight_legRight/bone_leg_right_1/bone_leg_right_2
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -2773,7 +2773,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Skin/knight_bodyBottom
+    path: knight_bodyBottom
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -2812,7 +2812,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Skin/knight_bodyBottom
+    path: knight_bodyBottom
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -2851,7 +2851,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Skin/knight_bodyBottom
+    path: knight_bodyBottom
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -2890,7 +2890,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: Skin/knight_bodyBottom/knight_legLeft/bone_leg_left_1/bone_leg_left_2/bone_leg_left_3
+    path: knight_bodyBottom/knight_legLeft/bone_leg_left_1/bone_leg_left_2/bone_leg_left_3
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -2929,7 +2929,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: Skin/knight_bodyBottom/knight_legLeft/bone_leg_left_1/bone_leg_left_2/bone_leg_left_3
+    path: knight_bodyBottom/knight_legLeft/bone_leg_left_1/bone_leg_left_2/bone_leg_left_3
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -2968,7 +2968,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: Skin/knight_bodyBottom/knight_legLeft/bone_leg_left_1/bone_leg_left_2/bone_leg_left_3
+    path: knight_bodyBottom/knight_legLeft/bone_leg_left_1/bone_leg_left_2/bone_leg_left_3
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -3007,7 +3007,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: Skin/knight_bodyBottom/knight_legRight/bone_leg_right_1/bone_leg_right_2/bone_leg_right_3
+    path: knight_bodyBottom/knight_legRight/bone_leg_right_1/bone_leg_right_2/bone_leg_right_3
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -3046,7 +3046,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: Skin/knight_bodyBottom/knight_legRight/bone_leg_right_1/bone_leg_right_2/bone_leg_right_3
+    path: knight_bodyBottom/knight_legRight/bone_leg_right_1/bone_leg_right_2/bone_leg_right_3
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -3085,7 +3085,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: Skin/knight_bodyBottom/knight_legRight/bone_leg_right_1/bone_leg_right_2/bone_leg_right_3
+    path: knight_bodyBottom/knight_legRight/bone_leg_right_1/bone_leg_right_2/bone_leg_right_3
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -3124,7 +3124,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: Skin/knight_bodyBottom/bone_bodyBottom_center/bone_bodyBottom_left
+    path: knight_bodyBottom/bone_bodyBottom_center/bone_bodyBottom_left
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -3163,7 +3163,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: Skin/knight_bodyBottom/bone_bodyBottom_center/bone_bodyBottom_left
+    path: knight_bodyBottom/bone_bodyBottom_center/bone_bodyBottom_left
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -3202,7 +3202,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: Skin/knight_bodyBottom/bone_bodyBottom_center/bone_bodyBottom_left
+    path: knight_bodyBottom/bone_bodyBottom_center/bone_bodyBottom_left
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -3241,7 +3241,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: Skin/knight_bodyBottom/bone_bodyBottom_center/bone_bodyBottom_right
+    path: knight_bodyBottom/bone_bodyBottom_center/bone_bodyBottom_right
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -3280,7 +3280,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: Skin/knight_bodyBottom/bone_bodyBottom_center/bone_bodyBottom_right
+    path: knight_bodyBottom/bone_bodyBottom_center/bone_bodyBottom_right
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -3319,7 +3319,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: Skin/knight_bodyBottom/bone_bodyBottom_center/bone_bodyBottom_right
+    path: knight_bodyBottom/bone_bodyBottom_center/bone_bodyBottom_right
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -3358,7 +3358,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: Skin/knight_bodyBottom/bone_body/knight_head/knight_helmet/knight_crista
+    path: knight_bodyBottom/bone_body/knight_head/knight_helmet/knight_crista
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -3397,7 +3397,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: Skin/knight_bodyBottom/bone_body/knight_head/knight_helmet/knight_crista
+    path: knight_bodyBottom/bone_body/knight_head/knight_helmet/knight_crista
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -3436,7 +3436,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: Skin/knight_bodyBottom/bone_body/knight_head/knight_helmet/knight_crista
+    path: knight_bodyBottom/bone_body/knight_head/knight_helmet/knight_crista
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -3449,7 +3449,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Skin/knight_bodyBottom/knight_legRight/bone_leg_right_1
+    path: knight_bodyBottom/knight_legRight/bone_leg_right_1
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3461,7 +3461,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Skin/knight_bodyBottom/knight_legRight/bone_leg_right_1
+    path: knight_bodyBottom/knight_legRight/bone_leg_right_1
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3473,7 +3473,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Skin/knight_bodyBottom/knight_legRight/bone_leg_right_1
+    path: knight_bodyBottom/knight_legRight/bone_leg_right_1
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3485,7 +3485,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Skin/knight_bodyBottom/knight_legLeft/bone_leg_left_1/bone_leg_left_2
+    path: knight_bodyBottom/knight_legLeft/bone_leg_left_1/bone_leg_left_2
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3497,7 +3497,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Skin/knight_bodyBottom/knight_legLeft/bone_leg_left_1/bone_leg_left_2
+    path: knight_bodyBottom/knight_legLeft/bone_leg_left_1/bone_leg_left_2
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3509,7 +3509,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Skin/knight_bodyBottom/knight_legLeft/bone_leg_left_1/bone_leg_left_2
+    path: knight_bodyBottom/knight_legLeft/bone_leg_left_1/bone_leg_left_2
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3521,7 +3521,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Skin/knight_bodyBottom/knight_legRight/bone_leg_right_1/bone_leg_right_2
+    path: knight_bodyBottom/knight_legRight/bone_leg_right_1/bone_leg_right_2
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3533,7 +3533,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Skin/knight_bodyBottom/knight_legRight/bone_leg_right_1/bone_leg_right_2
+    path: knight_bodyBottom/knight_legRight/bone_leg_right_1/bone_leg_right_2
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3545,7 +3545,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Skin/knight_bodyBottom/knight_legRight/bone_leg_right_1/bone_leg_right_2
+    path: knight_bodyBottom/knight_legRight/bone_leg_right_1/bone_leg_right_2
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3557,7 +3557,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Skin/knight_bodyBottom/bone_bodyBottom_center/bone_bodyBottom_right
+    path: knight_bodyBottom/bone_bodyBottom_center/bone_bodyBottom_right
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3569,7 +3569,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Skin/knight_bodyBottom/bone_bodyBottom_center/bone_bodyBottom_right
+    path: knight_bodyBottom/bone_bodyBottom_center/bone_bodyBottom_right
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3581,7 +3581,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Skin/knight_bodyBottom/bone_bodyBottom_center/bone_bodyBottom_right
+    path: knight_bodyBottom/bone_bodyBottom_center/bone_bodyBottom_right
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3593,7 +3593,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Skin/knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1/bone_armLeft_2
+    path: knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1/bone_armLeft_2
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3605,7 +3605,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Skin/knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1/bone_armLeft_2
+    path: knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1/bone_armLeft_2
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3617,7 +3617,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Skin/knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1/bone_armLeft_2
+    path: knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1/bone_armLeft_2
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3629,7 +3629,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Skin/knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1
+    path: knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3641,7 +3641,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Skin/knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1
+    path: knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3653,7 +3653,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Skin/knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1
+    path: knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3665,7 +3665,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Skin/knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3
+    path: knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3677,7 +3677,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Skin/knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3
+    path: knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3689,7 +3689,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Skin/knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3
+    path: knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3701,7 +3701,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Skin/knight_bodyBottom/bone_body/knight_head/knight_helmet/knight_crista
+    path: knight_bodyBottom/bone_body/knight_head/knight_helmet/knight_crista
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3713,7 +3713,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Skin/knight_bodyBottom/bone_body/knight_head/knight_helmet/knight_crista
+    path: knight_bodyBottom/bone_body/knight_head/knight_helmet/knight_crista
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3725,7 +3725,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Skin/knight_bodyBottom/bone_body/knight_head/knight_helmet/knight_crista
+    path: knight_bodyBottom/bone_body/knight_head/knight_helmet/knight_crista
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3737,7 +3737,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Skin/knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2
+    path: knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3749,7 +3749,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Skin/knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2
+    path: knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3761,7 +3761,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Skin/knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2
+    path: knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3773,7 +3773,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Skin/knight_bodyBottom/knight_legRight/bone_leg_right_1/bone_leg_right_2/bone_leg_right_3
+    path: knight_bodyBottom/knight_legRight/bone_leg_right_1/bone_leg_right_2/bone_leg_right_3
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3785,7 +3785,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Skin/knight_bodyBottom/knight_legRight/bone_leg_right_1/bone_leg_right_2/bone_leg_right_3
+    path: knight_bodyBottom/knight_legRight/bone_leg_right_1/bone_leg_right_2/bone_leg_right_3
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3797,7 +3797,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Skin/knight_bodyBottom/knight_legRight/bone_leg_right_1/bone_leg_right_2/bone_leg_right_3
+    path: knight_bodyBottom/knight_legRight/bone_leg_right_1/bone_leg_right_2/bone_leg_right_3
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3809,7 +3809,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Skin/knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3/bone_armLeft_4
+    path: knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3/bone_armLeft_4
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3821,7 +3821,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Skin/knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3/bone_armLeft_4
+    path: knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3/bone_armLeft_4
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3833,7 +3833,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Skin/knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3/bone_armLeft_4
+    path: knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3/bone_armLeft_4
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3845,7 +3845,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Skin/knight_bodyBottom/bone_bodyBottom_center/bone_bodyBottom_left
+    path: knight_bodyBottom/bone_bodyBottom_center/bone_bodyBottom_left
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3857,7 +3857,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Skin/knight_bodyBottom/bone_bodyBottom_center/bone_bodyBottom_left
+    path: knight_bodyBottom/bone_bodyBottom_center/bone_bodyBottom_left
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3869,7 +3869,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Skin/knight_bodyBottom/bone_bodyBottom_center/bone_bodyBottom_left
+    path: knight_bodyBottom/bone_bodyBottom_center/bone_bodyBottom_left
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3881,7 +3881,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Skin/knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3
+    path: knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3893,7 +3893,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Skin/knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3
+    path: knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3905,7 +3905,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Skin/knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3
+    path: knight_bodyBottom/bone_body/knight_armLeft/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3917,7 +3917,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Skin/knight_bodyBottom/bone_body
+    path: knight_bodyBottom/bone_body
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3929,7 +3929,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Skin/knight_bodyBottom/bone_body
+    path: knight_bodyBottom/bone_body
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3941,7 +3941,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Skin/knight_bodyBottom/bone_body
+    path: knight_bodyBottom/bone_body
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3953,7 +3953,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Skin/knight_bodyBottom/knight_legLeft/bone_leg_left_1
+    path: knight_bodyBottom/knight_legLeft/bone_leg_left_1
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3965,7 +3965,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Skin/knight_bodyBottom/knight_legLeft/bone_leg_left_1
+    path: knight_bodyBottom/knight_legLeft/bone_leg_left_1
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3977,7 +3977,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Skin/knight_bodyBottom/knight_legLeft/bone_leg_left_1
+    path: knight_bodyBottom/knight_legLeft/bone_leg_left_1
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3989,7 +3989,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Skin/knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1
+    path: knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -4001,7 +4001,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Skin/knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1
+    path: knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -4013,7 +4013,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Skin/knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1
+    path: knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -4025,7 +4025,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Skin/knight_bodyBottom/knight_legLeft/bone_leg_left_1/bone_leg_left_2/bone_leg_left_3
+    path: knight_bodyBottom/knight_legLeft/bone_leg_left_1/bone_leg_left_2/bone_leg_left_3
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -4037,7 +4037,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Skin/knight_bodyBottom/knight_legLeft/bone_leg_left_1/bone_leg_left_2/bone_leg_left_3
+    path: knight_bodyBottom/knight_legLeft/bone_leg_left_1/bone_leg_left_2/bone_leg_left_3
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -4049,7 +4049,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Skin/knight_bodyBottom/knight_legLeft/bone_leg_left_1/bone_leg_left_2/bone_leg_left_3
+    path: knight_bodyBottom/knight_legLeft/bone_leg_left_1/bone_leg_left_2/bone_leg_left_3
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -4061,7 +4061,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Skin/knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3/bone_armLeft_4
+    path: knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3/bone_armLeft_4
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -4073,7 +4073,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Skin/knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3/bone_armLeft_4
+    path: knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3/bone_armLeft_4
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -4085,7 +4085,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Skin/knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3/bone_armLeft_4
+    path: knight_bodyBottom/bone_body/knight_armRight/bone_armLeft_1/bone_armLeft_2/bone_armLeft_3/bone_armLeft_4
     classID: 4
     script: {fileID: 0}
     flags: 0

@@ -106,6 +106,7 @@ namespace Combat
 
         private void CompleteAttack(Points points)
         {
+            _model.Location.Hero.Animator.PlayAttack();
             points.Attack(_model.Location.FirstEnemyPosition).Subscribe(pointsValue =>
             {
                 DiscardFieldWords();

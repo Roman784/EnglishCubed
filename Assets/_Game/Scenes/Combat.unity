@@ -4370,6 +4370,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1023846730}
+  - component: {fileID: 1023846732}
   - component: {fileID: 1023846731}
   m_Layer: 0
   m_Name: Knight
@@ -4386,36 +4387,39 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1023846729}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.248, y: 5.104, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.248, y: 5.054, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1068351148}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1794532374}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1023846731
-Animator:
-  serializedVersion: 7
+--- !u!114 &1023846731
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1023846729}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c7becc5cd7d806d4ba0452897cb4c070, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07a95f9ce3c07294aba6153bcb08e8ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Gameplay.HeroAnimator
+  _animator: {fileID: 1068351149}
+--- !u!114 &1023846732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023846729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41a9fe8c7fc675f499588aa7d0a8d21c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Gameplay.Hero
 --- !u!1 &1030633153
 GameObject:
   m_ObjectHideFlags: 0
@@ -4607,6 +4611,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1068351148}
+  - component: {fileID: 1068351149}
   m_Layer: 0
   m_Name: Skin
   m_TagString: Untagged
@@ -4630,6 +4635,28 @@ Transform:
   - {fileID: 325397244}
   m_Father: {fileID: 1023846730}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1068351149
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068351147}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c7becc5cd7d806d4ba0452897cb4c070, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1114353179
 GameObject:
   m_ObjectHideFlags: 0
@@ -7069,6 +7096,7 @@ Transform:
   - {fileID: 1038239555}
   - {fileID: 1012390}
   - {fileID: 914037318}
+  - {fileID: 1023846730}
   - {fileID: 292153385}
   - {fileID: 1154640272}
   - {fileID: 43706567}
@@ -7089,6 +7117,7 @@ MonoBehaviour:
   _pointsAccumulationPoint: {fileID: 914037318}
   _enemies:
   - {fileID: 292153385}
+  _hero: {fileID: 1023846732}
 --- !u!1 &1807663761
 GameObject:
   m_ObjectHideFlags: 0
@@ -7701,7 +7730,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1715337359
   m_SortingLayer: 3
-  m_SortingOrder: 3
+  m_SortingOrder: -2
   m_MaskInteraction: 0
   m_Sprite: {fileID: 916657594, guid: ba37f1f400e8450498da108b9fca53bb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -8701,4 +8730,3 @@ SceneRoots:
   - {fileID: 1794532374}
   - {fileID: 1830545102}
   - {fileID: 1249546706}
-  - {fileID: 1023846730}
