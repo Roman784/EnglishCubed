@@ -10,6 +10,7 @@ namespace Gameplay
             None,
             Idle,
             Attack,
+            Damage,
             Death
         }
 
@@ -21,12 +22,28 @@ namespace Gameplay
         {
             _animationsMap[AnimationState.Idle] = "Idle";
             _animationsMap[AnimationState.Attack] = "Attack";
+            _animationsMap[AnimationState.Damage] = "Damage";
             _animationsMap[AnimationState.Death] = "Death";
+        }
+
+        public void PlayIdle()
+        {
+            SetState(AnimationState.Idle);
         }
 
         public void PlayAttack()
         {
             SetState(AnimationState.Attack);
+        }
+
+        public void PlayDamage()
+        {
+            SetState(AnimationState.Damage, 0);
+        }
+
+        public void PlayDeath()
+        {
+            SetState(AnimationState.Death);
         }
 
         private void SetState(AnimationState state, float mixDuration = 0.2f)

@@ -76,5 +76,11 @@ namespace Combat
         {
             _presenter?.Dispose();
         }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.D))
+                _location.Hero.TakeDamage();
+        }
     }
 }
