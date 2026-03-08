@@ -37,44 +37,34 @@ namespace Gameplay
             _onAttackEventSubj = new Subject<Unit>();
         }
 
-        public float PlayIdle()
-        {
-            return SetState(CreatureAnimationState.Idle);
-        }
+        public float PlayIdle() => SetState(CreatureAnimationState.Idle);
+        public float PlayAttack() => SetState(CreatureAnimationState.Attack);
+        public float PlayDamage() => SetState(CreatureAnimationState.Damage, 0);
+        public float PlayDeath() => SetState(CreatureAnimationState.Death);
 
-        public float PlayAttack()
-        {
-            return SetState(CreatureAnimationState.Attack);
-        }
-
-        public float PlayDamage()
-        {
-            return SetState(CreatureAnimationState.Damage, 0);
-        }
-
-        public float PlayDeath()
-        {
-            return SetState(CreatureAnimationState.Death);
-        }
+        public float GetDeathLength() => GetAnimationLength(CreatureAnimationState.Death);
 
         protected float SetState(CreatureAnimationState state, float mixDuration = 0.2f)
         {
             if (_animationsMap.TryGetValue(state, out var name))
             {
                 _animator.CrossFade(name, mixDuration);
-                return GetAnimationLength(name);
+                return GetAnimationLength(state);
             }
 
             return 0f;
         }
 
-        private float GetAnimationLength(string name)
+        private float GetAnimationLength(CreatureAnimationState state)
         {
-            var clips = _animator.runtimeAnimatorController.animationClips;
-            foreach (AnimationClip clip in clips)
+            if (_animationsMap.TryGetValue(state, out var name))
             {
-                if (clip.name == name)
-                    return clip.length;
+                var clips = _animator.runtimeAnimatorController.animationClips;
+                foreach (AnimationClip clip in clips)
+                {
+                    if (clip.name == name)
+                        return clip.length;
+                }
             }
             return 0f;
         }

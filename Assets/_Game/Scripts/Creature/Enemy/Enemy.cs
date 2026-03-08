@@ -1,4 +1,5 @@
 using UnityEngine;
+using R3;
 
 namespace Gameplay
 {
@@ -18,16 +19,27 @@ namespace Gameplay
 
             _health = new Health(100);
             _healthView.Init(_health);
+
+            _health.ZeroReachedSignal.Subscribe(_ => Die());
         }
 
-        public override void TakeDamage(int damage)
+        public override void TakeDamage(int damage, out float animationDuration)
         {
-            if (!_isAlive) return;
+            if (!_isAlive)
+            {
+                animationDuration = 0;
+                return;
+            }
 
             _health.Subtract(damage);
+            animationDuration = CurrentHealth > 0 ? 
+                _animator.PlayDamage() : _animator.GetDeathLength();
+        }
 
-            if (_health.CurrentValue <= 0)
-                _animator.PlayDeath();
+        public Observable<Unit> Attack()
+        {
+            _animator.PlayAttack();
+            return _animator.OnAttackEvent;
         }
     }
 }

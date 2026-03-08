@@ -3,12 +3,12 @@ using Gameplay;
 using GameRoot;
 using GrammarValidation;
 using R3;
-using System;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using Object = UnityEngine.Object;
 using DG.Tweening;
+using System;
 
 namespace Combat
 {
@@ -83,15 +83,17 @@ namespace Combat
         {
             _view.DisableControls();
 
-            _model.PointsCounter.StartCounting(_model.FieldWordUnitsGroup.AllWordUnits)
-                .Subscribe(accumulativePoints =>
+            _model.PointsCounter
+                .StartCounting(_model.FieldWordUnitsGroup.AllWordUnits)
+                .Select(points =>
                 {
                     var multipliers = GetMultipliers();
-
-                    _model.PointsCounter.AddMultipliers(multipliers, _view.DefaultPointsShowingPosition)
-                        .Subscribe(_ => CompleteAttack(accumulativePoints))
-                        .AddTo(_disposables);
+                    return _model.PointsCounter
+                        .AddMultipliers(multipliers, _view.DefaultPointsShowingPosition)
+                        .Select(_ => points);
                 })
+                .Switch()
+                .Subscribe(points => CompleteAttack(points))
                 .AddTo(_disposables);
         }
 
@@ -107,41 +109,51 @@ namespace Combat
 
         private void CompleteAttack(Points points)
         {
-            var hero = _model.Location.Hero;
-            hero.Animator.PlayAttack();
-            points.Attack(_model.Location.FirstEnemy.Center).Subscribe(pointsValue =>
+            _model.Location.Hero.Animator.PlayAttack();
+
+            points.Attack(_model.Location.FirstEnemy.Center)
+                .Subscribe(value =>
+                {
+                    DiscardFieldWords();
+                    ApplyDamageToEnemy(value);
+                })
+                .AddTo(_disposables);
+        }
+
+        private void ApplyDamageToEnemy(int pointsValue)
+        {
+            var enemy = _model.Location.FirstEnemy;
+
+            enemy.TakeDamage(pointsValue, out var animationDuration);
+            G.CameraShaker.MidShake();
+
+            Observable
+                .Timer(TimeSpan.FromSeconds(animationDuration + 0.2f))
+                .Subscribe(_ =>
+                {
+                    if (enemy.CurrentHealth <= 0)
+                    {
+                        _model.Hero.Stats.Experience.Add(pointsValue);
+                        _view.EnableControls();
+                        return;
+                    }
+
+                    EnemyRetaliate(enemy, pointsValue);
+                })
+                .AddTo(_disposables);
+        }
+
+        private void EnemyRetaliate(Enemy enemy, int pointsValue)
+        {
+            enemy.Attack().Subscribe(_ =>
             {
-                DiscardFieldWords();
-                G.CameraShaker.MidShake();
-
-                var enemy = _model.Location.FirstEnemy;
-                enemy.TakeDamage(pointsValue);
-
-                if (enemy.CurrentHealth <= 0)
+                _model.Hero.TakeDamage(0, out var _);
+                if (_model.Hero.CurrentHealth > 0)
                 {
                     _model.Hero.Stats.Experience.Add(pointsValue);
                     _view.EnableControls();
-                    return;
                 }
-
-                var enemyDamageDuration = enemy.Animator.PlayDamage();
-                Observable.Timer(TimeSpan.FromSeconds(enemyDamageDuration + 0.2f)).Subscribe(_ =>
-                {
-                    var enemyAttackDuration = enemy.Animator.PlayAttack();
-
-                    enemy.OnAttackEvent.Subscribe(_ =>
-                    {
-                        hero.TakeDamage();
-                        if (hero.CurrentHealth > 0)
-                        {
-                            _model.Hero.Stats.Experience.Add(pointsValue);
-                            _view.EnableControls();
-                        }
-                    });
-                })
-                .AddTo(_disposables);
-            })
-            .AddTo(_disposables);
+            });
         }
 
         // ================ Discard ================

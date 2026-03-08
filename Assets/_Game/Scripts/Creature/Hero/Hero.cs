@@ -19,9 +19,13 @@ namespace Gameplay
             _stats.Health.ZeroReachedSignal.Subscribe(_ => Die());
         }
 
-        public override void TakeDamage(int _=0)
+        public override void TakeDamage(int _, out float animationDuration)
         {
-            if (!_isAlive) return;
+            if (!_isAlive)
+            {
+                animationDuration = 0f;
+                return;
+            }
 
             G.CameraShaker.WeakShake();
 
@@ -30,8 +34,8 @@ namespace Gameplay
             else if (Stats.Health.CurrentValue > 0)
                 Stats.Health.DecreaseOne();
 
-            if (Stats.Health.CurrentValue > 0)
-                _animator.PlayDamage();
+            animationDuration = CurrentHealth > 0 ?
+                _animator.PlayDamage() : _animator.GetDeathLength();
         }
     }
 }

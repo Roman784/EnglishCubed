@@ -17,7 +17,7 @@ namespace Gameplay
             _isAlive = true;
         }
 
-        public abstract void TakeDamage(int damage);
+        public abstract void TakeDamage(int damage, out float animationDuration);
 
         protected void Die()
         {
