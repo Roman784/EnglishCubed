@@ -3,20 +3,17 @@ using UnityEngine;
 
 namespace Gameplay
 {
-    [RequireComponent(typeof(HeroAnimator))]
-    public class Hero : MonoBehaviour
+    public class Hero : Creature
     {
-        private HeroAnimator _animator;
-
-        public HeroAnimator Animator => _animator;
+        public new HeroAnimator Animator => (HeroAnimator)_animator;
+        public int CurrentHealth => G.HeroStats.Health.CurrentValue;
         private HeroStats Stats => G.HeroStats;
 
-        private void Awake()
+        public override void Init()
         {
-            _animator = GetComponent<HeroAnimator>();
         }
 
-        public void TakeDamage()
+        public override void TakeDamage()
         {
             if (Stats.Armor.CurrentValue > 0)
                 Stats.Armor.DecreaseOne();

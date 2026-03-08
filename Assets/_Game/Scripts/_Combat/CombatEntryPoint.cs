@@ -63,6 +63,10 @@ namespace Combat
 
             G.HeroStats = new HeroStats(heroHealth, heroArmor, heroExperience);
 
+            // ========== Hero ==========
+
+            _location.Hero.Init();
+
             // ========== Start Game ==========
 
             _view.EnableControls();

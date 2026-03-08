@@ -8,6 +8,7 @@ using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using Object = UnityEngine.Object;
+using DG.Tweening;
 
 namespace Combat
 {
@@ -106,19 +107,38 @@ namespace Combat
 
         private void CompleteAttack(Points points)
         {
-            _model.Location.Hero.Animator.PlayAttack();
-            points.Attack(_model.Location.FirstEnemyPosition).Subscribe(pointsValue =>
+            var hero = _model.Location.Hero;
+            hero.Animator.PlayAttack();
+            points.Attack(_model.Location.FirstEnemy.Center).Subscribe(pointsValue =>
             {
                 DiscardFieldWords();
                 G.CameraShaker.MidShake();
 
-                // Enemy take damage -> subscrube -> next
+                var enemy = _model.Location.FirstEnemy;
+                var enemyDamageDuration = enemy.Animator.PlayDamage();
 
-                G.HeroStats.Experience.Add(pointsValue);
+                Observable.Timer(TimeSpan.FromSeconds(enemyDamageDuration)).Subscribe(_ =>
+                {
+                    var enemyAttackDuration = enemy.Animator.PlayAttack();
 
-                _view.EnableControls();
+                    enemy.OnAttackEvent.Subscribe(_ =>
+                    {
+                        hero.TakeDamage();
+                        if (hero.CurrentHealth > 0)
+                        {
+                            G.HeroStats.Experience.Add(pointsValue);
+                            _view.EnableControls();
+                        }
+                    });
+                })
+                .AddTo(_disposables);
             })
             .AddTo(_disposables);
+        }
+
+        private void ExchangeAttacks()
+        {
+
         }
 
         // ================ Discard ================
