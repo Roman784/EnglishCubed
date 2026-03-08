@@ -53,8 +53,8 @@ namespace Combat
 
             // ========== Hero Stats ==========
 
-            var heroHealth = new Health(5, 5);
-            var heroArmor = new Armor(5, 5);
+            var heroHealth = new Health(1);
+            var heroArmor = new Armor(1);
             var heroExperience = new Experience(0, 100);
 
             _heroHealthStatView.Init(heroHealth);
@@ -79,12 +79,6 @@ namespace Combat
         private void OnDestroy()
         {
             _presenter?.Dispose();
-        }
-
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.D))
-                _location.Hero.TakeDamage();
         }
     }
 }

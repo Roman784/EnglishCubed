@@ -115,9 +115,17 @@ namespace Combat
                 G.CameraShaker.MidShake();
 
                 var enemy = _model.Location.FirstEnemy;
-                var enemyDamageDuration = enemy.Animator.PlayDamage();
+                enemy.TakeDamage(pointsValue);
 
-                Observable.Timer(TimeSpan.FromSeconds(enemyDamageDuration)).Subscribe(_ =>
+                if (enemy.CurrentHealth <= 0)
+                {
+                    G.HeroStats.Experience.Add(pointsValue);
+                    _view.EnableControls();
+                    return;
+                }
+
+                var enemyDamageDuration = enemy.Animator.PlayDamage();
+                Observable.Timer(TimeSpan.FromSeconds(enemyDamageDuration + 0.2f)).Subscribe(_ =>
                 {
                     var enemyAttackDuration = enemy.Animator.PlayAttack();
 

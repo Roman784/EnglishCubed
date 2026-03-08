@@ -8,17 +8,36 @@ namespace Gameplay
 {
     public class StatBarView : MonoBehaviour
     {
-        [SerializeField] private Image _progressBar;
         [SerializeField] private TMP_Text _valueView;
+        [SerializeField] private Image _progressBar;
+        [SerializeField] private Image _delayedBar;
+
+        [Space]
+
+        [SerializeField] private bool _onlyCurrent = true;
 
         private int _current;
 
         public void Init(Stat stat)
         {
-            stat.Current.Subscribe(current => UpdateProgress(current, stat.Max));
+            _current = stat.CurrentValue;
+            UpdateView(stat.CurrentValue, stat.Max);
+
+            stat.Current.Subscribe(current => 
+            {
+                if (_delayedBar != null)
+                {
+                    _progressBar.fillAmount = (float)current / stat.Max;
+                    UpdateBar(_delayedBar, current, stat.Max, Ease.OutQuad);
+                }
+                else
+                {
+                    UpdateBar(_progressBar, current, stat.Max, Ease.OutCubic);
+                }
+            });
         }
 
-        private void UpdateProgress(int end, int max)
+        private void UpdateBar(Image bar, int end, int max, Ease ease)
         {
             var endValue = end;
             DOTween.To(
@@ -26,12 +45,20 @@ namespace Gameplay
                 c =>
                 {
                     _current = c;
-                    _progressBar.fillAmount = (float)_current / max;
-                    _valueView.text = $"{(int)_current}/{max}";
+                    bar.fillAmount = (float)_current / max;
+                    UpdateView(_current, max);
                 },
                 endValue,
                 0.75f
-            ).SetEase(Ease.OutCubic);
+            ).SetEase(ease);
+        }
+
+        private void UpdateView(int current, int max)
+        {
+            if (_onlyCurrent)
+                _valueView.text = $"{(int)current}";
+            else
+                _valueView.text = $"{(int)current}/{max}";
         }
     }
 }

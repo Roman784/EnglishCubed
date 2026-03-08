@@ -13,7 +13,7 @@ namespace Gameplay
         {
         }
 
-        public override void TakeDamage()
+        public override void TakeDamage(int _=0)
         {
             if (Stats.Armor.CurrentValue > 0)
                 Stats.Armor.DecreaseOne();

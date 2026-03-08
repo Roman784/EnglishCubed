@@ -15,6 +15,6 @@ namespace Gameplay
         {
         }
 
-        public abstract void TakeDamage();
+        public abstract void TakeDamage(int damage);
     }
 }

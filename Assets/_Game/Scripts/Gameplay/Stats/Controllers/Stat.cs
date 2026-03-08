@@ -38,12 +38,18 @@ namespace Gameplay
         }
 
         public void SetToZero() => _current.OnNext(0);
-        public virtual void DecreaseOne() => Add(-1);
         public virtual void IncreaseOne() => Add(1);
+        public virtual void DecreaseOne() => Subtract(1);
 
         public void Add(int value)
         {
             var newCurrentValue = _current.Value + value;
+            CheckAndApplyNewCurrentValue(newCurrentValue);
+        }
+
+        public void Subtract(int value)
+        {
+            var newCurrentValue = _current.Value - value;
             CheckAndApplyNewCurrentValue(newCurrentValue);
         }
 
