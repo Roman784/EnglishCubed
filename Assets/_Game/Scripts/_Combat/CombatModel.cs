@@ -20,6 +20,7 @@ namespace Combat
         public PointsCounter PointsCounter { get; private set; }
         public Location Location { get; private set; }
 
+        public Hero Hero => Location.Hero;
         public int AvailableWordsOnFieldCount => MaxAvailableWordsOnFieldCount - UnitsOnFieldCount;
         public int UnitsOnFieldCount => FieldWordUnitsGroup.AllElementsCount;
         public int UnitsInHandCount => HandWordUnitsGroup.AllElementsCount;

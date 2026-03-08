@@ -22,6 +22,8 @@ namespace Gameplay
 
         public override void TakeDamage(int damage)
         {
+            if (!_isAlive) return;
+
             _health.Subtract(damage);
 
             if (_health.CurrentValue <= 0)

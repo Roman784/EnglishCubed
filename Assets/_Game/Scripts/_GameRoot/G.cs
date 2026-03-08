@@ -19,7 +19,6 @@ namespace GameRoot
 
         // Gameplay.
         public static CameraShaker CameraShaker;
-        public static HeroStats HeroStats;
         public static WordUnitsMovementProvider WordUnitsMovementProvider;
         public static WordUnitFactory WordUnitFactory;
         public static PointsFactory PointsFactory;

@@ -3087,9 +3087,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 695d17531965b2a4693016a2a97fdb82, type: 2}
   - {fileID: 11400000, guid: 4210c2cd410922f48a70c61f7955d760, type: 2}
   - {fileID: 11400000, guid: 0d83112eaa0978942bf40bfb33ce0f24, type: 2}
-  _heroHealthStatView: {fileID: 1860857682}
-  _heroArmorStatView: {fileID: 1509695403}
-  _heroExperienceStatView: {fileID: 737497468}
 --- !u!1 &553538552
 GameObject:
   m_ObjectHideFlags: 0
@@ -9163,6 +9160,9 @@ MonoBehaviour:
   _deckButtonPoint: {fileID: 51605288}
   _drawWordUnitsButtonPoint: {fileID: 1743268321}
   _defaultPointsShowingPoint: {fileID: 1162923875}
+  _heroHealthStatView: {fileID: 1860857682}
+  _heroArmorStatView: {fileID: 1509695403}
+  _heroExperienceStatView: {fileID: 737497468}
 --- !u!4 &1830545102
 Transform:
   m_ObjectHideFlags: 0

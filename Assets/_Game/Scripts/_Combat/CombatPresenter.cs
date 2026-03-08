@@ -119,7 +119,7 @@ namespace Combat
 
                 if (enemy.CurrentHealth <= 0)
                 {
-                    G.HeroStats.Experience.Add(pointsValue);
+                    _model.Hero.Stats.Experience.Add(pointsValue);
                     _view.EnableControls();
                     return;
                 }
@@ -134,7 +134,7 @@ namespace Combat
                         hero.TakeDamage();
                         if (hero.CurrentHealth > 0)
                         {
-                            G.HeroStats.Experience.Add(pointsValue);
+                            _model.Hero.Stats.Experience.Add(pointsValue);
                             _view.EnableControls();
                         }
                     });
@@ -142,11 +142,6 @@ namespace Combat
                 .AddTo(_disposables);
             })
             .AddTo(_disposables);
-        }
-
-        private void ExchangeAttacks()
-        {
-
         }
 
         // ================ Discard ================
@@ -161,8 +156,8 @@ namespace Combat
 
             if (_model.DiscardPoints > 0)
                 _model.SpendDiscardPoint();
-            else if (G.HeroStats.Health.CurrentValue > 1)
-                G.HeroStats.Health.DecreaseOne();
+            else if (_model.Hero.CurrentHealth > 1)
+                _model.Hero.Stats.Health.DecreaseOne();
             else
             {
                 G.UIRoot.ShowMessage("Ты так сильно хочешь умереть?"); // Loc.
@@ -209,8 +204,8 @@ namespace Combat
 
             if (_model.DrawPoints > 0)
                 _model.SpendDrawPoint();
-            else if (G.HeroStats.Health.CurrentValue > 1)
-                G.HeroStats.Health.DecreaseOne();
+            else if (_model.Hero.Stats.Health.CurrentValue > 1)
+                _model.Hero.Stats.Health.DecreaseOne();
             else
             {
                 G.UIRoot.ShowMessage("Ты так сильно хочешь умереть?"); // Loc.

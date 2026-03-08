@@ -1,3 +1,4 @@
+using Gameplay;
 using GameRoot;
 using R3;
 using TMPro;
@@ -26,12 +27,22 @@ namespace Combat
 
         [SerializeField] private Transform _defaultPointsShowingPoint;
 
+        [Space]
+
+        [SerializeField] private StatCellsView _heroHealthStatView;
+        [SerializeField] private StatCellsView _heroArmorStatView;
+        [SerializeField] private StatBarView _heroExperienceStatView; 
+
         private bool _isEnabled;
 
         private Subject<Unit> _attackButtonPressedSignalSubj = new();
         private Subject<Unit> _deckButtonPressedSignalSubj = new();
         private Subject<Unit> _drawButtonPressedSignalSubj = new();
         private Subject<Unit> _discardButtonPressedSignalSubj = new();
+
+        public StatCellsView HeroHealthStatView => _heroHealthStatView;
+        public StatCellsView HeroArmorStatView => _heroArmorStatView;
+        public StatBarView HeroExperienceStatView => _heroExperienceStatView;
 
         public Observable<Unit> AttackButtonPressedSignal => _attackButtonPressedSignalSubj;
         public Observable<Unit> DeckButtonPressedSignal => _deckButtonPressedSignalSubj;

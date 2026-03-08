@@ -7,14 +7,24 @@ namespace Gameplay
     {
         [SerializeField] protected CreatureAnimator _animator;
 
-        public CreatureAnimator Animator => _animator;
+        protected bool _isAlive;
 
+        public CreatureAnimator Animator => _animator;
         public Observable<Unit> OnAttackEvent => _animator.OnAttackEvent;
 
         public virtual void Init()
         {
+            _isAlive = true;
         }
 
         public abstract void TakeDamage(int damage);
+
+        protected void Die()
+        {
+            if (!_isAlive) return;
+            _isAlive = false;
+
+            _animator.PlayDeath();
+        }
     }
 }

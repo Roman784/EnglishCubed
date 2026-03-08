@@ -17,10 +17,6 @@ namespace Combat
 
         [SerializeField] private WordUnitConfigs[] _wordUnitsConfigs; // Temp.
 
-        [SerializeField] private StatCellsView _heroHealthStatView; // Temp.
-        [SerializeField] private StatCellsView _heroArmorStatView; // Temp.
-        [SerializeField] private StatBarView _heroExperienceStatView; // Temp.
-
         private CombatPresenter _presenter;
 
         protected override IEnumerator Run(CombatEnterParams enterParams)
@@ -57,15 +53,15 @@ namespace Combat
             var heroArmor = new Armor(1);
             var heroExperience = new Experience(0, 100);
 
-            _heroHealthStatView.Init(heroHealth);
-            _heroArmorStatView.Init(heroArmor);
-            _heroExperienceStatView.Init(heroExperience);
+            _view.HeroHealthStatView.Init(heroHealth);
+            _view.HeroArmorStatView.Init(heroArmor);
+            _view.HeroExperienceStatView.Init(heroExperience);
 
-            G.HeroStats = new HeroStats(heroHealth, heroArmor, heroExperience);
+            var heroStats = new HeroStats(heroHealth, heroArmor, heroExperience);
 
             // ========== Hero ==========
 
-            _location.Hero.Init();
+            _location.Hero.Init(heroStats);
 
             // ========== Start Game ==========
 
