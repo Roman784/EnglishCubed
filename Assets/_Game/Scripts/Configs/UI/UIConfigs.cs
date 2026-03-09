@@ -12,5 +12,6 @@ namespace GameRoot
 
         [Header("PopUps Gameplay")]
         public DeckPopUp DeckPopUpPrefab;
+        public AbilitySelectionPopUp AbilitySelectionPopUpPrefab;
     }
 }

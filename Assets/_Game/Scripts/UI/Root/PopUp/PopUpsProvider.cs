@@ -22,5 +22,13 @@ namespace UI
 
             return createdPopUp;
         }
+
+        public AbilitySelectionPopUp OpenAbilitySelectionPopUp()
+        {
+            var createdPopUp = _popUpFactory.Create(Configs.AbilitySelectionPopUpPrefab);
+            createdPopUp.Open();
+
+            return createdPopUp;
+        }
     }
 }

@@ -127,7 +127,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 1
         width: 256
         height: 256
       alignment: 0
@@ -299,28 +299,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hero_knight
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 282
-        width: 211
-        height: 321
-      alignment: 9
-      pivot: {x: 0.4909619, y: 0.14156534}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 37d01cfca4e3fc2478d6a27fb218e844
-      internalID: 757588557
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: ic_swords
       rect:
         serializedVersion: 2
@@ -382,28 +360,6 @@ TextureImporter:
       bones: []
       spriteID: d82868774fe33234ab86af3f9c9590dc
       internalID: 625730798
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemy_1
-      rect:
-        serializedVersion: 2
-        x: 255
-        y: 282
-        width: 304
-        height: 290
-      alignment: 9
-      pivot: {x: 0.5041821, y: 0.14489777}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f4037b2b2c05c7e4b80e707fa31a004c
-      internalID: 664701876
       vertices: []
       indices: 
       edges: []
@@ -540,6 +496,94 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: abilitySelectionCard_1
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 466
+        width: 272
+        height: 444
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 80, z: 0, w: 80}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2f5451cc868c2646a9a9ac25e2dbb75
+      internalID: 239288840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: abilitySelectionCard_2
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 287
+        width: 256
+        height: 754
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 80, z: 0, w: 80}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28b37e3e228fa7747bd29beb7345a6a0
+      internalID: 2055685780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: abilitySelectionCard_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 287
+        width: 256
+        height: 754
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 80, z: 0, w: 80}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e3468e9f7b3234469171b181f4d4c82
+      internalID: 639412363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: abilitySelectionCard_4
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 517
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 32, y: 32, z: 32, w: 32}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 478f218576827da4b87e6e1a8dfa3733
+      internalID: -1146481564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -557,6 +601,10 @@ TextureImporter:
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Sprites_0: 625730798
+      abilitySelectionCard_1: 239288840
+      abilitySelectionCard_2: 2055685780
+      abilitySelectionCard_3: 639412363
+      abilitySelectionCard_4: -1146481564
       cloud: 524866619
       enemy_1: 664701876
       hero_knight: 757588557
