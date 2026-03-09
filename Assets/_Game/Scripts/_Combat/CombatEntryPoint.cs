@@ -49,8 +49,8 @@ namespace Combat
 
             // ========== Hero Stats ==========
 
-            var heroHealth = new Health(1);
-            var heroArmor = new Armor(1);
+            var heroHealth = new Health(3);
+            var heroArmor = new Armor(2);
             var heroExperience = new Experience(0, 100);
 
             _view.HeroHealthStatView.Init(heroHealth);

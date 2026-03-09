@@ -9,7 +9,7 @@ namespace Gameplay
 
         protected bool _isAlive;
 
-        public CreatureAnimator Animator => _animator;
+        public bool IsAlive => _isAlive;
         public Observable<Unit> OnAttackEvent => _animator.OnAttackEvent;
 
         public virtual void Init()
@@ -17,9 +17,7 @@ namespace Gameplay
             _isAlive = true;
         }
 
-        public abstract void TakeDamage(int damage, out float animationDuration);
-
-        protected void Die()
+        protected void Kill()
         {
             if (!_isAlive) return;
             _isAlive = false;

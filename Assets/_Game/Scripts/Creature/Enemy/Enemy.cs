@@ -17,13 +17,19 @@ namespace Gameplay
         {
             base.Init();
 
-            _health = new Health(100);
+            _health = new Health(200);
             _healthView.Init(_health);
 
-            _health.ZeroReachedSignal.Subscribe(_ => Die());
+            _health.ZeroReachedSignal.Subscribe(_ => Kill());
         }
 
-        public override void TakeDamage(int damage, out float animationDuration)
+        public Observable<Unit> Attack()
+        {
+            _animator.PlayAttack();
+            return _animator.OnAttackEvent;
+        }
+
+        public void TakeDamage(int damage, out float animationDuration)
         {
             if (!_isAlive)
             {
@@ -34,12 +40,6 @@ namespace Gameplay
             _health.Subtract(damage);
             animationDuration = CurrentHealth > 0 ? 
                 _animator.PlayDamage() : _animator.GetDeathLength();
-        }
-
-        public Observable<Unit> Attack()
-        {
-            _animator.PlayAttack();
-            return _animator.OnAttackEvent;
         }
     }
 }

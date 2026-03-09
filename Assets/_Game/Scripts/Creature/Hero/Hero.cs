@@ -8,34 +8,46 @@ namespace Gameplay
     {
         private HeroStats _stats;
 
-        public HeroStats Stats => _stats;
-        public int CurrentHealth => _stats.Health.CurrentValue;
+        public bool IsMoreThanOneHealthUnit => _stats.Health.CurrentValue > 1;
 
         public void Init(HeroStats stats)
         {
             base.Init();
+
             _stats = stats;
 
-            _stats.Health.ZeroReachedSignal.Subscribe(_ => Die());
+            _stats.Health.ZeroReachedSignal.Subscribe(_ => Kill());
         }
 
-        public override void TakeDamage(int _, out float animationDuration)
+        public void Attack()
         {
-            if (!_isAlive)
-            {
-                animationDuration = 0f;
-                return;
-            }
+            _animator.PlayAttack();
+        }
+
+        public void TakeDamage()
+        {
+            if (!_isAlive) return;
 
             G.CameraShaker.WeakShake();
 
-            if (Stats.Armor.CurrentValue > 0)
-                Stats.Armor.DecreaseOne();
-            else if (Stats.Health.CurrentValue > 0)
-                Stats.Health.DecreaseOne();
+            if (_stats.Armor.CurrentValue > 0)
+                _stats.Armor.DecreaseOne();
+            else if (_stats.Health.CurrentValue > 0)
+                _stats.Health.DecreaseOne();
 
-            animationDuration = CurrentHealth > 0 ?
-                _animator.PlayDamage() : _animator.GetDeathLength();
+            if (_isAlive) 
+                _animator.PlayDamage();
+        }
+
+        public void SubstractOneHealthUnit()
+        {
+            G.CameraShaker.WeakShake();
+            _stats.Health.DecreaseOne();
+        }
+
+        public void AddExperience(int value)
+        {
+            _stats.Experience.Add(value);
         }
     }
 }

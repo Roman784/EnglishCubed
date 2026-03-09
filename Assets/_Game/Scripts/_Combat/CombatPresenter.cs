@@ -109,7 +109,7 @@ namespace Combat
 
         private void CompleteAttack(Points points)
         {
-            _model.Location.Hero.Animator.PlayAttack();
+            _model.Hero.Attack();
 
             points.Attack(_model.Location.FirstEnemy.Center)
                 .Subscribe(value =>
@@ -133,7 +133,7 @@ namespace Combat
                 {
                     if (enemy.CurrentHealth <= 0)
                     {
-                        _model.Hero.Stats.Experience.Add(pointsValue);
+                        _model.Hero.AddExperience(pointsValue);
                         _view.EnableControls();
                         return;
                     }
@@ -147,10 +147,10 @@ namespace Combat
         {
             enemy.Attack().Subscribe(_ =>
             {
-                _model.Hero.TakeDamage(0, out var _);
-                if (_model.Hero.CurrentHealth > 0)
+                _model.Hero.TakeDamage();
+                if (_model.Hero.IsAlive)
                 {
-                    _model.Hero.Stats.Experience.Add(pointsValue);
+                    _model.Hero.AddExperience(pointsValue);
                     _view.EnableControls();
                 }
             });
@@ -168,8 +168,8 @@ namespace Combat
 
             if (_model.DiscardPoints > 0)
                 _model.SpendDiscardPoint();
-            else if (_model.Hero.CurrentHealth > 1)
-                _model.Hero.Stats.Health.DecreaseOne();
+            else if (_model.Hero.IsMoreThanOneHealthUnit)
+                _model.Hero.SubstractOneHealthUnit();
             else
             {
                 G.UIRoot.ShowMessage("Ты так сильно хочешь умереть?"); // Loc.
@@ -216,8 +216,8 @@ namespace Combat
 
             if (_model.DrawPoints > 0)
                 _model.SpendDrawPoint();
-            else if (_model.Hero.Stats.Health.CurrentValue > 1)
-                _model.Hero.Stats.Health.DecreaseOne();
+            else if (_model.Hero.IsMoreThanOneHealthUnit)
+                _model.Hero.SubstractOneHealthUnit();
             else
             {
                 G.UIRoot.ShowMessage("Ты так сильно хочешь умереть?"); // Loc.
