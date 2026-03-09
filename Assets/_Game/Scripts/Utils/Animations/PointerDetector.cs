@@ -7,6 +7,7 @@ namespace Utils
     public class PointerDetector : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler
     {
         private bool _isEnabled = true;
+        private bool _isPointerOver = false; // Флаг для отслеживания состояния указателя
 
         private Subject<PointerEventData> _onPointerClickSignalSubj = new();
         private Subject<PointerEventData> _onPointerEnterSignalSubj = new();
@@ -20,8 +21,19 @@ namespace Utils
         public Observable<PointerEventData> OnPointerDownSignal => _onPointerDownSignalSubj;
         public Observable<PointerEventData> OnPointerUpSignal => _onPointerUpSignalSubj;
 
-        public void Enable() => _isEnabled = true;
-        public void Disable() => _isEnabled = false;
+        public void Enable()
+        {
+            if (!_isEnabled && _isPointerOver)
+            {
+                _onPointerEnterSignalSubj.OnNext(null);
+            }
+            _isEnabled = true;
+        }
+
+        public void Disable()
+        {
+            _isEnabled = false;
+        }
 
         public void OnPointerClick(PointerEventData eventData)
         {
@@ -31,12 +43,15 @@ namespace Utils
 
         public void OnPointerEnter(PointerEventData eventData)
         {
+            _isPointerOver = true;
             if (!_isEnabled) return;
             _onPointerEnterSignalSubj.OnNext(eventData);
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
+            _isPointerOver = false;
+            if (!_isEnabled) return;
             _onPointerExitSignalSubj.OnNext(eventData);
         }
 
@@ -48,6 +63,7 @@ namespace Utils
 
         public void OnPointerUp(PointerEventData eventData)
         {
+            if (!_isEnabled) return;
             _onPointerUpSignalSubj.OnNext(eventData);
         }
     }
