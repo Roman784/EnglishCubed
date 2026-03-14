@@ -1,3 +1,4 @@
+using Commands;
 using Configs;
 using Gameplay;
 using GameRoot;
@@ -63,6 +64,11 @@ namespace Combat
 
             _location.Hero.Init(heroStats);
 
+            // ========== Commands ==========
+
+            G.CommandProcessor = new CombatCommandProcessor();
+            G.CommandProcessor.RegisterHandler(new IncreaseHealthCommandHandler(heroHealth));
+
             // ========== Start Game ==========
 
             _view.EnableControls();
@@ -81,6 +87,9 @@ namespace Combat
         {
             if (Input.GetKeyDown(KeyCode.A))
                 G.PopUpsProvider.OpenAbilitySelectionPopUp();
+
+            else if (Input.GetKeyDown(KeyCode.I))
+                G.CommandProcessor.Process(new IncreaseHealthCommand(1));
         }
     }
 }

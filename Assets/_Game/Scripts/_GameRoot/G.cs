@@ -1,4 +1,5 @@
 using Audio;
+using Commands;
 using Configs;
 using Gameplay;
 using GameState;
@@ -18,6 +19,7 @@ namespace GameRoot
         public static AudioProvider AudioProvider;
 
         // Gameplay.
+        public static CommandProcessor CommandProcessor;
         public static CameraShaker CameraShaker;
         public static WordUnitsMovementProvider WordUnitsMovementProvider;
         public static WordUnitFactory WordUnitFactory;
