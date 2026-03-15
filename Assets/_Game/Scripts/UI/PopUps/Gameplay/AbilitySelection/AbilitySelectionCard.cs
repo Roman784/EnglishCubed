@@ -21,6 +21,8 @@ namespace UI
         [SerializeField] private RectTransform _descriptionViewport;
         [SerializeField] private PointerDetector _pointerDetector;
 
+        private Sequence _showingSequence;
+
         private Subject<Unit> _selectSignalSubj = new();
         public Observable<Unit> SelectSignal => _selectSignalSubj;
 
@@ -38,18 +40,27 @@ namespace UI
             _pointerDetector.OnPointerClickSignal.Subscribe(_ => Select());
         }
 
-        public Tween Show()
+        public Observable<Unit> Show()
         {
-            var seq = DOTween.Sequence();
+            var onCompleted = new Subject<Unit>();
+            _showingSequence = DOTween.Sequence();
 
-            seq.Append(transform.DOScaleX(0, 0.35f).SetEase(Ease.InQuart));
-            seq.AppendCallback(() =>
+            _showingSequence.Append(transform.DOScaleX(0, 0.35f).SetEase(Ease.InQuart));
+            _showingSequence.AppendCallback(() =>
             {
                 _backViewport.gameObject.SetActive(false);
                 _frontViewport.gameObject.SetActive(true);
             });
-            seq.Append(transform.DOScaleX(1, 0.35f).SetEase(Ease.OutQuart));
-            seq.Append(DOTween.To
+            _showingSequence.Append(transform.DOScaleX(1, 0.35f).SetEase(Ease.OutQuart));
+
+            _showingSequence.AppendCallback(() =>
+            {
+                _pointerDetector.Enable();
+                onCompleted.OnNext(Unit.Default);
+                onCompleted.OnCompleted();
+            });
+
+            _showingSequence.Append(DOTween.To
             (
                 () => _descriptionViewport.offsetMin.y,
                 y => { _descriptionViewport.offsetMin = new Vector2(_descriptionViewport.offsetMin.x, y); },
@@ -57,16 +68,13 @@ namespace UI
                 1.5f
             ).SetEase(Ease.OutElastic, amplitude: 0f, period: 0.75f));
 
-            seq.AppendCallback(() =>
-            {
-                _pointerDetector.Enable();
-            });
-
-            return seq;
+            return onCompleted;
         }
 
         public Tween Hide()
         {
+            _showingSequence?.Kill();
+
             _pointerDetector.enabled = false;
             var seq = DOTween.Sequence();
 
@@ -77,13 +85,12 @@ namespace UI
                 370,
                 0.5f
             ).SetEase(Ease.InBack));
-            seq.Append(transform.DOScale(0f, 0.25f).SetEase(Ease.InBack));
+            //seq.Append(transform.DOScale(0f, 0.25f).SetEase(Ease.InBack));
             seq.AppendCallback(() =>
             {
                 _backViewport.gameObject.SetActive(false);
                 _frontViewport.gameObject.SetActive(false);
             });
-            seq.AppendInterval(0.5f);
 
             return seq;
         }

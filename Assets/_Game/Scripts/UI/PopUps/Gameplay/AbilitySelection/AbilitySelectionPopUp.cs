@@ -15,19 +15,35 @@ namespace UI
     {
         [Space]
 
+        [SerializeField] private RectTransform _titleViewport;
+
+        [Space]
+
         [SerializeField] private AbilitySelectionCard _cardPrefab;
         [SerializeField] private RectTransform _cardsCOuntainer;
-        [SerializeField] private RectTransform _refuseButtonView;
+        [SerializeField] private CanvasGroup _refuseButtonView;
         [SerializeField] private TMP_Text _hintView;
 
         private List<AbilitySelectionCard> _createdCards = new();
 
-        public override void Open()
+        public override PopUp SetInitialViewState()
         {
-            _refuseButtonView.localScale = new Vector2(0f, 1f);
+            base.SetInitialViewState();
+
+            _titleViewport.localScale = Vector2.up;
+            _refuseButtonView.alpha = 0f;
+            _refuseButtonView.transform.localScale = new Vector2(0.5f, 0.5f);
             var hintColor = _hintView.color;
             hintColor.a = 0f;
             _hintView.color = hintColor;
+
+            return this;
+        }
+
+        public override void Open()
+        {
+            SetInitialViewState();
+            ShowTitle();
 
             CreateCards();
             Coroutines.Start(ShowElementsRoutine());
@@ -74,23 +90,29 @@ namespace UI
         {
             yield return new WaitForSeconds(0.25f);
 
-            Tween lastCardShowing = null;
+            Observable<Unit> lastCardShowedSignal = null;
             foreach (var card in _createdCards)
             {
                 yield return new WaitForSeconds(0.05f);
-                lastCardShowing = card.Show();
+                lastCardShowedSignal = card.Show();
             }
 
-            lastCardShowing.OnComplete(() =>
+            lastCardShowedSignal.Subscribe(_ =>
             {
                 ShowRefuseButtonView();
                 ShowHintView();
             });
         }
 
+        private void ShowTitle()
+        {
+            _titleViewport.DOScaleX(1, 0.5f).SetEase(Ease.OutBack);
+        }
+
         private void ShowRefuseButtonView()
         {
-            _refuseButtonView.DOScaleX(1, 0.5f).SetEase(Ease.OutBack);
+            _refuseButtonView.DOFade(1, 0.5f).SetEase(Ease.OutQuad);
+            _refuseButtonView.transform.DOScale(1, 0.5f).SetEase(Ease.OutBack);
         }
 
         private void ShowHintView()

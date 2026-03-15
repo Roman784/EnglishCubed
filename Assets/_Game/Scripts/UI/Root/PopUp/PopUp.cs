@@ -34,6 +34,7 @@ namespace UI
             _openTween = _rootView.transform
                 .DOScale(1, _openTweenData.Duration)
                 .SetEase(_openTweenData.Ease);
+            _rootView.alpha = 1f;
         }
 
         public virtual void Close()
