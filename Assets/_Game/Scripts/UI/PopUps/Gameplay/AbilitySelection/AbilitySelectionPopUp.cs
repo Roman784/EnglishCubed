@@ -1,13 +1,15 @@
-using System;
-using UnityEngine;
+using Abilities;
+using Configs;
+using DG.Tweening;
+using GameRoot;
 using R3;
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using Utils;
-using GameRoot;
-using DG.Tweening;
-using UnityEngine.UI;
 using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+using Utils;
 
 namespace UI
 {
@@ -40,12 +42,12 @@ namespace UI
             return this;
         }
 
-        public override void Open()
+        public void Open(IEnumerable<AbilityConfigs> abilitiesConfigs)
         {
             SetInitialViewState();
             ShowTitle();
 
-            CreateCards();
+            CreateCards(abilitiesConfigs);
             Coroutines.Start(ShowElementsRoutine());
 
             base.Open();
@@ -70,18 +72,19 @@ namespace UI
             Close();
         }
 
-        private void CreateCards()
+        private void CreateCards(IEnumerable<AbilityConfigs> abilitiesConfigs)
         {
-            for (int i = 0; i < 3; i++)
+            foreach (var abilityConfigs in abilitiesConfigs)
             {
-                CreateCard(i);
+                CreateCard(abilityConfigs);
             }
         }
 
-        private void CreateCard(int idx)
+        private void CreateCard(AbilityConfigs abilityConfigs)
         {
             var createdCard = Instantiate(_cardPrefab, _cardsCOuntainer, false);
-            createdCard.SelectSignal.Subscribe(_ => SelectAbility(idx));
+            createdCard.SetConfigs(abilityConfigs);
+            createdCard.SelectSignal.Subscribe(_ => SelectAbility(abilityConfigs.Name));
 
             _createdCards.Add(createdCard);
         }
@@ -120,9 +123,9 @@ namespace UI
             _hintView.DOFade(1, 1f).SetEase(Ease.OutQuad);
         }
 
-        private void SelectAbility(int idx)
+        private void SelectAbility(AbilityName abilityName)
         {
-            Debug.Log($"Select ability idx: {idx}");
+            Debug.Log($"Select ability idx: {abilityName}");
             Close();
         }
     }

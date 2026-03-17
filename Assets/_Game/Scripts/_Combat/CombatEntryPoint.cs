@@ -4,6 +4,8 @@ using Gameplay;
 using GameRoot;
 using GrammarValidation;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Combat
@@ -17,6 +19,7 @@ namespace Combat
         [SerializeField] private CameraShaker _cameraShaker;
 
         [SerializeField] private WordUnitConfigs[] _wordUnitsConfigs; // Temp.
+        [SerializeField] private AbilityConfigs[] _abilitiesConfigs; // Temp.
 
         private CombatPresenter _presenter;
 
@@ -86,10 +89,19 @@ namespace Combat
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.A))
-                G.PopUpsProvider.OpenAbilitySelectionPopUp();
+                G.PopUpsProvider.OpenAbilitySelectionPopUp(GetRandomElements(_abilitiesConfigs, 3));
 
             else if (Input.GetKeyDown(KeyCode.I))
                 G.CommandProcessor.Process(new IncreaseHealthCommand(1));
+        }
+
+        public static List<T> GetRandomElements<T>(IEnumerable<T> list, int count)
+        {
+            if (list.Count() <= count)
+                return new List<T>(list);
+
+            var random = new System.Random();
+            return list.OrderBy(x => random.Next()).Take(count).ToList();
         }
     }
 }

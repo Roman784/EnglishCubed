@@ -1,3 +1,5 @@
+using Abilities;
+using Configs;
 using DG.Tweening;
 using GrammarValidation;
 using R3;
@@ -38,6 +40,13 @@ namespace UI
 
             _pointerDetector.Disable();
             _pointerDetector.OnPointerClickSignal.Subscribe(_ => Select());
+        }
+
+        public void SetConfigs(AbilityConfigs configs)
+        {
+            _iconView.sprite = configs.Levels[0].Icon;
+            _titleView.text = configs.Levels[0].Title;
+            _descriptionView.text = configs.Levels[0].Description;
         }
 
         public Observable<Unit> Show()
