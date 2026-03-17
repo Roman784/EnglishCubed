@@ -1,3 +1,4 @@
+using Abilities;
 using Commands;
 using Configs;
 using Gameplay;
@@ -7,12 +8,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using R3;
 
 namespace Combat
 {
     public class CombatEntryPoint : SceneEntryPoint<CombatEnterParams>
     {
         [SerializeField] private CombatView _view;
+        [SerializeField] private AbilityInventoryView _abilityInventoryView;
         [SerializeField] private HandWordUnitsGroup _handWordUnitsGroup;
         [SerializeField] private FieldWordUnitsGroup _fieldWordUnitsGroup;
         [SerializeField] private Location _location;
@@ -22,6 +25,7 @@ namespace Combat
         [SerializeField] private AbilityConfigs[] _abilitiesConfigs; // Temp.
 
         private CombatPresenter _presenter;
+        private AbilityInventoryPresentor _abilityInventory;
 
         protected override IEnumerator Run(CombatEnterParams enterParams)
         {
@@ -72,6 +76,12 @@ namespace Combat
             G.CommandProcessor = new CombatCommandProcessor();
             G.CommandProcessor.RegisterHandler(new IncreaseHealthCommandHandler(heroHealth));
 
+            // ========== Abilities ==========
+
+            var abilityInventoryModel = new AbilityInventoryModel(
+                allConfigs: _abilitiesConfigs);
+            _abilityInventory = new AbilityInventoryPresentor(_abilityInventoryView, abilityInventoryModel);
+
             // ========== Start Game ==========
 
             _view.EnableControls();
@@ -89,7 +99,13 @@ namespace Combat
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.A))
-                G.PopUpsProvider.OpenAbilitySelectionPopUp(GetRandomElements(_abilitiesConfigs, 3));
+            {
+                G.PopUpsProvider.OpenAbilitySelectionPopUp(GetRandomElements(_abilitiesConfigs, 3))
+                    .AbilitySelectedSignal.Subscribe(abilityName =>
+                    {
+                        _abilityInventory.AddAbility(abilityName);
+                    });
+            }
 
             else if (Input.GetKeyDown(KeyCode.I))
                 G.CommandProcessor.Process(new IncreaseHealthCommand(1));

@@ -12,7 +12,7 @@ namespace Abilities
 
         public void Set(AbilityIconData data)
         {
-            if (data.StacksCount <= 0) _stacksView.gameObject.SetActive(false);
+            _stacksView.gameObject.SetActive(data.StacksCount > 0);
 
             _iconView.sprite = data.Icon;
             _stacksView.text = data.IsMaxStacks ? "max" : data.StacksCount.ToString();

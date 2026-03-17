@@ -28,6 +28,9 @@ namespace UI
 
         private List<AbilitySelectionCard> _createdCards = new();
 
+        private Subject<AbilityName> _abilitySelectedSignalSubj = new();
+        public Observable<AbilityName> AbilitySelectedSignal => _abilitySelectedSignalSubj;
+
         public override PopUp SetInitialViewState()
         {
             base.SetInitialViewState();
@@ -125,7 +128,9 @@ namespace UI
 
         private void SelectAbility(AbilityName abilityName)
         {
-            Debug.Log($"Select ability idx: {abilityName}");
+            _abilitySelectedSignalSubj.OnNext(abilityName);
+            _abilitySelectedSignalSubj.OnCompleted();
+
             Close();
         }
     }

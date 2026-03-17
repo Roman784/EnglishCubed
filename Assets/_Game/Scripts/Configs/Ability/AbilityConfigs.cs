@@ -10,11 +10,13 @@ namespace Configs
     public class AbilityConfigs : ScriptableObject
     {
         public AbilityName Name;
-        public AbilityLevel[] Levels;
+        public AbilityLevelData[] Levels;
+
+        public int MaxStacksCount => Levels.Length;
     }
 
     [Serializable]
-    public class AbilityLevel
+    public class AbilityLevelData
     {
         public Sprite Icon;
         public string Title;

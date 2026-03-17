@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Abilities
@@ -9,8 +10,10 @@ namespace Abilities
         [SerializeField] private RectTransform _iconsContainer;
         [SerializeField] private AbilityIcon _iconPrefab;
 
-        public void CreateIcons(IEnumerable<AbilityIconData> icons)
+        public void RefreshIcons(IEnumerable<AbilityIconData> icons)
         {
+            if (icons == null || icons.Count() == 0) return;
+
             ClearContainer();
 
             foreach (var iconData in icons)
