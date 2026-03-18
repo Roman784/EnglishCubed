@@ -25,7 +25,7 @@ namespace Combat
         [SerializeField] private AbilityConfigs[] _abilitiesConfigs; // Temp.
 
         private CombatPresenter _presenter;
-        private AbilityInventoryPresentor _abilityInventory;
+        private AbilityInventoryPresenter _abilityInventory;
 
         protected override IEnumerator Run(CombatEnterParams enterParams)
         {
@@ -80,7 +80,7 @@ namespace Combat
 
             var abilityInventoryModel = new AbilityInventoryModel(
                 allConfigs: _abilitiesConfigs);
-            _abilityInventory = new AbilityInventoryPresentor(_abilityInventoryView, abilityInventoryModel);
+            _abilityInventory = new AbilityInventoryPresenter(_abilityInventoryView, abilityInventoryModel);
 
             // ========== Start Game ==========
 
@@ -100,24 +100,15 @@ namespace Combat
         {
             if (Input.GetKeyDown(KeyCode.A))
             {
-                G.PopUpsProvider.OpenAbilitySelectionPopUp(GetRandomElements(_abilitiesConfigs, 3))
+                G.PopUpsProvider.OpenAbilitySelectionPopUp(_abilityInventory.GetAbilitiesForSelection())
                     .AbilitySelectedSignal.Subscribe(abilityName =>
                     {
-                        _abilityInventory.AddAbility(abilityName);
+                        _abilityInventory.AcquireAbility(abilityName);
                     });
             }
 
             else if (Input.GetKeyDown(KeyCode.I))
                 G.CommandProcessor.Process(new IncreaseHealthCommand(1));
-        }
-
-        public static List<T> GetRandomElements<T>(IEnumerable<T> list, int count)
-        {
-            if (list.Count() <= count)
-                return new List<T>(list);
-
-            var random = new System.Random();
-            return list.OrderBy(x => random.Next()).Take(count).ToList();
         }
     }
 }

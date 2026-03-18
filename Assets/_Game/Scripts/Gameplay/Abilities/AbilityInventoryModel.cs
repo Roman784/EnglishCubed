@@ -6,75 +6,71 @@ using UnityEngine;
 
 namespace Abilities
 {
-    public class AbilityInventoryModel    
+    public class AbilityInventoryModel
     {
+        private Dictionary<AbilityName, AcquiredAbilityData> _acquiredAbilitiesMap = new();
+
         public IEnumerable<AbilityConfigs> AllConfigs { get; private set; }
+        public IReadOnlyDictionary<AbilityName, AcquiredAbilityData> AcquiredAbilities => _acquiredAbilitiesMap;
 
-        private Dictionary<AbilityName, List<AbilityConfigs>> _abilitiesMap = new();
-
-        public AbilityInventoryModel(
-            IEnumerable<AbilityConfigs> allConfigs)
+        public AbilityInventoryModel(IEnumerable<AbilityConfigs> allConfigs)
         {
             AllConfigs = allConfigs;
         }
 
-        public AbilityLevelData AddAbility(AbilityName abilityName)
+        public IEnumerable<AbilityConfigs> GetUnacquiredAbilities(int count)
         {
-            var configs = GetAbilityConfigs(abilityName);
-            if (configs == null) return null;
-
-            if (!_abilitiesMap.ContainsKey(abilityName))
-                _abilitiesMap[abilityName] = new List<AbilityConfigs>();
- 
-            _abilitiesMap[abilityName].Add(configs);
-
-            return GetAbilityLevelData(configs);
+            var random = new System.Random();
+            return AllConfigs
+                .Where(c => 
+                {
+                    if (!_acquiredAbilitiesMap.ContainsKey(c.Name))
+                        return true;
+                    return _acquiredAbilitiesMap[c.Name].StacksCount < c.MaxStacksCount;
+                })
+                .OrderBy(x => random.Next())
+                .Take(count);
         }
 
-        public IEnumerable<AbilityIconData> GetAbilityIconsData()
+        public void AcquireAbility(AbilityName abilityName)
         {
-            var iconsData = new List<AbilityIconData>();
-            foreach (var configsList in _abilitiesMap.Values)
-            {
-                var configs = configsList[0];
-                var levelData = GetAbilityLevelData(configs);
-                var stacksCount = GetStacksCount(configs);
-                var isMaxStacks = IsMaxStacksCount(stacksCount, configs);
+            var configs = GetAbilityConfigs(abilityName);
+            if (configs == null) return;
 
-                iconsData.Add(new AbilityIconData()
-                {
-                    Icon = levelData.Icon,
-                    StacksCount = stacksCount,
-                    IsMaxStacks = isMaxStacks,
-                });
-            }
-            return iconsData;
+            if (!_acquiredAbilitiesMap.ContainsKey(abilityName))
+                _acquiredAbilitiesMap[abilityName] = new AcquiredAbilityData() { Configs = configs };
+
+            _acquiredAbilitiesMap[abilityName].StacksCount += 1;
+        }
+
+        public int GetStacksCount(AbilityName abilityName)
+        {
+            if (_acquiredAbilitiesMap.TryGetValue(abilityName, out var data))
+                return Mathf.Clamp(data.StacksCount, 0, data.Configs.MaxStacksCount);
+            return 0;
+        }
+
+        public bool IsMaxStacks(AbilityName abilityName)
+        {
+            var stacks = GetStacksCount(abilityName);
+            var configs = GetAbilityConfigs(abilityName);
+            return stacks >= configs?.MaxStacksCount;
+        }
+
+        public AbilityLevelData GetCurrentLevelData(AbilityName abilityName)
+        {
+            var stacks = GetStacksCount(abilityName);
+            var configs = GetAbilityConfigs(abilityName);
+
+            if (stacks > 0 && configs != null && stacks <= configs.Levels.Length)
+                return configs.Levels[stacks - 1];
+
+            return null;
         }
 
         private AbilityConfigs GetAbilityConfigs(AbilityName abilityName)
         {
             return AllConfigs.FirstOrDefault(c => c.Name == abilityName);
-        }
-
-        private AbilityLevelData GetAbilityLevelData(AbilityConfigs configs)
-        {
-            var lastStackIdx = GetStacksCount(configs) - 1;
-
-            if (lastStackIdx >= 0 && lastStackIdx < configs.Levels.Length) 
-                return configs.Levels[lastStackIdx];
-            return null;
-        }
-
-        private int GetStacksCount(AbilityConfigs configs)
-        {
-            if (_abilitiesMap.TryGetValue(configs.Name, out var stacks))
-                return Mathf.Clamp(stacks.Count, 0, configs.MaxStacksCount);
-            return -1;
-        }
-
-        private bool IsMaxStacksCount(int stackNumber, AbilityConfigs configs)
-        {
-            return stackNumber == configs.MaxStacksCount;
         }
     }
 }

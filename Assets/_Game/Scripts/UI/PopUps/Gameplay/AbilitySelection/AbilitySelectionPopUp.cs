@@ -6,6 +6,7 @@ using R3;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -47,6 +48,12 @@ namespace UI
 
         public void Open(IEnumerable<AbilityConfigs> abilitiesConfigs)
         {
+            if (abilitiesConfigs.Count() == 0)
+            {
+                Close();
+                return;
+            }
+
             SetInitialViewState();
             ShowTitle();
 

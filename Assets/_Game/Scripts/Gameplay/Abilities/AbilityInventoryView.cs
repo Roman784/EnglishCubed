@@ -10,7 +10,7 @@ namespace Abilities
         [SerializeField] private RectTransform _iconsContainer;
         [SerializeField] private AbilityIcon _iconPrefab;
 
-        public void RefreshIcons(IEnumerable<AbilityIconData> icons)
+        public void DisplayAbilities(IEnumerable<AbilityIconData> icons)
         {
             if (icons == null || icons.Count() == 0) return;
 
