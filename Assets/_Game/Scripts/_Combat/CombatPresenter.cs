@@ -19,7 +19,7 @@ namespace Combat
         private CombatView _view;
         private CombatModel _model;
 
-        public CombatPresenter( CombatView view, CombatModel model)
+        public CombatPresenter(CombatView view, CombatModel model)
         {
             _view = view;
             _model = model;

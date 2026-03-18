@@ -10,15 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1822f2f3359b3f447bbd5c33b2aa5016, type: 3}
-  m_Name: ArmorIncrease1_AbilityConfigs
+  m_Name: HandCapacityIncrease1_AbilityConfigs
   m_EditorClassIdentifier: Assembly-CSharp::Configs.AbilityConfigs
-  Name: 2
+  Name: 11
   DependsOn: 0
-  IsStackable: 0
+  IsStackable: 1
   Rarity: 0
   Weight: 0
   Levels:
-  - Icon: {fileID: 423442618, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
-    Title: "\u0417\u0430\u0449\u0438\u0442\u0430"
-    Description: "\u041E\u043D\u043E \u0443\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
-      \u0437\u0430\u0449\u0438\u0442\u0443"
+  - Icon: {fileID: -1110473470, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
+    Title: 
+    Description: 

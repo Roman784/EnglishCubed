@@ -11,25 +11,11 @@ namespace Abilities
         private Dictionary<AbilityName, AcquiredAbilityData> _acquiredAbilitiesMap = new();
 
         public IEnumerable<AbilityConfigs> AllConfigs { get; private set; }
-        public IReadOnlyDictionary<AbilityName, AcquiredAbilityData> AcquiredAbilities => _acquiredAbilitiesMap;
+        public IReadOnlyDictionary<AbilityName, AcquiredAbilityData> AcquiredAbilitiesMap => _acquiredAbilitiesMap;
 
         public AbilityInventoryModel(IEnumerable<AbilityConfigs> allConfigs)
         {
             AllConfigs = allConfigs;
-        }
-
-        public IEnumerable<AbilityConfigs> GetUnacquiredAbilities(int count)
-        {
-            var random = new System.Random();
-            return AllConfigs
-                .Where(c => 
-                {
-                    if (!_acquiredAbilitiesMap.ContainsKey(c.Name))
-                        return true;
-                    return _acquiredAbilitiesMap[c.Name].StacksCount < c.MaxStacksCount;
-                })
-                .OrderBy(x => random.Next())
-                .Take(count);
         }
 
         public void AcquireAbility(AbilityName abilityName)

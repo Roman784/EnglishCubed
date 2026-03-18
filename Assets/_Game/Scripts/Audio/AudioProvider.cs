@@ -76,7 +76,7 @@ namespace Audio
         public void PlayMusic(params AudioClip[] audioClip)
         {
             var clip = audioClip[Random.Range(0, audioClip.Length)];
-            if (clip == _musicSourcer.IsSameClip(clip)) return;
+            if (_musicSourcer.IsSameClip(clip)) return;
 
             _musicSourcer.ChangeVolume(0f, 0.5f).Subscribe(_ =>
             {

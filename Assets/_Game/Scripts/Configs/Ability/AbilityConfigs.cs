@@ -1,6 +1,7 @@
 using Abilities;
 using System;
 using UnityEngine;
+using Utils;
 
 namespace Configs
 {
@@ -10,6 +11,13 @@ namespace Configs
     public class AbilityConfigs : ScriptableObject
     {
         public AbilityName Name;
+        public AbilityName DependsOn;
+        public bool IsRepeatable;
+        public Rarity Rarity;
+        public Weight Weight;
+
+        [Space]
+
         public AbilityLevelData[] Levels;
 
         public int MaxStacksCount => Levels.Length;
