@@ -563,16 +563,16 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: abilitySelectionCard_4
+      name: square_r64
       rect:
         serializedVersion: 2
-        x: 872
-        y: 517
+        x: 876
+        y: 482
         width: 256
         height: 256
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 32, y: 32, z: 32, w: 32}
+      border: {x: 64, y: 64, z: 64, w: 64}
       customData: 
       outline: []
       physicsShape: []
@@ -606,6 +606,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: square_outline_r64
+      rect:
+        serializedVersion: 2
+        x: 1148
+        y: 482
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 64, y: 64, z: 64, w: 64}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b088ac3700f131146949582477d6441e
+      internalID: -2018211290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -626,7 +648,6 @@ TextureImporter:
       abilitySelectionCard_1: 239288840
       abilitySelectionCard_2: 2055685780
       abilitySelectionCard_3: 639412363
-      abilitySelectionCard_4: -1146481564
       cloud: 524866619
       enemy_1: 664701876
       hero_knight: 757588557
@@ -646,7 +667,9 @@ TextureImporter:
       sack: -1996793046
       square: -1202163512
       square_outline_r32: 329716326
+      square_outline_r64: -2018211290
       square_r32: 194469976
+      square_r64: -1146481564
       star_little: -1809274364
       title_viewport: 509758876
   mipmapLimitGroupName: 

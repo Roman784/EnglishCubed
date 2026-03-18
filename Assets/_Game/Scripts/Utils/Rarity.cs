@@ -4,8 +4,7 @@ namespace Utils
     {
         Common,
         Rare,
-        Epic,
-        Legendary
+        Epic
     }
 
     public enum Weight

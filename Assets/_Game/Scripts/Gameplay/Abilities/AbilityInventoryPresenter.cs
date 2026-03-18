@@ -19,7 +19,7 @@ namespace Abilities
             _model = model;
         }
 
-        public IEnumerable<AbilityConfigs> GetAbilitiesForSelection()
+        public IEnumerable<(AbilityConfigs, AbilityLevelData)> GetAbilitiesForSelection()
         {
             var random = new System.Random();
             return _model.AllConfigs
@@ -32,20 +32,21 @@ namespace Abilities
                     if (!_model.AcquiredAbilitiesMap.ContainsKey(c.Name))
                         return true;
 
-                    if (c.IsRepeatable) 
+                    if (c.IsRepeatable)
                         return true;
 
                     return _model.AcquiredAbilitiesMap[c.Name].StacksCount < c.MaxStacksCount;
                 })
                 .OrderBy(x => random.Next())
-                .Take(3);
+                .Take(3)
+                .Select(a => (a, _model.GetCurrentLevelDataOrFirst(a.Name)));
         }
 
         public void AcquireAbility(AbilityName abilityName)
         {
             _model.AcquireAbility(abilityName);
 
-            var abilityLevelData = _model.GetCurrentLevelData(abilityName);
+            var abilityLevelData = _model.GetCurrentLevelDataOrFirst(abilityName);
             // TODO: Apply ability.
 
             UpdateView();
@@ -59,7 +60,7 @@ namespace Abilities
             {
                 if (ability.Configs.IsRepeatable) continue;
 
-                var levelData = _model.GetCurrentLevelData(ability.Configs.Name);
+                var levelData = _model.GetCurrentLevelDataOrFirst(ability.Configs.Name);
                 var stacksCount = _model.GetStacksCount(ability.Configs.Name);
                 var isMaxStacks = _model.IsMaxStacks(ability.Configs.Name);
 

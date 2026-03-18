@@ -23,7 +23,7 @@ namespace UI
             return createdPopUp;
         }
 
-        public AbilitySelectionPopUp OpenAbilitySelectionPopUp(IEnumerable<AbilityConfigs> abilitiesConfigs)
+        public AbilitySelectionPopUp OpenAbilitySelectionPopUp(IEnumerable<(AbilityConfigs, AbilityLevelData)> abilitiesConfigs)
         {
             var createdPopUp = _popUpFactory.Create(Configs.AbilitySelectionPopUpPrefab);
             createdPopUp.Open(abilitiesConfigs);

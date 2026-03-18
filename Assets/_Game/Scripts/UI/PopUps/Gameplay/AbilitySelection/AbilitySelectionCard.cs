@@ -42,11 +42,14 @@ namespace UI
             _pointerDetector.OnPointerClickSignal.Subscribe(_ => Select());
         }
 
-        public void SetConfigs(AbilityConfigs configs)
+        public void SetConfigs(AbilityConfigs configs, AbilityLevelData levelData)
         {
-            _iconView.sprite = configs.Levels[0].Icon;
-            _titleView.text = configs.Levels[0].Title;
-            _descriptionView.text = configs.Levels[0].Description;
+            _iconView.sprite = levelData.Icon;
+            _titleView.text = levelData.Title;
+
+            if (levelData.Values != null)
+                _descriptionView.text = 
+                    $"{levelData.Description}\n\n{levelData.Details.Insert(levelData.Values)}";
         }
 
         public Observable<Unit> Show()

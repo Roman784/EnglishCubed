@@ -28,6 +28,9 @@ namespace Configs
     {
         public Sprite Icon;
         public string Title;
-        public string Description;
+        [TextArea(2, 3)]public string Description;
+        [TextArea(2, 3)]public string Details;
+
+        public float[] Values;
     }
 }

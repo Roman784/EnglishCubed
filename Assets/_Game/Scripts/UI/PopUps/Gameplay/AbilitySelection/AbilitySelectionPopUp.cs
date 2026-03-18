@@ -46,7 +46,7 @@ namespace UI
             return this;
         }
 
-        public void Open(IEnumerable<AbilityConfigs> abilitiesConfigs)
+        public void Open(IEnumerable<(AbilityConfigs, AbilityLevelData)> abilitiesConfigs)
         {
             if (abilitiesConfigs.Count() == 0)
             {
@@ -82,18 +82,18 @@ namespace UI
             Close();
         }
 
-        private void CreateCards(IEnumerable<AbilityConfigs> abilitiesConfigs)
+        private void CreateCards(IEnumerable<(AbilityConfigs, AbilityLevelData)> abilitiesConfigs)
         {
             foreach (var abilityConfigs in abilitiesConfigs)
             {
-                CreateCard(abilityConfigs);
+                CreateCard(abilityConfigs.Item1, abilityConfigs.Item2);
             }
         }
 
-        private void CreateCard(AbilityConfigs abilityConfigs)
+        private void CreateCard(AbilityConfigs abilityConfigs, AbilityLevelData levelData)
         {
             var createdCard = Instantiate(_cardPrefab, _cardsCOuntainer, false);
-            createdCard.SetConfigs(abilityConfigs);
+            createdCard.SetConfigs(abilityConfigs, levelData);
             createdCard.SelectSignal.Subscribe(_ => SelectAbility(abilityConfigs.Name));
 
             _createdCards.Add(createdCard);

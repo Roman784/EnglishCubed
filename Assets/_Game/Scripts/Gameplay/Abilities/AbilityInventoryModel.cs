@@ -43,15 +43,14 @@ namespace Abilities
             return stacks >= configs?.MaxStacksCount;
         }
 
-        public AbilityLevelData GetCurrentLevelData(AbilityName abilityName)
+        public AbilityLevelData GetCurrentLevelDataOrFirst(AbilityName abilityName)
         {
             var stacks = GetStacksCount(abilityName);
             var configs = GetAbilityConfigs(abilityName);
 
-            if (stacks > 0 && configs != null && stacks <= configs.Levels.Length)
-                return configs.Levels[stacks - 1];
-
-            return null;
+            if (stacks >= 0 && stacks <= configs?.MaxStacksCount - 1)
+                return configs?.Levels[stacks];
+            return configs?.Levels[0];
         }
 
         private AbilityConfigs GetAbilityConfigs(AbilityName abilityName)
