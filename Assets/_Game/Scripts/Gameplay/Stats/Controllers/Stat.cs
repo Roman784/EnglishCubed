@@ -30,6 +30,11 @@ namespace Gameplay
             _current = new ReactiveProperty<float>(current);
         }
 
+        public override string ToString()
+        {
+            return $"{Name}: {CurrentValue}/{Max}";
+        }
+
         public void SetMax(float newMax)
         {
             if (newMax < 0) newMax = 0;

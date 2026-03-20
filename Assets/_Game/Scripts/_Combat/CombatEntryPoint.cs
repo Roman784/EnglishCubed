@@ -86,6 +86,8 @@ namespace Combat
             _view.EnableControls();
             _view.PressDrawButton();
 
+            Debug.Log(heroStats.ToString());
+
             isLoaded = true;
             yield return new WaitUntil(() => isLoaded);
         }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Xml.Linq;
 using UnityEngine;
 
@@ -19,6 +20,14 @@ namespace Gameplay
         {
             SetStats(stats);
             SetDefaultStats();
+        }
+
+        public override string ToString()
+        {
+            var stringBuilder = new StringBuilder();
+            foreach (var stat in _statsMap.Values)
+                stringBuilder.AppendLine(stat.ToString());
+            return stringBuilder.ToString();
         }
 
         public void SetStat(Stat stat)
