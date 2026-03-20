@@ -28,8 +28,8 @@ namespace Gameplay
 
     public enum ModifierType
     {
-        Flat,       // +X
-        Multiplier, // *X
+        Flat,
+        Multiplier,
         Custom
     }
 }

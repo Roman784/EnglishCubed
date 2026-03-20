@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Xml.Linq;
 using UnityEngine;
 
@@ -7,7 +8,8 @@ namespace Gameplay
 {
     public class Stats
     {
-        public Dictionary<StatName, Stat> _statsMap = new();
+        private Dictionary<StatName, Stat> _statsMap = new();
+        private Dictionary<StatName, List<StatModifier>> _modifiersMap = new(); 
 
         public Health Health => (Health)_statsMap[StatName.Health];
         public Armor Armor => (Armor)_statsMap[StatName.Armor];
@@ -24,9 +26,54 @@ namespace Gameplay
             _statsMap[stat.Name] = stat;
         }
 
-        public bool TryGetStat(StatName name, out Stat stat)
+        public bool TryGetStatValue(StatName name, out float value)
         {
-            return _statsMap.TryGetValue(name, out stat);
+            var res = _statsMap.TryGetValue(name, out var stat);
+            
+            if (!res)
+            {
+                value = 0f;
+                return false;
+            }
+
+            value = ApplyModifiers(stat);
+            return true;
+        }
+
+        public void AddModifier(StatName statName, StatModifier modifier)
+        {
+            if (!_modifiersMap.ContainsKey(statName))
+                _modifiersMap[statName] = new List<StatModifier>();
+            _modifiersMap[statName].Add(modifier);
+        }
+
+        private float ApplyModifiers(Stat stat)
+        {
+            var result = stat.CurrentValue;
+
+            if (!_modifiersMap.TryGetValue(stat.Name, out var modifiers))
+                return result;
+
+            var flatModifiers = modifiers.Where(m => m.ModifierType == ModifierType.Flat);
+            var multiplierModifiers = modifiers.Where(m => m.ModifierType == ModifierType.Multiplier);
+            var customModifiers = modifiers.Where(m => m.ModifierType == ModifierType.Custom);
+
+            var flatBonus = 0f;
+            foreach (var modifier in flatModifiers)
+                flatBonus += modifier.Value;
+
+            result += flatBonus;
+
+            var multiplierBonus = 1f;
+            foreach(var modifier in multiplierModifiers)
+                multiplierBonus += modifier.Value;
+
+            result *= multiplierBonus;
+
+            foreach (var modifier in customModifiers)
+                result += modifier.СustomFormula(result);
+
+            return result;
         }
 
         private void SetStats(Stat[] stats)
