@@ -7,27 +7,30 @@ namespace Gameplay
 {
     public class Stat
     {
-        protected int _max;
-        protected ReactiveProperty<int> _current;
+        public readonly StatName Name;
+
+        protected float _max;
+        protected ReactiveProperty<float> _current;
 
         // Contains excess.
-        private Subject<int> _zeroReachedSignalSubj = new();
-        private Subject<int> _maxReachedSignalSubj = new();
+        private Subject<float> _zeroReachedSignalSubj = new();
+        private Subject<float> _maxReachedSignalSubj = new();
 
-        public int Max => _max;
-        public ReadOnlyReactiveProperty<int> Current => _current;
-        public int CurrentValue => _current.CurrentValue;
+        public float Max => _max;
+        public ReadOnlyReactiveProperty<float> Current => _current;
+        public float CurrentValue => _current.CurrentValue;
         public float Rate => _current.Value / _max;
-        public Subject<int> ZeroReachedSignal => _zeroReachedSignalSubj;
-        public Subject<int> MaxReachedSignal => _maxReachedSignalSubj;
+        public Subject<float> ZeroReachedSignal => _zeroReachedSignalSubj;
+        public Subject<float> MaxReachedSignal => _maxReachedSignalSubj;
 
-        public Stat(int current, int max)
+        public Stat(StatName name, int current, int max)
         {
+            Name = name;
             _max = max;
-            _current = new ReactiveProperty<int>(current);
+            _current = new ReactiveProperty<float>(current);
         }
 
-        public void SetMax(int newMax)
+        public void SetMax(float newMax)
         {
             if (newMax < 0) newMax = 0;
             var difference = newMax - _max;
@@ -41,19 +44,19 @@ namespace Gameplay
         public virtual void IncreaseOne() => Add(1);
         public virtual void DecreaseOne() => Subtract(1);
 
-        public void Add(int value)
+        public void Add(float value)
         {
             var newCurrentValue = _current.Value + value;
             CheckAndApplyNewCurrentValue(newCurrentValue);
         }
 
-        public void Subtract(int value)
+        public void Subtract(float value)
         {
             var newCurrentValue = _current.Value - value;
             CheckAndApplyNewCurrentValue(newCurrentValue);
         }
 
-        private void CheckAndApplyNewCurrentValue(int newValue)
+        private void CheckAndApplyNewCurrentValue(float newValue)
         {
             _current.OnNext(Mathf.Clamp(newValue, 0, _max));
 

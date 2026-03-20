@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1822f2f3359b3f447bbd5c33b2aa5016, type: 3}
-  m_Name: HealthRestoration_AbilityConfigs
+  m_Name: HealthRestoration2_AbilityConfigs
   m_EditorClassIdentifier: Assembly-CSharp::Configs.AbilityConfigs
-  Name: 5
+  Name: 23
   DependsOn: 0
   IsRepeatable: 1
   Rarity: 0
@@ -21,3 +21,5 @@ MonoBehaviour:
   - Icon: {fileID: 1799493355, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
     Title: 
     Description: 
+    Details: 
+    Values: []

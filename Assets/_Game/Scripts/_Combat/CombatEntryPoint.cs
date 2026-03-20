@@ -65,7 +65,7 @@ namespace Combat
             _view.HeroArmorStatView.Init(heroArmor);
             _view.HeroExperienceStatView.Init(heroExperience);
 
-            var heroStats = new HeroStats(heroHealth, heroArmor, heroExperience);
+            var heroStats = new Stats(heroHealth, heroArmor, heroExperience);
 
             // ========== Hero ==========
 
@@ -100,8 +100,10 @@ namespace Combat
         {
             if (Input.GetKeyDown(KeyCode.A))
             {
-                G.PopUpsProvider.OpenAbilitySelectionPopUp(_abilityInventory.GetAbilitiesForSelection())
-                    .AbilitySelectedSignal.Subscribe(abilityName =>
+                _view.DisableControls();
+                var popUp = G.PopUpsProvider.OpenAbilitySelectionPopUp(_abilityInventory.GetAbilitiesForSelection());
+                popUp.CloseSignal.Subscribe(_ => _view.EnableControls());
+                    popUp.AbilitySelectedSignal.Subscribe(abilityName =>
                     {
                         _abilityInventory.AcquireAbility(abilityName);
                     });

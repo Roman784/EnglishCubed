@@ -6,11 +6,11 @@ namespace Gameplay
 {
     public class Hero : Creature
     {
-        private HeroStats _stats;
+        private Stats _stats;
 
         public bool IsMoreThanOneHealthUnit => _stats.Health.CurrentValue > 1;
 
-        public void Init(HeroStats stats)
+        public void Init(Stats stats)
         {
             base.Init();
 

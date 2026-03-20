@@ -16,10 +16,13 @@ namespace Gameplay
 
         [SerializeField] private bool _onlyCurrent = true;
 
-        private int _current;
+        private float _current;
+        private bool _roundUp;
 
-        public void Init(Stat stat)
+        public void Init(Stat stat, bool roundUp = true)
         {
+            _roundUp = roundUp;
+
             _current = stat.CurrentValue;
             UpdateView(stat.CurrentValue, stat.Max);
 
@@ -27,7 +30,7 @@ namespace Gameplay
             {
                 if (_delayedBar != null)
                 {
-                    _progressBar.fillAmount = (float)current / stat.Max;
+                    _progressBar.fillAmount = current / stat.Max;
                     UpdateBar(_delayedBar, current, stat.Max, Ease.OutQuad);
                 }
                 else
@@ -37,7 +40,7 @@ namespace Gameplay
             });
         }
 
-        private void UpdateBar(Image bar, int end, int max, Ease ease)
+        private void UpdateBar(Image bar, float end, float max, Ease ease)
         {
             var endValue = end;
             DOTween.To(
@@ -45,7 +48,7 @@ namespace Gameplay
                 c =>
                 {
                     _current = c;
-                    bar.fillAmount = (float)_current / max;
+                    bar.fillAmount = _current / max;
                     UpdateView(_current, max);
                 },
                 endValue,
@@ -53,12 +56,18 @@ namespace Gameplay
             ).SetEase(ease);
         }
 
-        private void UpdateView(int current, int max)
+        private void UpdateView(float current, float max)
         {
+            if (_roundUp)
+            {
+                current = Mathf.FloorToInt(current);
+                max = Mathf.FloorToInt(max);
+            }
+
             if (_onlyCurrent)
-                _valueView.text = $"{(int)current}";
+                _valueView.text = $"{current}";
             else
-                _valueView.text = $"{(int)current}/{max}";
+                _valueView.text = $"{current}/{max}";
         }
     }
 }

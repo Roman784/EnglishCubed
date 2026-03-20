@@ -9,8 +9,8 @@ namespace Abilities
         ArmorIncrease1,
         HealthIncrease2,
         ArmorIncrease2,
-        HealthRestoration,
-        ArmorRestoration,
+        HealthRestoration1,
+        ArmorRestoration1,
         VampirismChanceIncrease,
         VampirismPowerIncrease,
         ExperienceMultiplierIncrease,
@@ -26,6 +26,8 @@ namespace Abilities
         AttackMultiplierIncrease,
         AttackMultiplierBasedOnFullHealthIncrease,
         AttackMultiplierBasedOnEmptyHealthIncrease,
-        DodgeChanceIncrease
+        DodgeChanceIncrease,
+        HealthRestoration2,
+        ArmorRestoration2
     }
 }

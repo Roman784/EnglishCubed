@@ -16,7 +16,8 @@ namespace Gameplay
             _cells = new LinkedList<StatCellView>();
             ClearContainer();
 
-            stat.Current.Subscribe(current => UpdateCells(current, stat.Max));
+            stat.Current.Subscribe(current => 
+                UpdateCells(Mathf.FloorToInt(current), Mathf.FloorToInt(stat.Max)));
         }
 
         private void UpdateCells(int fillsCount, int max)

@@ -10,7 +10,6 @@ namespace Utils
     public enum Weight
     {
         Low,
-        Medium,
         High
     }
 }

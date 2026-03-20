@@ -8,19 +8,21 @@ namespace Gameplay
         [SerializeField] private StatBarView _healthView;
         [SerializeField] private Transform _centerPoint;
 
-        private Health _health;
+        private Stats _stats;
 
         public Vector2 Center => _centerPoint.position;
-        public int CurrentHealth => _health.CurrentValue;
+        public float CurrentHealth => _stats.Health.CurrentValue;
 
         public override void Init()
         {
             base.Init();
 
-            _health = new Health(200);
-            _healthView.Init(_health);
+            var health = new Health(200);
+            _healthView.Init(health);
 
-            _health.ZeroReachedSignal.Subscribe(_ => Kill());
+            _stats = new Stats(health);
+
+            _stats.Health.ZeroReachedSignal.Subscribe(_ => Kill());
         }
 
         public Observable<Unit> Attack()
@@ -37,7 +39,7 @@ namespace Gameplay
                 return;
             }
 
-            _health.Subtract(damage);
+            _stats.Health.Subtract(damage);
             animationDuration = CurrentHealth > 0 ? 
                 _animator.PlayDamage() : _animator.GetDeathLength();
         }

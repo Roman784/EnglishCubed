@@ -8,7 +8,7 @@ namespace Gameplay
         private Subject<Unit> _levelUppedSignalSubj = new();
         public Observable<Unit> LevelUppedSignal => _levelUppedSignalSubj;
 
-        public Experience(int current, int max) : base(current, max)
+        public Experience(int current, int max) : base(StatName.Experience, current, max)
         {
             MaxReachedSignal.Subscribe(remainder =>
             {
