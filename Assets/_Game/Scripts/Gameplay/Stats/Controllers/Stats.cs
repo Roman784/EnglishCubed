@@ -26,18 +26,18 @@ namespace Gameplay
             _statsMap[stat.Name] = stat;
         }
 
-        public bool TryGetStatValue(StatName name, out float value)
+        public Stat GetStat(StatName name)
+        {
+            if (_statsMap.TryGetValue(name, out var stat)) return stat;
+            return null;
+        }
+
+        public float GetStatValue(StatName name)
         {
             var res = _statsMap.TryGetValue(name, out var stat);
-            
-            if (!res)
-            {
-                value = 0f;
-                return false;
-            }
+            if (!res) return 0f;
 
-            value = ApplyModifiers(stat);
-            return true;
+            return ApplyModifiers(stat);
         }
 
         public void AddModifier(StatName statName, StatModifier modifier)

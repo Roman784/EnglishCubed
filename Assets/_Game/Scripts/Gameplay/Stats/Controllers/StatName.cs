@@ -7,6 +7,7 @@ namespace Gameplay
         Health,
         Armor,
         Experience,
+        ExperiencePower,
         Attack,
         Dodge,
         Vampirism,
@@ -23,6 +24,10 @@ namespace Gameplay
         FiveWordsPower,
         PronounsPower,
         AdjectivesPower,
-        LinkingVerbsPower
+        LinkingVerbsPower,
+        HandCapacity,
+        FieldCapacity,
+        DrawsCount,
+        DiscardsCount
     }
 }
