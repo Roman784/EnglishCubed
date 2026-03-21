@@ -12,7 +12,8 @@ namespace Commands
         public override StatName StatName => StatName.InterrogativeSentencePower;
     }
 
-    public class AbilityIncreaseInterrogativeSentencePowerCommandHandler : AbilityAddModifierCommandHandler
+    public class AbilityIncreaseInterrogativeSentencePowerCommandHandler : 
+        AbilityAddModifierCommandHandler<AbilityIncreaseInterrogativeSentencePowerCommand>
     {
         public AbilityIncreaseInterrogativeSentencePowerCommandHandler(Stats stats) : base(stats)
         {

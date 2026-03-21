@@ -14,7 +14,8 @@ namespace Commands
         }
     }
 
-    public abstract class AbilityAddModifierCommandHandler : ICommandHandler<AbilityAddModifierCommand>
+    public abstract class AbilityAddModifierCommandHandler<TCommand> : 
+        ICommandHandler<TCommand> where TCommand : AbilityAddModifierCommand
     {
         private readonly Stats _stats;
 
@@ -23,7 +24,7 @@ namespace Commands
             _stats = stats;
         }
 
-        public bool Handle(AbilityAddModifierCommand command)
+        public bool Handle(TCommand command)
         {
             _stats.AddModifier(command.StatName, command.Modifier);
             return true;

@@ -12,7 +12,8 @@ namespace Commands
         public override StatName StatName => StatName.DeclarativeSentencePower;
     }
 
-    public class AbilityIncreaseDeclarativeSentencePowerCommandHandler : AbilityAddModifierCommandHandler
+    public class AbilityIncreaseDeclarativeSentencePowerCommandHandler : 
+        AbilityAddModifierCommandHandler<AbilityIncreaseDeclarativeSentencePowerCommand>
     {
         public AbilityIncreaseDeclarativeSentencePowerCommandHandler(Stats stats) : base(stats)
         {

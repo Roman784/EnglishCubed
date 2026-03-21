@@ -12,7 +12,8 @@ namespace Commands
         public override StatName StatName => StatName.AdjectivesPower;
     }
 
-    public class AbilityIncreaseAdjectivesPowerCommandHandler : AbilityAddModifierCommandHandler
+    public class AbilityIncreaseAdjectivesPowerCommandHandler : 
+        AbilityAddModifierCommandHandler<AbilityIncreaseAdjectivesPowerCommand>
     {
         public AbilityIncreaseAdjectivesPowerCommandHandler(Stats stats) : base(stats)
         {

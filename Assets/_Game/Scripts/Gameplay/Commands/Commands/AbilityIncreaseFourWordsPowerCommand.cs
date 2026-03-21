@@ -12,7 +12,8 @@ namespace Commands
         public override StatName StatName => StatName.FourWordsPower;
     }
 
-    public class AbilityIncreaseFourWordsPowerCommandHandler : AbilityAddModifierCommandHandler
+    public class AbilityIncreaseFourWordsPowerCommandHandler : 
+        AbilityAddModifierCommandHandler<AbilityIncreaseFourWordsPowerCommand>
     {
         public AbilityIncreaseFourWordsPowerCommandHandler(Stats stats) : base(stats)
         {

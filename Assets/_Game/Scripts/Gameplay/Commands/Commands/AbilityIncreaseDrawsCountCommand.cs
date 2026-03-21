@@ -13,7 +13,8 @@ namespace Commands
         public override StatName StatName => StatName.DrawsCount;
     }
 
-    public class AbilityIncreaseDrawsCountCommandHandler : AbilityAddModifierCommandHandler
+    public class AbilityIncreaseDrawsCountCommandHandler : 
+        AbilityAddModifierCommandHandler<AbilityIncreaseDrawsCountCommand>
     {
         public AbilityIncreaseDrawsCountCommandHandler(Stats stats) : base(stats)
         {

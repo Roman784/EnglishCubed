@@ -12,7 +12,8 @@ namespace Commands
         public override StatName StatName => StatName.ExperiencePower;
     }
 
-    public class AbilityIncreaseExperiencePowerCommandHandler : AbilityAddModifierCommandHandler
+    public class AbilityIncreaseExperiencePowerCommandHandler : 
+        AbilityAddModifierCommandHandler<AbilityIncreaseExperiencePowerCommand>
     {
         public AbilityIncreaseExperiencePowerCommandHandler(Stats stats) : base(stats)
         {

@@ -12,7 +12,8 @@ namespace Commands
         public override StatName StatName => StatName.VampirismPower;
     }
 
-    public class AbilityIncreaseVampirismPowerCommandHandler : AbilityAddModifierCommandHandler
+    public class AbilityIncreaseVampirismPowerCommandHandler : 
+        AbilityAddModifierCommandHandler<AbilityIncreaseVampirismPowerCommand> 
     {
         public AbilityIncreaseVampirismPowerCommandHandler(Stats stats) : base(stats)
         {

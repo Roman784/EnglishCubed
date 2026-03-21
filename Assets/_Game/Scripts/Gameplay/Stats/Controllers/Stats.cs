@@ -26,7 +26,7 @@ namespace Gameplay
         {
             var stringBuilder = new StringBuilder();
             foreach (var stat in _statsMap.Values)
-                stringBuilder.AppendLine(stat.ToString());
+                stringBuilder.AppendLine($"{stat.Name}: {GetStatValue(stat.Name)}");
             return stringBuilder.ToString();
         }
 

@@ -12,7 +12,8 @@ namespace Commands
         public override StatName StatName => StatName.HandCapacity;
     }
 
-    public class AbilityIncreaseHandCapacityCommandHandler : AbilityAddModifierCommandHandler
+    public class AbilityIncreaseHandCapacityCommandHandler : 
+        AbilityAddModifierCommandHandler<AbilityIncreaseHandCapacityCommand>
     {
         public AbilityIncreaseHandCapacityCommandHandler(Stats stats) : base(stats)
         {

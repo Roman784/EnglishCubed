@@ -12,7 +12,8 @@ namespace Commands
         public override StatName StatName => StatName.FieldCapacity;
     }
 
-    public class AbilityIncreaseFieldCapacityCommandHandler : AbilityAddModifierCommandHandler
+    public class AbilityIncreaseFieldCapacityCommandHandler : 
+        AbilityAddModifierCommandHandler<AbilityIncreaseFieldCapacityCommand>
     {
         public AbilityIncreaseFieldCapacityCommandHandler(Stats stats) : base(stats)
         {

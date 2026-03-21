@@ -12,7 +12,8 @@ namespace Commands
         public override StatName StatName => StatName.FieldCapacity;
     }
 
-    public class AbilityIncreaseFiveWordsPowerCommandHandler : AbilityAddModifierCommandHandler
+    public class AbilityIncreaseFiveWordsPowerCommandHandler : 
+        AbilityAddModifierCommandHandler<AbilityIncreaseFiveWordsPowerCommand>
     {
         public AbilityIncreaseFiveWordsPowerCommandHandler(Stats stats) : base(stats)
         {

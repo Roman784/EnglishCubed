@@ -12,7 +12,8 @@ namespace Commands
         public override StatName StatName => StatName.CriticalAttackPower;
     }
 
-    public class AbilityIncreaseCriticalAttackPowerCommandHandler : AbilityAddModifierCommandHandler
+    public class AbilityIncreaseCriticalAttackPowerCommandHandler : 
+        AbilityAddModifierCommandHandler<AbilityIncreaseCriticalAttackPowerCommand>
     {
         public AbilityIncreaseCriticalAttackPowerCommandHandler(Stats stats) : base(stats)
         {

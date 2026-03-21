@@ -1,5 +1,6 @@
 using Commands;
 using Configs;
+using Gameplay;
 using GameRoot;
 using System.Collections;
 using System.Collections.Generic;
@@ -49,19 +50,20 @@ namespace Abilities
             _model.AcquireAbility(abilityName);
 
             var abilityLevelData = _model.GetCurrentLevelDataOrFirst(abilityName);
+            var value1 = abilityLevelData.Values.Length > 0 ? abilityLevelData.Values[0] : 0f;
 
             switch (abilityName)
             {
                 case AbilityName.HealthIncrease1: 
                 case AbilityName.HealthIncrease2:
                     G.CommandProcessor.Process(
-                        new AbilityIncreaseHealthCommand(Mathf.FloorToInt(abilityLevelData.Values[0])));
+                        new AbilityIncreaseHealthCommand(Mathf.FloorToInt(value1)));
                     break;
 
                 case AbilityName.ArmorIncrease1:
                 case AbilityName.ArmorIncrease2:
                     G.CommandProcessor.Process(
-                        new AbilityIncreaseArmorCommand(Mathf.FloorToInt(abilityLevelData.Values[0])));
+                        new AbilityIncreaseArmorCommand(Mathf.FloorToInt(value1)));
                     break;
 
                 case AbilityName.HealthRestoration1:
@@ -80,6 +82,17 @@ namespace Abilities
                 case AbilityName.ArmorRestoration2:
                     G.CommandProcessor.Process(
                         new AbilityRestoreArmorCommand(full: true));
+                    break;
+
+                case AbilityName.VampirismChanceIncrease:
+                    G.CommandProcessor.Process(
+                        new AbilityIncreaseVampirismCommand(
+                            StatModifier.Flat(value1)));
+                    break;
+                case AbilityName.VampirismPowerIncrease:
+                    G.CommandProcessor.Process(
+                        new AbilityIncreaseVampirismPowerCommand(
+                            StatModifier.Flat(value1)));
                     break;
             }
 

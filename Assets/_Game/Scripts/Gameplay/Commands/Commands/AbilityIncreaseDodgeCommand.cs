@@ -12,7 +12,8 @@ namespace Commands
         public override StatName StatName => StatName.Dodge;
     }
 
-    public class AbilityIncreaseDodgeCommandhandler : AbilityAddModifierCommandHandler
+    public class AbilityIncreaseDodgeCommandhandler : 
+        AbilityAddModifierCommandHandler<AbilityIncreaseDodgeCommand>
     {
         public AbilityIncreaseDodgeCommandhandler(Stats stats) : base(stats)
         {

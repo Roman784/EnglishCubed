@@ -12,7 +12,8 @@ namespace Commands
         public override StatName StatName => StatName.ExclamatorySentencePower;
     }
 
-    public class AbilityIncreaseExclamatorySentencePowerCommandHandler : AbilityAddModifierCommandHandler
+    public class AbilityIncreaseExclamatorySentencePowerCommandHandler : 
+        AbilityAddModifierCommandHandler<AbilityIncreaseExclamatorySentencePowerCommand>
     {
         public AbilityIncreaseExclamatorySentencePowerCommandHandler(Stats stats) : base(stats)
         {

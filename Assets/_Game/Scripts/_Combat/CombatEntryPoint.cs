@@ -27,6 +27,8 @@ namespace Combat
         private CombatPresenter _presenter;
         private AbilityInventoryPresenter _abilityInventory;
 
+        private Stats _heroStats; // Temp.
+
         protected override IEnumerator Run(CombatEnterParams enterParams)
         {
             var isLoaded = false;
@@ -65,15 +67,15 @@ namespace Combat
             _view.HeroArmorStatView.Init(heroArmor);
             _view.HeroExperienceStatView.Init(heroExperience);
 
-            var heroStats = new Stats(heroHealth, heroArmor, heroExperience);
+            _heroStats = new Stats(heroHealth, heroArmor, heroExperience);
 
             // ========== Hero ==========
 
-            _location.Hero.Init(heroStats);
+            _location.Hero.Init(_heroStats);
 
             // ========== Commands ==========
 
-            InitCommands(heroStats);
+            InitCommands(_heroStats);
 
             // ========== Abilities ==========
 
@@ -85,9 +87,6 @@ namespace Combat
 
             _view.EnableControls();
             _view.PressDrawButton();
-
-            G.CommandProcessor.Process(new AbilityIncreaseHealthCommand(5));
-            heroHealth.Subtract(5);
 
             isLoaded = true;
             yield return new WaitUntil(() => isLoaded);
@@ -101,19 +100,19 @@ namespace Combat
         private void InitCommands(Stats heroStats)
         {
             G.CommandProcessor = new CombatCommandProcessor();
-            G.CommandProcessor.RegisterHandler(
+            /*G.CommandProcessor.RegisterHandler(
                 new AbilityIncreaseHealthCommandHandler(heroStats.Health));
             G.CommandProcessor.RegisterHandler(
                 new AbilityIncreaseArmorCommandHandler(heroStats.Armor));
             G.CommandProcessor.RegisterHandler(
                 new AbilityRestoreHealthCommandHandler(heroStats.Health));
             G.CommandProcessor.RegisterHandler(
-                new AbilityRestoreArmorCommandHandler(heroStats.Armor));
+                new AbilityRestoreArmorCommandHandler(heroStats.Armor));*/
             G.CommandProcessor.RegisterHandler(
                 new AbilityIncreaseVampirismCommandHandler(heroStats));
             G.CommandProcessor.RegisterHandler(
                 new AbilityIncreaseVampirismPowerCommandHandler(heroStats));
-            G.CommandProcessor.RegisterHandler(
+            /*G.CommandProcessor.RegisterHandler(
                 new AbilityIncreaseExperiencePowerCommandHandler(heroStats));
             G.CommandProcessor.RegisterHandler(
                 new AbilityIncreaseHandCapacityCommandHandler(heroStats));
@@ -152,7 +151,7 @@ namespace Combat
             G.CommandProcessor.RegisterHandler(
                 new AbilityIncreaseLinkingVerbsPowerCommandHandler(heroStats));
             G.CommandProcessor.RegisterHandler(
-                new AbilityIncreaseAdjectivesPowerCommandHandler(heroStats));
+                new AbilityIncreaseAdjectivesPowerCommandHandler(heroStats));*/
         }
 
         private void Update()
@@ -162,14 +161,17 @@ namespace Combat
                 _view.DisableControls();
                 var popUp = G.PopUpsProvider.OpenAbilitySelectionPopUp(_abilityInventory.GetAbilitiesForSelection());
                 popUp.CloseSignal.Subscribe(_ => _view.EnableControls());
-                    popUp.AbilitySelectedSignal.Subscribe(abilityName =>
-                    {
-                        _abilityInventory.AcquireAbility(abilityName);
-                    });
+                popUp.AbilitySelectedSignal.Subscribe(abilityName =>
+                {
+                    _abilityInventory.AcquireAbility(abilityName);
+                });
             }
 
             else if (Input.GetKeyDown(KeyCode.I))
                 G.CommandProcessor.Process(new AbilityIncreaseHealthCommand(1));
+
+            else if (Input.GetKeyDown(KeyCode.S))
+                Debug.Log(_heroStats.ToString());
         }
     }
 }

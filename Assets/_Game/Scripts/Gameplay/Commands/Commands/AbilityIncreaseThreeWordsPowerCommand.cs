@@ -12,7 +12,8 @@ namespace Commands
         public override StatName StatName => StatName.ThreeWordsPower;
     }
 
-    public class AbilityIncreaseThreeWordsPowerCommandHandler : AbilityAddModifierCommandHandler
+    public class AbilityIncreaseThreeWordsPowerCommandHandler :
+        AbilityAddModifierCommandHandler<AbilityIncreaseThreeWordsPowerCommand>
     {
         public AbilityIncreaseThreeWordsPowerCommandHandler(Stats stats) : base(stats)
         {

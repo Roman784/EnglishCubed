@@ -12,7 +12,8 @@ namespace Commands
         public override StatName StatName => StatName.LinkingVerbsPower;
     }
 
-    public class AbilityIncreaseLinkingVerbsPowerCommandHandler : AbilityAddModifierCommandHandler
+    public class AbilityIncreaseLinkingVerbsPowerCommandHandler : 
+        AbilityAddModifierCommandHandler<AbilityIncreaseLinkingVerbsPowerCommand>
     {
         public AbilityIncreaseLinkingVerbsPowerCommandHandler(Stats stats) : base(stats)
         {

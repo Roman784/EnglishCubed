@@ -18,8 +18,21 @@ MonoBehaviour:
   Rarity: 0
   Weight: 0
   Levels:
-  - Icon: {fileID: -671153970, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
+  - Icon: {fileID: -3641786769132176462, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
     Title: 
     Description: 
     Details: 
-    Values: []
+    Values:
+    - 0.1
+  - Icon: {fileID: -3641786769132176462, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
+    Title: 
+    Description: 
+    Details: 
+    Values:
+    - 0.1
+  - Icon: {fileID: -3641786769132176462, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
+    Title: 
+    Description: 
+    Details: 
+    Values:
+    - 0.1

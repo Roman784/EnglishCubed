@@ -12,7 +12,8 @@ namespace Commands
         public override StatName StatName => StatName.DiscardsCount;
     }
 
-    public class AbilityIncreaseDiscardsCountCommandHandler : AbilityAddModifierCommandHandler
+    public class AbilityIncreaseDiscardsCountCommandHandler : 
+        AbilityAddModifierCommandHandler<AbilityIncreaseDiscardsCountCommand>
     {
         public AbilityIncreaseDiscardsCountCommandHandler(Stats stats) : base(stats)
         {

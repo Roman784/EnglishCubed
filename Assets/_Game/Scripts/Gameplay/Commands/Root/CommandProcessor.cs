@@ -15,7 +15,7 @@ namespace Commands
 
         public bool Process<TCommand>(TCommand command) where TCommand : ICommand
         {
-            if (_handlesMap.TryGetValue(typeof(TCommand), out var handle))
+            if (_handlesMap.TryGetValue(command.GetType(), out var handle))
             {
                 var typedHandler = (ICommandHandler<TCommand>)handle;
                 var result = typedHandler.Handle(command);
