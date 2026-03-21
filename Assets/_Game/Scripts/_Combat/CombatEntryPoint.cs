@@ -101,57 +101,57 @@ namespace Combat
         {
             G.CommandProcessor = new CombatCommandProcessor();
             G.CommandProcessor.RegisterHandler(
-                new IncreaseHealthCommandHandler(heroStats.Health));
+                new AbilityIncreaseHealthCommandHandler(heroStats.Health));
             G.CommandProcessor.RegisterHandler(
-                new IncreaseArmorCommandHandler(heroStats.Armor));
+                new AbilityIncreaseArmorCommandHandler(heroStats.Armor));
             G.CommandProcessor.RegisterHandler(
-                new RestoreHealthCommandHandler(heroStats.Health));
+                new AbilityRestoreHealthCommandHandler(heroStats.Health));
             G.CommandProcessor.RegisterHandler(
-                new RestoreArmorCommandHandler(heroStats.Armor));
+                new AbilityRestoreArmorCommandHandler(heroStats.Armor));
             G.CommandProcessor.RegisterHandler(
-                new IncreaseVampirismCommandHandler(heroStats.GetStat(StatName.Vampirism)));
+                new AbilityIncreaseVampirismCommandHandler(heroStats));
             G.CommandProcessor.RegisterHandler(
-                new IncreaseVampirismPowerCommandHandler(heroStats.GetStat(StatName.VampirismPower)));
+                new AbilityIncreaseVampirismPowerCommandHandler(heroStats));
             G.CommandProcessor.RegisterHandler(
-                new IncreaseExperienceMultiplierCommandHandler(heroStats.GetStat(StatName.ExperiencePower)));
+                new AbilityIncreaseExperiencePowerCommandHandler(heroStats));
             G.CommandProcessor.RegisterHandler(
-                new IncreaseHandCapacityCommandHandler(heroStats.GetStat(StatName.HandCapacity)));
+                new AbilityIncreaseHandCapacityCommandHandler(heroStats));
             G.CommandProcessor.RegisterHandler(
-                new IncreaseFieldCapacityCommandHandler(heroStats.GetStat(StatName.FieldCapacity)));
+                new AbilityIncreaseFieldCapacityCommandHandler(heroStats));
             G.CommandProcessor.RegisterHandler(
-                new IncreaseDrawsCountCommandHandler(heroStats.GetStat(StatName.DrawsCount)));
+                new AbilityIncreaseDrawsCountCommandHandler(heroStats));
             G.CommandProcessor.RegisterHandler(
-                new IncreaseDiscardsCountCommandHandler(heroStats.GetStat(StatName.DiscardsCount)));
+                new AbilityIncreaseDiscardsCountCommandHandler(heroStats));
             G.CommandProcessor.RegisterHandler(
-                new IncreaseDeclarativeSentencePowerCommandHandler(heroStats.GetStat(StatName.DeclarativeSentencePower)));
+                new AbilityIncreaseDeclarativeSentencePowerCommandHandler(heroStats));
             G.CommandProcessor.RegisterHandler(
-                new IncreaseInterrogativeSentenceMultiplierCommandHandler(heroStats.GetStat(StatName.InterrogativeSentencePower)));
+                new AbilityIncreaseInterrogativeSentencePowerCommandHandler(heroStats));
             G.CommandProcessor.RegisterHandler(
-                new IncreaseExclamatorySentencePowerCommandHandler(heroStats.GetStat(StatName.ExclamatorySentencePower)));
+                new AbilityIncreaseExclamatorySentencePowerCommandHandler(heroStats));
             G.CommandProcessor.RegisterHandler(
-                new IncreaseThreeWordsPowerCommandHandler(heroStats.GetStat(StatName.ThreeWordsPower)));
+                new AbilityIncreaseThreeWordsPowerCommandHandler(heroStats));
             G.CommandProcessor.RegisterHandler(
-                new IncreaseFourWordsPowerCommandHandler(heroStats.GetStat(StatName.FourWordsPower)));
+                new AbilityIncreaseFourWordsPowerCommandHandler(heroStats));
             G.CommandProcessor.RegisterHandler(
-                new IncreaseFieldCapacityCommandHandler(heroStats.GetStat(StatName.FieldCapacity)));
+                new AbilityIncreaseFieldCapacityCommandHandler(heroStats));
             G.CommandProcessor.RegisterHandler(
-                new IncreaseDodgeCommandhandler(heroStats.GetStat(StatName.Dodge)));
+                new AbilityIncreaseDodgeCommandhandler(heroStats));
             G.CommandProcessor.RegisterHandler(
-                new IncreaseRageAttackCommandHandler(heroStats.GetStat(StatName.Attack)));
+                new AbilityIncreaseRageAttackCommandHandler(heroStats));
             G.CommandProcessor.RegisterHandler(
-                new IncreaseCriticalAttackCommandHandler(heroStats.GetStat(StatName.CriticalAttack)));
+                new AbilityIncreaseCriticalAttackCommandHandler(heroStats));
             G.CommandProcessor.RegisterHandler(
-                new IncreaseCriticalAttackPowerCommandHandler(heroStats.GetStat(StatName.CriticalAttackPower)));
+                new AbilityIncreaseCriticalAttackPowerCommandHandler(heroStats));
             G.CommandProcessor.RegisterHandler(
-                new IncreaseRageAttackCommandHandler(heroStats.GetStat(StatName.RageAttack)));
+                new AbilityIncreaseRageAttackCommandHandler(heroStats));
             G.CommandProcessor.RegisterHandler(
-                new IncreaseRageDodgeCommandHandler(heroStats.GetStat(StatName.RageDodge)));
+                new AbilityIncreaseRageDodgeCommandHandler(heroStats));
             G.CommandProcessor.RegisterHandler(
-                new IncreasePronounsPowerCommandHandler(heroStats.GetStat(StatName.PronounsPower)));
+                new AbilityIncreasePronounsPowerCommandHandler(heroStats));
             G.CommandProcessor.RegisterHandler(
-                new IncreaseLinkingVerbsPowerCommandHandler(heroStats.GetStat(StatName.LinkingVerbsPower)));
+                new AbilityIncreaseLinkingVerbsPowerCommandHandler(heroStats));
             G.CommandProcessor.RegisterHandler(
-                new IncreaseAdjectivesPowerCommandHandler(heroStats.GetStat(StatName.AdjectivesPower)));
+                new AbilityIncreaseAdjectivesPowerCommandHandler(heroStats));
         }
 
         private void Update()
@@ -168,7 +168,7 @@ namespace Combat
             }
 
             else if (Input.GetKeyDown(KeyCode.I))
-                G.CommandProcessor.Process(new IncreaseHealthCommand(1));
+                G.CommandProcessor.Process(new AbilityIncreaseHealthCommand(1));
         }
     }
 }

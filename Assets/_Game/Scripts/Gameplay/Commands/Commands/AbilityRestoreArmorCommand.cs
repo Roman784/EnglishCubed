@@ -3,13 +3,13 @@ using UnityEngine;
 
 namespace Commands
 {
-    public class RestoreArmorCommand : ICommand
+    public class AbilityRestoreArmorCommand : ICommand
     {
         public readonly int Value;
         public readonly bool Half;
         public readonly bool Full;
 
-        public RestoreArmorCommand(int value = 0, bool half = false, bool full = false)
+        public AbilityRestoreArmorCommand(int value = 0, bool half = false, bool full = false)
         {
             Value = value;
             Half = half;
@@ -17,16 +17,16 @@ namespace Commands
         }
     }
 
-    public class RestoreArmorCommandHandler : ICommandHandler<RestoreArmorCommand>
+    public class AbilityRestoreArmorCommandHandler : ICommandHandler<AbilityRestoreArmorCommand>
     {
         private readonly Armor _armor;
 
-        public RestoreArmorCommandHandler(Armor armor)
+        public AbilityRestoreArmorCommandHandler(Armor armor)
         {
             _armor = armor;
         }
 
-        public bool Handle(RestoreArmorCommand command)
+        public bool Handle(AbilityRestoreArmorCommand command)
         {
             if (command.Full)
                 _armor.Restore(Mathf.FloorToInt(_armor.Max - _armor.CurrentValue));

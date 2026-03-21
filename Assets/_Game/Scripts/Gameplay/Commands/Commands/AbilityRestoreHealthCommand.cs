@@ -3,13 +3,13 @@ using UnityEngine;
 
 namespace Commands
 {
-    public class RestoreHealthCommand : ICommand
+    public class AbilityRestoreHealthCommand : ICommand
     {
         public readonly int Value;
         public readonly bool Half;
         public readonly bool Full;
 
-        public RestoreHealthCommand(int value = 0, bool half = false, bool full = false)
+        public AbilityRestoreHealthCommand(int value = 0, bool half = false, bool full = false)
         {
             Value = value;
             Half = half;
@@ -17,16 +17,16 @@ namespace Commands
         }
     }
 
-    public class RestoreHealthCommandHandler : ICommandHandler<RestoreHealthCommand>
+    public class AbilityRestoreHealthCommandHandler : ICommandHandler<AbilityRestoreHealthCommand>
     {
         private readonly Health _health;
 
-        public RestoreHealthCommandHandler(Health health)
+        public AbilityRestoreHealthCommandHandler(Health health)
         {
             _health = health;
         }
 
-        public bool Handle(RestoreHealthCommand command)
+        public bool Handle(AbilityRestoreHealthCommand command)
         {
             if (command.Full)
                 _health.Restore(Mathf.FloorToInt(_health.Max - _health.CurrentValue));
