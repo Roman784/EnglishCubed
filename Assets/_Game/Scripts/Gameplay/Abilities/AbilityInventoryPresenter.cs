@@ -1,4 +1,6 @@
+using Commands;
 using Configs;
+using GameRoot;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,7 +49,21 @@ namespace Abilities
             _model.AcquireAbility(abilityName);
 
             var abilityLevelData = _model.GetCurrentLevelDataOrFirst(abilityName);
-            // TODO: Apply ability.
+
+            switch (abilityName)
+            {
+                case AbilityName.HealthIncrease1: 
+                case AbilityName.HealthIncrease2:
+                    G.CommandProcessor.Process(
+                        new AbilityIncreaseHealthCommand(Mathf.FloorToInt(abilityLevelData.Values[0])));
+                    break;
+
+                case AbilityName.ArmorIncrease1:
+                case AbilityName.ArmorIncrease2:
+                    G.CommandProcessor.Process(
+                        new AbilityIncreaseArmorCommand(Mathf.FloorToInt(abilityLevelData.Values[0])));
+                    break;
+            }
 
             UpdateView();
         }

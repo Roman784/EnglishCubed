@@ -14,11 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Configs.AbilityConfigs
   Name: 2
   DependsOn: 0
-  IsStackable: 0
+  IsRepeatable: 0
   Rarity: 0
   Weight: 0
   Levels:
-  - Icon: {fileID: 423442618, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
+  - Icon: {fileID: -6571116739072514575, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
     Title: "\u0417\u0430\u0449\u0438\u0442\u0430"
     Description: "\u041E\u043D\u043E \u0443\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
       \u0437\u0430\u0449\u0438\u0442\u0443"
+    Details: 
+    Values:
+    - 1

@@ -14,10 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Configs.AbilityConfigs
   Name: 3
   DependsOn: 0
-  IsStackable: 0
+  IsRepeatable: 0
   Rarity: 0
   Weight: 0
   Levels:
-  - Icon: {fileID: -1404176424, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
+  - Icon: {fileID: -1278534851, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
     Title: 
     Description: 
+    Details: 
+    Values:
+    - 2
+  - Icon: {fileID: -1278534851, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
+    Title: 
+    Description: 
+    Details: 
+    Values:
+    - 2
