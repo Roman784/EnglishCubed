@@ -29,9 +29,9 @@ namespace Commands
         public bool Handle(AbilityRestoreArmorCommand command)
         {
             if (command.Full)
-                _armor.Restore(Mathf.FloorToInt(_armor.Max - _armor.CurrentValue));
+                _armor.Restore(Mathf.CeilToInt(_armor.Max - _armor.CurrentValue));
             else if (command.Half)
-                _armor.Restore(Mathf.FloorToInt((_armor.Max - _armor.CurrentValue) / 2f));
+                _armor.Restore(Mathf.CeilToInt((_armor.Max - _armor.CurrentValue) / 2f));
             else
                 _armor.Restore(command.Value);
             return true;

@@ -17,7 +17,7 @@ namespace Gameplay
         {
             base.Init();
 
-            var health = new Health(200);
+            var health = new Health(2000);
             _healthView.Init(health);
 
             _stats = new Stats(health);

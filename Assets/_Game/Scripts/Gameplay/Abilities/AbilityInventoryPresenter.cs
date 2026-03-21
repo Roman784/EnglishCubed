@@ -63,6 +63,24 @@ namespace Abilities
                     G.CommandProcessor.Process(
                         new AbilityIncreaseArmorCommand(Mathf.FloorToInt(abilityLevelData.Values[0])));
                     break;
+
+                case AbilityName.HealthRestoration1:
+                    G.CommandProcessor.Process(
+                        new AbilityRestoreHealthCommand(half: true));
+                    break;
+                case AbilityName.HealthRestoration2:
+                    G.CommandProcessor.Process(
+                        new AbilityRestoreHealthCommand(full: true));
+                    break;
+
+                case AbilityName.ArmorRestoration1:
+                    G.CommandProcessor.Process(
+                        new AbilityRestoreArmorCommand(half: true));
+                    break;
+                case AbilityName.ArmorRestoration2:
+                    G.CommandProcessor.Process(
+                        new AbilityRestoreArmorCommand(full: true));
+                    break;
             }
 
             UpdateView();

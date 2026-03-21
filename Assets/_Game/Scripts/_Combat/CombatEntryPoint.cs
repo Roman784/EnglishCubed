@@ -58,7 +58,7 @@ namespace Combat
             // ========== Hero Stats ==========
 
             var heroHealth = new Health(3);
-            var heroArmor = new Armor(2);
+            var heroArmor = new Armor(0);
             var heroExperience = new Experience(0, 100);
 
             _view.HeroHealthStatView.Init(heroHealth);
@@ -86,7 +86,8 @@ namespace Combat
             _view.EnableControls();
             _view.PressDrawButton();
 
-            Debug.Log(heroStats.ToString());
+            G.CommandProcessor.Process(new AbilityIncreaseHealthCommand(5));
+            heroHealth.Subtract(5);
 
             isLoaded = true;
             yield return new WaitUntil(() => isLoaded);

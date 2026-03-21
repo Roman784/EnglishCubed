@@ -29,9 +29,9 @@ namespace Commands
         public bool Handle(AbilityRestoreHealthCommand command)
         {
             if (command.Full)
-                _health.Restore(Mathf.FloorToInt(_health.Max - _health.CurrentValue));
+                _health.Restore(Mathf.CeilToInt(_health.Max - _health.CurrentValue));
             else if (command.Half)
-                _health.Restore(Mathf.FloorToInt((_health.Max - _health.CurrentValue) / 2f));
+                _health.Restore(Mathf.CeilToInt((_health.Max - _health.CurrentValue) / 2f));
             else
                 _health.Restore(command.Value);
             return true;
