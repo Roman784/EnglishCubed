@@ -166,8 +166,8 @@ namespace Combat
                 return;
             }
 
-            if (_model.DiscardPoints > 0)
-                _model.SpendDiscardPoint();
+            if (_model.Discards.CurrentValue > 0)
+                _model.Discards.DecreaseOne();
             else if (_model.Hero.IsMoreThanOneHealthUnit)
                 _model.Hero.SubstractOneHealthUnit();
             else
@@ -202,7 +202,7 @@ namespace Combat
 
         private void HandleDraw()
         {
-            var capacityLeft = _model.MaxHandCapacity - _model.UnitsInHandCount;
+            var capacityLeft = (int)_model.HandCapacity.Max - _model.UnitsInHandCount;
             if (capacityLeft <= 0)
             {
                 G.UIRoot.ShowMessage("Все места на поле уже заняты"); // Loc.
@@ -214,8 +214,8 @@ namespace Combat
                 return;
             }
 
-            if (_model.DrawPoints > 0)
-                _model.SpendDrawPoint();
+            if (_model.Draws.CurrentValue > 0)
+                _model.Draws.DecreaseOne();
             else if (_model.Hero.IsMoreThanOneHealthUnit)
                 _model.Hero.SubstractOneHealthUnit();
             else
@@ -242,10 +242,10 @@ namespace Combat
 
         private void UpdateView()
         {
-            _view.UpdateDiscardPoints(_model.DiscardPoints);
-            _view.UpdateDrawPoints(_model.DrawPoints);
+            _view.UpdateDiscardPoints((int)_model.Discards.CurrentValue);
+            _view.UpdateDrawPoints((int)_model.Draws.CurrentValue);
             _view.UpdateAvailableWordsOnField(_model.AvailableWordsOnFieldCount);
-            _view.UpdateHandCapacity(_model.UnitsInHandCount, _model.MaxHandCapacity);
+            _view.UpdateHandCapacity(_model.UnitsInHandCount, (int)_model.HandCapacity.Max);
         }
     }
 }

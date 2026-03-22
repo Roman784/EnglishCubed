@@ -121,22 +121,19 @@ namespace Abilities
                 case AbilityName.HandCapacityIncrease1:
                 case AbilityName.HandCapacityIncrease2:
                     G.CommandProcessor.Process(
-                        new AbilityIncreaseHandCapacityCommand(
-                            StatModifier.Flat(value1)));
+                        new AbilityIncreaseHandCapacityCommand(value1));
                     break;
 
                 case AbilityName.FieldCapacityIncrease1:
                 case AbilityName.FieldCapacityIncrease2:
                     G.CommandProcessor.Process(
-                        new AbilityIncreaseFieldCapacityCommand(
-                            StatModifier.Flat(value1)));
+                        new AbilityIncreaseFieldCapacityCommand(value1));
                     break;
 
                 case AbilityName.DrawsCountIncrease1:
                 case AbilityName.DrawsCountIncrease2:
                     G.CommandProcessor.Process(
-                        new AbilityIncreaseDrawsCountCommand(
-                            StatModifier.Flat(value1)));
+                        new AbilityIncreaseDrawsCountCommand(value1));
                     break;
 
                 case AbilityName.DiscardsCountIncrease1:

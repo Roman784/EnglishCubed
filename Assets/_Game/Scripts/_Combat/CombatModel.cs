@@ -8,10 +8,10 @@ namespace Combat
     {
         private Subject<Unit> _changedSignalSubj = new();
 
-        public int DiscardPoints { get; private set; }
-        public int DrawPoints { get; private set; }
-        public int MaxAvailableWordsOnFieldCount { get; private set; }
-        public int MaxHandCapacity { get; private set; }
+        public Stat Discards { get; private set; }
+        public Stat Draws { get; private set; }
+        public Stat FieldCapacity { get; private set; }
+        public Stat HandCapacity { get; private set; }
 
         public Deck Deck { get; private set; }
         public HandWordUnitsGroup HandWordUnitsGroup { get; private set; }
@@ -21,17 +21,17 @@ namespace Combat
         public Location Location { get; private set; }
 
         public Hero Hero => Location.Hero;
-        public int AvailableWordsOnFieldCount => MaxAvailableWordsOnFieldCount - UnitsOnFieldCount;
+        public int AvailableWordsOnFieldCount => (int)FieldCapacity.Max - UnitsOnFieldCount;
         public int UnitsOnFieldCount => FieldWordUnitsGroup.AllElementsCount;
         public int UnitsInHandCount => HandWordUnitsGroup.AllElementsCount;
 
         public Observable<Unit> ChangedSignal => _changedSignalSubj;
 
         public CombatModel(
-            int discardPoints, 
-            int drawPoints,
-            int maxAvailableWordsOnFieldCount,
-            int maxHandCapacity,
+            Stat discards, 
+            Stat draws,
+            Stat fieldCapacity,
+            Stat handCapacity,
             Deck deck,
             HandWordUnitsGroup handWordUnitsGroup,
             FieldWordUnitsGroup fieldWordUnitsGroup,
@@ -39,10 +39,10 @@ namespace Combat
             PointsCounter pointsCounter,
             Location location)
         {
-            DiscardPoints = discardPoints;
-            DrawPoints = drawPoints;
-            MaxAvailableWordsOnFieldCount = maxAvailableWordsOnFieldCount;
-            MaxHandCapacity = maxHandCapacity;
+            Discards = discards;
+            Draws = draws;
+            FieldCapacity = fieldCapacity;
+            HandCapacity = handCapacity;
             Deck = deck;
             HandWordUnitsGroup = handWordUnitsGroup;
             FieldWordUnitsGroup = fieldWordUnitsGroup;
@@ -51,22 +51,18 @@ namespace Combat
             Location = location;
 
             HandWordUnitsGroup.Init();
-            FieldWordUnitsGroup.Init(maxAvailableWordsOnFieldCount);
+            FieldWordUnitsGroup.SetMaxAvailableWordsCount((int)fieldCapacity.Max);
 
+            Discards.Current.Subscribe(_ => _changedSignalSubj.OnNext(Unit.Default));
+            Draws.Current.Subscribe(_ => _changedSignalSubj.OnNext(Unit.Default));
+            FieldCapacity.Current.Subscribe(_ => 
+            { 
+                FieldWordUnitsGroup.SetMaxAvailableWordsCount((int)fieldCapacity.Max);
+                _changedSignalSubj.OnNext(Unit.Default);
+            });
+            HandCapacity.Current.Subscribe(_ => _changedSignalSubj.OnNext(Unit.Default));
             HandWordUnitsGroup.ChangedSignal.Subscribe(_ => _changedSignalSubj.OnNext(Unit.Default));
             FieldWordUnitsGroup.ChangedSignal.Subscribe(_ => _changedSignalSubj.OnNext(Unit.Default));
-        }
-
-        public void SpendDiscardPoint()
-        {
-            DiscardPoints--;
-            _changedSignalSubj.OnNext(Unit.Default);
-        }
-
-        public void SpendDrawPoint()
-        {
-            DrawPoints--;
-            _changedSignalSubj.OnNext(Unit.Default);
         }
     }
 }

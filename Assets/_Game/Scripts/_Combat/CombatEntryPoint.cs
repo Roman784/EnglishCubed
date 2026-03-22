@@ -48,19 +48,31 @@ namespace Combat
             var heroArmor = new Armor(0);
             var heroExperience = new Experience(0, 100);
 
+            var discards = new Stat(StatName.DiscardsCount, 3, 3);
+            var draws = new Stat(StatName.DrawsCount, 5, 5);
+            var fieldCapacity = new Stat(StatName.FieldCapacity, 5, 5);
+            var handCapacity = new Stat(StatName.HandCapacity, 10, 10);
+
             _view.HeroHealthStatView.Init(heroHealth);
             _view.HeroArmorStatView.Init(heroArmor);
             _view.HeroExperienceStatView.Init(heroExperience);
 
-            _heroStats = new Stats(heroHealth, heroArmor, heroExperience);
+            _heroStats = new Stats(
+                heroHealth, 
+                heroArmor, 
+                heroExperience, 
+                discards,
+                draws,
+                fieldCapacity,
+                handCapacity);
 
             // ========== MVP ==========
 
             var model = new CombatModel(
-                discardPoints: 3, 
-                drawPoints: 5,
-                maxAvailableWordsOnFieldCount: 5,
-                maxHandCapacity: 30,
+                discards: discards, 
+                draws: draws,
+                fieldCapacity: fieldCapacity,
+                handCapacity: handCapacity,
                 deck: deck,
                 handWordUnitsGroup: _handWordUnitsGroup,
                 fieldWordUnitsGroup: _fieldWordUnitsGroup,
@@ -115,11 +127,11 @@ namespace Combat
             G.CommandProcessor.RegisterHandler(
                 new AbilityIncreaseExperiencePowerCommandHandler(heroStats));
             G.CommandProcessor.RegisterHandler(
-                new AbilityIncreaseHandCapacityCommandHandler(heroStats));
+                new AbilityIncreaseHandCapacityCommandHandler(heroStats.GetStat(StatName.HandCapacity)));
             G.CommandProcessor.RegisterHandler(
-                new AbilityIncreaseFieldCapacityCommandHandler(heroStats));
+                new AbilityIncreaseFieldCapacityCommandHandler(heroStats.GetStat(StatName.FieldCapacity)));
             G.CommandProcessor.RegisterHandler(
-                new AbilityIncreaseDrawsCountCommandHandler(heroStats));
+                new AbilityIncreaseDrawsCountCommandHandler(heroStats.GetStat(StatName.DrawsCount)));
             G.CommandProcessor.RegisterHandler(
                 new AbilityIncreaseDiscardsCountCommandHandler(heroStats.GetStat(StatName.DiscardsCount)));
             G.CommandProcessor.RegisterHandler(
@@ -133,8 +145,6 @@ namespace Combat
             G.CommandProcessor.RegisterHandler(
                 new AbilityIncreaseFourWordsPowerCommandHandler(heroStats));
             G.CommandProcessor.RegisterHandler(
-                new AbilityIncreaseFieldCapacityCommandHandler(heroStats));
-            G.CommandProcessor.RegisterHandler(
                 new AbilityIncreaseDodgeCommandhandler(heroStats));
             G.CommandProcessor.RegisterHandler(
                 new AbilityIncreaseRageAttackCommandHandler(heroStats));
@@ -142,8 +152,6 @@ namespace Combat
                 new AbilityIncreaseCriticalAttackCommandHandler(heroStats));
             G.CommandProcessor.RegisterHandler(
                 new AbilityIncreaseCriticalAttackPowerCommandHandler(heroStats));
-            G.CommandProcessor.RegisterHandler(
-                new AbilityIncreaseRageDodgeCommandHandler(heroStats));
             G.CommandProcessor.RegisterHandler(
                 new AbilityIncreaseRageDodgeCommandHandler(heroStats));
             G.CommandProcessor.RegisterHandler(

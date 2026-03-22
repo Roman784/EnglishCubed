@@ -4,19 +4,17 @@ using UnityEngine;
 
 namespace Commands
 {
-    public class AbilityIncreaseDrawsCountCommand : AbilityAddStatModifierCommand
+    public class AbilityIncreaseDrawsCountCommand : AbilityIncreaseStatMaxCommand
     {
-        public AbilityIncreaseDrawsCountCommand(StatModifier modifier) : base(modifier)
+        public AbilityIncreaseDrawsCountCommand(float value) : base(value)
         {
         }
-
-        public override StatName StatName => StatName.DrawsCount;
     }
 
-    public class AbilityIncreaseDrawsCountCommandHandler : 
-        AbilityAddStatModifierCommandHandler<AbilityIncreaseDrawsCountCommand>
+    public class AbilityIncreaseDrawsCountCommandHandler :
+        AbilityIncreaseStatMaxCommandHandler<AbilityIncreaseDrawsCountCommand>
     {
-        public AbilityIncreaseDrawsCountCommandHandler(Stats stats) : base(stats)
+        public AbilityIncreaseDrawsCountCommandHandler(Stat stat) : base(stat)
         {
         }
     }

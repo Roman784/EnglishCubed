@@ -23,10 +23,14 @@ namespace Gameplay
         public int AllElementsCount => _allWordUnits.Count;
         public Observable<Unit> ChangedSignal => _changedSignalSubj;
 
-        public void Init(int maxAvailableWordsCount)
+        private void Awake()
         {
             _layout = GetComponent<FieldFlowLayout>();
-            _maxAvailableWordsCount = maxAvailableWordsCount;
+        }
+
+        public void SetMaxAvailableWordsCount(int maxCount)
+        {
+            _maxAvailableWordsCount = maxCount;
         }
 
         public bool CanMoveIn() => AllElementsCount < _maxAvailableWordsCount;

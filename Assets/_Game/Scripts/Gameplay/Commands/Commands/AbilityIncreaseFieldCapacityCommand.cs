@@ -3,19 +3,17 @@ using UnityEngine;
 
 namespace Commands
 {
-    public class AbilityIncreaseFieldCapacityCommand : AbilityAddStatModifierCommand
+    public class AbilityIncreaseFieldCapacityCommand : AbilityIncreaseStatMaxCommand
     {
-        public AbilityIncreaseFieldCapacityCommand(StatModifier modifier) : base(modifier)
+        public AbilityIncreaseFieldCapacityCommand(float value) : base(value)
         {
         }
-
-        public override StatName StatName => StatName.FieldCapacity;
     }
 
-    public class AbilityIncreaseFieldCapacityCommandHandler : 
-        AbilityAddStatModifierCommandHandler<AbilityIncreaseFieldCapacityCommand>
+    public class AbilityIncreaseFieldCapacityCommandHandler :
+        AbilityIncreaseStatMaxCommandHandler<AbilityIncreaseFieldCapacityCommand>
     {
-        public AbilityIncreaseFieldCapacityCommandHandler(Stats stats) : base(stats)
+        public AbilityIncreaseFieldCapacityCommandHandler(Stat stat) : base(stat)
         {
         }
     }

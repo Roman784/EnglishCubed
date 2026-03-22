@@ -3,19 +3,17 @@ using UnityEngine;
 
 namespace Commands
 {
-    public class AbilityIncreaseHandCapacityCommand : AbilityAddStatModifierCommand
+    public class AbilityIncreaseHandCapacityCommand : AbilityIncreaseStatMaxCommand
     {
-        public AbilityIncreaseHandCapacityCommand(StatModifier modifier) : base(modifier)
+        public AbilityIncreaseHandCapacityCommand(float value) : base(value)
         {
         }
-
-        public override StatName StatName => StatName.HandCapacity;
     }
 
-    public class AbilityIncreaseHandCapacityCommandHandler : 
-        AbilityAddStatModifierCommandHandler<AbilityIncreaseHandCapacityCommand>
+    public class AbilityIncreaseHandCapacityCommandHandler :
+        AbilityIncreaseStatMaxCommandHandler<AbilityIncreaseHandCapacityCommand>
     {
-        public AbilityIncreaseHandCapacityCommandHandler(Stats stats) : base(stats)
+        public AbilityIncreaseHandCapacityCommandHandler(Stat stat) : base(stat)
         {
         }
     }
