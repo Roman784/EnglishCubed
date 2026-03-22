@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Commands
 {
-    public class AbilityIncreaseLinkingVerbsPowerCommand : AbilityAddModifierCommand
+    public class AbilityIncreaseLinkingVerbsPowerCommand : AbilityAddStatModifierCommand
     {
         public AbilityIncreaseLinkingVerbsPowerCommand(StatModifier modifier) : base(modifier)
         {
@@ -13,7 +13,7 @@ namespace Commands
     }
 
     public class AbilityIncreaseLinkingVerbsPowerCommandHandler : 
-        AbilityAddModifierCommandHandler<AbilityIncreaseLinkingVerbsPowerCommand>
+        AbilityAddStatModifierCommandHandler<AbilityIncreaseLinkingVerbsPowerCommand>
     {
         public AbilityIncreaseLinkingVerbsPowerCommandHandler(Stats stats) : base(stats)
         {

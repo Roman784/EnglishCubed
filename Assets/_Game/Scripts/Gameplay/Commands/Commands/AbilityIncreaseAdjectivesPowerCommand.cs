@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Commands
 {
-    public class AbilityIncreaseAdjectivesPowerCommand : AbilityAddModifierCommand
+    public class AbilityIncreaseAdjectivesPowerCommand : AbilityAddStatModifierCommand
     {
         public AbilityIncreaseAdjectivesPowerCommand(StatModifier modifier) : base(modifier)
         {
@@ -13,7 +13,7 @@ namespace Commands
     }
 
     public class AbilityIncreaseAdjectivesPowerCommandHandler : 
-        AbilityAddModifierCommandHandler<AbilityIncreaseAdjectivesPowerCommand>
+        AbilityAddStatModifierCommandHandler<AbilityIncreaseAdjectivesPowerCommand>
     {
         public AbilityIncreaseAdjectivesPowerCommandHandler(Stats stats) : base(stats)
         {

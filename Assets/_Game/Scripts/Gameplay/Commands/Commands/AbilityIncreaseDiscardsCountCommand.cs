@@ -3,19 +3,17 @@ using UnityEngine;
 
 namespace Commands
 {
-    public class AbilityIncreaseDiscardsCountCommand : AbilityAddModifierCommand
+    public class AbilityIncreaseDiscardsCountCommand : AbilityIncreaseStatMaxCommand
     {
-        public AbilityIncreaseDiscardsCountCommand(StatModifier modifier) : base(modifier)
+        public AbilityIncreaseDiscardsCountCommand(float value) : base(value)
         {
         }
-
-        public override StatName StatName => StatName.DiscardsCount;
     }
 
-    public class AbilityIncreaseDiscardsCountCommandHandler : 
-        AbilityAddModifierCommandHandler<AbilityIncreaseDiscardsCountCommand>
+    public class AbilityIncreaseDiscardsCountCommandHandler :
+        AbilityIncreaseStatMaxCommandHandler<AbilityIncreaseDiscardsCountCommand>
     {
-        public AbilityIncreaseDiscardsCountCommandHandler(Stats stats) : base(stats)
+        public AbilityIncreaseDiscardsCountCommandHandler(Stat stat) : base(stat)
         {
         }
     }

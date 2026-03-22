@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Commands
 {
-    public class AbilityIncreaseDrawsCountCommand : AbilityAddModifierCommand
+    public class AbilityIncreaseDrawsCountCommand : AbilityAddStatModifierCommand
     {
         public AbilityIncreaseDrawsCountCommand(StatModifier modifier) : base(modifier)
         {
@@ -14,7 +14,7 @@ namespace Commands
     }
 
     public class AbilityIncreaseDrawsCountCommandHandler : 
-        AbilityAddModifierCommandHandler<AbilityIncreaseDrawsCountCommand>
+        AbilityAddStatModifierCommandHandler<AbilityIncreaseDrawsCountCommand>
     {
         public AbilityIncreaseDrawsCountCommandHandler(Stats stats) : base(stats)
         {

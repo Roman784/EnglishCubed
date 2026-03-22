@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Commands
 {
-    public class AbilityIncreaseCriticalAttackCommand : AbilityAddModifierCommand
+    public class AbilityIncreaseCriticalAttackCommand : AbilityAddStatModifierCommand
     {
         public AbilityIncreaseCriticalAttackCommand(StatModifier modifier) : base(modifier)
         {
@@ -13,7 +13,7 @@ namespace Commands
     }
 
     public class AbilityIncreaseCriticalAttackCommandHandler : 
-        AbilityAddModifierCommandHandler<AbilityIncreaseCriticalAttackCommand>
+        AbilityAddStatModifierCommandHandler<AbilityIncreaseCriticalAttackCommand>
     {
         public AbilityIncreaseCriticalAttackCommandHandler(Stats stats) : base(stats)
         {

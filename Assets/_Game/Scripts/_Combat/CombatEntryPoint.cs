@@ -42,6 +42,18 @@ namespace Combat
             var grammarValidator = new GrammarValidator(G.Configs.LexiconConfigs);
             var pointsCounter = new PointsCounter(_location.PointsAccumulationPosition);
 
+            // ========== Stats ==========
+
+            var heroHealth = new Health(3);
+            var heroArmor = new Armor(0);
+            var heroExperience = new Experience(0, 100);
+
+            _view.HeroHealthStatView.Init(heroHealth);
+            _view.HeroArmorStatView.Init(heroArmor);
+            _view.HeroExperienceStatView.Init(heroExperience);
+
+            _heroStats = new Stats(heroHealth, heroArmor, heroExperience);
+
             // ========== MVP ==========
 
             var model = new CombatModel(
@@ -56,18 +68,6 @@ namespace Combat
                 pointsCounter: pointsCounter,
                 location: _location);
             _presenter = new CombatPresenter(_view, model);
-
-            // ========== Hero Stats ==========
-
-            var heroHealth = new Health(3);
-            var heroArmor = new Armor(0);
-            var heroExperience = new Experience(0, 100);
-
-            _view.HeroHealthStatView.Init(heroHealth);
-            _view.HeroArmorStatView.Init(heroArmor);
-            _view.HeroExperienceStatView.Init(heroExperience);
-
-            _heroStats = new Stats(heroHealth, heroArmor, heroExperience);
 
             // ========== Hero ==========
 
@@ -100,7 +100,7 @@ namespace Combat
         private void InitCommands(Stats heroStats)
         {
             G.CommandProcessor = new CombatCommandProcessor();
-            /*G.CommandProcessor.RegisterHandler(
+            G.CommandProcessor.RegisterHandler(
                 new AbilityIncreaseHealthCommandHandler(heroStats.Health));
             G.CommandProcessor.RegisterHandler(
                 new AbilityIncreaseArmorCommandHandler(heroStats.Armor));
@@ -111,7 +111,7 @@ namespace Combat
             G.CommandProcessor.RegisterHandler(
                 new AbilityIncreaseVampirismCommandHandler(heroStats));
             G.CommandProcessor.RegisterHandler(
-                new AbilityIncreaseVampirismPowerCommandHandler(heroStats));*/
+                new AbilityIncreaseVampirismPowerCommandHandler(heroStats));
             G.CommandProcessor.RegisterHandler(
                 new AbilityIncreaseExperiencePowerCommandHandler(heroStats));
             G.CommandProcessor.RegisterHandler(
@@ -121,8 +121,8 @@ namespace Combat
             G.CommandProcessor.RegisterHandler(
                 new AbilityIncreaseDrawsCountCommandHandler(heroStats));
             G.CommandProcessor.RegisterHandler(
-                new AbilityIncreaseDiscardsCountCommandHandler(heroStats));
-            /*G.CommandProcessor.RegisterHandler(
+                new AbilityIncreaseDiscardsCountCommandHandler(heroStats.GetStat(StatName.DiscardsCount)));
+            G.CommandProcessor.RegisterHandler(
                 new AbilityIncreaseDeclarativeSentencePowerCommandHandler(heroStats));
             G.CommandProcessor.RegisterHandler(
                 new AbilityIncreaseInterrogativeSentencePowerCommandHandler(heroStats));
@@ -153,7 +153,7 @@ namespace Combat
             G.CommandProcessor.RegisterHandler(
                 new AbilityIncreaseAdjectivesPowerCommandHandler(heroStats));
             G.CommandProcessor.RegisterHandler(
-                new AbilityIncreaseFullHealthAttackCommandHandler(heroStats));*/
+                new AbilityIncreaseFullHealthAttackCommandHandler(heroStats));
         }
 
         private void Update()

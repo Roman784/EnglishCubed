@@ -2,29 +2,18 @@ using Gameplay;
 
 namespace Commands
 {
-    public class AbilityIncreaseArmorCommand : ICommand
+    public class AbilityIncreaseArmorCommand : AbilityIncreaseStatMaxCommand
     {
-        public readonly int Value;
-
-        public AbilityIncreaseArmorCommand(int value)
+        public AbilityIncreaseArmorCommand(float value) : base(value)
         {
-            Value = value;
         }
     }
 
-    public class AbilityIncreaseArmorCommandHandler : ICommandHandler<AbilityIncreaseArmorCommand>
+    public class AbilityIncreaseArmorCommandHandler :
+        AbilityIncreaseStatMaxCommandHandler<AbilityIncreaseArmorCommand>
     {
-        private readonly Armor _armor;
-
-        public AbilityIncreaseArmorCommandHandler(Armor armor)
+        public AbilityIncreaseArmorCommandHandler(Stat stat) : base(stat)
         {
-            _armor = armor;
-        }
-
-        public bool Handle(AbilityIncreaseArmorCommand command)
-        {
-            _armor.SetMax(_armor.Max + command.Value);
-            return true;
         }
     }
 }

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Commands
 {
-    public class AbilityIncreaseHandCapacityCommand : AbilityAddModifierCommand
+    public class AbilityIncreaseHandCapacityCommand : AbilityAddStatModifierCommand
     {
         public AbilityIncreaseHandCapacityCommand(StatModifier modifier) : base(modifier)
         {
@@ -13,7 +13,7 @@ namespace Commands
     }
 
     public class AbilityIncreaseHandCapacityCommandHandler : 
-        AbilityAddModifierCommandHandler<AbilityIncreaseHandCapacityCommand>
+        AbilityAddStatModifierCommandHandler<AbilityIncreaseHandCapacityCommand>
     {
         public AbilityIncreaseHandCapacityCommandHandler(Stats stats) : base(stats)
         {

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Commands
 {
-    public class AbilityIncreaseExclamatorySentencePowerCommand : AbilityAddModifierCommand
+    public class AbilityIncreaseExclamatorySentencePowerCommand : AbilityAddStatModifierCommand
     {
         public AbilityIncreaseExclamatorySentencePowerCommand(StatModifier modifier) : base(modifier)
         {
@@ -13,7 +13,7 @@ namespace Commands
     }
 
     public class AbilityIncreaseExclamatorySentencePowerCommandHandler : 
-        AbilityAddModifierCommandHandler<AbilityIncreaseExclamatorySentencePowerCommand>
+        AbilityAddStatModifierCommandHandler<AbilityIncreaseExclamatorySentencePowerCommand>
     {
         public AbilityIncreaseExclamatorySentencePowerCommandHandler(Stats stats) : base(stats)
         {

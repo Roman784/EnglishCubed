@@ -22,4 +22,11 @@ MonoBehaviour:
     Title: 
     Description: 
     Details: 
-    Values: []
+    Values:
+    - 2
+  - Icon: {fileID: -1763046964, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
+    Title: 
+    Description: 
+    Details: 
+    Values:
+    - 2

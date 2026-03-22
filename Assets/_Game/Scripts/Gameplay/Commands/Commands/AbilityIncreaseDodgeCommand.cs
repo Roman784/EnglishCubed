@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Commands
 {
-    public class AbilityIncreaseDodgeCommand : AbilityAddModifierCommand
+    public class AbilityIncreaseDodgeCommand : AbilityAddStatModifierCommand
     {
         public AbilityIncreaseDodgeCommand(StatModifier modifier) : base(modifier)
         {
@@ -13,7 +13,7 @@ namespace Commands
     }
 
     public class AbilityIncreaseDodgeCommandhandler : 
-        AbilityAddModifierCommandHandler<AbilityIncreaseDodgeCommand>
+        AbilityAddStatModifierCommandHandler<AbilityIncreaseDodgeCommand>
     {
         public AbilityIncreaseDodgeCommandhandler(Stats stats) : base(stats)
         {

@@ -3,23 +3,23 @@ using UnityEngine;
 
 namespace Commands
 {
-    public abstract class AbilityAddModifierCommand : ICommand
+    public abstract class AbilityAddStatModifierCommand : ICommand
     {
         public readonly StatModifier Modifier;
         public abstract StatName StatName { get; }
 
-        public AbilityAddModifierCommand(StatModifier modifier)
+        public AbilityAddStatModifierCommand(StatModifier modifier)
         {
             Modifier = modifier;
         }
     }
 
-    public abstract class AbilityAddModifierCommandHandler<TCommand> : 
-        ICommandHandler<TCommand> where TCommand : AbilityAddModifierCommand
+    public abstract class AbilityAddStatModifierCommandHandler<TCommand> : 
+        ICommandHandler<TCommand> where TCommand : AbilityAddStatModifierCommand
     {
         private readonly Stats _stats;
 
-        public AbilityAddModifierCommandHandler(Stats stats)
+        public AbilityAddStatModifierCommandHandler(Stats stats)
         {
             _stats = stats;
         }

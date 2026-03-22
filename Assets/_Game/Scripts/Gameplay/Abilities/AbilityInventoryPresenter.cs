@@ -142,8 +142,7 @@ namespace Abilities
                 case AbilityName.DiscardsCountIncrease1:
                 case AbilityName.DiscardsCountIncrease2:
                     G.CommandProcessor.Process(
-                        new AbilityIncreaseDiscardsCountCommand(
-                            StatModifier.Flat(value1)));
+                        new AbilityIncreaseDiscardsCountCommand(value1));
                     break;
 
                 case AbilityName.AttackPowerIncrease:

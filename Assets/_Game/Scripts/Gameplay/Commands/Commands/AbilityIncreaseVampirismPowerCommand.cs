@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Commands
 {
-    public class AbilityIncreaseVampirismPowerCommand : AbilityAddModifierCommand
+    public class AbilityIncreaseVampirismPowerCommand : AbilityAddStatModifierCommand
     {
         public AbilityIncreaseVampirismPowerCommand(StatModifier modifier) : base(modifier)
         {
@@ -13,7 +13,7 @@ namespace Commands
     }
 
     public class AbilityIncreaseVampirismPowerCommandHandler : 
-        AbilityAddModifierCommandHandler<AbilityIncreaseVampirismPowerCommand> 
+        AbilityAddStatModifierCommandHandler<AbilityIncreaseVampirismPowerCommand> 
     {
         public AbilityIncreaseVampirismPowerCommandHandler(Stats stats) : base(stats)
         {

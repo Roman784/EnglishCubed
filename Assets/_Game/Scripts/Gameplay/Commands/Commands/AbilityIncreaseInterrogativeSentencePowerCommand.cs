@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Commands
 {
-    public class AbilityIncreaseInterrogativeSentencePowerCommand : AbilityAddModifierCommand
+    public class AbilityIncreaseInterrogativeSentencePowerCommand : AbilityAddStatModifierCommand
     {
         public AbilityIncreaseInterrogativeSentencePowerCommand(StatModifier modifier) : base(modifier)
         {
@@ -13,7 +13,7 @@ namespace Commands
     }
 
     public class AbilityIncreaseInterrogativeSentencePowerCommandHandler : 
-        AbilityAddModifierCommandHandler<AbilityIncreaseInterrogativeSentencePowerCommand>
+        AbilityAddStatModifierCommandHandler<AbilityIncreaseInterrogativeSentencePowerCommand>
     {
         public AbilityIncreaseInterrogativeSentencePowerCommandHandler(Stats stats) : base(stats)
         {

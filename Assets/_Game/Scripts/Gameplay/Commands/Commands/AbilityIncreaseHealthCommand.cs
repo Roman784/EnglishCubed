@@ -3,29 +3,18 @@ using UnityEngine;
 
 namespace Commands
 {
-    public class AbilityIncreaseHealthCommand : ICommand
+    public class AbilityIncreaseHealthCommand : AbilityIncreaseStatMaxCommand
     {
-        public readonly int Value;
-
-        public AbilityIncreaseHealthCommand(int value)
+        public AbilityIncreaseHealthCommand(float value) : base(value)
         {
-            Value = value;
         }
     }
 
-    public class AbilityIncreaseHealthCommandHandler : ICommandHandler<AbilityIncreaseHealthCommand>
+    public class AbilityIncreaseHealthCommandHandler :
+        AbilityIncreaseStatMaxCommandHandler<AbilityIncreaseHealthCommand>
     {
-        private readonly Health _health;
-
-        public AbilityIncreaseHealthCommandHandler(Health health)
+        public AbilityIncreaseHealthCommandHandler(Stat stat) : base(stat)
         {
-            _health = health;
-        }
-
-        public bool Handle(AbilityIncreaseHealthCommand command)
-        {
-            _health.SetMax(_health.Max + command.Value);
-            return true;
         }
     }
 }
