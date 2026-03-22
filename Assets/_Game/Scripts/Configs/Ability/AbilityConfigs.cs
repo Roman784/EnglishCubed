@@ -1,5 +1,7 @@
 using Abilities;
+using Gameplay;
 using System;
+using UnityEditor;
 using UnityEngine;
 using Utils;
 
@@ -21,7 +23,26 @@ namespace Configs
         public AbilityLevelData[] Levels;
 
         public int MaxStacksCount => Levels.Length;
+
+#if UNITY_EDITOR
+        [ContextMenu("Set Ability Name")]
+        private void SetAbilityName()
+        {
+            var confName = name.Split('_')[0];
+
+            foreach (AbilityName abilityName in Enum.GetValues(typeof(AbilityName)))
+            {
+                if (abilityName.ToString() != confName) continue;
+                
+                Name = abilityName;
+                EditorUtility.SetDirty(this);
+                return;
+            }
+
+            Debug.LogWarning($"Failed to find ability name for {confName}!");
+        }
     }
+#endif
 
     [Serializable]
     public class AbilityLevelData

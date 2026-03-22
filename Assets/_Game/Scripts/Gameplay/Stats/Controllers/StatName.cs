@@ -4,6 +4,7 @@ namespace Gameplay
 {
     public enum StatName
     {
+        // 26
         Health,
         Armor,
         Experience,
@@ -16,6 +17,7 @@ namespace Gameplay
         CriticalAttackPower,
         RageAttack,
         RageDodge,
+        FullHealthAttack,
         DeclarativeSentencePower,
         InterrogativeSentencePower,
         ExclamatorySentencePower,

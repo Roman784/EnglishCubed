@@ -4,6 +4,7 @@ namespace Abilities
 {
     public enum AbilityName
     {
+        // 35
         None,
         HealthIncrease1,
         ArmorIncrease1,
@@ -11,23 +12,34 @@ namespace Abilities
         ArmorIncrease2,
         HealthRestoration1,
         ArmorRestoration1,
+        HealthRestoration2,
+        ArmorRestoration2,
         VampirismChanceIncrease,
         VampirismPowerIncrease,
         ExperiencePowerIncrease,
         InterrogativeSentencePowerIncrease,
+        DeclarativeSentencePowerIncrease,
+        ExclamatorySentencePowerIncrease,
         HandCapacityIncrease1,
         HandCapacityIncrease2,
         FieldCapacityIncrease1,
         FieldCapacityIncrease2,
-        DrawsIncrease1,
-        DrawsIncrease2,
-        DiscardsIncrease1,
-        DiscardsIncrease2,
-        AttackMultiplierIncrease,
-        AttackMultiplierBasedOnFullHealthIncrease,
-        AttackMultiplierBasedOnEmptyHealthIncrease,
+        DrawsCountIncrease1,
+        DrawsCountIncrease2,
+        DiscardsCountIncrease1,
+        DiscardsCountIncrease2,
+        AttackPowerIncrease,
         DodgeChanceIncrease,
-        HealthRestoration2,
-        ArmorRestoration2
+        FullHealthAttackIncrease,
+        RageAttackIncrease,
+        RageDodgeIncrease,
+        ThreeWordPowerIncrease,
+        FourWordPowerIncrease,
+        FiveWordPowerIncrease,
+        CriticalAttackChanceIncrease,
+        CriticalAttackPowerIncrease,
+        PronounsPowerIncrease,
+        AdjectivesPowerIncrease,
+        LinkingVerbsPowerIncrease
     }
 }

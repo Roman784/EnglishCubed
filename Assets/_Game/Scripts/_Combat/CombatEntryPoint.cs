@@ -107,12 +107,12 @@ namespace Combat
             G.CommandProcessor.RegisterHandler(
                 new AbilityRestoreHealthCommandHandler(heroStats.Health));
             G.CommandProcessor.RegisterHandler(
-                new AbilityRestoreArmorCommandHandler(heroStats.Armor));*/
+                new AbilityRestoreArmorCommandHandler(heroStats.Armor));
             G.CommandProcessor.RegisterHandler(
                 new AbilityIncreaseVampirismCommandHandler(heroStats));
             G.CommandProcessor.RegisterHandler(
-                new AbilityIncreaseVampirismPowerCommandHandler(heroStats));
-            /*G.CommandProcessor.RegisterHandler(
+                new AbilityIncreaseVampirismPowerCommandHandler(heroStats));*/
+            G.CommandProcessor.RegisterHandler(
                 new AbilityIncreaseExperiencePowerCommandHandler(heroStats));
             G.CommandProcessor.RegisterHandler(
                 new AbilityIncreaseHandCapacityCommandHandler(heroStats));
@@ -122,7 +122,7 @@ namespace Combat
                 new AbilityIncreaseDrawsCountCommandHandler(heroStats));
             G.CommandProcessor.RegisterHandler(
                 new AbilityIncreaseDiscardsCountCommandHandler(heroStats));
-            G.CommandProcessor.RegisterHandler(
+            /*G.CommandProcessor.RegisterHandler(
                 new AbilityIncreaseDeclarativeSentencePowerCommandHandler(heroStats));
             G.CommandProcessor.RegisterHandler(
                 new AbilityIncreaseInterrogativeSentencePowerCommandHandler(heroStats));
@@ -143,7 +143,7 @@ namespace Combat
             G.CommandProcessor.RegisterHandler(
                 new AbilityIncreaseCriticalAttackPowerCommandHandler(heroStats));
             G.CommandProcessor.RegisterHandler(
-                new AbilityIncreaseRageAttackCommandHandler(heroStats));
+                new AbilityIncreaseRageDodgeCommandHandler(heroStats));
             G.CommandProcessor.RegisterHandler(
                 new AbilityIncreaseRageDodgeCommandHandler(heroStats));
             G.CommandProcessor.RegisterHandler(
@@ -151,7 +151,9 @@ namespace Combat
             G.CommandProcessor.RegisterHandler(
                 new AbilityIncreaseLinkingVerbsPowerCommandHandler(heroStats));
             G.CommandProcessor.RegisterHandler(
-                new AbilityIncreaseAdjectivesPowerCommandHandler(heroStats));*/
+                new AbilityIncreaseAdjectivesPowerCommandHandler(heroStats));
+            G.CommandProcessor.RegisterHandler(
+                new AbilityIncreaseFullHealthAttackCommandHandler(heroStats));*/
         }
 
         private void Update()
