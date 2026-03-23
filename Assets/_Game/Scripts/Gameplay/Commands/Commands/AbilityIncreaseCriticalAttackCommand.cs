@@ -5,8 +5,11 @@ namespace Commands
 {
     public class AbilityIncreaseCriticalAttackCommand : AbilityAddStatModifierCommand
     {
-        public AbilityIncreaseCriticalAttackCommand(StatModifier modifier) : base(modifier)
+        public readonly float AdditionalValue;
+
+        public AbilityIncreaseCriticalAttackCommand(StatModifier modifier, float additionalValue) : base(modifier)
         {
+            AdditionalValue = additionalValue;
         }
 
         public override StatName StatName => StatName.CriticalAttack;
@@ -17,6 +20,12 @@ namespace Commands
     {
         public AbilityIncreaseCriticalAttackCommandHandler(Stats stats) : base(stats)
         {
+        }
+
+        public override bool Handle(AbilityIncreaseCriticalAttackCommand command)
+        {
+            Stats.GetStat(command.StatName).Add(command.AdditionalValue);
+            return base.Handle(command);
         }
     }
 }

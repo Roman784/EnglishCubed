@@ -15,18 +15,20 @@ MonoBehaviour:
   Name: 17
   DependsOn: 0
   IsRepeatable: 0
-  Rarity: 0
+  Rarity: 1
   Weight: 0
   Levels:
   - Icon: {fileID: 3444494264741111183, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
-    Title: 
-    Description: 
-    Details: 
+    Title: "\u0411\u043E\u043B\u044C\u0448\u043E\u0435 \u041F\u043E\u043B\u0435 "
+    Description: "\u0411\u043E\u043B\u044C\u0448\u0435 \u0441\u043B\u043E\u0432 \u043D\u0430
+      \u043F\u043E\u043B\u0435"
+    Details: <size=48>+{0}
     Values:
     - 1
   - Icon: {fileID: 3444494264741111183, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
-    Title: 
-    Description: 
-    Details: 
+    Title: "\u0411\u043E\u043B\u044C\u0448\u043E\u0435 \u041F\u043E\u043B\u0435 "
+    Description: "\u0411\u043E\u043B\u044C\u0448\u0435 \u0441\u043B\u043E\u0432 \u043D\u0430
+      \u043F\u043E\u043B\u0435"
+    Details: <size=48>+{0}
     Values:
     - 1

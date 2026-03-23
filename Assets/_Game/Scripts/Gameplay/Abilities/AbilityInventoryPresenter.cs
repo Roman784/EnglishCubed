@@ -52,6 +52,7 @@ namespace Abilities
 
             var abilityLevelData = _model.GetCurrentLevelDataOrFirst(abilityName);
             var value1 = abilityLevelData.Values.Length > 0 ? abilityLevelData.Values[0] : 0f;
+            var value2 = abilityLevelData.Values.Length > 1 ? abilityLevelData.Values[1] : 0f;
 
             switch (abilityName)
             {
@@ -189,7 +190,7 @@ namespace Abilities
                 case AbilityName.CriticalAttackChanceIncrease:
                     G.CommandProcessor.Process(
                         new AbilityIncreaseCriticalAttackCommand(
-                            StatModifier.Flat(value1)));
+                            StatModifier.Flat(value1), value2));
                     break;
                 case AbilityName.CriticalAttackPowerIncrease:
                     G.CommandProcessor.Process(

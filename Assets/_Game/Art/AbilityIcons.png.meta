@@ -672,6 +672,226 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: AbilityIcons_5
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 1
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d2c2285f552026409239979c7470770
+      internalID: -301981151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AbilityIcons_6
+      rect:
+        serializedVersion: 2
+        x: 3400
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98602b19606afa44f885a1d44d50e666
+      internalID: -512157538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AbilityIcons_11
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40866027b65987c4c8c3d09146fa4535
+      internalID: -1503715963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AbilityIcons_12
+      rect:
+        serializedVersion: 2
+        x: 3800
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc0a82cd8d47ae548b78d030914fdc94
+      internalID: 506376810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AbilityIcons_14
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc0b4ecfcbb91574fb513bff705586e4
+      internalID: -1669470705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AbilityIcons_13
+      rect:
+        serializedVersion: 2
+        x: 4200
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a32c7aa787d64714281208ac6090cc47
+      internalID: 1197958497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AbilityIcons_15
+      rect:
+        serializedVersion: 2
+        x: 4400
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4408f2c205d36604a9b2344126ce47d5
+      internalID: -1748322966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AbilityIcons_32
+      rect:
+        serializedVersion: 2
+        x: 4600
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 908e9226e4087ee448387510e65cdb04
+      internalID: -722583855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AbilityIcons_33
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf6d4e521c06a444d8c4d1bf9003040a
+      internalID: 1901003357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AbilityIcons_34
+      rect:
+        serializedVersion: 2
+        x: 4600
+        y: 200
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cd2637768138994b803c40553150f39
+      internalID: 2059557375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -716,9 +936,43 @@ TextureImporter:
       AbilityIcons_3: -1544706942
       AbilityIcons_30: -724525622
       AbilityIcons_31: 996395089
+      AbilityIcons_32: -722583855
+      AbilityIcons_33: 1901003357
+      AbilityIcons_34: 2059557375
+      AbilityIcons_35: -1084431180
+      AbilityIcons_36: -1722862719
+      AbilityIcons_37: 772276890
+      AbilityIcons_38: -2109857392
+      AbilityIcons_39: -481896383
       AbilityIcons_4: 1261599998
+      AbilityIcons_40: 324197648
+      AbilityIcons_41: 1528043595
+      AbilityIcons_42: -160367848
+      AbilityIcons_43: 1061435537
+      AbilityIcons_44: 1448377604
+      AbilityIcons_45: 528401049
+      AbilityIcons_46: -393537096
+      AbilityIcons_47: 1705302036
+      AbilityIcons_48: -1025526817
+      AbilityIcons_49: -1413627345
       AbilityIcons_5: -301981151
+      AbilityIcons_50: -2140269393
+      AbilityIcons_51: 676597652
+      AbilityIcons_52: 704580720
+      AbilityIcons_53: 1417062101
+      AbilityIcons_54: 913312369
+      AbilityIcons_55: 1541754549
+      AbilityIcons_56: 535565849
+      AbilityIcons_57: -1781185699
+      AbilityIcons_58: -39162666
+      AbilityIcons_59: 1965128691
       AbilityIcons_6: -512157538
+      AbilityIcons_60: 1219137778
+      AbilityIcons_61: -2144837931
+      AbilityIcons_62: -1379264591
+      AbilityIcons_63: -1983965506
+      AbilityIcons_64: -1360779874
+      AbilityIcons_65: 663216150
       AbilityIcons_7: -972984667
       AbilityIcons_8: -841378238
       AbilityIcons_9: -715755264

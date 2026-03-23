@@ -17,16 +17,16 @@ namespace Commands
     public abstract class AbilityAddStatModifierCommandHandler<TCommand> : 
         ICommandHandler<TCommand> where TCommand : AbilityAddStatModifierCommand
     {
-        private readonly Stats _stats;
+        protected readonly Stats Stats;
 
         public AbilityAddStatModifierCommandHandler(Stats stats)
         {
-            _stats = stats;
+            Stats = stats;
         }
 
-        public bool Handle(TCommand command)
+        public virtual bool Handle(TCommand command)
         {
-            _stats.AddModifier(command.StatName, command.Modifier);
+            Stats.AddModifier(command.StatName, command.Modifier);
             return true;
         }
     }

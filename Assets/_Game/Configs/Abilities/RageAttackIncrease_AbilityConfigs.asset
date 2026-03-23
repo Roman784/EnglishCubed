@@ -15,11 +15,13 @@ MonoBehaviour:
   Name: 26
   DependsOn: 0
   IsRepeatable: 0
-  Rarity: 0
+  Rarity: 2
   Weight: 0
   Levels:
-  - Icon: {fileID: 21134020, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
-    Title: 
-    Description: 
-    Details: 
-    Values: []
+  - Icon: {fileID: 996395089, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
+    Title: "\u042F\u0440\u043E\u0441\u0442\u043D\u0430\u044F \u0430\u0442\u0430\u043A\u0430"
+    Description: "\u041C\u0435\u043D\u044C\u0448\u0435 \u0437\u0434\u043E\u0440\u043E\u0432\u044C\u044F
+      - \u0441\u0438\u043B\u044C\u043D\u0435\u0435 \u0430\u0442\u0430\u043A\u0430"
+    Details: <size=48>1<sprite index="3"> -> +{0}%
+    Values:
+    - 5
