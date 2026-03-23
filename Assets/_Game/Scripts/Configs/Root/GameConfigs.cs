@@ -10,7 +10,7 @@ namespace Configs
     {
         public LexiconConfigs LexiconConfigs;
         public GrammarHintsConfigs GrammarHintsConfigs;
-        public MaxStatsConfigs MaxStatsConfigs;
+        public StatLimitsConfigs StatLimitsConfigs;
         public AudioConfigs AudioConfigs;
         public UIConfigs UIConfigs;
         public DefaultGameStateConfigs DefaultGameStateConfigs;
