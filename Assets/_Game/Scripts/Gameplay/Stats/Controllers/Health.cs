@@ -5,6 +5,9 @@ namespace Gameplay
 {
     public class Health : Stat
     {
+        public bool IsMax => (int)CurrentValue == (int)Max;
+        public int EmptyHeartsCount => (int)Max - (int)CurrentValue;
+
         public Health(int max) : base(StatName.Health, max, max)
         {
         }

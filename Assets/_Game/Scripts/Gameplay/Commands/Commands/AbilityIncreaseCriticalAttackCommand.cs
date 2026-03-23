@@ -24,7 +24,8 @@ namespace Commands
 
         public override bool Handle(AbilityIncreaseCriticalAttackCommand command)
         {
-            Stats.GetStat(command.StatName).Add(command.AdditionalValue);
+            var stat = Stats.GetStat(StatName.CriticalAttackPower);
+            stat.SetMax(stat.Max + command.AdditionalValue);
             return base.Handle(command);
         }
     }

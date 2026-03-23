@@ -76,10 +76,10 @@ namespace Combat
                 return;
             }*/
 
-            ExecuteAttackSequence();
+            ExecuteAttackSequence(validationResult);
         }
 
-        private void ExecuteAttackSequence()
+        private void ExecuteAttackSequence(ValidationResult validationResult)
         {
             _view.DisableControls();
 
@@ -87,7 +87,7 @@ namespace Combat
                 .StartCounting(_model.FieldWordUnitsGroup.AllWordUnits)
                 .Select(points =>
                 {
-                    var multipliers = GetMultipliers();
+                    var multipliers = _model.PointMultiplierResolver.GetMultipliers(validationResult);
                     return _model.PointsCounter
                         .AddMultipliers(multipliers, _view.DefaultPointsShowingPosition)
                         .Select(_ => points);
@@ -97,7 +97,7 @@ namespace Combat
                 .AddTo(_disposables);
         }
 
-        private IEnumerable<PointsMultiplierData> GetMultipliers()
+        /*private IEnumerable<PointsMultiplierData> GetMultipliers()
         {
             return new List<PointsMultiplierData>()
             {
@@ -105,7 +105,7 @@ namespace Combat
                 new PointsMultiplierData(1.5f, "Отрицание "),
                 new PointsMultiplierData(1.5f, "Ещё что-то "),
             };
-        }
+        }*/
 
         private void CompleteAttack(Points points)
         {

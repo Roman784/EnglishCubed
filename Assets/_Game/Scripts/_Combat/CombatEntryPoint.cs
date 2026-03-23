@@ -66,6 +66,9 @@ namespace Combat
                 fieldCapacity,
                 handCapacity);
 
+            var pointMultiplierResolver = new PointMultipliersResolver(
+                _heroStats, G.Configs.PointMultiplierNamesConfigs);
+
             // ========== MVP ==========
 
             var model = new CombatModel(
@@ -73,6 +76,7 @@ namespace Combat
                 draws: draws,
                 fieldCapacity: fieldCapacity,
                 handCapacity: handCapacity,
+                pointMultiplierResolver: pointMultiplierResolver,
                 deck: deck,
                 handWordUnitsGroup: _handWordUnitsGroup,
                 fieldWordUnitsGroup: _fieldWordUnitsGroup,

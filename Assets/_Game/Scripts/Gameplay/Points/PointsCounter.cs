@@ -60,7 +60,7 @@ namespace Gameplay
 
             foreach (var multiplier in multipliers)
             {
-                var createdPoints = G.PointsFactory.Create(multiplier.Points, "x", multiplier.Message, position);
+                var createdPoints = G.PointsFactory.Create(multiplier.Points, "x", $"{multiplier.Message} ", position);
 
                 yield return new WaitForSeconds(0.25f);
 

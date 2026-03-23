@@ -53,6 +53,7 @@ namespace Abilities
             var abilityLevelData = _model.GetCurrentLevelDataOrFirst(abilityName);
             var value1 = abilityLevelData.Values.Length > 0 ? abilityLevelData.Values[0] : 0f;
             var value2 = abilityLevelData.Values.Length > 1 ? abilityLevelData.Values[1] : 0f;
+            Debug.Log($"Acquired ability: {abilityName}, value1: {value1}, value2: {value2}");
 
             switch (abilityName)
             {
@@ -89,7 +90,7 @@ namespace Abilities
                 case AbilityName.VampirismChanceIncrease:
                     G.CommandProcessor.Process(
                         new AbilityIncreaseVampirismCommand(
-                            StatModifier.Flat(value1)));
+                            StatModifier.Flat(value1), value2));
                     break;
                 case AbilityName.VampirismPowerIncrease:
                     G.CommandProcessor.Process(

@@ -12,6 +12,7 @@ namespace Combat
         public Stat Draws { get; private set; }
         public Stat FieldCapacity { get; private set; }
         public Stat HandCapacity { get; private set; }
+        public PointMultipliersResolver PointMultiplierResolver { get; private set; }
 
         public Deck Deck { get; private set; }
         public HandWordUnitsGroup HandWordUnitsGroup { get; private set; }
@@ -32,6 +33,7 @@ namespace Combat
             Stat draws,
             Stat fieldCapacity,
             Stat handCapacity,
+            PointMultipliersResolver pointMultiplierResolver,
             Deck deck,
             HandWordUnitsGroup handWordUnitsGroup,
             FieldWordUnitsGroup fieldWordUnitsGroup,
@@ -43,6 +45,7 @@ namespace Combat
             Draws = draws;
             FieldCapacity = fieldCapacity;
             HandCapacity = handCapacity;
+            PointMultiplierResolver = pointMultiplierResolver;
             Deck = deck;
             HandWordUnitsGroup = handWordUnitsGroup;
             FieldWordUnitsGroup = fieldWordUnitsGroup;
