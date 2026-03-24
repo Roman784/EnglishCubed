@@ -104,11 +104,7 @@ namespace Combat
             points.Attack(_model.Location.FirstEnemy.Center)
                 .Subscribe(value =>
                 {
-                    //TODO
-                    var vampirismChance = _model.HeroStats.GetStatValue(StatName.Vampirism);
-                    if (vampirismChance < UnityEngine.Random.Range(0, 100))
-                        _model.HeroStats.Health.Restore(Mathf.RoundToInt(_model.HeroStats.GetStatValue(StatName.VampirismPower)));
-
+                    _model.HeroStats.TryApplyVampirism();
                     DiscardFieldWords();
                     ApplyDamageToEnemy(value);
                 })
@@ -142,17 +138,12 @@ namespace Combat
         {
             enemy.Attack().Subscribe(_ =>
             {
-                //TODO
-                var dodgeChance = _model.HeroStats.GetStatValue(StatName.Dodge) + 
-                    _model.HeroStats.GetStatValue(StatName.RageDodge) * _model.HeroStats.Health.EmptyHeartsCount;
-                if (dodgeChance < UnityEngine.Random.Range(0, 100))
+                if (_model.HeroStats.IsChanceSuccessWithRage(StatName.Dodge, StatName.RageDodge))
                     _model.Hero.TakeDamage();
                 
                 if (_model.Hero.IsAlive)
                 {
-                    // TODO
-                    var experience = Mathf.CeilToInt(
-                        pointsValue * (_model.HeroStats.GetStatValue(StatName.ExperiencePower) / 100f + 1f));
+                    var experience = _model.HeroStats.CalculateExperience(pointsValue);
                     _model.Hero.AddExperience(experience);
                     _view.EnableControls();
                 }

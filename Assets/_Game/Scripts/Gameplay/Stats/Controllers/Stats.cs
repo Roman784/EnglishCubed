@@ -56,6 +56,34 @@ namespace Gameplay
             _modifiersMap[statName].Add(modifier);
         }
 
+        public bool IsChanceSuccess(StatName statName)
+        {
+            var chance = GetStatValue(statName);
+            return chance < UnityEngine.Random.Range(0, 100);
+        }
+
+        public bool IsChanceSuccessWithRage(StatName statName, StatName rageStatName)
+        {
+            var chance = GetStatValue(statName) + GetStatValue(rageStatName) * Health.EmptyHeartsCount;
+            return chance < UnityEngine.Random.Range(0, 100);
+        }
+
+        public int CalculateExperience(int points)
+        {
+            return Mathf.CeilToInt(points * (GetStatValue(StatName.ExperiencePower) / 100f + 1f));
+        }
+
+        public bool TryApplyVampirism()
+        {
+            if (IsChanceSuccess(StatName.Vampirism))
+            {
+                var healthForRestore = Mathf.RoundToInt(GetStatValue(StatName.VampirismPower));
+                Health.Restore(healthForRestore);
+                return true;
+            }
+            return false;
+        }
+
         private float ApplyModifiers(Stat stat)
         {
             var result = stat.CurrentValue;

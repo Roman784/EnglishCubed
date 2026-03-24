@@ -29,7 +29,7 @@ namespace Gameplay
             _bannedStatNames.Add(StatName.Experience);
             _bannedStatNames.Add(StatName.ExperiencePower);
             _bannedStatNames.Add(StatName.Dodge);
-            _bannedStatNames.Add(StatName.Vampirism); // <-
+            _bannedStatNames.Add(StatName.Vampirism);
             _bannedStatNames.Add(StatName.VampirismPower);
             _bannedStatNames.Add(StatName.CriticalAttackPower);
             _bannedStatNames.Add(StatName.RageDodge);
@@ -71,7 +71,7 @@ namespace Gameplay
 
                 else if (statName == StatName.RageAttack)
                 {
-                    multiplier = CalculateMultiplierAndMultiplyByRage(statName, _stats.Health.EmptyHeartsCount);
+                    multiplier = CalculateMultiplierWithRage(statName, _stats.Health.EmptyHeartsCount);
                 }
 
                 if (multiplier != null) 
@@ -95,14 +95,12 @@ namespace Gameplay
         public PointsMultiplierData CalculateMultiplierWithChance(
             StatName chanceStatName, StatName multiplierStatName, bool asPercentage = true)
         {
-            var chance = _stats.GetStatValue(chanceStatName);
-            var r = UnityEngine.Random.Range(0, 100);
-            if (r <= chance)
+            if (_stats.IsChanceSuccess(chanceStatName))
                 return CalculateMultiplier(multiplierStatName, asPercentage);
             return null;
         }
 
-        public PointsMultiplierData CalculateMultiplierAndMultiplyByRage(StatName statName, int rage, bool asPercentage = true)
+        public PointsMultiplierData CalculateMultiplierWithRage(StatName statName, int rage, bool asPercentage = true)
         {
             var statValue = _stats.GetStatValue(statName);
             if (statValue == 0) return null;
