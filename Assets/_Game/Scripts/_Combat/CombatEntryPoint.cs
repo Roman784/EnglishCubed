@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using R3;
+using System;
 
 namespace Combat
 {
@@ -47,7 +48,7 @@ namespace Combat
 
             var heroHealth = new Health(3);
             var heroArmor = new Armor(0);
-            var heroExperience = new Experience(0, 100);
+            var heroExperience = new Experience(G.Configs.StatsConfigs.ExperienceLevelDatas);
 
             var discards = new Stat(StatName.DiscardsCount, 3, 3);
             var draws = new Stat(StatName.DrawsCount, 5, 5);
@@ -70,6 +71,12 @@ namespace Combat
             var pointMultiplierResolver = new PointMultipliersResolver(
                 _heroStats, G.Configs.PointMultiplierNamesConfigs);
 
+            // ========== Abilities ==========
+
+            var abilityInventoryModel = new AbilityInventoryModel(
+                allConfigs: _abilitiesConfigs);
+            _abilityInventory = new AbilityInventoryPresenter(_abilityInventoryView, abilityInventoryModel);
+
             // ========== MVP ==========
 
             var model = new CombatModel(
@@ -80,7 +87,9 @@ namespace Combat
                 fieldWordUnitsGroup: _fieldWordUnitsGroup,
                 grammarValidator: grammarValidator,
                 pointsCounter: pointsCounter,
-                location: _location);
+                location: _location,
+                abilityInventory: _abilityInventory,
+                availableWordUnitsConfigs: _wordUnitsConfigs);
             _presenter = new CombatPresenter(_view, model);
 
             // ========== Hero ==========
@@ -90,12 +99,6 @@ namespace Combat
             // ========== Commands ==========
 
             InitCommands(_heroStats);
-
-            // ========== Abilities ==========
-
-            var abilityInventoryModel = new AbilityInventoryModel(
-                allConfigs: _abilitiesConfigs);
-            _abilityInventory = new AbilityInventoryPresenter(_abilityInventoryView, abilityInventoryModel);
 
             // ========== Start Game ==========
 
@@ -172,24 +175,7 @@ namespace Combat
         {
             if (Input.GetKeyDown(KeyCode.A))
             {
-                _view.DisableControls();
-                var abilitySelectionPopUp = G.PopUpsProvider.OpenAbilitySelectionPopUp(_abilityInventory.GetAbilitiesForSelection());
-                
-                abilitySelectionPopUp.AbilitySelectedSignal.Subscribe(abilityName => 
-                    _abilityInventory.AcquireAbility(abilityName));
-                
-                abilitySelectionPopUp.CloseSignal.Subscribe(_ =>
-                {
-                    var random = new System.Random(); // TEMP.
-                    var wordUnitSelectionPopUp = G.PopUpsProvider.OpenWordUnitSelectionPopUp(
-                        _wordUnitsConfigs.OrderBy(x => random.Next()).Take(3)); // TEMP.
-                    
-                    wordUnitSelectionPopUp.WordSelectedSignal.Subscribe(configs =>
-                        _deck.Add(configs));
-
-                    wordUnitSelectionPopUp.CloseSignal.Subscribe(__ =>
-                        _view.EnableControls());
-                });
+                _presenter.OpenNewLevelUpgradePopUps();
             }
 
             else if (Input.GetKeyDown(KeyCode.I))

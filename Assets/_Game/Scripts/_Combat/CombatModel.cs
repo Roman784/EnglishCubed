@@ -1,3 +1,5 @@
+using Abilities;
+using Configs;
 using Gameplay;
 using GrammarValidation;
 using R3;
@@ -22,6 +24,9 @@ namespace Combat
         public PointsCounter PointsCounter { get; private set; }
         public Location Location { get; private set; }
 
+        public AbilityInventoryPresenter AbilityInventory { get; private set; }
+        public WordUnitConfigs[] AvailableWordUnitsConfigs { get; private set; }
+
         public Hero Hero => Location.Hero;
         public int AvailableWordsOnFieldCount => (int)FieldCapacity.Max - UnitsOnFieldCount;
         public int UnitsOnFieldCount => FieldWordUnitsGroup.AllElementsCount;
@@ -37,7 +42,9 @@ namespace Combat
             FieldWordUnitsGroup fieldWordUnitsGroup,
             GrammarValidator grammarValidator,
             PointsCounter pointsCounter,
-            Location location)
+            Location location,
+            AbilityInventoryPresenter abilityInventory,
+            WordUnitConfigs[] availableWordUnitsConfigs)
         {
             HeroStats = heroStats;
             Discards = heroStats.GetStat(StatName.DiscardsCount);
@@ -52,6 +59,9 @@ namespace Combat
             GrammarValidator = grammarValidator;
             PointsCounter = pointsCounter;
             Location = location;
+
+            AbilityInventory = abilityInventory;
+            AvailableWordUnitsConfigs = availableWordUnitsConfigs;
 
             HandWordUnitsGroup.Init();
             FieldWordUnitsGroup.SetMaxAvailableWordsCount((int)FieldCapacity.Max);

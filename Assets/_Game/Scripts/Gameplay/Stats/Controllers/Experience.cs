@@ -1,28 +1,38 @@
-using UnityEngine;
 using R3;
+using Configs;
 
 namespace Gameplay
 {
     public class Experience : Stat
     {
-        private Subject<Unit> _levelUppedSignalSubj = new();
-        public Observable<Unit> LevelUppedSignal => _levelUppedSignalSubj;
+        private readonly ExperienceLevelData[] _levelsData;
+        private int _currentLevel;
+        private bool _isNextLevelReached;
 
-        public Experience(int current, int max) : base(StatName.Experience, current, max)
+        public bool IsNextLevelReached => _isNextLevelReached;
+
+        public Experience(ExperienceLevelData[] levelsData) : 
+            base(StatName.Experience, 0, levelsData[0].Count)
         {
+            _levelsData = levelsData;
+            _currentLevel = 0;
+            _isNextLevelReached = false;
+
             MaxReachedSignal.Subscribe(remainder =>
             {
-                LevelUp();
+                _isNextLevelReached = true;
             });
         }
 
-
-        private void LevelUp()
+        public void LevelUp()
         {
-            Debug.Log("LevelUp");
+            _currentLevel += 1;
+            var nextLevel = _levelsData[_currentLevel < _levelsData.Length ? _currentLevel : _levelsData.Length - 1];
 
+            _max = nextLevel.Count;
             SetToZero();
-            _levelUppedSignalSubj.OnNext(Unit.Default);
+
+            _isNextLevelReached = false;
         }
     }
 }

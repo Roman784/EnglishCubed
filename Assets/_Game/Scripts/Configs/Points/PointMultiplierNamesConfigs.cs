@@ -8,7 +8,7 @@ using UnityEngine;
 namespace Configs
 {
     [CreateAssetMenu(fileName = "PointMultiplierNamesConfigs",
-                     menuName = "Game Configs/Stats/New Point Multiplier Names Configs")]
+                     menuName = "Game Configs/Points/New Point Multiplier Names Configs")]
     public class PointMultiplierNamesConfigs : ScriptableObject
     {
         public List<StatNameKVP> Names;

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c70c27f4d532fdc45a54666e6f8dfc2e, type: 3}
+  m_Name: StatsConfigs
+  m_EditorClassIdentifier: Assembly-CSharp::Configs.StatsConfigs
+  ExperienceLevelDatas:
+  - Count: 30
+  - Count: 50
+  - Count: 100
+  - Count: 150
+  - Count: 200
+  - Count: 250
+  - Count: 500

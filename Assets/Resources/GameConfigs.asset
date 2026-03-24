@@ -15,6 +15,7 @@ MonoBehaviour:
   LexiconConfigs: {fileID: 11400000, guid: c216488b40ec54e4c9e839da906fed2b, type: 2}
   GrammarHintsConfigs: {fileID: 11400000, guid: cfe2b54b0720eec4387aab27afb8cf53, type: 2}
   PointMultiplierNamesConfigs: {fileID: 11400000, guid: 34e4504d98ee4fb44a8557d53503d919, type: 2}
+  StatsConfigs: {fileID: 11400000, guid: c609a08232b71f549a35f0d83532eb87, type: 2}
   AudioConfigs: {fileID: 11400000, guid: 434402cbbf5349042bbc662480db3f13, type: 2}
   UIConfigs: {fileID: 11400000, guid: 197643596d2022f49bb8f7fec9c562df, type: 2}
   DefaultGameStateConfigs: {fileID: 11400000, guid: 84701581b285f6542943bd3b1b02f247, type: 2}

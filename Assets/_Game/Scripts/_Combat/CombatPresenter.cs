@@ -118,13 +118,15 @@ namespace Combat
             enemy.TakeDamage(pointsValue, out var animationDuration);
             G.CameraShaker.MidShake();
 
+            var experience = _model.HeroStats.CalculateExperience(pointsValue);
+            _model.Hero.AddExperience(experience);
+
             Observable
                 .Timer(TimeSpan.FromSeconds(animationDuration + 0.2f))
                 .Subscribe(_ =>
                 {
                     if (enemy.CurrentHealth <= 0)
                     {
-                        _model.Hero.AddExperience(pointsValue);
                         _view.EnableControls();
                         return;
                     }
@@ -143,10 +145,42 @@ namespace Combat
                 
                 if (_model.Hero.IsAlive)
                 {
-                    var experience = _model.HeroStats.CalculateExperience(pointsValue);
-                    _model.Hero.AddExperience(experience);
-                    _view.EnableControls();
+                    if (_model.HeroStats.Experience.IsNextLevelReached)
+                    {
+                        _model.HeroStats.Experience.LevelUp();
+                        OpenNewLevelUpgradePopUps();
+                    }
+                    else
+                        _view.EnableControls();
                 }
+            });
+        }
+
+        // ================ Upgrades ================
+
+        public void OpenNewLevelUpgradePopUps()
+        {
+            _view.DisableControls();
+            Observable.Timer(TimeSpan.FromSeconds(1)).Subscribe(_ =>
+            {
+                var abilitySelectionPopUp = G.PopUpsProvider.OpenAbilitySelectionPopUp(
+                    _model.AbilityInventory.GetAbilitiesForSelection());
+
+                abilitySelectionPopUp.AbilitySelectedSignal.Subscribe(abilityName =>
+                    _model.AbilityInventory.AcquireAbility(abilityName));
+
+                abilitySelectionPopUp.CloseSignal.Subscribe(_ =>
+                {
+                    var random = new System.Random();
+                    var wordUnitSelectionPopUp = G.PopUpsProvider.OpenWordUnitSelectionPopUp(
+                        _model.AvailableWordUnitsConfigs.OrderBy(x => random.Next()).Take(3));
+
+                    wordUnitSelectionPopUp.WordSelectedSignal.Subscribe(configs =>
+                        _model.Deck.Add(configs));
+
+                    wordUnitSelectionPopUp.CloseSignal.Subscribe(__ =>
+                        _view.EnableControls());
+                });
             });
         }
 
