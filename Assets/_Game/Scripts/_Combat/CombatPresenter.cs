@@ -142,7 +142,7 @@ namespace Combat
             {
                 if (_model.HeroStats.IsChanceSuccessWithRage(StatName.Dodge, StatName.RageDodge))
                     _model.Hero.TakeDamage();
-                
+
                 if (_model.Hero.IsAlive)
                 {
                     if (_model.HeroStats.Experience.IsNextLevelReached)
@@ -153,6 +153,9 @@ namespace Combat
                     else
                         _view.EnableControls();
                 }
+                else
+                    Observable.Timer(TimeSpan.FromSeconds(1f)).Subscribe(_ =>
+                        G.PopUpsProvider.OpenCombatDefeatPopUp());
             });
         }
 

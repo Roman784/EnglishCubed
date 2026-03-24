@@ -46,7 +46,7 @@ namespace Combat
 
             // ========== Stats ==========
 
-            var heroHealth = new Health(3);
+            var heroHealth = new Health(1);
             var heroArmor = new Armor(0);
             var heroExperience = new Experience(G.Configs.StatsConfigs.ExperienceLevelDatas);
 

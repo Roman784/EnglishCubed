@@ -37,5 +37,12 @@ namespace UI
             createdPopUp.Open(wordUnitConfigs);
             return createdPopUp;
         }
+
+        public CombatDefeatPopUp OpenCombatDefeatPopUp()
+        {
+            var createdPopUp = _popUpFactory.Create(Configs.CombatDefeatPopUpPrefab);
+            createdPopUp.Open();
+            return createdPopUp;
+        }
     }
 }

@@ -18,10 +18,6 @@ namespace UI
     {
         [Space]
 
-        [SerializeField] private RectTransform _titleViewport;
-
-        [Space]
-
         [SerializeField] private AbilitySelectionCard _cardPrefab;
         [SerializeField] private RectTransform _cardsCOuntainer;
         [SerializeField] private CanvasGroup _refuseButtonView;
@@ -36,7 +32,6 @@ namespace UI
         {
             base.SetInitialViewState();
 
-            _titleViewport.localScale = Vector2.up;
             _refuseButtonView.alpha = 0f;
             _refuseButtonView.transform.localScale = new Vector2(0.5f, 0.5f);
             var hintColor = _hintView.color;
@@ -115,11 +110,6 @@ namespace UI
                 ShowRefuseButtonView();
                 ShowHintView();
             });
-        }
-
-        private void ShowTitle()
-        {
-            _titleViewport.DOScaleX(1, 0.5f).SetEase(Ease.OutBack);
         }
 
         private void ShowRefuseButtonView()

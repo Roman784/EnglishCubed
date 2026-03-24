@@ -615,7 +615,7 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 64, y: 64, z: 64, w: 64}
       customData: 
       outline: []
@@ -624,6 +624,28 @@ TextureImporter:
       bones: []
       spriteID: b088ac3700f131146949582477d6441e
       internalID: -2018211290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bigBrokenHeart
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 764
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6249df0666632348bce104b6a4deb0c
+      internalID: -1277896774
       vertices: []
       indices: 
       edges: []
@@ -648,6 +670,7 @@ TextureImporter:
       abilitySelectionCard_1: 239288840
       abilitySelectionCard_2: 2055685780
       abilitySelectionCard_3: 639412363
+      bigBrokenHeart: -1277896774
       cloud: 524866619
       enemy_1: 664701876
       hero_knight: 757588557
