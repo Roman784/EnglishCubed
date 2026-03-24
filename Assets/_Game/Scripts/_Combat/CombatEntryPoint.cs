@@ -146,6 +146,8 @@ namespace Combat
             G.CommandProcessor.RegisterHandler(
                 new AbilityIncreaseFourWordsPowerCommandHandler(heroStats));
             G.CommandProcessor.RegisterHandler(
+                new AbilityIncreaseAttackPowerCommandHandler(heroStats));
+            G.CommandProcessor.RegisterHandler(
                 new AbilityIncreaseDodgeCommandhandler(heroStats));
             G.CommandProcessor.RegisterHandler(
                 new AbilityIncreaseRageAttackCommandHandler(heroStats));

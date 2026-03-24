@@ -53,6 +53,16 @@ namespace Abilities
             return configs?.Levels[0];
         }
 
+        public AbilityLevelData GetLevelDataForNextStack(AbilityName abilityName)
+        {
+            var stacks = GetStacksCount(abilityName);
+            var configs = GetAbilityConfigs(abilityName);
+
+            if (stacks >= 0 && stacks < configs?.MaxStacksCount)
+                return configs?.Levels[stacks];
+            return null;
+        }
+
         private AbilityConfigs GetAbilityConfigs(AbilityName abilityName)
         {
             return AllConfigs.FirstOrDefault(c => c.Name == abilityName);

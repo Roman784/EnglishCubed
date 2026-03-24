@@ -68,6 +68,7 @@ namespace Gameplay
                 createdPoints.SendToAccumulator().OnComplete(() =>
                 {
                     _accumulativePoints.Multiply(multiplier.Points);
+                    _accumulativePoints.CeilToInt();
                     _accumulativePoints.Pop();
                     isSended = true;
                     Object.Destroy(createdPoints);

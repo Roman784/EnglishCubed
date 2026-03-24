@@ -21,21 +21,21 @@ MonoBehaviour:
   - Icon: {fileID: -724525622, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
     Title: "\u0421\u0438\u043B\u0430"
     Description: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
-      \u043C\u043D\u043E\u0436\u0438\u0442\u0435\u043B\u044C \u0430\u0442\u0430\u043A\u0438"
+      \u0441\u0438\u043B\u0443 \u0430\u0442\u0430\u043A\u0438"
     Details: <size=48>+{0}%
     Values:
     - 15
   - Icon: {fileID: -724525622, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
     Title: "\u0421\u0438\u043B\u0430"
     Description: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
-      \u043C\u043D\u043E\u0436\u0438\u0442\u0435\u043B\u044C \u0430\u0442\u0430\u043A\u0438"
+      \u0441\u0438\u043B\u0443 \u0430\u0442\u0430\u043A\u0438"
     Details: <size=48>+{0}%
     Values:
     - 10
   - Icon: {fileID: -724525622, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
     Title: "\u0421\u0438\u043B\u0430"
     Description: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
-      \u043C\u043D\u043E\u0436\u0438\u0442\u0435\u043B\u044C \u0430\u0442\u0430\u043A\u0438"
+      \u0441\u0438\u043B\u0443 \u0430\u0442\u0430\u043A\u0438"
     Details: <size=48>+{0}%
     Values:
     - 5

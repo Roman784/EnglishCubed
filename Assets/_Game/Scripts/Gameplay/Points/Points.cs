@@ -46,9 +46,9 @@ namespace Gameplay
             UpdateView();
         }
 
-        public void Round()
+        public void CeilToInt()
         {
-            _value = Mathf.Floor(_value);
+            _value = Mathf.CeilToInt(_value);
             UpdateView();
         }
 

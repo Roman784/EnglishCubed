@@ -43,7 +43,7 @@ namespace Abilities
                 })
                 .OrderBy(x => random.Next())
                 .Take(3)
-                .Select(a => (a, _model.GetCurrentLevelDataOrFirst(a.Name)));
+                .Select(a => (a, _model.GetLevelDataForNextStack(a.Name)));
         }
 
         public void AcquireAbility(AbilityName abilityName)

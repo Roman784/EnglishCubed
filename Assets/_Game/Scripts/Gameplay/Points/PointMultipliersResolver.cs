@@ -87,7 +87,7 @@ namespace Gameplay
             if (statValue == 0) return null;
 
             if (asPercentage)
-                statValue /= 100f;
+                statValue = statValue / 100f + 1f;
 
             return new PointsMultiplierData(statValue, _namesConfigs.GetName(statName));
         }
