@@ -104,6 +104,11 @@ namespace Combat
             points.Attack(_model.Location.FirstEnemy.Center)
                 .Subscribe(value =>
                 {
+                    //TODO
+                    var vampirismChance = _model.HeroStats.GetStatValue(StatName.Vampirism);
+                    if (vampirismChance < UnityEngine.Random.Range(0, 100))
+                        _model.HeroStats.Health.Restore(Mathf.RoundToInt(_model.HeroStats.GetStatValue(StatName.VampirismPower)));
+
                     DiscardFieldWords();
                     ApplyDamageToEnemy(value);
                 })
