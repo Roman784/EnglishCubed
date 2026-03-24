@@ -137,9 +137,15 @@ namespace Combat
         {
             enemy.Attack().Subscribe(_ =>
             {
-                _model.Hero.TakeDamage();
+                //TODO
+                var dodgeChance = _model.HeroStats.GetStatValue(StatName.Dodge) + 
+                    _model.HeroStats.GetStatValue(StatName.RageDodge) * _model.HeroStats.Health.EmptyHeartsCount;
+                if (dodgeChance < UnityEngine.Random.Range(0, 100))
+                    _model.Hero.TakeDamage();
+                
                 if (_model.Hero.IsAlive)
                 {
+                    // TODO
                     var experience = Mathf.CeilToInt(
                         pointsValue * (_model.HeroStats.GetStatValue(StatName.ExperiencePower) / 100f + 1f));
                     _model.Hero.AddExperience(experience);

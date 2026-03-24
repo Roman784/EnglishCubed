@@ -54,8 +54,6 @@ namespace Gameplay
             if (!_modifiersMap.ContainsKey(statName))
                 _modifiersMap[statName] = new List<StatModifier>();
             _modifiersMap[statName].Add(modifier);
-
-            Debug.Log($"Added modifier to {statName}: {modifier.Value} ({modifier.ModifierType})");
         }
 
         private float ApplyModifiers(Stat stat)
