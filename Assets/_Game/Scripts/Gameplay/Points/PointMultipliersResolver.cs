@@ -27,12 +27,12 @@ namespace Gameplay
             _bannedStatNames.Add(StatName.Health);
             _bannedStatNames.Add(StatName.Armor);
             _bannedStatNames.Add(StatName.Experience);
-            _bannedStatNames.Add(StatName.ExperiencePower);
-            _bannedStatNames.Add(StatName.Dodge);
-            _bannedStatNames.Add(StatName.Vampirism);
+            _bannedStatNames.Add(StatName.ExperiencePower); // <-
+            _bannedStatNames.Add(StatName.Dodge); // <-
+            _bannedStatNames.Add(StatName.Vampirism); // <-
             _bannedStatNames.Add(StatName.VampirismPower);
             _bannedStatNames.Add(StatName.CriticalAttackPower);
-            _bannedStatNames.Add(StatName.RageDodge);
+            _bannedStatNames.Add(StatName.RageDodge); // <-
             _bannedStatNames.Add(StatName.HandCapacity);
             _bannedStatNames.Add(StatName.FiveWordsPower);
             _bannedStatNames.Add(StatName.DrawsCount);

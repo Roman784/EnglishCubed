@@ -8,6 +8,7 @@ namespace Combat
     {
         private Subject<Unit> _changedSignalSubj = new();
 
+        public Stats HeroStats { get; private set; }
         public Stat Discards { get; private set; }
         public Stat Draws { get; private set; }
         public Stat FieldCapacity { get; private set; }
@@ -29,10 +30,7 @@ namespace Combat
         public Observable<Unit> ChangedSignal => _changedSignalSubj;
 
         public CombatModel(
-            Stat discards, 
-            Stat draws,
-            Stat fieldCapacity,
-            Stat handCapacity,
+            Stats heroStats,
             PointMultipliersResolver pointMultiplierResolver,
             Deck deck,
             HandWordUnitsGroup handWordUnitsGroup,
@@ -41,10 +39,12 @@ namespace Combat
             PointsCounter pointsCounter,
             Location location)
         {
-            Discards = discards;
-            Draws = draws;
-            FieldCapacity = fieldCapacity;
-            HandCapacity = handCapacity;
+            HeroStats = heroStats;
+            Discards = heroStats.GetStat(StatName.DiscardsCount);
+            Draws = heroStats.GetStat(StatName.DrawsCount);
+            FieldCapacity = heroStats.GetStat(StatName.FieldCapacity);
+            HandCapacity = heroStats.GetStat(StatName.HandCapacity);
+
             PointMultiplierResolver = pointMultiplierResolver;
             Deck = deck;
             HandWordUnitsGroup = handWordUnitsGroup;
@@ -54,13 +54,13 @@ namespace Combat
             Location = location;
 
             HandWordUnitsGroup.Init();
-            FieldWordUnitsGroup.SetMaxAvailableWordsCount((int)fieldCapacity.Max);
+            FieldWordUnitsGroup.SetMaxAvailableWordsCount((int)FieldCapacity.Max);
 
             Discards.Current.Subscribe(_ => _changedSignalSubj.OnNext(Unit.Default));
             Draws.Current.Subscribe(_ => _changedSignalSubj.OnNext(Unit.Default));
             FieldCapacity.Current.Subscribe(_ => 
             { 
-                FieldWordUnitsGroup.SetMaxAvailableWordsCount((int)fieldCapacity.Max);
+                FieldWordUnitsGroup.SetMaxAvailableWordsCount((int)FieldCapacity.Max);
                 _changedSignalSubj.OnNext(Unit.Default);
             });
             HandCapacity.Current.Subscribe(_ => _changedSignalSubj.OnNext(Unit.Default));

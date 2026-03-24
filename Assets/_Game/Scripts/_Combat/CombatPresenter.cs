@@ -97,16 +97,6 @@ namespace Combat
                 .AddTo(_disposables);
         }
 
-        /*private IEnumerable<PointsMultiplierData> GetMultipliers()
-        {
-            return new List<PointsMultiplierData>()
-            {
-                new PointsMultiplierData(2f, "Вопрос "),
-                new PointsMultiplierData(1.5f, "Отрицание "),
-                new PointsMultiplierData(1.5f, "Ещё что-то "),
-            };
-        }*/
-
         private void CompleteAttack(Points points)
         {
             _model.Hero.Attack();
@@ -150,7 +140,9 @@ namespace Combat
                 _model.Hero.TakeDamage();
                 if (_model.Hero.IsAlive)
                 {
-                    _model.Hero.AddExperience(pointsValue);
+                    var experience = Mathf.CeilToInt(
+                        pointsValue * (_model.HeroStats.GetStatValue(StatName.ExperiencePower) / 100f + 1f));
+                    _model.Hero.AddExperience(experience);
                     _view.EnableControls();
                 }
             });

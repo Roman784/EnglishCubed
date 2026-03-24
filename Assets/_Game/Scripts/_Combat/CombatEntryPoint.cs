@@ -72,10 +72,7 @@ namespace Combat
             // ========== MVP ==========
 
             var model = new CombatModel(
-                discards: discards, 
-                draws: draws,
-                fieldCapacity: fieldCapacity,
-                handCapacity: handCapacity,
+                heroStats: _heroStats,
                 pointMultiplierResolver: pointMultiplierResolver,
                 deck: deck,
                 handWordUnitsGroup: _handWordUnitsGroup,
