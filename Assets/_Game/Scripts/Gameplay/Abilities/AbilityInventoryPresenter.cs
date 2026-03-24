@@ -53,7 +53,6 @@ namespace Abilities
             var abilityLevelData = _model.GetCurrentLevelDataOrFirst(abilityName);
             var value1 = abilityLevelData.Values.Length > 0 ? abilityLevelData.Values[0] : 0f;
             var value2 = abilityLevelData.Values.Length > 1 ? abilityLevelData.Values[1] : 0f;
-            Debug.Log($"Acquired ability: {abilityName}, value1: {value1}, value2: {value2}");
 
             switch (abilityName)
             {

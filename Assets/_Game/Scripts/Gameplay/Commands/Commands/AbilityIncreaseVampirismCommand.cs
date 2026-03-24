@@ -10,7 +10,6 @@ namespace Commands
         public AbilityIncreaseVampirismCommand(StatModifier modifier, float additionalValue) : base(modifier)
         {
             AdditionalValue = additionalValue;
-            Debug.Log($"Created AbilityIncreaseVampirismCommand with additional value: {additionalValue}");
         }
 
         public override StatName StatName => StatName.Vampirism;
@@ -27,7 +26,6 @@ namespace Commands
         {
             var stat = Stats.GetStat(StatName.VampirismPower);
             stat.SetMax(stat.Max + command.AdditionalValue);
-            Debug.Log($"Vampirism power increased by {command.AdditionalValue}. New max: {stat.Max}");
             return base.Handle(command);
         }
     }

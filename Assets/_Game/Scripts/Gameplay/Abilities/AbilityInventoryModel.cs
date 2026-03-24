@@ -48,8 +48,8 @@ namespace Abilities
             var stacks = GetStacksCount(abilityName);
             var configs = GetAbilityConfigs(abilityName);
 
-            if (stacks >= 0 && stacks <= configs?.MaxStacksCount - 1)
-                return configs?.Levels[stacks];
+            if (stacks > 0 && stacks <= configs?.MaxStacksCount)
+                return configs?.Levels[stacks - 1];
             return configs?.Levels[0];
         }
 
