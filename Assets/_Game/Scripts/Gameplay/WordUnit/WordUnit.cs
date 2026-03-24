@@ -29,6 +29,7 @@ namespace Gameplay
         public WordUnitBackplate BackplatePrefab => _backplatePrefab;
         public int Points => _configs.Points;
         public Vector2 PointsSpawnPosition => _pointsSpawnPoint.position;
+        public PointerDetector PointerDetector => _pointerDetector;
 
         public string GetWordText() => _configs?.Word.Text ?? "";
 

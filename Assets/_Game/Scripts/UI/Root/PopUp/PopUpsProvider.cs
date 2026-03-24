@@ -30,5 +30,12 @@ namespace UI
 
             return createdPopUp;
         }
+
+        public WordUnitSelectionPopUp OpenWordUnitSelectionPopUp(IEnumerable<WordUnitConfigs> wordUnitConfigs)
+        {
+            var createdPopUp = _popUpFactory.Create(Configs.WordUnitSelectionPopUpPrefab);
+            createdPopUp.Open(wordUnitConfigs);
+            return createdPopUp;
+        }
     }
 }

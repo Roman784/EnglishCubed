@@ -16,6 +16,8 @@ namespace Gameplay
         [SerializeField] private float _containerBorderWidth;
         [SerializeField] private float _minContainerWidth;
 
+        private Tween _showingTween;
+        private Tween _hidingTween;
         private Tween _movingTween;
         private Tween _localViewMovingTween;
         private Sequence _movingWithDecreasingSeq;
@@ -36,6 +38,22 @@ namespace Gameplay
             var newContainerWidth = wordWidth + _containerBorderWidth * 2f;
             newContainerWidth = Mathf.Max(_minContainerWidth, newContainerWidth);
             _containerView.sizeDelta = new Vector2(newContainerWidth, containerHeight);
+        }
+
+        public Tween Show()
+        {
+            _showingTween?.Kill();
+            _showingTween = _rootView.DOScale(1, 0.25f).SetEase(Ease.OutBack);
+
+            return _showingTween;
+        }
+
+        public Tween Hide()
+        {
+            _hidingTween?.Kill();
+            _hidingTween = _rootView.DOScale(0, 0.25f).SetEase(Ease.InBack);
+
+            return _hidingTween;
         }
 
         public Tween MoveTo(Vector2 to)
@@ -85,6 +103,8 @@ namespace Gameplay
 
         public void DOKillAll()
         {
+            _showingTween?.Kill();
+            _hidingTween?.Kill();
             _movingTween?.Kill();
             _localViewMovingTween?.Kill();
             _movingWithDecreasingSeq?.Kill();

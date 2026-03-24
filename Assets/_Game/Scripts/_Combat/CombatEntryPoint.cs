@@ -26,6 +26,7 @@ namespace Combat
 
         private CombatPresenter _presenter;
         private AbilityInventoryPresenter _abilityInventory;
+        private Deck _deck;
 
         private Stats _heroStats; // Temp.
 
@@ -38,7 +39,7 @@ namespace Combat
             G.WordUnitFactory = new WordUnitFactory();
             G.PointsFactory = new PointsFactory();
 
-            var deck = new Deck(_wordUnitsConfigs);
+            _deck = new Deck(_wordUnitsConfigs);
             var grammarValidator = new GrammarValidator(G.Configs.LexiconConfigs);
             var pointsCounter = new PointsCounter(_location.PointsAccumulationPosition);
 
@@ -74,7 +75,7 @@ namespace Combat
             var model = new CombatModel(
                 heroStats: _heroStats,
                 pointMultiplierResolver: pointMultiplierResolver,
-                deck: deck,
+                deck: _deck,
                 handWordUnitsGroup: _handWordUnitsGroup,
                 fieldWordUnitsGroup: _fieldWordUnitsGroup,
                 grammarValidator: grammarValidator,
@@ -172,11 +173,22 @@ namespace Combat
             if (Input.GetKeyDown(KeyCode.A))
             {
                 _view.DisableControls();
-                var popUp = G.PopUpsProvider.OpenAbilitySelectionPopUp(_abilityInventory.GetAbilitiesForSelection());
-                popUp.CloseSignal.Subscribe(_ => _view.EnableControls());
-                popUp.AbilitySelectedSignal.Subscribe(abilityName =>
+                var abilitySelectionPopUp = G.PopUpsProvider.OpenAbilitySelectionPopUp(_abilityInventory.GetAbilitiesForSelection());
+                
+                abilitySelectionPopUp.AbilitySelectedSignal.Subscribe(abilityName => 
+                    _abilityInventory.AcquireAbility(abilityName));
+                
+                abilitySelectionPopUp.CloseSignal.Subscribe(_ =>
                 {
-                    _abilityInventory.AcquireAbility(abilityName);
+                    var random = new System.Random(); // TEMP.
+                    var wordUnitSelectionPopUp = G.PopUpsProvider.OpenWordUnitSelectionPopUp(
+                        _wordUnitsConfigs.OrderBy(x => random.Next()).Take(3)); // TEMP.
+                    
+                    wordUnitSelectionPopUp.WordSelectedSignal.Subscribe(configs =>
+                        _deck.Add(configs));
+
+                    wordUnitSelectionPopUp.CloseSignal.Subscribe(__ =>
+                        _view.EnableControls());
                 });
             }
 
