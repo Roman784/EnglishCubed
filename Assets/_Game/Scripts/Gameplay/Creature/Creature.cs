@@ -7,22 +7,30 @@ namespace Gameplay
     {
         [SerializeField] protected CreatureAnimator _animator;
 
-        protected bool _isAlive;
+        protected Stats _stats;
+        private Subject<Unit> _deathSignalSubj = new();
 
-        public bool IsAlive => _isAlive;
+        public bool IsAlive => _stats.Health.IsAlive;
         public Observable<Unit> OnAttackEvent => _animator.OnAttackEvent;
+        public Observable<Unit> DeathSignal => _deathSignalSubj;
 
-        public virtual void Init()
+        public virtual void Init(Stats stats)
         {
-            _isAlive = true;
+            _stats = stats;
         }
 
         protected void Kill()
         {
-            if (!_isAlive) return;
-            _isAlive = false;
+            if (IsAlive)
+            {
+                _stats.Health.SetToZero();
+                return;
+            }
 
             _animator.PlayDeath();
+
+            _deathSignalSubj.OnNext(Unit.Default);
+            _deathSignalSubj.OnCompleted();
         }
     }
 }

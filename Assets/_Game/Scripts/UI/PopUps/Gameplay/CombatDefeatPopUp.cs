@@ -16,6 +16,7 @@ namespace UI
 
             _openLevelMenuButtonView.alpha = 0f;
             _openLevelMenuButtonView.transform.localScale = new Vector2(0.5f, 0.5f);
+            _heartIcon.localScale = Vector2.zero;
 
             return this;
         }
@@ -28,6 +29,8 @@ namespace UI
             {
                 ShowOpenLevelMenuButtonView();
             });
+
+            _heartIcon.DOScale(1f, 0.75f).SetEase(Ease.OutBack);
         }
 
         public void OpenLevelMenu()

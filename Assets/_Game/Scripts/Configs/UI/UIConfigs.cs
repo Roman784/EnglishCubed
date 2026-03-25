@@ -15,5 +15,6 @@ namespace GameRoot
         public AbilitySelectionPopUp AbilitySelectionPopUpPrefab;
         public WordUnitSelectionPopUp WordUnitSelectionPopUpPrefab;
         public CombatDefeatPopUp CombatDefeatPopUpPrefab;
+        public CombatVictoryPopUp CombatVictoryPopUpPrefab;
     }
 }

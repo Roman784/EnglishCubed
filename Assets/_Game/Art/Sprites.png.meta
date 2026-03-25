@@ -637,7 +637,7 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -646,6 +646,28 @@ TextureImporter:
       bones: []
       spriteID: a6249df0666632348bce104b6a4deb0c
       internalID: -1277896774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fanfare
+      rect:
+        serializedVersion: 2
+        x: 1129
+        y: 753
+        width: 375
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2a0350ab92ae8341954d64ccf759b14
+      internalID: 1456700952
       vertices: []
       indices: 
       edges: []
@@ -673,6 +695,7 @@ TextureImporter:
       bigBrokenHeart: -1277896774
       cloud: 524866619
       enemy_1: 664701876
+      fanfare: 1456700952
       hero_knight: 757588557
       ic_coin: -267339983
       ic_heart_empty: -780306982

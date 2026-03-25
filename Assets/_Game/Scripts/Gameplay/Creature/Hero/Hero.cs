@@ -7,15 +7,11 @@ namespace Gameplay
 {
     public class Hero : Creature
     {
-        private Stats _stats;
-
         public bool IsMoreThanOneHealthUnit => _stats.Health.CurrentValue > 1;
 
-        public void Init(Stats stats)
+        public override void Init(Stats stats)
         {
-            base.Init();
-
-            _stats = stats;
+            base.Init(stats);
 
             _stats.Health.ZeroReachedSignal.Subscribe(_ => Kill());
         }
@@ -27,7 +23,7 @@ namespace Gameplay
 
         public void TakeDamage()
         {
-            if (!_isAlive) return;
+            if (!IsAlive) return;
 
             G.CameraShaker.WeakShake();
 
@@ -36,7 +32,7 @@ namespace Gameplay
             else if (_stats.Health.CurrentValue > 0)
                 _stats.Health.DecreaseOne();
 
-            if (_isAlive) 
+            if (IsAlive)
                 _animator.PlayDamage();
         }
 

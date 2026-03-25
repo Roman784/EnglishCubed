@@ -17,3 +17,4 @@ MonoBehaviour:
   AbilitySelectionPopUpPrefab: {fileID: 2585745826185557585, guid: e60c0bdd094525344947532a81c18f1b, type: 3}
   WordUnitSelectionPopUpPrefab: {fileID: 2496130481704919453, guid: 872a70860d8943143b92e9c6d61461b2, type: 3}
   CombatDefeatPopUpPrefab: {fileID: 2264955954192916802, guid: 89017c0e771377749b883be03c4a8a28, type: 3}
+  CombatVictoryPopUpPrefab: {fileID: 4877711937594265630, guid: 0cfd5529a3e555e48afca3053bea0702, type: 3}

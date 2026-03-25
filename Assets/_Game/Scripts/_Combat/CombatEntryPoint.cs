@@ -100,6 +100,17 @@ namespace Combat
 
             InitCommands(_heroStats);
 
+            // ========== Level Passing ==========
+
+            _location.AllEnemiesDeathSignal.Subscribe(_ =>
+            {
+                Observable.Timer(TimeSpan.FromSeconds(3f)).Subscribe(_ =>
+                {
+                    _view.DisableControls();
+                    G.PopUpsProvider.OpenCombatVictoryPopUp();
+                });
+            });
+
             // ========== Start Game ==========
 
             _view.EnableControls();
