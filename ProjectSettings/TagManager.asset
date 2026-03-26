@@ -47,7 +47,7 @@ TagManager:
   - name: LocationMid
     uniqueID: 106117557
     locked: 0
-  - name: Character
+  - name: Creature
     uniqueID: 1715337359
     locked: 0
   - name: LocationForeground

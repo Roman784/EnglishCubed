@@ -22,7 +22,7 @@ namespace Gameplay
         {
             foreach (var enemy in _enemies)
             {
-                var stats = new Stats(new Health(10));
+                var stats = new Stats(new Health(50));
                 enemy.Init(stats);
 
                 enemy.DeathSignal.Subscribe(_ =>
