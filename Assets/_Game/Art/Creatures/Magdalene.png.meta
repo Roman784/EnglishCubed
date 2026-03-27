@@ -1892,7 +1892,7 @@ TextureImporter:
           rgba: 4278255615
       - name: bone_armLeft_2
         guid: 03e5b3ce7991a82469fda27671b992f4
-        position: {x: 16.798744, y: -0.000010238577, z: 0}
+        position: {x: 16.798744, y: -0.000012145925, z: 0}
         rotation: {x: 0, y: 0, z: 0.014352479, w: 0.999897}
         length: 16.30902
         parentId: 1
@@ -1901,7 +1901,7 @@ TextureImporter:
           rgba: 4278255360
       - name: bone_armLeft_3
         guid: a385f8b21f5071c4ea8b86394896df6d
-        position: {x: 16.309021, y: 0.000037094946, z: 0}
+        position: {x: 16.309021, y: 0.00003614245, z: 0}
         rotation: {x: 0, y: 0, z: -0.012352612, w: 0.99992377}
         length: 19.494038
         parentId: 2
@@ -2353,14 +2353,14 @@ TextureImporter:
         guid: a0ce2aa79e545df4d9e509053be7c98e
         position: {x: 87.153984, y: -0.000011716864, z: 0}
         rotation: {x: 0, y: 0, z: -0.013607419, w: 0.99990743}
-        length: 26.724525
+        length: 26.724518
         parentId: 0
         color:
           serializedVersion: 2
           rgba: 4278255615
       - name: bone_body_2
         guid: afd7e041247d1b642b1f72f3722b2651
-        position: {x: 26.724518, y: 0.000013725657, z: 0}
+        position: {x: 26.72451, y: 0.000009769389, z: 0}
         rotation: {x: 0, y: 0, z: 0.010721237, w: 0.9999426}
         length: 32.849037
         parentId: 1
@@ -2413,8 +2413,8 @@ TextureImporter:
       - {x: 5.1209984, y: 33.005}
       - {x: 0.041999817, y: 15.881}
       - {x: 0, y: 0}
-      - {x: 19.248001, y: 0.017997742}
-      - {x: 37.614, y: 0.002998352}
+      - {x: 19.410381, y: 0}
+      - {x: 37.505745, y: 0}
       - {x: 55.978, y: 0.0009994507}
       - {x: 32.92685, y: 104.51163}
       - {x: 33.811806, y: 120.26385}
@@ -2857,7 +2857,7 @@ TextureImporter:
           rgba: 4278255615
       - name: bone_armRight_2
         guid: 03e5b3ce7991a82469fda27671b992f4
-        position: {x: 16.79874, y: 0.000007881236, z: 0}
+        position: {x: 16.79874, y: 0.0000059738873, z: 0}
         rotation: {x: 0, y: 0, z: 0.014352479, w: 0.999897}
         length: 16.309029
         parentId: 1
@@ -2866,8 +2866,8 @@ TextureImporter:
           rgba: 4278255360
       - name: bone_armRight_3
         guid: a385f8b21f5071c4ea8b86394896df6d
-        position: {x: 16.30903, y: 0.000044661738, z: 0}
-        rotation: {x: 0, y: 0, z: 0.012352907, w: -0.99992377}
+        position: {x: 16.30903, y: 0.000043709242, z: 0}
+        rotation: {x: 0, y: 0, z: 0.012352949, w: -0.9999237}
         length: 19.494038
         parentId: 2
         color:
