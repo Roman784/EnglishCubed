@@ -25,15 +25,20 @@ namespace Gameplay
         {
             if (!IsAlive) return;
 
-            G.CameraShaker.WeakShake();
-
             if (_stats.Armor.CurrentValue > 0)
                 _stats.Armor.DecreaseOne();
             else if (_stats.Health.CurrentValue > 0)
                 _stats.Health.DecreaseOne();
 
             if (IsAlive)
+            {
+                G.CameraShaker.WeakShake();
                 _animator.PlayDamage();
+            }
+            else
+            {
+                G.CameraShaker.StrongShake();
+            }
         }
 
         public void SubstractOneHealthUnit()

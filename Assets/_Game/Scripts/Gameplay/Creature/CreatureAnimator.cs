@@ -38,8 +38,8 @@ namespace Gameplay
         }
 
         public float PlayIdle() => SetState(CreatureAnimationState.Idle);
-        public float PlayAttack() => SetState(CreatureAnimationState.Attack);
-        public float PlayDamage() => SetState(CreatureAnimationState.Damage, 0);
+        public float PlayAttack() => SetState(CreatureAnimationState.Attack, 0f);
+        public float PlayDamage() => SetState(CreatureAnimationState.Damage, 0f);
         public float PlayDeath() => SetState(CreatureAnimationState.Death);
 
         public float GetDeathLength() => GetAnimationLength(CreatureAnimationState.Death);
