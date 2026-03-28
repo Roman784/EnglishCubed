@@ -12,6 +12,7 @@ namespace Configs
         public GrammarHintsConfigs GrammarHintsConfigs;
         public PointMultiplierNamesConfigs PointMultiplierNamesConfigs;
         public StatsConfigs StatsConfigs;
+        public HeroesConfigs HeroesConfigs;
         public AudioConfigs AudioConfigs;
         public UIConfigs UIConfigs;
         public DefaultGameStateConfigs DefaultGameStateConfigs;
