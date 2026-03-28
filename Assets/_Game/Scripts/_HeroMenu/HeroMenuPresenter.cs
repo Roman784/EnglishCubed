@@ -86,9 +86,11 @@ namespace HeroMenu
             var heroConfigs = _model.GetCurrentHeroConfigs();
             var price = heroConfigs.Price;
 
-            // TODO: Implement coins and buying logic
-            /*if (Coins < price) return;
-                Coins -= price;*/
+            if (!G.Wallet.TrySpendCoins(price))
+            {
+                G.UIRoot.ShowMessage("Сначала накопи достаточное количество монет"); // Loc.
+                return;
+            }
             // TODO: Save unlocked hero to game state.
 
             _model.UnlockCurrentHero();

@@ -1,1 +1,9 @@
-{}
+{
+    "Audio": {
+        "SoundVolume": 0.0,
+        "MusicVolume": 0.0
+    },
+    "Currency": {
+        "Coins": 942839
+    }
+}

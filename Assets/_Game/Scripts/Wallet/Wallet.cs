@@ -30,9 +30,12 @@ namespace Currency
             Repository.SetCoins(_coins);
         }
 
-        public void AddCoins(int value)
+        public void AddCoins(int value, bool save = true)
         {
             _coins += value;
+            _coinsChangedSignalSubj.OnNext(_coins);
+
+            if (save) Save();
         }
 
         public bool TrySpendCoins(int value, bool save = true)
@@ -40,6 +43,8 @@ namespace Currency
             if (value > _coins) return false;
 
             _coins -= value;
+            _coinsChangedSignalSubj.OnNext(_coins);
+
             if (save) Save();
             return true;
         }
