@@ -1,6 +1,7 @@
 using Audio;
 using Commands;
 using Configs;
+using Currency;
 using Gameplay;
 using GameState;
 using UI;
@@ -17,6 +18,7 @@ namespace GameRoot
         public static PopUpsProvider PopUpsProvider;
         public static SceneProvider SceneProvider;
         public static AudioProvider AudioProvider;
+        public static Wallet Wallet;
 
         // Gameplay.
         public static CommandProcessor CommandProcessor;

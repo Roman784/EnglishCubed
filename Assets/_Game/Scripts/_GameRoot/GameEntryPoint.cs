@@ -1,5 +1,6 @@
 using Audio;
 using Configs;
+using Currency;
 using GameState;
 using R3;
 using System;
@@ -42,6 +43,7 @@ namespace GameRoot
             G.PopUpsProvider = new PopUpsProvider();
             G.SceneProvider = new SceneProvider(G.UIRoot);
             G.AudioProvider = new AudioProvider();
+            G.Wallet = new Wallet();
 
             StartGame();
         }

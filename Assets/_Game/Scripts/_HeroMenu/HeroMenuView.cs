@@ -1,3 +1,4 @@
+using Currency;
 using DG.Tweening;
 using Gameplay;
 using R3;
@@ -10,6 +11,10 @@ namespace HeroMenu
 {
     public class HeroMenuView : FullscreenUI
     {
+        [SerializeField] private WalletView _walletView;
+
+        [Space]
+
         [SerializeField] private Transform _heroContainer;
 
         [Space]
@@ -39,6 +44,8 @@ namespace HeroMenu
         public void PressSelectHeroButton() => _selectHeroButtonPressedSignalSubj.OnNext(Unit.Default);
         public void PressBuyHeroButton() => _buyHeroButtonPressedSignalSubj.OnNext(Unit.Default);
         public void PressExitButton() => _exitButtonPressedSignalSubj.OnNext(Unit.Default);
+
+        public void BindWalletView(Wallet wallet) => _walletView.Bind(wallet);
 
         public void AttachHero(Hero hero)
         {
@@ -70,7 +77,7 @@ namespace HeroMenu
         public void UpdateBuyHeroButton(bool isActive, int price)
         {
             SetActiveView(_buyHeroButtonView, isActive);
-            _priceView.text = price.ToString();
+            _priceView.text = price.ToCoinsFormat();
         }
 
         public void UpdateAlreadySelected(bool isActive)

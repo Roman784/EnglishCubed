@@ -1,3 +1,4 @@
+using Currency;
 using Gameplay;
 using GameRoot;
 using System.Collections;
@@ -19,6 +20,8 @@ namespace HeroMenu
                 CreatureName.Knight,
                 CreatureName.Cactus
             };
+
+            _view.BindWalletView(G.Wallet);
 
             var model = new HeroMenuModel(
                 heroConfigs: G.Configs.HeroesConfigs.AllHeroesConfigs,
