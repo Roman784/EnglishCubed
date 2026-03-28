@@ -15,4 +15,10 @@ MonoBehaviour:
   Name: 2
   Prefab: {fileID: 7525082526657403998, guid: e1ff6823ed2752e4ca1e47315af60505, type: 3}
   NameDescription: "\u041A\u0430\u043A\u0442\u0443\u0441"
-  DetailsDescription: "<size=80><sprite index=\"3\"> 5\t<sprite index=\"4\"> 5</size>\n\u0428\u0438\u043F\u044B"
+  DetailsDescription: "<size=80><sprite index=\"3\"> {0}\\t<sprite index=\"4\"> {1}</size>\n\u0428\u0438\u043F\u044B"
+  Price: 50
+  InitialStats:
+  - Name: 0
+    Value: 3
+  - Name: 1
+    Value: 3

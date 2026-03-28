@@ -277,13 +277,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ic_lock
+      name: lock
       rect:
         serializedVersion: 2
-        x: 673
-        y: 167
-        width: 44
-        height: 50
+        x: 663
+        y: 168
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -659,7 +659,7 @@ TextureImporter:
         width: 375
         height: 470
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -693,6 +693,7 @@ TextureImporter:
       abilitySelectionCard_2: 2055685780
       abilitySelectionCard_3: 639412363
       bigBrokenHeart: -1277896774
+      biglock: 492080285
       cloud: 524866619
       enemy_1: 664701876
       fanfare: 1456700952
@@ -701,7 +702,6 @@ TextureImporter:
       ic_heart_empty: -780306982
       ic_heart_full: -222968538
       ic_infinity: -186057115
-      ic_lock: -816058915
       ic_sack: 2076174178
       ic_sack_open: -2078837754
       ic_settings: -1173457764
@@ -709,6 +709,7 @@ TextureImporter:
       ic_shield_full: 959961410
       ic_swords: -1463130058
       ic_tree: 1928172411
+      lock: -816058915
       oldman: 871545008
       sack: -1996793046
       square: -1202163512

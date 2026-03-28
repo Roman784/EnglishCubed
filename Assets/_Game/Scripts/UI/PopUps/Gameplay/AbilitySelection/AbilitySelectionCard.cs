@@ -49,7 +49,7 @@ namespace UI
 
             if (levelData.Values != null)
                 _descriptionView.text = 
-                    $"{levelData.Description}\n\n{levelData.Details.Insert(levelData.Values)}";
+                    $"{levelData.Description}\n\n{levelData.Details.InsertValues(levelData.Values)}";
         }
 
         public Observable<Unit> Show()

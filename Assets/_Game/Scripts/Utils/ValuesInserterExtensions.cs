@@ -7,17 +7,17 @@ namespace Utils
 {
     public static class ValuesInserterExtensions    
     {
-        public static string Insert(this string str, params int[] values)
+        public static string InsertValues(this string str, params int[] values)
         {
-            return str.Insert(values.Select(v => v.ToString()).ToArray());
+            return str.InsertValues(values.Select(v => v.ToString()).ToArray());
         }
 
-        public static string Insert(this string str, params float[] values)
+        public static string InsertValues(this string str, params float[] values)
         {
-            return str.Insert(values.Select(v => v.ToString()).ToArray());
+            return str.InsertValues(values.Select(v => v.ToString()).ToArray());
         }
 
-        public static string Insert(this string str, params string[] values)
+        public static string InsertValues(this string str, params string[] values)
         {
             var formattedStr = new string(str);
             for (int i = 0; i < values.Length; i++)
