@@ -73,8 +73,9 @@ namespace HeroMenu
         {
             if (!_model.IsCurrentHeroUnlocked()) return;
 
-            // TODO: Select hero in game state.
-
+            _model.Repository.SetSeletedhero(
+                _model.GetCurrentHeroConfigs().Name);
+            
             _model.SelectCurrentHero();
             ShowCurrentHero();
         }
@@ -91,7 +92,8 @@ namespace HeroMenu
                 G.UIRoot.ShowMessage("Сначала накопи достаточное количество монет"); // Loc.
                 return;
             }
-            // TODO: Save unlocked hero to game state.
+            
+            _model.Repository.UnlockHero(heroConfigs.Name);
 
             _model.UnlockCurrentHero();
             ShowCurrentHero();

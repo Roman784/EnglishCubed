@@ -5,7 +5,8 @@ namespace GameState
     [Serializable]
     public class GameState
     {
-        public AudioGameState Audio;
+        public MetaProgressionGameState MetaProgression;
         public CurrencyGameState Currency;
+        public AudioGameState Audio;
     }
 }

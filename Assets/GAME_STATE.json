@@ -1,9 +1,18 @@
 {
-    "Audio": {
-        "SoundVolume": 0.0,
-        "MusicVolume": 0.0
+    "MetaProgression": {
+        "SelectedHero": 3,
+        "UnlockedHeroes": [
+            1,
+            2,
+            3,
+            5
+        ]
     },
     "Currency": {
-        "Coins": 942839
+        "Coins": 349
+    },
+    "Audio": {
+        "SoundVolume": 0.5,
+        "MusicVolume": 0.25
     }
 }

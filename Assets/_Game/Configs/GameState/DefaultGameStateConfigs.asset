@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: DefaultGameStateConfigs
   m_EditorClassIdentifier: 
   State:
+    MetaProgression:
+      SelectedHero: 1
+      UnlockedHeroes: 01000000
+    Currency:
+      Coins: 999
     Audio:
-      SoundVolume: 0.5
-      MusicVolume: 0.25
-    Levels:
-      LastCompletedLevel: 0
-      CompletionRates: []
+      SoundVolume: 1
+      MusicVolume: 1

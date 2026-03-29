@@ -15,19 +15,16 @@ namespace HeroMenu
         {
             var isLoaded = false;
 
-            var unlockedHeroes = new List<CreatureName>() // TODO: From game state.
-            { 
-                CreatureName.Knight,
-                CreatureName.Cactus
-            };
+            var heroesConfigs = G.Configs.HeroesConfigs.AllHeroesConfigs;
+            var unlockedHeroes = G.Repository.MetaProgression.GetUnlockedHeroes();
+            var selectedHero = G.Repository.MetaProgression.GetSelectedHero();
 
             _view.BindWalletView(G.Wallet);
 
             var model = new HeroMenuModel(
-                heroConfigs: G.Configs.HeroesConfigs.AllHeroesConfigs,
+                heroesConfigs: heroesConfigs,
                 unlockedHeroes: unlockedHeroes,
-                currentHeroName: CreatureName.Knight, // TODO: From game state.
-                selectedHero: CreatureName.Knight); // TODO: From game state.
+                selectedHero: selectedHero);
             var presenter = new HeroMenuPresenter(_view, model);
 
             presenter.ShowCurrentHero();

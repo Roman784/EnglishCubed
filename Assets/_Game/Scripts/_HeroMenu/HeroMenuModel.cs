@@ -1,5 +1,7 @@
 using Configs;
 using Gameplay;
+using GameRoot;
+using GameState;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +11,7 @@ namespace HeroMenu
 {
     public class HeroMenuModel
     {
-        public HeroConfigs[] HeroConfigs { get; private set; }
+        public HeroConfigs[] HeroesConfigs { get; private set; }
 
         private IEnumerable<int> _unlockedHeroIndexes;
         private int _currentHeroIndex;
@@ -17,16 +19,17 @@ namespace HeroMenu
 
         private int _displayedHeroIndex;
 
+        public MetaProgressionRepository Repository => G.Repository.MetaProgression;
+
         public HeroMenuModel(
-            HeroConfigs[] heroConfigs,
+            HeroConfigs[] heroesConfigs,
             IEnumerable<CreatureName> unlockedHeroes,
-            CreatureName currentHeroName,
             CreatureName selectedHero)
         {
-            HeroConfigs = heroConfigs;
+            HeroesConfigs = heroesConfigs;
             _unlockedHeroIndexes = new List<int>(unlockedHeroes.Select(h => GetHeroIndexByName(h)));
-            _currentHeroIndex = GetHeroIndexByName(currentHeroName);
             _selectedHeroIndex = GetHeroIndexByName(selectedHero);
+            _currentHeroIndex = _selectedHeroIndex;
 
             _displayedHeroIndex = -1;
         }
@@ -36,8 +39,8 @@ namespace HeroMenu
             _currentHeroIndex += step;
 
             if (_currentHeroIndex < 0)
-                _currentHeroIndex = HeroConfigs.Length - 1;
-            else if (_currentHeroIndex >= HeroConfigs.Length)
+                _currentHeroIndex = HeroesConfigs.Length - 1;
+            else if (_currentHeroIndex >= HeroesConfigs.Length)
                 _currentHeroIndex = 0;
         }
 
@@ -48,7 +51,7 @@ namespace HeroMenu
 
         public HeroConfigs GetCurrentHeroConfigs()
         {
-            return HeroConfigs[_currentHeroIndex];
+            return HeroesConfigs[_currentHeroIndex];
         }
 
         public bool IsCurrentHeroSelected()
@@ -78,9 +81,9 @@ namespace HeroMenu
 
         private int GetHeroIndexByName(CreatureName name)
         {
-            for (int i = 0; i < HeroConfigs.Length; i++)
+            for (int i = 0; i < HeroesConfigs.Length; i++)
             {
-                if (HeroConfigs[i].Name == name)
+                if (HeroesConfigs[i].Name == name)
                     return i;
             }
             Debug.LogError($"Failed to find hero with name {name}!");
