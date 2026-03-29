@@ -50,8 +50,6 @@ namespace UI
             }
 
             SetInitialViewState();
-            ShowTitle();
-
             CreateCards(abilitiesConfigs);
             Coroutines.Start(ShowElementsRoutine());
 

@@ -8,7 +8,6 @@ namespace UI
     public abstract class PopUp : MonoBehaviour
     {
         [SerializeField] protected CanvasGroup _rootView;
-        [SerializeField] private RectTransform _titleViewport;
 
         [Space]
 
@@ -27,7 +26,6 @@ namespace UI
         public virtual PopUp SetInitialViewState()
         {
             _rootView.transform.localScale = Vector3.one * _initialScale;
-            if (_titleViewport != null) _titleViewport.localScale = Vector2.up;
             return this;
         }
 
@@ -37,8 +35,6 @@ namespace UI
                 .DOScale(1, _openTweenData.Duration)
                 .SetEase(_openTweenData.Ease);
             _rootView.alpha = 1f;
-
-            ShowTitle();
         }
 
         public virtual void Close()
@@ -52,11 +48,6 @@ namespace UI
                     _closeSignalSubj.OnNext(Unit.Default);
                     _closeSignalSubj.OnCompleted();
                 });
-        }
-
-        protected void ShowTitle()
-        {
-            _titleViewport.DOScaleX(1, 0.5f).SetEase(Ease.OutBack);
         }
 
         public void Destroy()
