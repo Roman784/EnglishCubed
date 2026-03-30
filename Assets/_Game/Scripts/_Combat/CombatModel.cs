@@ -10,7 +10,7 @@ namespace Combat
     {
         private Subject<Unit> _changedSignalSubj = new();
 
-        public Stats HeroStats { get; private set; }
+        public Hero Hero { get; private set; }
         public Stat Discards { get; private set; }
         public Stat Draws { get; private set; }
         public Stat FieldCapacity { get; private set; }
@@ -27,7 +27,7 @@ namespace Combat
         public AbilityInventoryPresenter AbilityInventory { get; private set; }
         public WordUnitConfigs[] AvailableWordUnitsConfigs { get; private set; }
 
-        public Hero Hero => Location.Hero;
+        public Stats HeroStats => Hero.Stats;
         public int AvailableWordsOnFieldCount => (int)FieldCapacity.Max - UnitsOnFieldCount;
         public int UnitsOnFieldCount => FieldWordUnitsGroup.AllElementsCount;
         public int UnitsInHandCount => HandWordUnitsGroup.AllElementsCount;
@@ -35,7 +35,7 @@ namespace Combat
         public Observable<Unit> ChangedSignal => _changedSignalSubj;
 
         public CombatModel(
-            Stats heroStats,
+            Hero hero,
             PointMultipliersResolver pointMultiplierResolver,
             Deck deck,
             HandWordUnitsGroup handWordUnitsGroup,
@@ -46,11 +46,11 @@ namespace Combat
             AbilityInventoryPresenter abilityInventory,
             WordUnitConfigs[] availableWordUnitsConfigs)
         {
-            HeroStats = heroStats;
-            Discards = heroStats.GetStat(StatName.DiscardsCount);
-            Draws = heroStats.GetStat(StatName.DrawsCount);
-            FieldCapacity = heroStats.GetStat(StatName.FieldCapacity);
-            HandCapacity = heroStats.GetStat(StatName.HandCapacity);
+            Hero = hero;
+            Discards = HeroStats.GetStat(StatName.DiscardsCount);
+            Draws = HeroStats.GetStat(StatName.DrawsCount);
+            FieldCapacity = HeroStats.GetStat(StatName.FieldCapacity);
+            HandCapacity = HeroStats.GetStat(StatName.HandCapacity);
 
             PointMultiplierResolver = pointMultiplierResolver;
             Deck = deck;

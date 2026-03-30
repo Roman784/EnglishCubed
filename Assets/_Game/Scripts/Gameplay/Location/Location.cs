@@ -1,3 +1,5 @@
+using Configs;
+using GameRoot;
 using R3;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,13 +8,13 @@ namespace Gameplay
 {
     public class Location : MonoBehaviour
     {
+        [SerializeField] private Transform _heroPoint;
         [SerializeField] private Transform _pointsAccumulationPoint;
         [SerializeField] private List<Enemy> _enemies;
-        [SerializeField] private Hero _hero; // Temp.
 
         private Subject<Unit> _allEnemiesDeathSignalSubj = new();
 
-        public Hero Hero => _hero;
+        public Vector2 HeroPosition => _heroPoint.position;
         public Vector2 PointsAccumulationPosition => _pointsAccumulationPoint.position;
         public Enemy FirstEnemy => _enemies[0];
 

@@ -77,10 +77,17 @@ namespace Combat
                 allConfigs: _abilitiesConfigs);
             _abilityInventory = new AbilityInventoryPresenter(_abilityInventoryView, abilityInventoryModel);
 
+            // ========== Hero ==========
+
+            var heroName = G.GameSessionProvider.SessionData.Hero;
+            var heroPrefab = G.Configs.HeroesConfigs.GetHero(heroName).Prefab;
+            var hero = Instantiate(heroPrefab, _location.HeroPosition, Quaternion.identity);
+            hero.Init(_heroStats);
+
             // ========== MVP ==========
 
             var model = new CombatModel(
-                heroStats: _heroStats,
+                hero: hero,
                 pointMultiplierResolver: pointMultiplierResolver,
                 deck: _deck,
                 handWordUnitsGroup: _handWordUnitsGroup,
@@ -91,10 +98,6 @@ namespace Combat
                 abilityInventory: _abilityInventory,
                 availableWordUnitsConfigs: _wordUnitsConfigs);
             _presenter = new CombatPresenter(_view, model);
-
-            // ========== Hero ==========
-
-            _location.Hero.Init(_heroStats);
 
             // ========== Commands ==========
 

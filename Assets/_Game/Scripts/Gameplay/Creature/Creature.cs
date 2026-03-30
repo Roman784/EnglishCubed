@@ -11,6 +11,7 @@ namespace Gameplay
         private Subject<Unit> _deathSignalSubj = new();
 
         public bool IsAlive => _stats.Health.IsAlive;
+        public Stats Stats => _stats;
         public Observable<Unit> OnAttackEvent => _animator.OnAttackEvent;
         public Observable<Unit> DeathSignal => _deathSignalSubj;
 
