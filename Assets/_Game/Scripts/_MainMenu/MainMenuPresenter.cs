@@ -6,15 +6,15 @@ namespace MainMenu
 {
     public class MainMenuPresenter
     {
-        private MainMenuModel _model;
         private MainMenuView _view;
+        private MainMenuModel _model;
 
         public MainMenuPresenter(MainMenuView view, MainMenuModel model)
         {
             _model = model;
             _view = view;
 
-            _view.SetActiveContinueButton(false);
+            _view.SetActiveContinueButton(_model.IsGameSessionStarted);
 
             SetupSubscriptions();
         }
@@ -36,7 +36,10 @@ namespace MainMenu
 
         private void OpenLevelMenu()
         {
-            G.SceneProvider.OpenLevelMenu();
+            //G.SceneProvider.OpenLevelMenu();
+
+            G.GameSessionProvider.StartNewSession(_model.SelectedHero);
+            G.SceneProvider.OpenCombat(); // TEMP
         }
 
         private void ContinueLastGameSession()

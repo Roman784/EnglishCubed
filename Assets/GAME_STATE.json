@@ -1,6 +1,6 @@
 {
     "MetaProgression": {
-        "SelectedHero": 3,
+        "SelectedHero": 2,
         "UnlockedHeroes": [
             1,
             2,
@@ -10,6 +10,12 @@
     },
     "Currency": {
         "Coins": 349
+    },
+    "Session": {
+        "Data": {
+            "IsStarted": true,
+            "Hero": 2
+        }
     },
     "Audio": {
         "SoundVolume": 0.5,

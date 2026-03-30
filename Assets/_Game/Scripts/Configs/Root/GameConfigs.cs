@@ -16,5 +16,6 @@ namespace Configs
         public AudioConfigs AudioConfigs;
         public UIConfigs UIConfigs;
         public DefaultGameStateConfigs DefaultGameStateConfigs;
+        public DefaultGameSessionDataConfigs DefaultGameSessionDataConfigs;
     }
 }

@@ -7,6 +7,7 @@ namespace GameState
     {
         public MetaProgressionGameState MetaProgression;
         public CurrencyGameState Currency;
+        public SessionGameState Session;
         public AudioGameState Audio;
     }
 }

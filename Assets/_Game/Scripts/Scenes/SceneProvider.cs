@@ -1,5 +1,6 @@
 using AbilityMenu;
 using Combat;
+using GameSession;
 using HeroMenu;
 using LevelMenu;
 using MainMenu;

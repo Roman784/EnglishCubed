@@ -25,6 +25,7 @@ namespace MainMenu
         public void SetActiveContinueButton(bool isActive)
         {
             _continueButtonView.interactable = isActive;
+            _continueButtonView.blocksRaycasts = isActive;
             _continueButtonView.alpha = isActive ? 1f : 0.5f;
         }
     }

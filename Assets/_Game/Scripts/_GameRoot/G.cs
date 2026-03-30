@@ -3,6 +3,7 @@ using Commands;
 using Configs;
 using Currency;
 using Gameplay;
+using GameSession;
 using GameState;
 using UI;
 using UnityEngine;
@@ -19,6 +20,7 @@ namespace GameRoot
         public static SceneProvider SceneProvider;
         public static AudioProvider AudioProvider;
         public static Wallet Wallet;
+        public static GameSessionProvider GameSessionProvider;
 
         // Gameplay.
         public static CommandProcessor CommandProcessor;

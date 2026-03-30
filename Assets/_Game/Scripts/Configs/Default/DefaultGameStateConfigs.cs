@@ -5,7 +5,7 @@ namespace Configs
 {
     [CreateAssetMenu(
         fileName = "DefaultGameStateConfigs",
-        menuName = "Game Configs/New Default Game State Configs",
+        menuName = "Game Configs/Default/New Default Game State Configs",
         order = 100)]
     public class DefaultGameStateConfigs : ScriptableObject
     {

@@ -20,3 +20,4 @@ MonoBehaviour:
   AudioConfigs: {fileID: 11400000, guid: 434402cbbf5349042bbc662480db3f13, type: 2}
   UIConfigs: {fileID: 11400000, guid: 197643596d2022f49bb8f7fec9c562df, type: 2}
   DefaultGameStateConfigs: {fileID: 11400000, guid: 84701581b285f6542943bd3b1b02f247, type: 2}
+  DefaultGameSessionDataConfigs: {fileID: 11400000, guid: e8a538b27c94a974a9dd0f2dd94a2ea0, type: 2}

@@ -1,6 +1,7 @@
 using Audio;
 using Configs;
 using Currency;
+using GameSession;
 using GameState;
 using R3;
 using System;
@@ -44,6 +45,7 @@ namespace GameRoot
             G.SceneProvider = new SceneProvider(G.UIRoot);
             G.AudioProvider = new AudioProvider();
             G.Wallet = new Wallet();
+            G.GameSessionProvider = new GameSessionProvider();
 
             StartGame();
         }
@@ -84,8 +86,14 @@ namespace GameRoot
             else if (initialEditorScene == Scenes.LEVEL_MENU) { G.SceneProvider.OpenLevelMenu(); return; }
             else if (initialEditorScene == Scenes.ABILITY_MENU) { G.SceneProvider.OpenAbilityMenu(); return; }
             else if (initialEditorScene == Scenes.HERO_MENU) { G.SceneProvider.OpenHeroMenu(); return; }
-            else if (initialEditorScene == Scenes.COMBAT) { G.SceneProvider.OpenCombat(); return; }
             else if (initialEditorScene == Scenes.TEST_ROOM) { G.SceneProvider.OpenTestRoom(); return; }
+            else if (initialEditorScene == Scenes.COMBAT) 
+            {
+                var defaultGameSessionData = G.Configs.DefaultGameSessionDataConfigs.Data;
+                G.GameSessionProvider.StartNewSession(defaultGameSessionData);
+                G.SceneProvider.OpenCombat(); 
+                return; 
+            }
 
             // For an unregistered scene. For example, from assets.
             else if (initialEditorScene != Scenes.BOOT) { SceneManager.LoadScene(initialEditorScene); return; }
