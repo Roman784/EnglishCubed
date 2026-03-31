@@ -14,22 +14,54 @@
     "Session": {
         "Data": {
             "IsStarted": true,
-            "Hero": 3,
+            "Hero": 1,
             "Abilities": [
                 {
-                    "Name": 24,
+                    "Name": 26,
                     "StacksCount": 1
                 },
                 {
-                    "Name": 3,
-                    "StacksCount": 1
+                    "Name": 34,
+                    "StacksCount": 4
                 },
                 {
-                    "Name": 12,
+                    "Name": 17,
                     "StacksCount": 2
                 },
                 {
-                    "Name": 5,
+                    "Name": 6,
+                    "StacksCount": 5
+                },
+                {
+                    "Name": 4,
+                    "StacksCount": 2
+                },
+                {
+                    "Name": 15,
+                    "StacksCount": 1
+                },
+                {
+                    "Name": 23,
+                    "StacksCount": 2
+                },
+                {
+                    "Name": 18,
+                    "StacksCount": 1
+                },
+                {
+                    "Name": 7,
+                    "StacksCount": 1
+                },
+                {
+                    "Name": 16,
+                    "StacksCount": 1
+                },
+                {
+                    "Name": 11,
+                    "StacksCount": 1
+                },
+                {
+                    "Name": 8,
                     "StacksCount": 1
                 }
             ]

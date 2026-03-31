@@ -10,6 +10,6 @@ namespace GameSession
     {
         public bool IsStarted;
         public CreatureName Hero;
-        public AbilitySaveData[] Abilities;
+        public AbilitySaveData[] Abilities = new AbilitySaveData[0];
     }
 }

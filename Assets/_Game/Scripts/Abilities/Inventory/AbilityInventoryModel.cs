@@ -1,4 +1,5 @@
 using Configs;
+using Gameplay;
 using GameRoot;
 using GameSession;
 using NUnit.Framework;
@@ -14,12 +15,16 @@ namespace Abilities
         private IEnumerable<AbilityConfigs> _allAbilitiesConfigs;
         private List<AcquiredAbilityData> _acquiredAbilities = new();
 
+        public Stats HeroStats { get; private set; }
+
         public GameSessionProvider SessionProvider => G.GameSessionProvider;
 
         public AbilityInventoryModel(
-            IEnumerable<AbilityConfigs> allAbilitiesConfigs)
+            IEnumerable<AbilityConfigs> allAbilitiesConfigs,
+            Stats heroStats)
         {
             _allAbilitiesConfigs = allAbilitiesConfigs;
+            HeroStats = heroStats;
         }
 
         public IEnumerable<AcquiredAbilityData> GetAcquiredAbilities()

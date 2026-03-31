@@ -24,7 +24,8 @@ namespace GameSession
             _sessionData = new GameSessionData()
             {
                 IsStarted = true,
-                Hero = baseOnData.Hero
+                Hero = baseOnData.Hero,
+                Abilities = baseOnData.Abilities,
             };
             SaveSession();
         }

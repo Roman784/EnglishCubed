@@ -22,7 +22,6 @@ namespace Combat
         [SerializeField] private CameraShaker _cameraShaker;
 
         [SerializeField] private WordUnitConfigs[] _wordUnitsConfigs; // Temp.
-        [SerializeField] private AbilityConfigs[] _abilitiesConfigs; // Temp.
 
         private CombatPresenter _presenter;
         private AbilityInventoryPresenter _abilityInventory;
@@ -73,7 +72,8 @@ namespace Combat
             // ========== Abilities ==========
 
             var abilityInventoryModel = new AbilityInventoryModel(
-                allAbilitiesConfigs: G.Configs.AbilitiesConfigs.AllAbilities);
+                allAbilitiesConfigs: G.Configs.AbilitiesConfigs.AllAbilities,
+                heroStats: _heroStats);
             _abilityInventory = new AbilityInventoryPresenter(_abilityInventoryView, abilityInventoryModel);
             _abilityInventory.Load();
 
