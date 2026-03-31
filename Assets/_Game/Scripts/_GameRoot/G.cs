@@ -1,5 +1,5 @@
+using Abilities;
 using Audio;
-using Commands;
 using Configs;
 using Currency;
 using Gameplay;
@@ -21,9 +21,9 @@ namespace GameRoot
         public static AudioProvider AudioProvider;
         public static Wallet Wallet;
         public static GameSessionProvider GameSessionProvider;
+        public static AbilityProvider AbilityProvider;
 
         // Gameplay.
-        public static CommandProcessor CommandProcessor;
         public static CameraShaker CameraShaker;
         public static WordUnitsMovementProvider WordUnitsMovementProvider;
         public static WordUnitFactory WordUnitFactory;

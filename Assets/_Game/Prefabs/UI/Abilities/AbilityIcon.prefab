@@ -57,7 +57,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3122273455366350947}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 054231befcaf13f45b842ac4d0c5a74e, type: 3}
+  m_Script: {fileID: 11500000, guid: a49a9e46babe4674880d59d229957ac5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Abilities.AbilityIcon
   _iconView: {fileID: 6171748511156315543}

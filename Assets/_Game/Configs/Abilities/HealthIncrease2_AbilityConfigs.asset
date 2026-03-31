@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Configs.AbilityConfigs
   Name: 3
   DependsOn: 0
+  Application: 0
   IsRepeatable: 0
   Rarity: 2
   Weight: 1
+  ShowInInventory: 1
   Levels:
   - Icon: {fileID: -1278534851, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
     Title: "\u0416\u0438\u0432\u0443\u0447\u0435\u0441\u0442\u044C X2"

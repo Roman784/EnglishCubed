@@ -1,3 +1,4 @@
+using Abilities;
 using Audio;
 using Configs;
 using Currency;
@@ -46,6 +47,7 @@ namespace GameRoot
             G.AudioProvider = new AudioProvider();
             G.Wallet = new Wallet();
             G.GameSessionProvider = new GameSessionProvider();
+            G.AbilityProvider = new AbilityProvider();
 
             StartGame();
         }

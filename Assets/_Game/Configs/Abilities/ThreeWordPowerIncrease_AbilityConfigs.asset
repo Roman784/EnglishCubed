@@ -18,6 +18,7 @@ MonoBehaviour:
   IsRepeatable: 0
   Rarity: 0
   Weight: 0
+  ShowInInventory: 1
   Levels:
   - Icon: {fileID: -512157538, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
     Title: "\u0422\u0440\u0438 \u0441\u043B\u043E\u0432\u0430"

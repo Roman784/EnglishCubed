@@ -1,3 +1,4 @@
+using Abilities;
 using Configs;
 using GameRoot;
 using System.Collections.Generic;
@@ -23,7 +24,7 @@ namespace UI
             return createdPopUp;
         }
 
-        public AbilitySelectionPopUp OpenAbilitySelectionPopUp(IEnumerable<(AbilityConfigs, AbilityLevelData)> abilitiesConfigs)
+        public AbilitySelectionPopUp OpenAbilitySelectionPopUp(IEnumerable<AbilitySelectionData> abilitiesConfigs)
         {
             var createdPopUp = _popUpFactory.Create(Configs.AbilitySelectionPopUpPrefab);
             createdPopUp.Open(abilitiesConfigs);

@@ -148,7 +148,8 @@ namespace Combat
                     if (_model.HeroStats.Experience.IsNextLevelReached)
                     {
                         _model.HeroStats.Experience.LevelUp();
-                        OpenNewLevelUpgradePopUps();
+                        Observable.Timer(TimeSpan.FromSeconds(1)).Subscribe(_ =>
+                            OpenNewLevelUpgradePopUps());
                     }
                     else
                         _view.EnableControls();
@@ -164,26 +165,27 @@ namespace Combat
         public void OpenNewLevelUpgradePopUps()
         {
             _view.DisableControls();
-            Observable.Timer(TimeSpan.FromSeconds(1)).Subscribe(_ =>
+            
+            var abilitySelectionPopUp = G.PopUpsProvider.OpenAbilitySelectionPopUp(
+                G.AbilityProvider.GetAbilitiesForSelection(_model.AbilityInventory.GetAcquiredAbilities()));
+
+            abilitySelectionPopUp.AbilitySelectedSignal.Subscribe(abilityName =>
             {
-                var abilitySelectionPopUp = G.PopUpsProvider.OpenAbilitySelectionPopUp(
-                    _model.AbilityInventory.GetAbilitiesForSelection());
+                _model.AbilityInventory.AddAbility(abilityName);
+                _model.AbilityInventory.Save();
+            });
 
-                abilitySelectionPopUp.AbilitySelectedSignal.Subscribe(abilityName =>
-                    _model.AbilityInventory.AcquireAbility(abilityName));
+            abilitySelectionPopUp.CloseSignal.Subscribe(_ =>
+            {
+                var random = new System.Random();
+                var wordUnitSelectionPopUp = G.PopUpsProvider.OpenWordUnitSelectionPopUp(
+                    _model.AvailableWordUnitsConfigs.OrderBy(x => random.Next()).Take(3));
 
-                abilitySelectionPopUp.CloseSignal.Subscribe(_ =>
-                {
-                    var random = new System.Random();
-                    var wordUnitSelectionPopUp = G.PopUpsProvider.OpenWordUnitSelectionPopUp(
-                        _model.AvailableWordUnitsConfigs.OrderBy(x => random.Next()).Take(3));
+                wordUnitSelectionPopUp.WordSelectedSignal.Subscribe(configs =>
+                    _model.Deck.Add(configs));
 
-                    wordUnitSelectionPopUp.WordSelectedSignal.Subscribe(configs =>
-                        _model.Deck.Add(configs));
-
-                    wordUnitSelectionPopUp.CloseSignal.Subscribe(__ =>
-                        _view.EnableControls());
-                });
+                wordUnitSelectionPopUp.CloseSignal.Subscribe(__ =>
+                    _view.EnableControls());
             });
         }
 

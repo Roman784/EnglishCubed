@@ -42,11 +42,13 @@ namespace UI
             _pointerDetector.OnPointerClickSignal.Subscribe(_ => Select());
         }
 
-        public void SetConfigs(AbilityConfigs configs, AbilityLevelData levelData)
+        public void Init(AbilitySelectionData ability)
         {
-            if (levelData == null || levelData.Icon == null)
+            var levelData = ability.GetLevelData();
+
+            if (levelData == null)
             {
-                Debug.LogError($"Level data for ability {configs.Name} is not set up properly.");
+                Debug.LogError($"Level data for ability {ability.Configs.Name} is not set up properly!");
                 return;
             }
 

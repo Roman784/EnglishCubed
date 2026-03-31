@@ -1100,7 +1100,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 254274039}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1832b328c1a0474087b56f8c7ce73bd, type: 3}
+  m_Script: {fileID: 11500000, guid: 8778abae15023d1438d664db9386f7d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Abilities.AbilityInventoryView
   _iconsContainer: {fileID: 254274040}
@@ -7061,7 +7061,7 @@ GameObject:
   - component: {fileID: 1830545102}
   - component: {fileID: 1830545101}
   m_Layer: 0
-  m_Name: CombatHUD
+  m_Name: View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
