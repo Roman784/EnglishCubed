@@ -1,5 +1,7 @@
+using Abilities;
 using Gameplay;
 using GameRoot;
+using System.Linq;
 using UnityEngine;
 
 namespace GameSession
@@ -35,10 +37,37 @@ namespace GameSession
             };
             SaveSession();
         }
+        public void EndSession()
+        {
+            _sessionData.IsStarted = false;
+            SaveSession();
+        }
+
 
         public void SetHero(CreatureName hero)
         {
             _sessionData.Hero = hero;
+            SaveSession();
+        }
+
+        public (AbilityName, int)[] GetPassiveAbilities()
+        {
+            return _sessionData.Abilities
+                .Select(p => (p.Name, p.StacksCount))
+                .ToArray();
+        }
+
+        public void SetAbilities((AbilityName, int)[] abilityNames)
+        {
+            _sessionData.Abilities = 
+                abilityNames
+                .Select(p => new AcquiredAbilityData()
+                {
+                    Name = p.Item1,
+                    StacksCount = p.Item2
+                })
+                .ToArray();
+
             SaveSession();
         }
 

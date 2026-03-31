@@ -8,30 +8,30 @@ namespace Abilities
 {
     public class AbilityInventoryModel
     {
-        private Dictionary<AbilityName, AcquiredAbilityData> _acquiredAbilitiesMap = new();
+        private Dictionary<AbilityName, AcquiredAbilityData> _abilitiesMap = new();
 
         public IEnumerable<AbilityConfigs> AllConfigs { get; private set; }
-        public IReadOnlyDictionary<AbilityName, AcquiredAbilityData> AcquiredAbilitiesMap => _acquiredAbilitiesMap;
+        public IReadOnlyDictionary<AbilityName, AcquiredAbilityData> AcquiredAbilitiesMap => _abilitiesMap;
 
         public AbilityInventoryModel(IEnumerable<AbilityConfigs> allConfigs)
         {
             AllConfigs = allConfigs;
         }
 
-        public void AcquireAbility(AbilityName abilityName)
+        public void AddAbility(AbilityName abilityName)
         {
             var configs = GetAbilityConfigs(abilityName);
             if (configs == null) return;
 
-            if (!_acquiredAbilitiesMap.ContainsKey(abilityName))
-                _acquiredAbilitiesMap[abilityName] = new AcquiredAbilityData() { Configs = configs };
+            if (!_abilitiesMap.ContainsKey(abilityName))
+                _abilitiesMap[abilityName] = new AcquiredAbilityData() { Configs = configs };
 
-            _acquiredAbilitiesMap[abilityName].StacksCount += 1;
+            _abilitiesMap[abilityName].StacksCount += 1;
         }
 
         public int GetStacksCount(AbilityName abilityName)
         {
-            if (_acquiredAbilitiesMap.TryGetValue(abilityName, out var data))
+            if (_abilitiesMap.TryGetValue(abilityName, out var data))
                 return Mathf.Clamp(data.StacksCount, 0, data.Configs.MaxStacksCount);
             return 0;
         }
@@ -63,9 +63,16 @@ namespace Abilities
             return null;
         }
 
-        private AbilityConfigs GetAbilityConfigs(AbilityName abilityName)
+        public AbilityConfigs GetAbilityConfigs(AbilityName abilityName)
         {
             return AllConfigs.FirstOrDefault(c => c.Name == abilityName);
+        }
+
+        public (AbilityName, int)[] GetAcquiredAbilities()
+        {
+            return AcquiredAbilitiesMap
+                .Select(kv => (kv.Key, kv.Value.StacksCount))
+                .ToArray();
         }
     }
 }

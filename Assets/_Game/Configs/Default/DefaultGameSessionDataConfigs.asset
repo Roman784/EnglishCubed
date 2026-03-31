@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: DefaultGameSessionDataConfigs
   m_EditorClassIdentifier: Assembly-CSharp::Configs.DefaultGameSessionDataConfigs
   Data:
+    IsStarted: 0
     Hero: 1
+    PassiveAbilities: 

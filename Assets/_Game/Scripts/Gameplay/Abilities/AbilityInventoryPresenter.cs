@@ -46,9 +46,31 @@ namespace Abilities
                 .Select(a => (a, _model.GetLevelDataForNextStack(a.Name)));
         }
 
+        public void RestoreFromGameSession((AbilityName, int)[] abilities)
+        {
+            foreach (var ability in abilities)
+            {
+                for (int i = 0; i < ability.Item2; i++)
+                {
+                    var use = _model.GetAbilityConfigs(ability.Item1)
+                        .Application == AbilityApplication.Passive;
+                    AddAbility(ability.Item1);
+                }
+            }
+        }
+
         public void AcquireAbility(AbilityName abilityName)
         {
-            _model.AcquireAbility(abilityName);
+            AddAbility(abilityName);
+            SaveAbilities();
+        }
+
+        public void AddAbility(AbilityName abilityName, bool use = true)
+        {
+            _model.AddAbility(abilityName);
+            UpdateView();
+
+            if (!use) return;
 
             var abilityLevelData = _model.GetCurrentLevelDataOrFirst(abilityName);
             var value1 = abilityLevelData.Values.Length > 0 ? abilityLevelData.Values[0] : 0f;
@@ -216,8 +238,11 @@ namespace Abilities
                             StatModifier.Flat(value1)));
                     break;
             }
+        }
 
-            UpdateView();
+        private void SaveAbilities()
+        {
+            G.GameSessionProvider.SetAbilities(_model.GetAcquiredAbilities());
         }
 
         private void UpdateView()

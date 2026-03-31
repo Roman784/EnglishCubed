@@ -44,6 +44,12 @@ namespace UI
 
         public void SetConfigs(AbilityConfigs configs, AbilityLevelData levelData)
         {
+            if (levelData == null || levelData.Icon == null)
+            {
+                Debug.LogError($"Level data for ability {configs.Name} is not set up properly.");
+                return;
+            }
+
             _iconView.sprite = levelData.Icon;
             _titleView.text = levelData.Title;
 

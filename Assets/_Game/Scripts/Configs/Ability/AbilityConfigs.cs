@@ -14,6 +14,7 @@ namespace Configs
     {
         public AbilityName Name;
         public AbilityName DependsOn;
+        public AbilityApplication Application;
         public bool IsRepeatable;
         public Rarity Rarity;
         public Weight Weight;

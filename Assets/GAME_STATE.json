@@ -1,6 +1,6 @@
 {
     "MetaProgression": {
-        "SelectedHero": 2,
+        "SelectedHero": 3,
         "UnlockedHeroes": [
             1,
             2,
@@ -14,7 +14,49 @@
     "Session": {
         "Data": {
             "IsStarted": true,
-            "Hero": 2
+            "Hero": 3,
+            "Abilities": [
+                {
+                    "Name": 9,
+                    "StacksCount": 1
+                },
+                {
+                    "Name": 18,
+                    "StacksCount": 1
+                },
+                {
+                    "Name": 5,
+                    "StacksCount": 2
+                },
+                {
+                    "Name": 4,
+                    "StacksCount": 2
+                },
+                {
+                    "Name": 2,
+                    "StacksCount": 1
+                },
+                {
+                    "Name": 8,
+                    "StacksCount": 1
+                },
+                {
+                    "Name": 24,
+                    "StacksCount": 1
+                },
+                {
+                    "Name": 17,
+                    "StacksCount": 1
+                },
+                {
+                    "Name": 6,
+                    "StacksCount": 2
+                },
+                {
+                    "Name": 7,
+                    "StacksCount": 1
+                }
+            ]
         }
     },
     "Audio": {

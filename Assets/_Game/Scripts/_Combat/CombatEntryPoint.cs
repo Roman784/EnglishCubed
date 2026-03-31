@@ -71,11 +71,16 @@ namespace Combat
             var pointMultiplierResolver = new PointMultipliersResolver(
                 _heroStats, G.Configs.PointMultiplierNamesConfigs);
 
+            // ========== Commands ==========
+
+            InitCommands(_heroStats);
+
             // ========== Abilities ==========
 
             var abilityInventoryModel = new AbilityInventoryModel(
                 allConfigs: _abilitiesConfigs);
             _abilityInventory = new AbilityInventoryPresenter(_abilityInventoryView, abilityInventoryModel);
+            _abilityInventory.RestoreFromGameSession(G.GameSessionProvider.GetPassiveAbilities());
 
             // ========== Hero ==========
 
@@ -98,10 +103,6 @@ namespace Combat
                 abilityInventory: _abilityInventory,
                 availableWordUnitsConfigs: _wordUnitsConfigs);
             _presenter = new CombatPresenter(_view, model);
-
-            // ========== Commands ==========
-
-            InitCommands(_heroStats);
 
             // ========== Level Passing ==========
 
