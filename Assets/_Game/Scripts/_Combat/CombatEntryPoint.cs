@@ -38,33 +38,40 @@ namespace Combat
             G.WordUnitFactory = new WordUnitFactory();
             G.PointsFactory = new PointsFactory();
 
+            var sessionData = G.GameSessionProvider.SessionData;
+            var heroName = sessionData.Hero;
+            var heroConfigs = G.Configs.HeroesConfigs.GetHero(heroName);
+
             _deck = new Deck(_wordUnitsConfigs);
             var grammarValidator = new GrammarValidator(G.Configs.LexiconConfigs);
             var pointsCounter = new PointsCounter(_location.PointsAccumulationPosition);
 
             // ========== Stats ==========
 
-            var heroHealth = new Health(2);
-            var heroArmor = new Armor(0);
-            var heroExperience = new Experience(G.Configs.StatsConfigs.ExperienceLevelDatas);
+            var discards = new StatData() { Name = StatName.DiscardsCount, Value = 3, Max = 3 };
+            var draws = new StatData() { Name = StatName.DrawsCount, Value = 4, Max = 4 };
+            var fieldCapacity = new StatData() { Name = StatName.FieldCapacity, Value = 5, Max = 5 };
+            var handCapacity = new StatData() { Name = StatName.HandCapacity, Value = 10, Max = 10 };
 
-            var discards = new Stat(StatName.DiscardsCount, 3, 3);
-            var draws = new Stat(StatName.DrawsCount, 5, 5);
-            var fieldCapacity = new Stat(StatName.FieldCapacity, 5, 5);
-            var handCapacity = new Stat(StatName.HandCapacity, 10, 10);
+            var experienceLevelData = G.Configs.StatsConfigs.ExperienceLevelDatas;
+            var heroExperience = new Experience(
+                experienceLevelData, sessionData.Experience.CurrentValue, sessionData.Experience.Level);
 
-            _view.HeroHealthStatView.Init(heroHealth);
-            _view.HeroArmorStatView.Init(heroArmor);
-            _view.HeroExperienceStatView.Init(heroExperience);
-
-            _heroStats = new Stats(
-                heroHealth, 
-                heroArmor, 
-                heroExperience, 
+            var initialStats = new List<StatData>
+            {
                 discards,
                 draws,
                 fieldCapacity,
-                handCapacity);
+                handCapacity
+            };
+            initialStats.AddRange(heroConfigs.InitialStats);
+
+            _heroStats = new Stats(initialStats, sessionData.Stats);
+            _heroStats.SetStat(heroExperience);
+
+            _view.HeroHealthStatView.Init(_heroStats.Health);
+            _view.HeroArmorStatView.Init(_heroStats.Armor);
+            _view.HeroExperienceStatView.Init(_heroStats.Experience);
 
             var pointMultiplierResolver = new PointMultipliersResolver(
                 _heroStats, G.Configs.PointMultiplierNamesConfigs);
@@ -79,8 +86,7 @@ namespace Combat
 
             // ========== Hero ==========
 
-            var heroName = G.GameSessionProvider.SessionData.Hero;
-            var heroPrefab = G.Configs.HeroesConfigs.GetHero(heroName).Prefab;
+            var heroPrefab = heroConfigs.Prefab;
             var hero = Instantiate(heroPrefab, _location.HeroPosition, Quaternion.identity);
             hero.Init(_heroStats);
 
@@ -113,7 +119,7 @@ namespace Combat
             // ========== Start Game ==========
 
             _view.EnableControls();
-            _view.PressDrawButton();
+            _presenter.DrawWords();
 
             isLoaded = true;
             yield return new WaitUntil(() => isLoaded);

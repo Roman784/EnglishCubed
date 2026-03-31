@@ -61,8 +61,8 @@ namespace Configs
             var index = level - 1;
             if (Values == null) return 0f;
             if (Values.Length == 0) return 0f;
-            if (index > Values.Length) return 0f;
-            if (index < 0) return Values[0];
+            if (index > Values.Length - 1) return 0f;
+            if (index < 0) return 0f;
             return Values[index];
         }
     }

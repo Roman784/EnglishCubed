@@ -1,5 +1,6 @@
 using R3;
 using Configs;
+using UnityEngine;
 
 namespace Gameplay
 {
@@ -9,13 +10,14 @@ namespace Gameplay
         private int _currentLevel;
         private bool _isNextLevelReached;
 
+        public int CurrentLevel => _currentLevel;
         public bool IsNextLevelReached => _isNextLevelReached;
 
-        public Experience(ExperienceLevelData[] levelsData) : 
-            base(StatName.Experience, 0, levelsData[0].Count)
+        public Experience(ExperienceLevelData[] levelsData, int current, int level) : 
+            base(StatName.Experience, current, levelsData[level].Count)
         {
             _levelsData = levelsData;
-            _currentLevel = 0;
+            _currentLevel = ClampLevel(level);
             _isNextLevelReached = false;
 
             MaxReachedSignal.Subscribe(remainder =>
@@ -26,13 +28,16 @@ namespace Gameplay
 
         public void LevelUp()
         {
-            _currentLevel += 1;
-            var nextLevel = _levelsData[_currentLevel < _levelsData.Length ? _currentLevel : _levelsData.Length - 1];
+            var nextLevel = ClampLevel(_currentLevel + 1);
+            var nextLevelData = _levelsData[nextLevel];
+            _currentLevel = nextLevel;
 
-            _max = nextLevel.Count;
+            _max = nextLevelData.Count;
             SetToZero();
 
             _isNextLevelReached = false;
         }
+
+        private int ClampLevel(int level) => Mathf.Clamp(level, 0, _levelsData.Length - 1);
     }
 }

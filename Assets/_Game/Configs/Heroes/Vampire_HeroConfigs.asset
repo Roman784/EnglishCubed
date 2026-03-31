@@ -21,5 +21,13 @@ MonoBehaviour:
   InitialStats:
   - Name: 0
     Value: 3
+    Max: 3
   - Name: 1
     Value: 3
+    Max: 3
+  - Name: 6
+    Value: 20
+    Max: 20
+  - Name: 7
+    Value: 1
+    Max: 1

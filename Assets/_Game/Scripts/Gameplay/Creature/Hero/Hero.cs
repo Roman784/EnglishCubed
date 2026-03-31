@@ -51,5 +51,12 @@ namespace Gameplay
         {
             _stats.Experience.Add(value);
         }
+
+        public void SaveStats()
+        {
+            var statsData = Stats.GetStatsData();
+            G.GameSessionProvider.SetStats(statsData);
+            G.GameSessionProvider.SetExperience(ExperienceSaveData.Create(Stats.Experience));
+        }
     }
 }

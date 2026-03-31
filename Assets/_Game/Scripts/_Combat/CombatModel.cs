@@ -47,10 +47,10 @@ namespace Combat
             WordUnitConfigs[] availableWordUnitsConfigs)
         {
             Hero = hero;
-            Discards = HeroStats.GetStat(StatName.DiscardsCount);
-            Draws = HeroStats.GetStat(StatName.DrawsCount);
-            FieldCapacity = HeroStats.GetStat(StatName.FieldCapacity);
-            HandCapacity = HeroStats.GetStat(StatName.HandCapacity);
+            Discards = HeroStats.GetStatOrCreateNew(StatName.DiscardsCount);
+            Draws = HeroStats.GetStatOrCreateNew(StatName.DrawsCount);
+            FieldCapacity = HeroStats.GetStatOrCreateNew(StatName.FieldCapacity);
+            HandCapacity = HeroStats.GetStatOrCreateNew(StatName.HandCapacity);
 
             PointMultiplierResolver = pointMultiplierResolver;
             Deck = deck;

@@ -65,8 +65,8 @@ namespace Abilities
             var ability = _acquiredAbilities.FirstOrDefault(a => a.Configs.Name == abilityName);
             if (ability == null) return null;
 
-            var level = Mathf.Clamp(ability.StacksCount, 0, ability.Configs.MaxStacksCount - 1);
-            return ability.Configs.Levels[level];
+            var index = Mathf.Clamp(ability.StacksCount - 1, 0, ability.Configs.MaxStacksCount - 1);
+            return ability.Configs.Levels[index];
         }
 
         public int GetStacksCount(AbilityName abilityName)

@@ -23,7 +23,7 @@ namespace Gameplay
         public Subject<float> ZeroReachedSignal => _zeroReachedSignalSubj;
         public Subject<float> MaxReachedSignal => _maxReachedSignalSubj;
 
-        public Stat(StatName name, int current, int max)
+        public Stat(StatName name, float current, float max)
         {
             Name = name;
             _max = max;

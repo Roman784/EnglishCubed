@@ -16,7 +16,7 @@ namespace Abilities
             StatName statName,
             float value)
         {
-            var stat = _stats.GetStat(statName);
+            var stat = _stats.GetStatOrCreateNew(statName);
             stat.SetMax(stat.Max + value);
         }
     }

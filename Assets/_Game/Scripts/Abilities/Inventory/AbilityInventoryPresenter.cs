@@ -29,7 +29,7 @@ namespace Abilities
                 {
                     var configs = _model.GetAbilityConfigs(ability.Name);
                     var use = configs.Application != AbilityApplication.Instant;
-                    AddAbility(ability.Name);
+                    AddAbility(ability.Name, use);
                 }
             }
         }

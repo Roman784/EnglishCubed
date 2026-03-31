@@ -8,5 +8,6 @@ namespace Gameplay
     {
         public StatName Name;
         public float Value;
+        public float Max;
     }
 }

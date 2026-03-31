@@ -17,6 +17,10 @@ namespace Gameplay
         {
         }
 
+        public Health(StatData data) : base(StatName.Health, data.Value, data.Max)
+        {
+        }
+
         public void Restore(int value)
         {
             Add(value);

@@ -157,6 +157,8 @@ namespace Combat
                 else
                     Observable.Timer(TimeSpan.FromSeconds(1f)).Subscribe(_ =>
                         G.PopUpsProvider.OpenCombatDefeatPopUp());
+
+                _model.Hero.SaveStats();
             });
         }
 
@@ -173,6 +175,7 @@ namespace Combat
             {
                 _model.AbilityInventory.AddAbility(abilityName);
                 _model.AbilityInventory.Save();
+                _model.Hero.SaveStats();
             });
 
             abilitySelectionPopUp.CloseSignal.Subscribe(_ =>
@@ -210,6 +213,7 @@ namespace Combat
             }
 
             DiscardFieldWords();
+            _model.Hero.SaveStats();
         }
 
         private void DiscardFieldWords()
@@ -257,6 +261,12 @@ namespace Combat
                 return;
             }
 
+            DrawWords();
+        }
+
+        public void DrawWords()
+        {
+            var capacityLeft = (int)_model.HandCapacity.Max - _model.UnitsInHandCount;
             var wordUnitsConfigs = new List<WordUnitConfigs>();
             for (int i = 0; i < capacityLeft; i++)
             {
@@ -269,6 +279,7 @@ namespace Combat
                 _model.HandWordUnitsGroup.Add(createdWord);
             }
             _model.HandWordUnitsGroup.Layout.Arrange();
+            _model.Hero.SaveStats();
         }
 
         // ================ UI ================

@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Xml.Linq;
 using UnityEngine;
 
 namespace Gameplay
@@ -10,7 +9,7 @@ namespace Gameplay
     public class Stats
     {
         private Dictionary<StatName, Stat> _statsMap = new();
-        private Dictionary<StatName, List<StatModifier>> _modifiersMap = new(); 
+        private Dictionary<StatName, List<StatModifier>> _modifiersMap = new();
 
         public Health Health => (Health)_statsMap[StatName.Health];
         public Armor Armor => (Armor)_statsMap[StatName.Armor];
@@ -19,15 +18,20 @@ namespace Gameplay
         public Stats(params Stat[] stats)
         {
             SetStats(stats);
-            SetDefaultStats();
         }
 
-        public override string ToString()
+        public Stats(
+            IEnumerable<StatData> initialStats, IEnumerable<StatData> loadedStats)
         {
-            var stringBuilder = new StringBuilder();
-            foreach (var stat in _statsMap.Values)
-                stringBuilder.AppendLine($"{stat.Name}: {GetStatValue(stat.Name)}");
-            return stringBuilder.ToString();
+            foreach (var initialStat in initialStats)
+            {
+                var statName = initialStat.Name;
+                var loadedStat = loadedStats.FirstOrDefault(s => s.Name == initialStat.Name);
+                if (loadedStat != null)
+                    _statsMap[statName] = CreateStat(loadedStat);
+                else
+                    _statsMap[statName] = CreateStat(initialStat);
+            }
         }
 
         public void SetStat(Stat stat)
@@ -35,22 +39,33 @@ namespace Gameplay
             _statsMap[stat.Name] = stat;
         }
 
-        public Stat GetStat(StatName name)
+        public IEnumerable<StatData> GetStatsData()
+        {
+            return _statsMap.Values.Select(s => new StatData()
+            {
+                Name = s.Name,
+                Value = s.CurrentValue,
+                Max = s.Max
+            });
+        }
+
+        public Stat GetStatOrCreateNew(StatName name)
         {
             if (_statsMap.TryGetValue(name, out var stat)) return stat;
-            return null;
+            var createdStat = new Stat(name, 0, 0);
+            _statsMap[createdStat.Name] = createdStat;
+            return createdStat;
         }
 
         public float GetStatValue(StatName name)
         {
-            var res = _statsMap.TryGetValue(name, out var stat);
-            if (!res) return 0f;
-
+            if (!_statsMap.TryGetValue(name, out var stat)) return 0f;
             return ApplyModifiers(stat);
         }
 
         public void AddModifier(StatName statName, StatModifier modifier)
         {
+            GetStatOrCreateNew(statName); // If it doesnt exist.
             if (!_modifiersMap.ContainsKey(statName))
                 _modifiersMap[statName] = new List<StatModifier>();
             _modifiersMap[statName].Add(modifier);
@@ -84,6 +99,16 @@ namespace Gameplay
             return false;
         }
 
+        private void SetStats(IEnumerable<Stat> stats)
+        {
+            if (stats == null) return;
+            foreach (var stat in stats)
+            {
+                if (_statsMap.ContainsKey(stat.Name)) continue;
+                SetStat(stat);
+            }
+        }
+
         private float ApplyModifiers(Stat stat)
         {
             var result = stat.CurrentValue;
@@ -113,23 +138,21 @@ namespace Gameplay
             return result;
         }
 
-        private void SetStats(Stat[] stats)
+        private Stat CreateStat(StatData data)
         {
-            if (stats == null || stats.Length == 0) return;
-
-            foreach (var stat in stats)
-            {
-                SetStat(stat);
-            }
+            if (data.Name == StatName.Health)
+                return new Health((int)data.Value, (int)data.Max);
+            else if (data.Name == StatName.Armor)
+                return new Armor((int)data.Value, (int)data.Max);
+            return new Stat(data.Name, data.Value, data.Max);
         }
 
-        private void SetDefaultStats()
+        public override string ToString()
         {
-            foreach (StatName name in Enum.GetValues(typeof(StatName)))
-            {
-                if (_statsMap.ContainsKey(name)) continue;
-                _statsMap[name] = new Stat(name, 0, 0);
-            }
+            var stringBuilder = new StringBuilder();
+            foreach (var stat in _statsMap.Values)
+                stringBuilder.AppendLine($"{stat.Name}: {GetStatValue(stat.Name)}");
+            return stringBuilder.ToString();
         }
     }
 }

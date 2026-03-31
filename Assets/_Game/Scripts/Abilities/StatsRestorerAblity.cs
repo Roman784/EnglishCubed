@@ -18,7 +18,7 @@ namespace Abilities
             bool half = false, 
             bool full = false)
         {
-            var stat = _stats.GetStat(statName);
+            var stat = _stats.GetStatOrCreateNew(statName);
             if (full)
                 stat.Add(Mathf.CeilToInt(stat.Max - stat.CurrentValue));
             else if (half)

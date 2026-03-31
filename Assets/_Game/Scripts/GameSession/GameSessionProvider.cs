@@ -26,6 +26,8 @@ namespace GameSession
                 IsStarted = true,
                 Hero = baseOnData.Hero,
                 Abilities = baseOnData.Abilities,
+                Stats = baseOnData.Stats,
+                Experience = baseOnData.Experience,
             };
             SaveSession();
         }
@@ -35,7 +37,10 @@ namespace GameSession
             _sessionData = new GameSessionData() 
             { 
                 IsStarted = true,
-                Hero = hero 
+                Hero = hero,
+                Abilities = new AbilitySaveData[0],
+                Stats = new StatData[0],
+                Experience = new ExperienceSaveData(),
             };
             SaveSession();
         }
@@ -54,6 +59,20 @@ namespace GameSession
         public void SetAbilities(IEnumerable<AbilitySaveData> abilities)
         {
             _sessionData.Abilities = abilities.ToArray();
+            SaveSession();
+        }
+
+        public void SetStats(IEnumerable<StatData> stats)
+        {
+            _sessionData.Stats = stats
+                .Where(s => s.Name != StatName.Experience)
+                .ToArray();
+            SaveSession();
+        }
+
+        public void SetExperience(ExperienceSaveData data)
+        {
+            _sessionData.Experience = data;
             SaveSession();
         }
 
