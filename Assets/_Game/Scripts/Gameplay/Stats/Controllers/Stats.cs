@@ -26,7 +26,7 @@ namespace Gameplay
             foreach (var initialStat in initialStats)
             {
                 var statName = initialStat.Name;
-                var loadedStat = loadedStats.FirstOrDefault(s => s.Name == initialStat.Name);
+                var loadedStat = loadedStats?.FirstOrDefault(s => s.Name == initialStat.Name);
                 if (loadedStat != null)
                     _statsMap[statName] = CreateStat(loadedStat);
                 else

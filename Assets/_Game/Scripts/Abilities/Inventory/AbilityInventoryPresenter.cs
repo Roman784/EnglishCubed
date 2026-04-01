@@ -22,6 +22,8 @@ namespace Abilities
 
         public void Load()
         {
+            if (_model.SessionProvider.SessionData.Abilities == null) return;
+
             _model.ClearAcquiredAbilities();
             foreach (var ability in _model.SessionProvider.SessionData.Abilities)
             {
