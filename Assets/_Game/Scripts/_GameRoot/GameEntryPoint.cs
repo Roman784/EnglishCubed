@@ -93,7 +93,7 @@ namespace GameRoot
             {
                 var defaultGameSessionData = G.Configs.DefaultGameSessionDataConfigs.Data;
                 G.GameSessionProvider.StartNewSession(defaultGameSessionData);
-                G.SceneProvider.OpenCombat(); 
+                G.SceneProvider.OpenCombat(defaultGameSessionData.StageNumber);
                 return; 
             }
 

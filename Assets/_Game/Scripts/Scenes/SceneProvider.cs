@@ -46,9 +46,9 @@ namespace GameRoot
             OpenScene<HeroMenuEntryPoint, HeroMenuEnterParams>(enterParams);
         }
 
-        public void OpenCombat()
+        public void OpenCombat(int stageNumber)
         {
-            var enterParams = new CombatEnterParams();
+            var enterParams = new CombatEnterParams(stageNumber);
             OpenScene<CombatEntryPoint, CombatEnterParams>(enterParams);
         }
 

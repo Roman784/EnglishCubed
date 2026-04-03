@@ -125,13 +125,10 @@ namespace Combat
                 .Timer(TimeSpan.FromSeconds(animationDuration + 0.2f))
                 .Subscribe(_ =>
                 {
-                    if (enemy.CurrentHealth <= 0)
+                    if (enemy.IsAlive)
                     {
-                        _view.EnableControls();
-                        return;
+                        EnemyRetaliate(enemy, pointsValue);
                     }
-
-                    EnemyRetaliate(enemy, pointsValue);
                 })
                 .AddTo(_disposables);
         }

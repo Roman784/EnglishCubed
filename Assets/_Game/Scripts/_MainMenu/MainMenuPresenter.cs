@@ -39,12 +39,13 @@ namespace MainMenu
             //G.SceneProvider.OpenLevelMenu();
 
             G.GameSessionProvider.StartNewSession(_model.SelectedHero);
-            G.SceneProvider.OpenCombat(); // TEMP
+            G.SceneProvider.OpenCombat(1); // TEMP
         }
 
         private void ContinueLastGameSession()
         {
-            G.SceneProvider.OpenCombat();
+            var stageNumber = G.GameSessionProvider.SessionData.StageNumber;
+            G.SceneProvider.OpenCombat(stageNumber);
         }
 
         private void OpenAbilitiesMenu()

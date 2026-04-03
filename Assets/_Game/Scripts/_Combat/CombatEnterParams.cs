@@ -6,8 +6,11 @@ namespace Combat
 {
     public class CombatEnterParams : SceneEnterParams
     {
-        public CombatEnterParams() : base(Scenes.COMBAT)
+        public readonly int StageNumber;
+
+        public CombatEnterParams(int stageNumber) : base(Scenes.COMBAT)
         {
+            StageNumber = stageNumber;
         }
     }
 }

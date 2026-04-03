@@ -56,6 +56,12 @@ namespace GameSession
             SaveSession();
         }
 
+        public void SetStageNumber(int number)
+        {
+            _sessionData.StageNumber = number;
+            SaveSession();
+        }
+
         public void SetAbilities(IEnumerable<AbilitySaveData> abilities)
         {
             _sessionData.Abilities = abilities.ToArray();

@@ -14,5 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Configs.DefaultGameSessionDataConfigs
   Data:
     IsStarted: 0
+    StageNumber: 1
     Hero: 1
-    PassiveAbilities: 
+    Abilities: []
+    Stats: []
+    Experience:
+      CurrentValue: 0
+      Level: 0

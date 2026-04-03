@@ -5,11 +5,15 @@ namespace Gameplay
 {
     public class GameplayProducer
     {
+        public ProducerContext Context { get; private set; }
+
         public readonly EnemyProducer Enemy;
 
         public GameplayProducer()
         {
-            Enemy = new EnemyProducer();
+            Context = new ProducerContext();
+
+            Enemy = new EnemyProducer(Context);
         }
     }
 }

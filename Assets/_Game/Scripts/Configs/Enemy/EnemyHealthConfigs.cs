@@ -11,5 +11,9 @@ namespace Configs
         public HealthSpreadData OrdinaryEnemy;
         public HealthSpreadData LeaderEnemy;
         public HealthSpreadData BossEnemy;
+
+        [Space]
+
+        public AnimationCurve ChangesByStage;
     }
 }
