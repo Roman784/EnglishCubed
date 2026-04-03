@@ -10,6 +10,11 @@ namespace Gameplay
         Vampire,
         Magdalene,
         Archer,
-        Boar
+        Boar,
+        GoblinOrdinary,
+        GoblinLeader,
+        SkeletonOrdinary,
+        SkeletonLeader,
+        SlimeOrdinary
     }
 }

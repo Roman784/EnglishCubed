@@ -101,7 +101,7 @@ namespace Combat
         {
             _model.Hero.Attack();
 
-            points.Attack(_model.Location.FirstEnemy.Center)
+            points.Attack(_model.Enemy.Center)
                 .Subscribe(value =>
                 {
                     _model.HeroStats.TryApplyVampirism();
@@ -113,7 +113,7 @@ namespace Combat
 
         private void ApplyDamageToEnemy(int pointsValue)
         {
-            var enemy = _model.Location.FirstEnemy;
+            var enemy = _model.Enemy;
 
             enemy.TakeDamage(pointsValue, out var animationDuration);
             G.CameraShaker.MidShake();

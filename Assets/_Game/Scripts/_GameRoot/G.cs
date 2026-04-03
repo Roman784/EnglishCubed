@@ -24,6 +24,7 @@ namespace GameRoot
         public static AbilityProvider AbilityProvider;
 
         // Gameplay.
+        public static GameplayProducer Producer;
         public static CameraShaker CameraShaker;
         public static WordUnitsMovementProvider WordUnitsMovementProvider;
         public static WordUnitFactory WordUnitFactory;

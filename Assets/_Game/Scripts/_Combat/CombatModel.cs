@@ -1,6 +1,7 @@
 using Abilities;
 using Configs;
 using Gameplay;
+using GameRoot;
 using GrammarValidation;
 using R3;
 
@@ -11,6 +12,8 @@ namespace Combat
         private Subject<Unit> _changedSignalSubj = new();
 
         public Hero Hero { get; private set; }
+        public Enemy Enemy { get; private set; }
+
         public Stat Discards { get; private set; }
         public Stat Draws { get; private set; }
         public Stat FieldCapacity { get; private set; }
@@ -36,6 +39,7 @@ namespace Combat
 
         public CombatModel(
             Hero hero,
+            Enemy enemy,
             PointMultipliersResolver pointMultiplierResolver,
             Deck deck,
             HandWordUnitsGroup handWordUnitsGroup,
@@ -47,6 +51,8 @@ namespace Combat
             WordUnitConfigs[] availableWordUnitsConfigs)
         {
             Hero = hero;
+            Enemy = enemy;
+
             Discards = HeroStats.GetStatOrCreateNew(StatName.DiscardsCount);
             Draws = HeroStats.GetStatOrCreateNew(StatName.DrawsCount);
             FieldCapacity = HeroStats.GetStatOrCreateNew(StatName.FieldCapacity);

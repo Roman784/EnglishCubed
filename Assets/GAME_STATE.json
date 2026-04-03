@@ -44,12 +44,12 @@
                 },
                 {
                     "Name": 1,
-                    "Value": 4.0,
+                    "Value": 5.0,
                     "Max": 5.0
                 }
             ],
             "Experience": {
-                "CurrentValue": 10,
+                "CurrentValue": 0,
                 "Level": 0
             }
         }

@@ -17,6 +17,7 @@ MonoBehaviour:
   PointMultiplierNamesConfigs: {fileID: 11400000, guid: 34e4504d98ee4fb44a8557d53503d919, type: 2}
   StatsConfigs: {fileID: 11400000, guid: c609a08232b71f549a35f0d83532eb87, type: 2}
   HeroesConfigs: {fileID: 11400000, guid: ac8ba13c8311f714e8f7c633171cc317, type: 2}
+  EnemiesConfigs: {fileID: 11400000, guid: 1bb33f6cd502cc84d82503f6ddd7d7a5, type: 2}
   AbilitiesConfigs: {fileID: 11400000, guid: b1bfa762269d0b440928d041074b50fa, type: 2}
   AudioConfigs: {fileID: 11400000, guid: 434402cbbf5349042bbc662480db3f13, type: 2}
   UIConfigs: {fileID: 11400000, guid: 197643596d2022f49bb8f7fec9c562df, type: 2}

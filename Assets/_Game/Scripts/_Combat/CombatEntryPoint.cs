@@ -22,6 +22,7 @@ namespace Combat
         [SerializeField] private CameraShaker _cameraShaker;
 
         [SerializeField] private WordUnitConfigs[] _wordUnitsConfigs; // Temp.
+        [SerializeField] private EnemyConfigs _enemyConfigs; // Temp.
 
         private CombatPresenter _presenter;
         private AbilityInventoryPresenter _abilityInventory;
@@ -90,10 +91,14 @@ namespace Combat
             var hero = Instantiate(heroPrefab, _location.HeroPosition, Quaternion.identity);
             hero.Init(_heroStats);
 
+            // ========== Enemy ==========
+            var enemy = Instantiate(_enemyConfigs.Prefab, _location.EnemyPosition, Quaternion.identity);
+
             // ========== MVP ==========
 
             var model = new CombatModel(
                 hero: hero,
+                enemy: enemy,
                 pointMultiplierResolver: pointMultiplierResolver,
                 deck: _deck,
                 handWordUnitsGroup: _handWordUnitsGroup,

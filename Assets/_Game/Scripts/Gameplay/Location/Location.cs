@@ -9,17 +9,17 @@ namespace Gameplay
     public class Location : MonoBehaviour
     {
         [SerializeField] private Transform _heroPoint;
+        [SerializeField] private Transform _enemyPoint;
         [SerializeField] private Transform _pointsAccumulationPoint;
-        [SerializeField] private List<Enemy> _enemies;
 
         private Subject<Unit> _allEnemiesDeathSignalSubj = new();
 
         public Vector2 HeroPosition => _heroPoint.position;
+        public Vector2 EnemyPosition => _enemyPoint.position;
         public Vector2 PointsAccumulationPosition => _pointsAccumulationPoint.position;
-        public Enemy FirstEnemy => _enemies[0];
 
         public Observable<Unit> AllEnemiesDeathSignal => _allEnemiesDeathSignalSubj;
-
+/*
         private void Start()
         {
             foreach (var enemy in _enemies)
@@ -38,6 +38,6 @@ namespace Gameplay
                     }
                 });
             }
-        }
+        }*/
     }
 }
