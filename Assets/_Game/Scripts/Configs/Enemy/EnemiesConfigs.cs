@@ -9,6 +9,7 @@ namespace Configs
     public class EnemiesConfigs : ScriptableObject
     {
         public EnemyConfigs[] AllEnemiesConfigs;
+        public EnemyHealthConfigs HealthConfigs;
 
         public EnemyConfigs GetEnemy(CreatureName name)
         {
@@ -32,6 +33,17 @@ namespace Configs
 
             Debug.LogError($"Failed to find enemy by rank: {rank}");
             return null;
+        }
+
+        public HealthSpreadData GetHealthSpread(EnemyRank rank)
+        {
+            return rank switch
+            {
+                EnemyRank.Ordinary => HealthConfigs.OrdinaryEnemy,
+                EnemyRank.Leader => HealthConfigs.LeaderEnemy,
+                EnemyRank.Boss => HealthConfigs.BossEnemy,
+                _ => throw new System.Exception($"Unsupported enemy rank: {rank}!")
+            };
         }
     }
 }

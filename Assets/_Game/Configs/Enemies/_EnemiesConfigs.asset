@@ -19,3 +19,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 362df2c008716ca4d9bca6cf7634a6e9, type: 2}
   - {fileID: 11400000, guid: 0f18dbdeb8078f341b85bcb7307440cb, type: 2}
   - {fileID: 11400000, guid: a517ecb298e3aff40b361b1397a0350c, type: 2}
+  HealthConfigs: {fileID: 11400000, guid: 63d06a1156241684483980628a2a9a9d, type: 2}

@@ -15,7 +15,12 @@
         "Data": {
             "IsStarted": true,
             "Hero": 1,
-            "Abilities": [],
+            "Abilities": [
+                {
+                    "Name": 9,
+                    "StacksCount": 1
+                }
+            ],
             "Stats": [
                 {
                     "Name": 25,
@@ -44,13 +49,23 @@
                 },
                 {
                     "Name": 1,
-                    "Value": 5.0,
+                    "Value": 4.0,
                     "Max": 5.0
+                },
+                {
+                    "Name": 6,
+                    "Value": 0.0,
+                    "Max": 0.0
+                },
+                {
+                    "Name": 7,
+                    "Value": 0.0,
+                    "Max": 0.0
                 }
             ],
             "Experience": {
                 "CurrentValue": 0,
-                "Level": 0
+                "Level": 1
             }
         }
     },

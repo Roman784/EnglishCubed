@@ -22,7 +22,6 @@ namespace Combat
         [SerializeField] private CameraShaker _cameraShaker;
 
         [SerializeField] private WordUnitConfigs[] _wordUnitsConfigs; // Temp.
-        [SerializeField] private EnemyConfigs _enemyConfigs; // Temp.
 
         private CombatPresenter _presenter;
         private AbilityInventoryPresenter _abilityInventory;
@@ -91,8 +90,18 @@ namespace Combat
             var hero = Instantiate(heroPrefab, _location.HeroPosition, Quaternion.identity);
             hero.Init(_heroStats);
 
+            // ========== Game Producer ==========
+
+            var producer = new GameplayProducer();
+            G.Producer = producer;
+
             // ========== Enemy ==========
-            var enemy = Instantiate(_enemyConfigs.Prefab, _location.EnemyPosition, Quaternion.identity);
+
+            var enemySpec = producer.Enemy.GetEnemy();
+            var enemyPrefab = enemySpec.EnemyConfigs.Prefab;
+            var enemyHealth = enemySpec.Health;
+            var enemy = Instantiate(enemyPrefab, _location.EnemyPosition, Quaternion.identity);
+            enemy.Init(new Stats(new Health(enemyHealth)));
 
             // ========== MVP ==========
 
@@ -112,9 +121,9 @@ namespace Combat
 
             // ========== Level Passing ==========
 
-            _location.AllEnemiesDeathSignal.Subscribe(_ =>
+            enemy.DeathSignal.Subscribe(_ =>
             {
-                Observable.Timer(TimeSpan.FromSeconds(3f)).Subscribe(_ =>
+                Observable.Timer(TimeSpan.FromSeconds(2f)).Subscribe(_ =>
                 {
                     _view.DisableControls();
                     G.PopUpsProvider.OpenCombatVictoryPopUp();
