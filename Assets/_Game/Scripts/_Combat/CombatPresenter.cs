@@ -138,7 +138,15 @@ namespace Combat
             enemy.Attack().Subscribe(_ =>
             {
                 if (_model.HeroStats.IsChanceSuccessWithRage(StatName.Dodge, StatName.RageDodge))
+                {
+                    if (_model.HeroStats.IsExistAndNotZero(StatName.SpikesPower))
+                    {
+                        var spikesDamage = _model.HeroStats.GetStatValue(StatName.SpikesPower);
+                        enemy.TakeDamage((int)spikesDamage, out var _);
+                    }
+
                     _model.Hero.TakeDamage();
+                }
 
                 if (_model.Hero.IsAlive)
                 {

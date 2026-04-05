@@ -30,6 +30,7 @@ namespace Gameplay
         HandCapacity,
         FieldCapacity,
         DrawsCount,
-        DiscardsCount
+        DiscardsCount,
+        SpikesPower
     }
 }

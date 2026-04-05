@@ -71,6 +71,11 @@ namespace Gameplay
             _modifiersMap[statName].Add(modifier);
         }
 
+        public bool IsExistAndNotZero(StatName name)
+        {
+            return _statsMap.ContainsKey(name) && GetStatValue(name) > 0;
+        }
+
         public bool IsChanceSuccess(StatName statName)
         {
             var chance = GetStatValue(statName);

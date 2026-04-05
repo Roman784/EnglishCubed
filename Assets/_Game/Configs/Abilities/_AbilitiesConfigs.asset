@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: _AbilitiesConfigs
   m_EditorClassIdentifier: Assembly-CSharp::Configs.AbilitiesConfigs
   AllAbilities:
-  - {fileID: 11400000, guid: 4be45bcbdad904649bb28677690840f8, type: 2}
-  - {fileID: 11400000, guid: 7c3413483f52ee34cb5179a6531ecea9, type: 2}
+  - {fileID: 11400000, guid: 15dd506dfc32ec94c9f68a299545e3b1, type: 2}

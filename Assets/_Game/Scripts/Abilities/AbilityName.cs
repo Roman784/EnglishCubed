@@ -39,6 +39,7 @@ namespace Abilities
         CriticalAttackPowerIncrease,
         PronounsPowerIncrease,
         AdjectivesPowerIncrease,
-        LinkingVerbsPowerIncrease
+        LinkingVerbsPowerIncrease,
+        SpikesPowerIncrease
     }
 }

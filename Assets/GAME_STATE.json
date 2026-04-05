@@ -16,7 +16,12 @@
             "IsStarted": true,
             "StageNumber": 0,
             "Hero": 1,
-            "Abilities": [],
+            "Abilities": [
+                {
+                    "Name": 36,
+                    "StacksCount": 3
+                }
+            ],
             "Stats": [
                 {
                     "Name": 25,
@@ -45,13 +50,18 @@
                 },
                 {
                     "Name": 1,
-                    "Value": 5.0,
+                    "Value": 2.0,
                     "Max": 5.0
+                },
+                {
+                    "Name": 26,
+                    "Value": 0.0,
+                    "Max": 0.0
                 }
             ],
             "Experience": {
                 "CurrentValue": 0,
-                "Level": 0
+                "Level": 1
             }
         }
     },

@@ -239,6 +239,12 @@ namespace Abilities
                         StatName.FullHealthAttack,
                         StatModifier.Flat(levelData.GetValue(1)));
                     break;
+
+                case AbilityName.SpikesPowerIncrease:
+                    heroStatsModifier.Apply(
+                        StatName.SpikesPower,
+                        StatModifier.Flat(levelData.GetValue(1)));
+                    break;
             }
         }
 
