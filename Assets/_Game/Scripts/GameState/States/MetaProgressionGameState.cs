@@ -1,3 +1,4 @@
+using Abilities;
 using Gameplay;
 using System;
 using UnityEngine;
@@ -9,5 +10,6 @@ namespace GameState
     {
         public CreatureName SelectedHero;
         public CreatureName[] UnlockedHeroes;
+        public AbilityName[] UnlockedAbilities;
     }
 }

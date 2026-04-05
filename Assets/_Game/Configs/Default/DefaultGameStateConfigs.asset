@@ -16,8 +16,19 @@ MonoBehaviour:
     MetaProgression:
       SelectedHero: 1
       UnlockedHeroes: 01000000
+      UnlockedAbilities: 
     Currency:
       Coins: 999
+    Session:
+      Data:
+        IsStarted: 0
+        StageNumber: 0
+        Hero: 0
+        Abilities: []
+        Stats: []
+        Experience:
+          CurrentValue: 0
+          Level: 0
     Audio:
       SoundVolume: 1
       MusicVolume: 1

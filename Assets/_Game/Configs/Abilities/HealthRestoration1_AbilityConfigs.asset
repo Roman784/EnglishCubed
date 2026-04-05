@@ -14,9 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Configs.AbilityConfigs
   Name: 5
   DependsOn: 0
+  Application: 0
   IsRepeatable: 1
   Rarity: 0
   Weight: 0
+  ShowInInventory: 0
+  Price: 100
   Levels:
   - Icon: {fileID: 346780327, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
     Title: "\u041F\u0435\u0440\u0432\u0430\u044F \u041F\u043E\u043C\u043E\u0449\u044C  "

@@ -19,6 +19,7 @@ MonoBehaviour:
   Rarity: 0
   Weight: 0
   ShowInInventory: 1
+  Price: 100
   Levels:
   - Icon: {fileID: 8434511074868491901, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
     Title: "\u0428\u0438\u0440\u043E\u043A\u0430\u044F \u0420\u0443\u043A\u0430 "

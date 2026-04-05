@@ -19,10 +19,15 @@ namespace Configs
         public Rarity Rarity;
         public Weight Weight;
         public bool ShowInInventory;
+        public int Price;
 
         [Space]
 
         public AbilityLevelData[] Levels;
+
+        public Sprite Icon => Levels.Length > 0 ? Levels[0].Icon : null;
+        public string Title => Levels.Length > 0 ? Levels[0].Title : string.Empty;
+        public string Description => Levels.Length > 0 ? Levels[0].Description : string.Empty;
 
         public int MaxStacksCount => Levels.Length;
 

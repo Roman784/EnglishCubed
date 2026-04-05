@@ -1,3 +1,4 @@
+using Abilities;
 using Gameplay;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,11 @@ namespace GameState
             return State.UnlockedHeroes;
         }
 
+        public IEnumerable<AbilityName> GetUnlockedAbilities()
+        {
+            return State.UnlockedAbilities ?? new AbilityName[0];
+        }
+
         public void SetSeletedhero(CreatureName name)
         {
             State.SelectedHero = name;
@@ -40,6 +46,17 @@ namespace GameState
                 unlockedHeroes.Add(name);
                 State.UnlockedHeroes = unlockedHeroes.ToArray();
 
+                _gameStateProvider.SaveGameState();
+            }
+        }
+
+        public void UnlockAbility(AbilityName name)
+        {
+            if (!State.UnlockedAbilities.Contains(name))
+            {
+                var unlockedAbilities = State.UnlockedAbilities.ToList();
+                unlockedAbilities.Add(name);
+                State.UnlockedAbilities = unlockedAbilities.ToArray();
                 _gameStateProvider.SaveGameState();
             }
         }
