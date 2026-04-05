@@ -153,7 +153,7 @@ namespace Combat
                     _model.Hero.TakeDamage();
                 }
 
-                if (_model.Hero.IsAlive)
+                if (_model.Hero.IsAlive && _model.Enemy.IsAlive)
                 {
                     if (_model.HeroStats.Experience.IsNextLevelReached)
                     {
@@ -297,7 +297,8 @@ namespace Combat
             {
                 if (!_model.Hero.IsAlive) return;
                 _view.DisableControls();
-                G.PopUpsProvider.OpenCombatVictoryPopUp();
+                G.PopUpsProvider.OpenCombatVictoryPopUp(100);
+                G.Repository.Currency.AddCoins(100);
             });
         }
 

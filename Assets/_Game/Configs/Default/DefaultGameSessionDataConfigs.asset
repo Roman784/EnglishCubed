@@ -18,18 +18,9 @@ MonoBehaviour:
     Hero: 1
     Abilities: []
     Stats:
-    - Name: 26
-      Value: 1000
-      Max: 1000
-    - Name: 0
-      Value: 2
-      Max: 2
-    - Name: 1
-      Value: 0
-      Max: 0
-    - Name: 10
-      Value: 9
-      Max: 9
+    - Name: 4
+      Value: 10000
+      Max: 10000
     Experience:
       CurrentValue: 0
       Level: 0

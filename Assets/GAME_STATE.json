@@ -9,7 +9,7 @@
         ]
     },
     "Currency": {
-        "Coins": 349
+        "Coins": 800
     },
     "Session": {
         "Data": {
@@ -19,24 +19,9 @@
             "Abilities": [],
             "Stats": [
                 {
-                    "Name": 26,
-                    "Value": 1000.0,
-                    "Max": 1000.0
-                },
-                {
-                    "Name": 0,
-                    "Value": 0.0,
-                    "Max": 1.0
-                },
-                {
-                    "Name": 1,
-                    "Value": 0.0,
-                    "Max": 0.0
-                },
-                {
-                    "Name": 10,
-                    "Value": 9.0,
-                    "Max": 9.0
+                    "Name": 4,
+                    "Value": 10000.0,
+                    "Max": 10000.0
                 },
                 {
                     "Name": 25,
@@ -57,10 +42,20 @@
                     "Name": 22,
                     "Value": 10.0,
                     "Max": 10.0
+                },
+                {
+                    "Name": 0,
+                    "Value": 3.0,
+                    "Max": 3.0
+                },
+                {
+                    "Name": 1,
+                    "Value": 5.0,
+                    "Max": 5.0
                 }
             ],
             "Experience": {
-                "CurrentValue": 10,
+                "CurrentValue": 0,
                 "Level": 0
             }
         }

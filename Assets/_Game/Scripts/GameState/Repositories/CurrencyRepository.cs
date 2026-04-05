@@ -24,5 +24,11 @@ namespace GameState
             State.Coins = value;
             _gameStateProvider.SaveGameState();
         }
+
+        public void AddCoins(int value)
+        {
+            State.Coins += value;
+            _gameStateProvider.SaveGameState();
+        }
     }
 }
