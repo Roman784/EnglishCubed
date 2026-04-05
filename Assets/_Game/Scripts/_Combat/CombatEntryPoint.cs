@@ -121,17 +121,6 @@ namespace Combat
                 availableWordUnitsConfigs: _wordUnitsConfigs);
             _presenter = new CombatPresenter(_view, model);
 
-            // ========== Level Passing ==========
-
-            enemy.DeathSignal.Subscribe(_ =>
-            {
-                Observable.Timer(TimeSpan.FromSeconds(2f)).Subscribe(_ =>
-                {
-                    _view.DisableControls();
-                    G.PopUpsProvider.OpenCombatVictoryPopUp();
-                });
-            });
-
             // ========== Start Game ==========
 
             _view.EnableControls();

@@ -1,6 +1,6 @@
 {
     "MetaProgression": {
-        "SelectedHero": 3,
+        "SelectedHero": 2,
         "UnlockedHeroes": [
             1,
             2,
@@ -16,13 +16,28 @@
             "IsStarted": true,
             "StageNumber": 0,
             "Hero": 1,
-            "Abilities": [
-                {
-                    "Name": 36,
-                    "StacksCount": 3
-                }
-            ],
+            "Abilities": [],
             "Stats": [
+                {
+                    "Name": 26,
+                    "Value": 1000.0,
+                    "Max": 1000.0
+                },
+                {
+                    "Name": 0,
+                    "Value": 0.0,
+                    "Max": 1.0
+                },
+                {
+                    "Name": 1,
+                    "Value": 0.0,
+                    "Max": 0.0
+                },
+                {
+                    "Name": 10,
+                    "Value": 9.0,
+                    "Max": 9.0
+                },
                 {
                     "Name": 25,
                     "Value": 3.0,
@@ -42,26 +57,11 @@
                     "Name": 22,
                     "Value": 10.0,
                     "Max": 10.0
-                },
-                {
-                    "Name": 0,
-                    "Value": 3.0,
-                    "Max": 3.0
-                },
-                {
-                    "Name": 1,
-                    "Value": 2.0,
-                    "Max": 5.0
-                },
-                {
-                    "Name": 26,
-                    "Value": 0.0,
-                    "Max": 0.0
                 }
             ],
             "Experience": {
-                "CurrentValue": 0,
-                "Level": 1
+                "CurrentValue": 10,
+                "Level": 0
             }
         }
     },

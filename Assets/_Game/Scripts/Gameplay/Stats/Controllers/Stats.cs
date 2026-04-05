@@ -23,14 +23,15 @@ namespace Gameplay
         public Stats(
             IEnumerable<StatData> initialStats, IEnumerable<StatData> loadedStats)
         {
+            foreach (var loadedStat in loadedStats ?? new StatData[0])
+            {
+                _statsMap[loadedStat.Name] = CreateStat(loadedStat);
+            }
+
             foreach (var initialStat in initialStats)
             {
-                var statName = initialStat.Name;
-                var loadedStat = loadedStats?.FirstOrDefault(s => s.Name == initialStat.Name);
-                if (loadedStat != null)
-                    _statsMap[statName] = CreateStat(loadedStat);
-                else
-                    _statsMap[statName] = CreateStat(initialStat);
+                if(_statsMap.ContainsKey(initialStat.Name)) continue;
+                _statsMap[initialStat.Name] = CreateStat(initialStat);
             }
         }
 

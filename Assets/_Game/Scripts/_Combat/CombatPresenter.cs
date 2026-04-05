@@ -3,12 +3,9 @@ using Gameplay;
 using GameRoot;
 using GrammarValidation;
 using R3;
-using System.Linq;
-using System.Collections.Generic;
-using UnityEngine;
-using Object = UnityEngine.Object;
-using DG.Tweening;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Combat
 {
@@ -53,6 +50,14 @@ namespace Combat
 
             _model.ChangedSignal
                 .Subscribe(_ => UpdateView())
+                .AddTo(_disposables);
+
+            _model.Hero.DeathSignal
+                .Subscribe(_ => HandleLevelLosing())
+                .AddTo(_disposables);
+
+            _model.Enemy.DeathSignal
+                .Subscribe(_ => HandleLevelPassing())
                 .AddTo(_disposables);
         }
 
@@ -159,9 +164,6 @@ namespace Combat
                     else
                         _view.EnableControls();
                 }
-                else
-                    Observable.Timer(TimeSpan.FromSeconds(1f)).Subscribe(_ =>
-                        G.PopUpsProvider.OpenCombatDefeatPopUp());
 
                 _model.Hero.SaveStats();
             });
@@ -285,6 +287,27 @@ namespace Combat
             }
             _model.HandWordUnitsGroup.Layout.Arrange();
             _model.Hero.SaveStats();
+        }
+
+        // ================ Level Completion ================
+
+        private void HandleLevelPassing()
+        {
+            Observable.Timer(TimeSpan.FromSeconds(2f)).Subscribe(_ =>
+            {
+                if (!_model.Hero.IsAlive) return;
+                _view.DisableControls();
+                G.PopUpsProvider.OpenCombatVictoryPopUp();
+            });
+        }
+
+        private void HandleLevelLosing()
+        {
+            Observable.Timer(TimeSpan.FromSeconds(1f)).Subscribe(_ =>
+            {
+                _view.DisableControls();
+                G.PopUpsProvider.OpenCombatDefeatPopUp();
+             });
         }
 
         // ================ UI ================

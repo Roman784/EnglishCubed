@@ -46,6 +46,7 @@ namespace Gameplay
             foreach (StatName statName in Enum.GetValues(typeof(StatName)))
             {
                 if (_bannedStatNames.Contains(statName)) continue;
+                if (!_stats.IsExistAndNotZero(statName)) continue;
 
                 PointsMultiplierData multiplier = null;
 
@@ -103,7 +104,7 @@ namespace Gameplay
         public PointsMultiplierData CalculateMultiplierWithRage(StatName statName, int rage, bool asPercentage = true)
         {
             var statValue = _stats.GetStatValue(statName);
-            if (statValue == 0) return null;
+            if (statValue == 0 || rage == 0) return null;
 
             statValue *= rage;
 
