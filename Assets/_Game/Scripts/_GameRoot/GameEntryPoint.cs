@@ -89,6 +89,7 @@ namespace GameRoot
             else if (initialEditorScene == Scenes.ABILITY_MENU) { G.SceneProvider.OpenAbilityMenu(); return; }
             else if (initialEditorScene == Scenes.HERO_MENU) { G.SceneProvider.OpenHeroMenu(); return; }
             else if (initialEditorScene == Scenes.TEST_ROOM) { G.SceneProvider.OpenTestRoom(); return; }
+            else if (initialEditorScene == Scenes.ENCOUNTERS_MAP) { G.SceneProvider.OpenEncountersMap(); return; }
             else if (initialEditorScene == Scenes.COMBAT) 
             {
                 var defaultGameSessionData = G.Configs.DefaultGameSessionDataConfigs.Data;

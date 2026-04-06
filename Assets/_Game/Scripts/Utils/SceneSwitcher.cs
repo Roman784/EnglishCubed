@@ -42,6 +42,12 @@ namespace Utils
         {
             EditorSceneManager.OpenScene("Assets/_Game/Scenes/Combat.unity");
         }
+
+        [MenuItem("Scene/Encounters Map")]
+        public static void OpenEncountersMap()
+        {
+            EditorSceneManager.OpenScene("Assets/_Game/Scenes/EncountersMap.unity");
+        }
     }
 }
 #endif

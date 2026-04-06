@@ -1,5 +1,6 @@
 using AbilityMenu;
 using Combat;
+using EncountersMap;
 using GameSession;
 using HeroMenu;
 using LevelMenu;
@@ -50,6 +51,12 @@ namespace GameRoot
         {
             var enterParams = new CombatEnterParams(stageNumber);
             OpenScene<CombatEntryPoint, CombatEnterParams>(enterParams);
+        }
+
+        public void OpenEncountersMap()
+        {
+            var enterParams = new EncountersMapEnterParams();
+            OpenScene<EncountersMapEntryPoint, EncountersMapEnterParams>(enterParams);
         }
 
         public void OpenTestRoom()

@@ -31,7 +31,7 @@ namespace AbilityMenu
 
         [Space]
 
-        [SerializeField] private AbilitySelectionButton abilityButtonPrefab;
+        [SerializeField] private AbilitySelectionButton _abilityButtonPrefab;
 
         private Subject<Unit> _buyAbilityButtonPressedSignalSubj = new();
         private Subject<Unit> _exitButtonPressedSignalSubj = new();
@@ -51,7 +51,7 @@ namespace AbilityMenu
 
         public AbilitySelectionButton CreateAbilityButton()
         {
-            var button = Instantiate(abilityButtonPrefab);
+            var button = Instantiate(_abilityButtonPrefab);
             AttachAbiltyButton(button);
             return button;
         }
