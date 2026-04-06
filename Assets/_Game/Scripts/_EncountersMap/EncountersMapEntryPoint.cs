@@ -13,9 +13,15 @@ namespace EncountersMap
         {
             var isLoaded = false;
 
+            var mapGenerator = new EncountersMapGenerator();
+
             var model = new EncountersMapModel(
-                );
+                mapGenerator: mapGenerator,
+                mapSize: new Vector2Int(5, 7),
+                spacingBetweenEncounterButtons: 384);
             var presenter = new EncountersMapPresenter(_view, model);
+
+            presenter.CreateMap();
 
             isLoaded = true;
             yield return new WaitUntil(() => isLoaded);

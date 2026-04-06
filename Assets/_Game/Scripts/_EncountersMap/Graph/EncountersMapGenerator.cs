@@ -1,8 +1,72 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
-namespace _
+namespace EncountersMap
 {
     public class EncountersMapGenerator
     {
+        private Dictionary<Vector2Int, EncounterNode> _encountersMap;
+
+        private Vector2Int[] _nodeLinkDirections = new Vector2Int[4]
+        {
+            Vector2Int.up, Vector2Int.down, 
+            Vector2Int.left, Vector2Int.right
+        };
+
+        public IReadOnlyDictionary<Vector2Int, EncounterNode> EncountersMap => _encountersMap;
+
+        public EncountersMapGenerator()
+        {
+            _encountersMap = new Dictionary<Vector2Int, EncounterNode>();
+        }
+
+        public void GenerateMap(Vector2Int size)
+        {
+            for (int x = 0; x < size.x; x++)
+            {
+                for (int y = 0; y < size.y; y++)
+                {
+                    var node = new EncounterNode();
+                    _encountersMap.Add(new Vector2Int(x, y), node);
+                }
+            }
+        }
+
+        public void CreateLinks()
+        {
+            foreach (var node in _encountersMap)
+            {
+                _nodeLinkDirections = _nodeLinkDirections.OrderBy(_ => Random.value).ToArray();
+                foreach (var linkDirection in _nodeLinkDirections)
+                {
+                    if (node.Value.LinkedNodesCount >= 1)
+                        if (Random.Range(0, 100) > 50) continue;
+
+                    var linkedNodePosition = node.Key + linkDirection;
+                    if (_encountersMap.TryGetValue(linkedNodePosition, out var linkedNode) &&
+                        !node.Value.IsLinked(linkedNode) &&
+                        !linkedNode.IsLinked(node.Value))
+                    {
+                        node.Value.AddLinkedNode(linkedNode);
+                        linkedNode.AddLinkedNode(node.Value);
+                    }
+                }
+            }
+        }
+
+        public Vector2Int GetCenterOffset()
+        {
+            Vector2Int minCoordinates = _encountersMap.First().Key;
+            Vector2Int maxCoordinates = _encountersMap.First().Key;
+            foreach (var node in _encountersMap)
+            {
+                var coordinates = node.Key;
+                minCoordinates = Vector2Int.Min(minCoordinates, coordinates);
+                maxCoordinates = Vector2Int.Max(maxCoordinates, coordinates);
+            }
+
+            return (maxCoordinates - minCoordinates) / 2;
+        }
     }
 }

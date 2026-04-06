@@ -5262,7 +5262,7 @@ MonoBehaviour:
   _abilityPriceView: {fileID: 1524265190}
   _buyAbilityButtonView: {fileID: 1591894616}
   _alreadyBoughtView: {fileID: 66835496}
-  abilityButtonPrefab: {fileID: 8027080584213339196, guid: 73140d9a700c6024390845a43a4d1b99, type: 3}
+  _abilityButtonPrefab: {fileID: 8027080584213339196, guid: 73140d9a700c6024390845a43a4d1b99, type: 3}
 --- !u!1001 &1856655227
 PrefabInstance:
   m_ObjectHideFlags: 0

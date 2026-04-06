@@ -179,6 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 147dcba9e2a389840b01a27e19964825, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI.EncounterButton
+  _view: {fileID: 9102995425805783207}
 --- !u!1 &4314018600167430467
 GameObject:
   m_ObjectHideFlags: 0
