@@ -5,10 +5,17 @@ namespace EncountersMap
 {
     public class EncounterNode
     {
+        private int _stageNumber;
         private List<EncounterNode> _linkedNodes = new();
 
-        public int LinkedNodesCount => _linkedNodes.Count;
+        public int StageNumber => _stageNumber;
         public IEnumerable<EncounterNode> LinkedNodes => _linkedNodes;
+        public int LinkedNodesCount => _linkedNodes.Count;
+
+        public void SetStageNumber(int number)
+        {
+            _stageNumber = number;
+        }
 
         public bool IsLinked(EncounterNode node)
         {

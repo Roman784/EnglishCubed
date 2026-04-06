@@ -55,7 +55,12 @@ namespace EncountersMap
             }
         }
 
-        public Vector2Int GetCenterOffset()
+        public EncounterNode GetCenterNode()
+        {
+            return _encountersMap[GetCenterCoordinates()];
+        }
+
+        public Vector2Int GetCenterCoordinates()
         {
             Vector2Int minCoordinates = _encountersMap.First().Key;
             Vector2Int maxCoordinates = _encountersMap.First().Key;
@@ -67,6 +72,16 @@ namespace EncountersMap
             }
 
             return (maxCoordinates - minCoordinates) / 2;
+        }
+
+        public void SetStageNumbers()
+        {
+            int number = 1;
+            foreach (var node in _encountersMap)
+            {
+                node.Value.SetStageNumber(number);
+                number++;
+            }
         }
     }
 }

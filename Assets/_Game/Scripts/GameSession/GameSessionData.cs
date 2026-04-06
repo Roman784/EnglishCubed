@@ -10,6 +10,7 @@ namespace GameSession
     {
         public bool IsStarted;
         public int StageNumber;
+        public int[] PassedStages;
         public CreatureName Hero;
         public AbilitySaveData[] Abilities;
         public StatData[] Stats;

@@ -1,6 +1,6 @@
 {
     "MetaProgression": {
-        "SelectedHero": 2,
+        "SelectedHero": 5,
         "UnlockedHeroes": [
             1,
             2,
@@ -31,16 +31,23 @@
             21,
             22,
             34,
-            23
+            23,
+            30
         ]
     },
     "Currency": {
-        "Coins": 100200
+        "Coins": 100100
     },
     "Session": {
         "Data": {
             "IsStarted": true,
             "StageNumber": 0,
+            "PassedStages": [
+                1,
+                2,
+                3,
+                4
+            ],
             "Hero": 1,
             "Abilities": [],
             "Stats": [

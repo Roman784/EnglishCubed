@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UI;
 using UnityEngine;
 
@@ -8,6 +9,11 @@ namespace EncountersMap
         [SerializeField] private RectTransform _encounterButtonsContainer;
         [SerializeField] private EncounterButton _encounterButtonPrefab;
         [SerializeField] private LineRenderer _linkLinePrefab;
+
+        [Space]
+
+        [SerializeField] private Transform _goToButtonView;
+        [SerializeField] private Transform _alreadyPassedView;
 
         private void Start()
         {
@@ -36,6 +42,16 @@ namespace EncountersMap
             var screenSize = new Vector2(Screen.width, Screen.height);
             var defaultContainerSize = maxPositions - minPositions;
             _encounterButtonsContainer.sizeDelta = defaultContainerSize + screenSize * 0.75f;
+        }
+
+        public void UpdateGoToButton(bool isActive)
+        {
+            SetActiveView(_goToButtonView, isActive);
+        }
+
+        public void UpdateAlreadyPassed(bool isActive)
+        {
+            SetActiveView(_alreadyPassedView, isActive);
         }
 
         private void AttachEncounterButton(EncounterButton button, Vector2 position)
@@ -69,6 +85,14 @@ namespace EncountersMap
             var y = Mathf.Sin(angle);
 
             return new Vector2(x, y) * orbitRadius;
+        }
+
+        private void SetActiveView(Transform view, bool isActive)
+        {
+            if (view.gameObject.activeSelf == isActive) return;
+            view.gameObject.SetActive(isActive);
+            view.DOKill(true);
+            view.DOPunchScale(Vector2.one * 0.05f, 0.35f, 6).SetEase(Ease.OutQuad);
         }
     }
 }

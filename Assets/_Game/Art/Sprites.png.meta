@@ -672,6 +672,50 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: ic_question
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 268
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42dfb698d8c4a4c40b6a72512565d799
+      internalID: -256655645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ic_combat
+      rect:
+        serializedVersion: 2
+        x: 1407
+        y: 268
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0e6e34f3046054488c1c81f7933f54e
+      internalID: 1398669554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -699,9 +743,11 @@ TextureImporter:
       fanfare: 1456700952
       hero_knight: 757588557
       ic_coin: -267339983
+      ic_combat: 1398669554
       ic_heart_empty: -780306982
       ic_heart_full: -222968538
       ic_infinity: -186057115
+      ic_question: -256655645
       ic_sack: 2076174178
       ic_sack_open: -2078837754
       ic_settings: -1173457764

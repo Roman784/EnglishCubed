@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UI;
 using UnityEngine;
+using R3;
 
 namespace EncountersMap
 {
@@ -29,43 +30,61 @@ namespace EncountersMap
             CreateEncounterButtons();
             CreateLinks();
             AdaptEncounterButtonsContainerSize();
+            SetButtonStates();
         }
 
         private void CreateEncountersNodes()
         {
             _model.MapGenerator.GenerateMap(_model.MapSize);
             _model.MapGenerator.CreateLinks();
+            _model.MapGenerator.SetStageNumbers();
         }
 
         private void CreateEncounterButtons()
         {
             var encounterNodesMap = _model.MapGenerator.EncountersMap;
-            var centerOffset = _model.MapGenerator.GetCenterOffset();
+            var centerOffset = _model.MapGenerator.GetCenterCoordinates();
 
             foreach (var encounterNode in encounterNodesMap)
             {
                 var coordinates = encounterNode.Key;
                 var button = _view.CreateEncounterButton(
                     coordinates, centerOffset, _model.SpacingBetweenEncounterButtons);
-
+                SetUpEncounterButton(button);
                 _model.AddEncounterButton(encounterNode.Value, button);
             }
+        }
+
+        private void SetUpEncounterButton(EncounterButton button)
+        {
+            button.SelectedSignal.Subscribe(_ =>
+            {
+                _model.SelectedEncounterButton?.Deselect();
+                button.Select();
+                _model.SelectedEncounterButton = button;
+
+                _view.UpdateGoToButton(!button.IsLocked);
+                _view.UpdateAlreadyPassed(button.IsPassed);
+            });
         }
 
         private void CreateLinks()
         {
             var alreadyLinked = new List<EncounterButton>();
-            foreach (var encounterNode in _model.EncounterButtonsMap)
+            foreach (var encounterKvp in _model.EncounterButtonsMap)
             {
-                var button = encounterNode.Value;
-                var linkedButtons = _model.GetLinkedEncounterButtons(encounterNode.Key);
+                var node = encounterKvp.Key;
+                var button = encounterKvp.Value;
+                var linkedButtons = _model.GetLinkedEncounterButtons(node);
+
                 foreach (var linkedButton in linkedButtons)
                 {
                     if (alreadyLinked.Contains(linkedButton)) continue;
-                    _view.CreateLink(button.RectTransform.anchoredPosition, linkedButton.RectTransform.anchoredPosition);
+                    _view.CreateLink(
+                        button.RectTransform.anchoredPosition, linkedButton.RectTransform.anchoredPosition);
                 }
 
-                alreadyLinked.Add(encounterNode.Value);
+                alreadyLinked.Add(button);
             }
         }
 
@@ -79,6 +98,22 @@ namespace EncountersMap
                 encounterButtons.Max(button => button.RectTransform.anchoredPosition.x),
                 encounterButtons.Max(button => button.RectTransform.anchoredPosition.y));
             _view.AdaptEncounterButtonsContainerSize(minPositions, maxPositions);
+        }
+
+        private void SetButtonStates()
+        {
+            foreach (var encounterKvp in _model.EncounterButtonsMap)
+            {
+                var node = encounterKvp.Key;
+                var button = encounterKvp.Value;
+
+                if (_model.PassedStages.Contains(node.StageNumber))
+                    button.Complete();
+                else if (node.LinkedNodes.Any(linkedNode => _model.PassedStages.Contains(linkedNode.StageNumber)))
+                    button.Unlock();
+                else
+                    button.Hide();
+            }
         }
     }
 }
