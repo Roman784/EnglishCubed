@@ -24,6 +24,8 @@ namespace GameSession
             _sessionData = new GameSessionData()
             {
                 IsStarted = true,
+                IsInEncounter = baseOnData.IsInEncounter,
+                PassedEncounters = baseOnData.PassedEncounters,
                 Hero = baseOnData.Hero,
                 Abilities = baseOnData.Abilities,
                 Stats = baseOnData.Stats,
@@ -37,6 +39,8 @@ namespace GameSession
             _sessionData = new GameSessionData() 
             { 
                 IsStarted = true,
+                IsInEncounter = false,
+                PassedEncounters = new int[0],
                 Hero = hero,
                 Abilities = new AbilitySaveData[0],
                 Stats = new StatData[0],
@@ -56,15 +60,17 @@ namespace GameSession
             SaveSession();
         }
 
-        public void SetStageNumber(int number)
+        public void SetCurrentEncounterNumber(int number)
         {
-            _sessionData.StageNumber = number;
+            _sessionData.CurrentEncounterNumber = number;
             SaveSession();
         }
 
-        public void SetPassedStages(IEnumerable<int> passedStages)
+        public void AddPassedEncounter(int passedEncounter)
         {
-            _sessionData.PassedStages = passedStages.ToArray();
+            if (_sessionData.PassedEncounters.Contains(passedEncounter)) return;
+            _sessionData.PassedEncounters = 
+                _sessionData.PassedEncounters.Append(passedEncounter).ToArray();
             SaveSession();
         }
 

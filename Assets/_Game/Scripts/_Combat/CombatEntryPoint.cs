@@ -94,7 +94,7 @@ namespace Combat
 
             var producer = new GameplayProducer();
             producer.Context.SetTotalStageNumbers(5);
-            producer.Context.SetCurrentStageNumber(enterParams.StageNumber);
+            producer.Context.SetCurrentStageNumber(enterParams.EncounterNumber);
             G.Producer = producer;
 
             // ========== Enemy ==========

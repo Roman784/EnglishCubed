@@ -41,13 +41,9 @@
     "Session": {
         "Data": {
             "IsStarted": true,
-            "StageNumber": 0,
-            "PassedStages": [
-                1,
-                2,
-                3,
-                4
-            ],
+            "IsInEncounter": false,
+            "CurrentEncounterNumber": 0,
+            "PassedEncounters": [],
             "Hero": 1,
             "Abilities": [],
             "Stats": [

@@ -3,6 +3,7 @@ using System.Linq;
 using UI;
 using UnityEngine;
 using R3;
+using GameRoot;
 
 namespace EncountersMap
 {
@@ -31,6 +32,10 @@ namespace EncountersMap
             CreateLinks();
             AdaptEncounterButtonsContainerSize();
             SetButtonStates();
+
+            var centerNode = _model.MapGenerator.GetCenterNode();
+            _model.EncounterButtonsMap[centerNode].Unlock();
+            _model.EncounterButtonsMap[centerNode].SetCombat();
         }
 
         private void CreateEncountersNodes()
@@ -107,9 +112,9 @@ namespace EncountersMap
                 var node = encounterKvp.Key;
                 var button = encounterKvp.Value;
 
-                if (_model.PassedStages.Contains(node.StageNumber))
+                if (_model.PassedEncounters.Contains(node.Number))
                     button.Complete();
-                else if (node.LinkedNodes.Any(linkedNode => _model.PassedStages.Contains(linkedNode.StageNumber)))
+                else if (node.LinkedNodes.Any(linkedNode => _model.PassedEncounters.Contains(linkedNode.Number)))
                     button.Unlock();
                 else
                     button.Hide();

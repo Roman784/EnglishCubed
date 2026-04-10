@@ -13,11 +13,11 @@ namespace EncountersMap
         {
             var isLoaded = false;
 
-            var passedStages = G.GameSessionProvider.SessionData.PassedStages;
+            var passedEncounters = G.GameSessionProvider.SessionData.PassedEncounters;
             var mapGenerator = new EncountersMapGenerator();
 
             var model = new EncountersMapModel(
-                passedStages: passedStages,
+                passedEncounters: passedEncounters,
                 mapGenerator: mapGenerator,
                 mapSize: new Vector2Int(5, 7),
                 spacingBetweenEncounterButtons: 384);

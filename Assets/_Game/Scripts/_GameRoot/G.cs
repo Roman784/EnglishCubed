@@ -31,5 +31,6 @@ namespace GameRoot
         public static PointsFactory PointsFactory;
 
         public static GameConfigs Configs => ConfigsProvider.GameConfigs;
+        public static GameSessionData SessionData => G.GameSessionProvider.SessionData;
     }
 }

@@ -44,7 +44,13 @@ namespace MainMenu
 
         private void ContinueLastGameSession()
         {
-            var stageNumber = G.GameSessionProvider.SessionData.StageNumber;
+            if (!G.SessionData.IsInEncounter)
+            {
+                G.SceneProvider.OpenEncountersMap();
+                return;
+            }
+
+            var stageNumber = G.SessionData.CurrentEncounterNumber;
             G.SceneProvider.OpenCombat(stageNumber);
         }
 

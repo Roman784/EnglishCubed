@@ -6,7 +6,7 @@ namespace EncountersMap
 {
     public class EncountersMapModel
     {
-        public IEnumerable<int> PassedStages { get; private set; }
+        public IEnumerable<int> PassedEncounters { get; private set; }
         public EncountersMapGenerator MapGenerator { get; private set; }
         public Vector2Int MapSize { get; private set; }
         public float SpacingBetweenEncounterButtons { get; private set; }
@@ -18,12 +18,12 @@ namespace EncountersMap
         public IReadOnlyDictionary<EncounterNode, EncounterButton> EncounterButtonsMap => _encounterButtonsMap;
 
         public EncountersMapModel(
-            IEnumerable<int> passedStages,
+            IEnumerable<int> passedEncounters,
             EncountersMapGenerator mapGenerator,
             Vector2Int mapSize,
             float spacingBetweenEncounterButtons)
         {
-            PassedStages = passedStages;
+            PassedEncounters = passedEncounters;
             MapGenerator = mapGenerator;
             MapSize = mapSize;
             SpacingBetweenEncounterButtons = spacingBetweenEncounterButtons;

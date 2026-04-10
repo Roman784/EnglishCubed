@@ -9,8 +9,9 @@ namespace GameSession
     public class GameSessionData
     {
         public bool IsStarted;
-        public int StageNumber;
-        public int[] PassedStages;
+        public bool IsInEncounter;
+        public int CurrentEncounterNumber;
+        public int[] PassedEncounters;
         public CreatureName Hero;
         public AbilitySaveData[] Abilities;
         public StatData[] Stats;

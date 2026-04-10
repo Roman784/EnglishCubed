@@ -79,7 +79,7 @@ namespace EncountersMap
             int number = 1;
             foreach (var node in _encountersMap)
             {
-                node.Value.SetStageNumber(number);
+                node.Value.SetNumber(number);
                 number++;
             }
         }
