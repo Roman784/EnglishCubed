@@ -24,6 +24,7 @@ namespace GameSession
             _sessionData = new GameSessionData()
             {
                 IsStarted = true,
+                Seed = GetNewSeed(),
                 IsInEncounter = baseOnData.IsInEncounter,
                 PassedEncounters = baseOnData.PassedEncounters,
                 Hero = baseOnData.Hero,
@@ -36,9 +37,10 @@ namespace GameSession
 
         public void StartNewSession(CreatureName hero)
         {
-            _sessionData = new GameSessionData() 
-            { 
+            _sessionData = new GameSessionData()
+            {
                 IsStarted = true,
+                Seed = GetNewSeed(),
                 IsInEncounter = false,
                 PassedEncounters = new int[0],
                 Hero = hero,
@@ -69,7 +71,7 @@ namespace GameSession
         public void AddPassedEncounter(int passedEncounter)
         {
             if (_sessionData.PassedEncounters.Contains(passedEncounter)) return;
-            _sessionData.PassedEncounters = 
+            _sessionData.PassedEncounters =
                 _sessionData.PassedEncounters.Append(passedEncounter).ToArray();
             SaveSession();
         }
@@ -97,6 +99,11 @@ namespace GameSession
         private void SaveSession()
         {
             G.Repository.Session.SetData(_sessionData);
+        }
+
+        private int GetNewSeed()
+        {
+            return Random.Range(10000000, 99999999);
         }
     }
 }

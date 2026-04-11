@@ -9,6 +9,7 @@ namespace GameSession
     public class GameSessionData
     {
         public bool IsStarted;
+        public int Seed;
         public bool IsInEncounter;
         public int CurrentEncounterNumber;
         public int[] PassedEncounters;

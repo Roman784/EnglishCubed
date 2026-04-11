@@ -121,7 +121,7 @@ namespace EncountersMap
             if (_model.PassedEncounters.Contains(node.Number))
                 button.Complete();
             else if (!node.LinkedNodes.Any(linkedNode => _model.PassedEncounters.Contains(linkedNode.Number)))
-                button.SetUnknown();
+                button.SetUnknown(true);
         }
 
         private void SetButtonName(EncounterButton button)
@@ -135,7 +135,9 @@ namespace EncountersMap
         private void SetCenterNode()
         {
             var centerNode = _model.MapGenerator.GetCenterNode();
-            _model.EncounterButtonsMap[centerNode].SetName(EncounterName.Combat);
+            var button = _model.EncounterButtonsMap[centerNode];
+            button.SetUnknown(false);
+            button.SetName(EncounterName.Combat);
         }
 
         private void SetBossCombatNode()

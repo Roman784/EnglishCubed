@@ -60,10 +60,11 @@ namespace UI
             _selectionView.localScale = Vector3.zero;
         }
 
-        public void SetUnknown()
+        public void SetUnknown(bool value)
         {
-            _isUnknown = true;
-            _iconView.sprite = _unknownSprite;
+            _isUnknown = value;
+            if (value)
+                _iconView.sprite = _unknownSprite;
         }
 
         public void SetName(EncounterName encounterName)

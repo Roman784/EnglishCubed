@@ -39,6 +39,7 @@ namespace MainMenu
             //G.SceneProvider.OpenLevelMenu();
 
             G.GameSessionProvider.StartNewSession(_model.SelectedHero);
+            Random.InitState(G.GameSessionProvider.SessionData.Seed);
             G.SceneProvider.OpenCombat(1); // TEMP
         }
 
