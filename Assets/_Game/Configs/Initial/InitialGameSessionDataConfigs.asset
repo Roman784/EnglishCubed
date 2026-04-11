@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2aacdb668773f694ba506a4a965b6b97, type: 3}
-  m_Name: DefaultGameSessionDataConfigs
+  m_Name: InitialGameSessionDataConfigs
   m_EditorClassIdentifier: Assembly-CSharp::Configs.DefaultGameSessionDataConfigs
   Data:
     IsStarted: 0

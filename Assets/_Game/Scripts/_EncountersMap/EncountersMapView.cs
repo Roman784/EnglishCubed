@@ -1,4 +1,6 @@
 using DG.Tweening;
+using LevelMenu;
+using R3;
 using UI;
 using UnityEngine;
 
@@ -15,10 +17,15 @@ namespace EncountersMap
         [SerializeField] private Transform _goToButtonView;
         [SerializeField] private Transform _alreadyPassedView;
 
+        private Subject<Unit> _exitButtonPressedSignalSubj = new();
+        public Observable<Unit> ExitButtonPressedSignal => _exitButtonPressedSignalSubj;
+
         private void Start()
         {
             ClearEncountersButtonsContainer();
         }
+
+        public void PressExitButton() => _exitButtonPressedSignalSubj.OnNext(Unit.Default);
 
         public EncounterButton CreateEncounterButton(
             Vector2Int coordinates, Vector2Int offset, float spacing)

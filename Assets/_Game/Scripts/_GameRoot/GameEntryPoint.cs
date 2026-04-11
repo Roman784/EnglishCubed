@@ -103,13 +103,7 @@ namespace GameRoot
             else if (initialEditorScene != Scenes.BOOT) { SceneManager.LoadScene(initialEditorScene); return; }
 #endif
 
-            SetSeed();
             G.SceneProvider.OpenMainMenu();
-        }
-
-        private void SetSeed()
-        {
-            UnityEngine.Random.InitState(G.GameSessionProvider.SessionData.Seed);
         }
     }
 }

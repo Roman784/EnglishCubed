@@ -1,6 +1,7 @@
 using Abilities;
 using Gameplay;
 using GameRoot;
+using LevelMenu;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -28,6 +29,7 @@ namespace GameSession
                 IsInEncounter = baseOnData.IsInEncounter,
                 PassedEncounters = baseOnData.PassedEncounters,
                 Hero = baseOnData.Hero,
+                Level = baseOnData.Level,
                 Abilities = baseOnData.Abilities,
                 Stats = baseOnData.Stats,
                 Experience = baseOnData.Experience,
@@ -35,7 +37,7 @@ namespace GameSession
             SaveSession();
         }
 
-        public void StartNewSession(CreatureName hero)
+        public void StartNewSession(CreatureName hero, LevelName level)
         {
             _sessionData = new GameSessionData()
             {
@@ -44,6 +46,7 @@ namespace GameSession
                 IsInEncounter = false,
                 PassedEncounters = new int[0],
                 Hero = hero,
+                Level = level,
                 Abilities = new AbilitySaveData[0],
                 Stats = new StatData[0],
                 Experience = new ExperienceSaveData(),

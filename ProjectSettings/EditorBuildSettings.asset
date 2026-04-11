@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/_Game/Scenes/HeroMenu.unity
     guid: e52dd36cdf611d84c8965e5e9af47f1c
   - enabled: 1
+    path: Assets/_Game/Scenes/EncountersMap.unity
+    guid: 0ac2b6cb10fc62f499663cfae70ca1c1
+  - enabled: 1
     path: Assets/_Game/Scenes/Combat.unity
     guid: dbafc162469487c4c8b7361f1c2c6784
   - enabled: 1

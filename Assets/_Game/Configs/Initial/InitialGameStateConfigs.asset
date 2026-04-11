@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 976add5073485714b8e2b2f0614ca5e9, type: 3}
-  m_Name: DefaultGameStateConfigs
+  m_Name: InitialGameStateConfigs
   m_EditorClassIdentifier: 
   State:
     MetaProgression:

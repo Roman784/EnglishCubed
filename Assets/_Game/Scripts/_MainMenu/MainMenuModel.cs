@@ -8,10 +8,5 @@ namespace MainMenu
     public class MainMenuModel
     {
         public bool IsGameSessionStarted => G.GameSessionProvider.IsSessionStarted;
-        public CreatureName SelectedHero => G.Repository.MetaProgression.GetSelectedHero();
-
-        public MainMenuModel()
-        {
-        }
     }
 }

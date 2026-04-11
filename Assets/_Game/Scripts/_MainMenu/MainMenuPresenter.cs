@@ -36,15 +36,13 @@ namespace MainMenu
 
         private void OpenLevelMenu()
         {
-            //G.SceneProvider.OpenLevelMenu();
-
-            G.GameSessionProvider.StartNewSession(_model.SelectedHero);
-            Random.InitState(G.GameSessionProvider.SessionData.Seed);
-            G.SceneProvider.OpenCombat(1); // TEMP
+            G.SceneProvider.OpenLevelMenu();
         }
 
         private void ContinueLastGameSession()
         {
+            Random.InitState(G.GameSessionProvider.SessionData.Seed);
+
             if (!G.SessionData.IsInEncounter)
             {
                 G.SceneProvider.OpenEncountersMap();

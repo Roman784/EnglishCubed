@@ -481,9 +481,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MainMenu.MainMenuView, Assembly-CSharp
-        m_MethodName: PressStartButton
+      - m_Target: {fileID: 1442390345}
+        m_TargetAssemblyTypeName: LevelMenu.LevelMenuView, Assembly-CSharp
+        m_MethodName: PressForestPathButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -788,6 +788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cd133eb8e63df94fac56d8679f8bc1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelMenu.LevelMenuEntryPoint
+  _view: {fileID: 1442390345}
 --- !u!1 &586463089
 GameObject:
   m_ObjectHideFlags: 0
@@ -1668,8 +1669,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: HeroMenu.HeroMenuView, Assembly-CSharp
+      - m_Target: {fileID: 1442390345}
+        m_TargetAssemblyTypeName: LevelMenu.LevelMenuView, Assembly-CSharp
         m_MethodName: PressExitButton
         m_Mode: 1
         m_Arguments:
@@ -1761,6 +1762,7 @@ GameObject:
   - component: {fileID: 1442390343}
   - component: {fileID: 1442390342}
   - component: {fileID: 1442390341}
+  - component: {fileID: 1442390345}
   m_Layer: 5
   m_Name: View
   m_TagString: Untagged
@@ -1856,6 +1858,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1442390345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1442390340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: facc068a85367fa4bb264d70211f1acf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelMenu.LevelMenuView
 --- !u!1 &1488216299
 GameObject:
   m_ObjectHideFlags: 0

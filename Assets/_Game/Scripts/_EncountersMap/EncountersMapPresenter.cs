@@ -23,7 +23,8 @@ namespace EncountersMap
 
         private void SetupSubscriptions()
         {
-
+            _view.ExitButtonPressedSignal
+                .Subscribe(_ => OpenMainMenu()); 
         }
 
         public void CreateMap()
@@ -148,6 +149,11 @@ namespace EncountersMap
             
             if (button.IsUnknown) return;
             button.SetName(EncounterName.BossCombat);
+        }
+
+        private void OpenMainMenu()
+        {
+            G.SceneProvider.OpenMainMenu();
         }
     }
 }

@@ -1,6 +1,6 @@
 {
     "MetaProgression": {
-        "SelectedHero": 5,
+        "SelectedHero": 3,
         "UnlockedHeroes": [
             1,
             2,
@@ -41,44 +41,14 @@
     "Session": {
         "Data": {
             "IsStarted": true,
-            "Seed": 20725547,
+            "Seed": 72697684,
             "IsInEncounter": false,
             "CurrentEncounterNumber": 0,
             "PassedEncounters": [],
-            "Hero": 5,
+            "Hero": 3,
+            "Level": 1,
             "Abilities": [],
-            "Stats": [
-                {
-                    "Name": 25,
-                    "Value": 3.0,
-                    "Max": 3.0
-                },
-                {
-                    "Name": 24,
-                    "Value": 4.0,
-                    "Max": 4.0
-                },
-                {
-                    "Name": 23,
-                    "Value": 5.0,
-                    "Max": 5.0
-                },
-                {
-                    "Name": 22,
-                    "Value": 10.0,
-                    "Max": 10.0
-                },
-                {
-                    "Name": 0,
-                    "Value": 2.0,
-                    "Max": 2.0
-                },
-                {
-                    "Name": 1,
-                    "Value": 3.0,
-                    "Max": 3.0
-                }
-            ],
+            "Stats": [],
             "Experience": {
                 "CurrentValue": 0,
                 "Level": 0
