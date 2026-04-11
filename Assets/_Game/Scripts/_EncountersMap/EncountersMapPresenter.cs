@@ -4,6 +4,7 @@ using UI;
 using UnityEngine;
 using R3;
 using GameRoot;
+using System;
 
 namespace EncountersMap
 {
@@ -31,11 +32,8 @@ namespace EncountersMap
             CreateEncounterButtons();
             CreateLinks();
             AdaptEncounterButtonsContainerSize();
-            SetButtonStates();
-
-            var centerNode = _model.MapGenerator.GetCenterNode();
-            _model.EncounterButtonsMap[centerNode].Unlock();
-            _model.EncounterButtonsMap[centerNode].SetCombat();
+            UnlockCenterNode();
+            SetUpButtons();
         }
 
         private void CreateEncountersNodes()
@@ -55,22 +53,8 @@ namespace EncountersMap
                 var coordinates = encounterNode.Key;
                 var button = _view.CreateEncounterButton(
                     coordinates, centerOffset, _model.SpacingBetweenEncounterButtons);
-                SetUpEncounterButton(button);
                 _model.AddEncounterButton(encounterNode.Value, button);
             }
-        }
-
-        private void SetUpEncounterButton(EncounterButton button)
-        {
-            button.SelectedSignal.Subscribe(_ =>
-            {
-                _model.SelectedEncounterButton?.Deselect();
-                button.Select();
-                _model.SelectedEncounterButton = button;
-
-                _view.UpdateGoToButton(!button.IsLocked);
-                _view.UpdateAlreadyPassed(button.IsPassed);
-            });
         }
 
         private void CreateLinks()
@@ -105,20 +89,54 @@ namespace EncountersMap
             _view.AdaptEncounterButtonsContainerSize(minPositions, maxPositions);
         }
 
-        private void SetButtonStates()
+        private void SetUpButtons()
         {
             foreach (var encounterKvp in _model.EncounterButtonsMap)
             {
                 var node = encounterKvp.Key;
                 var button = encounterKvp.Value;
 
-                if (_model.PassedEncounters.Contains(node.Number))
-                    button.Complete();
-                else if (node.LinkedNodes.Any(linkedNode => _model.PassedEncounters.Contains(linkedNode.Number)))
-                    button.Unlock();
-                else
-                    button.Hide();
+                SetButtonSelection(button);
+                SetButtonState(node, button);
+                SetButtonName(node.Number, button);
             }
+        }
+
+        private void SetButtonSelection(EncounterButton button)
+        {
+            button.SelectedSignal.Subscribe(_ =>
+            {
+                _model.SelectedEncounterButton?.Deselect();
+                button.Select();
+                _model.SelectedEncounterButton = button;
+
+                _view.UpdateGoToButton(!button.IsLocked);
+                _view.UpdateAlreadyPassed(button.IsPassed);
+            });
+        }
+
+        private void SetButtonState(EncounterNode node, EncounterButton button)
+        {
+            if (_model.PassedEncounters.Contains(node.Number))
+                button.Complete();
+            else if (node.LinkedNodes.Any(linkedNode => _model.PassedEncounters.Contains(linkedNode.Number)))
+                button.Unlock();
+            else
+                button.Lock();
+        }
+
+        private void SetButtonName(int number, EncounterButton button)
+        {
+            var names = Enum.GetValues(typeof(EncounterName)).Cast<EncounterName>()
+                .Where(name => name != EncounterName.BossCombat);
+            
+        }
+
+        private void UnlockCenterNode()
+        {
+            var centerNode = _model.MapGenerator.GetCenterNode();
+            _model.EncounterButtonsMap[centerNode].Unlock();
+            _model.EncounterButtonsMap[centerNode].SetName(EncounterName.Combat);
         }
     }
 }

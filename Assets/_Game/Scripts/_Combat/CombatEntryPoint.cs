@@ -92,14 +92,12 @@ namespace Combat
 
             // ========== Game Producer ==========
 
-            var producer = new GameplayProducer();
-            producer.Context.SetTotalStageNumbers(5);
-            producer.Context.SetCurrentStageNumber(enterParams.EncounterNumber);
-            G.Producer = producer;
+            G.GameProducer.Context.SetTotalStageNumbers(5);
+            G.GameProducer.Context.SetCurrentStageNumber(enterParams.EncounterNumber);
 
             // ========== Enemy ==========
 
-            var enemySpec = producer.Enemy.GetEnemy();
+            var enemySpec = G.GameProducer.Enemy.GetEnemy();
             var enemyPrefab = enemySpec.EnemyConfigs.Prefab;
             var enemyHealth = enemySpec.Health;
             var enemy = Instantiate(enemyPrefab, _location.EnemyPosition, Quaternion.identity);

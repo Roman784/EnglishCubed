@@ -698,20 +698,64 @@ TextureImporter:
       name: ic_combat
       rect:
         serializedVersion: 2
-        x: 1407
-        y: 268
-        width: 192
-        height: 192
+        x: 22
+        y: 1211
+        width: 209
+        height: 209
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0e6e34f3046054488c1c81f7933f54e
-      internalID: 1398669554
+      spriteID: f2dd399c4d6b8be40bb1e29cec876d5f
+      internalID: 1398242545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ic_emergencyCombat
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 1211
+        width: 209
+        height: 209
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07924eee7c990aa49b938b4650f206db
+      internalID: 1414188175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ic_bossCombat
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 1201
+        width: 236
+        height: 236
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2856e99c222b3374f8c624fd95e66842
+      internalID: -1179608014
       vertices: []
       indices: 
       edges: []
@@ -742,8 +786,10 @@ TextureImporter:
       enemy_1: 664701876
       fanfare: 1456700952
       hero_knight: 757588557
+      ic_bossCombat: -1179608014
       ic_coin: -267339983
-      ic_combat: 1398669554
+      ic_combat: 1398242545
+      ic_emergencyCombat: 1414188175
       ic_heart_empty: -780306982
       ic_heart_full: -222968538
       ic_infinity: -186057115

@@ -1,21 +1,19 @@
 using Configs;
+using Gameplay;
 using GameRoot;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using static UnityEngine.Rendering.STP;
 
-namespace Gameplay
+namespace GameProducer
 {
     public class EnemyProducer
     {
-        private ProducerContext _context;
+        private GameProducerContext _context;
 
         private EnemiesConfigs Configs => G.Configs.EnemiesConfigs;
         private IReadOnlyList<EnemyConfigs> AllEnemies => Configs.AllEnemiesConfigs;
 
-        public EnemyProducer(ProducerContext context)
+        public EnemyProducer(GameProducerContext context)
         {
             _context = context;
         }

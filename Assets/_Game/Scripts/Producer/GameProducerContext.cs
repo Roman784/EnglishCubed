@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace Gameplay
+namespace GameProducer
 {
-    public class ProducerContext
+    public class GameProducerContext
     {
         public int CurrentStageNumber { get; private set; }
         public int TotalStageNumbers { get; private set; }

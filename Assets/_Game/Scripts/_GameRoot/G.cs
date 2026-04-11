@@ -6,7 +6,6 @@ using Gameplay;
 using GameSession;
 using GameState;
 using UI;
-using UnityEngine;
 
 namespace GameRoot
 {
@@ -22,9 +21,9 @@ namespace GameRoot
         public static Wallet Wallet;
         public static GameSessionProvider GameSessionProvider;
         public static AbilityProvider AbilityProvider;
+        public static GameProducer.GameProducer GameProducer;
 
         // Gameplay.
-        public static GameplayProducer Producer;
         public static CameraShaker CameraShaker;
         public static WordUnitsMovementProvider WordUnitsMovementProvider;
         public static WordUnitFactory WordUnitFactory;

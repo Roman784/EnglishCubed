@@ -1,4 +1,5 @@
 using DG.Tweening;
+using EncountersMap;
 using R3;
 using TMPro;
 using UnityEngine;
@@ -16,15 +17,19 @@ namespace UI
         [Space]
 
         [SerializeField] private Color _completedColor;
-        [SerializeField] private Sprite _hideSprite;
+        [SerializeField] private Sprite _unknownSprite;
         [SerializeField] private Sprite _combatSprite;
+        [SerializeField] private Sprite _emergencyCombatSprite;
+        [SerializeField] private Sprite _bossCombatSprite;
 
         private RectTransform _rectTransform;
+        private EncounterName _name;
         private bool _isLocked;
         private bool _isPassed;
         private Subject<Unit> _selectedSignalSubj = new();
 
         public RectTransform RectTransform => _rectTransform;
+        public bool HasName => _name != EncounterName.None;
         public bool IsLocked => _isLocked;
         public bool IsPassed => _isPassed;
         public Observable<Unit> SelectedSignal => _selectedSignalSubj;
@@ -55,20 +60,28 @@ namespace UI
             _selectionView.localScale = Vector3.zero;
         }
 
-        public void SetCombat()
-        {
-            _iconView.sprite = _combatSprite;
-        }
+        public void Lock() => _isLocked = true;
+        public void Unlock() => _isLocked = false;
 
-        public void Unlock()
+        public void SetName(EncounterName encounterName)
         {
-            _isLocked = false;
-        }
+            _name = encounterName;
 
-        public void Hide()
-        {
-            _isLocked = true;
-            _iconView.sprite = _hideSprite;
+            switch (encounterName)
+            {
+                case EncounterName.Unknown:
+                    _iconView.sprite = _unknownSprite;
+                    break;
+                case EncounterName.Combat:
+                    _iconView.sprite = _combatSprite;
+                    break;
+                case EncounterName.EmergencyCombat:
+                    _iconView.sprite = _combatSprite;
+                    break;
+                case EncounterName.BossCombat:
+                    _iconView.sprite = _combatSprite;
+                    break;
+            }
         }
 
         public void Complete()

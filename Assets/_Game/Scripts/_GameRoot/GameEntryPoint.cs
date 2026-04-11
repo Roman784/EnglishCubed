@@ -48,6 +48,7 @@ namespace GameRoot
             G.Wallet = new Wallet();
             G.GameSessionProvider = new GameSessionProvider();
             G.AbilityProvider = new AbilityProvider();
+            G.GameProducer = new GameProducer.GameProducer();
 
             StartGame();
         }
