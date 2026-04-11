@@ -7,6 +7,8 @@ namespace EncountersMap
     public class EncountersMapGenerator
     {
         private Dictionary<Vector2Int, EncounterNode> _encountersMap;
+        private Vector2Int _minCoordinates;
+        private Vector2Int _maxCoordinates;
 
         private Vector2Int[] _nodeLinkDirections = new Vector2Int[4]
         {
@@ -29,6 +31,9 @@ namespace EncountersMap
                 {
                     var node = new EncounterNode();
                     _encountersMap.Add(new Vector2Int(x, y), node);
+
+                    _minCoordinates = Vector2Int.Min(_minCoordinates, new Vector2Int(x, y));
+                    _maxCoordinates = Vector2Int.Max(_maxCoordinates, new Vector2Int(x, y));
                 }
             }
         }
@@ -62,16 +67,7 @@ namespace EncountersMap
 
         public Vector2Int GetCenterCoordinates()
         {
-            Vector2Int minCoordinates = _encountersMap.First().Key;
-            Vector2Int maxCoordinates = _encountersMap.First().Key;
-            foreach (var node in _encountersMap)
-            {
-                var coordinates = node.Key;
-                minCoordinates = Vector2Int.Min(minCoordinates, coordinates);
-                maxCoordinates = Vector2Int.Max(maxCoordinates, coordinates);
-            }
-
-            return (maxCoordinates - minCoordinates) / 2;
+            return (_maxCoordinates - _minCoordinates) / 2;
         }
 
         public void SetStageNumbers()
@@ -81,6 +77,19 @@ namespace EncountersMap
             {
                 node.Value.SetNumber(number);
                 number++;
+            }
+        }
+
+        public IEnumerable<EncounterNode> GetEdgeNodes()
+        {
+            foreach (var kvp in _encountersMap)
+            {
+                var coordinates = kvp.Key;
+                if (coordinates.x == _minCoordinates.x || coordinates.x == _maxCoordinates.x ||
+                    coordinates.y == _minCoordinates.y || coordinates.y == _maxCoordinates.y)
+                {
+                    yield return kvp.Value;
+                }
             }
         }
     }

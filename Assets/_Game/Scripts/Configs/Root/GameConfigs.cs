@@ -10,6 +10,7 @@ namespace Configs
     {
         public LexiconConfigs LexiconConfigs;
         public GrammarHintsConfigs GrammarHintsConfigs;
+        public EncountersConfigs EncountersConfigs;
         public PointMultiplierNamesConfigs PointMultiplierNamesConfigs;
         public StatsConfigs StatsConfigs;
         public HeroesConfigs HeroesConfigs;

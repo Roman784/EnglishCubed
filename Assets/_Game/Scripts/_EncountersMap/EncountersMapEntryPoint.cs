@@ -22,7 +22,7 @@ namespace EncountersMap
             var model = new EncountersMapModel(
                 passedEncounters: passedEncounters,
                 mapGenerator: mapGenerator,
-                mapSize: new Vector2Int(5, 7),
+                mapSize: new Vector2Int(7, 7),
                 spacingBetweenEncounterButtons: 384);
             var presenter = new EncountersMapPresenter(_view, model);
 

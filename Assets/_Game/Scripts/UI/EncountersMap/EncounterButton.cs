@@ -24,13 +24,13 @@ namespace UI
 
         private RectTransform _rectTransform;
         private EncounterName _name;
-        private bool _isLocked;
+        private bool _isUnknown;
         private bool _isPassed;
         private Subject<Unit> _selectedSignalSubj = new();
 
         public RectTransform RectTransform => _rectTransform;
         public bool HasName => _name != EncounterName.None;
-        public bool IsLocked => _isLocked;
+        public bool IsUnknown => _isUnknown;
         public bool IsPassed => _isPassed;
         public Observable<Unit> SelectedSignal => _selectedSignalSubj;
 
@@ -60,8 +60,11 @@ namespace UI
             _selectionView.localScale = Vector3.zero;
         }
 
-        public void Lock() => _isLocked = true;
-        public void Unlock() => _isLocked = false;
+        public void SetUnknown()
+        {
+            _isUnknown = true;
+            _iconView.sprite = _unknownSprite;
+        }
 
         public void SetName(EncounterName encounterName)
         {
@@ -69,24 +72,24 @@ namespace UI
 
             switch (encounterName)
             {
-                case EncounterName.Unknown:
-                    _iconView.sprite = _unknownSprite;
-                    break;
                 case EncounterName.Combat:
                     _iconView.sprite = _combatSprite;
                     break;
                 case EncounterName.EmergencyCombat:
-                    _iconView.sprite = _combatSprite;
+                    _iconView.sprite = _emergencyCombatSprite;
                     break;
                 case EncounterName.BossCombat:
-                    _iconView.sprite = _combatSprite;
+                    _iconView.sprite = _bossCombatSprite;
+                    break;
+                default:
+                    _iconView.sprite = _unknownSprite;
                     break;
             }
         }
 
         public void Complete()
         {
-            _isLocked = true;
+            _isUnknown = false;
             _isPassed = true;
             _backgroundView.color = _completedColor;
         }

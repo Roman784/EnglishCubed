@@ -32,8 +32,9 @@ namespace EncountersMap
             CreateEncounterButtons();
             CreateLinks();
             AdaptEncounterButtonsContainerSize();
-            UnlockCenterNode();
             SetUpButtons();
+            SetCenterNode();
+            SetBossCombatNode();
         }
 
         private void CreateEncountersNodes()
@@ -98,7 +99,7 @@ namespace EncountersMap
 
                 SetButtonSelection(button);
                 SetButtonState(node, button);
-                SetButtonName(node.Number, button);
+                SetButtonName(button);
             }
         }
 
@@ -107,10 +108,10 @@ namespace EncountersMap
             button.SelectedSignal.Subscribe(_ =>
             {
                 _model.SelectedEncounterButton?.Deselect();
-                button.Select();
                 _model.SelectedEncounterButton = button;
+                button.Select();
 
-                _view.UpdateGoToButton(!button.IsLocked);
+                _view.UpdateGoToButton(!(button.IsUnknown || button.IsPassed));
                 _view.UpdateAlreadyPassed(button.IsPassed);
             });
         }
@@ -119,24 +120,32 @@ namespace EncountersMap
         {
             if (_model.PassedEncounters.Contains(node.Number))
                 button.Complete();
-            else if (node.LinkedNodes.Any(linkedNode => _model.PassedEncounters.Contains(linkedNode.Number)))
-                button.Unlock();
-            else
-                button.Lock();
+            else if (!node.LinkedNodes.Any(linkedNode => _model.PassedEncounters.Contains(linkedNode.Number)))
+                button.SetUnknown();
         }
 
-        private void SetButtonName(int number, EncounterButton button)
+        private void SetButtonName(EncounterButton button)
         {
-            var names = Enum.GetValues(typeof(EncounterName)).Cast<EncounterName>()
-                .Where(name => name != EncounterName.BossCombat);
-            
+            if (button.IsUnknown) return;
+
+            var name = G.GameProducer.Encounter.GetEncounterName();
+            button.SetName(name);
         }
 
-        private void UnlockCenterNode()
+        private void SetCenterNode()
         {
             var centerNode = _model.MapGenerator.GetCenterNode();
-            _model.EncounterButtonsMap[centerNode].Unlock();
             _model.EncounterButtonsMap[centerNode].SetName(EncounterName.Combat);
+        }
+
+        private void SetBossCombatNode()
+        {
+            var validateNodes = _model.MapGenerator.GetEdgeNodes().ToArray();
+            var node = validateNodes[UnityEngine.Random.Range(0, validateNodes.Length)];
+            var button = _model.EncounterButtonsMap[node];
+            
+            if (button.IsUnknown) return;
+            button.SetName(EncounterName.BossCombat);
         }
     }
 }

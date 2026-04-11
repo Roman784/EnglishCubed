@@ -7,12 +7,14 @@ namespace GameProducer
     {
         public GameProducerContext Context { get; private set; }
 
+        public readonly EncounterProducer Encounter;
         public readonly EnemyProducer Enemy;
 
         public GameProducer()
         {
             Context = new GameProducerContext();
 
+            Encounter = new EncounterProducer(Context);
             Enemy = new EnemyProducer(Context);
         }
     }
