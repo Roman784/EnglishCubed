@@ -16,6 +16,8 @@ namespace EncountersMap
         {
             var isLoaded = false;
 
+            Random.InitState(G.GameSessionProvider.SessionData.Seed);
+
             var passedEncounters = G.GameSessionProvider.SessionData.PassedEncounters;
             var mapGenerator = new EncountersMapGenerator();
 

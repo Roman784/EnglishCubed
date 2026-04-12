@@ -1445,9 +1445,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI.CombatVictoryPopUp, Assembly-CSharp
-        m_MethodName: ContinueGame
+      - m_Target: {fileID: 1442390345}
+        m_TargetAssemblyTypeName: EncountersMap.EncountersMapView, Assembly-CSharp
+        m_MethodName: PressGoToEncounterButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

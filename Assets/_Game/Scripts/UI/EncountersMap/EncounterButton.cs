@@ -18,6 +18,7 @@ namespace UI
 
         [SerializeField] private Color _completedColor;
         [SerializeField] private Sprite _unknownSprite;
+        [SerializeField] private Sprite _checkMarkSprite;
         [SerializeField] private Sprite _combatSprite;
         [SerializeField] private Sprite _emergencyCombatSprite;
         [SerializeField] private Sprite _bossCombatSprite;
@@ -29,6 +30,7 @@ namespace UI
         private Subject<Unit> _selectedSignalSubj = new();
 
         public RectTransform RectTransform => _rectTransform;
+        public EncounterName Name => _name;
         public bool HasName => _name != EncounterName.None;
         public bool IsUnknown => _isUnknown;
         public bool IsPassed => _isPassed;
@@ -92,7 +94,8 @@ namespace UI
         {
             _isUnknown = false;
             _isPassed = true;
-            _backgroundView.color = _completedColor;
+            _iconView.sprite = _checkMarkSprite;
+            //_backgroundView.color = _completedColor;
         }
     }
 }

@@ -17,6 +17,7 @@ namespace EncountersMap
         };
 
         public IReadOnlyDictionary<Vector2Int, EncounterNode> EncountersMap => _encountersMap;
+        public int NodesCount => _encountersMap.Count;
 
         public EncountersMapGenerator()
         {

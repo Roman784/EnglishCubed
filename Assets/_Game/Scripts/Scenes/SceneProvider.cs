@@ -47,9 +47,9 @@ namespace GameRoot
             OpenScene<HeroMenuEntryPoint, HeroMenuEnterParams>(enterParams);
         }
 
-        public void OpenCombat(int encounterNumber)
+        public void OpenCombat(EncounterName encounterName, int encounterNumber)
         {
-            var enterParams = new CombatEnterParams(encounterNumber);
+            var enterParams = new CombatEnterParams(encounterName, encounterNumber);
             OpenScene<CombatEntryPoint, CombatEnterParams>(enterParams);
         }
 

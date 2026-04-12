@@ -760,6 +760,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: ic_checkMark
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 1203
+        width: 209
+        height: 209
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8acb36a2acbf7b94c8e39801b497de03
+      internalID: 720061333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -787,6 +809,7 @@ TextureImporter:
       fanfare: 1456700952
       hero_knight: 757588557
       ic_bossCombat: -1179608014
+      ic_checkMark: 720061333
       ic_coin: -267339983
       ic_combat: 1398242545
       ic_emergencyCombat: 1414188175

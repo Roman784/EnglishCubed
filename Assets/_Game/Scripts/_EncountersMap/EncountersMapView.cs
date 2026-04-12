@@ -17,7 +17,10 @@ namespace EncountersMap
         [SerializeField] private Transform _goToButtonView;
         [SerializeField] private Transform _alreadyPassedView;
 
+        private Subject<Unit> _goToEncounterButtonPressedSignalSubj = new();
         private Subject<Unit> _exitButtonPressedSignalSubj = new();
+
+        public Observable<Unit> GoToEncounterButtonPressedSignal => _goToEncounterButtonPressedSignalSubj;
         public Observable<Unit> ExitButtonPressedSignal => _exitButtonPressedSignalSubj;
 
         private void Start()
@@ -25,6 +28,7 @@ namespace EncountersMap
             ClearEncountersButtonsContainer();
         }
 
+        public void PressGoToEncounterButton() => _goToEncounterButtonPressedSignalSubj.OnNext(Unit.Default);
         public void PressExitButton() => _exitButtonPressedSignalSubj.OnNext(Unit.Default);
 
         public EncounterButton CreateEncounterButton(

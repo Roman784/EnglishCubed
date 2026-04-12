@@ -171,10 +171,12 @@ namespace Combat
 
         // ================ Upgrades ================
 
-        public void OpenNewLevelUpgradePopUps()
+        public Observable<Unit> OpenNewLevelUpgradePopUps()
         {
             _view.DisableControls();
             
+            var onCompleted = new Subject<Unit>();
+
             var abilitySelectionPopUp = G.PopUpsProvider.OpenAbilitySelectionPopUp(
                 G.AbilityProvider.GetAbilitiesForSelection(_model.AbilityInventory.GetAcquiredAbilities()));
 
@@ -195,8 +197,13 @@ namespace Combat
                     _model.Deck.Add(configs));
 
                 wordUnitSelectionPopUp.CloseSignal.Subscribe(__ =>
-                    _view.EnableControls());
+                {
+                    _view.EnableControls();
+                    onCompleted.OnNext(Unit.Default);
+                });
             });
+
+            return onCompleted;
         }
 
         // ================ Discard ================
@@ -296,9 +303,29 @@ namespace Combat
             Observable.Timer(TimeSpan.FromSeconds(2f)).Subscribe(_ =>
             {
                 if (!_model.Hero.IsAlive) return;
+
+                G.GameSessionProvider.AddPassedEncounter(
+                    _model.EnterParams.EncounterNumber);
+
                 _view.DisableControls();
-                G.PopUpsProvider.OpenCombatVictoryPopUp(100);
                 G.Repository.Currency.AddCoins(100);
+
+                if (_model.HeroStats.Experience.IsNextLevelReached)
+                {
+                    _model.HeroStats.Experience.LevelUp();
+                    Observable.Timer(TimeSpan.FromSeconds(1)).Subscribe(_ =>
+                        OpenNewLevelUpgradePopUps()
+                        .Subscribe(__ =>
+                        {
+                            _model.Hero.SaveStats();
+                            G.PopUpsProvider.OpenCombatVictoryPopUp(100);
+                            _view.DisableControls();
+                        }));
+                }
+                else
+                    G.PopUpsProvider.OpenCombatVictoryPopUp(100);
+
+                _model.Hero.SaveStats();
             });
         }
 

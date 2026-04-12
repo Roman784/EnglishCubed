@@ -1,6 +1,7 @@
 using GameRoot;
 using UnityEngine;
 using R3;
+using EncountersMap;
 
 namespace MainMenu
 {
@@ -49,8 +50,17 @@ namespace MainMenu
                 return;
             }
 
-            var stageNumber = G.SessionData.CurrentEncounterNumber;
-            G.SceneProvider.OpenCombat(stageNumber);
+            var encounterName = G.SessionData.CurrentEncounterName;
+            var encounterNumber = G.SessionData.CurrentEncounterNumber;
+
+            switch (encounterName)
+            {
+                case EncounterName.Combat:
+                case EncounterName.EmergencyCombat:
+                case EncounterName.BossCombat:
+                    G.SceneProvider.OpenCombat(encounterName, encounterNumber);
+                    break;
+            }
         }
 
         private void OpenAbilitiesMenu()

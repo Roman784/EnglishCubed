@@ -95,7 +95,8 @@ namespace GameRoot
             {
                 var defaultGameSessionData = G.Configs.DefaultGameSessionDataConfigs.Data;
                 G.GameSessionProvider.StartNewSession(defaultGameSessionData);
-                G.SceneProvider.OpenCombat(defaultGameSessionData.CurrentEncounterNumber);
+                G.SceneProvider.OpenCombat(
+                    defaultGameSessionData.CurrentEncounterName, defaultGameSessionData.CurrentEncounterNumber);
                 return; 
             }
 

@@ -27,6 +27,7 @@ namespace GameSession
                 IsStarted = true,
                 Seed = GetNewSeed(),
                 IsInEncounter = baseOnData.IsInEncounter,
+                TotalEncountersCount = baseOnData.TotalEncountersCount,
                 PassedEncounters = baseOnData.PassedEncounters,
                 Hero = baseOnData.Hero,
                 Level = baseOnData.Level,
@@ -44,6 +45,7 @@ namespace GameSession
                 IsStarted = true,
                 Seed = GetNewSeed(),
                 IsInEncounter = false,
+                TotalEncountersCount = 1,
                 PassedEncounters = new int[0],
                 Hero = hero,
                 Level = level,
@@ -71,11 +73,17 @@ namespace GameSession
             SaveSession();
         }
 
-        public void AddPassedEncounter(int passedEncounter)
+        public void SetTotalEncountersCount(int count)
         {
-            if (_sessionData.PassedEncounters.Contains(passedEncounter)) return;
+            _sessionData.TotalEncountersCount = count;
+            SaveSession();
+        }
+
+        public void AddPassedEncounter(int number)
+        {
+            if (_sessionData.PassedEncounters.Contains(number)) return;
             _sessionData.PassedEncounters =
-                _sessionData.PassedEncounters.Append(passedEncounter).ToArray();
+                _sessionData.PassedEncounters.Append(number).ToArray();
             SaveSession();
         }
 

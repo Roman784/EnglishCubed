@@ -33,6 +33,8 @@ namespace Combat
         {
             var isLoaded = false;
 
+            UnityEngine.Random.InitState(G.GameSessionProvider.SessionData.Seed);
+
             G.CameraShaker = _cameraShaker;
             G.WordUnitsMovementProvider = new WordUnitsMovementProvider(_handWordUnitsGroup, _fieldWordUnitsGroup);
             G.WordUnitFactory = new WordUnitFactory();
@@ -92,8 +94,7 @@ namespace Combat
 
             // ========== Game Producer ==========
 
-            G.GameProducer.Context.SetTotalStageNumbers(5);
-            G.GameProducer.Context.SetCurrentStageNumber(enterParams.EncounterNumber);
+            G.GameProducer.Context.EncounterName = enterParams.EncounterName;
 
             // ========== Enemy ==========
 
@@ -106,6 +107,7 @@ namespace Combat
             // ========== MVP ==========
 
             var model = new CombatModel(
+                enterParams: enterParams,
                 hero: hero,
                 enemy: enemy,
                 pointMultiplierResolver: pointMultiplierResolver,

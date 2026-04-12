@@ -23,6 +23,9 @@ namespace EncountersMap
 
         private void SetupSubscriptions()
         {
+            _view.GoToEncounterButtonPressedSignal
+                .Subscribe(_ => OpenSelectedEncounter());
+
             _view.ExitButtonPressedSignal
                 .Subscribe(_ => OpenMainMenu()); 
         }
@@ -36,6 +39,9 @@ namespace EncountersMap
             SetUpButtons();
             SetCenterNode();
             SetBossCombatNode();
+
+            G.GameSessionProvider.SetTotalEncountersCount(
+                _model.MapGenerator.NodesCount);
         }
 
         private void CreateEncountersNodes()
@@ -127,7 +133,7 @@ namespace EncountersMap
 
         private void SetButtonName(EncounterButton button)
         {
-            if (button.IsUnknown) return;
+            if (button.IsUnknown || button.IsPassed) return;
 
             var name = G.GameProducer.Encounter.GetEncounterName();
             button.SetName(name);
@@ -137,8 +143,10 @@ namespace EncountersMap
         {
             var centerNode = _model.MapGenerator.GetCenterNode();
             var button = _model.EncounterButtonsMap[centerNode];
+            
             button.SetUnknown(false);
-            button.SetName(EncounterName.Combat);
+            if (!button.IsPassed)
+                button.SetName(EncounterName.Combat);
         }
 
         private void SetBossCombatNode()
@@ -149,6 +157,22 @@ namespace EncountersMap
             
             if (button.IsUnknown) return;
             button.SetName(EncounterName.BossCombat);
+        }
+
+        private void OpenSelectedEncounter()
+        {
+            var selectedButton = _model.SelectedEncounterButton;
+            var encounterName = selectedButton.Name;
+            var encounterNumber = _model.GetNode(selectedButton).Number;
+
+            switch (encounterName)
+            {
+                case EncounterName.Combat:
+                case EncounterName.EmergencyCombat:
+                case EncounterName.BossCombat:
+                    G.SceneProvider.OpenCombat(encounterName, encounterNumber);
+                    break;
+            }
         }
 
         private void OpenMainMenu()

@@ -45,13 +45,12 @@ namespace UI
 
         public void ContinueGame()
         {
-            Debug.Log("Contineu game");
-            Close();
+            G.SceneProvider.OpenEncountersMap();
         }
 
         public void OpenLevelMenu()
         {
-            G.SceneProvider.OpenLevelMenu();
+            G.SceneProvider.OpenMainMenu();
         }
 
         public void ShowMessage()

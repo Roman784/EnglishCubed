@@ -1,4 +1,5 @@
 using Abilities;
+using EncountersMap;
 using Gameplay;
 using LevelMenu;
 using System;
@@ -12,7 +13,9 @@ namespace GameSession
         public bool IsStarted;
         public int Seed;
         public bool IsInEncounter;
+        public EncounterName CurrentEncounterName;
         public int CurrentEncounterNumber;
+        public int TotalEncountersCount;
         public int[] PassedEncounters;
         public CreatureName Hero;
         public LevelName Level;

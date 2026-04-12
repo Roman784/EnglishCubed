@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UI;
 using UnityEngine;
 
@@ -43,6 +44,11 @@ namespace EncountersMap
                     yield return button;
                 }
             }
+        }
+
+        public EncounterNode GetNode(EncounterButton button)
+        {
+            return _encounterButtonsMap.First(e => e.Value == button).Key;
         }
     }
 }
