@@ -122,6 +122,7 @@ namespace Combat
 
             enemy.TakeDamage(pointsValue, out var animationDuration);
             G.CameraShaker.MidShake();
+            G.GameSessionProvider.SetCurrentEnemyHealth((int)enemy.Stats.Health.CurrentValue);
 
             var experience = _model.HeroStats.CalculateExperience(pointsValue);
             _model.Hero.AddExperience(experience);
@@ -306,6 +307,8 @@ namespace Combat
 
                 G.GameSessionProvider.AddPassedEncounter(
                     _model.EnterParams.EncounterNumber);
+                G.GameSessionProvider.SetIsEnemyExist(false);
+                G.GameSessionProvider.SetIsInEncounter(false);
 
                 _view.DisableControls();
                 G.Repository.Currency.AddCoins(100);
@@ -334,8 +337,9 @@ namespace Combat
             Observable.Timer(TimeSpan.FromSeconds(1f)).Subscribe(_ =>
             {
                 _view.DisableControls();
+                G.GameSessionProvider.EndSession();
                 G.PopUpsProvider.OpenCombatDefeatPopUp();
-             });
+            });
         }
 
         // ================ UI ================

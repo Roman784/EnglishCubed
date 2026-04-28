@@ -6,6 +6,7 @@ namespace GameProducer
     public class GameProducerContext
     {
         public EncounterName EncounterName;
+        public int EncounterNumber;
         public int PassedEncountersCount;
         public int TotalEncountersCount;
 

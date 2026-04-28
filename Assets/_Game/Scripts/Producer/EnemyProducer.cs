@@ -5,6 +5,7 @@ using GameRoot;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using static UnityEngine.Rendering.STP;
 
 namespace GameProducer
 {
@@ -22,15 +23,34 @@ namespace GameProducer
 
         public EnemySpec GetEnemy()
         {
+            if (G.SessionData.IsEnemyExist)
+                return LoadSavedEnemy();
+            return CreateNewEnemy();
+        }
+
+        private EnemySpec LoadSavedEnemy()
+        {
+            var name = G.SessionData.Enemy;
+            return new EnemySpec
+            {
+                EnemyConfigs = Configs.GetEnemy(name),
+                CurrentHealth = G.SessionData.CurrentEnemyHealth,
+                MaxHealth = G.SessionData.MaxEnemyHealth
+            };
+        }
+
+        private EnemySpec CreateNewEnemy()
+        {
             var targetEnemyRank = GetEnemyRankByEncounter(_context.EncounterName);
             var targetEnemies = AllEnemies.Where(e => e.Rank == targetEnemyRank).ToArray();
             var configs = targetEnemies[Random.Range(0, targetEnemies.Length - 1)];
-            var health = CalculateHealth(configs.Rank);
+            var health = CalculateMaxHealth(configs.Rank);
 
             return new EnemySpec
             {
                 EnemyConfigs = configs,
-                Health = health
+                CurrentHealth = health,
+                MaxHealth = health
             };
         }
 
@@ -44,7 +64,7 @@ namespace GameProducer
             }
         }
 
-        private int CalculateHealth(EnemyRank rank)
+        private int CalculateMaxHealth(EnemyRank rank)
         {
             var healthSpread = Configs.GetHealthSpread(rank);
             float health = Random.Range(healthSpread.Min, healthSpread.Max);
@@ -56,6 +76,7 @@ namespace GameProducer
     public class EnemySpec
     {
         public EnemyConfigs EnemyConfigs;
-        public int Health;
+        public int CurrentHealth;
+        public int MaxHealth;
     }
 }

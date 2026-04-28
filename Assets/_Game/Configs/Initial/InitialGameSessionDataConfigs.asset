@@ -14,13 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Configs.DefaultGameSessionDataConfigs
   Data:
     IsStarted: 0
-    StageNumber: 1
+    Seed: 0
+    IsInEncounter: 0
+    CurrentEncounterName: 0
+    CurrentEncounterNumber: 0
+    TotalEncountersCount: 0
+    PassedEncounters: 
     Hero: 1
+    Level: 1
+    IsEnemyExist: 0
+    Enemy: 0
+    CurrentEnemyHealth: 0
     Abilities: []
-    Stats:
-    - Name: 4
-      Value: 10000
-      Max: 10000
+    Stats: []
     Experience:
       CurrentValue: 0
       Level: 0

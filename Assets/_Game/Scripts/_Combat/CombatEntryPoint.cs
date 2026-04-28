@@ -9,6 +9,7 @@ using System.Linq;
 using UnityEngine;
 using R3;
 using System;
+using EncountersMap;
 
 namespace Combat
 {
@@ -95,14 +96,24 @@ namespace Combat
             // ========== Game Producer ==========
 
             G.GameProducer.Context.EncounterName = enterParams.EncounterName;
+            G.GameProducer.Context.EncounterNumber = enterParams.EncounterNumber;
 
             // ========== Enemy ==========
 
             var enemySpec = G.GameProducer.Enemy.GetEnemy();
             var enemyPrefab = enemySpec.EnemyConfigs.Prefab;
-            var enemyHealth = enemySpec.Health;
+            var enemyCurrentHealth = enemySpec.CurrentHealth;
+            var enemyMaxHealth = enemySpec.MaxHealth;
             var enemy = Instantiate(enemyPrefab, _location.EnemyPosition, Quaternion.identity);
-            enemy.Init(new Stats(new Health(enemyHealth)));
+            enemy.Init(new Stats(new Health(enemyCurrentHealth, enemyMaxHealth)));
+
+            if (!G.SessionData.IsEnemyExist)
+            {
+                G.GameSessionProvider.SetEnemy(enemySpec.EnemyConfigs.Name);
+                G.GameSessionProvider.SetCurrentEnemyHealth(enemySpec.CurrentHealth);
+                G.GameSessionProvider.SetMaxEnemyHealth(enemySpec.MaxHealth);
+                G.GameSessionProvider.SetIsEnemyExist(true);
+            }
 
             // ========== MVP ==========
 
@@ -122,6 +133,10 @@ namespace Combat
             _presenter = new CombatPresenter(_view, model);
 
             // ========== Start Game ==========
+
+            G.GameSessionProvider.SetIsInEncounter(true);
+            G.GameSessionProvider.SetCurrentEncounterName(enterParams.EncounterName);
+            G.GameSessionProvider.SetCurrentEncounterNumber(enterParams.EncounterNumber);
 
             _view.EnableControls();
             _presenter.DrawWords();

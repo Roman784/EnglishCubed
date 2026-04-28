@@ -36,53 +36,45 @@
         ]
     },
     "Currency": {
-        "Coins": 102000
+        "Coins": 102900
     },
     "Session": {
         "Data": {
-            "IsStarted": true,
-            "Seed": 14975303,
-            "IsInEncounter": false,
-            "CurrentEncounterName": 0,
-            "CurrentEncounterNumber": 0,
+            "IsStarted": false,
+            "Seed": 16204017,
+            "IsInEncounter": true,
+            "CurrentEncounterName": 3,
+            "CurrentEncounterNumber": 33,
             "TotalEncountersCount": 49,
             "PassedEncounters": [
                 25,
-                32,
-                39,
-                38,
-                31,
                 26
             ],
             "Hero": 3,
             "Level": 1,
+            "IsEnemyExist": true,
+            "Enemy": 6,
+            "CurrentEnemyHealth": 140,
+            "MaxEnemyHealth": 170,
             "Abilities": [
                 {
-                    "Name": 34,
+                    "Name": 26,
                     "StacksCount": 1
                 },
                 {
-                    "Name": 25,
-                    "StacksCount": 1
-                },
-                {
-                    "Name": 11,
-                    "StacksCount": 1
-                },
-                {
-                    "Name": 29,
+                    "Name": 21,
                     "StacksCount": 1
                 }
             ],
             "Stats": [
                 {
                     "Name": 25,
-                    "Value": 1.0,
-                    "Max": 3.0
+                    "Value": 4.0,
+                    "Max": 4.0
                 },
                 {
                     "Name": 24,
-                    "Value": 2.0,
+                    "Value": 4.0,
                     "Max": 4.0
                 },
                 {
@@ -116,29 +108,14 @@
                     "Max": 1.0
                 },
                 {
-                    "Name": 20,
-                    "Value": 0.0,
-                    "Max": 0.0
-                },
-                {
-                    "Name": 12,
-                    "Value": 0.0,
-                    "Max": 0.0
-                },
-                {
-                    "Name": 3,
-                    "Value": 0.0,
-                    "Max": 0.0
-                },
-                {
-                    "Name": 17,
+                    "Name": 10,
                     "Value": 0.0,
                     "Max": 0.0
                 }
             ],
             "Experience": {
-                "CurrentValue": 134,
-                "Level": 4
+                "CurrentValue": 60,
+                "Level": 2
             }
         }
     },

@@ -19,6 +19,10 @@ namespace GameSession
         public int[] PassedEncounters;
         public CreatureName Hero;
         public LevelName Level;
+        public bool IsEnemyExist;
+        public CreatureName Enemy;
+        public int CurrentEnemyHealth;
+        public int MaxEnemyHealth;
         public AbilitySaveData[] Abilities;
         public StatData[] Stats;
         public ExperienceSaveData Experience;
