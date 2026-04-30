@@ -40,37 +40,25 @@
     },
     "Session": {
         "Data": {
-            "IsStarted": false,
-            "Seed": 16204017,
+            "IsStarted": true,
+            "Seed": 0,
             "IsInEncounter": true,
-            "CurrentEncounterName": 3,
-            "CurrentEncounterNumber": 33,
-            "TotalEncountersCount": 49,
-            "PassedEncounters": [
-                25,
-                26
-            ],
-            "Hero": 3,
+            "CurrentEncounterName": 0,
+            "CurrentEncounterNumber": 0,
+            "TotalEncountersCount": 0,
+            "PassedEncounters": [],
+            "Hero": 1,
             "Level": 1,
             "IsEnemyExist": true,
-            "Enemy": 6,
-            "CurrentEnemyHealth": 140,
-            "MaxEnemyHealth": 170,
-            "Abilities": [
-                {
-                    "Name": 26,
-                    "StacksCount": 1
-                },
-                {
-                    "Name": 21,
-                    "StacksCount": 1
-                }
-            ],
+            "Enemy": 7,
+            "CurrentEnemyHealth": 95,
+            "MaxEnemyHealth": 95,
+            "Abilities": [],
             "Stats": [
                 {
                     "Name": 25,
-                    "Value": 4.0,
-                    "Max": 4.0
+                    "Value": 3.0,
+                    "Max": 3.0
                 },
                 {
                     "Name": 24,
@@ -94,33 +82,18 @@
                 },
                 {
                     "Name": 1,
-                    "Value": 0.0,
-                    "Max": 3.0
-                },
-                {
-                    "Name": 6,
-                    "Value": 20.0,
-                    "Max": 20.0
-                },
-                {
-                    "Name": 7,
-                    "Value": 1.0,
-                    "Max": 1.0
-                },
-                {
-                    "Name": 10,
-                    "Value": 0.0,
-                    "Max": 0.0
+                    "Value": 5.0,
+                    "Max": 5.0
                 }
             ],
             "Experience": {
-                "CurrentValue": 60,
-                "Level": 2
+                "CurrentValue": 0,
+                "Level": 0
             }
         }
     },
     "Audio": {
-        "SoundVolume": 0.5,
-        "MusicVolume": 0.25
+        "SoundVolume": 0.7161157727241516,
+        "MusicVolume": 0.5336520671844482
     }
 }

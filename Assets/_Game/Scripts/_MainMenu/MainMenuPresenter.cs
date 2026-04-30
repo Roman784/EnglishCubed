@@ -1,7 +1,8 @@
-using GameRoot;
-using UnityEngine;
-using R3;
 using EncountersMap;
+using GameRoot;
+using R3;
+using System;
+using UnityEngine;
 
 namespace MainMenu
 {
@@ -9,6 +10,8 @@ namespace MainMenu
     {
         private MainMenuView _view;
         private MainMenuModel _model;
+
+        private CompositeDisposable _disposables = new();
 
         public MainMenuPresenter(MainMenuView view, MainMenuModel model)
         {
@@ -22,17 +25,25 @@ namespace MainMenu
 
         private void SetupSubscriptions()
         {
+            _view.SettingsButtonPressedSignal
+                .Subscribe(_ => HandleSettings())
+                .AddTo(_disposables);
+
             _view.StartButtonPressedSignal
-                .Subscribe(_ => OpenLevelMenu());
+                .Subscribe(_ => OpenLevelMenu())
+                .AddTo(_disposables);
 
             _view.ContinueButtonPressedSignal
-                .Subscribe(_ => ContinueLastGameSession());
+                .Subscribe(_ => ContinueLastGameSession())
+                .AddTo(_disposables);
 
             _view.AbilitiesButtonPressedSignal
-                .Subscribe(_ => OpenAbilitiesMenu());
+                .Subscribe(_ => OpenAbilitiesMenu())
+                .AddTo(_disposables);
 
             _view.HeroesButtonPressedSignal
-                .Subscribe(_ => OpenHeroesMenu());
+                .Subscribe(_ => OpenHeroesMenu())
+                .AddTo(_disposables);
         }
 
         private void OpenLevelMenu()
@@ -42,7 +53,7 @@ namespace MainMenu
 
         private void ContinueLastGameSession()
         {
-            Random.InitState(G.GameSessionProvider.SessionData.Seed);
+            UnityEngine.Random.InitState(G.GameSessionProvider.SessionData.Seed);
 
             if (!G.SessionData.IsInEncounter)
             {
@@ -71,6 +82,11 @@ namespace MainMenu
         private void OpenHeroesMenu()
         {
             G.SceneProvider.OpenHeroMenu();
+        }
+
+        private void HandleSettings()
+        {
+            G.PopUpsProvider.OpenSettingsPopUp(false);
         }
     }
 }

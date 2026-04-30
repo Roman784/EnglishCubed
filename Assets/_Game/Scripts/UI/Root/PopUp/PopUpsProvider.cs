@@ -16,6 +16,14 @@ namespace UI
             _popUpFactory = new PopUpFactory();
         }
 
+        public SettingsPopUp OpenSettingsPopUp(bool activeMainMenuButton)
+        {
+            var createdPopUp = _popUpFactory.Create(Configs.SettingsPopUpPrefab);
+            createdPopUp.Open(activeMainMenuButton);
+
+            return createdPopUp;
+        }
+
         public DeckPopUp OpenDeckPopUp(IEnumerable<WordUnitConfigs> wordUnitConfigs)
         {
             var createdPopUp = _popUpFactory.Create(Configs.DeckPopUpPrefab);

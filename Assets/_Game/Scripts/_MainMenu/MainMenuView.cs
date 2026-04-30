@@ -7,16 +7,19 @@ namespace MainMenu
     {
         [SerializeField] private CanvasGroup _continueButtonView;
 
+        private Subject<Unit> _settingsButtonPressedSignalSubj = new();
         private Subject<Unit> _startButtonPressedSignalSubj = new();
         private Subject<Unit> _continueButtonPressedSignalSubj = new();
         private Subject<Unit> _abilitiesButtonPressedSignalSubj = new();
         private Subject<Unit> _heroesButtonPressedSignalSubj = new();
 
+        public Observable<Unit> SettingsButtonPressedSignal => _settingsButtonPressedSignalSubj;
         public Observable<Unit> StartButtonPressedSignal => _startButtonPressedSignalSubj;
         public Observable<Unit> ContinueButtonPressedSignal => _continueButtonPressedSignalSubj;
         public Observable<Unit> AbilitiesButtonPressedSignal => _abilitiesButtonPressedSignalSubj;
         public Observable<Unit> HeroesButtonPressedSignal => _heroesButtonPressedSignalSubj;
 
+        public void PressSettingsButton() => _settingsButtonPressedSignalSubj.OnNext(Unit.Default);
         public void PressStartButton() => _startButtonPressedSignalSubj.OnNext(Unit.Default);
         public void PressContinueButton() => _continueButtonPressedSignalSubj.OnNext(Unit.Default);
         public void PressAbilitiesButton() => _abilitiesButtonPressedSignalSubj.OnNext(Unit.Default);

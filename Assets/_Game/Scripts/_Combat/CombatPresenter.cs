@@ -11,10 +11,10 @@ namespace Combat
 {
     public class CombatPresenter : IDisposable
     {
-        private readonly CompositeDisposable _disposables = new();
-
         private CombatView _view;
         private CombatModel _model;
+
+        private CompositeDisposable _disposables = new();
 
         public CombatPresenter(CombatView view, CombatModel model)
         {
@@ -31,6 +31,10 @@ namespace Combat
 
         private void SetupSubscriptions()
         {
+            _view.SettingsButtonPressedSignal
+                .Subscribe(_ => HandleSettings())
+                .AddTo(_disposables);
+
             _view.AttackButtonPressedSignal
                 .ThrottleFirst(TimeSpan.FromSeconds(0.25f))
                 .Subscribe(_ => HandleAttack())
@@ -343,6 +347,13 @@ namespace Combat
         }
 
         // ================ UI ================
+
+        private void HandleSettings()
+        {
+            _view.DisableControls();
+            G.PopUpsProvider.OpenSettingsPopUp(true)
+                .CloseSignal.Subscribe(_ => _view.EnableControls());
+        }
 
         private void UpdateView()
         {

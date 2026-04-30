@@ -11,6 +11,7 @@ namespace GameRoot
         public UIRoot Root;
 
         [Header("PopUps Gameplay")]
+        public SettingsPopUp SettingsPopUpPrefab;
         public DeckPopUp DeckPopUpPrefab;
         public AbilitySelectionPopUp AbilitySelectionPopUpPrefab;
         public WordUnitSelectionPopUp WordUnitSelectionPopUpPrefab;

@@ -35,6 +35,7 @@ namespace Combat
 
         private bool _isEnabled;
 
+        private Subject<Unit> _settingsButtonPressedSignalSubj = new();
         private Subject<Unit> _attackButtonPressedSignalSubj = new();
         private Subject<Unit> _deckButtonPressedSignalSubj = new();
         private Subject<Unit> _drawButtonPressedSignalSubj = new();
@@ -44,6 +45,7 @@ namespace Combat
         public StatCellsView HeroArmorStatView => _heroArmorStatView;
         public StatBarView HeroExperienceStatView => _heroExperienceStatView;
 
+        public Observable<Unit> SettingsButtonPressedSignal => _settingsButtonPressedSignalSubj;
         public Observable<Unit> AttackButtonPressedSignal => _attackButtonPressedSignalSubj;
         public Observable<Unit> DeckButtonPressedSignal => _deckButtonPressedSignalSubj;
         public Observable<Unit> DrawButtonPressedSignal => _drawButtonPressedSignalSubj;
@@ -65,6 +67,7 @@ namespace Combat
             G.WordUnitsMovementProvider.Disable();
         }
 
+        public void PressSettingsButton() { if (_isEnabled) _settingsButtonPressedSignalSubj.OnNext(Unit.Default); }
         public void PressAttackButton() { if (_isEnabled) _attackButtonPressedSignalSubj.OnNext(Unit.Default); }
         public void PressDeckButton() { if (_isEnabled) _deckButtonPressedSignalSubj.OnNext(Unit.Default); }
         public void PressDrawButton() { if (_isEnabled) _drawButtonPressedSignalSubj.OnNext(Unit.Default); }
