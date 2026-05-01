@@ -5,6 +5,7 @@ using Currency;
 using Gameplay;
 using GameSession;
 using GameState;
+using Localization;
 using UI;
 
 namespace GameRoot
@@ -13,6 +14,7 @@ namespace GameRoot
     {
         // Global.
         public static IConfigsProvider ConfigsProvider;
+        public static ILocalizationProvider LocalizationProvider;
         public static Repository Repository;
         public static UIRoot UIRoot;
         public static PopUpsProvider PopUpsProvider;

@@ -2487,6 +2487,7 @@ GameObject:
   - component: {fileID: 1952550125}
   - component: {fileID: 1952550124}
   - component: {fileID: 1952550126}
+  - component: {fileID: 1952550127}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -2564,6 +2565,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI.TitleView
   _viewport: {fileID: 1952550123}
+--- !u!114 &1952550127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1952550122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 251a9e3e451a9384e811f19a4db3cbd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Localization.LocalizedImage
+  _data:
+  - Language: 0
+    Sprite: {fileID: 21300000, guid: 0ed1f7c408d20a04bbdadd48783450fb, type: 3}
 --- !u!1 &2038458691
 GameObject:
   m_ObjectHideFlags: 0

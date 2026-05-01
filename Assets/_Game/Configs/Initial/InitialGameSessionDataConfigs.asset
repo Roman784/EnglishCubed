@@ -16,7 +16,7 @@ MonoBehaviour:
     IsStarted: 0
     Seed: 0
     IsInEncounter: 0
-    CurrentEncounterName: 0
+    CurrentEncounterName: 2
     CurrentEncounterNumber: 0
     TotalEncountersCount: 0
     PassedEncounters: 
@@ -25,8 +25,11 @@ MonoBehaviour:
     IsEnemyExist: 0
     Enemy: 0
     CurrentEnemyHealth: 0
+    MaxEnemyHealth: 0
     Abilities: []
     Stats: []
     Experience:
       CurrentValue: 0
       Level: 0
+    WordsInHand: []
+    WordsInDeck: []

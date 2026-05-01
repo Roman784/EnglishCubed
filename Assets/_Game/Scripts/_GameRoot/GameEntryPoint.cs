@@ -4,6 +4,7 @@ using Configs;
 using Currency;
 using GameSession;
 using GameState;
+using Localization;
 using R3;
 using System;
 using System.Collections;
@@ -31,6 +32,7 @@ namespace GameRoot
 
             G.ConfigsProvider = new ScriptableObjectConfigsProvider();
             var gameStateProvider = new JsonGameStateProvider();
+            G.LocalizationProvider = new JsonLocalizationProvider();
 
             yield return HandleLoading(
                 G.ConfigsProvider.LoadGameConfigs(),
@@ -41,6 +43,11 @@ namespace GameRoot
                 "Failed to load game state!");
 
             G.Repository = new Repository(gameStateProvider);
+
+            yield return HandleLoading(
+                G.LocalizationProvider.LoadTranslations(G.Repository.Language.GetLanguage()),
+                "Failed to load localization configs!");
+
             G.UIRoot = CreateUIRoot();
             G.PopUpsProvider = new PopUpsProvider();
             G.SceneProvider = new SceneProvider(G.UIRoot);
