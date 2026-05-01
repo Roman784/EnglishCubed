@@ -43,7 +43,7 @@
             "IsStarted": true,
             "Seed": 0,
             "IsInEncounter": true,
-            "CurrentEncounterName": 0,
+            "CurrentEncounterName": 2,
             "CurrentEncounterNumber": 0,
             "TotalEncountersCount": 0,
             "PassedEncounters": [],
@@ -51,18 +51,18 @@
             "Level": 1,
             "IsEnemyExist": true,
             "Enemy": 7,
-            "CurrentEnemyHealth": 95,
-            "MaxEnemyHealth": 95,
+            "CurrentEnemyHealth": 90,
+            "MaxEnemyHealth": 90,
             "Abilities": [],
             "Stats": [
                 {
                     "Name": 25,
-                    "Value": 3.0,
+                    "Value": 2.0,
                     "Max": 3.0
                 },
                 {
                     "Name": 24,
-                    "Value": 4.0,
+                    "Value": 2.0,
                     "Max": 4.0
                 },
                 {
@@ -89,7 +89,12 @@
             "Experience": {
                 "CurrentValue": 0,
                 "Level": 0
-            }
+            },
+            "WordsInHand": [],
+            "WordsInDeck": [
+                "itit",
+                "workerworker"
+            ]
         }
     },
     "Audio": {

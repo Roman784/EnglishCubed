@@ -1,6 +1,4 @@
 using GrammarValidation;
-using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
 
 namespace Configs
@@ -11,5 +9,7 @@ namespace Configs
     {
         public int Points;
         public WordData Word;
+
+        public string Name => Word.Text + Word.Lemma;
     }
 }

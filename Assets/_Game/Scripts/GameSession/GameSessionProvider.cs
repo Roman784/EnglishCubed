@@ -30,16 +30,18 @@ namespace GameSession
                 Seed = baseOnData.Seed,
                 IsInEncounter = baseOnData.IsInEncounter,
                 TotalEncountersCount = baseOnData.TotalEncountersCount,
-                PassedEncounters = new List<int>(baseOnData.PassedEncounters).ToArray(),
+                PassedEncounters = new List<int>(baseOnData.PassedEncounters),
                 Hero = baseOnData.Hero,
                 Level = baseOnData.Level,
-                Abilities = new List<AbilitySaveData>(baseOnData.Abilities).ToArray(),
-                Stats = new List<StatData>(baseOnData.Stats).ToArray(),
+                Abilities = new List<AbilitySaveData>(baseOnData.Abilities),
+                Stats = new List<StatData>(baseOnData.Stats),
                 Experience = baseOnData.Experience,
                 IsEnemyExist = baseOnData.IsEnemyExist,
                 Enemy = baseOnData.Enemy,
                 CurrentEnemyHealth = baseOnData.CurrentEnemyHealth,
-                MaxEnemyHealth = baseOnData.MaxEnemyHealth
+                MaxEnemyHealth = baseOnData.MaxEnemyHealth,
+                WordsInHand = new List<string>(baseOnData.WordsInHand),
+                WordsInDeck = new List<string>(baseOnData.WordsInDeck)
             };
             SaveSession();
         }
@@ -53,16 +55,18 @@ namespace GameSession
                 IsInEncounter = false,
                 TotalEncountersCount = 1,
                 CurrentEncounterNumber = -1,
-                PassedEncounters = new int[0],
+                PassedEncounters = new(),
                 Hero = hero,
                 Level = level,
-                Abilities = new AbilitySaveData[0],
-                Stats = new StatData[0],
-                Experience = new ExperienceSaveData(),
+                Abilities = new(),
+                Stats = new(),
+                Experience = new (),
                 IsEnemyExist = false,
                 Enemy = CreatureName.None,
                 CurrentEnemyHealth = 0,
-                MaxEnemyHealth = 0
+                MaxEnemyHealth = 0,
+                WordsInHand = new(),
+                WordsInDeck = new()
             };
             SaveSession();
         }
@@ -103,14 +107,13 @@ namespace GameSession
         public void AddPassedEncounter(int number)
         {
             if (_sessionData.PassedEncounters.Contains(number)) return;
-            _sessionData.PassedEncounters =
-                _sessionData.PassedEncounters.Append(number).ToArray();
+            _sessionData.PassedEncounters.Add(number);
             SaveSession();
         }
 
         public void SetAbilities(IEnumerable<AbilitySaveData> abilities)
         {
-            _sessionData.Abilities = abilities.ToArray();
+            _sessionData.Abilities = abilities.ToList();
             SaveSession();
         }
 
@@ -118,7 +121,7 @@ namespace GameSession
         {
             _sessionData.Stats = stats
                 .Where(s => s.Name != StatName.Experience)
-                .ToArray();
+                .ToList();
             SaveSession();
         }
 
@@ -149,6 +152,18 @@ namespace GameSession
         public void SetMaxEnemyHealth(int health)
         {
             _sessionData.MaxEnemyHealth = health;
+            SaveSession();
+        }
+
+        public void SetWordsInHand(IEnumerable<string> words)
+        {
+            _sessionData.WordsInHand = words.ToList();
+            SaveSession();
+        }
+
+        public void SetWordsInDeck(IEnumerable<string> words)
+        {
+            _sessionData.WordsInDeck = words.ToList();
             SaveSession();
         }
 

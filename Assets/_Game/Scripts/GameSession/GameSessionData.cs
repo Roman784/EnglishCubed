@@ -3,6 +3,7 @@ using EncountersMap;
 using Gameplay;
 using LevelMenu;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace GameSession
@@ -16,15 +17,17 @@ namespace GameSession
         public EncounterName CurrentEncounterName;
         public int CurrentEncounterNumber;
         public int TotalEncountersCount;
-        public int[] PassedEncounters;
+        public List<int> PassedEncounters;
         public CreatureName Hero;
         public LevelName Level;
         public bool IsEnemyExist;
         public CreatureName Enemy;
         public int CurrentEnemyHealth;
         public int MaxEnemyHealth;
-        public AbilitySaveData[] Abilities;
-        public StatData[] Stats;
+        public List<AbilitySaveData> Abilities;
+        public List<StatData> Stats;
         public ExperienceSaveData Experience;
+        public List<string> WordsInHand;
+        public List<string> WordsInDeck;
     }
 }

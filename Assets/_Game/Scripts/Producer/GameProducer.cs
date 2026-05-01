@@ -9,6 +9,7 @@ namespace GameProducer
 
         public readonly EncounterProducer Encounter;
         public readonly EnemyProducer Enemy;
+        public readonly WordUnitsProducer WordUnits;
 
         public GameProducer()
         {
@@ -16,6 +17,7 @@ namespace GameProducer
 
             Encounter = new EncounterProducer(Context);
             Enemy = new EnemyProducer(Context);
+            WordUnits = new WordUnitsProducer(Context);
         }
     }
 }

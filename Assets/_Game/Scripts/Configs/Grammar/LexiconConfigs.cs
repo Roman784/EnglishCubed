@@ -18,6 +18,8 @@ namespace Configs
 
         private Dictionary<string, WordUnitConfigs> _allWordsMap;
 
+        public IEnumerable<WordUnitConfigs> AllWords => _allWordsMap.Values;
+
         public WordUnitConfigs Lookup(string word)
         {
             if (_allWordsMap.ContainsKey(word))
@@ -48,7 +50,7 @@ namespace Configs
             {
                 if (word == null) continue;
 
-                var key = word.Word.Text;
+                var key = word.Name;
                 if (_allWordsMap.ContainsKey(key))
                 {
                     Debug.LogError($"Word {key} already in the lexicon!");

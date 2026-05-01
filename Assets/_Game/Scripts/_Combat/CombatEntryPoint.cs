@@ -45,9 +45,23 @@ namespace Combat
             var heroName = sessionData.Hero;
             var heroConfigs = G.Configs.HeroesConfigs.GetHero(heroName);
 
-            _deck = new Deck(_wordUnitsConfigs);
             var grammarValidator = new GrammarValidator(G.Configs.LexiconConfigs);
             var pointsCounter = new PointsCounter(_location.PointsAccumulationPosition);
+
+            // ========== Game Producer ==========
+
+            G.GameProducer.Context.EncounterName = enterParams.EncounterName;
+            G.GameProducer.Context.EncounterNumber = enterParams.EncounterNumber;
+
+            // ========== Deck ==========
+
+            IEnumerable<WordUnitConfigs> wordUnitsInDeck;
+            if (G.SessionData.WordsInDeck.Count == 0)
+                wordUnitsInDeck = G.GameProducer.WordUnits.GetWords(20);
+            else
+                wordUnitsInDeck = G.Configs.LexiconConfigs.AllWords.Where
+                    (w => G.SessionData.WordsInDeck.Contains(w.Name));
+            _deck = new Deck(wordUnitsInDeck);
 
             // ========== Stats ==========
 
@@ -93,11 +107,6 @@ namespace Combat
             var hero = Instantiate(heroPrefab, _location.HeroPosition, Quaternion.identity);
             hero.Init(_heroStats);
 
-            // ========== Game Producer ==========
-
-            G.GameProducer.Context.EncounterName = enterParams.EncounterName;
-            G.GameProducer.Context.EncounterNumber = enterParams.EncounterNumber;
-
             // ========== Enemy ==========
 
             var enemySpec = G.GameProducer.Enemy.GetEnemy();
@@ -106,14 +115,6 @@ namespace Combat
             var enemyMaxHealth = enemySpec.MaxHealth;
             var enemy = Instantiate(enemyPrefab, _location.EnemyPosition, Quaternion.identity);
             enemy.Init(new Stats(new Health(enemyCurrentHealth, enemyMaxHealth)));
-
-            if (!G.SessionData.IsEnemyExist)
-            {
-                G.GameSessionProvider.SetEnemy(enemySpec.EnemyConfigs.Name);
-                G.GameSessionProvider.SetCurrentEnemyHealth(enemySpec.CurrentHealth);
-                G.GameSessionProvider.SetMaxEnemyHealth(enemySpec.MaxHealth);
-                G.GameSessionProvider.SetIsEnemyExist(true);
-            }
 
             // ========== MVP ==========
 
@@ -138,8 +139,15 @@ namespace Combat
             G.GameSessionProvider.SetCurrentEncounterName(enterParams.EncounterName);
             G.GameSessionProvider.SetCurrentEncounterNumber(enterParams.EncounterNumber);
 
+            if (!G.SessionData.IsEnemyExist)
+            {
+                G.GameSessionProvider.SetEnemy(enemySpec.EnemyConfigs.Name);
+                G.GameSessionProvider.SetCurrentEnemyHealth(enemySpec.CurrentHealth);
+                G.GameSessionProvider.SetMaxEnemyHealth(enemySpec.MaxHealth);
+                G.GameSessionProvider.SetIsEnemyExist(true);
+            }
+
             _view.EnableControls();
-            _presenter.DrawWords();
 
             isLoaded = true;
             yield return new WaitUntil(() => isLoaded);
@@ -147,6 +155,7 @@ namespace Combat
 
         private void OnDestroy()
         {
+            _deck?.Dispose();
             _presenter?.Dispose();
         }
 

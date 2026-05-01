@@ -5,7 +5,6 @@ using GameRoot;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using static UnityEngine.Rendering.STP;
 
 namespace GameProducer
 {
