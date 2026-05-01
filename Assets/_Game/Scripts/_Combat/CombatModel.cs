@@ -74,7 +74,6 @@ namespace Combat
             AbilityInventory = abilityInventory;
             AvailableWordUnitsConfigs = availableWordUnitsConfigs;
 
-            HandWordUnitsGroup.Init();
             FieldWordUnitsGroup.SetMaxAvailableWordsCount((int)FieldCapacity.Max);
 
             Discards.Current.Subscribe(_ => _changedSignalSubj.OnNext(Unit.Default));

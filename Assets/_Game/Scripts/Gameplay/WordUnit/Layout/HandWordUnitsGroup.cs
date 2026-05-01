@@ -1,3 +1,4 @@
+using GameRoot;
 using R3;
 using System.Collections;
 using System.Collections.Generic;
@@ -23,9 +24,16 @@ namespace Gameplay
         public int AllElementsCount => _layout.AllElementsCount; // Including backplates.
         public Observable<Unit> ChangedSignal => _changedSignalSubj;
 
-        public void Init()
+        public void Init(IEnumerable<WordUnit> wordUnits = null)
         {
             _layout = GetComponent<HandFlowLayout>();
+
+            if (wordUnits != null)
+            {
+                foreach (var wordUnit in wordUnits)
+                    Add(wordUnit);
+                Layout.Arrange();
+            }
         }
 
         public bool CanMoveIn(WordUnit wordUnit) => _backplatesMap.ContainsKey(wordUnit);
@@ -92,6 +100,13 @@ namespace Gameplay
 
             _backplatesForDestruction.Clear();
             _changedSignalSubj.OnNext(Unit.Default);
+        }
+
+        public IEnumerable<string> GetWords()
+        {
+            var words = _allWordUnits.Select(w => w.Configs.Name).ToList();
+            words.AddRange(_backplatesMap.Keys.Select(w => w.Configs.Name));
+            return words;
         }
     }
 }

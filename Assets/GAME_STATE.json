@@ -57,12 +57,12 @@
             "Stats": [
                 {
                     "Name": 25,
-                    "Value": 2.0,
+                    "Value": 0.0,
                     "Max": 3.0
                 },
                 {
                     "Name": 24,
-                    "Value": 2.0,
+                    "Value": 0.0,
                     "Max": 4.0
                 },
                 {
@@ -77,7 +77,7 @@
                 },
                 {
                     "Name": 0,
-                    "Value": 3.0,
+                    "Value": 1.0,
                     "Max": 3.0
                 },
                 {
@@ -90,10 +90,19 @@
                 "CurrentValue": 0,
                 "Level": 0
             },
-            "WordsInHand": [],
+            "WordsInHand": [
+                "arebe"
+            ],
             "WordsInDeck": [
+                "thethe",
+                "doesdo",
+                "ambe",
+                "workerworker",
+                "applesapple",
                 "itit",
-                "workerworker"
+                "theythey",
+                "we",
+                "likeslike"
             ]
         }
     },

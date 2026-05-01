@@ -20,6 +20,13 @@ namespace Configs
 
         public IEnumerable<WordUnitConfigs> AllWords => _allWordsMap.Values;
 
+        public WordUnitConfigs GetByName(string name)
+        {
+            if (_allWordsMap.ContainsKey(name))
+                return _allWordsMap[name];
+            return null;
+        }
+
         public WordUnitConfigs Lookup(string word)
         {
             if (_allWordsMap.ContainsKey(word))

@@ -294,11 +294,16 @@ namespace Combat
                 var wordUnitConfigs = _model.Deck.DrawRandom();
                 if (wordUnitConfigs == null) continue;
 
-                var createdWord = G.WordUnitFactory.Create(wordUnitConfigs, _view.DrawWordUnitsButtonPosition);
-                _model.HandWordUnitsGroup.Add(createdWord);
+                CreateWordUnitInHand(wordUnitConfigs);
             }
-            _model.HandWordUnitsGroup.Layout.Arrange();
             _model.Hero.SaveStats();
+        }
+
+        public void CreateWordUnitInHand(WordUnitConfigs configs)
+        {
+            var createdWord = G.WordUnitFactory.Create(configs, _view.DrawWordUnitsButtonPosition);
+            _model.HandWordUnitsGroup.Add(createdWord);
+            _model.HandWordUnitsGroup.Layout.Arrange();
         }
 
         // ================ Level Completion ================

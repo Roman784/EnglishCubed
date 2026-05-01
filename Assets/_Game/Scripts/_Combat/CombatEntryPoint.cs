@@ -1,15 +1,16 @@
 using Abilities;
 using Configs;
+using EncountersMap;
 using Gameplay;
 using GameRoot;
 using GrammarValidation;
+using R3;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using R3;
-using System;
-using EncountersMap;
+using static UnityEngine.Rendering.STP;
 
 namespace Combat
 {
@@ -52,6 +53,17 @@ namespace Combat
 
             G.GameProducer.Context.EncounterName = enterParams.EncounterName;
             G.GameProducer.Context.EncounterNumber = enterParams.EncounterNumber;
+
+            // ======== Hand ==========
+
+            IEnumerable<WordUnit> handWordUnits = null;
+            if (G.SessionData.WordsInHand.Count != 0)
+                handWordUnits = G.SessionData.WordsInHand.Select(w => 
+                    G.WordUnitFactory.Create(G.Configs.LexiconConfigs.GetByName(w), Vector2.zero));
+            _handWordUnitsGroup.Init(handWordUnits);
+            _handWordUnitsGroup.ChangedSignal
+                .Subscribe(_ => G.GameSessionProvider.SetWordsInHand(_handWordUnitsGroup.GetWords()))
+                .AddTo(this);
 
             // ========== Deck ==========
 
