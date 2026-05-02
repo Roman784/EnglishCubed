@@ -22,8 +22,7 @@ MonoBehaviour:
   Price: 100
   Levels:
   - Icon: {fileID: 1261599998, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
-    Title: "\u0417\u0430\u043F\u043B\u0430\u0442\u043A\u0430"
-    Description: "\u0412\u043E\u0437\u0432\u0440\u0430\u0449\u0430\u0435\u0442 \u043F\u043E\u043B\u043E\u0432\u0438\u043D\u0443
-      \u0449\u0438\u0442\u043E\u0432"
+    Title: armor_restoration_1_name
+    Description: armor_restoration_1_description
     Details: 
     Values: []

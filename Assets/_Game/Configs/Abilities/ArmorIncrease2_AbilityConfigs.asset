@@ -22,16 +22,14 @@ MonoBehaviour:
   Price: 100
   Levels:
   - Icon: {fileID: -291291248, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
-    Title: "\u0421\u0442\u043E\u0439\u043A\u043E\u0441\u0442\u044C X2"
-    Description: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
-      \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0449\u0438\u0442\u043E\u0432\r\n"
-    Details: <size=48>+{0}<sprite index="4">
+    Title: armor_increase_2_name
+    Description: armor_increase_2_description
+    Details: ability_details_4
     Values:
     - 2
   - Icon: {fileID: -291291248, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
-    Title: "\u0421\u0442\u043E\u0439\u043A\u043E\u0441\u0442\u044C X2"
-    Description: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
-      \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0449\u0438\u0442\u043E\u0432\r\n"
-    Details: <size=48>+{0}<sprite index="4">
+    Title: armor_increase_2_name
+    Description: armor_increase_2_description
+    Details: ability_details_4
     Values:
     - 2

@@ -15,8 +15,8 @@ namespace Configs
 
         [Space]
 
-        [TextArea(2, 2)] public string NameDescription;
-        [TextArea(4, 5)] public string DetailsDescription;
+        public string NameDescription;
+        public string DetailsDescription;
 
         [Space]
 

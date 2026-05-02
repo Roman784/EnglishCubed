@@ -14,9 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Configs.HeroConfigs
   Name: 1
   Prefab: {fileID: 25979446726815077, guid: de0072833dfa7294ca331e59edec7d8f, type: 3}
-  NameDescription: "\u0420\u044B\u0446\u0430\u0440\u044C"
-  DetailsDescription: "<size=80><sprite index=\"3\"> {0}\\t<sprite index=\"4\"> {1}</size>\n\u041A\u0440\u0435\u043F\u043A\u0430\u044F
-    \u0431\u0440\u043E\u043D\u044F"
+  NameDescription: hero_knight_name
+  DetailsDescription: hero_knight_description
   Price: 0
   InitialStats:
   - Name: 0

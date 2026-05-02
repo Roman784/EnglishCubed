@@ -1,5 +1,5 @@
 {
-    "Language" : {
+    "Language": {
         "Language": 0
     },
     "MetaProgression": {
@@ -56,17 +56,26 @@
             "Enemy": 7,
             "CurrentEnemyHealth": 90,
             "MaxEnemyHealth": 90,
-            "Abilities": [],
+            "Abilities": [
+                {
+                    "Name": 15,
+                    "StacksCount": 1
+                },
+                {
+                    "Name": 20,
+                    "StacksCount": 1
+                }
+            ],
             "Stats": [
                 {
                     "Name": 25,
-                    "Value": 0.0,
+                    "Value": 3.0,
                     "Max": 3.0
                 },
                 {
                     "Name": 24,
-                    "Value": 0.0,
-                    "Max": 4.0
+                    "Value": 6.0,
+                    "Max": 6.0
                 },
                 {
                     "Name": 23,
@@ -75,12 +84,12 @@
                 },
                 {
                     "Name": 22,
-                    "Value": 10.0,
-                    "Max": 10.0
+                    "Value": 11.0,
+                    "Max": 11.0
                 },
                 {
                     "Name": 0,
-                    "Value": 1.0,
+                    "Value": 3.0,
                     "Max": 3.0
                 },
                 {
@@ -93,19 +102,30 @@
                 "CurrentValue": 0,
                 "Level": 0
             },
-            "WordsInHand": [
-                "arebe"
-            ],
+            "WordsInHand": [],
             "WordsInDeck": [
-                "thethe",
+                "we",
+                "workerworker",
+                "likeslike",
+                "theythey",
+                "isbe",
+                "dodo",
+                "itit",
+                "sheshe",
+                "arebe",
+                "youyou",
+                "aa",
+                "tiredtired",
+                "appleapple",
                 "doesdo",
                 "ambe",
-                "workerworker",
+                "anan",
+                "ii",
                 "applesapple",
+                "thethe",
+                "hehe",
                 "itit",
-                "theythey",
-                "we",
-                "likeslike"
+                "ii"
             ]
         }
     },

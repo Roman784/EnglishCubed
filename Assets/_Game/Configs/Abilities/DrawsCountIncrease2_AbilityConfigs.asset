@@ -22,20 +22,14 @@ MonoBehaviour:
   Price: 100
   Levels:
   - Icon: {fileID: 4662272, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
-    Title: "\u041F\u043E\u043F\u043E\u043B\u043D\u0435\u043D\u0438\u0435 \u0421\u043B\u043E\u0432
-      X2"
-    Description: "\u0411\u043E\u043B\u044C\u0448\u0435 \u043E\u0447\u043A\u043E\u0432
-      \u043F\u043E\u043F\u043E\u043B\u043D\u0435\u043D\u0438\u044F \u043F\u043E\u043B\u044F
-      \u0441\u043B\u043E\u0432\u0430\u043C\u0438"
-    Details: <size=48>+{0}
+    Title: draw_count_increase_1_name
+    Description: draw_count_increase_1_description
+    Details: ability_details_1
     Values:
     - 2
   - Icon: {fileID: 4662272, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
-    Title: "\u041F\u043E\u043F\u043E\u043B\u043D\u0435\u043D\u0438\u0435 \u0421\u043B\u043E\u0432
-      X2"
-    Description: "\u0411\u043E\u043B\u044C\u0448\u0435 \u043E\u0447\u043A\u043E\u0432
-      \u043F\u043E\u043F\u043E\u043B\u043D\u0435\u043D\u0438\u044F \u043F\u043E\u043B\u044F
-      \u0441\u043B\u043E\u0432\u0430\u043C\u0438"
-    Details: <size=48>+{0}
+    Title: draw_count_increase_1_name
+    Description: draw_count_increase_1_description
+    Details: ability_details_1
     Values:
     - 2

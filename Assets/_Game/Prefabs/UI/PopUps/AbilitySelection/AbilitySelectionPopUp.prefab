@@ -101,6 +101,7 @@ GameObject:
   - component: {fileID: 8092870679817995748}
   - component: {fileID: 7002580671712331202}
   - component: {fileID: 366159781715488706}
+  - component: {fileID: 2240685869166157590}
   m_Layer: 5
   m_Name: Txt
   m_TagString: Untagged
@@ -227,6 +228,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &2240685869166157590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234679954906434280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce18f1dbcd79fe548999a38c0aeaeab5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Localization.LocalizedText
+  _key: skip
+  _layoutsForRebuild: []
 --- !u!1 &1339840925056905828
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,6 +345,7 @@ GameObject:
   - component: {fileID: 8461668750524744113}
   - component: {fileID: 3643102256978167151}
   - component: {fileID: 8753653191989636900}
+  - component: {fileID: 3446432649650927036}
   m_Layer: 0
   m_Name: TitleTxt
   m_TagString: Untagged
@@ -456,6 +472,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &3446432649650927036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2258553656658448828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce18f1dbcd79fe548999a38c0aeaeab5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Localization.LocalizedText
+  _key: new_level
+  _layoutsForRebuild: []
 --- !u!1 &3366080109896522619
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,6 +621,7 @@ GameObject:
   - component: {fileID: 3368540362624968630}
   - component: {fileID: 2213888075562480408}
   - component: {fileID: 8099261833707002978}
+  - component: {fileID: 8557773413323687512}
   m_Layer: 0
   m_Name: HintTxt
   m_TagString: Untagged
@@ -732,6 +763,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Utils.Pulsation
   _amplitude: 0.05
   _period: 0.25
+--- !u!114 &8557773413323687512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7201898909751996581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce18f1dbcd79fe548999a38c0aeaeab5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Localization.LocalizedText
+  _key: select_one_skill
+  _layoutsForRebuild: []
 --- !u!1 &7864105037093469879
 GameObject:
   m_ObjectHideFlags: 0

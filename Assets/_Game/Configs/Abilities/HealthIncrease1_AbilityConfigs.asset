@@ -22,23 +22,20 @@ MonoBehaviour:
   Price: 100
   Levels:
   - Icon: {fileID: 3764425192585943739, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
-    Title: "\u0416\u0438\u0432\u0443\u0447\u0435\u0441\u0442\u044C"
-    Description: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
-      \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0441\u0435\u0440\u0434\u0435\u0446"
-    Details: <size=48>+{0}<sprite index="3">
+    Title: health_increase_1_name
+    Description: health_increase_1_description
+    Details: ability_details_3
     Values:
     - 1
   - Icon: {fileID: 3764425192585943739, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
-    Title: "\u0416\u0438\u0432\u0443\u0447\u0435\u0441\u0442\u044C"
-    Description: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
-      \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0441\u0435\u0440\u0434\u0435\u0446"
-    Details: <size=48>+{0}<sprite index="3">
+    Title: health_increase_1_name
+    Description: health_increase_1_description
+    Details: ability_details_3
     Values:
     - 1
   - Icon: {fileID: 3764425192585943739, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
-    Title: "\u0416\u0438\u0432\u0443\u0447\u0435\u0441\u0442\u044C"
-    Description: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
-      \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0441\u0435\u0440\u0434\u0435\u0446"
-    Details: <size=48>+{0}<sprite index="3">
+    Title: health_increase_1_name
+    Description: health_increase_1_description
+    Details: ability_details_3
     Values:
     - 1

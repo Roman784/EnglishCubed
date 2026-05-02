@@ -5515,6 +5515,7 @@ GameObject:
   - component: {fileID: 2036144861}
   - component: {fileID: 2036144863}
   - component: {fileID: 2036144862}
+  - component: {fileID: 2036144864}
   m_Layer: 5
   m_Name: Txt
   m_TagString: Untagged
@@ -5641,6 +5642,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2036144860}
   m_CullTransparentMesh: 1
+--- !u!114 &2036144864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036144860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce18f1dbcd79fe548999a38c0aeaeab5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Localization.LocalizedText
+  _key: attack
+  _layoutsForRebuild: []
 --- !u!1 &2119161305
 GameObject:
   m_ObjectHideFlags: 0

@@ -22,20 +22,14 @@ MonoBehaviour:
   Price: 100
   Levels:
   - Icon: {fileID: 2059557375, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
-    Title: "\u0421\u0438\u043B\u0430 \u043A\u0440\u0438\u0442\u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E
-      \u0443\u0440\u043E\u043D\u0430 "
-    Description: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
-      \u0441\u0438\u043B\u0443 \u043A\u0440\u0438\u0442\u0438\u0447\u0435\u0441\u043A\u043E\u0439
-      \u0430\u0442\u0430\u043A\u0438"
-    Details: <size=48>+{0}%
+    Title: critical_attack_power_increase_name
+    Description: critical_attack_power_increase_description
+    Details: ability_details_2
     Values:
     - 15
   - Icon: {fileID: 2059557375, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
-    Title: "\u0421\u0438\u043B\u0430 \u043A\u0440\u0438\u0442\u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E
-      \u0443\u0440\u043E\u043D\u0430 "
-    Description: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
-      \u0441\u0438\u043B\u0443 \u043A\u0440\u0438\u0442\u0438\u0447\u0435\u0441\u043A\u043E\u0439
-      \u0430\u0442\u0430\u043A\u0438"
-    Details: <size=48>+{0}%
+    Title: critical_attack_power_increase_name
+    Description: critical_attack_power_increase_description
+    Details: ability_details_2
     Values:
     - 15

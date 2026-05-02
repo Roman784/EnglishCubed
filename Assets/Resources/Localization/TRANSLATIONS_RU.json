@@ -1,6 +1,490 @@
 {
     "Items": [
         {
+            "Key": "new_game",
+            "Value": "Новая Игра_" 
+        },
+        {
+            "Key": "continue",
+            "Value": "Продолжить_" 
+        },
+        {
+            "Key": "abilities",
+            "Value": "Способности_" 
+        },
+        {
+            "Key": "heroes",
+            "Value": "Герои_" 
+        },
+        {
+            "Key": "back",
+            "Value": "Назад_" 
+        },
+        {
+            "Key": "close",
+            "Value": "Закрыть_" 
+        },
+        {
+            "Key": "open",
+            "Value": "Открыть_" 
+        },
+        {
+            "Key": "opened",
+            "Value": "Открыто_" 
+        },
+        {
+            "Key": "adventure",
+            "Value": "Путешествие_" 
+        },
+        {
+            "Key": "forest_path",
+            "Value": "Лесная Тропа_" 
+        },
+        {
+            "Key": "level_1",
+            "Value": "Уровень 1_" 
+        },
+        {
+            "Key": "buy",
+            "Value": "Купить_" 
+        },
+        {
+            "Key": "select",
+            "Value": "Выбрать_" 
+        },
+        {
+            "Key": "selected",
+            "Value": "Выбран_" 
+        },
+        {
+            "Key": "map",
+            "Value": "Карта_" 
+        },
+        {
+            "Key": "step_away",
+            "Value": "Отлучиться_" 
+        },
+        {
+            "Key": "passed",
+            "Value": "Пройдено_" 
+        },
+        {
+            "Key": "go_here",
+            "Value": "Отправиться Сюда_" 
+        },
+        {
+            "Key": "available_count",
+            "Value": "Доступно: {0}_" 
+        },
+        {
+            "Key": "words_count",
+            "Value": "Слов: {0}/{1}_" 
+        },
+        {
+            "Key": "into_bag",
+            "Value": "В мешок_" 
+        },
+        {
+            "Key": "attack",
+            "Value": "Атаковать_" 
+        },
+        {
+            "Key": "bag",
+            "Value": "Мешок_" 
+        },
+        {
+            "Key": "new_level",
+            "Value": "Новый Уровень!_" 
+        },
+        {
+            "Key": "skip",
+            "Value": "Пропустить_" 
+        },
+        {
+            "Key": "select_one_skill",
+            "Value": "Выберите один навык_" 
+        },
+        {
+            "Key": "defeat",
+            "Value": "Поражение_" 
+        },
+        {
+            "Key": "accept",
+            "Value": "Принять_" 
+        },
+        {
+            "Key": "victory",
+            "Value": "Победа_" 
+        },
+        {
+            "Key": "continue_path",
+            "Value": "Продолжить Путь_" 
+        },
+        {
+            "Key": "settings",
+            "Value": "Настройки_" 
+        },
+        {
+            "Key": "music_volume",
+            "Value": "Громкость Музыки_" 
+        },
+        {
+            "Key": "sound_volume",
+            "Value": "Громкость Звуков_" 
+        },
+        {
+            "Key": "select_one_word",
+            "Value": "Выберите одно слово_" 
+        },
+        {
+            "Key": "hero_arche_name",
+            "Value": "Арчер_" 
+        },
+        {
+            "Key": "hero_archer_description",
+            "Value": "<size=80><sprite index=3> {0}\t<sprite index=4> {1}</size>\nУворотливый\nРедко, но метко_" 
+        },
+        {
+            "Key": "hero_cactus_name",
+            "Value": "Кактус_" 
+        },
+        {
+            "Key": "hero_cactus_description",
+            "Value": "<size=80><sprite index=3> {0}\t<sprite index=4> {1}</size>\nШипы_" 
+        },
+        {
+            "Key": "hero_knight_name",
+            "Value": "Рыцарь_" 
+        },
+        {
+            "Key": "hero_knight_description",
+            "Value": "<size=80><sprite index=3> {0}\t<sprite index=4> {1}</size>\nКрепкая броня_" 
+        },
+        {
+            "Key": "hero_magdalene_name",
+            "Value": "Магдалина_" 
+        },
+        {
+            "Key": "hero_magdalene_description",
+            "Value": "<size=80><sprite index=3> {0}\t<sprite index=4> {1}</size>\nЗдоровье - сила_" 
+        },
+        {
+            "Key": "hero_vampire_name",
+            "Value": "Вампир_" 
+        },
+        {
+            "Key": "hero_vampire_description",
+            "Value": "<size=80><sprite index=3> {0}\t<sprite index=4> {1}</size>\nКража здоровья_" 
+        },
+        {
+            "Key": "adjectives_power_increase_name",
+            "Value": "Сила Прилагательных_" 
+        },
+        {
+            "Key": "adjectives_power_increase_description",
+            "Value": "Увеличивает атаку, если в предложении есть прилагательное_" 
+        },
+        {
+            "Key": "armor_increase_1_name",
+            "Value": "Стойкость_" 
+        },
+        {
+            "Key": "armor_increase_1_description",
+            "Value": "Увеличивает количество щитов_" 
+        },
+        {
+            "Key": "armor_increase_2_name",
+            "Value": "Стойкость X2_" 
+        },
+        {
+            "Key": "armor_increase_2_description",
+            "Value": "Увеличивает количество щитов_" 
+        },
+        {
+            "Key": "armor_restoration_1_name",
+            "Value": "Заплатка_" 
+        },
+        {
+            "Key": "armor_restoration_1_description",
+            "Value": "Возвращает половину щитов_" 
+        },
+        {
+            "Key": "armor_restoration_2_name",
+            "Value": "Полная Перековка_" 
+        },
+        {
+            "Key": "armor_restoration_2_description",
+            "Value": "Возвращает все щиты_" 
+        },
+        {
+            "Key": "attack_power_increase_name",
+            "Value": "Сила_" 
+        },
+        {
+            "Key": "attack_power_increase_description",
+            "Value": "Увеличивает силу атаки_" 
+        },
+        {
+            "Key": "critical_attack_chance_increase_name",
+            "Value": "Критический Удар_" 
+        },
+        {
+            "Key": "critical_attack_chance_increase_description",
+            "Value": "Шанс значительно увеличить атаку_" 
+        },
+        {
+            "Key": "critical_attack_power_increase_name",
+            "Value": "Сила критического урона_" 
+        },
+        {
+            "Key": "critical_attack_power_increase_description",
+            "Value": "Увеличивает силу критической атаки_" 
+        },
+        {
+            "Key": "declarative_sentence_power_increase_name",
+            "Value": "Сила Утверждений_" 
+        },
+        {
+            "Key": "declarative_sentence_power_increase_description",
+            "Value": "Увеличивает атаку за утверждения_" 
+        },
+        {
+            "Key": "discards_count_increase_1_name",
+            "Value": "Сброс Слов_" 
+        },
+        {
+            "Key": "discards_count_increase_1_description",
+            "Value": "Больше очков сброса слов в мешок_" 
+        },
+        {
+            "Key": "discards_count_increase_2_name",
+            "Value": "Сброс Слов X2_" 
+        },
+        {
+            "Key": "discards_count_increase_2_description",
+            "Value": "Больше очков сброса слов в мешок_" 
+        },
+        {
+            "Key": "dodge_chance_increase_name",
+            "Value": "Уклонение_" 
+        },
+        {
+            "Key": "dodge_chance_increase_description",
+            "Value": "Шанс избежать получение урона_" 
+        },
+        {
+            "Key": "draw_count_increase_1_name",
+            "Value": "Пополнение Слов_" 
+        },
+        {
+            "Key": "draw_count_increase_1_description",
+            "Value": "Больше очков пополнения поля словами_" 
+        },
+        {
+            "Key": "draw_count_increase_1_name",
+            "Value": "Пополнение Слов X2_" 
+        },
+        {
+            "Key": "draw_count_increase_1_description",
+            "Value": "Больше очков пополнения поля словами_" 
+        },
+        {
+            "Key": "exclamatory_sentence_power_increase_name",
+            "Value": "Сила Восклицаний_" 
+        },
+        {
+            "Key": "exclamatory_sentence_power_increase_description",
+            "Value": "Увеличивает атаку за восклицания_" 
+        },
+        {
+            "Key": "experience_power_increase_name",
+            "Value": "Мудрость_" 
+        },
+        {
+            "Key": "experience_power_increase_description",
+            "Value": "Увеличивает множитель получаемого опыта_" 
+        },
+        {
+            "Key": "field_capacity_increase_1_name",
+            "Value": "Большое Поле_" 
+        },
+        {
+            "Key": "field_capacity_increase_1_description",
+            "Value": "Больше слов на поле_" 
+        },
+        {
+            "Key": "field_capacity_increase_2_name",
+            "Value": "Большое Поле X2_" 
+        },
+        {
+            "Key": "field_capacity_increase_2_description",
+            "Value": "Больше слов на поле_" 
+        },
+        {
+            "Key": "five_word_power_increase_1_name",
+            "Value": "Пять Слов_" 
+        },
+        {
+            "Key": "five_word_power_increase_1_description",
+            "Value": "Увеличивает атаку, если в предложении ровно 5 слов_" 
+        },
+        {
+            "Key": "four_word_power_increase_name",
+            "Value": "Четыре Слова_" 
+        },
+        {
+            "Key": "four_word_power_increase_description",
+            "Value": "Увеличивает атаку, если в предложении ровно 4 слова_" 
+        },
+        {
+            "Key": "full_health_attack_increase_name",
+            "Value": "Сила Жизни_" 
+        },
+        {
+            "Key": "full_health_attack_increase_description",
+            "Value": "При полном здоровье - усиленная атака_" 
+        },
+        {
+            "Key": "hand_capacity_increase_1_name",
+            "Value": "Широкая Рука_" 
+        },
+        {
+            "Key": "hand_capacity_increase_1_description",
+            "Value": "Больше слов в руке_" 
+        },
+        {
+            "Key": "hand_capacity_increase_2_name",
+            "Value": "Широкая Рука X2_" 
+        },
+        {
+            "Key": "hand_capacity_increase_2_description",
+            "Value": "Больше слов в руке_" 
+        },
+        {
+            "Key": "health_increase_1_name",
+            "Value": "Живучесть_" 
+        },
+        {
+            "Key": "health_increase_1_description",
+            "Value": "Увеличивает количество сердец_" 
+        },
+        {
+            "Key": "health_increase_2_name",
+            "Value": "Живучесть X2_" 
+        },
+        {
+            "Key": "health_increase_2_description",
+            "Value": "Увеличивает количество сердец_" 
+        },
+        {
+            "Key": "health_restoration_1_name",
+            "Value": "Первая Помощь_" 
+        },
+        {
+            "Key": "health_restoration_1_description",
+            "Value": "Возвращает половину сердец_" 
+        },
+        {
+            "Key": "health_restoration_2_name",
+            "Value": "Чудотворство_" 
+        },
+        {
+            "Key": "health_restoration_2_description",
+            "Value": "Возвращает все сердца_" 
+        },
+        {
+            "Key": "interrogative_sentence_power_increase_name",
+            "Value": "Сила Вопросов_" 
+        },
+        {
+            "Key": "interrogative_sentence_power_increase_description",
+            "Value": "Увеличивает атаку за вопросы_" 
+        },
+        {
+            "Key": "linking_verbs_power_increase_name",
+            "Value": "Сила Глагол-связки_" 
+        },
+        {
+            "Key": "linking_verbs_power_increase_description",
+            "Value": "Увеличивает атаку, если в предложении есть глагол-связка_" 
+        },
+        {
+            "Key": "pronouns_power_increase_name",
+            "Value": "Сила Местоимений_" 
+        },
+        {
+            "Key": "pronouns_power_increase_description",
+            "Value": "Увеличивает атаку, если в предложении есть местоимение_" 
+        },
+        {
+            "Key": "rage_attack_increase_name",
+            "Value": "Яростная Атака_" 
+        },
+        {
+            "Key": "rage_attack_increase_description",
+            "Value": "Меньше здоровья - сильнее атака_" 
+        },
+        {
+            "Key": "rage_dodge_increase_name",
+            "Value": "Яростное Уклонение_" 
+        },
+        {
+            "Key": "rage_dodge_increase_description",
+            "Value": "Меньше здоровья - выше шанс избежать получение урона_" 
+        },
+        {
+            "Key": "spikes_power_increase_name",
+            "Value": "Шипы_" 
+        },
+        {
+            "Key": "spikes_power_increase_description",
+            "Value": "Отражаает часть урона_" 
+        },
+        {
+            "Key": "three_word_power_increase_name",
+            "Value": "Три Слова_" 
+        },
+        {
+            "Key": "three_word_power_increase_description",
+            "Value": "Увеличивает атаку, если в предложении ровно 3 слова_" 
+        },
+        {
+            "Key": "vampirism_chance_increase_name",
+            "Value": "Вампиризм_" 
+        },
+        {
+            "Key": "vampirism_chance_increase_description",
+            "Value": "Шанс восстановить здоровье после атаки_" 
+        },
+        {
+            "Key": "vampirism_power_increase_name",
+            "Value": "Сила Вампиризма_" 
+        },
+        {
+            "Key": "vampirism_power_increase_description",
+            "Value": "Увеличивает лечение от вампиризма_" 
+        },
+        {
+            "Key": "ability_details_1",
+            "Value": "<size=48>+{0}" 
+        },
+        {
+            "Key": "ability_details_2",
+            "Value": "<size=48>+{0}%" 
+        },
+        {
+            "Key": "ability_details_3",
+            "Value": "<size=48>+{0}<sprite index=3>" 
+        },
+        {
+            "Key": "ability_details_4",
+            "Value": "<size=48>+{0}<sprite index=4>" 
+        },
+        {
+            "Key": "ability_details_5",
+            "Value": "<size=48>1<sprite index=3> - +{0}%" 
+        },
+        {
             "Key": "",
             "Value": "" 
         }

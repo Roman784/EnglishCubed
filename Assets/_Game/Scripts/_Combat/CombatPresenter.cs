@@ -22,6 +22,7 @@ namespace Combat
             _model = model;
 
             SetupSubscriptions();
+            UpdateView();
         }
 
         public void Dispose()

@@ -22,23 +22,20 @@ MonoBehaviour:
   Price: 100
   Levels:
   - Icon: {fileID: 101954525, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
-    Title: "\u0421\u0438\u043B\u0430 \u0416\u0438\u0437\u043D\u0438"
-    Description: "\u041F\u0440\u0438 \u043F\u043E\u043B\u043D\u043E\u043C \u0437\u0434\u043E\u0440\u043E\u0432\u044C\u0435
-      - \u0443\u0441\u0438\u043B\u0435\u043D\u043D\u0430\u044F \u0430\u0442\u0430\u043A\u0430"
-    Details: <size=48>+{0}%
+    Title: full_health_attack_increase_name
+    Description: full_health_attack_increase_description
+    Details: ability_details_2
     Values:
     - 10
   - Icon: {fileID: 101954525, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
-    Title: "\u0421\u0438\u043B\u0430 \u0416\u0438\u0437\u043D\u0438"
-    Description: "\u041F\u0440\u0438 \u043F\u043E\u043B\u043D\u043E\u043C \u0437\u0434\u043E\u0440\u043E\u0432\u044C\u0435
-      - \u0443\u0441\u0438\u043B\u0435\u043D\u043D\u0430\u044F \u0430\u0442\u0430\u043A\u0430"
-    Details: <size=48>+{0}%
+    Title: full_health_attack_increase_name
+    Description: full_health_attack_increase_description
+    Details: ability_details_2
     Values:
     - 5
   - Icon: {fileID: 101954525, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
-    Title: "\u0421\u0438\u043B\u0430 \u0416\u0438\u0437\u043D\u0438"
-    Description: "\u041F\u0440\u0438 \u043F\u043E\u043B\u043D\u043E\u043C \u0437\u0434\u043E\u0440\u043E\u0432\u044C\u0435
-      - \u0443\u0441\u0438\u043B\u0435\u043D\u043D\u0430\u044F \u0430\u0442\u0430\u043A\u0430"
-    Details: <size=48>+{0}%
+    Title: full_health_attack_increase_name
+    Description: full_health_attack_increase_description
+    Details: ability_details_2
     Values:
     - 5

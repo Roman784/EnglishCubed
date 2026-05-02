@@ -1,6 +1,7 @@
 using Currency;
 using DG.Tweening;
 using Gameplay;
+using GameRoot;
 using R3;
 using TMPro;
 using UI;
@@ -58,9 +59,9 @@ namespace HeroMenu
             PlayHeroAppearanceAnimation(hero);
         }
 
-        public void UpdateHeroName(string name) => _heroNameView.text = name;
+        public void UpdateHeroName(string name) => _heroNameView.text = G.LocalizationProvider.GetTranslation(name);
         public void UpdateHeroDetails(string description, int health, int armor) => 
-            _heroDtailsView.text = description.InsertValues(health, armor);
+            _heroDtailsView.text = G.LocalizationProvider.GetTranslation(description).InsertValues(health, armor);
 
         public void UpdateLock(bool isActive)
         {

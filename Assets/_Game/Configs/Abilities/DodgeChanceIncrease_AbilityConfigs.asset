@@ -22,30 +22,26 @@ MonoBehaviour:
   Price: 100
   Levels:
   - Icon: {fileID: -941087625, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
-    Title: "\u0423\u043A\u043B\u043E\u043D\u0435\u043D\u0438\u0435"
-    Description: "\u0428\u0430\u043D\u0441 \u0438\u0437\u0431\u0435\u0436\u0430\u0442\u044C
-      \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u0435 \u0443\u0440\u043E\u043D\u0430"
-    Details: <size=48>+{0}%
+    Title: dodge_chance_increase_name
+    Description: dodge_chance_increase_description
+    Details: ability_details_2
     Values:
     - 5
   - Icon: {fileID: -941087625, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
-    Title: "\u0423\u043A\u043B\u043E\u043D\u0435\u043D\u0438\u0435"
-    Description: "\u0428\u0430\u043D\u0441 \u0438\u0437\u0431\u0435\u0436\u0430\u0442\u044C
-      \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u0435 \u0443\u0440\u043E\u043D\u0430"
-    Details: <size=48>+{0}%
+    Title: dodge_chance_increase_name
+    Description: dodge_chance_increase_description
+    Details: ability_details_2
     Values:
     - 5
   - Icon: {fileID: -941087625, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
-    Title: "\u0423\u043A\u043B\u043E\u043D\u0435\u043D\u0438\u0435"
-    Description: "\u0428\u0430\u043D\u0441 \u0438\u0437\u0431\u0435\u0436\u0430\u0442\u044C
-      \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u0435 \u0443\u0440\u043E\u043D\u0430"
-    Details: <size=48>+{0}%
+    Title: dodge_chance_increase_name
+    Description: dodge_chance_increase_description
+    Details: ability_details_2
     Values:
     - 5
   - Icon: {fileID: -941087625, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
-    Title: "\u0423\u043A\u043B\u043E\u043D\u0435\u043D\u0438\u0435"
-    Description: "\u0428\u0430\u043D\u0441 \u0438\u0437\u0431\u0435\u0436\u0430\u0442\u044C
-      \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u0435 \u0443\u0440\u043E\u043D\u0430"
-    Details: <size=48>+{0}%
+    Title: dodge_chance_increase_name
+    Description: dodge_chance_increase_description
+    Details: ability_details_2
     Values:
     - 5

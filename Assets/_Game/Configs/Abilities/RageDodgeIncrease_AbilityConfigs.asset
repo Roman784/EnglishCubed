@@ -22,42 +22,32 @@ MonoBehaviour:
   Price: 100
   Levels:
   - Icon: {fileID: 1901003357, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
-    Title: "\u042F\u0440\u043E\u0441\u0442\u043D\u043E\u0435 \u0423\u043A\u043B\u043E\u043D\u0435\u043D\u0438\u0435"
-    Description: "\u041C\u0435\u043D\u044C\u0448\u0435 \u0437\u0434\u043E\u0440\u043E\u0432\u044C\u044F
-      - \u0432\u044B\u0448\u0435 \u0448\u0430\u043D\u0441 \u0438\u0437\u0431\u0435\u0436\u0430\u0442\u044C
-      \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u0435 \u0443\u0440\u043E\u043D\u0430"
-    Details: <size=48>1<sprite index="3"> - +{0}%
+    Title: rage_dodge_increase_name
+    Description: rage_dodge_increase_description
+    Details: ability_details_5
     Values:
     - 1
   - Icon: {fileID: 1901003357, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
-    Title: "\u042F\u0440\u043E\u0441\u0442\u043D\u043E\u0435 \u0423\u043A\u043B\u043E\u043D\u0435\u043D\u0438\u0435"
-    Description: "\u041C\u0435\u043D\u044C\u0448\u0435 \u0437\u0434\u043E\u0440\u043E\u0432\u044C\u044F
-      - \u0432\u044B\u0448\u0435 \u0448\u0430\u043D\u0441 \u0438\u0437\u0431\u0435\u0436\u0430\u0442\u044C
-      \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u0435 \u0443\u0440\u043E\u043D\u0430"
-    Details: <size=48>1<sprite index="3"> - +{0}%
+    Title: rage_dodge_increase_name
+    Description: rage_dodge_increase_description
+    Details: ability_details_5
     Values:
     - 1
   - Icon: {fileID: 1901003357, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
-    Title: "\u042F\u0440\u043E\u0441\u0442\u043D\u043E\u0435 \u0423\u043A\u043B\u043E\u043D\u0435\u043D\u0438\u0435"
-    Description: "\u041C\u0435\u043D\u044C\u0448\u0435 \u0437\u0434\u043E\u0440\u043E\u0432\u044C\u044F
-      - \u0432\u044B\u0448\u0435 \u0448\u0430\u043D\u0441 \u0438\u0437\u0431\u0435\u0436\u0430\u0442\u044C
-      \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u0435 \u0443\u0440\u043E\u043D\u0430"
-    Details: <size=48>1<sprite index="3"> - +{0}%
+    Title: rage_dodge_increase_name
+    Description: rage_dodge_increase_description
+    Details: ability_details_5
     Values:
     - 1
   - Icon: {fileID: 1901003357, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
-    Title: "\u042F\u0440\u043E\u0441\u0442\u043D\u043E\u0435 \u0423\u043A\u043B\u043E\u043D\u0435\u043D\u0438\u0435"
-    Description: "\u041C\u0435\u043D\u044C\u0448\u0435 \u0437\u0434\u043E\u0440\u043E\u0432\u044C\u044F
-      - \u0432\u044B\u0448\u0435 \u0448\u0430\u043D\u0441 \u0438\u0437\u0431\u0435\u0436\u0430\u0442\u044C
-      \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u0435 \u0443\u0440\u043E\u043D\u0430"
-    Details: <size=48>1<sprite index="3"> - +{0}%
+    Title: rage_dodge_increase_name
+    Description: rage_dodge_increase_description
+    Details: ability_details_5
     Values:
     - 1
   - Icon: {fileID: 1901003357, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
-    Title: "\u042F\u0440\u043E\u0441\u0442\u043D\u043E\u0435 \u0423\u043A\u043B\u043E\u043D\u0435\u043D\u0438\u0435"
-    Description: "\u041C\u0435\u043D\u044C\u0448\u0435 \u0437\u0434\u043E\u0440\u043E\u0432\u044C\u044F
-      - \u0432\u044B\u0448\u0435 \u0448\u0430\u043D\u0441 \u0438\u0437\u0431\u0435\u0436\u0430\u0442\u044C
-      \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u0435 \u0443\u0440\u043E\u043D\u0430"
-    Details: <size=48>1<sprite index="3"> - +{0}%
+    Title: rage_dodge_increase_name
+    Description: rage_dodge_increase_description
+    Details: ability_details_5
     Values:
     - 1

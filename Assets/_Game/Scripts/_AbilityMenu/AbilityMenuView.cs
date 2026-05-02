@@ -1,5 +1,6 @@
 using Currency;
 using DG.Tweening;
+using GameRoot;
 using R3;
 using TMPro;
 using UI;
@@ -82,12 +83,12 @@ namespace AbilityMenu
 
         public void UpdateAbilityName(string name)
         {
-            _abilityNameView.text = name;
+            _abilityNameView.text = G.LocalizationProvider.GetTranslation(name);
         }
 
         public void UpdateAbilityDescription(string description)
         {
-            _abilityDescriptionView.text = description;
+            _abilityDescriptionView.text = G.LocalizationProvider.GetTranslation(description);
         }
 
         public void UpdateBuyAbilityButton(bool isActive, int price)

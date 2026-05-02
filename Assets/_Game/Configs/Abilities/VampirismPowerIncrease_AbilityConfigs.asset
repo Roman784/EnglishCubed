@@ -22,9 +22,8 @@ MonoBehaviour:
   Price: 100
   Levels:
   - Icon: {fileID: -1544706942, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
-    Title: "\u0421\u0438\u043B\u0430 \u0412\u0430\u043C\u043F\u0438\u0440\u0438\u0437\u043C\u0430 "
-    Description: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
-      \u043B\u0435\u0447\u0435\u043D\u0438\u0435 \u043E\u0442 \u0432\u0430\u043C\u043F\u0438\u0440\u0438\u0437\u043C\u0430"
-    Details: <size=48>+{0}<sprite index="3">
+    Title: vampirism_power_increase_name
+    Description: vampirism_power_increase_description
+    Details: ability_details_4
     Values:
     - 1

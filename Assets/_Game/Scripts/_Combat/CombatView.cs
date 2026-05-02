@@ -78,9 +78,9 @@ namespace Combat
         public void UpdateDiscardPoints(int points)
         {
             if (points > 0)
-                _discardPointsView.text = $"В мешок x{points}";  // Loc.
+                _discardPointsView.text = G.LocalizationProvider.GetTranslation("into_bag") + $" x{points}";
             else
-                _discardPointsView.text = $"В мешок<size=92>{TextIcons.BrokenHeart}</size>"; // Loc.
+                _discardPointsView.text = G.LocalizationProvider.GetTranslation("into_bag") + $"<size=92>{TextIcons.BrokenHeart}</size>";
         }
 
         public void UpdateDrawPoints(int points)
@@ -91,7 +91,9 @@ namespace Combat
                 _drawPointsView.text = $"<size=92>{TextIcons.BrokenHeart}</size>";
         }
 
-        public void UpdateAvailableWordsOnField(int count) => _availableWordsOnFieldView.text = $"Доступно: {count}"; // Loc.
-        public void UpdateHandCapacity(int current, int max) => _handCapacityView.text = $"Слов: {current}/{max}"; // Loc.
+        public void UpdateAvailableWordsOnField(int count) => 
+            _availableWordsOnFieldView.text = G.LocalizationProvider.GetTranslation("available_count").InsertValues(count);
+        public void UpdateHandCapacity(int current, int max) => 
+            _handCapacityView.text = G.LocalizationProvider.GetTranslation("words_count").InsertValues(current, max);
     }
 }

@@ -1,16 +1,13 @@
 using Abilities;
 using Configs;
-using EncountersMap;
 using Gameplay;
 using GameRoot;
 using GrammarValidation;
 using R3;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using static UnityEngine.Rendering.STP;
 
 namespace Combat
 {

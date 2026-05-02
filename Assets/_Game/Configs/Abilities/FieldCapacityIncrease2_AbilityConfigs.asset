@@ -22,9 +22,8 @@ MonoBehaviour:
   Price: 100
   Levels:
   - Icon: {fileID: -715755264, guid: 5024f4951f0d83249a9f323188abc38b, type: 3}
-    Title: "\u0411\u043E\u043B\u044C\u0448\u043E\u0435 \u041F\u043E\u043B\u0435 X2"
-    Description: "\u0411\u043E\u043B\u044C\u0448\u0435 \u0441\u043B\u043E\u0432 \u043D\u0430
-      \u043F\u043E\u043B\u0435"
-    Details: <size=48>+{0}
+    Title: field_capacity_increase_2_name
+    Description: field_capacity_increase_2_description
+    Details: ability_details_1
     Values:
     - 2

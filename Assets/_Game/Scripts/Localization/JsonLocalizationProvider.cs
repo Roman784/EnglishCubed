@@ -21,7 +21,6 @@ namespace Localization
 
         public Observable<bool> LoadTranslations(Language language)
         {
-            if (CurrentLanguage == language) return Observable.Return(true);
             if (!_pathsMap.ContainsKey(language)) return Observable.Return(false);
 
             var json = Resources.Load<TextAsset>(_pathsMap[language]);
@@ -53,7 +52,7 @@ namespace Localization
                 LoadTranslations(Language.Ru);
             }
 
-            if (_tranlationsMap.TryGetValue(key, out string translatedValue))
+            if (_tranlationsMap.TryGetValue(key, out var translatedValue))
                 return translatedValue;
             return $"MISSING: {key}";
         }

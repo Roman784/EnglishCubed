@@ -1,6 +1,7 @@
 using Abilities;
 using Configs;
 using DG.Tweening;
+using GameRoot;
 using GrammarValidation;
 using R3;
 using TMPro;
@@ -53,11 +54,13 @@ namespace UI
             }
 
             _iconView.sprite = levelData.Icon;
-            _titleView.text = levelData.Title;
+            _titleView.text = G.LocalizationProvider.GetTranslation(levelData.Title);
 
             if (levelData.Values != null)
                 _descriptionView.text = 
-                    $"{levelData.Description}\n\n{levelData.Details.InsertValues(levelData.Values)}";
+                    $"{G.LocalizationProvider.GetTranslation(levelData.Description)}" +
+                    $"\n\n" +
+                    $"{G.LocalizationProvider.GetTranslation(levelData.Details).InsertValues(levelData.Values)}";
         }
 
         public Observable<Unit> Show()
@@ -105,7 +108,6 @@ namespace UI
                 370,
                 0.5f
             ).SetEase(Ease.InBack));
-            //seq.Append(transform.DOScale(0f, 0.25f).SetEase(Ease.InBack));
             seq.AppendCallback(() =>
             {
                 _backViewport.gameObject.SetActive(false);

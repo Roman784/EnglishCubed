@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6614139381870868316}
   - component: {fileID: 1215441683213620619}
   - component: {fileID: 7476990757706805129}
+  - component: {fileID: 4555861750091254342}
   m_Layer: 5
   m_Name: Txt
   m_TagString: Untagged
@@ -137,6 +138,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &4555861750091254342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102968381384154970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce18f1dbcd79fe548999a38c0aeaeab5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Localization.LocalizedText
+  _key: step_away
+  _layoutsForRebuild: []
 --- !u!1 &438555793420706243
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,6 +343,7 @@ GameObject:
   - component: {fileID: 8092870679817995748}
   - component: {fileID: 7002580671712331202}
   - component: {fileID: 366159781715488706}
+  - component: {fileID: 6026942726751967499}
   m_Layer: 5
   m_Name: Txt
   m_TagString: Untagged
@@ -454,6 +470,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6026942726751967499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234679954906434280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce18f1dbcd79fe548999a38c0aeaeab5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Localization.LocalizedText
+  _key: close
+  _layoutsForRebuild: []
 --- !u!1 &1339840925056905828
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,6 +662,7 @@ GameObject:
   - component: {fileID: 8461668750524744113}
   - component: {fileID: 3643102256978167151}
   - component: {fileID: 8753653191989636900}
+  - component: {fileID: 911117657395807656}
   m_Layer: 0
   m_Name: TitleTxt
   m_TagString: Untagged
@@ -758,6 +789,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &911117657395807656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2258553656658448828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce18f1dbcd79fe548999a38c0aeaeab5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Localization.LocalizedText
+  _key: settings
+  _layoutsForRebuild: []
 --- !u!1 &2957824218785109783
 GameObject:
   m_ObjectHideFlags: 0
@@ -769,6 +814,7 @@ GameObject:
   - component: {fileID: 840224059713795954}
   - component: {fileID: 7626469612169189622}
   - component: {fileID: 6365639496203347642}
+  - component: {fileID: 4162329500154427131}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -895,6 +941,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &4162329500154427131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2957824218785109783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce18f1dbcd79fe548999a38c0aeaeab5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Localization.LocalizedText
+  _key: sound_volume
+  _layoutsForRebuild: []
 --- !u!1 &3490939686265660279
 GameObject:
   m_ObjectHideFlags: 0
@@ -1370,6 +1430,7 @@ GameObject:
   - component: {fileID: 525569925462373753}
   - component: {fileID: 3339658268416597963}
   - component: {fileID: 7361054895876219437}
+  - component: {fileID: 3928488808661712938}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1496,6 +1557,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &3928488808661712938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6111311913648344951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce18f1dbcd79fe548999a38c0aeaeab5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Localization.LocalizedText
+  _key: music_volume
+  _layoutsForRebuild: []
 --- !u!1 &6731621208592148293
 GameObject:
   m_ObjectHideFlags: 0
@@ -2016,10 +2091,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 4086201650818697649}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 60, y: 16}
+  m_SizeDelta: {x: 0, y: 16}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4820185052888663016
 CanvasRenderer:
