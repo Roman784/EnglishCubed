@@ -55,7 +55,7 @@ namespace UI
 
         public void ShowMessage()
         {
-            G.UIRoot.ShowMessage("Победа! Остановишься здесь или пойдёшь дальше?"); // Loc.
+            G.UIRoot.ShowMessage(G.LocalizationProvider.GetTranslation("combat_victory_message"));
         }
 
         private void Update()

@@ -68,8 +68,8 @@ namespace Combat
             if (G.SessionData.WordsInDeck.Count == 0)
                 wordUnitsInDeck = G.GameProducer.WordUnits.GetWords(20);
             else
-                wordUnitsInDeck = G.Configs.LexiconConfigs.AllWords.Where
-                    (w => G.SessionData.WordsInDeck.Contains(w.Name));
+                wordUnitsInDeck = G.SessionData.WordsInDeck.Select
+                    (w => G.Configs.LexiconConfigs.AllWords.First(wc => wc.Name == w));
             _deck = new Deck(wordUnitsInDeck);
 
             // ========== Stats ==========

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Configs
@@ -17,13 +18,14 @@ namespace Configs
         public List<WordUnitConfigs> Verbs;
 
         private Dictionary<string, WordUnitConfigs> _allWordsMap;
+        private Dictionary<string, WordUnitConfigs> _allWordsByNameMap;
 
-        public IEnumerable<WordUnitConfigs> AllWords => _allWordsMap.Values;
+        public IEnumerable<WordUnitConfigs> AllWords => _allWordsByNameMap.Values;
 
         public WordUnitConfigs GetByName(string name)
         {
-            if (_allWordsMap.ContainsKey(name))
-                return _allWordsMap[name];
+            if (_allWordsByNameMap.ContainsKey(name))
+                return _allWordsByNameMap[name];
             return null;
         }
 
@@ -41,7 +43,7 @@ namespace Configs
 
         private void FillMap()
         {
-            _allWordsMap = new Dictionary<string, WordUnitConfigs>();
+            _allWordsByNameMap = new Dictionary<string, WordUnitConfigs>();
             FillMap(Adjectives);
             FillMap(Articles);
             FillMap(AuxiliaryVerbs);
@@ -49,6 +51,11 @@ namespace Configs
             FillMap(Nouns);
             FillMap(Pronouns);
             FillMap(Verbs);
+
+            _allWordsMap = new Dictionary<string, WordUnitConfigs>();
+            _allWordsMap = _allWordsByNameMap.Select(kvp => 
+                new KeyValuePair<string, WordUnitConfigs>(kvp.Value.Word.Text, kvp.Value))
+                .ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
         }
 
         private void FillMap(List<WordUnitConfigs> words)
@@ -58,13 +65,13 @@ namespace Configs
                 if (word == null) continue;
 
                 var key = word.Name;
-                if (_allWordsMap.ContainsKey(key))
+                if (_allWordsByNameMap.ContainsKey(key))
                 {
                     Debug.LogError($"Word {key} already in the lexicon!");
                     continue;
                 }
 
-                _allWordsMap[key] = word;
+                _allWordsByNameMap[key] = word;
             }
         }
     }

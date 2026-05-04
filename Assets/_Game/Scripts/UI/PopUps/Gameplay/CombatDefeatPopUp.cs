@@ -40,7 +40,7 @@ namespace UI
 
         public void ShowMessage()
         {
-            G.UIRoot.ShowMessage("Ты проиграл, на этом твоему пути конец"); // Loc.
+            G.UIRoot.ShowMessage(G.LocalizationProvider.GetTranslation("combat_defeat_message"));
         }
 
         private void Update()

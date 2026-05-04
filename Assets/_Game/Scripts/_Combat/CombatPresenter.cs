@@ -72,7 +72,7 @@ namespace Combat
         {
             if (_model.UnitsOnFieldCount == 0)
             {
-                G.UIRoot.ShowMessage("Сначала составь предложение"); // Loc.
+                G.UIRoot.ShowMessage(G.LocalizationProvider.GetTranslation("empty_sentence_message"));
                 return;
             }
 
@@ -218,7 +218,7 @@ namespace Combat
         {
             if (_model.UnitsOnFieldCount <= 0)
             {
-                G.UIRoot.ShowMessage("Не вижу ни одного слова"); // Loc.
+                G.UIRoot.ShowMessage(G.LocalizationProvider.GetTranslation("no_words_on_field_message"));
                 return;
             }
 
@@ -228,7 +228,7 @@ namespace Combat
                 _model.Hero.SubstractOneHealthUnit();
             else
             {
-                G.UIRoot.ShowMessage("Ты так сильно хочешь умереть?"); // Loc.
+                G.UIRoot.ShowMessage(G.LocalizationProvider.GetTranslation("death_notice_message"));
                 return;
             }
 
@@ -262,12 +262,12 @@ namespace Combat
             var capacityLeft = (int)_model.HandCapacity.Max - _model.UnitsInHandCount;
             if (capacityLeft <= 0)
             {
-                G.UIRoot.ShowMessage("Все места на поле уже заняты"); // Loc.
+                G.UIRoot.ShowMessage(G.LocalizationProvider.GetTranslation("field_is_full_message"));
                 return;
             } 
             else if (!_model.Deck.HasAnyWordUnit)
             {
-                G.UIRoot.ShowMessage("Мешок пуст, ни одного слова"); // Loc.
+                G.UIRoot.ShowMessage(G.LocalizationProvider.GetTranslation("bag_is_empty_message"));
                 return;
             }
 
@@ -277,7 +277,7 @@ namespace Combat
                 _model.Hero.SubstractOneHealthUnit();
             else
             {
-                G.UIRoot.ShowMessage("Ты так сильно хочешь умереть?"); // Loc.
+                G.UIRoot.ShowMessage(G.LocalizationProvider.GetTranslation("death_notice_message"));
                 return;
             }
 
@@ -321,7 +321,9 @@ namespace Combat
                 G.GameSessionProvider.SetIsInEncounter(false);
 
                 _view.DisableControls();
-                G.Repository.Currency.AddCoins(100);
+
+                var coinsReward = G.GameProducer.Currency.GetCoinsForLevelPassing();
+                G.Repository.Currency.AddCoins(coinsReward);
 
                 if (_model.HeroStats.Experience.IsNextLevelReached)
                 {
@@ -331,12 +333,12 @@ namespace Combat
                         .Subscribe(__ =>
                         {
                             _model.Hero.SaveStats();
-                            G.PopUpsProvider.OpenCombatVictoryPopUp(100);
+                            G.PopUpsProvider.OpenCombatVictoryPopUp(coinsReward);
                             _view.DisableControls();
                         }));
                 }
                 else
-                    G.PopUpsProvider.OpenCombatVictoryPopUp(100);
+                    G.PopUpsProvider.OpenCombatVictoryPopUp(coinsReward);
 
                 _model.Hero.SaveStats();
             });

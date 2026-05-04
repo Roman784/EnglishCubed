@@ -20,5 +20,6 @@ namespace Configs
         public UIConfigs UIConfigs;
         public DefaultGameStateConfigs DefaultGameStateConfigs;
         public DefaultGameSessionDataConfigs DefaultGameSessionDataConfigs;
+        public CurrencyConfigs CurrencyConfigs;
     }
 }

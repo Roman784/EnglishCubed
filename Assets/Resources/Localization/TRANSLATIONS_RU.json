@@ -485,6 +485,46 @@
             "Value": "<size=48>1<sprite index=3> - +{0}%" 
         },
         {
+            "Key": "not_enough_coins_message",
+            "Value": "Сначала накопи достаточное количество монет_" 
+        },
+        {
+            "Key": "empty_sentence_message",
+            "Value": "Сначала составь предложение_" 
+        },
+        {
+            "Key": "no_words_on_field_message",
+            "Value": "Не вижу ни одного слова_" 
+        },
+        {
+            "Key": "death_notice_message",
+            "Value": "Ты так сильно хочешь умереть?_" 
+        },
+        {
+            "Key": "field_is_full_message",
+            "Value": "Все места на поле уже заняты_" 
+        },
+        {
+            "Key": "bag_is_empty_message",
+            "Value": "Мешок пуст, ни одного слова_" 
+        },
+        {
+            "Key": "combat_defeat_message",
+            "Value": "Ты проиграл, на этом твоему пути конец_" 
+        },
+        {
+            "Key": "combat_victory_message",
+            "Value": "Победа! Остановишься здесь или пойдёшь дальше?_" 
+        },
+        {
+            "Key": "",
+            "Value": "" 
+        },
+        {
+            "Key": "",
+            "Value": "" 
+        },
+        {
             "Key": "",
             "Value": "" 
         }

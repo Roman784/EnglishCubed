@@ -24,3 +24,4 @@ MonoBehaviour:
   UIConfigs: {fileID: 11400000, guid: 197643596d2022f49bb8f7fec9c562df, type: 2}
   DefaultGameStateConfigs: {fileID: 11400000, guid: 84701581b285f6542943bd3b1b02f247, type: 2}
   DefaultGameSessionDataConfigs: {fileID: 11400000, guid: e8a538b27c94a974a9dd0f2dd94a2ea0, type: 2}
+  CurrencyConfigs: {fileID: 11400000, guid: 45d4a4e79a54c6e4c8ac299a209306d8, type: 2}

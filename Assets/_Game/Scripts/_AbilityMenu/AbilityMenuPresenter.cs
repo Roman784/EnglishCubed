@@ -72,7 +72,7 @@ namespace AbilityMenu
             var price = selectedAbility.Price;
             if (!G.Wallet.TrySpendCoins(price))
             {
-                G.UIRoot.ShowMessage("Сначала накопи достаточное количество монет"); // Loc.
+                G.UIRoot.ShowMessage(G.LocalizationProvider.GetTranslation("not_enough_coins_message"));
                 return;
             }
 
