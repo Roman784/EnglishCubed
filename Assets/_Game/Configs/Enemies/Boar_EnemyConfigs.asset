@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Boar_EnemyConfigs
   m_EditorClassIdentifier: Assembly-CSharp::Configs.EnemyConfigs
   Name: 6
-  Rank: 1
+  Rank: 2
   Prefab: {fileID: 3110905218314609237, guid: 119c95efd8334ef40b7055c2bad6b268, type: 3}

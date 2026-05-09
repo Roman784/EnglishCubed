@@ -314,17 +314,24 @@ namespace Combat
             {
                 if (!_model.Hero.IsAlive) return;
 
-                G.GameSessionProvider.AddPassedEncounter(
-                    _model.EnterParams.EncounterNumber);
-                G.GameSessionProvider.SetIsEnemyExist(false);
-                G.GameSessionProvider.SetIsInEncounter(false);
+                if (_model.IsBossEncounter)
+                {
+                    G.GameSessionProvider.EndSession();
+                }
+                else
+                {
+                    G.GameSessionProvider.AddPassedEncounter(
+                        _model.EnterParams.EncounterNumber);
+                    G.GameSessionProvider.SetIsEnemyExist(false);
+                    G.GameSessionProvider.SetIsInEncounter(false);
+                }
 
                 _view.DisableControls();
 
                 var coinsReward = G.GameProducer.Currency.GetCoinsForLevelPassing();
                 G.Repository.Currency.AddCoins(coinsReward);
 
-                if (_model.HeroStats.Experience.IsNextLevelReached)
+                if (_model.HeroStats.Experience.IsNextLevelReached && !_model.IsBossEncounter)
                 {
                     _model.HeroStats.Experience.LevelUp();
                     Observable.Timer(TimeSpan.FromSeconds(1)).Subscribe(_ =>
@@ -332,13 +339,16 @@ namespace Combat
                         .Subscribe(__ =>
                         {
                             _model.Hero.SaveStats();
-                            G.PopUpsProvider.OpenCombatVictoryPopUp(coinsReward);
+                            G.PopUpsProvider.OpenCombatVictoryPopUp(coinsReward, _model.IsBossEncounter);
                             _view.DisableControls();
                         }));
                 }
                 else
-                    G.PopUpsProvider.OpenCombatVictoryPopUp(coinsReward);
+                    G.PopUpsProvider.OpenCombatVictoryPopUp(coinsReward, _model.IsBossEncounter);
 
+                _model.RestoreArmor();
+                _model.RestoreDiscards();
+                _model.RestoreDraws();
                 _model.Hero.SaveStats();
             });
         }

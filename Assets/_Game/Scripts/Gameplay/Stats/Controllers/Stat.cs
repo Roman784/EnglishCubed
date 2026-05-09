@@ -2,6 +2,7 @@ using R3;
 using System;
 using UnityEngine;
 using UnityEngine.Rendering;
+using static UnityEngine.Rendering.DebugUI;
 
 namespace Gameplay
 {
@@ -59,6 +60,11 @@ namespace Gameplay
         {
             var newCurrentValue = _current.Value - value;
             CheckAndApplyNewCurrentValue(newCurrentValue);
+        }
+
+        public void RestoreFull()
+        {
+            CheckAndApplyNewCurrentValue(_max);
         }
 
         private void CheckAndApplyNewCurrentValue(float newValue)

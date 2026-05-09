@@ -1,5 +1,6 @@
 using Abilities;
 using Configs;
+using EncountersMap;
 using Gameplay;
 using GameRoot;
 using GrammarValidation;
@@ -35,6 +36,7 @@ namespace Combat
         public int AvailableWordsOnFieldCount => (int)FieldCapacity.Max - UnitsOnFieldCount;
         public int UnitsOnFieldCount => FieldWordUnitsGroup.AllElementsCount;
         public int UnitsInHandCount => HandWordUnitsGroup.AllElementsCount;
+        public bool IsBossEncounter => EnterParams.EncounterName == EncounterName.BossCombat;
 
         public Observable<Unit> ChangedSignal => _changedSignalSubj;
 
@@ -83,6 +85,21 @@ namespace Combat
             HandCapacity.Current.Subscribe(_ => _changedSignalSubj.OnNext(Unit.Default));
             HandWordUnitsGroup.ChangedSignal.Subscribe(_ => _changedSignalSubj.OnNext(Unit.Default));
             FieldWordUnitsGroup.ChangedSignal.Subscribe(_ => _changedSignalSubj.OnNext(Unit.Default));
+        }
+
+        public void RestoreArmor()
+        {
+            Hero.Stats.Armor.RestoreFull();
+        }
+
+        public void RestoreDiscards()
+        {
+            Discards.RestoreFull();
+        }
+
+        public void RestoreDraws()
+        {
+            Draws.RestoreFull();
         }
     }
 }

@@ -54,10 +54,10 @@ namespace UI
             return createdPopUp;
         }
 
-        public CombatVictoryPopUp OpenCombatVictoryPopUp(int earnedСoins)
+        public CombatVictoryPopUp OpenCombatVictoryPopUp(int earnedСoins, bool isLastEncounter)
         {
             var createdPopUp = _popUpFactory.Create(Configs.CombatVictoryPopUpPrefab);
-            createdPopUp.Open(earnedСoins);
+            createdPopUp.Open(earnedСoins, isLastEncounter);
             return createdPopUp;
         }
     }

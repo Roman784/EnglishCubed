@@ -17,6 +17,8 @@ namespace UI
         [SerializeField] RectTransform _fanfareIcon;
         [SerializeField] Effect _conffetiEffect;
 
+        private bool _isLastEncounter;
+
         public override PopUp SetInitialViewState()
         {
             base.SetInitialViewState();
@@ -29,7 +31,7 @@ namespace UI
             return this;
         }
 
-        public void Open(int earnedСoins)
+        public void Open(int earnedСoins, bool isLastEncounter)
         {
             base.Open();
 
@@ -41,11 +43,16 @@ namespace UI
 
             _fanfareIcon.DOScale(1f, 0.75f).SetEase(Ease.OutBack);
             Instantiate(_conffetiEffect, transform).Play();
+
+            _isLastEncounter = isLastEncounter;
         }
 
         public void ContinueGame()
         {
-            G.SceneProvider.OpenEncountersMap();
+            if (!_isLastEncounter)
+                G.SceneProvider.OpenEncountersMap();
+            else
+                G.SceneProvider.OpenMainMenu();
         }
 
         public void OpenLevelMenu()
