@@ -26,19 +26,5 @@ namespace Abilities
         {
             return G.GameProducer.Ability.GetThree(acquiredAbilities);
         }
-
-        public AbilitySelectionData GetAbilitySelectionData(
-            AbilityConfigs configs,
-            IEnumerable<AcquiredAbilityData> acquiredAbilities)
-        {
-            var sameAbility = acquiredAbilities
-                .FirstOrDefault(a => a.Configs.Name == configs.Name);
-
-            return new AbilitySelectionData()
-            {
-                Configs = configs,
-                Level = sameAbility?.StacksCount ?? 0
-            };
-        }
     }
 }

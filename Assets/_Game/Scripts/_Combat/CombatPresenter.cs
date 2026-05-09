@@ -195,9 +195,8 @@ namespace Combat
 
             abilitySelectionPopUp.CloseSignal.Subscribe(_ =>
             {
-                var random = new System.Random();
                 var wordUnitSelectionPopUp = G.PopUpsProvider.OpenWordUnitSelectionPopUp(
-                    _model.AvailableWordUnitsConfigs.OrderBy(x => random.Next()).Take(3));
+                    G.GameProducer.WordUnits.GetThree());
 
                 wordUnitSelectionPopUp.WordSelectedSignal.Subscribe(configs =>
                     _model.Deck.Add(configs));

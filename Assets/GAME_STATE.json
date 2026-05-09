@@ -56,37 +56,91 @@
             "Hero": 1,
             "Level": 1,
             "IsEnemyExist": true,
-            "Enemy": 7,
-            "CurrentEnemyHealth": 90,
-            "MaxEnemyHealth": 90,
-            "Abilities": [],
-            "Stats": [],
+            "Enemy": 9,
+            "CurrentEnemyHealth": 95,
+            "MaxEnemyHealth": 95,
+            "Abilities": [
+                {
+                    "Name": 30,
+                    "StacksCount": 1
+                },
+                {
+                    "Name": 2,
+                    "StacksCount": 1
+                },
+                {
+                    "Name": 11,
+                    "StacksCount": 1
+                }
+            ],
+            "Stats": [
+                {
+                    "Name": 25,
+                    "Value": 3.0,
+                    "Max": 3.0
+                },
+                {
+                    "Name": 24,
+                    "Value": 4.0,
+                    "Max": 4.0
+                },
+                {
+                    "Name": 23,
+                    "Value": 5.0,
+                    "Max": 5.0
+                },
+                {
+                    "Name": 22,
+                    "Value": 10.0,
+                    "Max": 10.0
+                },
+                {
+                    "Name": 0,
+                    "Value": 3.0,
+                    "Max": 3.0
+                },
+                {
+                    "Name": 1,
+                    "Value": 6.0,
+                    "Max": 6.0
+                },
+                {
+                    "Name": 18,
+                    "Value": 0.0,
+                    "Max": 0.0
+                },
+                {
+                    "Name": 3,
+                    "Value": 0.0,
+                    "Max": 0.0
+                }
+            ],
             "Experience": {
                 "CurrentValue": 0,
                 "Level": 0
             },
             "WordsInHand": [],
             "WordsInDeck": [
-                "we",
-                "workerworker",
-                "likeslike",
-                "theythey",
-                "isbe",
-                "dodo",
+                "applesapple",
+                "hehe",
                 "itit",
-                "sheshe",
-                "arebe",
-                "youyou",
-                "aa",
-                "tiredtired",
-                "appleapple",
+                "theythey",
                 "doesdo",
+                "ii",
+                "appleapple",
+                "isbe",
+                "thethe",
+                "aa",
+                "likelike",
+                "sheshe",
+                "we",
+                "workersworker",
+                "workerworker",
+                "dodo",
                 "ambe",
                 "anan",
-                "ii",
-                "applesapple",
-                "thethe",
-                "hehe"
+                "tiredtired",
+                "youyou"
             ]
         }
     },

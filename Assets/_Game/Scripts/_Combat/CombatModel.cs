@@ -30,7 +30,6 @@ namespace Combat
         public Location Location { get; private set; }
 
         public AbilityInventoryPresenter AbilityInventory { get; private set; }
-        public WordUnitConfigs[] AvailableWordUnitsConfigs { get; private set; }
 
         public Stats HeroStats => Hero.Stats;
         public int AvailableWordsOnFieldCount => (int)FieldCapacity.Max - UnitsOnFieldCount;
@@ -50,8 +49,7 @@ namespace Combat
             GrammarValidator grammarValidator,
             PointsCounter pointsCounter,
             Location location,
-            AbilityInventoryPresenter abilityInventory,
-            WordUnitConfigs[] availableWordUnitsConfigs)
+            AbilityInventoryPresenter abilityInventory)
         {
             EnterParams = enterParams;
 
@@ -72,7 +70,6 @@ namespace Combat
             Location = location;
 
             AbilityInventory = abilityInventory;
-            AvailableWordUnitsConfigs = availableWordUnitsConfigs;
 
             FieldWordUnitsGroup.SetMaxAvailableWordsCount((int)FieldCapacity.Max);
 

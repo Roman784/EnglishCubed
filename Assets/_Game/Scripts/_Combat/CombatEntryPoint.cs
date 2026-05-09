@@ -20,13 +20,11 @@ namespace Combat
         [SerializeField] private Location _location;
         [SerializeField] private CameraShaker _cameraShaker;
 
-        [SerializeField] private WordUnitConfigs[] _wordUnitsConfigs; // Temp.
-
         private CombatPresenter _presenter;
         private AbilityInventoryPresenter _abilityInventory;
         private Deck _deck;
 
-        private Stats _heroStats; // Temp.
+        private Stats _heroStats;
 
         protected override IEnumerator Run(CombatEnterParams enterParams)
         {
@@ -138,8 +136,7 @@ namespace Combat
                 grammarValidator: grammarValidator,
                 pointsCounter: pointsCounter,
                 location: _location,
-                abilityInventory: _abilityInventory,
-                availableWordUnitsConfigs: _wordUnitsConfigs);
+                abilityInventory: _abilityInventory);
             _presenter = new CombatPresenter(_view, model);
 
             // ========== Start Game ==========

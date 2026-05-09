@@ -8,7 +8,7 @@ namespace GameProducer
 {
     public class WordUnitsProducer
     {
-        private GameProducerContext _context;
+        private readonly GameProducerContext _context;
 
         private LexiconConfigs Configs => G.Configs.LexiconConfigs;
 
@@ -17,9 +17,34 @@ namespace GameProducer
             _context = context;
         }
 
+        public IEnumerable<WordUnitConfigs> GetThree()
+        {
+            return GetWords(3);
+        }
+
         public IEnumerable<WordUnitConfigs> GetWords(int count)
         {
-            return Configs.AllWords.OrderBy(x => Random.value).Take(count);
+            var availableWords = Configs.AllWords.ToList();
+
+            var result = new List<WordUnitConfigs>();
+
+            for (int i = 0; i < count; i++)
+            {
+                if (availableWords.Count == 0)
+                    break;
+
+                var weightedArray = availableWords
+                    .Select(w => (item: w, weight: w.Weight))
+                    .ToArray();
+
+                var selected = WeightedRandom.Get(weightedArray);
+
+                availableWords.Remove(selected);
+
+                result.Add(selected);
+            }
+
+            return result;
         }
     }
 }
