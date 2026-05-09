@@ -3,12 +3,13 @@
         "Language": 0
     },
     "MetaProgression": {
-        "SelectedHero": 3,
+        "SelectedHero": 2,
         "UnlockedHeroes": [
             1,
             2,
             3,
-            5
+            5,
+            4
         ],
         "UnlockedAbilities": [
             1,
@@ -35,115 +36,62 @@
             22,
             34,
             23,
-            30
+            30,
+            33,
+            26
         ]
     },
     "Currency": {
-        "Coins": 103394
+        "Coins": 103094
     },
     "Session": {
         "Data": {
             "IsStarted": true,
-            "Seed": 64771721,
-            "IsInEncounter": false,
+            "Seed": 0,
+            "IsInEncounter": true,
             "CurrentEncounterName": 2,
-            "CurrentEncounterNumber": 25,
-            "TotalEncountersCount": 49,
-            "PassedEncounters": [
-                25
-            ],
-            "Hero": 3,
+            "CurrentEncounterNumber": 0,
+            "TotalEncountersCount": 0,
+            "PassedEncounters": [],
+            "Hero": 1,
             "Level": 1,
-            "IsEnemyExist": false,
+            "IsEnemyExist": true,
             "Enemy": 7,
-            "CurrentEnemyHealth": 0,
-            "MaxEnemyHealth": 85,
-            "Abilities": [
-                {
-                    "Name": 3,
-                    "StacksCount": 1
-                },
-                {
-                    "Name": 17,
-                    "StacksCount": 1
-                }
-            ],
-            "Stats": [
-                {
-                    "Name": 25,
-                    "Value": 3.0,
-                    "Max": 3.0
-                },
-                {
-                    "Name": 24,
-                    "Value": 3.0,
-                    "Max": 4.0
-                },
-                {
-                    "Name": 23,
-                    "Value": 6.0,
-                    "Max": 6.0
-                },
-                {
-                    "Name": 22,
-                    "Value": 10.0,
-                    "Max": 10.0
-                },
-                {
-                    "Name": 0,
-                    "Value": 5.0,
-                    "Max": 5.0
-                },
-                {
-                    "Name": 1,
-                    "Value": 2.0,
-                    "Max": 3.0
-                },
-                {
-                    "Name": 6,
-                    "Value": 20.0,
-                    "Max": 20.0
-                },
-                {
-                    "Name": 7,
-                    "Value": 1.0,
-                    "Max": 1.0
-                }
-            ],
+            "CurrentEnemyHealth": 90,
+            "MaxEnemyHealth": 90,
+            "Abilities": [],
+            "Stats": [],
             "Experience": {
                 "CurrentValue": 0,
-                "Level": 2
+                "Level": 0
             },
-            "WordsInHand": [
-                "we",
-                "itit"
-            ],
+            "WordsInHand": [],
             "WordsInDeck": [
-                "hehe",
-                "ambe",
-                "doesdo",
-                "dodo",
-                "thethe",
-                "sheshe",
+                "we",
                 "workerworker",
-                "workersworker",
-                "isbe",
-                "tiredtired",
-                "youyou",
-                "likelike",
-                "appleapple",
-                "hehe",
-                "arebe",
+                "likeslike",
                 "theythey",
-                "applesapple",
-                "ii",
+                "isbe",
+                "dodo",
+                "itit",
+                "sheshe",
+                "arebe",
+                "youyou",
                 "aa",
-                "arebe"
+                "tiredtired",
+                "appleapple",
+                "doesdo",
+                "ambe",
+                "anan",
+                "ii",
+                "applesapple",
+                "thethe",
+                "hehe"
             ]
         }
     },
     "Audio": {
-        "SoundVolume": 0.7161157727241516,
+        "SoundVolume": 0.3851884603500366,
         "MusicVolume": 0.5336520671844482
     }
 }

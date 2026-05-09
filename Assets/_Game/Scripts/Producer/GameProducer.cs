@@ -11,6 +11,7 @@ namespace GameProducer
         public readonly EnemyProducer Enemy;
         public readonly WordUnitsProducer WordUnits;
         public readonly CurrencyProducer Currency;
+        public readonly AbilityProducer Ability;
 
         public GameProducer()
         {
@@ -20,6 +21,7 @@ namespace GameProducer
             Enemy = new EnemyProducer(Context);
             WordUnits = new WordUnitsProducer(Context);
             Currency = new CurrencyProducer(Context);
+            Ability = new AbilityProducer(Context);
         }
     }
 }

@@ -19,25 +19,5 @@ namespace Gameplay
         public Vector2 PointsAccumulationPosition => _pointsAccumulationPoint.position;
 
         public Observable<Unit> AllEnemiesDeathSignal => _allEnemiesDeathSignalSubj;
-/*
-        private void Start()
-        {
-            foreach (var enemy in _enemies)
-            {
-                var stats = new Stats(new Health(50));
-                enemy.Init(stats);
-
-                enemy.DeathSignal.Subscribe(_ =>
-                {
-                    _enemies.Remove(enemy);
-
-                    if (_enemies.Count == 0)
-                    {
-                        _allEnemiesDeathSignalSubj.OnNext(Unit.Default);
-                        _allEnemiesDeathSignalSubj.OnCompleted();
-                    }
-                });
-            }
-        }*/
     }
 }

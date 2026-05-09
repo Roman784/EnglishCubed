@@ -31,6 +31,8 @@ namespace Configs
 
         public int MaxStacksCount => Levels.Length;
 
+        public int TrueWeight => Rarity.Number() * Weight.Number();
+
 #if UNITY_EDITOR
         [ContextMenu("Set Ability Name")]
         private void SetAbilityName()
