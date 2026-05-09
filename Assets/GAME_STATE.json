@@ -3,7 +3,7 @@
         "Language": 0
     },
     "MetaProgression": {
-        "SelectedHero": 5,
+        "SelectedHero": 4,
         "UnlockedHeroes": [
             1,
             2,
@@ -42,32 +42,37 @@
         ]
     },
     "Currency": {
-        "Coins": 103882
+        "Coins": 104023
     },
     "Session": {
         "Data": {
-            "IsStarted": false,
-            "Seed": 10760284,
-            "IsInEncounter": false,
-            "CurrentEncounterName": 0,
-            "CurrentEncounterNumber": -1,
-            "TotalEncountersCount": 4,
+            "IsStarted": true,
+            "Seed": 81790368,
+            "IsInEncounter": true,
+            "CurrentEncounterName": 2,
+            "CurrentEncounterNumber": 18,
+            "TotalEncountersCount": 49,
             "PassedEncounters": [
-                1
+                25,
+                32
             ],
-            "Hero": 5,
+            "Hero": 4,
             "Level": 1,
             "IsEnemyExist": true,
-            "Enemy": 6,
-            "CurrentEnemyHealth": 0,
-            "MaxEnemyHealth": 350,
+            "Enemy": 7,
+            "CurrentEnemyHealth": 80,
+            "MaxEnemyHealth": 80,
             "Abilities": [
                 {
-                    "Name": 36,
+                    "Name": 34,
                     "StacksCount": 1
                 },
                 {
-                    "Name": 8,
+                    "Name": 5,
+                    "StacksCount": 1
+                },
+                {
+                    "Name": 36,
                     "StacksCount": 1
                 }
             ],
@@ -79,7 +84,7 @@
                 },
                 {
                     "Name": 24,
-                    "Value": 4.0,
+                    "Value": 3.0,
                     "Max": 4.0
                 },
                 {
@@ -94,13 +99,28 @@
                 },
                 {
                     "Name": 0,
-                    "Value": 2.0,
-                    "Max": 2.0
+                    "Value": 3.0,
+                    "Max": 5.0
                 },
                 {
                     "Name": 1,
                     "Value": 3.0,
                     "Max": 3.0
+                },
+                {
+                    "Name": 12,
+                    "Value": 15.0,
+                    "Max": 15.0
+                },
+                {
+                    "Name": 10,
+                    "Value": 5.0,
+                    "Max": 5.0
+                },
+                {
+                    "Name": 20,
+                    "Value": 0.0,
+                    "Max": 0.0
                 },
                 {
                     "Name": 26,
@@ -109,33 +129,35 @@
                 }
             ],
             "Experience": {
-                "CurrentValue": 100,
-                "Level": 2
+                "CurrentValue": 55,
+                "Level": 3
             },
             "WordsInHand": [
-                "aa",
-                "sheshe",
-                "youyou",
+                "isbe",
+                "theythey",
+                "thethe",
+                "hehe",
                 "itit",
-                "arebe",
-                "dodo",
-                "doesdo"
+                "sheshe",
+                "ii",
+                "hehe",
+                "workersworker",
+                "workerworker"
             ],
             "WordsInDeck": [
-                "likeslike",
-                "theythey",
-                "anan",
-                "appleapple",
-                "thethe",
-                "tiredtired",
                 "likelike",
+                "applesapple",
+                "dodo",
+                "tiredtired",
+                "appleapple",
                 "ambe",
-                "workersworker",
-                "workerworker",
-                "hehe",
-                "we",
-                "isbe",
-                "ambe"
+                "anan",
+                "doesdo",
+                "aa",
+                "likeslike",
+                "applesapple",
+                "youyou",
+                "we"
             ]
         }
     },

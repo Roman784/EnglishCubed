@@ -24,3 +24,12 @@ MonoBehaviour:
   - Name: 1
     Value: 3
     Max: 3
+  - Name: 5
+    Value: 20
+    Max: 20
+  - Name: 8
+    Value: 20
+    Max: 20
+  - Name: 9
+    Value: 50
+    Max: 50

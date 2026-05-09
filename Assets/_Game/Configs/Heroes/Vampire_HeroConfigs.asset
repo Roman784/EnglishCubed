@@ -25,8 +25,8 @@ MonoBehaviour:
     Value: 3
     Max: 3
   - Name: 6
-    Value: 20
-    Max: 20
+    Value: 30
+    Max: 30
   - Name: 7
     Value: 1
     Max: 1
