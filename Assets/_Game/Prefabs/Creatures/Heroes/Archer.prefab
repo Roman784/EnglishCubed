@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6329131269798407150}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_legRight_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 586804502438376531}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_legLeft_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1265396305318003549}
   - component: {fileID: 5718208396201557910}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,7 +164,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3934540579049781329}
   - component: {fileID: 1910900534239019841}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: archer_handLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -254,7 +254,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1622699490664194829}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_armLeft_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -287,7 +287,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1910413365422741566}
   - component: {fileID: 562421268550802005}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: archer_head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -381,7 +381,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3382649179898942957}
   - component: {fileID: 8073937085024053674}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: archer_bodyMid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -478,7 +478,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4839240763349745833}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_bodyTop_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -511,7 +511,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2204878998390879468}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_bodyBottom_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -544,7 +544,7 @@ GameObject:
   - component: {fileID: 7487519407108682899}
   - component: {fileID: 3886536481815672196}
   - component: {fileID: 6307410085552166146}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: archer_armRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -657,7 +657,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7575128985578647127}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_legLeft_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -691,7 +691,7 @@ GameObject:
   - component: {fileID: 1733491944431831110}
   - component: {fileID: 559097634806968238}
   - component: {fileID: 5654442601611163862}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: archer_armleft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -804,7 +804,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3966468216683005669}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_armLeft_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -836,7 +836,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4228125337590157291}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_armLeft_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -869,7 +869,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3338054067611674787}
   - component: {fileID: 5053446315538139996}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: archer_eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -960,7 +960,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7469796348065138673}
   - component: {fileID: 3265606866652962024}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: archer_bowstring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1052,7 +1052,7 @@ GameObject:
   - component: {fileID: 3664589722717966837}
   - component: {fileID: 5425485928667503815}
   - component: {fileID: 3519296681928549515}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: archer_legLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1165,7 +1165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7981592717920977208}
   - component: {fileID: 348931721806161905}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: archer_bow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1256,7 +1256,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8564778869556925463}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_bodyBottom_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1288,7 +1288,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6971030712357363657}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_bodyTop_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1320,7 +1320,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4532385972107895417}
   - component: {fileID: 4243746282570705812}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Archer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1365,7 +1365,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 512160141216683376}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_armLeft_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1399,7 +1399,7 @@ GameObject:
   - component: {fileID: 2653657055437217875}
   - component: {fileID: 9009659608923309413}
   - component: {fileID: 2571801745805410739}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: archer_bodyBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1511,7 +1511,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3719860610697553042}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_armLeft_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1545,7 +1545,7 @@ GameObject:
   - component: {fileID: 5907399621720163335}
   - component: {fileID: 5171437468129047204}
   - component: {fileID: 223821300589001516}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: archer_bodyTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1660,7 +1660,7 @@ GameObject:
   - component: {fileID: 3914827612767786994}
   - component: {fileID: 5896499846228673063}
   - component: {fileID: 4262184221560266381}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: archer_legRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1774,7 +1774,7 @@ GameObject:
   - component: {fileID: 7410156358531981559}
   - component: {fileID: 9218842608390653542}
   - component: {fileID: 1626483390357050683}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Skin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1843,7 +1843,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4340199939506285339}
   - component: {fileID: 8119030477417618260}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: archer_featherSmall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1933,7 +1933,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7195434217669079409}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_armLeft_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1965,7 +1965,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8527071711500931700}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_legRight_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1997,7 +1997,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6208640016008371679}
   - component: {fileID: 5873268757489325369}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: archer_handRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2089,7 +2089,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2361004433769373094}
   - component: {fileID: 4797191900456764842}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: archer_featherBig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2179,7 +2179,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5462909365516820987}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_bodyTop_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

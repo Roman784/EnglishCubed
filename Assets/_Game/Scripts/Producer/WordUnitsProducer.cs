@@ -24,8 +24,7 @@ namespace GameProducer
 
         public IEnumerable<WordUnitConfigs> GetWords(int count)
         {
-            var availableWords = Configs.AllWords.ToList();
-
+            var availableWords = new List<WordUnitConfigs>(Configs.AllWords);
             var result = new List<WordUnitConfigs>();
 
             for (int i = 0; i < count; i++)

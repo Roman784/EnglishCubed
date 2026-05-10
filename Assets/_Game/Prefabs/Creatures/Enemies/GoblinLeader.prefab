@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5553778784440758415}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_armLeft_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 626877958259658165}
   - component: {fileID: 1367101669968204753}
   - component: {fileID: 5953309936574329691}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: goblin_legLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,7 +155,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6367111747030474922}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_armLeft_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -188,7 +188,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8982496693397412132}
   - component: {fileID: 2957805353522316958}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: goblin_headHighlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -278,7 +278,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4319454535544919177}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_armRight_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -312,7 +312,7 @@ GameObject:
   - component: {fileID: 7771229353171245977}
   - component: {fileID: 8404888659923831790}
   - component: {fileID: 3104052708508059926}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -449,7 +449,7 @@ GameObject:
   - component: {fileID: 5126385384533246268}
   - component: {fileID: 137601588651158246}
   - component: {fileID: 1689191159769847707}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Skin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -521,7 +521,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4743743744330359952}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_armRight_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -555,7 +555,7 @@ GameObject:
   - component: {fileID: 8600188855465011041}
   - component: {fileID: 7921302687460099541}
   - component: {fileID: 7711523726174474006}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -616,7 +616,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6885133305322445039}
   - component: {fileID: 1855146501357676817}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: goblin_necklace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -707,7 +707,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2967092697728501797}
   - component: {fileID: 5302067123291420188}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: goblin_nose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -800,7 +800,7 @@ GameObject:
   - component: {fileID: 8960028383495989025}
   - component: {fileID: 711293085928975211}
   - component: {fileID: 4235973347579301894}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -888,7 +888,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1831374041966724694}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -921,7 +921,7 @@ GameObject:
   - component: {fileID: 3438988258377545389}
   - component: {fileID: 7276863310644423671}
   - component: {fileID: 342141469664029118}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: goblin_armRightt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1034,7 +1034,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7748887000255871283}
   - component: {fileID: 6555206031172209794}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1096,7 +1096,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8582457303058412490}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CenterPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1128,7 +1128,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3019485314661747395}
   - component: {fileID: 8877209689209945670}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: goblin_handLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1220,7 +1220,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6378298686913576409}
   - component: {fileID: 3318354825995154181}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: goblin_handRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1311,7 +1311,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9021713736696631966}
   - component: {fileID: 3461486028210110279}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GoblinLeader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1359,7 +1359,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3698408915650319434}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_legLeft_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1393,7 +1393,7 @@ GameObject:
   - component: {fileID: 4058142800946764975}
   - component: {fileID: 6236841453930143284}
   - component: {fileID: 2798632587327735059}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CurrentBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1467,7 +1467,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8174952324079624553}
   - component: {fileID: 3736254955480619647}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1559,7 +1559,7 @@ GameObject:
   - component: {fileID: 1868665958618612952}
   - component: {fileID: 3791990546301003950}
   - component: {fileID: 8126435497620179395}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: goblin_legRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1672,7 +1672,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2450575986975153322}
   - component: {fileID: 5308444452496190095}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: goblin_iroquois
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1763,7 +1763,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1619634397226453016}
   - component: {fileID: 2236993759034864881}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1854,7 +1854,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7495737754122829400}
   - component: {fileID: 3949078006933773238}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: goblin_body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1949,7 +1949,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6774180714284559333}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_legRight_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1982,7 +1982,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7077976672079244680}
   - component: {fileID: 6068896211000473248}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: goblin_eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2073,7 +2073,7 @@ GameObject:
   m_Component:
   - component: {fileID: 230660208577546130}
   - component: {fileID: 5460117486016213561}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: goblin_sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2164,7 +2164,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5035650319677293496}
   - component: {fileID: 5907271866865040547}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: goblin_earRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2254,7 +2254,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5449570554457937265}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_legLeft_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2287,7 +2287,7 @@ GameObject:
   - component: {fileID: 1100033874273154383}
   - component: {fileID: 6628878141602620837}
   - component: {fileID: 5057315500680195296}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: goblin_armLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2399,7 +2399,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2678209984759339529}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_legRight_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2432,7 +2432,7 @@ GameObject:
   - component: {fileID: 7250189453271079120}
   - component: {fileID: 3461407876388305412}
   - component: {fileID: 4939755870407020179}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DelayedBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2505,7 +2505,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 389089059167755459}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2539,7 +2539,7 @@ GameObject:
   m_Component:
   - component: {fileID: 929374864581328268}
   - component: {fileID: 4469023286786287681}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: goblin_head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2637,7 +2637,7 @@ GameObject:
   - component: {fileID: 1800487872477133551}
   - component: {fileID: 2499239716159118331}
   - component: {fileID: 4523760810193295304}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: goblin_bodyBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2750,7 +2750,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6714702939241707962}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2782,7 +2782,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6772207874018858672}
   - component: {fileID: 2708650452888599055}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: goblin_earLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}

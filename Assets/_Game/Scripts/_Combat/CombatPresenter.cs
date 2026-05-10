@@ -79,12 +79,12 @@ namespace Combat
             var sentence = string.Join(" ", _model.FieldWordUnitsGroup.AllWordUnits.Select(w => w.GetWordText()));
             var validationResult = _model.GrammarValidator.Validate(sentence);
 
-            /*if (!validationResult.IsValid)
+            if (!validationResult.IsValid)
             {
                 var hintMessage = G.Configs.GrammarHintsConfigs.GetMessage(validationResult.HintCode);
                 _view.ShowMessage(hintMessage);
                 return;
-            }*/
+            }
 
             ExecuteAttackSequence(validationResult);
         }

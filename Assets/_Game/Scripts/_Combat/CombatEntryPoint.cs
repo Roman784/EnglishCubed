@@ -60,11 +60,12 @@ namespace Combat
                 .Subscribe(_ => G.GameSessionProvider.SetWordsInHand(_handWordUnitsGroup.GetWords()))
                 .AddTo(this);
 
+
             // ========== Deck ==========
 
-            IEnumerable<WordUnitConfigs> wordUnitsInDeck;
+            IEnumerable<WordUnitConfigs> wordUnitsInDeck = null;
             if (G.SessionData.WordsInDeck.Count == 0)
-                wordUnitsInDeck = G.GameProducer.WordUnits.GetWords(20);
+                wordUnitsInDeck = G.GameProducer.WordUnits.GetWords(25);
             else
                 wordUnitsInDeck = G.SessionData.WordsInDeck.Select
                     (w => G.Configs.LexiconConfigs.AllWords.First(wc => wc.Name == w));
@@ -75,7 +76,7 @@ namespace Combat
             var discards = new StatData() { Name = StatName.DiscardsCount, Value = 3, Max = 3 };
             var draws = new StatData() { Name = StatName.DrawsCount, Value = 4, Max = 4 };
             var fieldCapacity = new StatData() { Name = StatName.FieldCapacity, Value = 5, Max = 5 };
-            var handCapacity = new StatData() { Name = StatName.HandCapacity, Value = 10, Max = 10 };
+            var handCapacity = new StatData() { Name = StatName.HandCapacity, Value = 15, Max = 15 };
 
             var experienceLevelData = G.Configs.StatsConfigs.ExperienceLevelDatas;
             var heroExperience = new Experience(

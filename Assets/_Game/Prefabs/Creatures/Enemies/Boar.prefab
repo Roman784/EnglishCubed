@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 243997430130503597}
   - component: {fileID: 4678794202712237643}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: boar_body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6322104338987684233}
   - component: {fileID: 4893794342792489254}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: boar_leg_RB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,7 +200,7 @@ GameObject:
   - component: {fileID: 4550461826560201533}
   - component: {fileID: 4543884421209831229}
   - component: {fileID: 8568491474703646978}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -336,7 +336,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7542211118951479911}
   - component: {fileID: 3728954016423632641}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: boar_leg_LF
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -427,7 +427,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5176120920911596392}
   - component: {fileID: 9196511579562254750}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: boar_ear_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -519,7 +519,7 @@ GameObject:
   - component: {fileID: 7128035972741337702}
   - component: {fileID: 4307658596467072908}
   - component: {fileID: 1455665690633652217}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -580,7 +580,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8787387999949505445}
   - component: {fileID: 8248843006426639886}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: boar_tusk_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -672,7 +672,7 @@ GameObject:
   - component: {fileID: 1819951617813661984}
   - component: {fileID: 2443661404158448277}
   - component: {fileID: 992540819699997004}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CurrentBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -746,7 +746,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4025730748815323340}
   - component: {fileID: 5754253435759918455}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: boar_nose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -837,7 +837,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7347516508108938782}
   - component: {fileID: 6630757963176093208}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: boar_wool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -929,7 +929,7 @@ GameObject:
   - component: {fileID: 87734861322954653}
   - component: {fileID: 1647125713908933703}
   - component: {fileID: 1867892200070505696}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Skin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1004,7 +1004,7 @@ GameObject:
   m_Component:
   - component: {fileID: 852455003659552579}
   - component: {fileID: 4342775267600680244}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1067,7 +1067,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4601728612076456282}
   - component: {fileID: 486336188618065767}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: boar_leg_LB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1158,7 +1158,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1111725189437251231}
   - component: {fileID: 3110905218314609237}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Boar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1206,7 +1206,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2560540590644707379}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1237,7 +1237,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4250540932439269053}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CenterPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1271,7 +1271,7 @@ GameObject:
   - component: {fileID: 7184930760689742454}
   - component: {fileID: 6009279819606454883}
   - component: {fileID: 1798878867273290854}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1361,7 +1361,7 @@ GameObject:
   - component: {fileID: 7575468356147249644}
   - component: {fileID: 2141927291745836212}
   - component: {fileID: 2141656057029202796}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: boar_tail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1475,7 +1475,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6763968236371983200}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1507,7 +1507,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 402727525239321633}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1540,7 +1540,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1704666649658525231}
   - component: {fileID: 2606092538023735949}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1631,7 +1631,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8204936091523792844}
   - component: {fileID: 3941495260565796136}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: boar_tusk_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1722,7 +1722,7 @@ GameObject:
   m_Component:
   - component: {fileID: 297405731523570905}
   - component: {fileID: 3360652383607461338}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: boar_ear_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1814,7 +1814,7 @@ GameObject:
   - component: {fileID: 2266954027492936193}
   - component: {fileID: 963219971361968396}
   - component: {fileID: 6370044999633723554}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DelayedBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1887,7 +1887,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1509205973457772565}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1920,7 +1920,7 @@ GameObject:
   m_Component:
   - component: {fileID: 78037276734595849}
   - component: {fileID: 4297324710111950960}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: boar_leg_RF
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2011,7 +2011,7 @@ GameObject:
   m_Component:
   - component: {fileID: 155609026606131924}
   - component: {fileID: 6089943885820117095}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3516192168872982686}
   - component: {fileID: 6222139881320530910}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cactus_body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6744655483395958850}
   - component: {fileID: 4345356383135936657}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cactus_spike (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -198,7 +198,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7557756700216751702}
   - component: {fileID: 4253507250209772979}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cactus_spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -289,7 +289,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2484477552779155258}
   - component: {fileID: 8753653589133576553}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cactus_spike (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -379,7 +379,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7933719965401224879}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Face
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -416,7 +416,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7915974565650072772}
   - component: {fileID: 2431713595045270666}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cactus_spike (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -507,7 +507,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7753328196838049678}
   - component: {fileID: 1109084988947614734}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cactus_eyeLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -598,7 +598,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6742651222723806209}
   - component: {fileID: 1489064967933503093}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cactus_forearmLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -691,7 +691,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4342740797955925427}
   - component: {fileID: 8076999321868222165}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -782,7 +782,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8576189534203699788}
   - component: {fileID: 5698754012471765522}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cactus_eyeRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -873,7 +873,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6800528493293667488}
   - component: {fileID: 7645007847896791735}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cactus_legRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -965,7 +965,7 @@ GameObject:
   m_Component:
   - component: {fileID: 636728691663277125}
   - component: {fileID: 8932444498739759892}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cactus_spike (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1056,7 +1056,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9184076726174971244}
   - component: {fileID: 272010442872632496}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cactus_armRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1149,7 +1149,7 @@ GameObject:
   m_Component:
   - component: {fileID: 138121678262067123}
   - component: {fileID: 6504707361279916868}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cactus_flower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1240,7 +1240,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3992247286859457423}
   - component: {fileID: 1861529106462213245}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cactus_armLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1332,7 +1332,7 @@ GameObject:
   m_Component:
   - component: {fileID: 764028229275669081}
   - component: {fileID: 8209254156870878366}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cactus_mouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1423,7 +1423,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6935958831749402088}
   - component: {fileID: 421195315712432731}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cactus_spike (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1514,7 +1514,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1574203790197326424}
   - component: {fileID: 2979460117374021261}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cactus_legLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1607,7 +1607,7 @@ GameObject:
   - component: {fileID: 7072800692143430135}
   - component: {fileID: 282067640427291016}
   - component: {fileID: 1847516169022871496}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Skin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1676,7 +1676,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3466839230260409377}
   - component: {fileID: 7525082526657403998}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cactus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1722,7 +1722,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8361506266063805656}
   - component: {fileID: 7017622817677377713}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cactus_spike (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1813,7 +1813,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6216028204093499832}
   - component: {fileID: 412170453358577017}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cactus_spike (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

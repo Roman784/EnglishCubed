@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5329227452301649906}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_armRight_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 34085046743622785}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_armRight_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8942848724032989422}
   - component: {fileID: 7575262133546416730}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: skeleton_shoulderPadRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7259758018941134464}
   - component: {fileID: 3163326424194119017}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: skeleton_helmetHornLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -255,7 +255,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7863675852760778900}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_armLeft_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -288,7 +288,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3847519125592801876}
   - component: {fileID: 7358343117359803019}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: skeleton_handRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -379,7 +379,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5738338369899334824}
   - component: {fileID: 8049635209912407144}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: skeleton_necklace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -469,7 +469,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7208381581335550295}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_legLeft_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -502,7 +502,7 @@ GameObject:
   - component: {fileID: 3682288740099990721}
   - component: {fileID: 7398365206780574440}
   - component: {fileID: 6886618218860180079}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: skeleton_armLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -616,7 +616,7 @@ GameObject:
   - component: {fileID: 878553718363893951}
   - component: {fileID: 3802398661613032560}
   - component: {fileID: 1434083143745746761}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: skeleton_armRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -729,7 +729,7 @@ GameObject:
   m_Component:
   - component: {fileID: 928647768290575870}
   - component: {fileID: 7072640755898702108}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: skeleton_shoulderPadLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -820,7 +820,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3825666281823334666}
   - component: {fileID: 992101758136384312}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -883,7 +883,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7768283553128702574}
   - component: {fileID: 9020171883417720490}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: skeleton_bodyMid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -976,7 +976,7 @@ GameObject:
   - component: {fileID: 3408645376076890810}
   - component: {fileID: 4034108949967095884}
   - component: {fileID: 2596675469694204477}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Skin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1050,7 +1050,7 @@ GameObject:
   - component: {fileID: 8190104477493837504}
   - component: {fileID: 3863657862675467686}
   - component: {fileID: 4557627270560048579}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DelayedBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1124,7 +1124,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4383948098340600356}
   - component: {fileID: 1994955387757480196}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1215,7 +1215,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2228719021752580591}
   - component: {fileID: 2052085171725948785}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: skeleton_weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1307,7 +1307,7 @@ GameObject:
   - component: {fileID: 3070716189017817652}
   - component: {fileID: 2176560749313692356}
   - component: {fileID: 5933924792568716743}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: skeleton_legRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1420,7 +1420,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2970307426306449630}
   - component: {fileID: 2354451645477766809}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: skeleton_helmet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1512,7 +1512,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7863853771084163396}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_legLeft_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1545,7 +1545,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8509133217422976830}
   - component: {fileID: 2207617440873017346}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: skeleton_bodyBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1638,7 +1638,7 @@ GameObject:
   - component: {fileID: 7719320267480931834}
   - component: {fileID: 7622152358749480833}
   - component: {fileID: 6387175326110632893}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1700,7 +1700,7 @@ GameObject:
   - component: {fileID: 2658152483864165819}
   - component: {fileID: 3854882708598008706}
   - component: {fileID: 8764307704872505222}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CurrentBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1773,7 +1773,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 206261016419576490}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_armLeft_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1806,7 +1806,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3095738733759575053}
   - component: {fileID: 5827812657653088947}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: skeleton_helmetHornRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1897,7 +1897,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2206958111306777322}
   - component: {fileID: 5376605056807326363}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: skeleton_handLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1990,7 +1990,7 @@ GameObject:
   - component: {fileID: 6973795336247890795}
   - component: {fileID: 8841760281967819371}
   - component: {fileID: 2311775008800571707}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: skeleton_legLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2103,7 +2103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7921611404924981551}
   - component: {fileID: 6463087937799955482}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: skeleton_head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2197,7 +2197,7 @@ GameObject:
   m_Component:
   - component: {fileID: 766063116445229097}
   - component: {fileID: 7193653087744332185}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: skeleton_eyes_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2287,7 +2287,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 254129261407308785}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_legRight_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2321,7 +2321,7 @@ GameObject:
   - component: {fileID: 6368993009883236560}
   - component: {fileID: 5619982048416912660}
   - component: {fileID: 7421814069055790933}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2459,7 +2459,7 @@ GameObject:
   - component: {fileID: 3015318701219390185}
   - component: {fileID: 3554853707951282222}
   - component: {fileID: 566431632961762793}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2548,7 +2548,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5809323872346697526}
   - component: {fileID: 6100855270670160841}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2639,7 +2639,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2894077481017206103}
   - component: {fileID: 1375110521667062525}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: skeleton_bodyTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2735,7 +2735,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8369508397397190125}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CenterPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2767,7 +2767,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3886003746454821412}
   - component: {fileID: 8925973609641512015}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SkeletonOrdinary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2816,7 +2816,7 @@ GameObject:
   m_Component:
   - component: {fileID: 117141740875935855}
   - component: {fileID: 7421374263714406986}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: skeleton_eyes_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2906,7 +2906,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6382887130146103910}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_legRight_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

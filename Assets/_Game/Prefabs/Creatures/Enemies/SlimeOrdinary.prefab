@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5947716973998035272}
   - component: {fileID: 3820911718423711062}
   - component: {fileID: 4035517239575229269}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 2240428730783476092}
   - component: {fileID: 2879545257928967895}
   - component: {fileID: 8529951331775514739}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -238,7 +238,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1369666165780883341}
   - component: {fileID: 4039311886729166265}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: slime_hornRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -329,7 +329,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2986919561330622827}
   - component: {fileID: 1027715295767533799}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: slime_hornLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -421,7 +421,7 @@ GameObject:
   - component: {fileID: 8900137374721241802}
   - component: {fileID: 7841117011013562445}
   - component: {fileID: 5028007406136803784}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -483,7 +483,7 @@ GameObject:
   - component: {fileID: 2113041356705879262}
   - component: {fileID: 2775135437450585024}
   - component: {fileID: 2719633688955042595}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Skin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -555,7 +555,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8269421853609370573}
   - component: {fileID: 3427451996281481432}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -618,7 +618,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1518504417888404483}
   - component: {fileID: 1370072604159859937}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: slime_eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -709,7 +709,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8653565266125399727}
   - component: {fileID: 8052156536820166280}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -799,7 +799,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8992184306303562028}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CenterPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -831,7 +831,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5583145391796620485}
   - component: {fileID: 6868093635503452574}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SlimeOrdinary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -880,7 +880,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4461154231854366750}
   - component: {fileID: 4702714548023551450}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -971,7 +971,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7843433513371200857}
   - component: {fileID: 1803783962369949711}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: slime_bodySmall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1064,7 +1064,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1242300307150785565}
   - component: {fileID: 1945843288648138541}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: slime_head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1157,7 +1157,7 @@ GameObject:
   - component: {fileID: 7417854762283015962}
   - component: {fileID: 7569410676979995305}
   - component: {fileID: 7707537401593612133}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CurrentBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1232,7 +1232,7 @@ GameObject:
   - component: {fileID: 9024129562040312770}
   - component: {fileID: 2328592349405764670}
   - component: {fileID: 1843615529400400845}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DelayedBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}

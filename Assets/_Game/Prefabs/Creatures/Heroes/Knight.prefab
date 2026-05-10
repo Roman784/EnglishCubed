@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5010952425391042009}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_armLeft_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3662364207545902450}
   - component: {fileID: 25979446726815077}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Knight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7582349905843947393}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_armLeft_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 6174175028435351309}
   - component: {fileID: 2095499967537214179}
   - component: {fileID: 1908430843665503840}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: knight_armRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: 439358260445916857}
   - component: {fileID: 3152291596007513529}
   - component: {fileID: 717099619671025455}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: knight_bodyBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -354,7 +354,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6371618078923728949}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_leg_right_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -386,7 +386,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4414365928780901356}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_bodyBottom_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -417,7 +417,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7884120640372787802}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_armLeft_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -449,7 +449,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4199029541298130195}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_armLeft_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -481,7 +481,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5225163096757988866}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_leg_right_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -515,7 +515,7 @@ GameObject:
   - component: {fileID: 4976081412202610938}
   - component: {fileID: 3279157144354093360}
   - component: {fileID: 4533643251016167091}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: knight_armLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -630,7 +630,7 @@ GameObject:
   m_Component:
   - component: {fileID: 933678747208966145}
   - component: {fileID: 5636091982891280963}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: knight_palmRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -721,7 +721,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3286786896960206219}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_leg_right_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -753,7 +753,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5697103362338280574}
   - component: {fileID: 3615237269523748256}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: knight_bodyTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -844,7 +844,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1572466605912898692}
   - component: {fileID: 3001692109345178616}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: knight_helmet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -936,7 +936,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3214775390220618542}
   - component: {fileID: 4490571083677649754}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: knight_palmLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1026,7 +1026,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4324632898968543142}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_leg_left_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1058,7 +1058,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3028938147370729282}
   - component: {fileID: 8290750801701355833}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: knight_sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1148,7 +1148,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1630842501033541703}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_armLeft_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1182,7 +1182,7 @@ GameObject:
   - component: {fileID: 8182901052342165854}
   - component: {fileID: 1659444780604556902}
   - component: {fileID: 7909655721220910479}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: knight_legRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1297,7 +1297,7 @@ GameObject:
   - component: {fileID: 6111231094568417523}
   - component: {fileID: 1855415178545692252}
   - component: {fileID: 7734659198953537526}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: knight_bodyMid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1407,7 +1407,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8920873860348026502}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_bodyBottom_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1439,7 +1439,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3219368792748032559}
   - component: {fileID: 8749423121291287204}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1529,7 +1529,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2138358043427090758}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_armLeft_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1561,7 +1561,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6718352505521045717}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_bodyBottom_center
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1595,7 +1595,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4731469341441025144}
   - component: {fileID: 7908643049920159674}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: knight_head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1686,7 +1686,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7471198121290116759}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1721,7 +1721,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4736441694056049704}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_armLeft_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1754,7 +1754,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2040901054461722563}
   - component: {fileID: 329175865520252026}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: knight_crista
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1846,7 +1846,7 @@ GameObject:
   - component: {fileID: 6404849924245824318}
   - component: {fileID: 5948872860570902048}
   - component: {fileID: 7506508487952097882}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: knight_legLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1961,7 +1961,7 @@ GameObject:
   - component: {fileID: 4390725666714409094}
   - component: {fileID: 8715557816240732859}
   - component: {fileID: 7178835836163578418}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Skin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2029,7 +2029,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3526115445339572234}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_armLeft_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2061,7 +2061,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1007358712523664574}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_leg_left_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2093,7 +2093,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3399045949371983055}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bone_leg_left_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -22,6 +22,11 @@ namespace Configs
 
         public IEnumerable<WordUnitConfigs> AllWords => _allWordsByNameMap.Values;
 
+        private void Awake()
+        {
+            FillMap();
+        }
+
         public WordUnitConfigs GetByName(string name)
         {
             if (_allWordsByNameMap.ContainsKey(name))
@@ -34,11 +39,6 @@ namespace Configs
             if (_allWordsMap.ContainsKey(word))
                 return _allWordsMap[word];
             return null;
-        }
-
-        private void OnValidate()
-        {
-            FillMap();
         }
 
         private void FillMap()

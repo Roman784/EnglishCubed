@@ -3,166 +3,42 @@
         "Language": 0
     },
     "MetaProgression": {
-        "SelectedHero": 4,
+        "SelectedHero": 1,
         "UnlockedHeroes": [
-            1,
-            2,
-            3,
-            5,
-            4
+            1
         ],
-        "UnlockedAbilities": [
-            1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7,
-            8,
-            9,
-            10,
-            11,
-            12,
-            13,
-            14,
-            15,
-            16,
-            17,
-            18,
-            19,
-            20,
-            21,
-            22,
-            34,
-            23,
-            30,
-            33,
-            26
-        ]
+        "UnlockedAbilities": []
     },
     "Currency": {
-        "Coins": 104023
+        "Coins": 999
     },
     "Session": {
         "Data": {
             "IsStarted": true,
-            "Seed": 81790368,
-            "IsInEncounter": true,
-            "CurrentEncounterName": 2,
-            "CurrentEncounterNumber": 18,
-            "TotalEncountersCount": 49,
-            "PassedEncounters": [
-                25,
-                32
-            ],
-            "Hero": 4,
+            "Seed": 0,
+            "IsInEncounter": false,
+            "CurrentEncounterName": 0,
+            "CurrentEncounterNumber": 0,
+            "TotalEncountersCount": 0,
+            "PassedEncounters": [],
+            "Hero": 1,
             "Level": 1,
-            "IsEnemyExist": true,
-            "Enemy": 7,
-            "CurrentEnemyHealth": 80,
-            "MaxEnemyHealth": 80,
-            "Abilities": [
-                {
-                    "Name": 34,
-                    "StacksCount": 1
-                },
-                {
-                    "Name": 5,
-                    "StacksCount": 1
-                },
-                {
-                    "Name": 36,
-                    "StacksCount": 1
-                }
-            ],
-            "Stats": [
-                {
-                    "Name": 25,
-                    "Value": 3.0,
-                    "Max": 3.0
-                },
-                {
-                    "Name": 24,
-                    "Value": 3.0,
-                    "Max": 4.0
-                },
-                {
-                    "Name": 23,
-                    "Value": 5.0,
-                    "Max": 5.0
-                },
-                {
-                    "Name": 22,
-                    "Value": 10.0,
-                    "Max": 10.0
-                },
-                {
-                    "Name": 0,
-                    "Value": 3.0,
-                    "Max": 5.0
-                },
-                {
-                    "Name": 1,
-                    "Value": 3.0,
-                    "Max": 3.0
-                },
-                {
-                    "Name": 12,
-                    "Value": 15.0,
-                    "Max": 15.0
-                },
-                {
-                    "Name": 10,
-                    "Value": 5.0,
-                    "Max": 5.0
-                },
-                {
-                    "Name": 20,
-                    "Value": 0.0,
-                    "Max": 0.0
-                },
-                {
-                    "Name": 26,
-                    "Value": 0.0,
-                    "Max": 0.0
-                }
-            ],
+            "IsEnemyExist": false,
+            "Enemy": 0,
+            "CurrentEnemyHealth": 0,
+            "MaxEnemyHealth": 0,
+            "Abilities": [],
+            "Stats": [],
             "Experience": {
-                "CurrentValue": 55,
-                "Level": 3
+                "CurrentValue": 0,
+                "Level": 0
             },
-            "WordsInHand": [
-                "isbe",
-                "theythey",
-                "thethe",
-                "hehe",
-                "itit",
-                "sheshe",
-                "ii",
-                "hehe",
-                "workersworker",
-                "workerworker"
-            ],
-            "WordsInDeck": [
-                "likelike",
-                "applesapple",
-                "dodo",
-                "tiredtired",
-                "appleapple",
-                "ambe",
-                "anan",
-                "doesdo",
-                "aa",
-                "likeslike",
-                "applesapple",
-                "youyou",
-                "we"
-            ]
+            "WordsInHand": [],
+            "WordsInDeck": []
         }
     },
     "Audio": {
-        "SoundVolume": 0.3851884603500366,
-        "MusicVolume": 0.5336520671844482
+        "SoundVolume": 1.0,
+        "MusicVolume": 1.0
     }
 }

@@ -50,8 +50,8 @@ namespace Configs
 
             Debug.LogWarning($"Failed to find ability name for {confName}!");
         }
-    }
 #endif
+    }
 
     [Serializable]
     public class AbilityLevelData
