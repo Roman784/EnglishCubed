@@ -10,31 +10,88 @@
         "UnlockedAbilities": []
     },
     "Currency": {
-        "Coins": 999
+        "Coins": 1072
     },
     "Session": {
         "Data": {
             "IsStarted": true,
             "Seed": 0,
-            "IsInEncounter": false,
-            "CurrentEncounterName": 0,
+            "IsInEncounter": true,
+            "CurrentEncounterName": 2,
             "CurrentEncounterNumber": 0,
             "TotalEncountersCount": 0,
             "PassedEncounters": [],
             "Hero": 1,
             "Level": 1,
-            "IsEnemyExist": false,
-            "Enemy": 0,
-            "CurrentEnemyHealth": 0,
-            "MaxEnemyHealth": 0,
+            "IsEnemyExist": true,
+            "Enemy": 7,
+            "CurrentEnemyHealth": 90,
+            "MaxEnemyHealth": 90,
             "Abilities": [],
-            "Stats": [],
+            "Stats": [
+                {
+                    "Name": 25,
+                    "Value": 3.0,
+                    "Max": 3.0
+                },
+                {
+                    "Name": 24,
+                    "Value": 3.0,
+                    "Max": 4.0
+                },
+                {
+                    "Name": 23,
+                    "Value": 5.0,
+                    "Max": 5.0
+                },
+                {
+                    "Name": 22,
+                    "Value": 15.0,
+                    "Max": 15.0
+                },
+                {
+                    "Name": 0,
+                    "Value": 3.0,
+                    "Max": 3.0
+                },
+                {
+                    "Name": 1,
+                    "Value": 5.0,
+                    "Max": 5.0
+                }
+            ],
             "Experience": {
                 "CurrentValue": 0,
                 "Level": 0
             },
-            "WordsInHand": [],
-            "WordsInDeck": []
+            "WordsInHand": [
+                "appleapple",
+                "sheshe",
+                "hehe",
+                "likelike",
+                "isbe",
+                "doesdo",
+                "we",
+                "ii",
+                "workerworker",
+                "tiredtired",
+                "workerworker",
+                "applesapple",
+                "aa",
+                "dodo",
+                "anan"
+            ],
+            "WordsInDeck": [
+                "itit",
+                "theythey",
+                "thethe",
+                "workersworker",
+                "ambe",
+                "youyou",
+                "likeslike",
+                "arebe",
+                "likelike"
+            ]
         }
     },
     "Audio": {

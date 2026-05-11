@@ -74,10 +74,13 @@ namespace UI
             foreach (var element in _allElements)
                 baseSizes[element] = element.ContainerSize;
 
-            var scale = CalculateOptimalScale(_allElements.ToList(), baseSizes, containerWidth, containerHeight);
-            var lines = CreateLinesWithScale(_allElements, baseSizes, containerWidth, scale);
+            // Рассчитываем spacing как процент от размера контейнера
+            var spacingInPixels = _spacing * Mathf.Min(containerWidth, containerHeight);
+
+            var scale = CalculateOptimalScale(_allElements.ToList(), baseSizes, containerWidth, containerHeight, spacingInPixels);
+            var lines = CreateLinesWithScale(_allElements, baseSizes, containerWidth, scale, spacingInPixels);
             var elementsAndPositionsPair = CenterLinesWithScale(
-                lines, minScreenContainerCorner, maxScreenContainerCorner, baseSizes, scale, instantly, elementMovedSignal);
+                lines, minScreenContainerCorner, maxScreenContainerCorner, baseSizes, scale, instantly, elementMovedSignal, spacingInPixels);
 
             foreach (var pair in elementsAndPositionsPair)
                 elementPositionsMap[pair.Item1] = pair.Item2;
@@ -90,7 +93,7 @@ namespace UI
 
         private float CalculateOptimalScale(List<ILayoutElement> elements,
             Dictionary<ILayoutElement, Vector2> baseSizes,
-            float containerWidth, float containerHeight)
+            float containerWidth, float containerHeight, float spacingPixels)
         {
             float minScale = 0.3f;
             float maxScale = _scale;
@@ -106,7 +109,7 @@ namespace UI
                 {
                     var scaledWidth = baseSizes[element].x * testScale;
 
-                    if (currentLine.Count > 0 && currentLineWidth + scaledWidth + _spacing * testScale > containerWidth)
+                    if (currentLine.Count > 0 && currentLineWidth + scaledWidth + spacingPixels > containerWidth)
                     {
                         lines.Add(new List<ILayoutElement>(currentLine));
                         currentLine.Clear();
@@ -114,14 +117,14 @@ namespace UI
                     }
 
                     currentLine.Add(element);
-                    currentLineWidth += scaledWidth + (currentLine.Count > 1 ? _spacing * testScale : 0);
+                    currentLineWidth += scaledWidth + (currentLine.Count > 1 ? spacingPixels : 0);
                 }
 
                 if (currentLine.Count > 0)
                     lines.Add(new List<ILayoutElement>(currentLine));
 
                 var elementHeight = baseSizes[elements[0]].y * testScale;
-                var requiredHeight = lines.Count * (elementHeight + _spacing * testScale) - _spacing * testScale;
+                var requiredHeight = lines.Count * (elementHeight + spacingPixels) - spacingPixels;
 
                 if (requiredHeight <= containerHeight)
                 {
@@ -134,21 +137,20 @@ namespace UI
         }
 
         private List<List<ILayoutElement>> CreateLinesWithScale(IEnumerable<ILayoutElement> elements,
-            Dictionary<ILayoutElement, Vector2> baseSizes, float containerWidth, float scale)
+            Dictionary<ILayoutElement, Vector2> baseSizes, float containerWidth, float scale, float spacingPixels)
         {
             var lines = new List<List<ILayoutElement>>();
             var currentLine = new List<ILayoutElement>();
             var currentLineWidth = 0f;
-            var scaledSpacing = _spacing * scale;
 
             foreach (var element in elements)
             {
                 var scaledWidth = baseSizes[element].x * scale;
 
-                if (currentLine.Count == 0 || currentLineWidth + scaledWidth + scaledSpacing <= containerWidth)
+                if (currentLine.Count == 0 || currentLineWidth + scaledWidth + spacingPixels <= containerWidth)
                 {
                     currentLine.Add(element);
-                    currentLineWidth += scaledWidth + (currentLine.Count > 1 ? scaledSpacing : 0);
+                    currentLineWidth += scaledWidth + (currentLine.Count > 1 ? spacingPixels : 0);
                 }
                 else
                 {
@@ -168,17 +170,16 @@ namespace UI
         private List<(ILayoutElement, Vector2)> CenterLinesWithScale(List<List<ILayoutElement>> lines,
             Vector2 minContainerCorner, Vector2 maxContainerCorner,
             Dictionary<ILayoutElement, Vector2> baseSizes, float scale, bool instantly,
-            Subject<ILayoutElement> elementMovedSignal)
+            Subject<ILayoutElement> elementMovedSignal, float spacingPixels)
         {
             if (lines.Count == 0) return null;
 
             var elementsAndPositionsPair = new List<(ILayoutElement, Vector2)>();
 
             var containerCenter = (minContainerCorner + maxContainerCorner) / 2f;
-            var scaledSpacing = _spacing * scale;
 
             var elementHeight = baseSizes[lines[0][0]].y * scale;
-            var totalHeight = lines.Count * (elementHeight + scaledSpacing) - scaledSpacing;
+            var totalHeight = lines.Count * (elementHeight + spacingPixels) - spacingPixels;
             var startY = containerCenter.y + totalHeight / 2f;
             var currentY = startY;
 
@@ -187,7 +188,7 @@ namespace UI
                 var totalWidth = 0f;
                 foreach (var element in line)
                     totalWidth += baseSizes[element].x * scale;
-                totalWidth += (line.Count - 1) * scaledSpacing;
+                totalWidth += (line.Count - 1) * spacingPixels;
 
                 var startX = containerCenter.x - totalWidth / 2f;
                 var currentX = startX;
@@ -217,9 +218,9 @@ namespace UI
                         });
                     }
 
-                    currentX += scaledSize.x + scaledSpacing;
+                    currentX += scaledSize.x + spacingPixels;
                 }
-                currentY -= elementHeight + scaledSpacing;
+                currentY -= elementHeight + spacingPixels;
             }
 
             return elementsAndPositionsPair;

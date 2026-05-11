@@ -81,7 +81,8 @@ namespace Combat
 
             if (!validationResult.IsValid)
             {
-                var hintMessage = G.Configs.GrammarHintsConfigs.GetMessage(validationResult.HintCode);
+                var hintMessage = G.LocalizationProvider.GetTranslation(
+                    G.Configs.GrammarHintsConfigs.GetMessage(validationResult.HintCode));
                 _view.ShowMessage(hintMessage);
                 return;
             }

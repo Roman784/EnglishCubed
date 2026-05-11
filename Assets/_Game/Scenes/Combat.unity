@@ -1518,7 +1518,7 @@ MonoBehaviour:
   _handWordUnitsGroup: {fileID: 1807663765}
   _fieldWordUnitsGroup: {fileID: 1114353183}
   _location: {fileID: 1794532375}
-  _cameraShaker: {fileID: 2005119206}
+  _cameraShaker: {fileID: 2026679259}
 --- !u!1 &553538552
 GameObject:
   m_ObjectHideFlags: 0
@@ -2288,7 +2288,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 384
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: b453e1a5ff4eda64493ee6b419853a49, type: 2}
   m_TargetDisplay: 0
@@ -3003,7 +3003,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.FieldWordUnitsGroup
   _container: {fileID: 1182296949}
   _scale: 1
-  _spacing: 0.25
+  _spacing: 0.125
   _gravitationalPullerStrength: 0.15
 --- !u!114 &1114353183
 MonoBehaviour:
@@ -4881,7 +4881,7 @@ Transform:
   m_GameObject: {fileID: 1794532373}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.49, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4960,7 +4960,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UI.HandFlowLayout
   _container: {fileID: 553538553}
   _scale: 1
-  _spacing: 0.25
+  _spacing: 0.05
   _gravitationalPullerStrength: 0.25
 --- !u!114 &1807663765
 MonoBehaviour:
@@ -5556,7 +5556,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2005119205}
-  - component: {fileID: 2005119206}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -5580,19 +5579,6 @@ Transform:
   - {fileID: 16887210}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2005119206
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2005119204}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbb48982e38256a4e8e3036e78b2a571, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Gameplay.CameraShaker
-  _camera: {fileID: 16887210}
 --- !u!1 &2009405812
 GameObject:
   m_ObjectHideFlags: 0

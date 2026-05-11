@@ -60,7 +60,6 @@ namespace Combat
                 .Subscribe(_ => G.GameSessionProvider.SetWordsInHand(_handWordUnitsGroup.GetWords()))
                 .AddTo(this);
 
-
             // ========== Deck ==========
 
             IEnumerable<WordUnitConfigs> wordUnitsInDeck = null;
