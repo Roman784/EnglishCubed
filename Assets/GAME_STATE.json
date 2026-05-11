@@ -1,33 +1,52 @@
 {
     "Language": {
-        "Language": 0
+        "Language": 1
     },
     "MetaProgression": {
         "SelectedHero": 1,
         "UnlockedHeroes": [
             1
         ],
-        "UnlockedAbilities": []
+        "UnlockedAbilities": [
+            17
+        ]
     },
     "Currency": {
-        "Coins": 1072
+        "Coins": 972
     },
     "Session": {
         "Data": {
             "IsStarted": true,
-            "Seed": 0,
+            "Seed": 86160333,
             "IsInEncounter": true,
             "CurrentEncounterName": 2,
-            "CurrentEncounterNumber": 0,
-            "TotalEncountersCount": 0,
+            "CurrentEncounterNumber": 25,
+            "TotalEncountersCount": 49,
             "PassedEncounters": [],
             "Hero": 1,
             "Level": 1,
             "IsEnemyExist": true,
             "Enemy": 7,
-            "CurrentEnemyHealth": 90,
-            "MaxEnemyHealth": 90,
-            "Abilities": [],
+            "CurrentEnemyHealth": 40,
+            "MaxEnemyHealth": 80,
+            "Abilities": [
+                {
+                    "Name": 33,
+                    "StacksCount": 1
+                },
+                {
+                    "Name": 8,
+                    "StacksCount": 1
+                },
+                {
+                    "Name": 13,
+                    "StacksCount": 1
+                },
+                {
+                    "Name": 34,
+                    "StacksCount": 1
+                }
+            ],
             "Stats": [
                 {
                     "Name": 25,
@@ -58,39 +77,54 @@
                     "Name": 1,
                     "Value": 5.0,
                     "Max": 5.0
+                },
+                {
+                    "Name": 19,
+                    "Value": 0.0,
+                    "Max": 0.0
+                },
+                {
+                    "Name": 13,
+                    "Value": 0.0,
+                    "Max": 0.0
+                },
+                {
+                    "Name": 20,
+                    "Value": 0.0,
+                    "Max": 0.0
                 }
             ],
             "Experience": {
                 "CurrentValue": 0,
-                "Level": 0
+                "Level": 1
             },
             "WordsInHand": [
-                "appleapple",
-                "sheshe",
-                "hehe",
-                "likelike",
-                "isbe",
-                "doesdo",
-                "we",
-                "ii",
-                "workerworker",
-                "tiredtired",
-                "workerworker",
                 "applesapple",
-                "aa",
+                "doesdo",
+                "ii",
+                "tiredtired",
+                "youyou",
+                "arebe",
+                "ambe",
+                "theythey",
+                "workerworker",
                 "dodo",
-                "anan"
+                "itit"
             ],
             "WordsInDeck": [
-                "itit",
-                "theythey",
-                "thethe",
-                "workersworker",
-                "ambe",
-                "youyou",
+                "isbe",
+                "sheshe",
                 "likeslike",
-                "arebe",
-                "likelike"
+                "aa",
+                "workersworker",
+                "hehe",
+                "anan",
+                "we",
+                "likelike",
+                "thethe",
+                "appleapple",
+                "isbe",
+                "workersworker"
             ]
         }
     },

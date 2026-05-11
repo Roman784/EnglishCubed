@@ -1,0 +1,904 @@
+{
+    "Items": [
+        {
+            "Key": "new_game",
+            "Russian": "Новая Игра",
+            "German": "Neues Spiel",
+            "Spanish": "Nueva Partida"
+        },
+        {
+            "Key": "continue",
+            "Russian": "Продолжить",
+            "German": "Fortsetzen",
+            "Spanish": "Continuar"
+        },
+        {
+            "Key": "abilities",
+            "Russian": "Способности",
+            "German": "Fähigkeiten",
+            "Spanish": "Habilidades"
+        },
+        {
+            "Key": "heroes",
+            "Russian": "Герои",
+            "German": "Helden",
+            "Spanish": "Héroes"
+        },
+        {
+            "Key": "back",
+            "Russian": "Назад",
+            "German": "Zurück",
+            "Spanish": "Atrás"
+        },
+        {
+            "Key": "close",
+            "Russian": "Закрыть",
+            "German": "Schließen",
+            "Spanish": "Cerrar"
+        },
+        {
+            "Key": "open",
+            "Russian": "Открыть",
+            "German": "Öffnen",
+            "Spanish": "Abrir"
+        },
+        {
+            "Key": "opened",
+            "Russian": "Открыто",
+            "German": "Geöffnet",
+            "Spanish": "Abierto"
+        },
+        {
+            "Key": "adventure",
+            "Russian": "Путешествие",
+            "German": "Abenteuer",
+            "Spanish": "Aventura"
+        },
+        {
+            "Key": "forest_path",
+            "Russian": "Лесная Тропа",
+            "German": "Waldpfad",
+            "Spanish": "Sendero del Bosque"
+        },
+        {
+            "Key": "level_1",
+            "Russian": "Уровень 1",
+            "German": "Level 1",
+            "Spanish": "Nivel 1"
+        },
+        {
+            "Key": "buy",
+            "Russian": "Купить",
+            "German": "Kaufen",
+            "Spanish": "Comprar"
+        },
+        {
+            "Key": "select",
+            "Russian": "Выбрать",
+            "German": "Auswählen",
+            "Spanish": "Elegir"
+        },
+        {
+            "Key": "selected",
+            "Russian": "Выбран",
+            "German": "Ausgewählt",
+            "Spanish": "Elegido"
+        },
+        {
+            "Key": "map",
+            "Russian": "Карта",
+            "German": "Karte",
+            "Spanish": "Mapa"
+        },
+        {
+            "Key": "step_away",
+            "Russian": "Отлучиться",
+            "German": "Kurz weg",
+            "Spanish": "Ausentarse"
+        },
+        {
+            "Key": "passed",
+            "Russian": "Пройдено",
+            "German": "Bestanden",
+            "Spanish": "Completado"
+        },
+        {
+            "Key": "go_here",
+            "Russian": "Отправиться Сюда",
+            "German": "Hierhin gehen",
+            "Spanish": "Ir a este lugar"
+        },
+        {
+            "Key": "available_count",
+            "Russian": "Доступно: {0}",
+            "German": "Verfügbar: {0}",
+            "Spanish": "Disponible: {0}"
+        },
+        {
+            "Key": "words_count",
+            "Russian": "Слов: {0}/{1}",
+            "German": "Wörter: {0}/{1}",
+            "Spanish": "Palabras: {0}/{1}"
+        },
+        {
+            "Key": "into_bag",
+            "Russian": "В мешок",
+            "German": "In den Beutel",
+            "Spanish": "A la bolsa"
+        },
+        {
+            "Key": "attack",
+            "Russian": "Атаковать",
+            "German": "Angreifen",
+            "Spanish": "Atacar"
+        },
+        {
+            "Key": "bag",
+            "Russian": "Мешок",
+            "German": "Beutel",
+            "Spanish": "Bolsa"
+        },
+        {
+            "Key": "new_level",
+            "Russian": "Новый Уровень!",
+            "German": "Neues Level!",
+            "Spanish": "¡Nuevo Nivel!"
+        },
+        {
+            "Key": "skip",
+            "Russian": "Пропустить",
+            "German": "Überspringen",
+            "Spanish": "Saltar"
+        },
+        {
+            "Key": "select_one_skill",
+            "Russian": "Выберите один навык",
+            "German": "Wähle eine Fähigkeit",
+            "Spanish": "Elige una habilidad"
+        },
+        {
+            "Key": "defeat",
+            "Russian": "Поражение",
+            "German": "Niederlage",
+            "Spanish": "Derrota"
+        },
+        {
+            "Key": "accept",
+            "Russian": "Принять",
+            "German": "Akzeptieren",
+            "Spanish": "Aceptar"
+        },
+        {
+            "Key": "victory",
+            "Russian": "Победа",
+            "German": "Sieg",
+            "Spanish": "Victoria"
+        },
+        {
+            "Key": "continue_path",
+            "Russian": "Продолжить Путь",
+            "German": "Den Weg fortsetzen",
+            "Spanish": "Continuar el camino"
+        },
+        {
+            "Key": "settings",
+            "Russian": "Настройки",
+            "German": "Optionen",
+            "Spanish": "Ajustes"
+        },
+        {
+            "Key": "music_volume",
+            "Russian": "Громкость Музыки",
+            "German": "Musiklautstärke",
+            "Spanish": "Volumen de la música"
+        },
+        {
+            "Key": "sound_volume",
+            "Russian": "Громкость Звуков",
+            "German": "Soundlautstärke",
+            "Spanish": "Volumen del sonido"
+        },
+        {
+            "Key": "select_one_word",
+            "Russian": "Выберите одно слово",
+            "German": "Wähle ein Wort",
+            "Spanish": "Elige una palabra"
+        },
+        {
+            "Key": "hero_arche_name",
+            "Russian": "Арчер",
+            "German": "Archer",
+            "Spanish": "Archero"
+        },
+        {
+            "Key": "hero_archer_description",
+            "Russian": "<size=80><sprite index=3> {0}\t<sprite index=4> {1}</size>\nУворотливый\nРедко, но метко",
+            "German": "<size=80><sprite index=3> {0}\t<sprite index=4> {1}</size>\nWendig\nSelten, aber treffsicher",
+            "Spanish": "<size=80><sprite index=3> {0}\t<sprite index=4> {1}</size>\nEsquivo\nPoco, pero certero"
+        },
+        {
+            "Key": "hero_cactus_name",
+            "Russian": "Кактус",
+            "German": "Kaktus",
+            "Spanish": "Cactus"
+        },
+        {
+            "Key": "hero_cactus_description",
+            "Russian": "<size=80><sprite index=3> {0}\t<sprite index=4> {1}</size>\nШипы",
+            "German": "<size=80><sprite index=3> {0}\t<sprite index=4> {1}</size>\nDornen",
+            "Spanish": "<size=80><sprite index=3> {0}\t<sprite index=4> {1}</size>\nEspinas"
+        },
+        {
+            "Key": "hero_knight_name",
+            "Russian": "Рыцарь",
+            "German": "Ritter",
+            "Spanish": "Caballero"
+        },
+        {
+            "Key": "hero_knight_description",
+            "Russian": "<size=80><sprite index=3> {0}\t<sprite index=4> {1}</size>\nКрепкая броня",
+            "German": "<size=80><sprite index=3> {0}\t<sprite index=4> {1}</size>\nFeste Rüstung",
+            "Spanish": "<size=80><sprite index=3> {0}\t<sprite index=4> {1}</size>\nBuena armadura"
+        },
+        {
+            "Key": "hero_magdalene_name",
+            "Russian": "Магдалина",
+            "German": "Magdalena",
+            "Spanish": "Magdalena"
+        },
+        {
+            "Key": "hero_magdalene_description",
+            "Russian": "<size=80><sprite index=3> {0}\t<sprite index=4> {1}</size>\nЗдоровье - сила",
+            "German": "<size=80><sprite index=3> {0}\t<sprite index=4> {1}</size>\nGesundheit ist Kraft",
+            "Spanish": "<size=80><sprite index=3> {0}\t<sprite index=4> {1}</size>\nSalud es poder"
+        },
+        {
+            "Key": "hero_vampire_name",
+            "Russian": "Вампир",
+            "German": "Vampir",
+            "Spanish": "Vampiro"
+        },
+        {
+            "Key": "hero_vampire_description",
+            "Russian": "<size=80><sprite index=3> {0}\t<sprite index=4> {1}</size>\nКража здоровья",
+            "German": "<size=80><sprite index=3> {0}\t<sprite index=4> {1}</size>\nLebensraub",
+            "Spanish": "<size=80><sprite index=3> {0}\t<sprite index=4> {1}</size>\nRobo de vida"
+        },
+        {
+            "Key": "adjectives_power_increase_name",
+            "Russian": "Сила Прилагательных",
+            "German": "Kraft der Adjektive",
+            "Spanish": "Poder Adjetivos"
+        },
+        {
+            "Key": "adjectives_power_increase_description",
+            "Russian": "Увеличивает атаку, если в предложении есть прилагательное",
+            "German": "Erhöht Angriff, wenn Satz ein Adjektiv enthält",
+            "Spanish": "Aumenta ataque si hay adjetivo"
+        },
+        {
+            "Key": "armor_increase_1_name",
+            "Russian": "Стойкость",
+            "German": "Standhaftigkeit",
+            "Spanish": "Resistencia"
+        },
+        {
+            "Key": "armor_increase_1_description",
+            "Russian": "Увеличивает количество щитов",
+            "German": "Erhöht Anzahl der Schilde",
+            "Spanish": "Aumenta los escudos"
+        },
+        {
+            "Key": "armor_increase_2_name",
+            "Russian": "Стойкость X2",
+            "German": "Standhaftigkeit X2",
+            "Spanish": "Resistencia X2"
+        },
+        {
+            "Key": "armor_increase_2_description",
+            "Russian": "Увеличивает количество щитов",
+            "German": "Erhöht Anzahl der Schilde",
+            "Spanish": "Aumenta los escudos"
+        },
+        {
+            "Key": "armor_restoration_1_name",
+            "Russian": "Заплатка",
+            "German": "Flicken",
+            "Spanish": "Parche"
+        },
+        {
+            "Key": "armor_restoration_1_description",
+            "Russian": "Возвращает половину щитов",
+            "German": "Stellt die Hälfte der Schilde wieder her",
+            "Spanish": "Restaura la mitad de escudos"
+        },
+        {
+            "Key": "armor_restoration_2_name",
+            "Russian": "Полная Перековка",
+            "German": "Vollständige Schmiede",
+            "Spanish": "Reforja Total"
+        },
+        {
+            "Key": "armor_restoration_2_description",
+            "Russian": "Возвращает все щиты",
+            "German": "Stellt alle Schilde wieder her",
+            "Spanish": "Restaura todos los escudos"
+        },
+        {
+            "Key": "attack_power_increase_name",
+            "Russian": "Сила",
+            "German": "Stärke",
+            "Spanish": "Fuerza"
+        },
+        {
+            "Key": "attack_power_increase_description",
+            "Russian": "Увеличивает силу атаки",
+            "German": "Erhöht die Angriffsstärke",
+            "Spanish": "Aumenta el poder de ataque"
+        },
+        {
+            "Key": "critical_attack_chance_increase_name",
+            "Russian": "Критический Удар",
+            "German": "Kritischer Treffer",
+            "Spanish": "Golpe Crítico"
+        },
+        {
+            "Key": "critical_attack_chance_increase_description",
+            "Russian": "Шанс значительно увеличить атаку",
+            "German": "Chance, Angriff deutlich zu erhöhen",
+            "Spanish": "Probabilidad de aumentar mucho el ataque"
+        },
+        {
+            "Key": "critical_attack_power_increase_name",
+            "Russian": "Сила критического урона",
+            "German": "Kritische Schadenskraft",
+            "Spanish": "Poder Crítico"
+        },
+        {
+            "Key": "critical_attack_power_increase_description",
+            "Russian": "Увеличивает силу критической атаки",
+            "German": "Erhöht die Stärke kritischer Angriffe",
+            "Spanish": "Aumenta el daño del golpe crítico"
+        },
+        {
+            "Key": "declarative_sentence_power_increase_name",
+            "Russian": "Сила Утверждений",
+            "German": "Kraft der Aussagen",
+            "Spanish": "Poder Afirmaciones"
+        },
+        {
+            "Key": "declarative_sentence_power_increase_description",
+            "Russian": "Увеличивает атаку за утверждения",
+            "German": "Erhöht Angriff für Aussagen",
+            "Spanish": "Aumenta ataque por afirmaciones"
+        },
+        {
+            "Key": "discards_count_increase_1_name",
+            "Russian": "Сброс Слов",
+            "German": "Wörter ablegen",
+            "Spanish": "Descartar Palabras"
+        },
+        {
+            "Key": "discards_count_increase_1_description",
+            "Russian": "Больше очков сброса слов в мешок",
+            "German": "Mehr Punkte zum Ablegen von Wörtern in den Beutel",
+            "Spanish": "Más puntos para descartar palabras"
+        },
+        {
+            "Key": "discards_count_increase_2_name",
+            "Russian": "Сброс Слов X2",
+            "German": "Wörter ablegen X2",
+            "Spanish": "Descartar Palabras X2"
+        },
+        {
+            "Key": "discards_count_increase_2_description",
+            "Russian": "Больше очков сброса слов в мешок",
+            "German": "Mehr Punkte zum Ablegen von Wörtern in den Beutel",
+            "Spanish": "Más puntos para descartar palabras"
+        },
+        {
+            "Key": "dodge_chance_increase_name",
+            "Russian": "Уклонение",
+            "German": "Ausweichen",
+            "Spanish": "Esquivar"
+        },
+        {
+            "Key": "dodge_chance_increase_description",
+            "Russian": "Шанс избежать получение урона",
+            "German": "Chance, Schaden zu vermeiden",
+            "Spanish": "Probabilidad de evitar daño"
+        },
+        {
+            "Key": "draw_count_increase_1_name",
+            "Russian": "Пополнение Слов",
+            "German": "Wörter nachziehen",
+            "Spanish": "Robar Palabras"
+        },
+        {
+            "Key": "draw_count_increase_1_description",
+            "Russian": "Больше очков пополнения поля словами",
+            "German": "Mehr Punkte, um das Feld mit Wörtern aufzufüllen",
+            "Spanish": "Más puntos para robar palabras al campo"
+        },
+        {
+            "Key": "draw_count_increase_2_name",
+            "Russian": "Пополнение Слов X2",
+            "German": "Wörter nachziehen X2",
+            "Spanish": "Robar Palabras X2"
+        },
+        {
+            "Key": "draw_count_increase_2_description",
+            "Russian": "Больше очков пополнения поля словами",
+            "German": "Mehr Punkte, um das Feld mit Wörtern aufzufüllen",
+            "Spanish": "Más puntos para robar palabras al campo"
+        },
+        {
+            "Key": "exclamatory_sentence_power_increase_name",
+            "Russian": "Сила Восклицаний",
+            "German": "Kraft der Ausrufe",
+            "Spanish": "Poder Exclamaciones"
+        },
+        {
+            "Key": "exclamatory_sentence_power_increase_description",
+            "Russian": "Увеличивает атаку за восклицания",
+            "German": "Erhöht Angriff für Ausrufe",
+            "Spanish": "Aumenta ataque por exclamaciones"
+        },
+        {
+            "Key": "experience_power_increase_name",
+            "Russian": "Мудрость",
+            "German": "Weisheit",
+            "Spanish": "Sabiduría"
+        },
+        {
+            "Key": "experience_power_increase_description",
+            "Russian": "Увеличивает множитель получаемого опыта",
+            "German": "Erhöht den Multiplikator für Erfahrung",
+            "Spanish": "Aumenta el multiplicador de experiencia"
+        },
+        {
+            "Key": "field_capacity_increase_1_name",
+            "Russian": "Большое Поле",
+            "German": "Großes Feld",
+            "Spanish": "Campo Grande"
+        },
+        {
+            "Key": "field_capacity_increase_1_description",
+            "Russian": "Больше слов на поле",
+            "German": "Mehr Wörter auf dem Feld",
+            "Spanish": "Más palabras en el campo"
+        },
+        {
+            "Key": "field_capacity_increase_2_name",
+            "Russian": "Большое Поле X2",
+            "German": "Großes Feld X2",
+            "Spanish": "Campo Grande X2"
+        },
+        {
+            "Key": "field_capacity_increase_2_description",
+            "Russian": "Больше слов на поле",
+            "German": "Mehr Wörter auf dem Feld",
+            "Spanish": "Más palabras en el campo"
+        },
+        {
+            "Key": "five_word_power_increase_1_name",
+            "Russian": "Пять Слов",
+            "German": "Fünf Wörter",
+            "Spanish": "Cinco Palabras"
+        },
+        {
+            "Key": "five_word_power_increase_1_description",
+            "Russian": "Увеличивает атаку, если в предложении ровно 5 слов",
+            "German": "Erhöht Angriff, wenn der Satz genau 5 Wörter hat",
+            "Spanish": "Aumenta ataque si la frase tiene 5 palabras"
+        },
+        {
+            "Key": "four_word_power_increase_name",
+            "Russian": "Четыре Слова",
+            "German": "Vier Wörter",
+            "Spanish": "Cuatro Palabras"
+        },
+        {
+            "Key": "four_word_power_increase_description",
+            "Russian": "Увеличивает атаку, если в предложении ровно 4 слова",
+            "German": "Erhöht Angriff, wenn der Satz genau 4 Wörter hat",
+            "Spanish": "Aumenta ataque si la frase tiene 4 palabras"
+        },
+        {
+            "Key": "full_health_attack_increase_name",
+            "Russian": "Сила Жизни",
+            "German": "Lebenskraft",
+            "Spanish": "Fuerza Vital"
+        },
+        {
+            "Key": "full_health_attack_increase_description",
+            "Russian": "При полном здоровье - усиленная атака",
+            "German": "Bei voller Gesundheit - verstärkter Angriff",
+            "Spanish": "Con salud completa, ataque aumentado"
+        },
+        {
+            "Key": "hand_capacity_increase_1_name",
+            "Russian": "Широкая Рука",
+            "German": "Griff",
+            "Spanish": "Mano Ancha"
+        },
+        {
+            "Key": "hand_capacity_increase_1_description",
+            "Russian": "Больше слов в руке",
+            "German": "Mehr Wörter auf der Hand",
+            "Spanish": "Más palabras en la mano"
+        },
+        {
+            "Key": "hand_capacity_increase_2_name",
+            "Russian": "Широкая Рука X2",
+            "German": "Griff X2",
+            "Spanish": "Mano Ancha X2"
+        },
+        {
+            "Key": "hand_capacity_increase_2_description",
+            "Russian": "Больше слов в руке",
+            "German": "Mehr Wörter auf der Hand",
+            "Spanish": "Más palabras en la mano"
+        },
+        {
+            "Key": "health_increase_1_name",
+            "Russian": "Живучесть",
+            "German": "Zähigkeit",
+            "Spanish": "Vitalidad"
+        },
+        {
+            "Key": "health_increase_1_description",
+            "Russian": "Увеличивает количество сердец",
+            "German": "Erhöht die Anzahl der Herzen",
+            "Spanish": "Aumenta los corazones"
+        },
+        {
+            "Key": "health_increase_2_name",
+            "Russian": "Живучесть X2",
+            "German": "Zähigkeit X2",
+            "Spanish": "Vitalidad X2"
+        },
+        {
+            "Key": "health_increase_2_description",
+            "Russian": "Увеличивает количество сердец",
+            "German": "Erhöht die Anzahl der Herzen",
+            "Spanish": "Aumenta los corazones"
+        },
+        {
+            "Key": "health_restoration_1_name",
+            "Russian": "Первая Помощь",
+            "German": "Erste Hilfe",
+            "Spanish": "Primeros Auxilios"
+        },
+        {
+            "Key": "health_restoration_1_description",
+            "Russian": "Возвращает половину сердец",
+            "German": "Stellt die Hälfte der Herzen wieder her",
+            "Spanish": "Restaura la mitad de corazones"
+        },
+        {
+            "Key": "health_restoration_2_name",
+            "Russian": "Чудотворство",
+            "German": "Wunderheilung",
+            "Spanish": "Milagro"
+        },
+        {
+            "Key": "health_restoration_2_description",
+            "Russian": "Возвращает все сердца",
+            "German": "Stellt alle Herzen wieder her",
+            "Spanish": "Restaura todos los corazones"
+        },
+        {
+            "Key": "interrogative_sentence_power_increase_name",
+            "Russian": "Сила Вопросов",
+            "German": "Kraft der Fragen",
+            "Spanish": "Poder Preguntas"
+        },
+        {
+            "Key": "interrogative_sentence_power_increase_description",
+            "Russian": "Увеличивает атаку за вопросы",
+            "German": "Erhöht Angriff für Fragen",
+            "Spanish": "Aumenta ataque por preguntas"
+        },
+        {
+            "Key": "linking_verbs_power_increase_name",
+            "Russian": "Сила Глагол-связки",
+            "German": "Kraft der Kopula",
+            "Spanish": "Poder Cópulas"
+        },
+        {
+            "Key": "linking_verbs_power_increase_description",
+            "Russian": "Увеличивает атаку, если в предложении есть глагол-связка",
+            "German": "Erhöht Angriff, wenn der Satz eine Kopula enthält",
+            "Spanish": "Aumenta ataque si hay verbo copulativo"
+        },
+        {
+            "Key": "pronouns_power_increase_name",
+            "Russian": "Сила Местоимений",
+            "German": "Kraft der Pronomen",
+            "Spanish": "Poder Pronombres"
+        },
+        {
+            "Key": "pronouns_power_increase_description",
+            "Russian": "Увеличивает атаку, если в предложении есть местоимение",
+            "German": "Erhöht Angriff, wenn der Satz ein Pronomen enthält",
+            "Spanish": "Aumenta ataque si hay pronombre"
+        },
+        {
+            "Key": "rage_attack_increase_name",
+            "Russian": "Яростная Атака",
+            "German": "Wütender Angriff",
+            "Spanish": "Ataque Furioso"
+        },
+        {
+            "Key": "rage_attack_increase_description",
+            "Russian": "Меньше здоровья - сильнее атака",
+            "German": "Weniger Gesundheit - stärkerer Angriff",
+            "Spanish": "Menos salud, más ataque"
+        },
+        {
+            "Key": "rage_dodge_increase_name",
+            "Russian": "Яростное Уклонение",
+            "German": "Wütendes Ausweichen",
+            "Spanish": "Esquiva Furiosa"
+        },
+        {
+            "Key": "rage_dodge_increase_description",
+            "Russian": "Меньше здоровья - выше шанс избежать получение урона",
+            "German": "Weniger Gesundheit - höhere Chance Schaden zu vermeiden",
+            "Spanish": "Menos salud, más probabilidad de evitar daño"
+        },
+        {
+            "Key": "spikes_power_increase_name",
+            "Russian": "Шипы",
+            "German": "Dornen",
+            "Spanish": "Espinas"
+        },
+        {
+            "Key": "spikes_power_increase_description",
+            "Russian": "Отражаает часть урона",
+            "German": "Reflektiert einen Teil des Schadens",
+            "Spanish": "Refleja parte del daño"
+        },
+        {
+            "Key": "three_word_power_increase_name",
+            "Russian": "Три Слова",
+            "German": "Drei Wörter",
+            "Spanish": "Tres Palabras"
+        },
+        {
+            "Key": "three_word_power_increase_description",
+            "Russian": "Увеличивает атаку, если в предложении ровно 3 слова",
+            "German": "Erhöht Angriff, wenn der Satz genau 3 Wörter hat",
+            "Spanish": "Aumenta ataque si la frase tiene 3 palabras"
+        },
+        {
+            "Key": "vampirism_chance_increase_name",
+            "Russian": "Вампиризм",
+            "German": "Vampirismus",
+            "Spanish": "Vampirismo"
+        },
+        {
+            "Key": "vampirism_chance_increase_description",
+            "Russian": "Шанс восстановить здоровье после атаки",
+            "German": "Chance, nach einem Angriff Gesundheit wiederherzustellen",
+            "Spanish": "Probabilidad de restaurar salud al atacar"
+        },
+        {
+            "Key": "vampirism_power_increase_name",
+            "Russian": "Сила Вампиризма",
+            "German": "Stärke des Vampirismus",
+            "Spanish": "Poder Vampirismo"
+        },
+        {
+            "Key": "vampirism_power_increase_description",
+            "Russian": "Увеличивает лечение от вампиризма",
+            "German": "Erhöht die Heilung durch Vampirismus",
+            "Spanish": "Aumenta la curación del vampirismo"
+        },
+        {
+            "Key": "ability_details_1",
+            "Russian": "<size=48>+{0}", 
+            "German": "<size=48>+{0}",
+            "Spanish": "<size=48>+{0}"
+        },
+        {
+            "Key": "ability_details_2",
+            "Russian": "<size=48>+{0}%",
+            "German": "<size=48>+{0}%",
+            "Spanish": "<size=48>+{0}%"
+        },
+        {
+            "Key": "ability_details_3",
+            "Russian": "<size=48>+{0}<sprite index=3>",
+            "German": "<size=48>+{0}<sprite index=3>",
+            "Spanish": "<size=48>+{0}<sprite index=3>"
+        },
+        {
+            "Key": "ability_details_4",
+            "Russian": "<size=48>+{0}<sprite index=4>",
+            "German": "<size=48>+{0}<sprite index=4>",
+            "Spanish": "<size=48>+{0}<sprite index=4>"
+        },
+        {
+            "Key": "ability_details_5",
+            "Russian": "<size=48>1<sprite index=3> - +{0}%",
+            "German": "<size=48>1<sprite index=3> - +{0}%",
+            "Spanish": "<size=48>1<sprite index=3> - +{0}%"
+        },
+        {
+            "Key": "not_enough_coins_message",
+            "Russian": "Сначала накопи достаточное количество монет",
+            "German": "Sammle zuerst genügend Münzen",
+            "Spanish": "Consigue suficientes monedas primero"
+        },
+        {
+            "Key": "empty_sentence_message",
+            "Russian": "Сначала составь предложение",
+            "German": "Bilde zuerst einen Satz",
+            "Spanish": "Forma una frase primero"
+        },
+        {
+            "Key": "no_words_on_field_message",
+            "Russian": "Не вижу ни одного слова",
+            "German": "Ich sehe kein einziges Wort",
+            "Spanish": "No veo ninguna palabra"
+        },
+        {
+            "Key": "death_notice_message",
+            "Russian": "Ты так сильно хочешь умереть?",
+            "German": "Willst du unbedingt sterben?",
+            "Spanish": "¿Tantas ganas tienes de morir?"
+        },
+        {
+            "Key": "field_is_full_message",
+            "Russian": "Все места на поле уже заняты",
+            "German": "Alle Plätze auf dem Feld sind belegt",
+            "Spanish": "Todos los espacios del campo están ocupados"
+        },
+        {
+            "Key": "bag_is_empty_message",
+            "Russian": "Мешок пуст, ни одного слова",
+            "German": "Der Beutel ist leer, kein einziges Wort",
+            "Spanish": "La bolsa está vacía, ni una palabra"
+        },
+        {
+            "Key": "combat_defeat_message",
+            "Russian": "Ты проиграл, на этом твоему пути конец",
+            "German": "Du hast verloren, deine Reise endet hier",
+            "Spanish": "Has perdido, tu viaje termina aquí"
+        },
+        {
+            "Key": "combat_victory_message",
+            "Russian": "Победа! Остановишься здесь или пойдёшь дальше?",
+            "German": "Sieg! Hältst du hier an oder gehst du weiter?",
+            "Spanish": "¡Victoria! ¿Paras aquí o sigues adelante?"
+        },
+        {
+            "Key": "grammar_hint_0_1",
+            "Russian": "Не пойму, что ты написал?",
+            "German": "Ich verstehe nicht, was du geschrieben hast.",
+            "Spanish": "No entiendo lo que has escrito."
+        },
+        {
+            "Key": "grammar_hint_0_2",
+            "Russian": "Белиберда какая-то",
+            "German": "Das ist Unsinn",
+            "Spanish": "No tiene sentido"
+        },
+        {
+            "Key": "grammar_hint_0_3",
+            "Russian": "Ты кое-что забыл",
+            "German": "Du hast etwas vergessen",
+            "Spanish": "Te falta algo"
+        },
+        {
+            "Key": "grammar_hint_0_4",
+            "Russian": "Ты ничего не забыл?",
+            "German": "Hast du nichts vergessen?",
+            "Spanish": "¿No se te olvida algo?"
+        },
+        {
+            "Key": "grammar_hint_1_1",
+            "Russian": "Кажется, проблема с артиклем",
+            "German": "Scheint ein Problem mit dem Artikel zu geben",
+            "Spanish": "Parece que hay un problema con el artículo"
+        },
+        {
+            "Key": "grammar_hint_1_2",
+            "Russian": "На артикль посмотри",
+            "German": "Sieh dir den Artikel an",
+            "Spanish": "Revisa el artículo"
+        },
+        {
+            "Key": "grammar_hint_1_3",
+            "Russian": "А что с артиклем?",
+            "German": "Was ist mit dem Artikel?",
+            "Spanish": "¿Qué pasa con el artículo?"
+        },
+        {
+            "Key": "grammar_hint_2_1",
+            "Russian": "Проблема с to be, не думаешь?",
+            "German": "Gibt's ein Problem mit 'sein', meinst du nicht?",
+            "Spanish": "Hay un problema con 'ser/estar', ¿no crees?"
+        },
+        {
+            "Key": "grammar_hint_2_2",
+            "Russian": "На to be посмотри",
+            "German": "Schau dir 'sein' an",
+            "Spanish": "Revisa el verbo 'ser/estar'"
+        },
+        {
+            "Key": "grammar_hint_2_3",
+            "Russian": "Чем ты части речи связываешь?",
+            "German": "Womit verbindest du die Satzteile?",
+            "Spanish": "¿Cómo conectas las partes de la oración?"
+        },
+        {
+            "Key": "grammar_hint_3_1",
+            "Russian": "Что-то чиселки не сходятся",
+            "German": "Irgendwas stimmt mit den Zahlen nicht",
+            "Spanish": "Algo no cuadra con el número"
+        },
+        {
+            "Key": "grammar_hint_3_2",
+            "Russian": "Единственное число не подружить со множественным",
+            "German": "Singular und Plural passen nicht zusammen",
+            "Spanish": "El singular no concuerda con el plural"
+        },
+        {
+            "Key": "grammar_hint_4_1",
+            "Russian": "Не пойму, проблема в окончании или времени?",
+            "German": "Ist das Problem die Endung oder die Zeit?",
+            "Spanish": "¿Es problema de la terminación o del tiempo?"
+        },
+        {
+            "Key": "grammar_hint_4_2",
+            "Russian": "Проверь окончание у глагола",
+            "German": "Überprüfe die Endung des Verbs",
+            "Spanish": "Revisa la terminación del verbo"
+        },
+        {
+            "Key": "grammar_hint_5_1",
+            "Russian": "Ну тут точно со вспомогательным глаголом накосячил",
+            "German": "Hier hast du sicher das Hilfsverb vermasselt",
+            "Spanish": "Seguro la regaste con el verbo auxiliar"
+        },
+        {
+            "Key": "grammar_hint_5_2",
+            "Russian": "Ты что, перепутал do и does?",
+            "German": "Hast du do und does verwechselt?",
+            "Spanish": "¿Confundiste do y does?"
+        },
+        {
+            "Key": "grammar_hint_6_1",
+            "Russian": "Подлежащее забыл",
+            "German": "Du hast das Subjekt vergessen",
+            "Spanish": "Olvidaste el sujeto"
+        },
+        {
+            "Key": "grammar_hint_6_2",
+            "Russian": "А где подлежащее?",
+            "German": "Wo ist das Subjekt?",
+            "Spanish": "¿Dónde está el sujeto?"
+        },
+        {
+            "Key": "grammar_hint_7_1",
+            "Russian": "Глагол забыл",
+            "German": "Du hast das Verb vergessen",
+            "Spanish": "Olvidaste el verbo"
+        },
+        {
+            "Key": "grammar_hint_7_2",
+            "Russian": "А где глагол?",
+            "German": "Wo ist das Verb?",
+            "Spanish": "¿Dónde está el verbo?"
+        },
+        {
+            "Key": "",
+            "Russian": "",
+            "German": "",
+            "Spanish": ""
+        }
+    ]
+}

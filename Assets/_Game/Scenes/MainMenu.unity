@@ -486,11 +486,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8406769831585471261, guid: 78b60936adc100d47a8f4ab45ddf634c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 79
+      value: 142
       objectReference: {fileID: 0}
     - target: {fileID: 8406769831585471261, guid: 78b60936adc100d47a8f4ab45ddf634c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 140
+      value: 232
       objectReference: {fileID: 0}
     - target: {fileID: 8406769831585471261, guid: 78b60936adc100d47a8f4ab45ddf634c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1801,11 +1801,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8406769831585471261, guid: 78b60936adc100d47a8f4ab45ddf634c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -266
+      value: -264
       objectReference: {fileID: 0}
     - target: {fileID: 8406769831585471261, guid: 78b60936adc100d47a8f4ab45ddf634c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 218
+      value: 269
       objectReference: {fileID: 0}
     - target: {fileID: 8406769831585471261, guid: 78b60936adc100d47a8f4ab45ddf634c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2730,6 +2730,10 @@ MonoBehaviour:
   _data:
   - Language: 0
     Sprite: {fileID: 21300000, guid: 0ed1f7c408d20a04bbdadd48783450fb, type: 3}
+  - Language: 1
+    Sprite: {fileID: 21300000, guid: f849a87a1517b894bb8f1fdd36994245, type: 3}
+  - Language: 2
+    Sprite: {fileID: 21300000, guid: 3f265374736f38e4199859ab726f2897, type: 3}
 --- !u!1 &2038458691
 GameObject:
   m_ObjectHideFlags: 0

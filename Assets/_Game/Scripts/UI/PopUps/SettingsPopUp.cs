@@ -1,6 +1,7 @@
 using Audio;
 using GameRoot;
 using GameState;
+using Localization;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,6 +15,8 @@ namespace UI
         [SerializeField] private Slider _soundVolumeView;
 
         [SerializeField] private GameObject _mainMenuButton;
+
+        [SerializeField] private LanguageSwitcher _languageSwitcher;
 
         private void Start()
         {
@@ -41,6 +44,21 @@ namespace UI
         {
             SaveAudioState();
             G.SceneProvider.OpenMainMenu();
+        }
+
+        public void SetRuLanguage()
+        {
+            _languageSwitcher.SetRuLanguage();
+        }
+
+        public void SetDeLanguage()
+        {
+            _languageSwitcher.SetDeLanguage();
+        }
+
+        public void SetEsLanguage()
+        {
+            _languageSwitcher.SetEsLanguage();
         }
 
         private void ChangeMusicVolume(float volume)

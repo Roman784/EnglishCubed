@@ -4,6 +4,8 @@ namespace Localization
 {
     public enum Language
     {
-        Ru
+        Ru,
+        De,
+        Es
     }
 }

@@ -15,37 +15,37 @@ MonoBehaviour:
   Hints:
   - Code: 0
     Messages:
-    - Text: grammar_hit_0_1
-    - Text: grammar_hit_0_2
-    - Text: grammar_hit_0_3
-    - Text: grammar_hit_0_4
+    - Text: grammar_hint_0_1
+    - Text: grammar_hint_0_2
+    - Text: grammar_hint_0_3
+    - Text: grammar_hint_0_4
   - Code: 1
     Messages:
-    - Text: grammar_hit_1_1
-    - Text: grammar_hit_1_2
-    - Text: grammar_hit_1_3
+    - Text: grammar_hint_1_1
+    - Text: grammar_hint_1_2
+    - Text: grammar_hint_1_3
   - Code: 2
     Messages:
-    - Text: grammar_hit_2_1
-    - Text: grammar_hit_2_2
-    - Text: grammar_hit_2_3
+    - Text: grammar_hint_2_1
+    - Text: grammar_hint_2_2
+    - Text: grammar_hint_2_3
   - Code: 3
     Messages:
-    - Text: grammar_hit_3_1
-    - Text: grammar_hit_3_2
+    - Text: grammar_hint_3_1
+    - Text: grammar_hint_3_2
   - Code: 4
     Messages:
-    - Text: grammar_hit_4_1
-    - Text: grammar_hit_4_2
+    - Text: grammar_hint_4_1
+    - Text: grammar_hint_4_2
   - Code: 5
     Messages:
-    - Text: grammar_hit_5_1
-    - Text: grammar_hit_5_2
+    - Text: grammar_hint_5_1
+    - Text: grammar_hint_5_2
   - Code: 6
     Messages:
-    - Text: grammar_hit_6_1
-    - Text: grammar_hit_6_2
+    - Text: grammar_hint_6_1
+    - Text: grammar_hint_6_2
   - Code: 7
     Messages:
-    - Text: grammar_hit_7_1
-    - Text: grammar_hit_7_2
+    - Text: grammar_hint_7_1
+    - Text: grammar_hint_7_2

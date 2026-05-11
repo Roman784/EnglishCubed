@@ -7,11 +7,6 @@ namespace Localization
 {
     public class JsonLocalizationProvider : ILocalizationProvider
     {
-        private static Dictionary<Language, string> _pathsMap = new()
-        {
-            { Language.Ru, $"Localization/TRANSLATIONS_RU" }
-        };
-
         private Dictionary<string, string> _tranlationsMap;
         private Subject<Unit> _languageChangedSignalSubj = new();
 
@@ -21,9 +16,7 @@ namespace Localization
 
         public Observable<bool> LoadTranslations(Language language)
         {
-            if (!_pathsMap.ContainsKey(language)) return Observable.Return(false);
-
-            var json = Resources.Load<TextAsset>(_pathsMap[language]);
+            var json = Resources.Load<TextAsset>("Localization/TRANSLATIONS");
 
             if (json == null)
             {
@@ -36,7 +29,14 @@ namespace Localization
             _tranlationsMap = new Dictionary<string, string>();
             foreach (var item in data.Items)
             {
-                _tranlationsMap[item.Key] = item.Value;
+                var translation = language switch
+                {
+                    Language.Ru => item.Russian,
+                    Language.De => item.German,
+                    Language.Es => item.Spanish,
+                    _ => item.Russian
+                };
+                _tranlationsMap[item.Key] = translation;
             }
 
             CurrentLanguage = language;

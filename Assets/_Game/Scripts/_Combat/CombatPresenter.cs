@@ -64,6 +64,10 @@ namespace Combat
             _model.Enemy.DeathSignal
                 .Subscribe(_ => HandleLevelPassing())
                 .AddTo(_disposables);
+
+            G.LocalizationProvider.LanguageChangedSignal
+                .Subscribe(_ => UpdateView())
+                .AddTo(_disposables);
         }
 
         // ================ Attack ================
