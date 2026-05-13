@@ -123,7 +123,7 @@
         {
             "Key": "into_bag",
             "Russian": "В мешок",
-            "German": "Zurücksetzen",
+            "German": "Ablegen",
             "Spanish": "A la bolsa"
         },
         {
@@ -141,7 +141,7 @@
         {
             "Key": "new_level",
             "Russian": "Новый Уровень!",
-            "German": "Neues Level!",
+            "German": "Neues Niveau!",
             "Spanish": "¡Nuevo Nivel!"
         },
         {
@@ -206,7 +206,7 @@
         },
         {
             "Key": "hero_arche_name",
-            "Russian": "Арчер",
+            "Russian": "Лучник",
             "German": "Archer",
             "Spanish": "Archero"
         },
@@ -267,7 +267,7 @@
         {
             "Key": "adjectives_power_increase_name",
             "Russian": "Сила Прилагательных",
-            "German": "Kraft der Adjektive",
+            "German": "Macht der Adjektive",
             "Spanish": "Poder Adjetivos"
         },
         {
@@ -363,7 +363,7 @@
         {
             "Key": "declarative_sentence_power_increase_name",
             "Russian": "Сила Утверждений",
-            "German": "Kraft der Aussagen",
+            "German": "Macht der Aussagen",
             "Spanish": "Poder Afirmaciones"
         },
         {
@@ -435,7 +435,7 @@
         {
             "Key": "exclamatory_sentence_power_increase_name",
             "Russian": "Сила Восклицаний",
-            "German": "Kraft der Ausrufe",
+            "German": "Macht der Ausrufe",
             "Spanish": "Poder Exclamaciones"
         },
         {
@@ -591,7 +591,7 @@
         {
             "Key": "interrogative_sentence_power_increase_name",
             "Russian": "Сила Вопросов",
-            "German": "Kraft der Fragen",
+            "German": "Macht der Fragen",
             "Spanish": "Poder Preguntas"
         },
         {
@@ -603,7 +603,7 @@
         {
             "Key": "linking_verbs_power_increase_name",
             "Russian": "Сила Глагол-связки",
-            "German": "Kraft der Kopula",
+            "German": "Macht der Kopula",
             "Spanish": "Poder Cópulas"
         },
         {
@@ -615,7 +615,7 @@
         {
             "Key": "pronouns_power_increase_name",
             "Russian": "Сила Местоимений",
-            "German": "Kraft der Pronomen",
+            "German": "Macht der Pronomen",
             "Spanish": "Poder Pronombres"
         },
         {

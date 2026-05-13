@@ -19,13 +19,13 @@ namespace GrammarValidation
         public int WordsCount;
 
         public static ValidationResult Success(
-            bool isDeclarative = true,
-            bool isInterrogative = true, 
-            bool isExclamatory = true,
-            bool hasPronouns = true,
-            bool hasAdjectives = true,
-            bool hasLinkinVerbs = true,
-            int wordsCount = 3)
+            bool isDeclarative = false,
+            bool isInterrogative = false, 
+            bool isExclamatory = false,
+            bool hasPronouns = false,
+            bool hasAdjectives = false,
+            bool hasLinkinVerbs = false,
+            int wordsCount = 0)
             => new ValidationResult 
             { 
                 IsValid = true,
