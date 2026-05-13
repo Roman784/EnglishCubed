@@ -16,6 +16,7 @@ namespace Configs
         public List<WordUnitConfigs> Nouns;
         public List<WordUnitConfigs> Pronouns;
         public List<WordUnitConfigs> Verbs;
+        public List<WordUnitConfigs> Marks;
 
         private Dictionary<string, WordUnitConfigs> _allWordsMap;
         private Dictionary<string, WordUnitConfigs> _allWordsByNameMap;
@@ -51,6 +52,7 @@ namespace Configs
             FillMap(Nouns);
             FillMap(Pronouns);
             FillMap(Verbs);
+            FillMap(Marks);
 
             _allWordsMap = new Dictionary<string, WordUnitConfigs>();
             _allWordsMap = _allWordsByNameMap.Select(kvp => 

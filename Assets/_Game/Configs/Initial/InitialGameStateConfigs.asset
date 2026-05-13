@@ -18,7 +18,7 @@ MonoBehaviour:
     MetaProgression:
       SelectedHero: 1
       UnlockedHeroes: 01000000
-      UnlockedAbilities: 
+      UnlockedAbilities: 010000000200000005000000060000000f00000011000000130000001500000015000000
     Currency:
       Coins: 0
     Session:

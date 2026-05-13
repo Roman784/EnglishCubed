@@ -31,6 +31,11 @@ namespace Gameplay
             _animationsMap[CreatureAnimationState.Death] = "Death";
         }
 
+        private void Start()
+        {
+            PlayIdle();
+        }
+
         public void OnAttack()
         {
             _onAttackEventSubj.OnNext(Unit.Default);

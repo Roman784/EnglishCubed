@@ -22,7 +22,12 @@ namespace UI
             _isEnabled = true;
         }
 
-        public void Enable() => _isEnabled = true;
+        public void Enable()
+        {
+            _isEnabled = true;
+            ReturnAllToOriginalPositions();
+        }
+
         public void Disable()
         {
             _isEnabled = false;

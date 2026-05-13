@@ -1,130 +1,70 @@
 {
     "Language": {
-        "Language": 1
+        "Language": 0
     },
     "MetaProgression": {
-        "SelectedHero": 1,
+        "SelectedHero": 4,
         "UnlockedHeroes": [
-            1
+            1,
+            4
         ],
         "UnlockedAbilities": [
-            17
+            17,
+            34,
+            2,
+            4,
+            6
         ]
     },
     "Currency": {
-        "Coins": 972
+        "Coins": 563
     },
     "Session": {
         "Data": {
             "IsStarted": true,
-            "Seed": 86160333,
+            "Seed": 0,
             "IsInEncounter": true,
             "CurrentEncounterName": 2,
-            "CurrentEncounterNumber": 25,
-            "TotalEncountersCount": 49,
+            "CurrentEncounterNumber": 0,
+            "TotalEncountersCount": 0,
             "PassedEncounters": [],
             "Hero": 1,
             "Level": 1,
             "IsEnemyExist": true,
             "Enemy": 7,
-            "CurrentEnemyHealth": 40,
+            "CurrentEnemyHealth": 80,
             "MaxEnemyHealth": 80,
-            "Abilities": [
-                {
-                    "Name": 33,
-                    "StacksCount": 1
-                },
-                {
-                    "Name": 8,
-                    "StacksCount": 1
-                },
-                {
-                    "Name": 13,
-                    "StacksCount": 1
-                },
-                {
-                    "Name": 34,
-                    "StacksCount": 1
-                }
-            ],
-            "Stats": [
-                {
-                    "Name": 25,
-                    "Value": 3.0,
-                    "Max": 3.0
-                },
-                {
-                    "Name": 24,
-                    "Value": 3.0,
-                    "Max": 4.0
-                },
-                {
-                    "Name": 23,
-                    "Value": 5.0,
-                    "Max": 5.0
-                },
-                {
-                    "Name": 22,
-                    "Value": 15.0,
-                    "Max": 15.0
-                },
-                {
-                    "Name": 0,
-                    "Value": 3.0,
-                    "Max": 3.0
-                },
-                {
-                    "Name": 1,
-                    "Value": 5.0,
-                    "Max": 5.0
-                },
-                {
-                    "Name": 19,
-                    "Value": 0.0,
-                    "Max": 0.0
-                },
-                {
-                    "Name": 13,
-                    "Value": 0.0,
-                    "Max": 0.0
-                },
-                {
-                    "Name": 20,
-                    "Value": 0.0,
-                    "Max": 0.0
-                }
-            ],
+            "Abilities": [],
+            "Stats": [],
             "Experience": {
                 "CurrentValue": 0,
-                "Level": 1
+                "Level": 0
             },
-            "WordsInHand": [
+            "WordsInHand": [],
+            "WordsInDeck": [
+                "hehe",
                 "applesapple",
+                "sheshe",
+                "we",
                 "doesdo",
                 "ii",
-                "tiredtired",
-                "youyou",
-                "arebe",
-                "ambe",
-                "theythey",
+                "itit",
                 "workerworker",
                 "dodo",
-                "itit"
-            ],
-            "WordsInDeck": [
-                "isbe",
-                "sheshe",
-                "likeslike",
                 "aa",
-                "workersworker",
-                "hehe",
-                "anan",
-                "we",
-                "likelike",
-                "thethe",
+                "likeslike",
                 "appleapple",
-                "isbe",
-                "workersworker"
+                "theythey",
+                "youyou",
+                "workersworker",
+                "thethe",
+                "arebe",
+                "anan",
+                "tiredtired",
+                "likelike",
+                "?",
+                "ambe",
+                "isbe"
             ]
         }
     },

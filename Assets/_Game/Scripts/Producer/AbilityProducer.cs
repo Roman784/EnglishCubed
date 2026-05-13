@@ -20,7 +20,7 @@ namespace GameProducer
 
         public IEnumerable<AbilitySelectionData> GetThree(IEnumerable<AcquiredAbilityData> acquiredAbilities)
         {
-            var availableAbilities = AllAbilitiesConfigs
+            var availableAbilities = GetUnlockedAbilities()
                 .Where(c => IsAvailable(c, acquiredAbilities))
                 .ToList();
 
@@ -72,6 +72,12 @@ namespace GameProducer
                 return true;
 
             return sameAbility.StacksCount < configs.MaxStacksCount;
+        }
+
+        private IEnumerable<AbilityConfigs> GetUnlockedAbilities()
+        {
+            var unlockedNames = G.Repository.MetaProgression.GetUnlockedAbilities().ToList();
+            return AllAbilitiesConfigs.Where(a => unlockedNames.Contains(a.Name));
         }
     }
 }

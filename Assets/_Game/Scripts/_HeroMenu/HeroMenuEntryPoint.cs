@@ -27,6 +27,8 @@ namespace HeroMenu
                 selectedHero: selectedHero);
             var presenter = new HeroMenuPresenter(_view, model);
 
+            yield return null;
+
             presenter.ShowCurrentHero();
 
             isLoaded = true;
