@@ -153,6 +153,9 @@ namespace Combat
                 G.GameSessionProvider.SetIsEnemyExist(true);
             }
 
+            if (_handWordUnitsGroup.Layout.AllElementsCount == 0)
+                _presenter.DrawWords();
+
             _view.EnableControls();
 
             isLoaded = true;
