@@ -1,5 +1,6 @@
 using AbilityMenu;
 using Combat;
+using Configs;
 using EncountersMap;
 using GameSession;
 using HeroMenu;

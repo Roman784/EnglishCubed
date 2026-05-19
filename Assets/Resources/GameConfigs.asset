@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LexiconConfigs: {fileID: 11400000, guid: c216488b40ec54e4c9e839da906fed2b, type: 2}
   GrammarHintsConfigs: {fileID: 11400000, guid: cfe2b54b0720eec4387aab27afb8cf53, type: 2}
+  LevelsConfigs: {fileID: 11400000, guid: 485f4a06d44fe4143abbbf1086aed580, type: 2}
   EncountersConfigs: {fileID: 11400000, guid: 227a8aa1392db12498bceef602dcfe04, type: 2}
   PointMultiplierNamesConfigs: {fileID: 11400000, guid: 34e4504d98ee4fb44a8557d53503d919, type: 2}
   StatsConfigs: {fileID: 11400000, guid: c609a08232b71f549a35f0d83532eb87, type: 2}

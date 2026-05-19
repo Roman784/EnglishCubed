@@ -17,8 +17,6 @@ namespace Combat
         [SerializeField] private AbilityInventoryView _abilityInventoryView;
         [SerializeField] private HandWordUnitsGroup _handWordUnitsGroup;
         [SerializeField] private FieldWordUnitsGroup _fieldWordUnitsGroup;
-        [SerializeField] private Location _location;
-        [SerializeField] private CameraShaker _cameraShaker;
 
         private CombatPresenter _presenter;
         private AbilityInventoryPresenter _abilityInventory;
@@ -32,7 +30,6 @@ namespace Combat
 
             UnityEngine.Random.InitState(G.GameSessionProvider.SessionData.Seed);
 
-            G.CameraShaker = _cameraShaker;
             G.WordUnitsMovementProvider = new WordUnitsMovementProvider(_handWordUnitsGroup, _fieldWordUnitsGroup);
             G.WordUnitFactory = new WordUnitFactory();
             G.PointsFactory = new PointsFactory();
@@ -41,13 +38,17 @@ namespace Combat
             var heroName = sessionData.Hero;
             var heroConfigs = G.Configs.HeroesConfigs.GetHero(heroName);
 
+            var levelName = G.SessionData.Level;
+            var levelConfigs = G.Configs.LevelsConfigs.GetLevelConfigs(levelName);
+
             var grammarValidator = new GrammarValidator(G.Configs.LexiconConfigs);
-            var pointsCounter = new PointsCounter(_location.PointsAccumulationPosition);
 
             // ========== Game Producer ==========
 
             G.GameProducer.Context.EncounterName = enterParams.EncounterName;
             G.GameProducer.Context.EncounterNumber = enterParams.EncounterNumber;
+            G.GameProducer.Context.LexiconPool = new List<WordUnitConfigs>(levelConfigs.LexiconPool);
+            G.GameProducer.Context.AbilitiesPool = new List<AbilityConfigs>(levelConfigs.AbilitiesPool);
 
             // ======== Hand ==========
 
@@ -108,10 +109,19 @@ namespace Combat
             _abilityInventory = new AbilityInventoryPresenter(_abilityInventoryView, abilityInventoryModel);
             _abilityInventory.Load();
 
+            // ========== Location ==========
+
+            var location = Instantiate(levelConfigs.LocationPrefab);
+            G.CameraShaker = location.CameraShaker;
+
+            // ========== Points ==========
+
+            var pointsCounter = new PointsCounter(location.PointsAccumulationPosition);
+
             // ========== Hero ==========
 
             var heroPrefab = heroConfigs.Prefab;
-            var hero = Instantiate(heroPrefab, _location.HeroPosition, Quaternion.identity);
+            var hero = Instantiate(heroPrefab, location.HeroPosition, Quaternion.identity);
             hero.Init(_heroStats);
 
             // ========== Enemy ==========
@@ -120,7 +130,7 @@ namespace Combat
             var enemyPrefab = enemySpec.EnemyConfigs.Prefab;
             var enemyCurrentHealth = enemySpec.CurrentHealth;
             var enemyMaxHealth = enemySpec.MaxHealth;
-            var enemy = Instantiate(enemyPrefab, _location.EnemyPosition, Quaternion.identity);
+            var enemy = Instantiate(enemyPrefab, location.EnemyPosition, Quaternion.identity);
             enemy.Init(new Stats(new Health(enemyCurrentHealth, enemyMaxHealth)));
 
             // ========== MVP ==========
@@ -135,7 +145,7 @@ namespace Combat
                 fieldWordUnitsGroup: _fieldWordUnitsGroup,
                 grammarValidator: grammarValidator,
                 pointsCounter: pointsCounter,
-                location: _location,
+                location: location,
                 abilityInventory: _abilityInventory);
             _presenter = new CombatPresenter(_view, model);
 

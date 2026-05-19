@@ -24,6 +24,14 @@ namespace UI
             return createdPopUp;
         }
 
+        public TheoryPopUp OpenTheoryPopUp()
+        {
+            var createdPopUp = _popUpFactory.Create(Configs.TheoryPopUpPrefab);
+            createdPopUp.Open();
+
+            return createdPopUp;
+        }
+
         public DeckPopUp OpenDeckPopUp(IEnumerable<WordUnitConfigs> wordUnitConfigs)
         {
             var createdPopUp = _popUpFactory.Create(Configs.DeckPopUpPrefab);

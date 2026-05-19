@@ -8,12 +8,14 @@ namespace Gameplay
 {
     public class Location : MonoBehaviour
     {
+        [SerializeField] private CameraShaker _cameraShaker;
         [SerializeField] private Transform _heroPoint;
         [SerializeField] private Transform _enemyPoint;
         [SerializeField] private Transform _pointsAccumulationPoint;
 
         private Subject<Unit> _allEnemiesDeathSignalSubj = new();
 
+        public CameraShaker CameraShaker => _cameraShaker;
         public Vector2 HeroPosition => _heroPoint.position;
         public Vector2 EnemyPosition => _enemyPoint.position;
         public Vector2 PointsAccumulationPosition => _pointsAccumulationPoint.position;

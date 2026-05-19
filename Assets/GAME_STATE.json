@@ -3,21 +3,25 @@
         "Language": 0
     },
     "MetaProgression": {
-        "SelectedHero": 4,
+        "SelectedHero": 3,
         "UnlockedHeroes": [
             1,
-            4
+            4,
+            3
         ],
         "UnlockedAbilities": [
             17,
             34,
             2,
             4,
-            6
+            6,
+            30,
+            28,
+            36
         ]
     },
     "Currency": {
-        "Coins": 707
+        "Coins": 654
     },
     "Session": {
         "Data": {
@@ -32,7 +36,7 @@
             "Level": 1,
             "IsEnemyExist": true,
             "Enemy": 7,
-            "CurrentEnemyHealth": 30,
+            "CurrentEnemyHealth": 80,
             "MaxEnemyHealth": 80,
             "Abilities": [],
             "Stats": [
@@ -63,25 +67,30 @@
                 },
                 {
                     "Name": 1,
-                    "Value": 4.0,
+                    "Value": 5.0,
                     "Max": 5.0
                 }
             ],
             "Experience": {
                 "CurrentValue": 0,
-                "Level": 1
+                "Level": 0
             },
             "WordsInHand": [
-                "appleapple",
-                "thethe",
                 "workerworker",
+                "thethe",
+                "workersworker",
+                "appleapple",
+                "likelike",
                 "tiredtired",
-                "aa",
+                "youyou",
                 "likeslike",
+                "aa",
+                "dodo",
+                "?",
                 "ambe",
                 "isbe",
                 "arebe",
-                "workersworker"
+                "applesapple"
             ],
             "WordsInDeck": [
                 "hehe",
@@ -91,12 +100,7 @@
                 "ii",
                 "itit",
                 "theythey",
-                "anan",
-                "dodo",
-                "youyou",
-                "likelike",
-                "applesapple",
-                "?"
+                "anan"
             ]
         }
     },

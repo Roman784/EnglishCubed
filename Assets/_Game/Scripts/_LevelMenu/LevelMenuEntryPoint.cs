@@ -1,3 +1,4 @@
+using Configs;
 using GameRoot;
 using System.Collections;
 using UnityEngine;

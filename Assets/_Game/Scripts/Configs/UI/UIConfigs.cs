@@ -10,8 +10,9 @@ namespace GameRoot
         [Header("Root")]
         public UIRoot Root;
 
-        [Header("PopUps Gameplay")]
+        [Header("PopUps")]
         public SettingsPopUp SettingsPopUpPrefab;
+        public TheoryPopUp TheoryPopUpPrefab;
         public DeckPopUp DeckPopUpPrefab;
         public AbilitySelectionPopUp AbilitySelectionPopUpPrefab;
         public WordUnitSelectionPopUp WordUnitSelectionPopUpPrefab;

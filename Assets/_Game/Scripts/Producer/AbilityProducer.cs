@@ -11,8 +11,6 @@ namespace GameProducer
     {
         private GameProducerContext _context;
 
-        private IEnumerable<AbilityConfigs> AllAbilitiesConfigs => G.Configs.AbilitiesConfigs.AllAbilities;
-
         public AbilityProducer(GameProducerContext context)
         {
             _context = context;
@@ -77,7 +75,7 @@ namespace GameProducer
         private IEnumerable<AbilityConfigs> GetUnlockedAbilities()
         {
             var unlockedNames = G.Repository.MetaProgression.GetUnlockedAbilities().ToList();
-            return AllAbilitiesConfigs.Where(a => unlockedNames.Contains(a.Name));
+            return _context.AbilitiesPool.Where(a => unlockedNames.Contains(a.Name));
         }
     }
 }

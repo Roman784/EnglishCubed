@@ -36,6 +36,10 @@ namespace Combat
                 .Subscribe(_ => HandleSettings())
                 .AddTo(_disposables);
 
+            _view.TheoryButtonPressedSignal
+                .Subscribe(_ => HandleTheory())
+                .AddTo(_disposables);
+
             _view.AttackButtonPressedSignal
                 .ThrottleFirst(TimeSpan.FromSeconds(0.25f))
                 .Subscribe(_ => HandleAttack())
@@ -374,6 +378,13 @@ namespace Combat
         {
             _view.DisableControls();
             G.PopUpsProvider.OpenSettingsPopUp(true)
+                .CloseSignal.Subscribe(_ => _view.EnableControls());
+        }
+
+        private void HandleTheory()
+        {
+            _view.DisableControls();
+            G.PopUpsProvider.OpenTheoryPopUp()
                 .CloseSignal.Subscribe(_ => _view.EnableControls());
         }
 

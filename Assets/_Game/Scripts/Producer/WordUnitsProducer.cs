@@ -10,8 +10,6 @@ namespace GameProducer
     {
         private readonly GameProducerContext _context;
 
-        private LexiconConfigs Configs => G.Configs.LexiconConfigs;
-
         public WordUnitsProducer(GameProducerContext context)
         {
             _context = context;
@@ -24,7 +22,7 @@ namespace GameProducer
 
         public IEnumerable<WordUnitConfigs> GetWords(int count)
         {
-            var availableWords = new List<WordUnitConfigs>(Configs.AllWords);
+            var availableWords = new List<WordUnitConfigs>(_context.LexiconPool);
             var result = new List<WordUnitConfigs>();
 
             for (int i = 0; i < count; i++)
