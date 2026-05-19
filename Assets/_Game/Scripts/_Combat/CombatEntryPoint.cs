@@ -136,6 +136,7 @@ namespace Combat
             // ========== MVP ==========
 
             var model = new CombatModel(
+                levelConfigs: levelConfigs,
                 enterParams: enterParams,
                 hero: hero,
                 enemy: enemy,

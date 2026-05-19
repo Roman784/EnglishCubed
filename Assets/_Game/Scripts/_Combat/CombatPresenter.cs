@@ -383,8 +383,11 @@ namespace Combat
 
         private void HandleTheory()
         {
+            var title = _model.LevelConfigs.TheoryConfigs.Title;
+            var content = _model.LevelConfigs.TheoryConfigs.Content;
+
             _view.DisableControls();
-            G.PopUpsProvider.OpenTheoryPopUp()
+            G.PopUpsProvider.OpenTheoryPopUp(title, content)
                 .CloseSignal.Subscribe(_ => _view.EnableControls());
         }
 

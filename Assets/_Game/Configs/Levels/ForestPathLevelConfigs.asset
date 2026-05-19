@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ForestPathLevelConfigs
   m_EditorClassIdentifier: Assembly-CSharp::Configs.LevelConfigs
   LocationPrefab: {fileID: 7219644840028643391, guid: 09294ae6a01ed2347a71bcaf3a31b400, type: 3}
-  TheoryConfigs: {fileID: 0}
+  TheoryConfigs: {fileID: 11400000, guid: e972836dfdd5e494c99c9413373b95d3, type: 2}
   LexiconPool:
   - {fileID: 11400000, guid: 8df80c55d4e9596409aa8f209ac4815f, type: 2}
   - {fileID: 11400000, guid: 315cce5a869d56d458f8ac9b2a85e2aa, type: 2}

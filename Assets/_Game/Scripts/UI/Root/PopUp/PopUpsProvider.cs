@@ -24,10 +24,10 @@ namespace UI
             return createdPopUp;
         }
 
-        public TheoryPopUp OpenTheoryPopUp()
+        public TheoryPopUp OpenTheoryPopUp(string title, string content)
         {
             var createdPopUp = _popUpFactory.Create(Configs.TheoryPopUpPrefab);
-            createdPopUp.Open();
+            createdPopUp.Open(title, content);
 
             return createdPopUp;
         }

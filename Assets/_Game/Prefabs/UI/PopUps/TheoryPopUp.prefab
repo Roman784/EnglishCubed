@@ -536,7 +536,6 @@ GameObject:
   - component: {fileID: 8461668750524744113}
   - component: {fileID: 3643102256978167151}
   - component: {fileID: 8753653191989636900}
-  - component: {fileID: 7413679511492591996}
   m_Layer: 0
   m_Name: TitleTxt
   m_TagString: Untagged
@@ -663,20 +662,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &7413679511492591996
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2258553656658448828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce18f1dbcd79fe548999a38c0aeaeab5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Localization.LocalizedText
-  _key: theory_title_level_1
-  _layoutsForRebuild: []
 --- !u!1 &2409377438502346788
 GameObject:
   m_ObjectHideFlags: 0
@@ -1202,6 +1187,8 @@ MonoBehaviour:
   _closeTweenData:
     Duration: 0.2
     Ease: 1
+  _titleView: {fileID: 8753653191989636900}
+  _contentView: {fileID: 8302128972554995190}
 --- !u!1 &7458370513630131068
 GameObject:
   m_ObjectHideFlags: 0

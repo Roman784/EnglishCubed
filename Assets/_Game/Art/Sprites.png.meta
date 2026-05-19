@@ -782,6 +782,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: ic_theory
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 950
+        width: 128
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6651949053a592f48ab5c07342bfb235
+      internalID: 1537998511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -823,6 +845,7 @@ TextureImporter:
       ic_shield_empty: -2015586938
       ic_shield_full: 959961410
       ic_swords: -1463130058
+      ic_theory: 1537998511
       ic_tree: 1928172411
       lock: -816058915
       oldman: 871545008

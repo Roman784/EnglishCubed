@@ -12,6 +12,7 @@ namespace Combat
     {
         private Subject<Unit> _changedSignalSubj = new();
 
+        public LevelConfigs LevelConfigs { get; private set; }
         public CombatEnterParams EnterParams { get; private set; }
 
         public Hero Hero { get; private set; }
@@ -41,6 +42,7 @@ namespace Combat
         public Observable<Unit> ChangedSignal => _changedSignalSubj;
 
         public CombatModel(
+            LevelConfigs levelConfigs,
             CombatEnterParams enterParams,
             Hero hero,
             Enemy enemy,
@@ -53,6 +55,7 @@ namespace Combat
             Location location,
             AbilityInventoryPresenter abilityInventory)
         {
+            LevelConfigs = levelConfigs;
             EnterParams = enterParams;
 
             Hero = hero;
