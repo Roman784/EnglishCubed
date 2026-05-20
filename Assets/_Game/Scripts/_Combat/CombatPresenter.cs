@@ -96,6 +96,7 @@ namespace Combat
             }
 
             ExecuteAttackSequence(validationResult);
+            IncreaseWordsUses();
         }
 
         private void ExecuteAttackSequence(ValidationResult validationResult)
@@ -182,6 +183,12 @@ namespace Combat
 
                 _model.Hero.SaveStats();
             });
+        }
+
+        private void IncreaseWordsUses()
+        {
+            foreach (var word in _model.FieldWordUnitsGroup.AllWordUnits)
+                G.GameProducer.WordUnits.IncreaseWordUses(word.Configs);
         }
 
         // ================ Upgrades ================

@@ -36,9 +36,14 @@
             "Level": 1,
             "IsEnemyExist": true,
             "Enemy": 7,
-            "CurrentEnemyHealth": 80,
+            "CurrentEnemyHealth": 30,
             "MaxEnemyHealth": 80,
-            "Abilities": [],
+            "Abilities": [
+                {
+                    "Name": 28,
+                    "StacksCount": 1
+                }
+            ],
             "Stats": [
                 {
                     "Name": 25,
@@ -47,7 +52,7 @@
                 },
                 {
                     "Name": 24,
-                    "Value": 4.0,
+                    "Value": 3.0,
                     "Max": 4.0
                 },
                 {
@@ -67,40 +72,46 @@
                 },
                 {
                     "Name": 1,
-                    "Value": 5.0,
+                    "Value": 4.0,
                     "Max": 5.0
+                },
+                {
+                    "Name": 16,
+                    "Value": 0.0,
+                    "Max": 0.0
                 }
             ],
             "Experience": {
                 "CurrentValue": 0,
-                "Level": 0
+                "Level": 1
             },
             "WordsInHand": [
                 "workerworker",
                 "thethe",
-                "workersworker",
                 "appleapple",
-                "likelike",
                 "tiredtired",
-                "youyou",
                 "likeslike",
                 "aa",
-                "dodo",
-                "?",
                 "ambe",
                 "isbe",
                 "arebe",
-                "applesapple"
+                "applesapple",
+                "theythey",
+                "itit",
+                "we",
+                "anan",
+                "hehe"
             ],
             "WordsInDeck": [
-                "hehe",
                 "sheshe",
-                "we",
                 "doesdo",
                 "ii",
-                "itit",
-                "theythey",
-                "anan"
+                "dodo",
+                "youyou",
+                "likelike",
+                "workersworker",
+                "?",
+                "appleapple"
             ]
         }
     },
