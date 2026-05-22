@@ -13,7 +13,7 @@ namespace GrammarValidation
             var configsProv = new ScriptableObjectConfigsProvider();
             configsProv.LoadGameConfigs().Subscribe(_ =>
             {
-                var grammarValidator = new GrammarValidator(configsProv.GameConfigs.LexiconConfigs);
+                var grammarValidator = new GrammarValidator();
 
                 grammarValidator.DebugSentence("I am tired.", true);
                 grammarValidator.DebugSentence("You are tired.", true);

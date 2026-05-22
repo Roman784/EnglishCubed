@@ -9,8 +9,8 @@ namespace Configs
     {
         public int Weight;
         public int Points;
-        public WordData Word;
+        public WordDefinition Definition;
 
-        public string Name => Word.Text + Word.Lemma;
+        public string Name => Definition.Text + Definition.Lemma;
     }
 }

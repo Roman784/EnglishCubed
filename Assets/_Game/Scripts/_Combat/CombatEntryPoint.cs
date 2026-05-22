@@ -41,7 +41,7 @@ namespace Combat
             var levelName = G.SessionData.Level;
             var levelConfigs = G.Configs.LevelsConfigs.GetLevelConfigs(levelName);
 
-            var grammarValidator = new GrammarValidator(G.Configs.LexiconConfigs);
+            var grammarValidator = new GrammarValidator();
 
             // ========== Game Producer ==========
 

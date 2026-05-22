@@ -1,46 +1,59 @@
 using Configs;
-using System.ComponentModel.DataAnnotations;
-using System.Data;
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace GrammarValidation
 {
     public class GrammarValidator
     {
-        private readonly Lexer _lexer;
-        private readonly CFGParser _parser;
-        private readonly GrammarRulesValidator _rulesValidator;
+        private readonly Tokenizer _tokenizer;
+        private readonly DependencyGraphBuilder _builder;
+        private readonly List<IGrammarRule> _rules;
 
-        public GrammarValidator(LexiconConfigs lexicon)
+        public GrammarValidator()
         {
-            _lexer = new Lexer(lexicon);
-            _parser = new CFGParser();
-            _rulesValidator = new GrammarRulesValidator();
-        }
+            _tokenizer = new Tokenizer();
+            _builder = new DependencyGraphBuilder();
 
-        public ValidationResult Validate(string sentence)
-        {
-            var tokens = _lexer.Tokenize(sentence);
-            if (tokens == null)
-                return ValidationResult.Fail("Unknown word", 0);
-
-            var ast = _parser.Parse(tokens);
-            if (ast == null)
-                return ValidationResult.Fail("Syntax error", 0);
-
-            return _rulesValidator.Validate(ast);
-        }
-
-        public void DebugSentence(string sentence, bool expectedResult)
-        {
-            // Debug.Log($"=== Debug: {sentence} ===");
-            var res = Validate(sentence);
-            if (res.IsValid != expectedResult)
+            _rules = new List<IGrammarRule>
             {
-                //Debug.Log($"Failed at {rule.GetType().Name}: {result.Message}");
-                Debug.LogError($"Fail: {sentence}\nMust be: {expectedResult}\nMessage: {res.Message}\n" +
-                    $"{_parser.Parse(_lexer.Tokenize(sentence))}");
+                new ValidStructureRule(),
+                new TransitivityRule(),
+                new SubjectVerbAgreementRule(),
+                new AuxiliaryMainVerbRule(),
+                new SingularNounArticleRule(),
+                new ArticleUsageRule(),
+                new ComplementAgreementRule()
+            };
+        }
+
+        public ValidationResult Validate(string text)
+        {
+            var tokens = _tokenizer.Tokenize(text, out var type);
+            var graph = _builder.BuildGraph(tokens, type);
+            var result = new ValidationResult();
+
+            foreach (var rule in _rules) 
+            {
+                if (!rule.Execute(graph, result)) 
+                    break; 
             }
+
+            Debug.Log($"[{text} -> Got: {result.IsSuccess} " + (!result.IsSuccess ? $"({result.Message})" : ""));
+            return result;
+        }
+
+        public void DebugSentence(string text, bool expected)
+        {
+            var tokens = _tokenizer.Tokenize(text, out var type);
+            var graph = _builder.BuildGraph(tokens, type);
+            var result = new ValidationResult();
+
+            foreach (var rule in _rules) { if (!rule.Execute(graph, result)) break; }
+
+            var isPassed = result.IsSuccess == expected;
+            Debug.Log($"[{(isPassed ? "PASS" : "FAIL")}] {text} -> Expected: {expected}, Got: {result.IsSuccess} " + (!result.IsSuccess ? $"({result.Message})" : ""));
         }
     }
 }

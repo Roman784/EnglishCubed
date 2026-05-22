@@ -87,7 +87,7 @@ namespace Combat
             var sentence = string.Join(" ", _model.FieldWordUnitsGroup.AllWordUnits.Select(w => w.GetWordText()));
             var validationResult = _model.GrammarValidator.Validate(sentence);
 
-            if (!validationResult.IsValid)
+            if (!validationResult.IsSuccess)
             {
                 var hintMessage = G.LocalizationProvider.GetTranslation(
                     G.Configs.GrammarHintsConfigs.GetMessage(validationResult.HintCode));

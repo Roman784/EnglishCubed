@@ -56,7 +56,7 @@ namespace Configs
 
             _allWordsMap = new Dictionary<string, WordUnitConfigs>();
             _allWordsMap = _allWordsByNameMap.Select(kvp => 
-                new KeyValuePair<string, WordUnitConfigs>(kvp.Value.Word.Text, kvp.Value))
+                new KeyValuePair<string, WordUnitConfigs>(kvp.Value.Definition.Text, kvp.Value))
                 .ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
         }
 

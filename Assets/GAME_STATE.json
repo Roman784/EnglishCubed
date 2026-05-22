@@ -36,7 +36,7 @@
             "Level": 1,
             "IsEnemyExist": true,
             "Enemy": 7,
-            "CurrentEnemyHealth": 30,
+            "CurrentEnemyHealth": 40,
             "MaxEnemyHealth": 80,
             "Abilities": [
                 {
@@ -52,7 +52,7 @@
                 },
                 {
                     "Name": 24,
-                    "Value": 3.0,
+                    "Value": 4.0,
                     "Max": 4.0
                 },
                 {
@@ -86,32 +86,32 @@
                 "Level": 1
             },
             "WordsInHand": [
-                "workerworker",
-                "thethe",
                 "appleapple",
-                "tiredtired",
-                "likeslike",
                 "aa",
                 "ambe",
-                "isbe",
                 "arebe",
                 "applesapple",
-                "theythey",
-                "itit",
-                "we",
-                "anan",
-                "hehe"
+                "tiredtire",
+                "likeslike",
+                "thethe",
+                "workerworker",
+                "isbe",
+                "workersworker"
             ],
             "WordsInDeck": [
+                "hehe",
                 "sheshe",
+                "wewe",
                 "doesdo",
                 "ii",
+                "itit",
+                "theythey",
+                "anan",
                 "dodo",
                 "youyou",
                 "likelike",
-                "workersworker",
                 "?",
-                "appleapple"
+                "applesapple"
             ]
         }
     },

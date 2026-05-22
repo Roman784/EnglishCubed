@@ -14,34 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Configs.WordUnitConfigs
   Weight: 1
   Points: 10
-  Word:
+  Definition:
     Text: likes
     Lemma: like
-    PartOfSpeech: 2
-    NounAttributes:
-      Number: 0
-      IsCountable: 0
-      Case: 0
-    VerbAttributes:
-      Tense: 1
-      Aspect: 1
-      VerbForm: 2
-      Voice: 0
-      Mood: 0
-      Person: 3
-      Number: 1
-      IsMainVerb: 0
-      IsAuxiliary: 0
-      IsLinkingVerb: 0
-      IsModal: 0
+    Role: 1
+    StartsWithVowelSound: 0
+    Person: 0
+    Number: 0
+    IsVerb: 1
+    VerbDefinition:
+      Form: 1
       IsTransitive: 1
-      IsRegular: 1
-    PronounAttributes:
-      Person: 0
-      Case: 0
-      Type: 0
-      Number: 0
-    AdjectiveAttributes:
-      Degree: 0
-    ArticleAttributes:
-      Type: 0

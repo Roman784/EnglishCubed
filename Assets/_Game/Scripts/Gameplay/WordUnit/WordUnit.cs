@@ -31,7 +31,7 @@ namespace Gameplay
         public Vector2 PointsSpawnPosition => _pointsSpawnPoint.position;
         public PointerDetector PointerDetector => _pointerDetector;
 
-        public string GetWordText() => _configs?.Word.Text ?? "";
+        public string GetWordText() => _configs?.Definition.Text ?? "";
 
         private void Awake()
         {
@@ -43,7 +43,7 @@ namespace Gameplay
         public WordUnit SetConfigs(WordUnitConfigs configs)
         {
             _configs = configs;
-            SetWordText(_configs.Word.Text);
+            SetWordText(_configs.Definition.Text);
 
             return this;
         }
