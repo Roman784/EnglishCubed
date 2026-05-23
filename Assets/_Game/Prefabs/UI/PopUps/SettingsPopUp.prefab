@@ -666,6 +666,7 @@ GameObject:
   - component: {fileID: 3047932038770887682}
   - component: {fileID: 5761023527241321289}
   - component: {fileID: 4185558199311307997}
+  - component: {fileID: 533920903225994260}
   m_Layer: 5
   m_Name: Es
   m_TagString: Untagged
@@ -841,6 +842,19 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &533920903225994260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562158058455021172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ea60c0b7e7ce24c89ad5478187409a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Audio.ButtonAudioPlayer
+  _clip: {fileID: 0}
 --- !u!1 &2258553656658448828
 GameObject:
   m_ObjectHideFlags: 0
@@ -1196,6 +1210,7 @@ GameObject:
   - component: {fileID: 498813493241391861}
   - component: {fileID: 2973863000313866623}
   - component: {fileID: 7478368733965359667}
+  - component: {fileID: 1360368951431711018}
   m_Layer: 5
   m_Name: De
   m_TagString: Untagged
@@ -1371,6 +1386,19 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &1360368951431711018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4437786272892645633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ea60c0b7e7ce24c89ad5478187409a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Audio.ButtonAudioPlayer
+  _clip: {fileID: 0}
 --- !u!1 &4703262443735046442
 GameObject:
   m_ObjectHideFlags: 0
@@ -1697,6 +1725,7 @@ GameObject:
   - component: {fileID: 189304836380443898}
   - component: {fileID: 7484587657115616987}
   - component: {fileID: 3953551386647911359}
+  - component: {fileID: 1479940730929123938}
   m_Layer: 5
   m_Name: OpenMainMenuBtn
   m_TagString: Untagged
@@ -1849,6 +1878,19 @@ MonoBehaviour:
   m_EffectColor: {r: 0.6156863, g: 0.7137255, b: 0.7254902, a: 1}
   m_EffectDistance: {x: 0, y: -8}
   m_UseGraphicAlpha: 1
+--- !u!114 &1479940730929123938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5800032927362512952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ea60c0b7e7ce24c89ad5478187409a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Audio.ButtonAudioPlayer
+  _clip: {fileID: 0}
 --- !u!1 &5935268736992276163
 GameObject:
   m_ObjectHideFlags: 0
@@ -2153,6 +2195,7 @@ GameObject:
   - component: {fileID: 367309357470126425}
   - component: {fileID: 6609974468831144548}
   - component: {fileID: 6864013106876659941}
+  - component: {fileID: 4655276526148660193}
   m_Layer: 5
   m_Name: Ru
   m_TagString: Untagged
@@ -2304,6 +2347,19 @@ MonoBehaviour:
   m_EffectColor: {r: 0.6156863, g: 0.7137255, b: 0.7254902, a: 1}
   m_EffectDistance: {x: 0, y: -8}
   m_UseGraphicAlpha: 1
+--- !u!114 &4655276526148660193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6905031326268787443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ea60c0b7e7ce24c89ad5478187409a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Audio.ButtonAudioPlayer
+  _clip: {fileID: 0}
 --- !u!1 &7155218473606721139
 GameObject:
   m_ObjectHideFlags: 0
@@ -2427,6 +2483,7 @@ GameObject:
   - component: {fileID: 2924750377338446586}
   - component: {fileID: 2502488705547159748}
   - component: {fileID: 1332841886841217381}
+  - component: {fileID: 1553716872586751899}
   m_Layer: 5
   m_Name: CloseBtn
   m_TagString: Untagged
@@ -2579,6 +2636,19 @@ MonoBehaviour:
   m_EffectColor: {r: 0.7529412, g: 0.35686275, b: 0.3372549, a: 1}
   m_EffectDistance: {x: 0, y: -8}
   m_UseGraphicAlpha: 1
+--- !u!114 &1553716872586751899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7864105037093469879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ea60c0b7e7ce24c89ad5478187409a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Audio.ButtonAudioPlayer
+  _clip: {fileID: 0}
 --- !u!1 &8130711119318842217
 GameObject:
   m_ObjectHideFlags: 0

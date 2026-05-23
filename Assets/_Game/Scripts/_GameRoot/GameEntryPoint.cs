@@ -57,6 +57,8 @@ namespace GameRoot
             G.AbilityProvider = new AbilityProvider();
             G.GameProducer = new GameProducer.GameProducer();
 
+            yield return R.LoadAudioClips();
+
             StartGame();
         }
 

@@ -25,6 +25,8 @@ namespace Gameplay
         {
             if (!IsAlive) return;
 
+            G.AudioProvider.PlaySound(R.Audio.HeroDamage);
+
             if (_stats.Armor.CurrentValue > 0)
                 _stats.Armor.DecreaseOne();
             else if (_stats.Health.CurrentValue > 0)

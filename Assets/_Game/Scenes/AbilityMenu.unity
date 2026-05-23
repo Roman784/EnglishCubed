@@ -1229,8 +1229,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 701843069}
   m_HandleRect: {fileID: 701843068}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.80357146
+  m_Value: 0.99999964
+  m_Size: 0.8035714
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2954,6 +2954,7 @@ GameObject:
   - component: {fileID: 1198559748}
   - component: {fileID: 1198559747}
   - component: {fileID: 1198559746}
+  - component: {fileID: 1198559751}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -3106,6 +3107,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1198559744}
   m_CullTransparentMesh: 1
+--- !u!114 &1198559751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198559744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ea60c0b7e7ce24c89ad5478187409a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Audio.ButtonAudioPlayer
+  _clip: {fileID: 0}
 --- !u!1001 &1284531169
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4336,6 +4350,7 @@ GameObject:
   - component: {fileID: 1591894619}
   - component: {fileID: 1591894618}
   - component: {fileID: 1591894617}
+  - component: {fileID: 1591894622}
   m_Layer: 5
   m_Name: BuyBtn
   m_TagString: Untagged
@@ -4489,6 +4504,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1591894615}
   m_CullTransparentMesh: 1
+--- !u!114 &1591894622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1591894615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ea60c0b7e7ce24c89ad5478187409a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Audio.ButtonAudioPlayer
+  _clip: {fileID: 0}
 --- !u!1 &1627552754
 GameObject:
   m_ObjectHideFlags: 0

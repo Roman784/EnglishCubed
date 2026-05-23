@@ -349,6 +349,7 @@ GameObject:
   - component: {fileID: 2111839327428675055}
   - component: {fileID: 1602769128611286155}
   - component: {fileID: 4388308647357789304}
+  - component: {fileID: 6664963356625136830}
   m_Layer: 5
   m_Name: ContinueBtn
   m_TagString: Untagged
@@ -501,6 +502,19 @@ MonoBehaviour:
   m_EffectColor: {r: 0.6156863, g: 0.7137255, b: 0.7254902, a: 1}
   m_EffectDistance: {x: 0, y: -8}
   m_UseGraphicAlpha: 1
+--- !u!114 &6664963356625136830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1887333653064566970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ea60c0b7e7ce24c89ad5478187409a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Audio.ButtonAudioPlayer
+  _clip: {fileID: 0}
 --- !u!1 &2239308419803499108
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,6 +530,7 @@ GameObject:
   - component: {fileID: 7348365468736413572}
   - component: {fileID: 8104118540353818773}
   - component: {fileID: 3369713973308538024}
+  - component: {fileID: 3686728559158101595}
   m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
@@ -681,6 +696,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.AspectRatioFitter
   m_AspectMode: 1
   m_AspectRatio: 0.79787236
+--- !u!114 &3686728559158101595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2239308419803499108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ea60c0b7e7ce24c89ad5478187409a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Audio.ButtonAudioPlayer
+  _clip: {fileID: 0}
 --- !u!1 &2258553656658448828
 GameObject:
   m_ObjectHideFlags: 0
@@ -1197,6 +1225,7 @@ GameObject:
   - component: {fileID: 2924750377338446586}
   - component: {fileID: 2502488705547159748}
   - component: {fileID: 1332841886841217381}
+  - component: {fileID: 4348139547786912494}
   m_Layer: 5
   m_Name: ExitBtn
   m_TagString: Untagged
@@ -1349,6 +1378,19 @@ MonoBehaviour:
   m_EffectColor: {r: 0.7529412, g: 0.35686275, b: 0.3372549, a: 1}
   m_EffectDistance: {x: 0, y: -8}
   m_UseGraphicAlpha: 1
+--- !u!114 &4348139547786912494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7864105037093469879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ea60c0b7e7ce24c89ad5478187409a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Audio.ButtonAudioPlayer
+  _clip: {fileID: 0}
 --- !u!1 &8130711119318842217
 GameObject:
   m_ObjectHideFlags: 0

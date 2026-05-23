@@ -528,6 +528,7 @@ GameObject:
   - component: {fileID: 220183435}
   - component: {fileID: 220183436}
   - component: {fileID: 220183437}
+  - component: {fileID: 220183438}
   m_Layer: 5
   m_Name: Abilities
   m_TagString: Untagged
@@ -680,6 +681,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &220183438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220183430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ea60c0b7e7ce24c89ad5478187409a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Audio.ButtonAudioPlayer
+  _clip: {fileID: 0}
 --- !u!1 &264599398
 GameObject:
   m_ObjectHideFlags: 0
@@ -794,10 +808,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1649431191}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -32, y: -33}
-  m_SizeDelta: {x: 64, y: 66}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &316179399
 MonoBehaviour:
@@ -1314,6 +1328,7 @@ GameObject:
   - component: {fileID: 1097688971}
   - component: {fileID: 1097688972}
   - component: {fileID: 1097688973}
+  - component: {fileID: 1097688974}
   m_Layer: 5
   m_Name: Start
   m_TagString: Untagged
@@ -1466,6 +1481,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1097688974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097688966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ea60c0b7e7ce24c89ad5478187409a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Audio.ButtonAudioPlayer
+  _clip: {fileID: 0}
 --- !u!1 &1119660213
 GameObject:
   m_ObjectHideFlags: 0
@@ -1480,6 +1508,7 @@ GameObject:
   - component: {fileID: 1119660218}
   - component: {fileID: 1119660219}
   - component: {fileID: 1119660220}
+  - component: {fileID: 1119660221}
   m_Layer: 5
   m_Name: Heroes
   m_TagString: Untagged
@@ -1632,6 +1661,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1119660221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119660213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ea60c0b7e7ce24c89ad5478187409a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Audio.ButtonAudioPlayer
+  _clip: {fileID: 0}
 --- !u!1 &1168800989
 GameObject:
   m_ObjectHideFlags: 0
@@ -2217,6 +2259,7 @@ GameObject:
   - component: {fileID: 1649431193}
   - component: {fileID: 1649431196}
   - component: {fileID: 1649431195}
+  - component: {fileID: 1649431197}
   m_Layer: 5
   m_Name: Settings
   m_TagString: Untagged
@@ -2241,8 +2284,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -32, y: -64}
-  m_SizeDelta: {x: 128, y: 128}
+  m_AnchoredPosition: {x: -16, y: -16}
+  m_SizeDelta: {x: 160, y: 160}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1649431192
 MonoBehaviour:
@@ -2367,6 +2410,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1649431197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649431190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ea60c0b7e7ce24c89ad5478187409a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Audio.ButtonAudioPlayer
+  _clip: {fileID: 0}
 --- !u!1001 &1707572358
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2749,6 +2805,7 @@ GameObject:
   - component: {fileID: 2038458694}
   - component: {fileID: 2038458693}
   - component: {fileID: 2038458698}
+  - component: {fileID: 2038458699}
   m_Layer: 5
   m_Name: Continue
   m_TagString: Untagged
@@ -2913,6 +2970,19 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &2038458699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038458691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ea60c0b7e7ce24c89ad5478187409a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Audio.ButtonAudioPlayer
+  _clip: {fileID: 0}
 --- !u!1 &2134118396
 GameObject:
   m_ObjectHideFlags: 0

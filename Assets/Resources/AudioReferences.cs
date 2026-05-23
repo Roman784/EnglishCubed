@@ -6,10 +6,33 @@ public static partial class R
 {
     public static class Audio
     {
+        public static AudioClip ForestPath;
+        public static AudioClip MainMenu;
+        public static AudioClip ButtonClick;
+        public static AudioClip Buy;
+        public static AudioClip EnemyDamage;
+        public static AudioClip HeroDamage;
+        public static AudioClip LevelDefeat;
+        public static AudioClip LevelVictory;
     }
 
     public static IEnumerator LoadAudioClips()
     {
-        yield return null;
+        Audio.ForestPath = Resources.Load<AudioClip>("Audio/Musics/ForestPath");
+         yield return null;
+        Audio.MainMenu = Resources.Load<AudioClip>("Audio/Musics/MainMenu");
+         yield return null;
+        Audio.ButtonClick = Resources.Load<AudioClip>("Audio/Sounds/ButtonClick");
+         yield return null;
+        Audio.Buy = Resources.Load<AudioClip>("Audio/Sounds/Buy");
+         yield return null;
+        Audio.EnemyDamage = Resources.Load<AudioClip>("Audio/Sounds/EnemyDamage");
+         yield return null;
+        Audio.HeroDamage = Resources.Load<AudioClip>("Audio/Sounds/HeroDamage");
+         yield return null;
+        Audio.LevelDefeat = Resources.Load<AudioClip>("Audio/Sounds/LevelDefeat");
+         yield return null;
+        Audio.LevelVictory = Resources.Load<AudioClip>("Audio/Sounds/LevelVictory");
+         yield return null;
     }
 }

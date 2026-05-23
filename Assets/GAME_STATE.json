@@ -1,6 +1,6 @@
 {
     "Language": {
-        "Language": 0
+        "Language": 2
     },
     "MetaProgression": {
         "SelectedHero": 3,
@@ -36,14 +36,9 @@
             "Level": 1,
             "IsEnemyExist": true,
             "Enemy": 7,
-            "CurrentEnemyHealth": 40,
+            "CurrentEnemyHealth": 80,
             "MaxEnemyHealth": 80,
-            "Abilities": [
-                {
-                    "Name": 28,
-                    "StacksCount": 1
-                }
-            ],
+            "Abilities": [],
             "Stats": [
                 {
                     "Name": 25,
@@ -72,46 +67,40 @@
                 },
                 {
                     "Name": 1,
-                    "Value": 4.0,
+                    "Value": 5.0,
                     "Max": 5.0
-                },
-                {
-                    "Name": 16,
-                    "Value": 0.0,
-                    "Max": 0.0
                 }
             ],
             "Experience": {
                 "CurrentValue": 0,
-                "Level": 1
+                "Level": 0
             },
             "WordsInHand": [
-                "appleapple",
-                "aa",
-                "ambe",
-                "arebe",
-                "applesapple",
-                "tiredtire",
-                "likeslike",
-                "thethe",
-                "workerworker",
                 "isbe",
-                "workersworker"
+                "theythey",
+                "applesapple",
+                "hehe",
+                "itit",
+                "lovelove",
+                "?",
+                "anan",
+                "ii",
+                "ambe",
+                "tiredtire",
+                "catscat",
+                "thethe",
+                "arebe",
+                "sheshe"
             ],
             "WordsInDeck": [
-                "hehe",
-                "sheshe",
                 "wewe",
                 "doesdo",
-                "ii",
-                "itit",
-                "theythey",
-                "anan",
+                "appleapple",
                 "dodo",
+                "aa",
+                "catcat",
                 "youyou",
-                "likelike",
-                "?",
-                "applesapple"
+                "loveslove"
             ]
         }
     },

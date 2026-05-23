@@ -1,5 +1,6 @@
 using UnityEngine;
 using R3;
+using GameRoot;
 
 namespace Gameplay
 {
@@ -28,6 +29,8 @@ namespace Gameplay
 
         public void TakeDamage(int damage, out float animationDuration)
         {
+            G.AudioProvider.PlaySound(R.Audio.EnemyDamage);
+
             if (!IsAlive)
             {
                 animationDuration = 0;

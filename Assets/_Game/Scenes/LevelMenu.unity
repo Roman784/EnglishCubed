@@ -422,6 +422,7 @@ GameObject:
   - component: {fileID: 158695350}
   - component: {fileID: 158695349}
   - component: {fileID: 158695348}
+  - component: {fileID: 158695353}
   m_Layer: 5
   m_Name: ForestPathBtn
   m_TagString: Untagged
@@ -578,6 +579,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 158695346}
   m_CullTransparentMesh: 1
+--- !u!114 &158695353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158695346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ea60c0b7e7ce24c89ad5478187409a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Audio.ButtonAudioPlayer
+  _clip: {fileID: 0}
 --- !u!1 &266187906
 GameObject:
   m_ObjectHideFlags: 0
@@ -1829,6 +1843,7 @@ GameObject:
   - component: {fileID: 1127846243}
   - component: {fileID: 1127846242}
   - component: {fileID: 1127846241}
+  - component: {fileID: 1127846246}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -1981,6 +1996,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1127846239}
   m_CullTransparentMesh: 1
+--- !u!114 &1127846246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127846239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ea60c0b7e7ce24c89ad5478187409a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Audio.ButtonAudioPlayer
+  _clip: {fileID: 0}
 --- !u!1 &1442390340
 GameObject:
   m_ObjectHideFlags: 0

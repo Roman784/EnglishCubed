@@ -513,6 +513,7 @@ GameObject:
   - component: {fileID: 118582237}
   - component: {fileID: 118582236}
   - component: {fileID: 118582240}
+  - component: {fileID: 118582241}
   m_Layer: 5
   m_Name: RightBtn
   m_TagString: Untagged
@@ -665,6 +666,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &118582241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118582234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ea60c0b7e7ce24c89ad5478187409a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Audio.ButtonAudioPlayer
+  _clip: {fileID: 0}
 --- !u!1 &197892156
 GameObject:
   m_ObjectHideFlags: 0
@@ -679,6 +693,7 @@ GameObject:
   - component: {fileID: 197892160}
   - component: {fileID: 197892159}
   - component: {fileID: 197892158}
+  - component: {fileID: 197892163}
   m_Layer: 5
   m_Name: SelectBtn
   m_TagString: Untagged
@@ -831,6 +846,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 197892156}
   m_CullTransparentMesh: 1
+--- !u!114 &197892163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197892156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ea60c0b7e7ce24c89ad5478187409a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Audio.ButtonAudioPlayer
+  _clip: {fileID: 0}
 --- !u!1001 &207368972
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1261,6 +1289,7 @@ GameObject:
   - component: {fileID: 566981826}
   - component: {fileID: 566981825}
   - component: {fileID: 566981829}
+  - component: {fileID: 566981830}
   m_Layer: 5
   m_Name: BuyBtn
   m_TagString: Untagged
@@ -1414,6 +1443,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &566981830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566981823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ea60c0b7e7ce24c89ad5478187409a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Audio.ButtonAudioPlayer
+  _clip: {fileID: 0}
 --- !u!1 &699380667
 GameObject:
   m_ObjectHideFlags: 0
@@ -1572,6 +1614,7 @@ GameObject:
   - component: {fileID: 810386675}
   - component: {fileID: 810386674}
   - component: {fileID: 810386678}
+  - component: {fileID: 810386679}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -1724,6 +1767,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &810386679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810386672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ea60c0b7e7ce24c89ad5478187409a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Audio.ButtonAudioPlayer
+  _clip: {fileID: 0}
 --- !u!1 &824750943
 GameObject:
   m_ObjectHideFlags: 0
@@ -3681,6 +3737,7 @@ GameObject:
   - component: {fileID: 6264319367625989588}
   - component: {fileID: 4416954163417799577}
   - component: {fileID: 8765829060521622379}
+  - component: {fileID: 8765829060521622380}
   m_Layer: 5
   m_Name: LeftBtn
   m_TagString: Untagged
@@ -3952,6 +4009,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8765829060521622380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575961123736375281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ea60c0b7e7ce24c89ad5478187409a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Audio.ButtonAudioPlayer
+  _clip: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

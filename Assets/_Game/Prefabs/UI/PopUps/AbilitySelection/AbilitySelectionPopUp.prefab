@@ -792,6 +792,7 @@ GameObject:
   - component: {fileID: 2502488705547159748}
   - component: {fileID: 1332841886841217381}
   - component: {fileID: 8840581739682224406}
+  - component: {fileID: 4282695539776401033}
   m_Layer: 5
   m_Name: RefuseBtn
   m_TagString: Untagged
@@ -956,3 +957,16 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &4282695539776401033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7864105037093469879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ea60c0b7e7ce24c89ad5478187409a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Audio.ButtonAudioPlayer
+  _clip: {fileID: 0}

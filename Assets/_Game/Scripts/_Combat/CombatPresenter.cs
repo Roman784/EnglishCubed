@@ -366,6 +366,8 @@ namespace Combat
                 _model.RestoreDiscards();
                 _model.RestoreDraws();
                 _model.Hero.SaveStats();
+
+                G.AudioProvider.PlaySound(R.Audio.LevelVictory);
             });
         }
 
@@ -376,6 +378,8 @@ namespace Combat
                 _view.DisableControls();
                 G.GameSessionProvider.EndSession();
                 G.PopUpsProvider.OpenCombatDefeatPopUp();
+
+                G.AudioProvider.PlaySound(R.Audio.LevelDefeat);
             });
         }
 

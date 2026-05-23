@@ -11,5 +11,6 @@ namespace Configs
         public TheoryConfigs TheoryConfigs;
         public WordUnitConfigs[] LexiconPool;
         public AbilityConfigs[] AbilitiesPool;
+        public AudioClip BackgroundMusic;
     }
 }

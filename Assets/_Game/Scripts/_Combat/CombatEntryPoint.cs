@@ -150,6 +150,10 @@ namespace Combat
                 abilityInventory: _abilityInventory);
             _presenter = new CombatPresenter(_view, model);
 
+            // ========== Background Music ==========
+
+            G.AudioProvider.PlayMusic(levelConfigs.BackgroundMusic);
+
             // ========== Start Game ==========
 
             G.GameSessionProvider.SetIsInEncounter(true);

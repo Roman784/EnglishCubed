@@ -1,6 +1,3 @@
-using UnityEditor.PackageManager.Requests;
-using UnityEngine;
-
 namespace GrammarValidation
 {
     public class SubjectVerbAgreementRule : IGrammarRule

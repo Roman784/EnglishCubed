@@ -15,6 +15,8 @@ namespace MainMenu
             var model = new MainMenuModel();
             var presenter = new MainMenuPresenter(_view, model);
 
+            G.AudioProvider.PlayMusic(R.Audio.MainMenu);
+
             isLoaded = true;
             yield return new WaitUntil(() => isLoaded);
         }

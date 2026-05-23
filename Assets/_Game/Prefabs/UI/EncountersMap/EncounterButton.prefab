@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 5663268302965666660}
   - component: {fileID: 3533986166426364684}
   - component: {fileID: 9205188055273344918}
+  - component: {fileID: 2581243122808497993}
   m_Layer: 5
   m_Name: EncounterButton
   m_TagString: Untagged
@@ -264,6 +265,19 @@ MonoBehaviour:
   _combatSprite: {fileID: 1398242545, guid: 9b8a65ec8091a0f40b9a66926c730ef7, type: 3}
   _emergencyCombatSprite: {fileID: 1414188175, guid: 9b8a65ec8091a0f40b9a66926c730ef7, type: 3}
   _bossCombatSprite: {fileID: -1179608014, guid: 9b8a65ec8091a0f40b9a66926c730ef7, type: 3}
+--- !u!114 &2581243122808497993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2556562282995412997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ea60c0b7e7ce24c89ad5478187409a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Audio.ButtonAudioPlayer
+  _clip: {fileID: 0}
 --- !u!1 &2606075556898325892
 GameObject:
   m_ObjectHideFlags: 0
