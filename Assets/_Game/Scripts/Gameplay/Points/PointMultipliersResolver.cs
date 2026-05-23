@@ -55,7 +55,7 @@ namespace Gameplay
                     statName == StatName.ExclamatorySentencePower && validationResult.IsExclamatory ||
                     statName == StatName.PronounsPower && validationResult.HasPronouns ||
                     statName == StatName.PronounsPower && validationResult.HasAdjectives ||
-                    statName == StatName.PronounsPower && validationResult.HasLinkinVerbs ||
+                    statName == StatName.PronounsPower && validationResult.HasLinkingVerbs ||
                     statName == StatName.ThreeWordsPower && validationResult.WordsCount == 3 ||
                     statName == StatName.FourWordsPower && validationResult.WordsCount == 4 ||
                     statName == StatName.FiveWordsPower && validationResult.WordsCount == 5 ||

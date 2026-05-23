@@ -10,11 +10,13 @@ namespace GrammarValidation
         private readonly Tokenizer _tokenizer;
         private readonly DependencyGraphBuilder _builder;
         private readonly List<IGrammarRule> _rules;
+        private readonly SentenceAnalyzer _analyzer;
 
         public GrammarValidator()
         {
             _tokenizer = new Tokenizer();
             _builder = new DependencyGraphBuilder();
+            _analyzer = new SentenceAnalyzer();
 
             _rules = new List<IGrammarRule>
             {
@@ -39,6 +41,8 @@ namespace GrammarValidation
                 if (!rule.Execute(graph, result)) 
                     break; 
             }
+
+            _analyzer.Analyze(tokens, type, result);
 
             Debug.Log($"[{text} -> Got: {result.IsSuccess} " + (!result.IsSuccess ? $"({result.Message})" : ""));
             return result;

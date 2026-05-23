@@ -12,7 +12,7 @@ namespace GrammarValidation
 
         public bool HasPronouns;
         public bool HasAdjectives;
-        public bool HasLinkinVerbs;
+        public bool HasLinkingVerbs;
 
         public int WordsCount;
     }
