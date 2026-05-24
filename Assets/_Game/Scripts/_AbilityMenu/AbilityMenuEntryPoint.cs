@@ -15,6 +15,7 @@ namespace AbilityMenu
             var allAbilitiesConfigs = G.Configs.AbilitiesConfigs.AllAbilities;
             var unlockedAbilities = G.Repository.MetaProgression.GetUnlockedAbilities();
 
+            G.Wallet.Load();
             _view.BindWalletView(G.Wallet);
 
             var model = new AbilityMenuModel(

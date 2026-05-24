@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DO_WordUnit
   m_EditorClassIdentifier: Assembly-CSharp::Configs.WordUnitConfigs
   Weight: 1
-  Points: 10
+  Points: 15
   Definition:
     Text: do
     Lemma: do

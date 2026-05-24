@@ -19,6 +19,11 @@ namespace Currency
 
         public Wallet()
         {
+            Load();
+        }
+
+        public void Load()
+        {
             _coins = Repository.GetCoins();
         }
 

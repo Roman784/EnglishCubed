@@ -52,6 +52,13 @@ namespace UI
         private void Update()
         {
             _gravitationalPuller.Handle();
+
+#if (UNITY_IOS || UNITY_ANDROID || UNITY_WEBGL) && !UNITY_EDITOR
+            if (UnityEngine.Device.Application.isMobilePlatform && Input.touchCount == 0)
+            {
+                _gravitationalPuller.ReturnAllToOriginalPositions();
+            }
+#endif
         }
 
         [ContextMenu("Arrange")]

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AM_WordUnit
   m_EditorClassIdentifier: Assembly-CSharp::Configs.WordUnitConfigs
   Weight: 1
-  Points: 100
+  Points: 5
   Definition:
     Text: am
     Lemma: be

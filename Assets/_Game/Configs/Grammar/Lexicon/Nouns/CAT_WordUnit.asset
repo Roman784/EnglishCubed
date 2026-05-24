@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CAT_WordUnit
   m_EditorClassIdentifier: Assembly-CSharp::Configs.WordUnitConfigs
   Weight: 1
-  Points: 10
+  Points: 8
   Definition:
     Text: cat
     Lemma: cat

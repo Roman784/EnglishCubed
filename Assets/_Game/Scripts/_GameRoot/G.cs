@@ -6,6 +6,7 @@ using Gameplay;
 using GameSession;
 using GameState;
 using Localization;
+using SDK;
 using UI;
 
 namespace GameRoot
@@ -13,6 +14,7 @@ namespace GameRoot
     public static class G
     {
         // Global.
+        public static SDK.SDK SDK;
         public static IConfigsProvider ConfigsProvider;
         public static ILocalizationProvider LocalizationProvider;
         public static Repository Repository;

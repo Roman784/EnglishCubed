@@ -6,6 +6,7 @@ using GameSession;
 using GameState;
 using Localization;
 using R3;
+using SDK;
 using System;
 using System.Collections;
 using UI;
@@ -30,8 +31,25 @@ namespace GameRoot
 
             yield return null;
 
+            SDK.SDK sdk = null;
+#if !UNITY_EDITOR && UNITY_WEBGL
+            sdk = new GameObject("SDK").AddComponent<YandexSDK>();
+#else
+            sdk = new GameObject("SDK").AddComponent<EditorSDK>();
+#endif
+            DontDestroyOnLoad(sdk);
+
+            G.SDK = sdk;
+            G.SDK.Init();
+
             G.ConfigsProvider = new ScriptableObjectConfigsProvider();
-            var gameStateProvider = new JsonGameStateProvider();
+
+            IGameStateProvider gameStateProvider;
+#if !UNITY_EDITOR && UNITY_WEBGL
+            gameStateProvider = new SDKGameStateProvider();
+#else
+            gameStateProvider = new JsonGameStateProvider();
+#endif
             G.LocalizationProvider = new JsonLocalizationProvider();
 
             yield return HandleLoading(

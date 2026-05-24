@@ -113,7 +113,7 @@ namespace UI
             }
         }
 
-        private void ReturnAllToOriginalPositions()
+        public void ReturnAllToOriginalPositions()
         {
             foreach (var element in _elements)
             {

@@ -19,6 +19,7 @@ namespace HeroMenu
             var unlockedHeroes = G.Repository.MetaProgression.GetUnlockedHeroes();
             var selectedHero = G.Repository.MetaProgression.GetSelectedHero();
 
+            G.Wallet.Load();
             _view.BindWalletView(G.Wallet);
 
             var model = new HeroMenuModel(

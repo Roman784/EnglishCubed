@@ -33,27 +33,16 @@
             "Seed": 0,
             "IsInEncounter": true,
             "CurrentEncounterName": 2,
-            "CurrentEncounterNumber": 25,
-            "TotalEncountersCount": 49,
-            "PassedEncounters": [
-                0
-            ],
+            "CurrentEncounterNumber": 0,
+            "TotalEncountersCount": 0,
+            "PassedEncounters": [],
             "Hero": 1,
             "Level": 1,
             "IsEnemyExist": true,
             "Enemy": 7,
-            "CurrentEnemyHealth": 0,
-            "MaxEnemyHealth": 95,
-            "Abilities": [
-                {
-                    "Name": 28,
-                    "StacksCount": 1
-                },
-                {
-                    "Name": 12,
-                    "StacksCount": 1
-                }
-            ],
+            "CurrentEnemyHealth": 80,
+            "MaxEnemyHealth": 80,
+            "Abilities": [],
             "Stats": [
                 {
                     "Name": 25,
@@ -62,7 +51,7 @@
                 },
                 {
                     "Name": 24,
-                    "Value": 3.0,
+                    "Value": 4.0,
                     "Max": 4.0
                 },
                 {
@@ -84,50 +73,38 @@
                     "Name": 1,
                     "Value": 5.0,
                     "Max": 5.0
-                },
-                {
-                    "Name": 16,
-                    "Value": 0.0,
-                    "Max": 0.0
-                },
-                {
-                    "Name": 14,
-                    "Value": 0.0,
-                    "Max": 0.0
                 }
             ],
             "Experience": {
                 "CurrentValue": 0,
-                "Level": 1
+                "Level": 0
             },
             "WordsInHand": [
+                "isbe",
+                "theythey",
+                "applesapple",
+                "hehe",
                 "itit",
                 "lovelove",
+                "?",
                 "anan",
+                "ii",
+                "ambe",
                 "tiredtire",
                 "catscat",
                 "thethe",
-                "sheshe",
-                "appleapple",
-                "ii",
-                "doesdo",
-                "hehe",
-                "isbe"
+                "arebe",
+                "sheshe"
             ],
             "WordsInDeck": [
                 "wewe",
+                "doesdo",
+                "appleapple",
                 "dodo",
                 "aa",
                 "catcat",
                 "youyou",
-                "loveslove",
-                "isbe",
-                "ambe",
-                "?",
-                "arebe",
-                "theythey",
-                "arebe",
-                "applesapple"
+                "loveslove"
             ]
         }
     },

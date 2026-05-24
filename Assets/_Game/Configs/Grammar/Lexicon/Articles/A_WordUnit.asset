@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: A_WordUnit
   m_EditorClassIdentifier: Assembly-CSharp::Configs.WordUnitConfigs
   Weight: 1
-  Points: 10
+  Points: 2
   Definition:
     Text: a
     Lemma: a
@@ -21,3 +21,7 @@ MonoBehaviour:
     StartsWithVowelSound: 0
     Person: 0
     Number: 0
+    IsVerb: 0
+    VerbDefinition:
+      Form: 0
+      IsTransitive: 1

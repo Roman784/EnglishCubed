@@ -7,7 +7,7 @@ namespace Utils
     public class PointerDetector : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler
     {
         private bool _isEnabled = true;
-        private bool _isPointerOver = false; // Флаг для отслеживания состояния указателя
+        private bool _isPointerOver = false;
 
         private Subject<PointerEventData> _onPointerClickSignalSubj = new();
         private Subject<PointerEventData> _onPointerEnterSignalSubj = new();

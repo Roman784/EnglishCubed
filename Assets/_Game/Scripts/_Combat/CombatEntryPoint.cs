@@ -74,9 +74,9 @@ namespace Combat
             // ========== Stats ==========
 
             var discards = new StatData() { Name = StatName.DiscardsCount, Value = 3, Max = 3 };
-            var draws = new StatData() { Name = StatName.DrawsCount, Value = 4, Max = 4 };
+            var draws = new StatData() { Name = StatName.DrawsCount, Value = 3, Max = 3 };
             var fieldCapacity = new StatData() { Name = StatName.FieldCapacity, Value = 5, Max = 5 };
-            var handCapacity = new StatData() { Name = StatName.HandCapacity, Value = 15, Max = 15 };
+            var handCapacity = new StatData() { Name = StatName.HandCapacity, Value = 10, Max = 10 };
 
             var experienceLevelData = G.Configs.StatsConfigs.ExperienceLevelDatas;
             var heroExperience = new Experience(
@@ -181,17 +181,6 @@ namespace Combat
         {
             _deck?.Dispose();
             _presenter?.Dispose();
-        }
-
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-                _presenter.OpenNewLevelUpgradePopUps();
-            }
-
-            else if (Input.GetKeyDown(KeyCode.S))
-                Debug.Log(_heroStats.ToString());
         }
     }
 }
