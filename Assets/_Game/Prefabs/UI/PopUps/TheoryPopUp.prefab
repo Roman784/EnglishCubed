@@ -872,8 +872,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7045940576546196710}
   m_HandleRect: {fileID: 6905017779349269957}
   m_Direction: 2
-  m_Value: 0.9999998
-  m_Size: 0.20547946
+  m_Value: 0.9999999
+  m_Size: 0.05430847
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -961,7 +961,7 @@ RectTransform:
   m_GameObject: {fileID: 4164458463882449808}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6911474378944216546}
@@ -969,7 +969,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 668, y: 256}
+  m_SizeDelta: {x: 0, y: 256}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &2492218818305895838
 CanvasRenderer:
@@ -1021,7 +1021,6 @@ MonoBehaviour:
   _scrollSpeed: 0.1
   _xDirection: -1
   _yDirection: 0
-  _defaultAspect: 1.777
 --- !u!1 &4708440572008713143
 GameObject:
   m_ObjectHideFlags: 0

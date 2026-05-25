@@ -19,6 +19,8 @@ namespace MainMenu
 
             isLoaded = true;
             yield return new WaitUntil(() => isLoaded);
+
+            G.SDK.GameReady();
         }
     }
 }

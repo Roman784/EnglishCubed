@@ -17,7 +17,7 @@ mergeInto(LibraryManager.library, {
     {
         player.getData().then(_date => {
             const myJSON = JSON.stringify(_date);
-            gameInstance.SendMessage('YandexSDK', 'AcceptLoadedData', myJSON);
+            gameInstance.SendMessage('SDK', 'AcceptLoadedData', myJSON);
             console.log('Load data');
         });
     },
@@ -27,19 +27,19 @@ mergeInto(LibraryManager.library, {
         ysdk.adv.showRewardedVideo({
             callbacks: {
                 onOpen: () => {
-                    gameInstance.SendMessage('YandexSDK', 'StopGame');
+                    gameInstance.SendMessage('SDK', 'StopGame');
                     console.log('Video ad open.');
                 },
                 onRewarded: () => {
-                    gameInstance.SendMessage('YandexSDK', 'InvokeCallback', id);
+                    gameInstance.SendMessage('SDK', 'InvokeCallback', id);
                     console.log('Rewarded!');
                 },
                 onClose: () => {
-                    gameInstance.SendMessage('YandexSDK', 'ContinueGame');
+                    gameInstance.SendMessage('SDK', 'ContinueGame');
                     console.log('Video ad closed.');
                 }, 
                 onError: (e) => {
-                    gameInstance.SendMessage('YandexSDK', 'ContinueGame');
+                    gameInstance.SendMessage('SDK', 'ContinueGame');
                     console.log('Error while open video ad:', e);
                 }
             }
@@ -51,15 +51,15 @@ mergeInto(LibraryManager.library, {
         ysdk.adv.showFullscreenAdv({
             callbacks: {
                 onClose: function(wasShown) {
-                    gameInstance.SendMessage('YandexSDK', 'ContinueGame');
+                    gameInstance.SendMessage('SDK', 'ContinueGame');
                     console.log ("adv close");
                 },
                 onOpen: function(open) {
-                    gameInstance.SendMessage('YandexSDK', 'StopGame');
+                    gameInstance.SendMessage('SDK', 'StopGame');
                     console.log ("adv open");
                 },
                 onError: function(error) {
-                    gameInstance.SendMessage('YandexSDK', 'ContinueGame');
+                    gameInstance.SendMessage('SDK', 'ContinueGame');
                     console.log ("adv error");
                 }
             }

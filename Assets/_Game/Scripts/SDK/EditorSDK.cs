@@ -9,7 +9,7 @@ namespace SDK
 
         public override string GetLanguage()
         {
-            return "en";
+            return "ru";
         }
 
         public override Observable<bool> Init()

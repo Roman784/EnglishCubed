@@ -40,7 +40,9 @@ namespace GameRoot
             DontDestroyOnLoad(sdk);
 
             G.SDK = sdk;
-            G.SDK.Init();
+            yield return HandleLoading(
+                G.SDK.Init(),
+                "Failed to init sdk!");
 
             G.ConfigsProvider = new ScriptableObjectConfigsProvider();
 
@@ -50,7 +52,6 @@ namespace GameRoot
 #else
             gameStateProvider = new JsonGameStateProvider();
 #endif
-            G.LocalizationProvider = new JsonLocalizationProvider();
 
             yield return HandleLoading(
                 G.ConfigsProvider.LoadGameConfigs(),
@@ -61,9 +62,13 @@ namespace GameRoot
                 "Failed to load game state!");
 
             G.Repository = new Repository(gameStateProvider);
+            var prefferedLanguage = LanguageMapper.To(G.SDK.GetLanguage());
+            var loadedLanguage = G.Repository.Language.GetLanguage();
+            var language = loadedLanguage == Language.None ? prefferedLanguage : loadedLanguage;
+            G.LocalizationProvider = new JsonLocalizationProvider();
 
             yield return HandleLoading(
-                G.LocalizationProvider.LoadTranslations(G.Repository.Language.GetLanguage()),
+                G.LocalizationProvider.LoadTranslations(language),
                 "Failed to load localization configs!");
 
             G.UIRoot = CreateUIRoot();

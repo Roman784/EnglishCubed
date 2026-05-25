@@ -51,8 +51,8 @@
                 },
                 {
                     "Name": 24,
-                    "Value": 4.0,
-                    "Max": 4.0
+                    "Value": 3.0,
+                    "Max": 3.0
                 },
                 {
                     "Name": 23,
@@ -61,8 +61,8 @@
                 },
                 {
                     "Name": 22,
-                    "Value": 15.0,
-                    "Max": 15.0
+                    "Value": 10.0,
+                    "Max": 10.0
                 },
                 {
                     "Name": 0,
@@ -89,14 +89,11 @@
                 "?",
                 "anan",
                 "ii",
-                "ambe",
-                "tiredtire",
-                "catscat",
-                "thethe",
-                "arebe",
-                "sheshe"
+                "ambe"
             ],
             "WordsInDeck": [
+                "catscat",
+                "sheshe",
                 "wewe",
                 "doesdo",
                 "appleapple",
@@ -104,6 +101,9 @@
                 "aa",
                 "catcat",
                 "youyou",
+                "thethe",
+                "arebe",
+                "tiredtire",
                 "loveslove"
             ]
         }

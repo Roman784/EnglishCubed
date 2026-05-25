@@ -1258,10 +1258,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1168800990}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 668, y: 256}
+  m_SizeDelta: {x: 1748, y: 256}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &705785610
 MonoBehaviour:
@@ -1313,7 +1313,6 @@ MonoBehaviour:
   _scrollSpeed: 0.1
   _xDirection: -1
   _yDirection: 0
-  _defaultAspect: 1.777
 --- !u!1 &1097688966
 GameObject:
   m_ObjectHideFlags: 0
@@ -2784,11 +2783,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Localization.LocalizedImage
   _data:
-  - Language: 0
-    Sprite: {fileID: 21300000, guid: 0ed1f7c408d20a04bbdadd48783450fb, type: 3}
   - Language: 1
-    Sprite: {fileID: 21300000, guid: f849a87a1517b894bb8f1fdd36994245, type: 3}
+    Sprite: {fileID: 21300000, guid: 0ed1f7c408d20a04bbdadd48783450fb, type: 3}
   - Language: 2
+    Sprite: {fileID: 21300000, guid: f849a87a1517b894bb8f1fdd36994245, type: 3}
+  - Language: 3
     Sprite: {fileID: 21300000, guid: 3f265374736f38e4199859ab726f2897, type: 3}
 --- !u!1 &2038458691
 GameObject:
