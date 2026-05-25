@@ -5,56 +5,105 @@ namespace GrammarValidation
         public bool Execute(ParsedSentenceGraph graph, ValidationResult result)
         {
             var subject = graph.Root.GetChild(DependencyRelation.Subject);
+
             if (subject == null)
                 return true;
 
-            var sPerson = subject.Token.Definition.Person;
-            var sNumber = subject.Token.Definition.Number;
-            var verbToken = graph.Root.GetChild(DependencyRelation.Auxiliary)?.Token ?? graph.Root.Token;
-            var vStr = verbToken.RawValue.ToLower();
+            var subjectDefinition = subject.Token.Definition;
 
-            var isThirdSingular = sPerson == Person.Third && sNumber == Number.Singular;
-            var isFirstSingular = sPerson == Person.First && sNumber == Number.Singular;
+            var sPerson = subjectDefinition.Person;
+            var sNumber = subjectDefinition.Number;
 
-            if (vStr == "is" || vStr == "does" || vStr == "likes")
+            var verbToken =
+                graph.Root.GetChild(DependencyRelation.Auxiliary)?.Token
+                ?? graph.Root.Token;
+
+            var verbDefinition = verbToken.Definition;
+
+            if (!verbDefinition.IsVerb || verbDefinition.VerbDefinition == null)
+                return true;
+
+            var verbForm = verbDefinition.VerbDefinition.Form;
+
+            var isThirdSingular =
+                sPerson == Person.Third &&
+                sNumber == Number.Singular;
+
+            var isFirstSingular =
+                sPerson == Person.First &&
+                sNumber == Number.Singular;
+
+            switch (verbForm)
             {
-                if (!isThirdSingular)
-                {
-                    result.IsSuccess = false;
-                    result.Message = $"Verb '{vStr}' requires 3rd person singular subject.";
-                    result.HintCode = 3;
-                    return false;
-                }
-            }
-            else if (vStr == "am")
-            {
-                if (!isFirstSingular)
-                {
-                    result.IsSuccess = false;
-                    result.Message = "Verb 'am' requires 'I'.";
-                    result.HintCode = 2;
-                    return false;
-                }
-            }
-            else if (vStr == "are")
-            {
-                if (isThirdSingular || isFirstSingular)
-                {
-                    result.IsSuccess = false;
-                    result.Message = "Verb 'are' cannot be used with 1st/3rd person singular.";
-                    result.HintCode = 2;
-                    return false;
-                }
-            }
-            else if (vStr == "do" || vStr == "like" || vStr == "walk" || vStr == "wake")
-            {
-                if (isThirdSingular)
-                {
-                    result.IsSuccess = false;
-                    result.Message = $"Base verb '{vStr}' cannot be used with 3rd person singular.";
-                    result.HintCode = 4;
-                    return false;
-                }
+                case VerbForm.ThirdPersonSingular:
+
+                    if (!isThirdSingular)
+                    {
+                        result.IsSuccess = false;
+                        result.Message =
+                            "This verb form requires a 3rd person singular subject.";
+                        result.HintCode = 4;
+
+                        return false;
+                    }
+
+                    break;
+
+                case VerbForm.Base:
+
+                    if (isThirdSingular)
+                    {
+                        result.IsSuccess = false;
+                        result.Message =
+                            "Base verb form cannot be used with 3rd person singular.";
+                        result.HintCode = 4;
+
+                        return false;
+                    }
+
+                    break;
+
+                case VerbForm.Be_FirstSingular:
+
+                    if (!isFirstSingular)
+                    {
+                        result.IsSuccess = false;
+                        result.Message =
+                            "'am' can only be used with first person singular.";
+                        result.HintCode = 2;
+
+                        return false;
+                    }
+
+                    break;
+
+                case VerbForm.Be_ThirdSingular:
+
+                    if (!isThirdSingular)
+                    {
+                        result.IsSuccess = false;
+                        result.Message =
+                            "'is' requires 3rd person singular.";
+                        result.HintCode = 2;
+
+                        return false;
+                    }
+
+                    break;
+
+                case VerbForm.Be_Plural:
+
+                    if (isFirstSingular || isThirdSingular)
+                    {
+                        result.IsSuccess = false;
+                        result.Message =
+                            "'are' cannot be used with 1st/3rd person singular.";
+                        result.HintCode = 2;
+
+                        return false;
+                    }
+
+                    break;
             }
 
             return true;

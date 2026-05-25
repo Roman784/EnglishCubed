@@ -25,35 +25,33 @@
         ]
     },
     "Currency": {
-        "Coins": 557
+        "Coins": 613
     },
     "Session": {
         "Data": {
             "IsStarted": true,
             "Seed": 0,
-            "IsInEncounter": false,
+            "IsInEncounter": true,
             "CurrentEncounterName": 2,
             "CurrentEncounterNumber": 0,
             "TotalEncountersCount": 0,
-            "PassedEncounters": [
-                0
-            ],
+            "PassedEncounters": [],
             "Hero": 1,
             "Level": 1,
-            "IsEnemyExist": false,
+            "IsEnemyExist": true,
             "Enemy": 7,
-            "CurrentEnemyHealth": 0,
+            "CurrentEnemyHealth": 40,
             "MaxEnemyHealth": 40,
             "Abilities": [],
             "Stats": [
                 {
                     "Name": 25,
-                    "Value": 3.0,
+                    "Value": 0.0,
                     "Max": 3.0
                 },
                 {
                     "Name": 24,
-                    "Value": 3.0,
+                    "Value": 0.0,
                     "Max": 3.0
                 },
                 {
@@ -68,7 +66,7 @@
                 },
                 {
                     "Name": 0,
-                    "Value": 3.0,
+                    "Value": 1.0,
                     "Max": 3.0
                 },
                 {
@@ -79,34 +77,34 @@
             ],
             "Experience": {
                 "CurrentValue": 0,
-                "Level": 1
+                "Level": 0
             },
             "WordsInHand": [
-                "isbe",
-                "theythey",
-                "itit",
-                "anan"
+                "tiredtire",
+                "doesdo",
+                "anan",
+                "appleapple",
+                "wewe",
+                "loveslove",
+                "thethe",
+                "ambe",
+                "dodo",
+                "catcat"
             ],
             "WordsInDeck": [
                 "catscat",
-                "sheshe",
-                "wewe",
-                "doesdo",
-                "appleapple",
-                "dodo",
                 "aa",
-                "catcat",
+                "sheshe",
                 "youyou",
-                "thethe",
-                "arebe",
-                "tiredtire",
-                "loveslove",
-                "ambe",
+                "theythey",
                 "ii",
-                "?",
                 "hehe",
-                "lovelove",
-                "applesapple"
+                "applesapple",
+                "isbe",
+                "arebe",
+                "?",
+                "itit",
+                "lovelove"
             ]
         }
     },

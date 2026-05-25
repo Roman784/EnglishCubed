@@ -561,7 +561,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UI.HandFlowLayout
   _container: {fileID: 2451611541180696408}
   _scale: 100
-  _spacing: 0.1
+  _spacing: 0.2
   _gravitationalPullerStrength: 0.25
 --- !u!1 &5559610431304777165
 GameObject:

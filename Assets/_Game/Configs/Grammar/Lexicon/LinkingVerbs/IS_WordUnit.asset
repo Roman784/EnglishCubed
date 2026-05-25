@@ -23,5 +23,5 @@ MonoBehaviour:
     Number: 0
     IsVerb: 1
     VerbDefinition:
-      Form: 1
+      Form: 3
       IsTransitive: 1

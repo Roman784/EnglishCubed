@@ -19,7 +19,7 @@ namespace GrammarValidation
             {
                 result.IsSuccess = false;
                 result.Message = "Missing or misplaced subject.";
-                result.HintCode = 6;
+                result.HintCode = 0;
                 return false;
             }
 
