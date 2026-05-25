@@ -18,6 +18,7 @@ namespace UI
         protected List<ILayoutElement> _newElements = new();
         private Dictionary<ILayoutElement, Vector3> _originalScales = new();
 
+        private Canvas _canvas;
         private GravitationalPuller _gravitationalPuller;
 
         public RectTransform Container => _container;
@@ -45,6 +46,7 @@ namespace UI
 
         private void Awake()
         {
+            _canvas = _container.GetComponentInParent<Canvas>();
             _gravitationalPuller = new GravitationalPuller(
                 _container, _allElements, _gravitationalPullerStrength);
         }
@@ -74,6 +76,18 @@ namespace UI
 
             var minScreenContainerCorner = RectTransformUtility.WorldToScreenPoint(null, containerCorners[0]);
             var maxScreenContainerCorner = RectTransformUtility.WorldToScreenPoint(null, containerCorners[2]);
+
+            _canvas = _container.GetComponentInParent<Canvas>();
+            if (_canvas.renderMode == RenderMode.ScreenSpaceOverlay)
+            {
+                minScreenContainerCorner = Camera.main.ScreenToWorldPoint(minScreenContainerCorner);
+                maxScreenContainerCorner = Camera.main.ScreenToWorldPoint(maxScreenContainerCorner);
+
+                _canvas.renderMode = RenderMode.ScreenSpaceCamera;
+                _canvas.worldCamera = Camera.main;
+                _canvas.sortingLayerName = "Top";
+            }
+
             var containerWidth = maxScreenContainerCorner.x - minScreenContainerCorner.x;
             var containerHeight = maxScreenContainerCorner.y - minScreenContainerCorner.y;
 

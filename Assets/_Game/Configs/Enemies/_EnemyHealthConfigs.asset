@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: _EnemyHealthConfigs
   m_EditorClassIdentifier: Assembly-CSharp::Configs.EnemyHealthConfigs
   OrdinaryEnemy:
-    Min: 75
-    Max: 100
+    Min: 30
+    Max: 50
   LeaderEnemy:
-    Min: 150
-    Max: 200
+    Min: 50
+    Max: 100
   BossEnemy:
-    Min: 300
-    Max: 400
+    Min: 100
+    Max: 150
   ChangesByStage:
     serializedVersion: 2
     m_Curve:

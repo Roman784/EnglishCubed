@@ -87,7 +87,8 @@ namespace UI
         private WordUnit CreateWordUnit(WordUnitConfigs configs)
         {
             var createWord = G.WordUnitFactory.Create(configs, transform.position);
-            createWord.transform.SetParent(_containerLayout.Container, true);
+            createWord.Transform.Show();
+            createWord.transform.SetParent(_containerLayout.Container, false);
 
             createWord.PointerDetector.OnPointerClickSignal.Subscribe(_ => SelectWord(configs));
 

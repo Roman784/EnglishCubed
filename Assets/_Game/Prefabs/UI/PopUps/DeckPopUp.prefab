@@ -579,6 +579,7 @@ MonoBehaviour:
   _closeTweenData:
     Duration: 0.1
     Ease: 27
+  _container: {fileID: 3603239276221971436}
   _layout: {fileID: 5689100522431689503}
 --- !u!114 &5689100522431689503
 MonoBehaviour:
@@ -594,7 +595,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UI.HandFlowLayout
   _container: {fileID: 3603239276221971436}
   _scale: 100
-  _spacing: 0.05
+  _spacing: 0.075
   _gravitationalPullerStrength: 0.25
 --- !u!1 &6344881961538150467
 GameObject:

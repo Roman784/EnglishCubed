@@ -31,7 +31,8 @@ namespace UI
         private WordUnit CreateWordUnit(WordUnitConfigs configs)
         {
             var createWord = G.WordUnitFactory.Create(configs, transform.position);
-            createWord.transform.SetParent(_layout.Container, true);
+            createWord.Transform.Show();
+            createWord.transform.SetParent(_layout.Container, false);
             return createWord;
         }
     }

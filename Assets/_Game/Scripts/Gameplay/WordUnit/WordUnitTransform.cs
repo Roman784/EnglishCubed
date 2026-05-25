@@ -25,7 +25,7 @@ namespace Gameplay
 
         public Transform Transform => transform;
         public Vector2 Position => Transform.position;
-        public Vector2 ContainerSize => _containerView.sizeDelta;
+        public Vector2 ContainerSize => _containerView.sizeDelta * transform.lossyScale;
 
         private void Awake()
         {

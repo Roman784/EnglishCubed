@@ -25,23 +25,25 @@
         ]
     },
     "Currency": {
-        "Coins": 344
+        "Coins": 557
     },
     "Session": {
         "Data": {
             "IsStarted": true,
             "Seed": 0,
-            "IsInEncounter": true,
+            "IsInEncounter": false,
             "CurrentEncounterName": 2,
             "CurrentEncounterNumber": 0,
             "TotalEncountersCount": 0,
-            "PassedEncounters": [],
+            "PassedEncounters": [
+                0
+            ],
             "Hero": 1,
             "Level": 1,
-            "IsEnemyExist": true,
+            "IsEnemyExist": false,
             "Enemy": 7,
-            "CurrentEnemyHealth": 80,
-            "MaxEnemyHealth": 80,
+            "CurrentEnemyHealth": 0,
+            "MaxEnemyHealth": 40,
             "Abilities": [],
             "Stats": [
                 {
@@ -77,19 +79,13 @@
             ],
             "Experience": {
                 "CurrentValue": 0,
-                "Level": 0
+                "Level": 1
             },
             "WordsInHand": [
                 "isbe",
                 "theythey",
-                "applesapple",
-                "hehe",
                 "itit",
-                "lovelove",
-                "?",
-                "anan",
-                "ii",
-                "ambe"
+                "anan"
             ],
             "WordsInDeck": [
                 "catscat",
@@ -104,7 +100,13 @@
                 "thethe",
                 "arebe",
                 "tiredtire",
-                "loveslove"
+                "loveslove",
+                "ambe",
+                "ii",
+                "?",
+                "hehe",
+                "lovelove",
+                "applesapple"
             ]
         }
     },
