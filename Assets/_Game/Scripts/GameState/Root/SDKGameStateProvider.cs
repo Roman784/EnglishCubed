@@ -10,6 +10,8 @@ namespace GameState
         public GameState GameState { get; private set; }
         private GameState DefaultGameState => G.ConfigsProvider.GameConfigs.DefaultGameStateConfigs.State;
 
+        private string _previousGameState;
+
         public Observable<bool> LoadGameState()
         {
             var onLoaded = new Subject<bool>();
@@ -44,7 +46,11 @@ namespace GameState
             try
             {
                 var json = JsonUtility.ToJson(GameState, true);
+                if (json == _previousGameState) return Observable.Return(false);
+                
                 G.SDK.SaveData(json);
+
+                _previousGameState = json;
 
                 return Observable.Return(true);
             }

@@ -136,6 +136,7 @@ namespace GameRoot
             else if (initialEditorScene != Scenes.BOOT) { SceneManager.LoadScene(initialEditorScene); return; }
 #endif
 
+            G.SDK.GameReady();
             G.SceneProvider.OpenMainMenu();
         }
     }
